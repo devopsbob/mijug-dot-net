@@ -23,7 +23,7 @@ You can find the source code for Jekyll at GitHub:
 
 This domain was initially created to drive Michigan Java Users Group. I created it in 2002 while at Compuware Corporation supporting OptimalJ which ran using Java 5.
 
-### Futures
+#### Futures
 
   **My Information Just Under Glass - Network**, is a reflection that this is a .net TLD (Top-level-domain) which I intend providing information through my looking glass as information I've gathered during my career.
 
