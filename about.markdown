@@ -3,20 +3,6 @@ layout: page
 title: About
 permalink: /about/
 ---
-
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
-
-You can find the source code for Minima at GitHub:
-[jekyll][jekyll-organization] /
-[minima](https://github.com/jekyll/minima)
-
-You can find the source code for Jekyll at GitHub:
-[jekyll][jekyll-organization] /
-[jekyll](https://github.com/jekyll/jekyll)
-
-
-[jekyll-organization]: https://github.com/jekyll
-
 ## My Information Just Under Glass - Network
 
 #### Origins
@@ -27,3 +13,4 @@ This domain was initially created to drive Michigan Java Users Group. I created 
 
   **My Information Just Under Glass - Network**, is a reflection that this is a .net TLD (Top-level-domain) which I intend providing information through my looking glass as information I've gathered during my career.
 
+  Renaming this site to such an obscure name is a folly of mine. I am reminded of Get Smart television show where Maxwell Smart is talking to the Chief in a glass dome to preserve secrecy. The irony is they are both in separate glass containers and cannot hear each other! The asynchronous internet has changed our communications to this similarly muted misunderstandings. The "under glass" is the hushed and secure intentions of the exchanged information. The "just under" is the reflection that this information is being viewed and consumed through a monitor window glass. The "My Information" is the lense that it is what I have published to the world wide web with positive intention.
