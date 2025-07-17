@@ -52,7 +52,7 @@ else
 fi
 
 git add -A
-git commit -m "Deploying to GitHub Pages"
+git commit -m "Deploy script commit to main"
 git push origin main
 if [ $? -ne 0 ]; then
   echo "Git push failed. Exiting."
@@ -60,9 +60,11 @@ if [ $? -ne 0 ]; then
 fi
 echo "Push to GitHub Pages repository main branch completed successfully."
 # If you want to deploy to a different branch, uncomment the following line and change 'gh-pages' to your desired branch.
-git push origin main:gh-pages
-if [ $? -ne 0 ]; then
-  echo "Git push to gh-pages branch failed. Exiting."
-  exit 1
-fi
-echo "Deployment to gh-pages branch completed successfully."
+# Uncomment the next lines to push to gh-pages branch; ensure you have the branch set up and its not protected.
+# echo "Pushing to gh-pages branch."
+# git push origin main:gh-pages
+# if [ $? -ne 0 ]; then
+#   echo "Git push to gh-pages branch failed. Exiting."
+#   exit 1
+# fi
+# echo "Deployment to gh-pages branch completed successfully."
