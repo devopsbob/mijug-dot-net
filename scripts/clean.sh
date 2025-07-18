@@ -14,13 +14,6 @@ if [ -d _site ]; then
 else
   echo "_site directory does not exist, skipping removal."
 fi
-# Remove the docs directory if it exists
-if [ -d docs ]; then
-    echo "Removing docs directory."
-    rm -rf docs
-else
-    echo "docs directory does not exist, skipping removal."
-fi
 # Remove the .jekyll-cache directory if it exists
 if [ -d .jekyll-cache ]; then
     echo "Removing .jekyll-cache directory."
