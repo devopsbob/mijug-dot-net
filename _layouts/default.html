@@ -6,12 +6,10 @@
   <body>
     
     {%- include header.html -%}
+    {%- include nav.html -%}
 
     <div class="layout">
-      <aside class="sidebar">
-        {%- include nav.html -%}
-      </aside>
-      <main>
+      <main class="wrapper">
         {{ content }}
       </main>
     </div>
