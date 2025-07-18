@@ -1,6 +1,0 @@
-Trying to use the default workflow of Github pages.
-
-  Seems to infer using branch 'gh-pages' for publishing.
-  Seems to infer using directory 'docs' as the output published result.
-  Seems to say put .nojekyll file into root of gh-pages branch and to ignore in other branches so that jekyll build executes for thos non-published branches.
-  
