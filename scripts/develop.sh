@@ -11,7 +11,8 @@ if [ ! -f Gemfile ]; then
   exit 1
 fi
 echo "Installing dependencies from Gemfile."
-bundle install --path vendor/bundle
+bundle config set path 'vendor/bundle'
+bundle install 
 if [ $? -ne 0 ]; then
   echo "Bundle install failed. Exiting."
   exit 1
