@@ -49,3 +49,26 @@ if [ -d vendor/bundle ]; then
 else
     echo "vendor/bundle directory does not exist, skipping removal."
 fi
+# Remove the Gemfile.lock file if it exists
+if [ -f Gemfile.lock ]; then
+
+    echo "Removing Gemfile.lock file."
+    rm -f Gemfile.lock
+else
+    echo "Gemfile.lock file does not exist, skipping removal."
+fi
+# Remove the node_modules directory if it exists
+if [ -d node_modules ]; then
+    echo "Removing node_modules directory."
+    rm -rf node_modules
+else
+    echo "node_modules directory does not exist, skipping removal."
+fi
+# Remove .bundler directory if it exists
+if [ -d .bundle ]; then
+    echo "Removing .bundle directory."
+    rm -rf .bundle
+else
+    echo ".bundle directory does not exist, skipping removal."
+fi
+echo "Cleanup completed successfully."

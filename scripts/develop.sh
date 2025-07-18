@@ -11,6 +11,7 @@ if [ ! -f Gemfile ]; then
   exit 1
 fi
 echo "Installing dependencies from Gemfile."
+bundle config unset with
 bundle config set path 'vendor/bundle'
 bundle install 
 if [ $? -ne 0 ]; then

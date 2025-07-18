@@ -10,7 +10,8 @@ if [ ! -f Gemfile ]; then
 fi
 echo "Installing dependencies from Gemfile."
 bundle config set path 'vendor/bundle'
-bundle install --without development test
+bundle config set without 'development test'
+bundle install
 if [ $? -ne 0 ]; then
   echo "Bundle install failed. Exiting."
   exit 1
