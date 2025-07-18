@@ -1,20 +1,21 @@
 <!doctype html>
 <html lang="{{ site.lang | default: 'en' }}" dir="{{ site.dir | default: 'ltr' }}">
 
-  {%- include head.html -%}
+{%- include head.html -%}
 
-  <body>
-    
-    {%- include header.html -%}
-    {%- include nav.html -%}
+<body>
 
-    <div class="layout">
-      <main class="wrapper">
-        {{ content }}
-      </main>
-    </div>
+  {%- include header.html -%}
+  {%- include nav.html -%}
 
-        {%- include footer.html -%}
+  <div class="layout">
+    <main class="wrapper">
+      {{ content }}
+    </main>
+  </div>
 
-  </body>
+  {%- include footer.html -%}
+
+</body>
+
 </html>
