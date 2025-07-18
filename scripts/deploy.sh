@@ -54,7 +54,7 @@ else
 fi
 
 git add -A
-git commit -m "Deploy script commit to main"
+git commit -m "Deploy script commit to main branch on $(date '+%Y-%m-%d %H:%M:%S')"
 git push origin main
 if [ $? -ne 0 ]; then
   echo "Git push failed. Exiting."
