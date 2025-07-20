@@ -12,7 +12,7 @@ title: Categories
   <p>Click on a category to view posts in that category:</p>
   <ul>
     {% for category in categories %}
-       <li><a href="/category?category={{ category | slugify }}">{{ category }}</a></li>
+       <li><a href="/category?category={{ category }}">{{ category }}</a></li>
     {% endfor %}
   </ul>
   {% endif %}

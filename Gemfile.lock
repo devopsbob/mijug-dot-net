@@ -304,7 +304,7 @@ PLATFORMS
 
 DEPENDENCIES
   github-pages
-  http_parser.rb (~> 0.6.0)
+  http_parser.rb (~> 0.8.0)
   jekyll-feed (~> 0.17)
   jekyll-seo-tag (~> 2.8)
   jekyll-sitemap (~> 1.4)
