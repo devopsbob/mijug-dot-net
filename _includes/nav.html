@@ -17,7 +17,7 @@
         <ul style="list-style: none">
             {%- assign has_pages = false -%}
             {%- for path in page_paths -%}
-                {%- unless path contains 'about' or path contains 'help' -%}
+                {%- unless path contains 'about' or path contains 'help' or path contains 'category' -%}
                     {%- assign my_page = site.pages | where: "path", path | first -%}
                     {%- if my_page.title -%}
                         <li><a class="page-link" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a></li>

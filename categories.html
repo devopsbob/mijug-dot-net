@@ -4,13 +4,15 @@ title: Categories
 ---
 
 <h1>Categories</h1>
-<ul>
   {% assign categories = site.posts | map: 'categories' | join: ',' | split: ',' | uniq %}
-  {% for category in categories %}
-    <li><a href="/category?category={{ category | slugify }}">{{ category }}</a></li>
-  {% endfor %}
-</ul>
-{% if categories.size == 0 %}
-  <p>No categories found.</p>
-{% endif %}
-
+  {% assign categories = categories | sort %}
+  {% if categories.size == 0 %}
+     <p>No categories found.</p>
+  {% else %}
+  <p>Click on a category to view posts in that category:</p>
+  <ul>
+    {% for category in categories %}
+       <li><a href="/category?category={{ category | slugify }}">{{ category }}</a></li>
+    {% endfor %}
+  </ul>
+  {% endif %}

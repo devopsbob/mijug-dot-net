@@ -10,11 +10,25 @@ title: Tag
   // Get the tag from the URL
   const urlParams = new URLSearchParams(window.location.search);
   const tag = urlParams.get('tag');
+  if (!tag) {
+    document.getElementById('tag-name').textContent = 'No tag specified';
+    document.getElementById('tagged-posts').innerHTML = '<p>No posts found.</p>';
+    throw new Error('No tag specified in the URL');
+  }
+  // Set the tag name in the header
+  // Note: Ensure the tag is sanitized if it comes from user input to prevent XSS
+  // For example, you might want to escape HTML characters in the tag.
+  // This is a simple example; consider using a library for more complex sanitization.
   document.getElementById('tag-name').textContent = tag;
 
   // Filter posts by tag; keep as: const tag_posts = {{ site.posts | jsonify }};
   const tag_posts = {{ site.posts | jsonify }};
   const filteredPosts = tag_posts.filter(post => post.tags.includes(tag));
+
+  if (filteredPosts.length === 0) {
+    document.getElementById('tagged-posts').innerHTML = '<p>No posts found for this tag.</p>';
+    throw new Error('No posts found for the specified tag');
+  }
 
   const postsList = document.getElementById('tagged-posts');
   filteredPosts.forEach(post => {
@@ -23,6 +37,3 @@ title: Tag
     postsList.appendChild(li);
   });
 </script>
-{% if filteredPosts.size == 0 %}
-  <p>No posts found for this tag.</p>
-{% endif %}
