@@ -306,7 +306,7 @@ DEPENDENCIES
   github-pages
   http_parser.rb (~> 0.8.0)
   jekyll-feed (~> 0.17)
-  jekyll-seo-tag (~> 2.8)
+  jekyll-seo-tag (~> 2.7)
   jekyll-sitemap (~> 1.4)
   tzinfo (>= 1, < 3)
   tzinfo-data
