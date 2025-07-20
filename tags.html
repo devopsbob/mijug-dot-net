@@ -5,7 +5,7 @@ title: Tags
 
 <h1>Tags</h1>
 <ul>
-  {% assign tags = site.posts | map: 'tags' | join: ',' | split: ',' | uniq %}
+  {% assign tags = site.posts | map: 'tags' | join: ',' | split: ',' | compact | uniq %}
   {% for tag in tags %}
     <li><a href="/tag?tag={{ tag | slugify }}">{{ tag }}</a></li>
   {% endfor %}
