@@ -55,3 +55,6 @@ exclude:
   - vendor/ruby/
   - docs
   - scripts
+  - README.md
+  - LICENSE
+  - frontmatter.json
