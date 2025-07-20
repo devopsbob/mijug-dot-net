@@ -58,5 +58,5 @@
   "frontMatter.git.enabled": true,
   "frontMatter.excludeFiles": [
     "[[workspace]]/README.md",
-    "[[workspace]]/Gemfile",
+    "[[workspace]]/Gemfile"]
 }
