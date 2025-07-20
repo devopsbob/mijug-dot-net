@@ -3,8 +3,8 @@ title: Reusing Older Computers in 2025
 description: "Keeping your chips out of the wood chipper"
 date: 2025-07-18T20:39:43.763Z
 preview: ""
-tags: [cpus, gpus, "big-ugly-tag"]
-categories: ["linux", "history"]
+tags: [cpus, gpus]
+categories: ["linux"]
 ---
 
 Many years ago each type of computer was really based on who created the silicon chips put inside. Mainframe, Workstation, PC, MAC, Micro-Computer, Mini-Computer, Macintosh, etcetera...
