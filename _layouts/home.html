@@ -43,7 +43,7 @@ layout: default
     {%- assign categories = categories | compact | sort -%}
     {%- for category in categories -%}
       {%- if category != "" -%}
-      <a href="/category?category={{ category | slugify }}">{{ category }}</a>{% unless forloop.last %}, {% endunless %}
+      <a href="/categories#{{ category }}">{{ category }}</a>{% unless forloop.last %}, {% endunless %}
       {%- endif -%}
     {%- endfor -%}
   </p>
@@ -55,7 +55,7 @@ layout: default
     {%- assign tags = tags | compact | sort -%}
     {%- for tag in tags -%}
       {%- if tag != "" -%}
-      <a href="/tag?tag={{ tag | slugify }}">{{ tag }}</a>{% unless forloop.last %}, {% endunless %}
+      <a href="/tags#{{ tag }}">{{ tag }}</a>{% unless forloop.last %}, {% endunless %}
       {%- endif -%}
     {%- endfor -%}
   </p>
