@@ -4,6 +4,8 @@
 
 layout: home
 title: What's New
+categories: HomePage
+
 ---
 
 Welcome to **My Information Just Under Glass**!

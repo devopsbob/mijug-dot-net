@@ -1,0 +1,18 @@
+---
+layout: default
+title: Categories
+---
+
+<h1>Categories</h1>
+  {% assign categories = site.posts | map: 'categories' | join: ',' | split: ',' | where: 'size', '>', 0 | uniq %}
+  {% assign categories = categories | sort %}
+  {% if categories.size == 0 %}
+     <p>No categories found.</p>
+  {% else %}
+  <p>Click on a category to view posts in that category:</p>
+  <ul>
+    {% for category in categories %}
+       <li><a href="/category?category={{ category }}">{{ category }}</a></li>
+    {% endfor %}
+  </ul>
+  {% endif %}

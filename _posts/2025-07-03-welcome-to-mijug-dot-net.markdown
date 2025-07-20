@@ -2,7 +2,7 @@
 layout: post
 title:  "Welcome to MIJUG.NET!"
 date:   2025-07-03 15:05:55 -0400
-categories: jekyll update
+categories: announcements
 ---
 
 [MIJUG.NET](https://www.mijug.net) is a site built to serve primarily south east Michigan, Ohio, and Florida.
