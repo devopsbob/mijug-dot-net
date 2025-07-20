@@ -1,0 +1,15 @@
+---
+layout: default
+title: Tags
+---
+
+<h1>Tags</h1>
+<ul>
+  {% assign tags = site.posts | map: 'tags' | join: ',' | split: ',' | uniq %}
+  {% for tag in tags %}
+    <li><a href="/tag?tag={{ tag | slugify }}">{{ tag }}</a></li>
+  {% endfor %}
+</ul>
+{% if tags.size == 0 %}
+  <p>No tags found.</p>
+{% endif %}

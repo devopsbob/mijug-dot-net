@@ -1,0 +1,54 @@
+---
+layout: default
+title: category
+---
+
+<h1>Posts Categorized: <span id="category-name"></span></h1>
+<!-- This file lists all posts in a specific category based on the URL parameter. -->
+<!-- The category is extracted from the URL and used to filter posts. -->
+
+<ul>
+  {% assign category_param = page.url | split: '?' | last | split: '&' %}
+  {% assign category_value = '' %}
+  {% for param in category_param %}
+    {% assign pair = param | split: '=' %}
+    {% if pair[0] == 'category' %}
+      {% assign category_value = pair[1] %}
+    {% endif %}
+  {% endfor %}
+  {% for post in site.posts %}
+    {% if post.categories contains category_value %}
+      <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endif %}
+  {% endfor %}
+</ul>
+
+
+
+
+
+
+<ul id="category-posts"></ul>
+
+<script>
+  // Get the category from the URL
+  const urlParams = new URLSearchParams(window.location.search);
+  const category = urlParams.get('category');
+  document.getElementById('category-name').textContent = category;
+
+  // Filter posts by category; keep as: const category_posts = {{ site.posts | jsonify }};
+  const category_posts = {{ site.posts | jsonify }};
+  const filteredPosts = category_posts.filter(post => post.categories.includes(category));
+
+  console.log('Filtered Posts:', filteredPosts);
+  const postsList = document.getElementById('category-posts');
+  filteredPosts.forEach(post => {
+    const li = document.createElement('li');
+    li.innerHTML = `<a href="${post.url}">${post.title}</a>`;
+    postsList.appendChild(li);
+  });
+</script>
+{% if filteredPosts.size == 0 %}  
+  <p>No posts found for this category.</p>
+{% endif %}
+<!-- This file lists all categories and provides links to each category page. -->
