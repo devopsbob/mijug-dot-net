@@ -4,7 +4,7 @@ title: Categories
 ---
 
 <h1>Categories</h1>
-  {% assign categories = site.posts | map: 'categories' | join: ',' | split: ',' | uniq %}
+  {% assign categories = site.posts | map: 'categories' | join: ',' | split: ',' | where: 'size', '>', 0 | uniq %}
   {% assign categories = categories | sort %}
   {% if categories.size == 0 %}
      <p>No categories found.</p>
