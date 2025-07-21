@@ -9,10 +9,9 @@ title: Categories
   {% if categories.size == 0 %}
      <p>No categories found.</p>
   {% else %}
-  <p>Click on a category to view posts in that category:</p>
   <ul>
     {% for category in categories %}
-       <li><a href="/category?category={{ category }}">{{ category }}</a></li>
+       <li>{{ category }}</li>
     {% endfor %}
   </ul>
   {% endif %}
