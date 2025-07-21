@@ -6,5 +6,10 @@ _site/
 .bundle/
 vendor/
 
+# Keep node setup out of the repo
+node_modules/
+package-lock.json
+package.json
+
 # Ignore that other branch gh-pages has .nojekyll file
 .nojekyll
