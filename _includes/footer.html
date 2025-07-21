@@ -4,7 +4,7 @@
     <div class="wrapper">
 
         <h2 class="footer-heading">
-            &copy; {{ site.time | date: '%Y' }} {{ site.title | escape }}
+            {{ site.description | escape }}<br>          
         </h2>
 
         <div class="footer-col-wrapper">
@@ -28,7 +28,8 @@
             </div>
 
             <div class="footer-col footer-col-3">
-                <p>{{- site.description | escape -}}</p>
+                <p>&copy; {{ site.time | date: '%Y' }} {{ site.company | escape }} <br/>
+                subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
             </div>
         </div>
 
