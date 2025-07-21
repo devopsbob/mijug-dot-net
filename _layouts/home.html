@@ -37,29 +37,39 @@ layout: default
     {%- endfor -%}
   </ul>
 
-  {%- if categories.size > 0 -%}
-  <p class="post-categories">
-    Categories: &nbsp;
-    {%- assign categories = categories | compact | sort -%}
-    {%- for category in categories -%}
-      {%- if category != "" -%}
-      <a href="/categories#{{ category }}">{{ category }}</a>{% unless forloop.last %}, {% endunless %}
-      {%- endif -%}
-    {%- endfor -%}
-  </p>
-  {%- endif -%}
+  <table style="border:none; padding: 0;">
+    <tr style="border:none; padding: 0;">
+      <td style="border:none; padding: 0;">
+        {%- if categories.size > 0 -%}
+          <p class="post-categories">
+            Categories: &nbsp;
+             {%- assign categories = categories | compact | sort -%}
+             {%- for category in categories -%}
+              {%- if category != "" -%}
+               <a href="/categories#{{ category }}">{{ category }}</a>{% unless forloop.last %}, {% endunless %}
+              {%- endif -%}
+             {%- endfor -%}
+          </p>
+        {%- endif -%}
+      </td>
+      <td style="border:none; padding: 0;">
+      {%- if tags.size > 0 -%}
+         <p class="post-tags">
+             Tags: &nbsp;
+           {%- assign tags = tags | compact | sort -%}
+           {%- for tag in tags -%}
+           {%- if tag != "" -%}
+             <a href="/tags#{{ tag }}">{{ tag }}</a>{% unless forloop.last %}, {% endunless %}
+           {%- endif -%}
+           {%- endfor -%}
+         </p>
+      </td>
 
-  {%- if tags.size > 0 -%}
-  <p class="post-tags">
-    Tags: &nbsp;
-    {%- assign tags = tags | compact | sort -%}
-    {%- for tag in tags -%}
-      {%- if tag != "" -%}
-      <a href="/tags#{{ tag }}">{{ tag }}</a>{% unless forloop.last %}, {% endunless %}
-      {%- endif -%}
-    {%- endfor -%}
-  </p>
+    </tr>
+
+
   {%- endif -%}
+  </table>
 
   {%- endif -%}
 
