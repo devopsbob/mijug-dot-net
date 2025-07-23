@@ -8,13 +8,33 @@ categories: HomePage
 
 ---
 
-Welcome to **My Information Just Under Glass**!
+Welcome to **My Information Just Under Glass (MIJUG)**!
 
-In coming weeks **MIJUG** will be presenting a seminar series to assist DIY'ers and those less technically saavy to convert their existing non-Windows 10 supported computers into Linux.
+This fall of 2025, **MIJUG** is excited to host an in-person seminar series designed to empower DIY enthusiasts and non-technical individuals to convert their older, non-Windows-11-compliant computers into Linux-based systems.
 
-The objective will be to person-to-person engage and explain the what, how, why you would convert your non-Windows-11-compliant computer to Linux.
+### Why Attend?
+Our seminar series offers hands-on guidance and practical knowledge to help you:
+- **Understand** what Linux is and how it can replace unsupported Windows systems.
+- **Learn** the step-by-step process to convert your computer to Linux.
+- **Discover** why switching to Linux is a sustainable and cost-effective solution.
 
-As a seasoned veteran of the Information Technology space I have previously taught at Wayne State University in Detroit, created and managed technology user group(s), and enabled many career-changers during the pandemic.
+### About the Presenter
+With years of experience in IT and education, I am passionate about helping others embrace technology. My background includes:
+- Teaching as a former instructor at Wayne State University in Detroit.
+- Founding and managing multiple technology user groups.
+- Mentoring career-changers during the pandemic to help them transition into tech roles.
 
-The seminar series will be delivered in-person only. The content will not be recorded or provided directly via this website. This website will be a landing zone for additional helpful tips, references, or tools. One of the objectives is to provide a "human-in-the-loop" to assist others to recycle their older computers thereby reducing e-waste and providing a basic internet enabled desktop computer for grandkids, casual internet surfing, or low-impact (ie not gaming) application support for the common user.
+### What to Expect
+The seminars will be delivered **in-person only** and will not be recorded or made available online. However, this website will serve as your go-to resource hub, providing:
+- Practical tips for Linux conversion.
+- References to helpful tools and guides.
+- Ongoing support for your Linux journey.
+
+### Our Mission
+At MIJUG, we aim to reduce e-waste by repurposing older computers. By converting them into Linux-based systems, you can:
+- Create a functional desktop for casual internet use or for your grandkids.
+- Enable basic application support for non-gaming purposes.
+- Contribute to a more sustainable future by recycling outdated hardware.
+
+Stay tuned for updates, resources, and more information to help you get started on your Linux conversion journey!
 
