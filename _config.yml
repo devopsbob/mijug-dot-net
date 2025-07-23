@@ -28,6 +28,8 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  devopsbob
 linkedin_username: bobkranson
+logo: /assets/logo-mijug-watermark-98x100.svg # path to your logo image
+favicon: /assets/favicon.ico # path to your favicon image
 
 # Build settings
 theme: minima
