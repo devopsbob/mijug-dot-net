@@ -7,23 +7,29 @@ tags: [cpus, gpus]
 categories: ["linux"]
 ---
 
-Many years ago each type of computer was really based on who created the silicon chips put inside. Mainframe, Workstation, PC, MAC, Micro-Computer, Mini-Computer, Macintosh, etcetera...
+### Reusing Older Computers in 2025
 
-There was IBM, Sun Microsystems, Intel, Hewlett-Packard, Texas Instruments, Apple and a few others. The chipset made the computer hardware compatible with a given operating system.
+In the past, the type of computer you owned was largely determined by the silicon chips inside it. Mainframes, workstations, PCs, Macs, microcomputers, and minicomputers were all defined by their chipsets. Companies like IBM, Sun Microsystems, Intel, Hewlett-Packard, Texas Instruments, and Apple created hardware that was compatible with specific operating systems.
 
-Now, in 2025, the chips have sped their way to faster central processing units (CPUS) with varying names (i5, i7, CoreDuo, M1) and have incorporated even faster graphical processing units (GPUS) which are targeted for gaming and graphical manipulation or rendering though have become ubiquitous with the current Artificial Intelligence (AI) domain.
+Fast forward to 2025, and chip technology has advanced dramatically. Central processing units (CPUs) have become faster, with names like i5, i7, CoreDuo, and M1. Meanwhile, graphical processing units (GPUs), originally designed for gaming and rendering, are now essential for artificial intelligence (AI) applications. This rapid evolution has driven a relentless pace of change, particularly in security.
 
-This speed of change has required a brutal pace to ensure security. How fast can you crack a password? What if you wanted to do it with you home computer? Maybe it could be done with a rental computer (aka cloud)? Or many rented computers (aka many computers in any number of cloud providers)? This is all possible. So possible they have created another chip to separate concerns for security - Trusted Module Platform or TPM chip. This is the minimum requirement for Windows 11. Do you have one in your current Personal Computer? Maybe. You will have to update it via an internet connection via Windows 10 operating system and find out.
+### The Security Race
 
-Why do we need a TPM? Quantum is coming, that's why. No, it's not the star from the TV show "Quantum Leap". Its the capability to process so many numbers, letters, digits so fast that it can replace 1000's of computers processing time for days and years into seconds.
+As computing power increases, so does the ability to crack passwords. Tasks that once required a single home computer can now be accomplished faster with rented cloud computers—or even multiple rented computers across cloud providers. This has necessitated the development of new security measures, such as the Trusted Platform Module (TPM) chip, which is a minimum requirement for Windows 11. 
 
-Why keep my old computer? Do you play music on it? Do you view pictures on it? Do you play games on it? Likely a few things you do on the computer are not "security sensitive" like banking, investing, financing, legal, or business activities would be. You can still use it for those no-security things in your day to day life.
+Do you have a TPM chip in your current PC? Maybe. You’ll need to check via an internet connection and a Windows 10 update to find out. But why is a TPM chip so important? The answer lies in quantum computing. Quantum technology is on the horizon, promising to process data at speeds that could render traditional security measures obsolete. A task that might take thousands of computers days or years to complete could be done in seconds with quantum computing.
 
-Taking time to re-use your old computer for non-secure basic activities will provide you this value:
+### Why Keep Your Old Computer?
 
-- Delay or defer creating more electronic waste
-- Provide a cut-off point to off-load, backup, and format your old computer to something new
-- Breathe a different life into that investment you made X years ago
-  - Grandkids can play games
-  - That old garage stereo can now become a garage PC with video AND music
-  - You can do not-logged-in-as-you internet surfing to keep tracking and ads focused away from your "personal" device(s)
+While new security requirements may render older computers unsuitable for sensitive tasks like banking or business, they can still serve a purpose. Many everyday activities—like playing music, viewing photos, or casual gaming—don’t require the latest security features. Repurposing your old computer for these non-sensitive tasks can provide significant value:
+
+- **Reduce Electronic Waste**: Reusing your old computer delays the need to dispose of it, helping to reduce e-waste.
+- **Transition Gracefully**: Use your old computer as a staging ground to offload, back up, and format data before moving to a new device.
+- **Extend Its Life**: Repurpose your old investment for new uses:
+  - Let grandkids play games on it.
+  - Turn it into a garage PC for music and video.
+  - Use it for anonymous internet browsing to reduce tracking and targeted ads on your primary devices.
+
+### Conclusion
+
+Reusing older computers is not just about nostalgia—it’s a practical way to maximize your investment, reduce waste, and adapt to changing technology. While they may no longer meet the demands of modern security, these devices still have plenty of life left for everyday, non-sensitive tasks. So before you toss that old PC, consider how it might still serve you in 2025 and beyond.
