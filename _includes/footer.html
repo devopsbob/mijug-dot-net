@@ -18,7 +18,7 @@
                         {%- endif -%}
                     </li>
                     {%- if site.email -%}
-                    <li><a class="u-email" href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+                    <li><a rel="ugc,nofollow" class="u-email" href="mailto:{{ site.email }}">{{ site.email }}</a></li>
                     {%- endif -%}
                 </ul>
             </div>
@@ -29,7 +29,7 @@
 
             <div class="footer-col footer-col-3">
                 <p>&copy; {{ site.time | date: '%Y' }} {{ site.company | escape }} <br/>
-                &nbsp;&nbsp;&nbsp;&nbsp;subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
+                &nbsp;&nbsp;&nbsp;&nbsp;subscribe <a rel="ugc,nofollow" href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
             </div>
         </div>
 

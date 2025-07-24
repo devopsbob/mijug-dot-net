@@ -3,7 +3,7 @@
 
     {%- if page_paths -%}
     <nav popover id="mobile-navigation" class="site-nav">
-        <button style="border: none;background-color: aliceblue;" popovertarget="mobile-navigation" popovertargetaction="hide">Close</button>
+        <button style="border: none;background-color: aliceblue;" popovertarget="mobile-navigation" popovertargetaction="hide" type="button">Close</button>
         <input type="checkbox" id="nav-trigger" class="nav-trigger" title="Site Navigation" />
         <label for="nav-trigger">
             <span class="menu-icon">
@@ -20,7 +20,7 @@
                 {%- unless path contains 'about' or path contains 'help' or path contains 'category' -%}
                     {%- assign my_page = site.pages | where: "path", path | first -%}
                     {%- if my_page.title -%}
-                        <li><a class="page-link" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a></li>
+                        <li><a rel="ugc" class="page-link" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a></li>
                         {%- assign has_pages = true -%}
                     {%- endif -%}
                 {%- endunless -%}
