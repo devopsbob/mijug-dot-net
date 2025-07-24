@@ -1,8 +1,9 @@
 ---
 layout: post
-title: "Welcome to MIJUG.NET!"
+title: Welcome to MIJUG.NET!
 date: 2025-07-03 15:05:55 -0400
 categories: announcements
+description: Welcome Announcement
 ---
 
 Welcome to [MIJUG.NET](https://www.mijug.net), a platform dedicated to serving the communities of southeast Michigan, Ohio, and Florida.

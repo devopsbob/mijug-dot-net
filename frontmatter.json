@@ -42,6 +42,16 @@
           "title": "Categories",
           "name": "categories",
           "type": "categories"
+        },
+        {
+          "title": "layout",
+          "name": "layout",
+          "type": "string"
+        },
+        {
+          "title": "fmContentType",
+          "name": "fmContentType",
+          "type": "string"
         }
       ]
     }
@@ -58,5 +68,6 @@
   "frontMatter.git.enabled": true,
   "frontMatter.excludeFiles": [
     "[[workspace]]/README.md",
-    "[[workspace]]/Gemfile"]
+    "[[workspace]]/Gemfile"
+  ]
 }
