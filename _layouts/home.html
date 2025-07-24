@@ -26,7 +26,7 @@ layout: default
       {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
       <span class="post-meta">{{ post.date | date: date_format }}</span>
       <h3>
-        <a class="post-link" href="{{ post.url | relative_url }}">
+        <a rel="ugc" class="post-link" href="{{ post.url | relative_url }}">
           {{ post.title | escape }}
         </a>
       </h3>
@@ -46,7 +46,7 @@ layout: default
              {%- assign categories = categories | compact | sort -%}
              {%- for category in categories -%}
               {%- if category != "" -%}
-               <a href="/categories#{{ category }}">{{ category }}</a>{% unless forloop.last %}, {% endunless %}
+               <a rel="ugc" href="/categories#{{ category }}">{{ category }}</a>{% unless forloop.last %}, {% endunless %}
               {%- endif -%}
              {%- endfor -%}
           </p>
@@ -59,7 +59,7 @@ layout: default
            {%- assign tags = tags | compact | sort -%}
            {%- for tag in tags -%}
            {%- if tag != "" -%}
-             <a href="/tags#{{ tag }}">{{ tag }}</a>{% unless forloop.last %}, {% endunless %}
+             <a rel="ugc" href="/tags#{{ tag }}">{{ tag }}</a>{% unless forloop.last %}, {% endunless %}
            {%- endif -%}
            {%- endfor -%}
          </p>
