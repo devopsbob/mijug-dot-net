@@ -74,6 +74,12 @@ webrick:
   # This is useful for development purposes, but consider restricting
   # this in production environments but will impact the ability to load resources from other domains.
   # such as Google AdSense or other third-party services.
+    Access-Control-Allow-Credentials: true # Allow credentials to be included in CORS requests
+  # This allows cookies, authorization headers, or TLS client certificates to be included in CORS
+  # requests, which is often necessary for authenticated requests.
+    Access-Control-Allow-Headers: 'Content-Type, Authorization, X-Requested-With' # Allow specific headers
+  # This allows the specified headers to be included in CORS requests.
+  # Adjust the headers as needed for your application.
     Access-Control-Allow-Methods: 'GET, POST, OPTIONS' # Allow specific methods
   # This allows GET, POST, and OPTIONS methods for CORS requests.
     Permissions-Policy: accelerometer=(), attribution-reporting=(), autoplay=(), bluetooth=(), browsing-topics=(), camera=(), captured-surface-control=(), ch-device-memory=(), ch-downlink=(), ch-dpr=(), ch-ect=(), ch-prefers-color-scheme=(), ch-prefers-reduced-motion=(), ch-prefers-reduced-transparency=(), ch-rtt=(), ch-save-data=(), ch-ua=(), ch-ua-arch=(), ch-ua-bitness=(), ch-ua-form-factors=(), ch-ua-full-version=(), ch-ua-full-version-list=(), ch-ua-mobile=(), ch-ua-model=(), ch-ua-platform=(), ch-ua-platform-version=(), ch-ua-wow64=(), ch-viewport-height=(), ch-viewport-width=(), ch-width=(), clipboard-read=(), clipboard-write=(), compute-pressure=(), cross-origin-isolated=(), deferred-fetch=(), deferred-fetch-minimal=(), display-capture=(), encrypted-media=(), fullscreen=(), gamepad=(), geolocation=(), gyroscope=(), hid=(), identity-credentials-get=(), idle-detection=(), interest-cohort=(), join-ad-interest-group=(), keyboard-map=(), language-detector=(), local-fonts=(), magnetometer=(), microphone=(), midi=(), otp-credentials=(), payment=(), picture-in-picture=(), private-aggregation=(), private-state-token-issuance=(), private-state-token-redemption=(), publickey-credentials-create=(), publickey-credentials-get=(), rewriter=(), run-ad-auction=(), screen-wake-lock=(), serial=(), shared-storage=(), shared-storage-select-url=(), storage-access=(), summarizer=(), sync-xhr=(), translator=(), unload=(), usb=(), web-share=(), window-management=(), writer=(), xr-spatial-tracking=()
