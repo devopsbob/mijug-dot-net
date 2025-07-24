@@ -68,7 +68,7 @@ webrick:
     # Add Content-Security-Policy header to enhance security
     # This example allows scripts, styles, images, and connections from the same origin
     # Adjust the policy as needed for your site requirements
-    Content-Security-Policy: default-src 'self'; script-src 'self' 'strict-dynamic' 'unsafe-inline' https://pagead2.googlesyndication.com; connect-src 'self' https://pagead2.googlesyndication.com; img-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests; block-all-mixed-content
+    Content-Security-Policy: default-src 'self'; script-src 'self' 'strict-dynamic' 'unsafe-inline' https://www.freecounterstat.com https://counter1.optistats.ovh https://pagead2.googlesyndication.com; connect-src 'self' https://pagead2.googlesyndication.com; img-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests; block-all-mixed-content
   # Note: The above policy is a basic example. You may need to adjust it based
     Access-Control-Allow-Origin: '*' # Allow all origins for CORS
   # This is useful for development purposes, but consider restricting

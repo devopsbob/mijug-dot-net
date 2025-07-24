@@ -4,7 +4,21 @@
     <div class="wrapper">
 
         <h2 class="footer-heading">
-            {{ site.description | escape }}<br>          
+            {{ site.description | escape }}<br>
+              {%- if jekyll.environment == 'production' -%}
+                <a href="https://www.freecounterstat.com">Site page views</a>
+                <div id="sfc7cyytxa5ukdg92qwtqh9umn5txq31duh"></div>
+                <script type="text/javascript" 
+                        src="https://counter1.optistats.ovh/private/counter.js?c=7cyytxa5ukdg92qwtqh9umn5txq31duh&down=async" 
+                        async>
+                </script>
+                <noscript>
+                    <a rel="nofollow" href="https://www.freecounterstat.com" title="page counter">
+                        <img src="https://counter1.optistats.ovh/private/freecounterstat.php?c=7cyytxa5ukdg92qwtqh9umn5txq31duh" 
+                        border="0" title="page counter" alt="page counter">
+                    </a>
+                </noscript>
+              {%- endif -%}
         </h2>
 
         <div class="footer-col-wrapper">
