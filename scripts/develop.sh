@@ -12,6 +12,7 @@ if [ ! -f Gemfile ]; then
 fi
 echo "Installing dependencies from Gemfile."
 bundle config unset with
+bundle config unset without
 bundle config set with 'development test'
 bundle config set path 'vendor/bundle'
 RUBYZIP_V3_API_WARN=1 bundle install
