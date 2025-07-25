@@ -9,8 +9,11 @@ if [ ! -f Gemfile ]; then
   exit 1
 fi
 echo "Installing dependencies from Gemfile."
-bundle config set path 'vendor/bundle'
+bundle config unset with
+bundle config set with 'production'
+bundle config unset without
 bundle config set without 'development test'
+bundle config set path 'vendor/bundle'
 RUBYZIP_V3_API_WARN=1 bundle install
 if [ $? -ne 0 ]; then
   echo "Bundle install failed. Exiting."

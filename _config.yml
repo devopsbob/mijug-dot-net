@@ -23,6 +23,7 @@ email: devopsbob@outlook.com
 description: >- # this means to ignore newlines until "baseurl:"
   Computer related information and blogging content.
 company: Kranson Enterprises
+company_url: https://share.google/8Ir6br641K4uU74l2
 author: Bob Kranson
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
@@ -30,6 +31,9 @@ github_username:  devopsbob
 linkedin_username: bobkranson
 logo: /assets/logo-mijug-watermark-98x100.svg # path to your logo image
 favicon: /assets/favicon.ico # path to your favicon image
+contact_address: 33461 Clifton Drive, Sterling Heights, MI 48310 # your contact address
+contact_phone: +1 (586) 237-9857 # your contact phone number
+contact_email: devopsbob@outlook.com # your contact email address
 
 # Build settings
 # theme: minima
@@ -69,11 +73,11 @@ webrick:
     # This example allows scripts, styles, images, and connections from the same origin
     # Adjust the policy as needed for your site requirements
   # Development only: Uncomment the following lines to enable CSP headers
-    Content-Security-Policy-Report-Only: default-src 'self'; script-src 'self' 'sha256-L9NtTqBLxf1z3sIza7z/JTtm01m91a8xVl07p4WTMYw=' 'unsafe-inline' 'strict-dynamic' https://www.freecounterstat.com https://counter1.optistats.ovh https://pagead2.googlesyndication.com; connect-src 'self' https://pagead2.googlesyndication.com; img-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests; block-all-mixed-content
+    Content-Security-Policy-Report-Only: default-src 'self'; script-src 'self' 'sha256-L9NtTqBLxf1z3sIza7z/JTtm01m91a8xVl07p4WTMYw=' 'strict-dynamic' https://www.freecounterstat.com https://counter1.optistats.ovh https://pagead2.googlesyndication.com https://www.google.com https://googleads.g.doubleclick.net; connect-src 'self' https://pagead2.googlesyndication.com; img-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; block-all-mixed-content
   # Production only: Uncomment the following lines to enable CSP headers
   # Note: The 'report-only' header is useful for testing your CSP without enforcing it
   # Uncomment the following line to enable CSP headers in production
-  #  Content-Security-Policy: default-src 'self'; script-src 'self' 'sha256-L9NtTqBLxf1z3sIza7z/JTtm01m91a8xVl07p4WTMYw=' 'unsafe-inline' 'strict-dynamic' https://www.freecounterstat.com https://counter1.optistats.ovh https://pagead2.googlesyndication.com; connect-src 'self' https://pagead2.googlesyndication.com; img-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests; block-all-mixed-content
+  #  Content-Security-Policy: default-src 'self'; script-src 'self' 'sha256-L9NtTqBLxf1z3sIza7z/JTtm01m91a8xVl07p4WTMYw=' 'strict-dynamic' https://www.freecounterstat.com https://counter1.optistats.ovh https://pagead2.googlesyndication.com https://www.google.com https://googleads.g.doubleclick.net; connect-src 'self' https://pagead2.googlesyndication.com; img-src 'self'; style-src 'self' 'unsafe-inline'; font-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; block-all-mixed-content; upgrade-insecure-requests;
   # Note: The above policy is a basic example. You may need to adjust it based
     Access-Control-Allow-Origin: '*' # Allow all origins for CORS
   # This is useful for development purposes, but consider restricting

@@ -23,26 +23,16 @@
 
         <div class="footer-col-wrapper">
             <div class="footer-col footer-col-1">
-                <ul class="contact-list">
-                    <li class="p-name">
-                        {%- if site.author -%}
-                        {{ site.author | escape }}
-                        {%- else -%}
-                        {{ site.title | escape }}
-                        {%- endif -%}
-                    </li>
-                    {%- if site.email -%}
-                    <li><a rel="ugc,nofollow" class="u-email" href="mailto:{{ site.email }}">{{ site.email }}</a></li>
-                    {%- endif -%}
-                </ul>
+                <a rel="ugc,nofollow" href="/terms-of-service.html">Terms of Service</a></br>
+                <a rel="ugc,nofollow" href="/privacy-policy.html">Privacy Policy</a>
             </div>
 
             <div class="footer-col footer-col-2">
-                {%- include social.html -%}
+                <a rel="ugc,nofollow" href="/contact.html">Contact Us</a>
             </div>
 
             <div class="footer-col footer-col-3">
-                <p>&copy; {{ site.time | date: '%Y' }} {{ site.company | escape }} <br/>
+                <p>&copy; {{ site.time | date: '%Y' }} <a rel="ugc,nofollow" href="{{ site.company_url }}">{{ site.company | escape }}</a><br/>
                 &nbsp;&nbsp;&nbsp;&nbsp;subscribe <a rel="ugc,nofollow" href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
             </div>
         </div>

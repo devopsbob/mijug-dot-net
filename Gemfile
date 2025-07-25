@@ -34,3 +34,13 @@ gem "wdm", "~> 0.1", :platforms => [:windows]
 # Lock `http_parser.rb` gem to `v0.6.x` on JRuby builds since newer versions of the gem
 # do not have a Java counterpart.
 gem "http_parser.rb", "~> 0.8.0", :platforms => [:jruby]
+
+# https://github.com/ruby/debug
+group :development, :test do
+  gem "debug", platforms: %i[ ruby jruby windows ]
+end
+
+# https://github.com/rails/web-console
+group :development do
+  gem "web-console"
+end
