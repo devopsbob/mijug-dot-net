@@ -55,14 +55,11 @@ GEM
     erb (5.0.2)
     erubi (1.13.1)
     eventmachine (1.2.7)
-    ffi (1.17.2)
     ffi (1.17.2-aarch64-linux-gnu)
     ffi (1.17.2-aarch64-linux-musl)
     ffi (1.17.2-arm-linux-gnu)
     ffi (1.17.2-arm-linux-musl)
     ffi (1.17.2-arm64-darwin)
-    ffi (1.17.2-x86-linux-gnu)
-    ffi (1.17.2-x86-linux-musl)
     ffi (1.17.2-x86_64-darwin)
     ffi (1.17.2-x86_64-linux-gnu)
     ffi (1.17.2-x86_64-linux-musl)
@@ -77,12 +74,6 @@ GEM
       bigdecimal
       rake (>= 13)
     google-protobuf (4.31.1-arm64-darwin)
-      bigdecimal
-      rake (>= 13)
-    google-protobuf (4.31.1-x86-linux-gnu)
-      bigdecimal
-      rake (>= 13)
-    google-protobuf (4.31.1-x86-linux-musl)
       bigdecimal
       rake (>= 13)
     google-protobuf (4.31.1-x86_64-darwin)
@@ -145,11 +136,7 @@ GEM
       crass (~> 1.0.2)
       nokogiri (>= 1.12.0)
     mercenary (0.4.0)
-    mini_portile2 (2.8.9)
     minitest (5.25.5)
-    nokogiri (1.18.9)
-      mini_portile2 (~> 2.8.2)
-      racc (~> 1.4)
     nokogiri (1.18.9-aarch64-linux-gnu)
       racc (~> 1.4)
     nokogiri (1.18.9-aarch64-linux-musl)
@@ -211,16 +198,9 @@ GEM
     rexml (3.4.1)
     rouge (4.6.0)
     safe_yaml (1.0.5)
-    sass-embedded (1.89.2)
-      google-protobuf (~> 4.31)
-      rake (>= 13)
-    sass-embedded (1.89.2-aarch64-linux-android)
-      google-protobuf (~> 4.31)
     sass-embedded (1.89.2-aarch64-linux-gnu)
       google-protobuf (~> 4.31)
     sass-embedded (1.89.2-aarch64-linux-musl)
-      google-protobuf (~> 4.31)
-    sass-embedded (1.89.2-arm-linux-androideabi)
       google-protobuf (~> 4.31)
     sass-embedded (1.89.2-arm-linux-gnueabihf)
       google-protobuf (~> 4.31)
@@ -228,15 +208,7 @@ GEM
       google-protobuf (~> 4.31)
     sass-embedded (1.89.2-arm64-darwin)
       google-protobuf (~> 4.31)
-    sass-embedded (1.89.2-riscv64-linux-android)
-      google-protobuf (~> 4.31)
-    sass-embedded (1.89.2-riscv64-linux-gnu)
-      google-protobuf (~> 4.31)
-    sass-embedded (1.89.2-riscv64-linux-musl)
-      google-protobuf (~> 4.31)
     sass-embedded (1.89.2-x86_64-darwin)
-      google-protobuf (~> 4.31)
-    sass-embedded (1.89.2-x86_64-linux-android)
       google-protobuf (~> 4.31)
     sass-embedded (1.89.2-x86_64-linux-gnu)
       google-protobuf (~> 4.31)
@@ -261,23 +233,14 @@ GEM
     zeitwerk (2.7.3)
 
 PLATFORMS
-  aarch64-linux-android
   aarch64-linux-gnu
   aarch64-linux-musl
-  arm-linux-androideabi
   arm-linux-gnu
   arm-linux-gnueabihf
   arm-linux-musl
   arm-linux-musleabihf
   arm64-darwin
-  riscv64-linux-android
-  riscv64-linux-gnu
-  riscv64-linux-musl
-  ruby
-  x86-linux-gnu
-  x86-linux-musl
   x86_64-darwin
-  x86_64-linux-android
   x86_64-linux-gnu
   x86_64-linux-musl
 

@@ -23,6 +23,7 @@ email: devopsbob@outlook.com
 description: >- # this means to ignore newlines until "baseurl:"
   Computer related information and blogging content.
 company: Kranson Enterprises
+company_url: https://share.google/8Ir6br641K4uU74l2
 author: Bob Kranson
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
@@ -30,6 +31,9 @@ github_username:  devopsbob
 linkedin_username: bobkranson
 logo: /assets/logo-mijug-watermark-98x100.svg # path to your logo image
 favicon: /assets/favicon.ico # path to your favicon image
+contact_address: 33461 Clifton Drive, Sterling Heights, MI 48310 # your contact address
+contact_phone: +1 (586) 237-9857 # your contact phone number
+contact_email: devopsbob@outlook.com # your contact email address
 
 # Build settings
 # theme: minima
