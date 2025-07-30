@@ -1,0 +1,53 @@
+{
+  "name": "My Information Just Under Glass (MIJUG)",
+  "short_name": "MIJUG",
+  "description": "Empowering DIY enthusiasts to repurpose older computers with Linux and reduce e-waste.",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "display_override": [
+    "fullscreen",
+    "window-controls-overlay",
+    "minimal-ui"
+  ],
+  "background_color": "#fdfdfd",
+  "theme_color": "#2a7ae2",
+  "icons": [
+    {
+      "src": "/assets/icons/icon-mijug-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/icons/icon-mijug-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "screen_shots": [
+    {
+      "src": "/assets/screenshots/screenshot-mijug-home.png",
+      "sizes": "482x143",
+      "form_factor": "",
+      "type": "image/png",
+      "label": "Home Screen for MIJUG"
+    },
+    {
+      "src": "/assets/screenshots/screenshot-cone-of-silence.png",
+      "sizes": "767x378",
+      "form_factor": "wide",
+      "type": "image/png",
+      "label": "Cone Of Silence from the 1960s TV show Get Smart"
+    }
+  ],
+  "prefer_related_applications": false,
+  "related_applications": [],
+  "categories": [
+    "education",
+    "technology",
+    "lifestyle",
+    "environment"
+  ],
+  "scope": "/",
+  "orientation": "portrait-primary",
+  "lang": "en-US"
+}
