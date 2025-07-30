@@ -1,0 +1,15 @@
+---
+layout: default-noads
+title: Tags
+---
+
+<h1>Tags</h1>
+<ul>
+  {% assign tags = site.posts | map: 'tags' | join: ',' | split: ',' | compact | uniq %}
+  {% for tag in tags %}
+    <li>{{ tag }}</a></li>
+  {% endfor %}
+</ul>
+{% if tags.size == 0 %}
+  <p>No tags found.</p>
+{% endif %}
