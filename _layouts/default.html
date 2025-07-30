@@ -1,0 +1,24 @@
+---
+layout: compress
+---
+<!doctype html>
+<html lang="{{ site.lang | default: 'en' }}" dir="{{ site.dir | default: 'ltr' }}">
+
+{%- include head.html -%}
+
+<body>
+
+  {%- include header.html -%}
+  {%- include nav.html -%}
+
+  <div class="layout">
+    <main class="wrapper">
+      {{ content }}
+    </main>
+  </div>
+
+  {%- include footer.html -%}
+
+</body>
+
+</html>
