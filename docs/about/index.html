@@ -53,7 +53,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="About" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","author":{"@type":"Person","name":"Bob Kranson"},"dateModified":"2025-07-30T22:54:37-04:00","description":"MIJUG.NET serves the communities of Southeast Michigan, Ohio, and Florida with technology, sustainability, and community engagement resources. A platform by Kranson Enterprises for sharing knowledge and connecting communities.","headline":"About","name":"My Information Just Under Glass","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://www.mijug.net/assets/logo-mijug-watermark-98x100.svg"},"name":"Bob Kranson"},"url":"https://www.mijug.net/about/"}</script>
+{"@context":"https://schema.org","@type":"WebSite","author":{"@type":"Person","name":"Bob Kranson"},"dateModified":"2025-07-31T12:51:33-04:00","description":"MIJUG.NET serves the communities of Southeast Michigan, Ohio, and Florida with technology, sustainability, and community engagement resources. A platform by Kranson Enterprises for sharing knowledge and connecting communities.","headline":"About","name":"My Information Just Under Glass","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://www.mijug.net/assets/logo-mijug-watermark-98x100.svg"},"name":"Bob Kranson"},"url":"https://www.mijug.net/about/"}</script>
 <!-- End Jekyll SEO tag -->
 
   </head>
@@ -439,7 +439,313 @@ This site is a personal endeavor to share knowledge, foster understanding, and p
 
 <p><em>Serving the communities of southeast Michigan, Ohio, and Florida since 2002.</em></p>
 </div>
+
+  <!-- Browser Session Information Section -->
+  <section class="browser-info-section">
+    <h2>Browser Session Information</h2>
+    <p class="section-description">
+      This section displays technical information about your current browser
+      session for transparency and debugging purposes.
+    </p>
+
+    <div class="info-grid">
+      <!-- Browser Information -->
+      <div class="info-card">
+        <h3>Browser Details</h3>
+        <div class="info-item">
+          <strong>User Agent:</strong>
+          <span id="userAgent">Loading...</span>
+        </div>
+        <div class="info-item">
+          <strong>Browser:</strong>
+          <span id="browserName">Loading...</span>
+        </div>
+        <div class="info-item">
+          <strong>Platform:</strong>
+          <span id="platform">Loading...</span>
+        </div>
+        <div class="info-item">
+          <strong>Language:</strong>
+          <span id="language">Loading...</span>
+        </div>
+        <div class="info-item">
+          <strong>Cookie Enabled:</strong>
+          <span id="cookieEnabled">Loading...</span>
+        </div>
+      </div>
+
+      <!-- Screen Information -->
+      <div class="info-card">
+        <h3>Display Information</h3>
+        <div class="info-item">
+          <strong>Screen Resolution:</strong>
+          <span id="screenResolution">Loading...</span>
+        </div>
+        <div class="info-item">
+          <strong>Viewport Size:</strong>
+          <span id="viewportSize">Loading...</span>
+        </div>
+        <div class="info-item">
+          <strong>Color Depth:</strong>
+          <span id="colorDepth">Loading...</span>
+        </div>
+        <div class="info-item">
+          <strong>Pixel Ratio:</strong>
+          <span id="pixelRatio">Loading...</span>
+        </div>
+      </div>
+
+      <!-- Connection Information -->
+      <div class="info-card">
+        <h3>Connection Details</h3>
+        <div class="info-item">
+          <strong>Current URL:</strong>
+          <span id="currentUrl">Loading...</span>
+        </div>
+        <div class="info-item">
+          <strong>Referrer:</strong>
+          <span id="referrer">Loading...</span>
+        </div>
+        <div class="info-item">
+          <strong>Connection Type:</strong>
+          <span id="connectionType">Loading...</span>
+        </div>
+        <div class="info-item">
+          <strong>Online Status:</strong>
+          <span id="onlineStatus">Loading...</span>
+        </div>
+      </div>
+
+      <!-- Timezone and Date -->
+      <div class="info-card">
+        <h3>Time & Location</h3>
+        <div class="info-item">
+          <strong>Local Time:</strong>
+          <span id="localTime">Loading...</span>
+        </div>
+        <div class="info-item">
+          <strong>Timezone:</strong>
+          <span id="timezone">Loading...</span>
+        </div>
+        <div class="info-item">
+          <strong>UTC Offset:</strong>
+          <span id="utcOffset">Loading...</span>
+        </div>
+        <div class="info-item">
+          <strong>Session Duration:</strong>
+          <span id="sessionDuration">Loading...</span>
+        </div>
+      </div>
+
+      <!-- Privacy Information -->
+      <div class="info-card">
+        <h3>Privacy & Security</h3>
+        <div class="info-item">
+          <strong>Do Not Track:</strong>
+          <span id="doNotTrack">Loading...</span>
+        </div>
+        <div class="info-item">
+          <strong>JavaScript Enabled:</strong>
+          <span id="jsEnabled">Yes (you're seeing this!)</span>
+        </div>
+        <div class="info-item">
+          <strong>Local Storage:</strong>
+          <span id="localStorage">Loading...</span>
+        </div>
+        <div class="info-item">
+          <strong>Session Storage:</strong>
+          <span id="sessionStorage">Loading...</span>
+        </div>
+      </div>
+
+      <!-- Performance Information -->
+      <div class="info-card">
+        <h3>Performance</h3>
+        <div class="info-item">
+          <strong>Page Load Time:</strong>
+          <span id="pageLoadTime">Loading...</span>
+        </div>
+        <div class="info-item">
+          <strong>Memory Usage:</strong>
+          <span id="memoryUsage">Loading...</span>
+        </div>
+        <div class="info-item">
+          <strong>Hardware Concurrency:</strong>
+          <span id="hardwareConcurrency">Loading...</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="privacy-notice">
+      <h4>Privacy Notice</h4>
+      <p>
+        All information displayed above is collected client-side using
+        JavaScript and is not transmitted to any servers. This data is used
+        solely for transparency and to help visitors understand what information
+        their browser makes available to websites.
+      </p>
+    </div>
+  </section>
 </article>
+
+<script>
+  // Browser Session Information Script
+  (function () {
+    'use strict';
+
+    // Store session start time
+    const sessionStart = performance.now();
+
+    function updateElement(id, value) {
+      const element = document.getElementById(id);
+      if (element) {
+        element.textContent = value || 'Not available';
+      }
+    }
+
+    function formatBytes(bytes) {
+      if (bytes === 0) return '0 Bytes';
+      const k = 1024;
+      const sizes = ['Bytes', 'KB', 'MB', 'GB'];
+      const i = Math.floor(Math.log(bytes) / Math.log(k));
+      return parseFloat((bytes / Math.pow(k, i)).toFixed(2)) + ' ' + sizes[i];
+    }
+
+    function formatDuration(ms) {
+      const seconds = Math.floor(ms / 1000);
+      const minutes = Math.floor(seconds / 60);
+      const hours = Math.floor(minutes / 60);
+
+      if (hours > 0) {
+        return `${hours}h ${minutes % 60}m ${seconds % 60}s`;
+      } else if (minutes > 0) {
+        return `${minutes}m ${seconds % 60}s`;
+      } else {
+        return `${seconds}s`;
+      }
+    }
+
+    function getBrowserName() {
+      const userAgent = navigator.userAgent;
+      let browserName = 'Unknown';
+
+      if (userAgent.indexOf('Firefox') > -1) {
+        browserName = 'Firefox';
+      } else if (userAgent.indexOf('Chrome') > -1) {
+        browserName = 'Chrome';
+      } else if (userAgent.indexOf('Safari') > -1) {
+        browserName = 'Safari';
+      } else if (userAgent.indexOf('Edge') > -1) {
+        browserName = 'Edge';
+      } else if (userAgent.indexOf('Opera') > -1) {
+        browserName = 'Opera';
+      }
+
+      return browserName;
+    }
+
+    function updateBrowserInfo() {
+      // Browser Details
+      updateElement('userAgent', navigator.userAgent);
+      updateElement('browserName', getBrowserName());
+      updateElement('platform', navigator.platform);
+      updateElement('language', navigator.language);
+      updateElement('cookieEnabled', navigator.cookieEnabled ? 'Yes' : 'No');
+
+      // Display Information
+      updateElement('screenResolution', `${screen.width} × ${screen.height}`);
+      updateElement(
+        'viewportSize',
+        `${window.innerWidth} × ${window.innerHeight}`
+      );
+      updateElement('colorDepth', `${screen.colorDepth}-bit`);
+      updateElement('pixelRatio', window.devicePixelRatio || 'Not available');
+
+      // Connection Details
+      updateElement('currentUrl', window.location.href);
+      updateElement('referrer', document.referrer || 'Direct visit');
+      updateElement(
+        'connectionType',
+        navigator.connection
+          ? navigator.connection.effectiveType
+          : 'Not available'
+      );
+      updateElement('onlineStatus', navigator.onLine ? 'Online' : 'Offline');
+
+      // Time & Location
+      const now = new Date();
+      updateElement('localTime', now.toLocaleString());
+      updateElement(
+        'timezone',
+        Intl.DateTimeFormat().resolvedOptions().timeZone
+      );
+      updateElement(
+        'utcOffset',
+        `UTC${now.getTimezoneOffset() > 0 ? '-' : '+'}${Math.abs(now.getTimezoneOffset() / 60)}`
+      );
+
+      // Privacy & Security
+      updateElement('doNotTrack', navigator.doNotTrack || 'Not set');
+      updateElement(
+        'localStorage',
+        typeof Storage !== 'undefined' ? 'Available' : 'Not available'
+      );
+      updateElement(
+        'sessionStorage',
+        typeof Storage !== 'undefined' ? 'Available' : 'Not available'
+      );
+
+      // Performance
+      if (performance.timing) {
+        const loadTime =
+          performance.timing.loadEventEnd - performance.timing.navigationStart;
+        updateElement('pageLoadTime', `${loadTime}ms`);
+      }
+
+      if (performance.memory) {
+        updateElement(
+          'memoryUsage',
+          formatBytes(performance.memory.usedJSHeapSize)
+        );
+      }
+
+      updateElement(
+        'hardwareConcurrency',
+        navigator.hardwareConcurrency || 'Not available'
+      );
+
+      // Session Duration (update every second)
+      const sessionDuration = performance.now() - sessionStart;
+      updateElement('sessionDuration', formatDuration(sessionDuration));
+    }
+
+    // Initial update
+    updateBrowserInfo();
+
+    // Update session duration every second
+    setInterval(function () {
+      const sessionDuration = performance.now() - sessionStart;
+      updateElement('sessionDuration', formatDuration(sessionDuration));
+    }, 1000);
+
+    // Update viewport size on resize
+    window.addEventListener('resize', function () {
+      updateElement(
+        'viewportSize',
+        `${window.innerWidth} × ${window.innerHeight}`
+      );
+    });
+
+    // Update online status
+    window.addEventListener('online', function () {
+      updateElement('onlineStatus', 'Online');
+    });
+
+    window.addEventListener('offline', function () {
+      updateElement('onlineStatus', 'Offline');
+    });
+  })();
+</script>
 </div>
     </main>
 
