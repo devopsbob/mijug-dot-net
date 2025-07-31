@@ -62,7 +62,11 @@
   <body>
     <header class="site-header" role="banner">
       <div class="wrapper">
-        <a class="site-title" rel="author" href="/">
+        <a
+          class="site-title long-title"
+          rel="author"
+          href="/"
+        >
           
           <img
             src="/assets/logo-mijug-watermark-98x100.svg"
@@ -73,16 +77,23 @@
            My Information Just Under Glass
         </a>
 
-        <nav class="site-nav">
+        <nav class="site-nav" role="navigation" aria-label="Main navigation">
           <input
             type="checkbox"
             id="header-nav-trigger"
             class="nav-trigger"
-            title="header navigation"
+            title="Toggle header navigation"
+            aria-label="Toggle navigation menu"
           />
-          <label for="header-nav-trigger">
+          <label for="header-nav-trigger" aria-label="Open navigation menu">
             <span class="menu-icon">
-              <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <svg
+                viewBox="0 0 18 15"
+                width="18px"
+                height="15px"
+                role="img"
+                aria-label="Menu icon"
+              >
                 <path
                   d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"
                 />
@@ -91,16 +102,20 @@
           </label>
 
           <div class="trigger">
-                          
-            <a class="page-link" href="/about/"
+            <a
+              class="page-link"
+              href="/about/"
+              aria-label="About MIJUG"
               >About</a
             >
-                                                         
             <button
               class="nav-button"
               popovertarget="mobile-navigation"
               popovertargetaction="show"
               type="button"
+              aria-label="Open additional navigation menu"
+              aria-haspopup="true"
+              aria-expanded="false"
             >
               Navigation
             </button>
@@ -109,12 +124,21 @@
       </div>
     </header>
 
-    <nav popover id="mobile-navigation" class="site-nav">
+    <nav
+      popover
+      id="mobile-navigation"
+      class="site-nav"
+      role="dialog"
+      aria-labelledby="nav-heading"
+      aria-modal="true"
+    >
+      <h2 id="nav-heading" class="sr-only">Additional Navigation</h2>
       <button
         class="nav-button"
         popovertarget="mobile-navigation"
         popovertargetaction="hide"
         type="button"
+        aria-label="Close navigation menu"
       >
         Close
       </button>
@@ -123,12 +147,20 @@
         <!-- Posts Section -->
         <div class="popover-section">
           <h3 class="popover-heading">Posts</h3>
-          <ul style="list-style: none">
+          <ul class="nav-list" role="list">
             <li>
-              <a class="page-link" href="/blog/">Blog</a>
+              <a
+                class="page-link"
+                href="/blog/"
+                aria-label="View blog posts"
+                >Blog</a
+              >
             </li>
             <li>
-              <a class="page-link" href="/contact.html"
+              <a
+                class="page-link"
+                href="/contact.html"
+                aria-label="Contact MIJUG"
                 >Contact Us</a
               >
             </li>
@@ -139,15 +171,18 @@
         
         <div class="popover-section">
           <h3 class="popover-heading">Categories</h3>
-          <ul style="list-style: none">
+          <ul class="nav-list" role="list" aria-label="Blog post categories">
             
             <li>
               <a
                 class="page-link"
                 href="/category/announcements"
+                aria-label="View Announcements category with 1 posts"
               >
                 Announcements
-                <span class="count">(1)</span>
+                <span class="count" aria-hidden="true"
+                  >(1)</span
+                >
               </a>
             </li>
             
@@ -155,9 +190,12 @@
               <a
                 class="page-link"
                 href="/category/linux"
+                aria-label="View Linux category with 1 posts"
               >
                 Linux
-                <span class="count">(1)</span>
+                <span class="count" aria-hidden="true"
+                  >(1)</span
+                >
               </a>
             </li>
             
@@ -165,9 +203,12 @@
               <a
                 class="page-link"
                 href="/category/tutorial"
+                aria-label="View Tutorial category with 1 posts"
               >
                 Tutorial
-                <span class="count">(1)</span>
+                <span class="count" aria-hidden="true"
+                  >(1)</span
+                >
               </a>
             </li>
             
@@ -175,9 +216,12 @@
               <a
                 class="page-link"
                 href="/category/getting-started"
+                aria-label="View Getting-started category with 1 posts"
               >
                 Getting-started
-                <span class="count">(1)</span>
+                <span class="count" aria-hidden="true"
+                  >(1)</span
+                >
               </a>
             </li>
             
@@ -185,9 +229,12 @@
               <a
                 class="page-link"
                 href="/category/documentation"
+                aria-label="View Documentation category with 1 posts"
               >
                 Documentation
-                <span class="count">(1)</span>
+                <span class="count" aria-hidden="true"
+                  >(1)</span
+                >
               </a>
             </li>
             
@@ -195,9 +242,12 @@
               <a
                 class="page-link"
                 href="/category/navigation"
+                aria-label="View Navigation category with 1 posts"
               >
                 Navigation
-                <span class="count">(1)</span>
+                <span class="count" aria-hidden="true"
+                  >(1)</span
+                >
               </a>
             </li>
             
@@ -209,14 +259,18 @@
         
         <div class="popover-section">
           <h3 class="popover-heading">Tags</h3>
-          <ul style="list-style: none">
+          <ul class="nav-list" role="list" aria-label="Blog post tags">
              
             <li>
               <a
                 class="page-link"
                 href="/tag/cpus"
+                aria-label="View posts tagged with cpus (1 posts)"
               >
-                #cpus <span class="count">(1)</span>
+                #cpus
+                <span class="count" aria-hidden="true"
+                  >(1)</span
+                >
               </a>
             </li>
             
@@ -224,8 +278,12 @@
               <a
                 class="page-link"
                 href="/tag/development"
+                aria-label="View posts tagged with development (1 posts)"
               >
-                #development <span class="count">(1)</span>
+                #development
+                <span class="count" aria-hidden="true"
+                  >(1)</span
+                >
               </a>
             </li>
             
@@ -233,8 +291,12 @@
               <a
                 class="page-link"
                 href="/tag/docs"
+                aria-label="View posts tagged with docs (1 posts)"
               >
-                #docs <span class="count">(1)</span>
+                #docs
+                <span class="count" aria-hidden="true"
+                  >(1)</span
+                >
               </a>
             </li>
             
@@ -242,8 +304,12 @@
               <a
                 class="page-link"
                 href="/tag/gpus"
+                aria-label="View posts tagged with gpus (1 posts)"
               >
-                #gpus <span class="count">(1)</span>
+                #gpus
+                <span class="count" aria-hidden="true"
+                  >(1)</span
+                >
               </a>
             </li>
             
@@ -251,8 +317,12 @@
               <a
                 class="page-link"
                 href="/tag/guide"
+                aria-label="View posts tagged with guide (1 posts)"
               >
-                #guide <span class="count">(1)</span>
+                #guide
+                <span class="count" aria-hidden="true"
+                  >(1)</span
+                >
               </a>
             </li>
             
@@ -260,8 +330,12 @@
               <a
                 class="page-link"
                 href="/tag/jekyll"
+                aria-label="View posts tagged with jekyll (1 posts)"
               >
-                #jekyll <span class="count">(1)</span>
+                #jekyll
+                <span class="count" aria-hidden="true"
+                  >(1)</span
+                >
               </a>
             </li>
             
@@ -269,8 +343,12 @@
               <a
                 class="page-link"
                 href="/tag/navigation"
+                aria-label="View posts tagged with navigation (1 posts)"
               >
-                #navigation <span class="count">(1)</span>
+                #navigation
+                <span class="count" aria-hidden="true"
+                  >(1)</span
+                >
               </a>
             </li>
             
@@ -278,8 +356,12 @@
               <a
                 class="page-link"
                 href="/tag/tutorial"
+                aria-label="View posts tagged with tutorial (1 posts)"
               >
-                #tutorial <span class="count">(1)</span>
+                #tutorial
+                <span class="count" aria-hidden="true"
+                  >(1)</span
+                >
               </a>
             </li>
             
@@ -287,8 +369,12 @@
               <a
                 class="page-link"
                 href="/tag/typescript"
+                aria-label="View posts tagged with typescript (1 posts)"
               >
-                #typescript <span class="count">(1)</span>
+                #typescript
+                <span class="count" aria-hidden="true"
+                  >(1)</span
+                >
               </a>
             </li>
             
