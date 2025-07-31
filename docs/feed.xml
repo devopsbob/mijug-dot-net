@@ -1,254 +1,328 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2025-07-30T22:43:52-04:00</updated><id>/feed.xml</id><title type="html">My Information Just Under Glass</title><subtitle>MIJUG.NET serves the communities of Southeast Michigan, Ohio, and Florida with technology, sustainability, and community engagement resources. A platform by Kranson Enterprises for sharing knowledge and connecting communities.</subtitle><author><name>Bob Kranson</name></author><entry><title type="html">Documentation Guide - Navigate Our Knowledge Base</title><link href="/documentation/navigation/2025/07/30/documentation-guide.html" rel="alternate" type="text/html" title="Documentation Guide - Navigate Our Knowledge Base" /><published>2025-07-30T14:00:00-04:00</published><updated>2025-07-30T22:42:13-04:00</updated><id>/documentation/navigation/2025/07/30/documentation-guide</id><content type="html" xml:base="/documentation/navigation/2025/07/30/documentation-guide.html"><![CDATA[# Documentation Guide - Navigate Our Knowledge Base
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.4.1">Jekyll</generator><link href="https://www.mijug.net/feed.xml" rel="self" type="application/atom+xml" /><link href="https://www.mijug.net/" rel="alternate" type="text/html" /><updated>2025-07-30T23:39:09-04:00</updated><id>https://www.mijug.net/feed.xml</id><title type="html">My Information Just Under Glass</title><subtitle>MIJUG.NET serves the communities of Southeast Michigan, Ohio, and Florida with technology, sustainability, and community engagement resources. A platform by Kranson Enterprises for sharing knowledge and connecting communities.</subtitle><author><name>Bob Kranson</name></author><entry><title type="html">Documentation Guide - Navigate Our Knowledge Base</title><link href="https://www.mijug.net/documentation/navigation/2025/07/30/documentation-guide.html" rel="alternate" type="text/html" title="Documentation Guide - Navigate Our Knowledge Base" /><published>2025-07-30T14:00:00-04:00</published><updated>2025-07-30T23:08:50-04:00</updated><id>https://www.mijug.net/documentation/navigation/2025/07/30/documentation-guide</id><content type="html" xml:base="https://www.mijug.net/documentation/navigation/2025/07/30/documentation-guide.html"><![CDATA[<h1 id="documentation-guide---navigate-our-knowledge-base">Documentation Guide - Navigate Our Knowledge Base</h1>
 
-Welcome to your complete guide for navigating our documentation! This page serves as your roadmap to all the tutorials, guides, and resources available in our knowledge base.
+<p>Welcome to your complete guide for navigating our documentation! This page serves as your roadmap to all the tutorials, guides, and resources available in our knowledge base.</p>
 
 <!-- excerpt-start -->
 
-Whether you're just getting started or looking for advanced techniques, our documentation is organized to help you find exactly what you need. From development setup to content management, we've got you covered.
+<p>Whether you’re just getting started or looking for advanced techniques, our documentation is organized to help you find exactly what you need. From development setup to content management, we’ve got you covered.</p>
 
 <!-- excerpt-end -->
 
-## 📚 Documentation Overview
+<h2 id="-documentation-overview">📚 Documentation Overview</h2>
 
-Our documentation is structured to support different learning paths and use cases. Here's how to navigate our knowledge base effectively:
+<p>Our documentation is structured to support different learning paths and use cases. Here’s how to navigate our knowledge base effectively:</p>
 
-## 🎯 Quick Start Paths
+<h2 id="-quick-start-paths">🎯 Quick Start Paths</h2>
 
-### For New Users
-1. **[Getting Started]({{ '/docs/getting-started/' | relative_url }})** - Essential setup and first steps
-2. **[Welcome to MIJUG Workspace]({{ '/docs/welcome-mijug-workspace/' | relative_url }})** - Understand our platform
+<h3 id="for-new-users">For New Users</h3>
 
-### For Developers
-1. **[Getting Started]({{ '/docs/getting-started/' | relative_url }})** - Development environment setup
-2. **[Liquid Tags Examples]({{ '/docs/liquid-tags-examples/' | relative_url }})** - Jekyll templating
-3. **[FrontMatter CMS Usage]({{ '/docs/frontmatter-cms/' | relative_url }})** - Content management
+<ol>
+  <li><strong><a href="/docs/getting-started/">Getting Started</a></strong> - Essential setup and first steps</li>
+  <li><strong><a href="/docs/welcome-mijug-workspace/">Welcome to MIJUG Workspace</a></strong> - Understand our platform</li>
+</ol>
 
-### For Content Creators
-1. **[FrontMatter CMS Usage]({{ '/docs/frontmatter-cms/' | relative_url }})** - Learn the CMS interface
-2. **[Liquid Tags Examples]({{ '/docs/liquid-tags-examples/' | relative_url }})** - Advanced content features
+<h3 id="for-developers">For Developers</h3>
 
-### For Accessibility Focus
-1. **[Accessibility Testing]({{ '/docs/accessibility-testing/' | relative_url }})** - WCAG compliance and testing
+<ol>
+  <li><strong><a href="/docs/getting-started/">Getting Started</a></strong> - Development environment setup</li>
+  <li><strong><a href="/docs/liquid-tags-examples/">Liquid Tags Examples</a></strong> - Jekyll templating</li>
+  <li><strong><a href="/docs/frontmatter-cms/">FrontMatter CMS Usage</a></strong> - Content management</li>
+</ol>
 
-## 📋 Documentation by Topic
+<h3 id="for-content-creators">For Content Creators</h3>
 
-### Development & Setup
-{% assign dev_docs = site.docs | where: 'categories', 'development' %}
-{% if dev_docs.size > 0 %}
+<ol>
+  <li><strong><a href="/docs/frontmatter-cms/">FrontMatter CMS Usage</a></strong> - Learn the CMS interface</li>
+  <li><strong><a href="/docs/liquid-tags-examples/">Liquid Tags Examples</a></strong> - Advanced content features</li>
+</ol>
+
+<h3 id="for-accessibility-focus">For Accessibility Focus</h3>
+
+<ol>
+  <li><strong><a href="/docs/accessibility-testing/">Accessibility Testing</a></strong> - WCAG compliance and testing</li>
+</ol>
+
+<h2 id="-documentation-by-topic">📋 Documentation by Topic</h2>
+
+<h3 id="development--setup">Development &amp; Setup</h3>
+
 <ul class="topic-list">
-{% for doc in dev_docs %}
-  <li><a href="{{ doc.url | relative_url }}">{{ doc.title }}</a>{% if doc.description %} - {{ doc.description }}{% endif %}</li>
-{% endfor %}
+
+  <li><a href="/docs/accessibility-testing/">Accessibility Testing Configuration</a> - Comprehensive accessibility testing setup with WCAG 2.1 AA compliance using axe-core and Playwright</li>
+
+  <li><a href="/docs/frontmatter-cms/">FrontMatter CMS Usage</a> - Learn how to use the FrontMatter CMS extension for content management in Jekyll</li>
+
+  <li><a href="/docs/getting-started/">Getting Started</a></li>
+
+  <li><a href="/docs/liquid-tags-examples/">Liquid Tags Examples</a> - Comprehensive examples of Liquid tag usage in Jekyll</li>
+
+  <li><a href="/docs/welcome-mijug-workspace/">Workspace Home</a> - Workspace project for VSCode to develop the target site.</li>
+
 </ul>
-{% else %}
-- [Getting Started]({{ '/docs/getting-started/' | relative_url }}) - Essential development setup
-- [FrontMatter CMS Usage]({{ '/docs/frontmatter-cms/' | relative_url }}) - Content management system
-{% endif %}
 
-### Platform & Tools
-- [Welcome to MIJUG Workspace]({{ '/docs/welcome-mijug-workspace/' | relative_url }}) - Platform overview
-- [Liquid Tags Examples]({{ '/docs/liquid-tags-examples/' | relative_url }}) - Jekyll templating reference
+<h3 id="platform--tools">Platform &amp; Tools</h3>
 
-### Quality & Testing
-- [Accessibility Testing]({{ '/docs/accessibility-testing/' | relative_url }}) - WCAG compliance and testing tools
+<ul>
+  <li><a href="/docs/welcome-mijug-workspace/">Welcome to MIJUG Workspace</a> - Platform overview</li>
+  <li><a href="/docs/liquid-tags-examples/">Liquid Tags Examples</a> - Jekyll templating reference</li>
+</ul>
 
-## 🔍 Find What You Need
+<h3 id="quality--testing">Quality &amp; Testing</h3>
 
-### By Difficulty Level
-- **Beginner**: Getting Started, Welcome to MIJUG Workspace
-- **Intermediate**: FrontMatter CMS Usage, Liquid Tags Examples
-- **Advanced**: Accessibility Testing, Custom Development
+<ul>
+  <li><a href="/docs/accessibility-testing/">Accessibility Testing</a> - WCAG compliance and testing tools</li>
+</ul>
 
-### By Time Investment
-- **5 minutes**: Welcome to MIJUG Workspace
-- **15 minutes**: Getting Started, FrontMatter CMS Usage
-- **30+ minutes**: Liquid Tags Examples, Accessibility Testing
+<h2 id="-find-what-you-need">🔍 Find What You Need</h2>
 
-## 📞 Need Help?
+<h3 id="by-difficulty-level">By Difficulty Level</h3>
 
-Can't find what you're looking for? Here are your options:
+<ul>
+  <li><strong>Beginner</strong>: Getting Started, Welcome to MIJUG Workspace</li>
+  <li><strong>Intermediate</strong>: FrontMatter CMS Usage, Liquid Tags Examples</li>
+  <li><strong>Advanced</strong>: Accessibility Testing, Custom Development</li>
+</ul>
 
-1. **Search**: Use the site search to find specific topics
-2. **Categories**: Browse by [documentation category]({{ '/categories/' | relative_url }})
-3. **Tags**: Explore content by [topic tags]({{ '/tags/' | relative_url }})
-4. **Contact**: [Reach out to our team]({{ '/contact.html' | relative_url }}) for personalized help
+<h3 id="by-time-investment">By Time Investment</h3>
 
-## 🚀 Contributing to Documentation
+<ul>
+  <li><strong>5 minutes</strong>: Welcome to MIJUG Workspace</li>
+  <li><strong>15 minutes</strong>: Getting Started, FrontMatter CMS Usage</li>
+  <li><strong>30+ minutes</strong>: Liquid Tags Examples, Accessibility Testing</li>
+</ul>
 
-Found an error or want to improve our docs? We welcome contributions:
+<h2 id="-need-help">📞 Need Help?</h2>
 
-- Documentation source is in the `docs/_docs/` directory
-- Use the FrontMatter CMS for easy editing
-- Follow our content style guide for consistency
+<p>Can’t find what you’re looking for? Here are your options:</p>
 
----
+<ol>
+  <li><strong>Search</strong>: Use the site search to find specific topics</li>
+  <li><strong>Categories</strong>: Browse by <a href="/categories/">documentation category</a></li>
+  <li><strong>Tags</strong>: Explore content by <a href="/tags/">topic tags</a></li>
+  <li><strong>Contact</strong>: <a href="/contact.html">Reach out to our team</a> for personalized help</li>
+</ol>
 
-*This documentation guide is automatically updated as new content is added. Bookmark this page for quick access to our latest resources!*]]></content><author><name>MIJUG Team</name></author><category term="documentation" /><category term="navigation" /><category term="docs" /><category term="guide" /><category term="navigation" /><category term="tutorial" /><summary type="html"><![CDATA[Your complete guide to navigating and using our documentation. Find tutorials, guides, and resources organized by topic and difficulty.]]></summary></entry><entry><title type="html">Getting Started with TypeScript and Jekyll</title><link href="/tutorial/getting-started/2025/07/29/getting-started.html" rel="alternate" type="text/html" title="Getting Started with TypeScript and Jekyll" /><published>2025-07-29T08:00:00-04:00</published><updated>2025-07-29T18:53:47-04:00</updated><id>/tutorial/getting-started/2025/07/29/getting-started</id><content type="html" xml:base="/tutorial/getting-started/2025/07/29/getting-started.html"><![CDATA[# Getting Started with TypeScript and Jekyll
+<h2 id="-contributing-to-documentation">🚀 Contributing to Documentation</h2>
 
-Welcome to our comprehensive guide on setting up a modern development workspace with TypeScript and Jekyll! This post will walk you through the key features and benefits of our integrated development environment.
+<p>Found an error or want to improve our docs? We welcome contributions:</p>
+
+<ul>
+  <li>Documentation source is in the <code class="language-plaintext highlighter-rouge">docs/_docs/</code> directory</li>
+  <li>Use the FrontMatter CMS for easy editing</li>
+  <li>Follow our content style guide for consistency</li>
+</ul>
+
+<hr />
+
+<p><em>This documentation guide is automatically updated as new content is added. Bookmark this page for quick access to our latest resources!</em></p>]]></content><author><name>MIJUG Team</name></author><category term="documentation" /><category term="navigation" /><category term="docs" /><category term="guide" /><category term="navigation" /><category term="tutorial" /><summary type="html"><![CDATA[Your complete guide to navigating and using our documentation. Find tutorials, guides, and resources organized by topic and difficulty.]]></summary></entry><entry><title type="html">Getting Started with TypeScript and Jekyll</title><link href="https://www.mijug.net/tutorial/getting-started/2025/07/29/getting-started.html" rel="alternate" type="text/html" title="Getting Started with TypeScript and Jekyll" /><published>2025-07-29T08:00:00-04:00</published><updated>2025-07-30T23:08:50-04:00</updated><id>https://www.mijug.net/tutorial/getting-started/2025/07/29/getting-started</id><content type="html" xml:base="https://www.mijug.net/tutorial/getting-started/2025/07/29/getting-started.html"><![CDATA[<h1 id="getting-started-with-typescript-and-jekyll">Getting Started with TypeScript and Jekyll</h1>
+
+<p>Welcome to our comprehensive guide on setting up a modern development workspace with TypeScript and Jekyll! This post will walk you through the key features and benefits of our integrated development environment.</p>
 
 <!-- excerpt-start -->
 
-This workspace combines the power of TypeScript for application development with Jekyll for beautiful, maintainable documentation. Perfect for teams who want to keep their code and docs in sync.
+<p>This workspace combines the power of TypeScript for application development with Jekyll for beautiful, maintainable documentation. Perfect for teams who want to keep their code and docs in sync.</p>
 
 <!-- excerpt-end -->
 
-## Table of Contents
+<h2 id="table-of-contents">Table of Contents</h2>
 
-* TOC
-{:toc}
+<ul>
+  <li>TOC</li>
+</ul>
 
-## Key Features
+<h2 id="key-features">Key Features</h2>
 
-### TypeScript Development
+<h3 id="typescript-development">TypeScript Development</h3>
 
-- **Full IntelliSense Support**: Get autocomplete, type checking, and refactoring
-- **Modern ES Features**: Use the latest JavaScript features with confidence
-- **Debugging Integration**: Debug directly in VS Code with source maps
+<ul>
+  <li><strong>Full IntelliSense Support</strong>: Get autocomplete, type checking, and refactoring</li>
+  <li><strong>Modern ES Features</strong>: Use the latest JavaScript features with confidence</li>
+  <li><strong>Debugging Integration</strong>: Debug directly in VS Code with source maps</li>
+</ul>
 
-### Jekyll Documentation
+<h3 id="jekyll-documentation">Jekyll Documentation</h3>
 
-- **Live Reload**: See changes instantly as you write
-- **Markdown Support**: Write documentation in familiar Markdown syntax
-- **SEO Optimized**: Built-in SEO tags and sitemap generation
+<ul>
+  <li><strong>Live Reload</strong>: See changes instantly as you write</li>
+  <li><strong>Markdown Support</strong>: Write documentation in familiar Markdown syntax</li>
+  <li><strong>SEO Optimized</strong>: Built-in SEO tags and sitemap generation</li>
+</ul>
 
-### Testing Suite
+<h3 id="testing-suite">Testing Suite</h3>
 
-- **Unit Tests**: Jest integration for TypeScript testing
-- **E2E Tests**: Playwright for comprehensive browser testing
-- **CI/CD Ready**: GitHub Actions workflows included
+<ul>
+  <li><strong>Unit Tests</strong>: Jest integration for TypeScript testing</li>
+  <li><strong>E2E Tests</strong>: Playwright for comprehensive browser testing</li>
+  <li><strong>CI/CD Ready</strong>: GitHub Actions workflows included</li>
+</ul>
 
-## Quick Start Commands
+<h2 id="quick-start-commands">Quick Start Commands</h2>
 
-Here are the essential commands to get you started:
+<p>Here are the essential commands to get you started:</p>
 
-```bash
-# Install dependencies
-npm install
-cd docs && bundle install
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Install dependencies</span>
+npm <span class="nb">install
+cd </span>docs <span class="o">&amp;&amp;</span> bundle <span class="nb">install</span>
 
-# Start development servers
-npm run dev          # TypeScript development
-npm run dev:jekyll   # Jekyll documentation
+<span class="c"># Start development servers</span>
+npm run dev          <span class="c"># TypeScript development</span>
+npm run dev:jekyll   <span class="c"># Jekyll documentation</span>
 
-# Run tests
-npm test             # Unit tests
-npm run test:e2e     # End-to-end tests
-```
+<span class="c"># Run tests</span>
+npm <span class="nb">test</span>             <span class="c"># Unit tests</span>
+npm run <span class="nb">test</span>:e2e     <span class="c"># End-to-end tests</span>
+</code></pre></div></div>
 
-## Code Examples
+<h2 id="code-examples">Code Examples</h2>
 
-### TypeScript Function
+<h3 id="typescript-function">TypeScript Function</h3>
 
-```typescript
-export function greet(name: string): string {
-  return `Hello, ${name}!`;
-}
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="kd">function</span> <span class="nf">greet</span><span class="p">(</span><span class="nx">name</span><span class="p">:</span> <span class="kr">string</span><span class="p">):</span> <span class="kr">string</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="s2">`Hello, </span><span class="p">${</span><span class="nx">name</span><span class="p">}</span><span class="s2">!`</span><span class="p">;</span>
+<span class="p">}</span>
 
-// Usage example
-const message = greet('TypeScript Developer');
-console.log(message);
-```
+<span class="c1">// Usage example</span>
+<span class="kd">const</span> <span class="nx">message</span> <span class="o">=</span> <span class="nf">greet</span><span class="p">(</span><span class="dl">'</span><span class="s1">TypeScript Developer</span><span class="dl">'</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="nx">message</span><span class="p">);</span>
+</code></pre></div></div>
 
-### Jekyll Front Matter
+<h3 id="jekyll-front-matter">Jekyll Front Matter</h3>
 
-```yaml
----
-layout: post
-title: 'Your Post Title'
-date: 2025-07-29
-categories: [development, tutorial]
-tags: [typescript, jekyll]
----
-```
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
+<span class="na">layout</span><span class="pi">:</span> <span class="s">post</span>
+<span class="na">title</span><span class="pi">:</span> <span class="s1">'</span><span class="s">Your</span><span class="nv"> </span><span class="s">Post</span><span class="nv"> </span><span class="s">Title'</span>
+<span class="na">date</span><span class="pi">:</span> <span class="s">2025-07-29</span>
+<span class="na">categories</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">development</span><span class="pi">,</span> <span class="nv">tutorial</span><span class="pi">]</span>
+<span class="na">tags</span><span class="pi">:</span> <span class="pi">[</span><span class="nv">typescript</span><span class="pi">,</span> <span class="nv">jekyll</span><span class="pi">]</span>
+<span class="nn">---</span>
+</code></pre></div></div>
 
-## Markdown Features
+<h2 id="markdown-features">Markdown Features</h2>
 
-### Lists and Links
+<h3 id="lists-and-links">Lists and Links</h3>
 
-- [TypeScript Handbook](https://www.typescriptlang.org/docs/)
-- [Jekyll Documentation](https://jekyllrb.com/docs/)
-- [VS Code WSL Guide](https://code.visualstudio.com/docs/remote/wsl)
+<ul>
+  <li><a href="https://www.typescriptlang.org/docs/">TypeScript Handbook</a></li>
+  <li><a href="https://jekyllrb.com/docs/">Jekyll Documentation</a></li>
+  <li><a href="https://code.visualstudio.com/docs/remote/wsl">VS Code WSL Guide</a></li>
+</ul>
 
-### Code Blocks with Syntax Highlighting
+<h3 id="code-blocks-with-syntax-highlighting">Code Blocks with Syntax Highlighting</h3>
 
-```json
-{
-  "compilerOptions": {
-    "target": "ES2020",
-    "module": "commonjs",
-    "strict": true
-  }
-}
-```
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"compilerOptions"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"target"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ES2020"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"module"</span><span class="p">:</span><span class="w"> </span><span class="s2">"commonjs"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"strict"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
 
-### Tables
+<h3 id="tables">Tables</h3>
 
-| Feature     | TypeScript | Jekyll |
-| ----------- | ---------- | ------ |
-| Hot Reload  | ✅          | ✅      |
-| Type Safety | ✅          | ❌      |
-| SEO         | ❌          | ✅      |
-| Testing     | ✅          | ✅      |
+<table>
+  <thead>
+    <tr>
+      <th>Feature</th>
+      <th>TypeScript</th>
+      <th>Jekyll</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Hot Reload</td>
+      <td>✅</td>
+      <td>✅</td>
+    </tr>
+    <tr>
+      <td>Type Safety</td>
+      <td>✅</td>
+      <td>❌</td>
+    </tr>
+    <tr>
+      <td>SEO</td>
+      <td>❌</td>
+      <td>✅</td>
+    </tr>
+    <tr>
+      <td>Testing</td>
+      <td>✅</td>
+      <td>✅</td>
+    </tr>
+  </tbody>
+</table>
 
-### Callouts and Alerts
+<h3 id="callouts-and-alerts">Callouts and Alerts</h3>
 
-> **💡 Pro Tip**: Use the VS Code command palette (`Ctrl+Shift+P`) to quickly access Jekyll and TypeScript tasks.
+<blockquote>
+  <p><strong>💡 Pro Tip</strong>: Use the VS Code command palette (<code class="language-plaintext highlighter-rouge">Ctrl+Shift+P</code>) to quickly access Jekyll and TypeScript tasks.</p>
+</blockquote>
 
-> **⚠️ Warning**: Make sure to run `bundle install` in the `docs/` directory before starting Jekyll development.
+<blockquote>
+  <p><strong>⚠️ Warning</strong>: Make sure to run <code class="language-plaintext highlighter-rouge">bundle install</code> in the <code class="language-plaintext highlighter-rouge">docs/</code> directory before starting Jekyll development.</p>
+</blockquote>
 
-> **✅ Success**: Your workspace is now configured for both TypeScript development and Jekyll documentation!
+<blockquote>
+  <p><strong>✅ Success</strong>: Your workspace is now configured for both TypeScript development and Jekyll documentation!</p>
+</blockquote>
 
-## Next Steps
+<h2 id="next-steps">Next Steps</h2>
 
-1. **Explore the codebase**: Check out the `src/` directory for TypeScript examples
-2. **Customize Jekyll**: Modify `docs/_config.yml` to personalize your site
-3. **Write tests**: Add unit tests in `tests/` and E2E tests in `e2e/`
-4. **Deploy**: Push to GitHub for automatic deployment via GitHub Actions
+<ol>
+  <li><strong>Explore the codebase</strong>: Check out the <code class="language-plaintext highlighter-rouge">src/</code> directory for TypeScript examples</li>
+  <li><strong>Customize Jekyll</strong>: Modify <code class="language-plaintext highlighter-rouge">docs/_config.yml</code> to personalize your site</li>
+  <li><strong>Write tests</strong>: Add unit tests in <code class="language-plaintext highlighter-rouge">tests/</code> and E2E tests in <code class="language-plaintext highlighter-rouge">e2e/</code></li>
+  <li><strong>Deploy</strong>: Push to GitHub for automatic deployment via GitHub Actions</li>
+</ol>
 
-## Conclusion
+<h2 id="conclusion">Conclusion</h2>
 
-This integrated workspace provides everything you need for modern web development with TypeScript and beautiful documentation with Jekyll. The combination of powerful development tools, comprehensive testing, and automated deployment makes it perfect for teams of any size.
+<p>This integrated workspace provides everything you need for modern web development with TypeScript and beautiful documentation with Jekyll. The combination of powerful development tools, comprehensive testing, and automated deployment makes it perfect for teams of any size.</p>
 
-Happy coding! 🚀
+<p>Happy coding! 🚀</p>
 
----
+<hr />
 
-_Last updated: {{ page.last_modified_at | date: "%B %d, %Y" }}_]]></content><author><name>MIJUG Team</name></author><category term="tutorial" /><category term="getting-started" /><category term="typescript" /><category term="jekyll" /><category term="development" /><summary type="html"><![CDATA[Learn how to set up a modern development environment with TypeScript and Jekyll for documentation.]]></summary></entry><entry><title type="html">Reusing Older Computers in 2025</title><link href="/linux/2025/07/18/reusing-older-computers-in-2025.html" rel="alternate" type="text/html" title="Reusing Older Computers in 2025" /><published>2025-07-18T16:39:43-04:00</published><updated>2025-07-30T19:46:23-04:00</updated><id>/linux/2025/07/18/reusing-older-computers-in-2025</id><content type="html" xml:base="/linux/2025/07/18/reusing-older-computers-in-2025.html"><![CDATA[In the past, the type of computer you owned was largely determined by the silicon chips inside it. Mainframes, workstations, PCs, Macs, microcomputers, and minicomputers were all defined by their chipsets. Companies like IBM, Sun Microsystems, Intel, Hewlett-Packard, Texas Instruments, and Apple created hardware that was compatible with specific operating systems.
+<p><em>Last updated: July 30, 2025</em></p>]]></content><author><name>MIJUG Team</name></author><category term="tutorial" /><category term="getting-started" /><category term="typescript" /><category term="jekyll" /><category term="development" /><summary type="html"><![CDATA[Learn how to set up a modern development environment with TypeScript and Jekyll for documentation.]]></summary></entry><entry><title type="html">Reusing Older Computers in 2025</title><link href="https://www.mijug.net/linux/2025/07/18/reusing-older-computers-in-2025.html" rel="alternate" type="text/html" title="Reusing Older Computers in 2025" /><published>2025-07-18T16:39:43-04:00</published><updated>2025-07-30T22:54:37-04:00</updated><id>https://www.mijug.net/linux/2025/07/18/reusing-older-computers-in-2025</id><content type="html" xml:base="https://www.mijug.net/linux/2025/07/18/reusing-older-computers-in-2025.html"><![CDATA[<p>In the past, the type of computer you owned was largely determined by the silicon chips inside it. Mainframes, workstations, PCs, Macs, microcomputers, and minicomputers were all defined by their chipsets. Companies like IBM, Sun Microsystems, Intel, Hewlett-Packard, Texas Instruments, and Apple created hardware that was compatible with specific operating systems.</p>
 
-### Chips
+<h3 id="chips">Chips</h3>
 
-Fast forward to 2025, and chip technology has advanced dramatically. Central processing units (CPUs) have become faster, with names like i5, i7, CoreDuo, and M1. Meanwhile, graphical processing units (GPUs), originally designed for gaming and rendering, are now essential for artificial intelligence (AI) applications. This rapid evolution has driven a relentless pace of change, particularly in security.
+<p>Fast forward to 2025, and chip technology has advanced dramatically. Central processing units (CPUs) have become faster, with names like i5, i7, CoreDuo, and M1. Meanwhile, graphical processing units (GPUs), originally designed for gaming and rendering, are now essential for artificial intelligence (AI) applications. This rapid evolution has driven a relentless pace of change, particularly in security.</p>
 
-### The Security Race
+<h3 id="the-security-race">The Security Race</h3>
 
-As computing power increases, so does the ability to crack passwords. Tasks that once required a single home computer can now be accomplished faster with rented cloud computers—or even multiple rented computers across cloud providers. This has necessitated the development of new security measures, such as the Trusted Platform Module (TPM) chip, which is a minimum requirement for Windows 11.
+<p>As computing power increases, so does the ability to crack passwords. Tasks that once required a single home computer can now be accomplished faster with rented cloud computers—or even multiple rented computers across cloud providers. This has necessitated the development of new security measures, such as the Trusted Platform Module (TPM) chip, which is a minimum requirement for Windows 11.</p>
 
-#### Trusted Platform Module - TPM
+<h4 id="trusted-platform-module---tpm">Trusted Platform Module - TPM</h4>
 
-Do you have a TPM chip in your current PC? Maybe. You’ll need to check via an internet connection and a Windows 10 update to find out. But why is a TPM chip so important? The answer lies in quantum computing. Quantum technology is on the horizon, promising to process data at speeds that could render traditional security measures obsolete. A task that might take thousands of computers days or years to complete could be done in seconds with quantum computing.
+<p>Do you have a TPM chip in your current PC? Maybe. You’ll need to check via an internet connection and a Windows 10 update to find out. But why is a TPM chip so important? The answer lies in quantum computing. Quantum technology is on the horizon, promising to process data at speeds that could render traditional security measures obsolete. A task that might take thousands of computers days or years to complete could be done in seconds with quantum computing.</p>
 
-### Why Keep Your Old Computer?
+<h3 id="why-keep-your-old-computer">Why Keep Your Old Computer?</h3>
 
-While new security requirements may render older computers unsuitable for sensitive tasks like banking or business, they can still serve a purpose. Many everyday activities—like playing music, viewing photos, or casual gaming—don’t require the latest security features. Repurposing your old computer for these non-sensitive tasks can provide significant value:
+<p>While new security requirements may render older computers unsuitable for sensitive tasks like banking or business, they can still serve a purpose. Many everyday activities—like playing music, viewing photos, or casual gaming—don’t require the latest security features. Repurposing your old computer for these non-sensitive tasks can provide significant value:</p>
 
-- **Reduce Electronic Waste**: Reusing your old computer delays the need to dispose of it, helping to reduce e-waste.
-- **Transition Gracefully**: Use your old computer as a staging ground to offload, back up, and format data before moving to a new device.
-- **Extend Its Life**: Repurpose your old investment for new uses:
-  - Let grandkids play games on it.
-  - Turn it into a garage PC for music and video.
-  - Use it for anonymous internet browsing to reduce tracking and targeted ads on your primary devices.
+<ul>
+  <li><strong>Reduce Electronic Waste</strong>: Reusing your old computer delays the need to dispose of it, helping to reduce e-waste.</li>
+  <li><strong>Transition Gracefully</strong>: Use your old computer as a staging ground to offload, back up, and format data before moving to a new device.</li>
+  <li><strong>Extend Its Life</strong>: Repurpose your old investment for new uses:
+    <ul>
+      <li>Let grandkids play games on it.</li>
+      <li>Turn it into a garage PC for music and video.</li>
+      <li>Use it for anonymous internet browsing to reduce tracking and targeted ads on your primary devices.</li>
+    </ul>
+  </li>
+</ul>
 
-### Conclusion
+<h3 id="conclusion">Conclusion</h3>
 
-Reusing older computers is not just about nostalgia—it’s a practical way to maximize your investment, reduce waste, and adapt to changing technology. While they may no longer meet the demands of modern security, these devices still have plenty of life left for everyday, non-sensitive tasks. So before you toss that old PC, consider how it might still serve you in 2025 and beyond.]]></content><author><name>Bob Kranson</name></author><category term="linux" /><category term="cpus" /><category term="gpus" /><summary type="html"><![CDATA[Keeping your chips out of the wood chipper]]></summary></entry><entry><title type="html">Welcome to MIJUG.NET!</title><link href="/announcements/2025/07/03/welcome-to-mijug-dot-net.html" rel="alternate" type="text/html" title="Welcome to MIJUG.NET!" /><published>2025-07-03T15:05:55-04:00</published><updated>2025-07-30T19:46:23-04:00</updated><id>/announcements/2025/07/03/welcome-to-mijug-dot-net</id><content type="html" xml:base="/announcements/2025/07/03/welcome-to-mijug-dot-net.html"><![CDATA[### Hello!
+<p>Reusing older computers is not just about nostalgia—it’s a practical way to maximize your investment, reduce waste, and adapt to changing technology. While they may no longer meet the demands of modern security, these devices still have plenty of life left for everyday, non-sensitive tasks. So before you toss that old PC, consider how it might still serve you in 2025 and beyond.</p>]]></content><author><name>Bob Kranson</name></author><category term="linux" /><category term="cpus" /><category term="gpus" /><summary type="html"><![CDATA[Keeping your chips out of the wood chipper]]></summary></entry><entry><title type="html">Welcome to MIJUG.NET!</title><link href="https://www.mijug.net/announcements/2025/07/03/welcome-to-mijug-dot-net.html" rel="alternate" type="text/html" title="Welcome to MIJUG.NET!" /><published>2025-07-03T15:05:55-04:00</published><updated>2025-07-30T22:54:37-04:00</updated><id>https://www.mijug.net/announcements/2025/07/03/welcome-to-mijug-dot-net</id><content type="html" xml:base="https://www.mijug.net/announcements/2025/07/03/welcome-to-mijug-dot-net.html"><![CDATA[<h3 id="hello">Hello!</h3>
 
-Welcome to [MIJUG.NET](https://www.mijug.net), a platform dedicated to serving the communities of southeast Michigan, Ohio, and Florida.
+<p>Welcome to <a href="https://www.mijug.net">MIJUG.NET</a>, a platform dedicated to serving the communities of southeast Michigan, Ohio, and Florida.</p>
 
-### Location(s)
+<h3 id="locations">Location(s)</h3>
 
-As the proprietor of this site, I am based in southeast Michigan and occasionally travel to Ohio and Florida. This site is designed to share knowledge, resources, and updates relevant to these regions, with a focus on technology, sustainability, and community engagement.
+<p>As the proprietor of this site, I am based in southeast Michigan and occasionally travel to Ohio and Florida. This site is designed to share knowledge, resources, and updates relevant to these regions, with a focus on technology, sustainability, and community engagement.</p>
 
-### Thank You!
+<h3 id="thank-you">Thank You!</h3>
 
-Thank you for visiting, and I look forward to connecting with you!]]></content><author><name>Bob Kranson</name></author><category term="announcements" /><summary type="html"><![CDATA[Welcome Announcement for My Information Just Under Glass - MIJUG.NET]]></summary></entry></feed>
+<p>Thank you for visiting, and I look forward to connecting with you!</p>]]></content><author><name>Bob Kranson</name></author><category term="announcements" /><summary type="html"><![CDATA[Welcome Announcement for My Information Just Under Glass - MIJUG.NET]]></summary></entry></feed>
