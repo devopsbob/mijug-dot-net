@@ -1,0 +1,1029 @@
+<h1>Jekyll Themes: Complete Usage Guide</h1>
+
+<p>
+  Jekyll themes provide a powerful way to create consistent, maintainable
+  websites while separating content from presentation. This comprehensive guide
+  covers everything from basic theme usage to advanced API integration patterns.
+</p>
+
+<h2>Table of Contents</h2>
+
+<ol>
+  <li>
+    <a href="#understanding-jekyll-themes">Understanding Jekyll Themes</a>
+  </li>
+  <li><a href="#theme-installation-methods">Theme Installation Methods</a></li>
+  <li>
+    <a href="#theme-structure-and-components">Theme Structure and Components</a>
+  </li>
+  <li><a href="#customizing-themes">Customizing Themes</a></li>
+  <li><a href="#advanced-theme-development">Advanced Theme Development</a></li>
+  <li>
+    <a href="#creating-help-apis-with-themes">Creating Help APIs with Themes</a>
+  </li>
+  <li>
+    <a href="#collections-and-data-integration"
+      >Collections and Data Integration</a
+    >
+  </li>
+  <li><a href="#theme-best-practices">Theme Best Practices</a></li>
+  <li>
+    <a href="#troubleshooting-common-issues">Troubleshooting Common Issues</a>
+  </li>
+  <li><a href="#resources-and-references">Resources and References</a></li>
+</ol>
+
+<h2 id="understanding-jekyll-themes">Understanding Jekyll Themes</h2>
+
+<h3>What Are Jekyll Themes?</h3>
+
+<p>Jekyll themes are reusable packages that contain:</p>
+
+<ul>
+  <li><strong>Layouts</strong>: HTML templates that define page structure</li>
+  <li><strong>Includes</strong>: Reusable HTML snippets</li>
+  <li><strong>Sass files</strong>: Stylesheets for visual design</li>
+  <li><strong>Assets</strong>: Images, JavaScript, and other static files</li>
+  <li><strong>Configuration</strong>: Default settings and options</li>
+</ul>
+
+<h3>Theme Types</h3>
+
+<h4>Gem-based Themes</h4>
+
+<pre><code class="language-yaml"># _config.yml
+theme: minima</code></pre>
+
+<h4>Fork-based Themes</h4>
+
+<ul>
+  <li>Clone the entire theme repository</li>
+  <li>Full control over all files</li>
+  <li>Easier customization but harder to update</li>
+</ul>
+
+<h4>GitHub Pages Compatible Themes</h4>
+
+<pre><code class="language-yaml"># _config.yml
+remote_theme: jekyll/minima</code></pre>
+
+<h2 id="theme-installation-methods">Theme Installation Methods</h2>
+
+<h3>Method 1: Gem-based Installation</h3>
+
+<h4>Step 1: Add theme to Gemfile</h4>
+
+<pre><code class="language-ruby"># Gemfile
+gem "theme-name", "~> 1.0"</code></pre>
+
+<h4>Step 2: Update configuration</h4>
+
+<pre><code class="language-yaml"># _config.yml
+theme: theme-name</code></pre>
+
+<h4>Step 3: Install and build</h4>
+
+<pre><code class="language-bash">bundle install
+bundle exec jekyll serve</code></pre>
+
+<h3>Method 2: Remote Theme (GitHub Pages)</h3>
+
+<pre><code class="language-yaml"># _config.yml
+remote_theme: username/theme-repository
+plugins:
+  - jekyll-remote-theme</code></pre>
+
+<h3>Method 3: Fork and Customize</h3>
+
+<pre><code class="language-bash"># Clone theme repository
+git clone https://github.com/username/theme-name.git my-site
+cd my-site
+
+# Install dependencies
+bundle install
+
+# Customize and build
+bundle exec jekyll serve</code></pre>
+
+<h2 id="theme-structure-and-components">Theme Structure and Components</h2>
+
+<h3>Essential Theme Files</h3>
+
+<pre><code>theme-name/
+├── _layouts/
+│   ├── default.html      # Base layout
+│   ├── page.html         # Page layout
+│   ├── post.html         # Blog post layout
+│   └── home.html         # Homepage layout
+├── _includes/
+│   ├── header.html       # Site header
+│   ├── footer.html       # Site footer
+│   ├── head.html         # HTML head section
+│   └── navigation.html   # Navigation menu
+├── _sass/
+│   ├── _variables.scss   # Theme variables
+│   ├── _base.scss        # Base styles
+│   └── _layout.scss      # Layout styles
+├── assets/
+│   ├── main.scss         # Main stylesheet
+│   ├── js/              # JavaScript files
+│   └── images/          # Theme images
+├── _config.yml          # Theme configuration
+└── theme-name.gemspec   # Gem specification</code></pre>
+
+<h3>Layout Hierarchy</h3>
+
+<pre><code class="language-yaml">---
+layout: default # Inherits from default.html
+---</code></pre>
+
+<h4>Layout inheritance example:</h4>
+
+<pre><code class="language-html">&lt;!-- _layouts/default.html --&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;% include head.html %%}gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;% include header.html %%}gt;
+    &lt;main&gt;&lt;{{lt; content &gt;}}gt;&lt;/main&gt;
+    &lt;% include footer.html %%}gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+
+&lt;!-- _layouts/post.html --&gt;
+---
+layout: default
+---
+&lt;article class="post"&gt;
+  &lt;h1&gt;&lt;{{lt; page.title &gt;}}gt;&lt;/h1&gt;
+  &lt;div class="post-content"&gt;&lt;{{lt; content &gt;}}gt;&lt;/div&gt;
+&lt;/article&gt;</code></pre>
+
+<h2 id="customizing-themes">Customizing Themes</h2>
+
+<h3>Override Theme Files</h3>
+
+<p>Create files with the same path in your site to override theme files:</p>
+
+<pre><code>your-site/
+├── _layouts/
+│   └── post.html         # Overrides theme's post.html
+├── _includes/
+│   └── header.html       # Overrides theme's header.html
+└── _sass/
+    └── _variables.scss   # Overrides theme variables</code></pre>
+
+<h3>Customize Variables</h3>
+
+<pre><code class="language-scss">// _sass/_variables.scss
+$primary-color: #2c5aa0;
+$font-family: 'Helvetica Neue', Arial, sans-serif;
+$content-width: 800px;
+
+// Import theme styles after variables
+@import 'theme-name';</code></pre>
+
+<h3>Add Custom CSS</h3>
+
+<pre><code class="language-scss">// assets/main.scss
+---
+---
+@import "theme-name";
+
+// Custom styles
+.custom-section {
+  background-color: var(--custom-bg);
+  padding: 2rem;
+}</code></pre>
+
+<h3>Configuration Customization</h3>
+
+<pre><code class="language-yaml"># _config.yml
+title: 'My Custom Site'
+description: 'Powered by Jekyll Theme'
+
+# Theme-specific settings
+theme_settings:
+  navigation:
+    - title: 'Home'
+      url: '/'
+    - title: 'About'
+      url: '/about/'
+
+  social_links:
+    github: 'username'
+    twitter: 'username'
+
+# Override theme defaults
+permalink: /:categories/:year/:month/:day/:title/
+paginate: 10</code></pre>
+
+<h2 id="advanced-theme-development">Advanced Theme Development</h2>
+
+<h3>Creating Custom Layouts</h3>
+
+<pre><code class="language-html">&lt;!-- _layouts/api-docs.html --&gt;
+---
+layout: default
+---
+&lt;div class="api-documentation"&gt;
+  &lt;aside class="api-sidebar"&gt;&lt;!-- &lt;% include api-navigation.html %%}gt; --&gt;&lt;/aside&gt;
+
+  &lt;main class="api-content"&gt;
+    &lt;header class="api-header"&gt;
+      &lt;h1&gt;&lt;{{lt; page.title &gt;}}gt;&lt;/h1&gt;
+      &lt;% if page.api_version %%}gt;
+      &lt;span class="api-version"&gt;&lt;{{lt; page.api_version &gt;}}gt;&lt;/span&gt;
+      &lt;% endif %%}gt;
+    &lt;/header&gt;
+
+    &lt;div class="api-body"&gt;&lt;{{lt; content &gt;}}gt;&lt;/div&gt;
+
+    &lt;% if page.code_examples %%}gt;
+    &lt;section class="code-examples"&gt;
+      &lt;% for example in page.code_examples %%}gt;
+      &lt;div class="code-example"&gt;
+        &lt;h3&gt;&lt;{{lt; example.title &gt;}}gt;&lt;/h3&gt;
+        &lt;pre&gt;&lt;code class="&lt;{{lt; example.language &gt;}}gt;"&gt;&lt;{{lt; example.code &gt;}}gt;&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+      &lt;% endfor %%}gt;
+    &lt;/section&gt;
+    &lt;% endif %%}gt;
+  &lt;/main&gt;
+&lt;/div&gt;</code></pre>
+
+<h3>Theme Configuration Schema</h3>
+
+<pre><code class="language-ruby"># theme-name.gemspec
+Gem::Specification.new do |spec|
+  spec.name          = "theme-name"
+  spec.version       = "1.0.0"
+  spec.authors       = ["Your Name"]
+  spec.email         = ["your.email@example.com"]
+
+  spec.summary       = "A Jekyll theme for documentation"
+  spec.homepage      = "https://github.com/username/theme-name"
+  spec.license       = "MIT"
+
+  spec.files         = `git ls-files -z`.split("\x0").select do |f|
+    f.match(%r{^(assets|_layouts|_includes|_sass|LICENSE|README)}i)
+  end
+
+  spec.add_runtime_dependency "jekyll", "~> 4.0"
+  spec.add_runtime_dependency "jekyll-feed", "~> 0.9"
+  spec.add_runtime_dependency "jekyll-sitemap", "~> 1.0"
+end</code></pre>
+
+<h2 id="creating-help-apis-with-themes">Creating Help APIs with Themes</h2>
+
+<h3>Setting Up Collections for API Content</h3>
+
+<pre><code class="language-yaml"># _config.yml
+collections:
+  tooltips:
+    output: false
+  api_docs:
+    output: true
+    permalink: /:collection/:name/</code></pre>
+
+<h3>Creating Tooltip Definitions</h3>
+
+<pre><code class="language-yaml"># _data/definitions.yml
+api_key: 'A unique identifier used to authenticate API requests. Keep this secure and never expose it in client-side code.'
+
+response_codes: 'HTTP status codes returned by the API. 200 indicates success, 4xx indicates client errors, 5xx indicates server errors.'
+
+rate_limiting: 'The practice of limiting the number of API requests a client can make within a specific time period to prevent abuse and ensure fair usage.'</code></pre>
+
+<h3>Tooltip Collection Pages</h3>
+
+<pre><code class="language-markdown">&lt;!-- _tooltips/api-key.md --&gt;
+---
+doc_id: api_key
+product: mijug_api
+category: authentication
+---
+
+&lt;{{lt; site.data.definitions.api_key &gt;}}gt;</code></pre>
+
+<h3>JSON API Generation</h3>
+
+<pre><code class="language-liquid">---
+layout: null
+search: exclude
+---
+{
+  "entries": [
+    &lt;% for page in site.tooltips %%}gt;
+      &lt;% if page.product == "mijug_api" %%}gt;
+        {
+          "doc_id": "&lt;{{lt; page.doc_id &gt;}}gt;",
+          "category": "&lt;{{lt; page.category &gt;}}gt;",
+          "body": "&lt;{{lt; page.content | strip_newlines | replace: '\', '\\\\' | replace: '"', '\\"' &gt;}}gt;"
+        }&lt;% unless forloop.last %%}gt;,&lt;% endunless %%}gt;
+      &lt;% endif %%}gt;
+    &lt;% endfor %%}gt;
+  ],
+  "metadata": {
+    "generated": "&lt;{{lt; site.time | date_to_xmlschema &gt;}}gt;",
+    "version": "&lt;{{lt; site.data.api.version &gt;}}gt;",
+    "total_entries": &lt;{{lt; site.tooltips | where: "product", "mijug_api" | size &gt;}}gt;
+  }
+}</code></pre>
+
+<h3>Advanced API Integration</h3>
+
+<pre><code class="language-javascript">// assets/js/theme-api.js
+class ThemeAPIHelper {
+  constructor(apiUrl) {
+    this.apiUrl = apiUrl;
+    this.cache = new Map();
+  }
+
+  async loadTooltips() {
+    if (this.cache.has('tooltips')) {
+      return this.cache.get('tooltips');
+    }
+
+    try {
+      const response = await fetch(`${this.apiUrl}/tooltips.json`);
+      const data = await response.json();
+      this.cache.set('tooltips', data);
+      return data;
+    } catch (error) {
+      console.error('Failed to load tooltips:', error);
+      return { entries: [] };
+    }
+  }
+
+  async initializeTooltips() {
+    const data = await this.loadTooltips();
+
+    data.entries.forEach(entry => {
+      const elements = document.querySelectorAll(
+        `[data-tooltip="${entry.doc_id}"]`
+      );
+      elements.forEach(element => {
+        this.attachTooltip(element, entry.body);
+      });
+    });
+  }
+
+  attachTooltip(element, content) {
+    // Bootstrap popover integration
+    if (typeof bootstrap !== 'undefined') {
+      new bootstrap.Popover(element, {
+        content: content,
+        html: true,
+        placement: 'top',
+        trigger: 'hover focus',
+      });
+    }
+  }
+}
+
+// Initialize API helper
+document.addEventListener('DOMContentLoaded', () => {
+  const apiHelper = new ThemeAPIHelper('/api');
+  apiHelper.initializeTooltips();
+});</code></pre>
+
+<h2 id="collections-and-data-integration">Collections and Data Integration</h2>
+
+<h3>Multi-language Support</h3>
+
+<pre><code class="language-yaml"># _config.yml
+collections:
+  docs_en:
+    output: true
+    permalink: /en/:name/
+  docs_es:
+    output: true
+    permalink: /es/:name/
+
+defaults:
+  - scope:
+      path: '_docs_en'
+    values:
+      lang: 'en'
+      layout: 'docs'
+  - scope:
+      path: '_docs_es'
+    values:
+      lang: 'es'
+      layout: 'docs'</code></pre>
+
+<h3>Data-driven Navigation</h3>
+
+<pre><code class="language-yaml"># _data/navigation.yml
+main:
+  - title: 'Documentation'
+    url: '/docs/'
+    children:
+      - title: 'Getting Started'
+        url: '/docs/getting-started/'
+      - title: 'API Reference'
+        url: '/docs/api/'
+        children:
+          - title: 'Authentication'
+            url: '/docs/api/auth/'
+          - title: 'Endpoints'
+            url: '/docs/api/endpoints/'
+
+footer:
+  - title: 'Resources'
+    links:
+      - title: 'GitHub'
+        url: 'https://github.com/username/repo'
+      - title: 'Issues'
+        url: 'https://github.com/username/repo/issues'</code></pre>
+
+<h3>Dynamic Content Generation</h3>
+
+<pre><code class="language-html">&lt;!-- _includes/api-navigation.html --&gt;
+&lt;nav class="api-navigation"&gt;
+  &lt;% assign api_pages = site.api_docs | sort: 'order' %%}gt;
+  &lt;% for page in api_pages %%}gt;
+    &lt;div class="nav-section"&gt;
+      &lt;h3&gt;&lt;{{lt; page.section &gt;}}gt;&lt;/h3&gt;
+      &lt;ul&gt;
+        &lt;% assign section_pages = site.api_docs | where: 'section', page.section | sort: 'order' %%}gt;
+        &lt;% for section_page in section_pages %%}gt;
+          &lt;li&gt;
+            &lt;a href="&lt;{{lt; section_page.url | relative_url &gt;}}gt;"
+               &lt;% if section_page.url == page.url %%}gt;class="active"&lt;% endif %%}gt;&gt;
+              &lt;{{lt; section_page.title &gt;}}gt;
+            &lt;/a&gt;
+          &lt;/li&gt;
+        &lt;% endfor %%}gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  &lt;% endfor %%}gt;
+&lt;/nav&gt;</code></pre>
+
+<h2 id="theme-best-practices">Theme Best Practices</h2>
+
+<h3>Performance Optimization</h3>
+
+<pre><code class="language-scss">// Optimize CSS loading
+@import "variables";
+@import "mixins";
+
+// Load critical styles first
+@import "base";
+@import "layout";
+
+// Load component styles conditionally
+&lt;% if page.layout == "post" %%}gt;
+  @import "post";
+&lt;% endif %%}gt;</code></pre>
+
+<h3>Accessibility Standards</h3>
+
+<pre><code class="language-html">&lt;!-- _includes/accessible-navigation.html --&gt;
+&lt;nav role="navigation" aria-label="Main navigation"&gt;
+  &lt;button
+    class="nav-toggle"
+    aria-expanded="false"
+    aria-controls="nav-menu"
+    aria-label="Toggle navigation menu"
+  &gt;
+    &lt;span class="sr-only"&gt;Menu&lt;/span&gt;
+  &lt;/button&gt;
+
+  &lt;ul id="nav-menu" class="nav-menu"&gt;
+    &lt;% for item in site.data.navigation.main %%}gt;
+    &lt;li&gt;
+      &lt;a
+        href="&lt;{{lt; item.url | relative_url &gt;}}gt;"
+        &lt;% if item.url == page.url %%}gt;aria-current="page"&lt;% endif %%}gt;
+      &gt;
+        &lt;{{lt; item.title &gt;}}gt;
+      &lt;/a&gt;
+    &lt;/li&gt;
+    &lt;% endfor %%}gt;
+  &lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
+
+<h3>SEO Integration</h3>
+
+<pre><code class="language-html">&lt;!-- _includes/seo.html --&gt;
+&lt;meta
+  name="description"
+  content="&lt;{{lt; page.description | default: site.description | escape &gt;}}gt;"
+/&gt;
+&lt;meta name="keywords" content="&lt;{{lt; page.tags | join: ', ' &gt;}}gt;" /&gt;
+
+&lt;!-- Open Graph --&gt;
+&lt;meta property="og:title" content="&lt;{{lt; page.title | default: site.title &gt;}}gt;" /&gt;
+&lt;meta
+  property="og:description"
+  content="&lt;{{lt; page.description | default: site.description &gt;}}gt;"
+/&gt;
+&lt;meta property="og:url" content="&lt;{{lt; page.url | absolute_url &gt;}}gt;" /&gt;
+
+&lt;!-- Schema.org --&gt;
+&lt;script type="application/ld+json"&gt;
+  {
+    "@context": "https://schema.org",
+    "@type": "&lt;{{lt; page.schema_type | default: 'WebPage' &gt;}}gt;",
+    "name": "&lt;{{lt; page.title | escape &gt;}}gt;",
+    "description": "&lt;{{lt; page.description | escape &gt;}}gt;"
+  }
+&lt;/script&gt;</code></pre>
+
+<h3>Cross-Origin Resource Sharing (CORS)</h3>
+
+<p>For themes that serve APIs or data files:</p>
+
+<pre><code class="language-apache"># .htaccess
+Header set Access-Control-Allow-Origin "*"
+Header set Access-Control-Allow-Methods "GET, POST, OPTIONS"
+Header set Access-Control-Allow-Headers "Content-Type"</code></pre>
+
+<h2 id="troubleshooting-common-issues">Troubleshooting Common Issues</h2>
+
+<h3>Theme Not Loading</h3>
+
+<h4>Problem: Theme styles not applying</h4>
+
+<pre><code class="language-bash"># Check if theme is installed
+bundle list | grep theme-name
+
+# Reinstall theme
+bundle clean --force
+bundle install</code></pre>
+
+<h4>Solution: Verify theme configuration</h4>
+
+<pre><code class="language-yaml"># _config.yml
+theme: correct-theme-name # Check spelling</code></pre>
+
+<h3>Override Not Working</h3>
+
+<h4>Problem: Custom files not overriding theme files</h4>
+
+<pre><code class="language-bash"># Check file paths match exactly
+bundle info theme-name --path</code></pre>
+
+<h4>Solution: Ensure correct directory structure</h4>
+
+<pre><code>your-site/
+├── _layouts/
+│   └── post.html        # Must match theme path exactly</code></pre>
+
+<h3>Build Errors</h3>
+
+<h4>Problem: Liquid syntax errors</h4>
+
+<pre><code>Liquid Exception: undefined method `title' for nil:NilClass</code></pre>
+
+<h4>Solution: Add null checks</h4>
+
+<pre><code class="language-liquid">&lt;% if page.title %%}gt;
+  &lt;h1&gt;&lt;{{lt; page.title &gt;}}gt;&lt;/h1&gt;
+&lt;% endif %%}gt;</code></pre>
+
+<h3>Performance Issues</h3>
+
+<h4>Problem: Slow build times</h4>
+
+<pre><code class="language-yaml"># _config.yml
+incremental: true
+profile: true</code></pre>
+
+<h4>Solution: Optimize loops and includes</h4>
+
+<pre><code class="language-html">&lt;!-- Cache expensive operations --&gt;
+&lt;% assign sorted_posts = site.posts | sort: 'date' | reverse %%}gt;
+&lt;% for post in sorted_posts limit: 10 %%}gt;
+  &lt;!-- Content --&gt;
+&lt;% endfor %%}gt;</code></pre>
+
+<h2 id="resources-and-references">Resources and References</h2>
+
+<h3>Official Documentation</h3>
+
+<ul>
+  <li>
+    <a
+      href="https://jekyllrb.com/docs/themes/"
+      rel="noopener noreferrer"
+      target="_blank"
+      >Jekyll Themes Documentation</a
+    >
+  </li>
+  <li>
+    <a
+      href="https://jekyllrb.com/docs/collections/"
+      rel="noopener noreferrer"
+      target="_blank"
+      >Jekyll Collections</a
+    >
+  </li>
+  <li>
+    <a
+      href="https://shopify.github.io/liquid/"
+      rel="noopener noreferrer"
+      target="_blank"
+      >Liquid Template Language</a
+    >
+  </li>
+</ul>
+
+<h3>Popular Themes</h3>
+
+<ul>
+  <li>
+    <a
+      href="https://github.com/jekyll/minima"
+      rel="noopener noreferrer"
+      target="_blank"
+      >Minima</a
+    >
+    - Jekyll's default theme
+  </li>
+  <li>
+    <a
+      href="https://github.com/mmistakes/minimal-mistakes"
+      rel="noopener noreferrer"
+      target="_blank"
+      >Minimal Mistakes</a
+    >
+    - Feature-rich theme
+  </li>
+  <li>
+    <a
+      href="https://github.com/pmarsceill/just-the-docs"
+      rel="noopener noreferrer"
+      target="_blank"
+      >Just the Docs</a
+    >
+    - Documentation theme
+  </li>
+</ul>
+
+<h3>Development Tools</h3>
+
+<ul>
+  <li>
+    <a
+      href="https://github.com/jekyll/jekyll-theme-inspector"
+      rel="noopener noreferrer"
+      target="_blank"
+      >Jekyll Theme Inspector</a
+    >
+  </li>
+  <li>
+    <a
+      href="https://github.com/ashmaroli/jekyll-theme-validator"
+      rel="noopener noreferrer"
+      target="_blank"
+      >Theme Validation</a
+    >
+  </li>
+  <li>
+    <a
+      href="https://www.webpagetest.org/"
+      rel="noopener noreferrer"
+      target="_blank"
+      >Performance Testing</a
+    >
+  </li>
+</ul>
+
+<h3>Community Resources</h3>
+
+<ul>
+  <li>
+    <a
+      href="https://talk.jekyllrb.com/"
+      rel="noopener noreferrer"
+      target="_blank"
+      >Jekyll Talk Forum</a
+    >
+  </li>
+  <li>
+    <a href="https://jekyllthemes.io/" rel="noopener noreferrer" target="_blank"
+      >Jekyll Themes Gallery</a
+    >
+  </li>
+  <li>
+    <a
+      href="https://pages.github.com/themes/"
+      rel="noopener noreferrer"
+      target="_blank"
+      >GitHub Pages Themes</a
+    >
+  </li>
+</ul>
+
+<hr />
+
+<h2>Conclusion</h2>
+
+<p>
+  Jekyll themes provide a powerful foundation for creating maintainable,
+  scalable websites. By understanding theme structure, customization patterns,
+  and advanced features like API integration, you can create sophisticated
+  documentation sites that serve both human readers and automated systems.
+</p>
+
+<p>
+  The integration of help APIs through collections and JSON generation allows
+  themes to extend beyond static content, creating dynamic, interactive
+  experiences while maintaining the simplicity and performance benefits of
+  static site generation.
+</p>
+
+<p>
+  Whether you're using an existing theme or developing your own, following these
+  best practices will ensure your Jekyll site is accessible, performant, and
+  maintainable for years to come.
+</p>
+
+<hr />
+
+<h2>Bibliography</h2>
+
+<h3>Primary Sources</h3>
+
+<ol>
+  <li>
+    <strong>Jekyll Official Documentation</strong>
+    <ul>
+      <li>
+        Jekyll Themes Documentation:
+        <a
+          href="https://jekyllrb.com/docs/themes/"
+          rel="noopener noreferrer"
+          target="_blank"
+          >https://jekyllrb.com/docs/themes/</a
+        >
+      </li>
+      <li>
+        Jekyll Collections Guide:
+        <a
+          href="https://jekyllrb.com/docs/collections/"
+          rel="noopener noreferrer"
+          target="_blank"
+          >https://jekyllrb.com/docs/collections/</a
+        >
+      </li>
+      <li>
+        Jekyll Configuration Reference:
+        <a
+          href="https://jekyllrb.com/docs/configuration/"
+          rel="noopener noreferrer"
+          target="_blank"
+          >https://jekyllrb.com/docs/configuration/</a
+        >
+      </li>
+    </ul>
+  </li>
+
+  <li>
+    <strong>Liquid Template Language</strong>
+    <ul>
+      <li>
+        Official Liquid Documentation:
+        <a
+          href="https://shopify.github.io/liquid/"
+          rel="noopener noreferrer"
+          target="_blank"
+          >https://shopify.github.io/liquid/</a
+        >
+      </li>
+      <li>
+        Jekyll Liquid Extensions:
+        <a
+          href="https://jekyllrb.com/docs/liquid/"
+          rel="noopener noreferrer"
+          target="_blank"
+          >https://jekyllrb.com/docs/liquid/</a
+        >
+      </li>
+    </ul>
+  </li>
+</ol>
+
+<h3>API Integration References</h3>
+
+<ol start="3">
+  <li>
+    <strong>MyDoc Help API Documentation</strong>
+    <ul>
+      <li>
+        SuperScary MyDoc Help API:
+        <a
+          href="https://superscary.github.io/mydoc_help_api.html"
+          rel="noopener noreferrer"
+          target="_blank"
+          >https://superscary.github.io/mydoc_help_api.html</a
+        >
+      </li>
+      <li>API Integration Patterns and Collection-based Help Systems</li>
+    </ul>
+  </li>
+
+  <li>
+    <strong>Web Standards and Accessibility</strong>
+    <ul>
+      <li>
+        WCAG 2.1 Guidelines:
+        <a
+          href="https://www.w3.org/WAI/WCAG21/Understanding/"
+          rel="noopener noreferrer"
+          target="_blank"
+          >https://www.w3.org/WAI/WCAG21/Understanding/</a
+        >
+      </li>
+      <li>
+        Schema.org Structured Data:
+        <a href="https://schema.org/" rel="noopener noreferrer" target="_blank"
+          >https://schema.org/</a
+        >
+      </li>
+      <li>
+        Open Graph Protocol:
+        <a href="https://ogp.me/" rel="noopener noreferrer" target="_blank"
+          >https://ogp.me/</a
+        >
+      </li>
+    </ul>
+  </li>
+</ol>
+
+<h3>Theme Development Resources</h3>
+
+<ol start="5">
+  <li>
+    <strong>Popular Jekyll Themes</strong>
+    <ul>
+      <li>
+        Minima Theme:
+        <a
+          href="https://github.com/jekyll/minima"
+          rel="noopener noreferrer"
+          target="_blank"
+          >https://github.com/jekyll/minima</a
+        >
+      </li>
+      <li>
+        Minimal Mistakes:
+        <a
+          href="https://github.com/mmistakes/minimal-mistakes"
+          rel="noopener noreferrer"
+          target="_blank"
+          >https://github.com/mmistakes/minimal-mistakes</a
+        >
+      </li>
+      <li>
+        Just the Docs:
+        <a
+          href="https://github.com/pmarsceill/just-the-docs"
+          rel="noopener noreferrer"
+          target="_blank"
+          >https://github.com/pmarsceill/just-the-docs</a
+        >
+      </li>
+    </ul>
+  </li>
+
+  <li>
+    <strong>Development Tools and Validation</strong>
+    <ul>
+      <li>
+        Jekyll Theme Inspector:
+        <a
+          href="https://github.com/jekyll/jekyll-theme-inspector"
+          rel="noopener noreferrer"
+          target="_blank"
+          >https://github.com/jekyll/jekyll-theme-inspector</a
+        >
+      </li>
+      <li>
+        WebPageTest Performance Analysis:
+        <a
+          href="https://www.webpagetest.org/"
+          rel="noopener noreferrer"
+          target="_blank"
+          >https://www.webpagetest.org/</a
+        >
+      </li>
+      <li>
+        GitHub Pages Themes:
+        <a
+          href="https://pages.github.com/themes/"
+          rel="noopener noreferrer"
+          target="_blank"
+          >https://pages.github.com/themes/</a
+        >
+      </li>
+    </ul>
+  </li>
+</ol>
+
+<h3>Community and Support</h3>
+
+<ol start="7">
+  <li>
+    <strong>Jekyll Community Resources</strong>
+    <ul>
+      <li>
+        Jekyll Talk Forum:
+        <a
+          href="https://talk.jekyllrb.com/"
+          rel="noopener noreferrer"
+          target="_blank"
+          >https://talk.jekyllrb.com/</a
+        >
+      </li>
+      <li>
+        Jekyll Themes Gallery:
+        <a
+          href="https://jekyllthemes.io/"
+          rel="noopener noreferrer"
+          target="_blank"
+          >https://jekyllthemes.io/</a
+        >
+      </li>
+      <li>
+        Jekyll GitHub Repository:
+        <a
+          href="https://github.com/jekyll/jekyll"
+          rel="noopener noreferrer"
+          target="_blank"
+          >https://github.com/jekyll/jekyll</a
+        >
+      </li>
+    </ul>
+  </li>
+</ol>
+
+<h3>Technical Standards</h3>
+
+<ol start="8">
+  <li>
+    <strong>Web Performance and Security</strong>
+    <ul>
+      <li>
+        MDN Web Docs - CORS:
+        <a
+          href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS"
+          rel="noopener noreferrer"
+          target="_blank"
+          >https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS</a
+        >
+      </li>
+      <li>
+        Bootstrap Framework:
+        <a
+          href="https://getbootstrap.com/"
+          rel="noopener noreferrer"
+          target="_blank"
+          >https://getbootstrap.com/</a
+        >
+      </li>
+      <li>
+        Sass/SCSS Documentation:
+        <a
+          href="https://sass-lang.com/documentation"
+          rel="noopener noreferrer"
+          target="_blank"
+          >https://sass-lang.com/documentation</a
+        >
+      </li>
+    </ul>
+  </li>
+</ol>
+
+<hr />
+
+<h3>Citation Format</h3>
+
+<p>
+  This document follows the Chicago Manual of Style for web resources. All URLs
+  were verified as accessible on July 31, 2025. For the most current
+  information, please refer to the original sources as web content may change
+  over time.
+</p>
+
+<p>
+  <strong>Special Acknowledgment</strong>: The API integration patterns and
+  collection-based help system concepts in this guide are significantly
+  influenced by the MyDoc Help API documentation by SuperScary, which provides
+  excellent examples of Jekyll-based API generation and tooltip systems.
+</p>
+
+<hr />
+
+<p>
+  <em
+    >This guide is part of the MIJUG.NET documentation series. For updates and
+    additional resources, visit
+    <a href="&lt;{{lt; site.url &gt;}}gt;" rel="home">MIJUG.NET</a>.</em
+  >
+</p>

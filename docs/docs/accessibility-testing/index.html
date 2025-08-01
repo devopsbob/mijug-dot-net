@@ -50,11 +50,11 @@
 <meta property="og:url" content="https://www.mijug.net/docs/accessibility-testing/" />
 <meta property="og:site_name" content="My Information Just Under Glass" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2025-07-31T12:52:12-04:00" />
+<meta property="article:published_time" content="2025-07-31T20:30:09-04:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Accessibility Testing Configuration" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Bob Kranson"},"dateModified":"2025-07-30T22:55:15-04:00","datePublished":"2025-07-31T12:52:12-04:00","description":"Comprehensive accessibility testing setup with WCAG 2.1 AA compliance using axe-core and Playwright","headline":"Accessibility Testing Configuration","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.mijug.net/docs/accessibility-testing/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://www.mijug.net/assets/logo-mijug-watermark-98x100.svg"},"name":"Bob Kranson"},"url":"https://www.mijug.net/docs/accessibility-testing/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Bob Kranson"},"dateModified":"2025-07-31T20:27:38-04:00","datePublished":"2025-07-31T20:30:09-04:00","description":"Comprehensive accessibility testing setup with WCAG 2.1 AA compliance using axe-core and Playwright","headline":"Accessibility Testing Configuration","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.mijug.net/docs/accessibility-testing/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://www.mijug.net/assets/logo-mijug-watermark-98x100.svg"},"name":"Bob Kranson"},"url":"https://www.mijug.net/docs/accessibility-testing/"}</script>
 <!-- End Jekyll SEO tag -->
 
   </head>
@@ -62,7 +62,7 @@
   <body>
     <header class="site-header" role="banner">
       <div class="wrapper">
-        <a class="site-title long-title" rel="author" href="/">
+        <a class="site-title long-title" rel="home" href="/">
           
           <img src="/assets/logo-mijug-watermark-98x100.svg" alt="My Information Just Under Glass" width="50" height="50">
            My Information Just Under Glass
@@ -107,6 +107,52 @@
             </li>
           </ul>
         </div>
+
+        <!-- Documentation Section -->
+        
+        <div class="popover-section">
+          <h3 class="popover-heading">Documentation</h3>
+          <ul class="nav-list" role="list" aria-label="Documentation pages">
+             
+            <li>
+              <a class="page-link" href="/docs/rel-attribute-guide/" aria-label="View The rel Attribute in HTML Links: A Comprehensive Guide documentation">
+                The rel Attribute in HTML Links: A Comprehensive Guide
+              </a>
+            </li>
+            
+            <li>
+              <a class="page-link" href="/docs/welcome-mijug-workspace/" aria-label="View Workspace Home documentation">
+                Workspace Home
+              </a>
+            </li>
+            
+            <li>
+              <a class="page-link" href="/docs/getting-started/" aria-label="View Getting Started documentation">
+                Getting Started
+              </a>
+            </li>
+            
+            <li>
+              <a class="page-link" href="/docs/accessibility-testing/" aria-label="View Accessibility Testing Configuration documentation">
+                Accessibility Testing Configuration
+              </a>
+            </li>
+            
+            <li>
+              <a class="page-link" href="/docs/liquid-tags-examples/" aria-label="View Liquid Tags Examples documentation">
+                Liquid Tags Examples
+              </a>
+            </li>
+            
+            <li>
+              <a class="page-link" href="/docs/frontmatter-cms/" aria-label="View FrontMatter CMS Usage documentation">
+                FrontMatter CMS Usage
+              </a>
+            </li>
+            
+          </ul>
+        </div>
+        
 
         <!-- Categories Section -->
         
@@ -262,6 +308,80 @@
 <strong>Mobile Accessibility</strong>: Touch target and navigation testing</li>
 </ul>
 
+<h2 id="table-of-contents">Table of Contents</h2>
+
+<ul class="no_toc" id="markdown-toc">
+  <li>
+<a href="#accessibility-testing-configuration" id="markdown-toc-accessibility-testing-configuration">Accessibility Testing Configuration</a>    <ul>
+      <li><a href="#overview" id="markdown-toc-overview">Overview</a></li>
+      <li><a href="#table-of-contents" id="markdown-toc-table-of-contents">Table of Contents</a></li>
+      <li>
+<a href="#test-categories" id="markdown-toc-test-categories">Test Categories</a>        <ul>
+          <li><a href="#1-automated-accessibility-audits-a11y-tag" id="markdown-toc-1-automated-accessibility-audits-a11y-tag">1. Automated Accessibility Audits (<code class="language-plaintext highlighter-rouge">@a11y</code> tag)</a></li>
+          <li><a href="#2-manual-accessibility-tests" id="markdown-toc-2-manual-accessibility-tests">2. Manual Accessibility Tests</a></li>
+          <li><a href="#3-mobile-accessibility" id="markdown-toc-3-mobile-accessibility">3. Mobile Accessibility</a></li>
+        </ul>
+      </li>
+      <li>
+<a href="#wcag-21-compliance" id="markdown-toc-wcag-21-compliance">WCAG 2.1 Compliance</a>        <ul>
+          <li><a href="#level-a-requirements" id="markdown-toc-level-a-requirements">Level A Requirements</a></li>
+          <li><a href="#level-aa-requirements" id="markdown-toc-level-aa-requirements">Level AA Requirements</a></li>
+        </ul>
+      </li>
+      <li>
+<a href="#test-structure" id="markdown-toc-test-structure">Test Structure</a>        <ul>
+          <li><a href="#accessibility-test-files" id="markdown-toc-accessibility-test-files">Accessibility Test Files</a></li>
+          <li>
+<a href="#test-patterns" id="markdown-toc-test-patterns">Test Patterns</a>            <ul>
+              <li><a href="#basic-accessibility-audit" id="markdown-toc-basic-accessibility-audit">Basic Accessibility Audit</a></li>
+              <li><a href="#keyboard-navigation-test" id="markdown-toc-keyboard-navigation-test">Keyboard Navigation Test</a></li>
+              <li><a href="#specific-rule-testing" id="markdown-toc-specific-rule-testing">Specific Rule Testing</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>
+<a href="#configuration" id="markdown-toc-configuration">Configuration</a>        <ul>
+          <li><a href="#packagejson-scripts" id="markdown-toc-packagejson-scripts">Package.json Scripts</a></li>
+          <li><a href="#playwright-configuration" id="markdown-toc-playwright-configuration">Playwright Configuration</a></li>
+        </ul>
+      </li>
+      <li>
+<a href="#best-practices" id="markdown-toc-best-practices">Best Practices</a>        <ul>
+          <li><a href="#1-semantic-html" id="markdown-toc-1-semantic-html">1. Semantic HTML</a></li>
+          <li><a href="#2-aria-attributes" id="markdown-toc-2-aria-attributes">2. ARIA Attributes</a></li>
+          <li><a href="#3-keyboard-navigation" id="markdown-toc-3-keyboard-navigation">3. Keyboard Navigation</a></li>
+          <li><a href="#4-images-and-media" id="markdown-toc-4-images-and-media">4. Images and Media</a></li>
+          <li><a href="#5-forms" id="markdown-toc-5-forms">5. Forms</a></li>
+        </ul>
+      </li>
+      <li>
+<a href="#common-issues-and-solutions" id="markdown-toc-common-issues-and-solutions">Common Issues and Solutions</a>        <ul>
+          <li><a href="#1-color-contrast" id="markdown-toc-1-color-contrast">1. Color Contrast</a></li>
+          <li><a href="#2-missing-alt-text" id="markdown-toc-2-missing-alt-text">2. Missing Alt Text</a></li>
+          <li><a href="#3-keyboard-navigation-1" id="markdown-toc-3-keyboard-navigation-1">3. Keyboard Navigation</a></li>
+          <li><a href="#4-heading-hierarchy" id="markdown-toc-4-heading-hierarchy">4. Heading Hierarchy</a></li>
+          <li><a href="#5-form-labels" id="markdown-toc-5-form-labels">5. Form Labels</a></li>
+        </ul>
+      </li>
+      <li><a href="#integration-with-cicd" id="markdown-toc-integration-with-cicd">Integration with CI/CD</a></li>
+      <li>
+<a href="#tools-and-resources" id="markdown-toc-tools-and-resources">Tools and Resources</a>        <ul>
+          <li><a href="#testing-tools" id="markdown-toc-testing-tools">Testing Tools</a></li>
+          <li><a href="#browser-extensions" id="markdown-toc-browser-extensions">Browser Extensions</a></li>
+          <li><a href="#guidelines-and-standards" id="markdown-toc-guidelines-and-standards">Guidelines and Standards</a></li>
+        </ul>
+      </li>
+      <li>
+<a href="#reporting-and-monitoring" id="markdown-toc-reporting-and-monitoring">Reporting and Monitoring</a>        <ul>
+          <li><a href="#test-reports" id="markdown-toc-test-reports">Test Reports</a></li>
+          <li><a href="#continuous-monitoring" id="markdown-toc-continuous-monitoring">Continuous Monitoring</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
 <h2 id="test-categories">Test Categories</h2>
 
 <h3 id="1-automated-accessibility-audits-a11y-tag">1. Automated Accessibility Audits (<code class="language-plaintext highlighter-rouge">@a11y</code> tag)</h3>
@@ -349,9 +469,7 @@ npm run <span class="nb">test</span>:a11y:headed  <span class="c"># Run with bro
 <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">test</span><span class="p">(</span><span class="dl">'</span><span class="s1">should pass accessibility audit @a11y</span><span class="dl">'</span><span class="p">,</span> <span class="k">async </span><span class="p">({</span> <span class="nx">page</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="p">{</span>
   <span class="k">await</span> <span class="nx">page</span><span class="p">.</span><span class="nf">goto</span><span class="p">(</span><span class="dl">'</span><span class="s1">/</span><span class="dl">'</span><span class="p">);</span>
 
-  <span class="kd">const</span> <span class="nx">accessibilityScanResults</span> <span class="o">=</span> <span class="k">await</span> <span class="k">new</span> <span class="nc">AxeBuilder</span><span class="p">({</span> <span class="nx">page</span> <span class="p">})</span>
-    <span class="p">.</span><span class="nf">withTags</span><span class="p">([</span><span class="dl">'</span><span class="s1">wcag2a</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">wcag2aa</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">wcag21aa</span><span class="dl">'</span><span class="p">])</span>
-    <span class="p">.</span><span class="nf">analyze</span><span class="p">();</span>
+  <span class="kd">const</span> <span class="nx">accessibilityScanResults</span> <span class="o">=</span> <span class="k">await</span> <span class="k">new</span> <span class="nc">AxeBuilder</span><span class="p">({</span> <span class="nx">page</span> <span class="p">}).</span><span class="nf">withTags</span><span class="p">([</span><span class="dl">'</span><span class="s1">wcag2a</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">wcag2aa</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">wcag21aa</span><span class="dl">'</span><span class="p">]).</span><span class="nf">analyze</span><span class="p">();</span>
 
   <span class="nf">expect</span><span class="p">(</span><span class="nx">accessibilityScanResults</span><span class="p">.</span><span class="nx">violations</span><span class="p">).</span><span class="nf">toEqual</span><span class="p">([]);</span>
 <span class="p">});</span>
@@ -363,9 +481,7 @@ npm run <span class="nb">test</span>:a11y:headed  <span class="c"># Run with bro
   <span class="k">await</span> <span class="nx">page</span><span class="p">.</span><span class="nf">goto</span><span class="p">(</span><span class="dl">'</span><span class="s1">/</span><span class="dl">'</span><span class="p">);</span>
 
   <span class="k">await</span> <span class="nx">page</span><span class="p">.</span><span class="nx">keyboard</span><span class="p">.</span><span class="nf">press</span><span class="p">(</span><span class="dl">'</span><span class="s1">Tab</span><span class="dl">'</span><span class="p">);</span>
-  <span class="kd">const</span> <span class="nx">focusedElement</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">page</span><span class="p">.</span><span class="nf">evaluate</span><span class="p">(</span>
-    <span class="p">()</span> <span class="o">=&gt;</span> <span class="nb">document</span><span class="p">.</span><span class="nx">activeElement</span><span class="p">?.</span><span class="nx">tagName</span>
-  <span class="p">);</span>
+  <span class="kd">const</span> <span class="nx">focusedElement</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">page</span><span class="p">.</span><span class="nf">evaluate</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="nb">document</span><span class="p">.</span><span class="nx">activeElement</span><span class="p">?.</span><span class="nx">tagName</span><span class="p">);</span>
   <span class="nf">expect</span><span class="p">([</span><span class="dl">'</span><span class="s1">A</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">BUTTON</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">INPUT</span><span class="dl">'</span><span class="p">]).</span><span class="nf">toContain</span><span class="p">(</span><span class="nx">focusedElement</span><span class="p">);</span>
 <span class="p">});</span>
 </code></pre></div></div>
@@ -375,9 +491,7 @@ npm run <span class="nb">test</span>:a11y:headed  <span class="c"># Run with bro
 <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">test</span><span class="p">(</span><span class="dl">'</span><span class="s1">should have proper color contrast @a11y</span><span class="dl">'</span><span class="p">,</span> <span class="k">async </span><span class="p">({</span> <span class="nx">page</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="p">{</span>
   <span class="k">await</span> <span class="nx">page</span><span class="p">.</span><span class="nf">goto</span><span class="p">(</span><span class="dl">'</span><span class="s1">/</span><span class="dl">'</span><span class="p">);</span>
 
-  <span class="kd">const</span> <span class="nx">accessibilityScanResults</span> <span class="o">=</span> <span class="k">await</span> <span class="k">new</span> <span class="nc">AxeBuilder</span><span class="p">({</span> <span class="nx">page</span> <span class="p">})</span>
-    <span class="p">.</span><span class="nf">withRules</span><span class="p">([</span><span class="dl">'</span><span class="s1">color-contrast</span><span class="dl">'</span><span class="p">])</span>
-    <span class="p">.</span><span class="nf">analyze</span><span class="p">();</span>
+  <span class="kd">const</span> <span class="nx">accessibilityScanResults</span> <span class="o">=</span> <span class="k">await</span> <span class="k">new</span> <span class="nc">AxeBuilder</span><span class="p">({</span> <span class="nx">page</span> <span class="p">}).</span><span class="nf">withRules</span><span class="p">([</span><span class="dl">'</span><span class="s1">color-contrast</span><span class="dl">'</span><span class="p">]).</span><span class="nf">analyze</span><span class="p">();</span>
 
   <span class="nf">expect</span><span class="p">(</span><span class="nx">accessibilityScanResults</span><span class="p">.</span><span class="nx">violations</span><span class="p">).</span><span class="nf">toEqual</span><span class="p">([]);</span>
 <span class="p">});</span>
@@ -559,7 +673,7 @@ npm run <span class="nb">test</span>:a11y:headed  <span class="c"># Run with bro
       <div class="wrapper">
         <h2 class="footer-heading">
           
-          <a href="https://www.freecounterstat.com">Site page views</a>
+          <a href="https://www.freecounterstat.com" rel="nofollow external">Site page views</a>
           <div id="sfc7cyytxa5ukdg92qwtqh9umn5txq31duh"></div>
           <script type="text/javascript" src="https://counter1.optistats.ovh/private/counter.js?c=7cyytxa5ukdg92qwtqh9umn5txq31duh&amp;down=async" async></script>
           <noscript>
@@ -572,15 +686,15 @@ npm run <span class="nb">test</span>:a11y:headed  <span class="c"># Run with bro
 
         <div class="footer-col-wrapper">
           <div class="footer-col footer-col-1">
-            <a rel="ugc,nofollow" href="/terms-of-service.html">Terms of Service</a><br>
-            <a rel="ugc,nofollow" href="/privacy-policy.html">Privacy Policy</a>
+            <a href="/terms-of-service.html">Terms of Service</a><br>
+            <a href="/privacy-policy.html">Privacy Policy</a>
           </div>
 
           <div class="footer-col footer-col-2">
-            <a rel="ugc,nofollow" href="/contact.html">Contact Us</a>
+            <a href="/contact.html">Contact Us</a>
             <!-- Google Calendar Appointment Scheduling begin -->
             <div class="calendar-appointment-container">
-              <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
+              <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet external">
               <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
               <script>
                 (function () {
@@ -602,9 +716,9 @@ npm run <span class="nb">test</span>:a11y:headed  <span class="c"># Run with bro
           <div class="footer-col footer-col-3">
             <p>
               © 2025
-              <a rel="ugc,nofollow" href="https://share.google/8Ir6br641K4uU74l2">Kranson Enterprises</a><br>
+              <a rel="external nofollow" href="https://share.google/8Ir6br641K4uU74l2">Kranson Enterprises</a><br>
                   subscribe
-              <a rel="ugc,nofollow" href="/feed.xml">via RSS<svg class="svg-icon">
+              <a href="/feed.xml">via RSS<svg class="svg-icon">
                   <use xlink:href="/assets/minima-social-icons.svg#rss"></use></svg></a>
             </p>
           </div>
@@ -613,29 +727,618 @@ npm run <span class="nb">test</span>:a11y:headed  <span class="c"># Run with bro
     </footer>
 
     
+    <!-- Google Analytics with Consent Mode -->
     <script>
-      (function (i, s, o, g, r, a, m) {
-        i['GoogleAnalyticsObject'] = r;
-        ((i[r] =
-          i[r] ||
-          function () {
-            (i[r].q = i[r].q || []).push(arguments);
-          }),
-          (i[r].l = 1 * new Date()));
-        ((a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]));
-        a.async = 1;
-        a.src = g;
-        m.parentNode.insertBefore(a, m);
-      })(
-        window,
-        document,
-        'script',
-        'https://www.google-analytics.com/analytics.js',
-        'ga'
-      );
-      ga('create', 'G-XXXXXXXXXX', 'auto');
-      ga('send', 'pageview');
+      // Initialize gtag with default consent settings
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+
+      // Default consent to denied for GDPR compliance
+      gtag('consent', 'default', {
+        analytics_storage: 'denied',
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+      });
+
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
     </script>
+
+    <!-- Load Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
     
+
+    <!-- Google AdSense -->
+    <!-- Google AdSense with Consent Mode Support -->
+<script>
+  // Initialize consent mode for AdSense
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+
+  // Set default consent state
+  gtag('consent', 'default', {
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied',
+  });
+</script>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3383458876439157" crossorigin="anonymous"></script>
+
+
+    <!-- Cookie Consent Banner for GDPR Compliance -->
+    <!-- Cookie Consent Banner for GDPR Compliance -->
+<div id="cookie-consent-banner" class="cookie-consent-banner" style="display: none">
+  <div class="cookie-consent-content">
+    <div class="cookie-consent-text">
+      <p>
+        <strong>🍪 Cookie Notice</strong><br>
+        This website uses cookies for Google AdSense and analytics to improve
+        your experience.
+        <a href="/privacy-policy.html" class="cookie-policy-link">Learn more in our Privacy Policy</a>
+      </p>
+    </div>
+    <div class="cookie-consent-buttons">
+      <button id="accept-cookies" class="cookie-btn cookie-btn-accept" onclick="acceptCookies()">
+        Accept All Cookies
+      </button>
+      <button id="decline-cookies" class="cookie-btn cookie-btn-decline" onclick="declineCookies()">
+        Decline Optional Cookies
+      </button>
+      <button id="cookie-settings" class="cookie-btn cookie-btn-settings" onclick="showCookieSettings()">
+        Cookie Settings
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Cookie Settings Modal -->
+<div id="cookie-settings-modal" class="cookie-modal" style="display: none">
+  <div class="cookie-modal-content">
+    <div class="cookie-modal-header">
+      <h3>Cookie Settings</h3>
+      <button class="cookie-modal-close" onclick="closeCookieSettings()">
+        ×
+      </button>
+    </div>
+    <div class="cookie-modal-body">
+      <div class="cookie-category">
+        <div class="cookie-category-header">
+          <h4>Essential Cookies</h4>
+          <label class="cookie-toggle">
+            <input type="checkbox" checked disabled>
+            <span class="cookie-slider"></span>
+          </label>
+        </div>
+        <p>Required for basic site functionality. These cannot be disabled.</p>
+      </div>
+
+      <div class="cookie-category">
+        <div class="cookie-category-header">
+          <h4>Analytics Cookies</h4>
+          <label class="cookie-toggle">
+            <input type="checkbox" id="analytics-cookies">
+            <span class="cookie-slider"></span>
+          </label>
+        </div>
+        <p>
+          Help us understand how visitors interact with our website via Google
+          Analytics.
+        </p>
+      </div>
+
+      <div class="cookie-category">
+        <div class="cookie-category-header">
+          <h4>Advertising Cookies</h4>
+          <label class="cookie-toggle">
+            <input type="checkbox" id="advertising-cookies">
+            <span class="cookie-slider"></span>
+          </label>
+        </div>
+        <p>Used by Google AdSense to display relevant advertisements.</p>
+      </div>
+    </div>
+    <div class="cookie-modal-footer">
+      <button class="cookie-btn cookie-btn-accept" onclick="savePreferences()">
+        Save Preferences
+      </button>
+      <button class="cookie-btn cookie-btn-decline" onclick="closeCookieSettings()">
+        Cancel
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Cookie Consent Management
+  (function () {
+    'use strict';
+
+    const COOKIE_CONSENT_KEY = 'mijug-cookie-consent';
+    const COOKIE_PREFERENCES_KEY = 'mijug-cookie-preferences';
+    const CONSENT_EXPIRY_DAYS = 365;
+
+    // Check if user is from EU (simplified check)
+    function isEUUser() {
+      // In production, use a proper geolocation service
+      // For now, show to all users for compliance
+      return true;
+    }
+
+    // Get cookie value
+    function getCookie(name) {
+      const value = `; ${document.cookie}`;
+      const parts = value.split(`; ${name}=`);
+      if (parts.length === 2) return parts.pop().split(';').shift();
+      return null;
+    }
+
+    // Set cookie
+    function setCookie(name, value, days) {
+      const expires = new Date();
+      expires.setTime(expires.getTime() + days * 24 * 60 * 60 * 1000);
+      document.cookie = `${name}=${value};expires=${expires.toUTCString()};path=/;SameSite=Strict`;
+    }
+
+    // Show cookie banner
+    function showCookieBanner() {
+      const banner = document.getElementById('cookie-consent-banner');
+      if (banner) {
+        banner.style.display = 'block';
+        banner.setAttribute('aria-hidden', 'false');
+      }
+    }
+
+    // Hide cookie banner
+    function hideCookieBanner() {
+      const banner = document.getElementById('cookie-consent-banner');
+      if (banner) {
+        banner.style.display = 'none';
+        banner.setAttribute('aria-hidden', 'true');
+      }
+    }
+
+    // Load Google Analytics conditionally
+    function loadAnalytics() {
+      if (hasAnalyticsConsent()) {
+        // Load Google Analytics if consent given
+        if (typeof gtag !== 'undefined') {
+          gtag('consent', 'update', {
+            analytics_storage: 'granted',
+          });
+        }
+      }
+    }
+
+    // Load AdSense conditionally
+    function loadAdSense() {
+      if (hasAdvertisingConsent()) {
+        // Load AdSense if consent given
+        if (typeof gtag !== 'undefined') {
+          gtag('consent', 'update', {
+            ad_storage: 'granted',
+            ad_user_data: 'granted',
+            ad_personalization: 'granted',
+          });
+        }
+      }
+    }
+
+    // Check consent status
+    function hasConsent() {
+      return getCookie(COOKIE_CONSENT_KEY) !== null;
+    }
+
+    function hasAnalyticsConsent() {
+      const preferences = getCookie(COOKIE_PREFERENCES_KEY);
+      if (!preferences) return false;
+      try {
+        const prefs = JSON.parse(preferences);
+        return prefs.analytics === true;
+      } catch {
+        return false;
+      }
+    }
+
+    function hasAdvertisingConsent() {
+      const preferences = getCookie(COOKIE_PREFERENCES_KEY);
+      if (!preferences) return false;
+      try {
+        const prefs = JSON.parse(preferences);
+        return prefs.advertising === true;
+      } catch {
+        return false;
+      }
+    }
+
+    // Global functions for buttons
+    window.acceptCookies = function () {
+      const preferences = {
+        analytics: true,
+        advertising: true,
+      };
+      setCookie(COOKIE_CONSENT_KEY, 'accepted', CONSENT_EXPIRY_DAYS);
+      setCookie(
+        COOKIE_PREFERENCES_KEY,
+        JSON.stringify(preferences),
+        CONSENT_EXPIRY_DAYS
+      );
+      hideCookieBanner();
+      loadAnalytics();
+      loadAdSense();
+    };
+
+    window.declineCookies = function () {
+      const preferences = {
+        analytics: false,
+        advertising: false,
+      };
+      setCookie(COOKIE_CONSENT_KEY, 'declined', CONSENT_EXPIRY_DAYS);
+      setCookie(
+        COOKIE_PREFERENCES_KEY,
+        JSON.stringify(preferences),
+        CONSENT_EXPIRY_DAYS
+      );
+      hideCookieBanner();
+    };
+
+    window.showCookieSettings = function () {
+      const modal = document.getElementById('cookie-settings-modal');
+      if (modal) {
+        // Load current preferences
+        const preferences = getCookie(COOKIE_PREFERENCES_KEY);
+        if (preferences) {
+          try {
+            const prefs = JSON.parse(preferences);
+            document.getElementById('analytics-cookies').checked =
+              prefs.analytics || false;
+            document.getElementById('advertising-cookies').checked =
+              prefs.advertising || false;
+          } catch {
+            // Default to false if parsing fails
+          }
+        }
+        modal.style.display = 'block';
+        modal.setAttribute('aria-hidden', 'false');
+      }
+    };
+
+    window.closeCookieSettings = function () {
+      const modal = document.getElementById('cookie-settings-modal');
+      if (modal) {
+        modal.style.display = 'none';
+        modal.setAttribute('aria-hidden', 'true');
+      }
+    };
+
+    window.savePreferences = function () {
+      const analytics = document.getElementById('analytics-cookies').checked;
+      const advertising = document.getElementById(
+        'advertising-cookies'
+      ).checked;
+
+      const preferences = {
+        analytics: analytics,
+        advertising: advertising,
+      };
+
+      setCookie(COOKIE_CONSENT_KEY, 'customized', CONSENT_EXPIRY_DAYS);
+      setCookie(
+        COOKIE_PREFERENCES_KEY,
+        JSON.stringify(preferences),
+        CONSENT_EXPIRY_DAYS
+      );
+
+      hideCookieBanner();
+      closeCookieSettings();
+
+      if (analytics) loadAnalytics();
+      if (advertising) loadAdSense();
+    };
+
+    // Initialize on DOM ready
+    document.addEventListener('DOMContentLoaded', function () {
+      if (isEUUser() && !hasConsent()) {
+        showCookieBanner();
+      } else if (hasConsent()) {
+        loadAnalytics();
+        loadAdSense();
+      }
+    });
+
+    // Close modal when clicking outside
+    window.onclick = function (event) {
+      const modal = document.getElementById('cookie-settings-modal');
+      if (event.target === modal) {
+        closeCookieSettings();
+      }
+    };
+  })();
+</script>
+
+<style>
+  /* Cookie Consent Banner Styles */
+  .cookie-consent-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #2c3e50;
+    color: white;
+    padding: 1rem;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 10000;
+    border-top: 3px solid #3498db;
+  }
+
+  .cookie-consent-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .cookie-consent-text {
+    flex: 1;
+  }
+
+  .cookie-consent-text p {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  .cookie-policy-link {
+    color: #3498db;
+    text-decoration: underline;
+  }
+
+  .cookie-policy-link:hover {
+    color: #2980b9;
+  }
+
+  .cookie-consent-buttons {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .cookie-btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+  }
+
+  .cookie-btn-accept {
+    background: #27ae60;
+    color: white;
+  }
+
+  .cookie-btn-accept:hover {
+    background: #219a52;
+  }
+
+  .cookie-btn-decline {
+    background: #e74c3c;
+    color: white;
+  }
+
+  .cookie-btn-decline:hover {
+    background: #c0392b;
+  }
+
+  .cookie-btn-settings {
+    background: #95a5a6;
+    color: white;
+  }
+
+  .cookie-btn-settings:hover {
+    background: #7f8c8d;
+  }
+
+  /* Cookie Settings Modal */
+  .cookie-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 10001;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .cookie-modal-content {
+    background: white;
+    border-radius: 8px;
+    max-width: 500px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  }
+
+  .cookie-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    border-bottom: 1px solid #ecf0f1;
+  }
+
+  .cookie-modal-header h3 {
+    margin: 0;
+    color: #2c3e50;
+  }
+
+  .cookie-modal-close {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #7f8c8d;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .cookie-modal-close:hover {
+    color: #2c3e50;
+  }
+
+  .cookie-modal-body {
+    padding: 1.5rem;
+  }
+
+  .cookie-category {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #ecf0f1;
+  }
+
+  .cookie-category:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+  }
+
+  .cookie-category-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+  }
+
+  .cookie-category-header h4 {
+    margin: 0;
+    color: #2c3e50;
+    font-size: 1rem;
+  }
+
+  .cookie-category p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #7f8c8d;
+    line-height: 1.4;
+  }
+
+  /* Toggle Switch */
+  .cookie-toggle {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+  }
+
+  .cookie-toggle input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .cookie-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 24px;
+  }
+
+  .cookie-slider:before {
+    position: absolute;
+    content: '';
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+  }
+
+  input:checked + .cookie-slider {
+    background-color: #3498db;
+  }
+
+  input:checked + .cookie-slider:before {
+    transform: translateX(26px);
+  }
+
+  input:disabled + .cookie-slider {
+    background-color: #27ae60;
+    cursor: not-allowed;
+  }
+
+  .cookie-modal-footer {
+    padding: 1.5rem;
+    border-top: 1px solid #ecf0f1;
+    display: flex;
+    gap: 0.5rem;
+    justify-content: flex-end;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .cookie-consent-content {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .cookie-consent-buttons {
+      justify-content: center;
+    }
+
+    .cookie-btn {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .cookie-modal-content {
+      width: 95%;
+      margin: 1rem;
+    }
+
+    .cookie-modal-footer {
+      flex-direction: column;
+    }
+
+    .cookie-modal-footer .cookie-btn {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .cookie-consent-buttons {
+      flex-direction: column;
+    }
+
+    .cookie-category-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+  }
+</style>
+
   </body>
 </html>

@@ -2,11 +2,11 @@
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>https://www.mijug.net/docs/accessibility-testing/</loc>
-<lastmod>2025-07-30T22:55:15-04:00</lastmod>
+<lastmod>2025-07-31T20:27:38-04:00</lastmod>
 </url>
 <url>
 <loc>https://www.mijug.net/docs/frontmatter-cms/</loc>
-<lastmod>2025-07-30T22:55:15-04:00</lastmod>
+<lastmod>2025-07-31T20:27:38-04:00</lastmod>
 </url>
 <url>
 <loc>https://www.mijug.net/docs/getting-started/</loc>
@@ -14,7 +14,11 @@
 </url>
 <url>
 <loc>https://www.mijug.net/docs/liquid-tags-examples/</loc>
-<lastmod>2025-07-30T22:55:15-04:00</lastmod>
+<lastmod>2025-07-31T20:27:38-04:00</lastmod>
+</url>
+<url>
+<loc>https://www.mijug.net/docs/rel-attribute-guide/</loc>
+<lastmod>2025-07-31T20:27:38-04:00</lastmod>
 </url>
 <url>
 <loc>https://www.mijug.net/docs/welcome-mijug-workspace/</loc>
@@ -30,7 +34,7 @@
 </url>
 <url>
 <loc>https://www.mijug.net/tutorial/getting-started/2025/07/29/getting-started.html</loc>
-<lastmod>2025-07-30T23:08:50-04:00</lastmod>
+<lastmod>2025-07-31T20:05:36-04:00</lastmod>
 </url>
 <url>
 <loc>https://www.mijug.net/documentation/navigation/2025/07/30/documentation-guide.html</loc>
@@ -46,7 +50,7 @@
 </url>
 <url>
 <loc>https://www.mijug.net/contact.html</loc>
-<lastmod>2025-07-30T23:31:20-04:00</lastmod>
+<lastmod>2025-07-31T20:05:36-04:00</lastmod>
 </url>
 <url>
 <loc>https://www.mijug.net/</loc>
@@ -54,7 +58,7 @@
 </url>
 <url>
 <loc>https://www.mijug.net/privacy-policy.html</loc>
-<lastmod>2025-07-30T22:54:37-04:00</lastmod>
+<lastmod>2025-07-31T20:05:36-04:00</lastmod>
 </url>
 <url>
 <loc>https://www.mijug.net/tags/</loc>
@@ -62,7 +66,7 @@
 </url>
 <url>
 <loc>https://www.mijug.net/terms-of-service.html</loc>
-<lastmod>2025-07-30T22:54:37-04:00</lastmod>
+<lastmod>2025-07-31T20:05:36-04:00</lastmod>
 </url>
 <url>
 <loc>https://www.mijug.net/tag/cpus/</loc>
@@ -112,5 +116,9 @@
 <url>
 <loc>https://www.mijug.net/blog/</loc>
 <lastmod>2025-07-30T22:54:37-04:00</lastmod>
+</url>
+<url>
+<loc>https://www.mijug.net/_docs/jekyll-themes-guide.html</loc>
+<lastmod>2025-07-31T18:58:07-04:00</lastmod>
 </url>
 </urlset>
