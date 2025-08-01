@@ -1,124 +1,67 @@
+<!-- Sitemap for better search engine indexing -->
+---
+layout: null
+sitemap: false
+---
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url>
-<loc>https://www.mijug.net/docs/accessibility-testing/</loc>
-<lastmod>2025-07-31T20:27:38-04:00</lastmod>
-</url>
-<url>
-<loc>https://www.mijug.net/docs/frontmatter-cms/</loc>
-<lastmod>2025-07-31T20:27:38-04:00</lastmod>
-</url>
-<url>
-<loc>https://www.mijug.net/docs/getting-started/</loc>
-<lastmod>2025-07-30T22:55:15-04:00</lastmod>
-</url>
-<url>
-<loc>https://www.mijug.net/docs/liquid-tags-examples/</loc>
-<lastmod>2025-07-31T21:05:49-04:00</lastmod>
-</url>
-<url>
-<loc>https://www.mijug.net/docs/rel-attribute-guide/</loc>
-<lastmod>2025-07-31T21:09:42-04:00</lastmod>
-</url>
-<url>
-<loc>https://www.mijug.net/docs/welcome-mijug-workspace/</loc>
-<lastmod>2025-07-30T23:31:20-04:00</lastmod>
-</url>
-<url>
-<loc>https://www.mijug.net/announcements/2025/07/03/welcome-to-mijug-dot-net.html</loc>
-<lastmod>2025-07-30T22:54:37-04:00</lastmod>
-</url>
-<url>
-<loc>https://www.mijug.net/linux/2025/07/18/reusing-older-computers-in-2025.html</loc>
-<lastmod>2025-07-30T22:54:37-04:00</lastmod>
-</url>
-<url>
-<loc>https://www.mijug.net/tutorial/getting-started/2025/07/29/getting-started.html</loc>
-<lastmod>2025-07-31T20:05:36-04:00</lastmod>
-</url>
-<url>
-<loc>https://www.mijug.net/documentation/navigation/2025/07/30/documentation-guide.html</loc>
-<lastmod>2025-07-30T23:08:50-04:00</lastmod>
-</url>
-<url>
-<loc>https://www.mijug.net/about/</loc>
-<lastmod>2025-07-31T12:51:33-04:00</lastmod>
-</url>
-<url>
-<loc>https://www.mijug.net/categories/</loc>
-<lastmod>2025-07-30T23:51:43-04:00</lastmod>
-</url>
-<url>
-<loc>https://www.mijug.net/contact.html</loc>
-<lastmod>2025-07-31T20:05:36-04:00</lastmod>
-</url>
-<url>
-<loc>https://www.mijug.net/</loc>
-<lastmod>2025-07-30T22:54:37-04:00</lastmod>
-</url>
-<url>
-<loc>https://www.mijug.net/privacy-policy.html</loc>
-<lastmod>2025-07-31T20:05:36-04:00</lastmod>
-</url>
-<url>
-<loc>https://www.mijug.net/tags/</loc>
-<lastmod>2025-07-30T23:51:43-04:00</lastmod>
-</url>
-<url>
-<loc>https://www.mijug.net/terms-of-service.html</loc>
-<lastmod>2025-07-31T20:05:36-04:00</lastmod>
-</url>
-<url>
-<loc>https://www.mijug.net/tag/cpus/</loc>
-</url>
-<url>
-<loc>https://www.mijug.net/tag/gpus/</loc>
-</url>
-<url>
-<loc>https://www.mijug.net/tag/typescript/</loc>
-</url>
-<url>
-<loc>https://www.mijug.net/tag/jekyll/</loc>
-</url>
-<url>
-<loc>https://www.mijug.net/tag/development/</loc>
-</url>
-<url>
-<loc>https://www.mijug.net/tag/docs/</loc>
-</url>
-<url>
-<loc>https://www.mijug.net/tag/guide/</loc>
-</url>
-<url>
-<loc>https://www.mijug.net/tag/navigation/</loc>
-</url>
-<url>
-<loc>https://www.mijug.net/tag/tutorial/</loc>
-</url>
-<url>
-<loc>https://www.mijug.net/category/announcements/</loc>
-</url>
-<url>
-<loc>https://www.mijug.net/category/linux/</loc>
-</url>
-<url>
-<loc>https://www.mijug.net/category/tutorial/</loc>
-</url>
-<url>
-<loc>https://www.mijug.net/category/getting-started/</loc>
-</url>
-<url>
-<loc>https://www.mijug.net/category/documentation/</loc>
-</url>
-<url>
-<loc>https://www.mijug.net/category/navigation/</loc>
-</url>
-<url>
-<loc>https://www.mijug.net/blog/</loc>
-<lastmod>2025-07-30T22:54:37-04:00</lastmod>
-</url>
-<url>
-<loc>https://www.mijug.net/_docs/jekyll-themes-guide.html</loc>
-<lastmod>2025-07-31T21:02:51-04:00</lastmod>
-</url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <!-- Homepage -->
+    <url>
+        <loc>{{ site.url }}/</loc>
+        <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    <!-- Posts -->
+    {% for post in site.posts %}
+    <url>
+        <loc>{{ site.url }}{{ post.url }}</loc>
+        <lastmod>{{ post.last_modified_at | default: post.date | date_to_xmlschema }}</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    {% endfor %}
+
+    <!-- Documentation -->
+    {% for doc in site.docs %}
+    <url>
+        <loc>{{ site.url }}{{ doc.url }}</loc>
+        <lastmod>{{ doc.last_modified_at | default: site.time | date_to_xmlschema }}</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    {% endfor %}
+
+    <!-- Static pages -->
+    {% for page in site.pages %}
+        {% unless page.sitemap == false %}
+        <url>
+            <loc>{{ site.url }}{{ page.url }}</loc>
+            <lastmod>{{ page.last_modified_at | default: site.time | date_to_xmlschema }}</lastmod>
+            <changefreq>monthly</changefreq>
+            <priority>0.6</priority>
+        </url>
+        {% endunless %}
+    {% endfor %}
+
+    <!-- Categories -->
+    {% for category in site.categories %}
+    <url>
+        <loc>{{ site.url }}/category/{{ category | first | slugify }}/</loc>
+        <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    {% endfor %}
+
+    <!-- Tags -->
+    {% for tag in site.tags %}
+    <url>
+        <loc>{{ site.url }}/tag/{{ tag | first | slugify }}/</loc>
+        <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.5</priority>
+    </url>
+    {% endfor %}
 </urlset>

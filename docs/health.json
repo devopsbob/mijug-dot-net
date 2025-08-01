@@ -1,0 +1,33 @@
+{
+  "status": "ok",
+  "timestamp": "2025-08-01 18:29:15 UTC",
+  "version": "1.0.0",
+  "services": {
+    "website": {
+      "status": "operational",
+      "response_time": "fast",
+      "last_updated": "2025-08-01 18:29:15 UTC"
+    },
+    "jekyll": {
+      "status": "operational",
+      "version": "4.4.1",
+      "environment": "production"
+    }
+  },
+  "metrics": {
+    "total_posts": 3,
+    "total_docs": 7,
+    "total_pages": 5,
+    "categories": 4,
+    "tags": 6
+  },
+  "uptime": {
+    "status": "monitoring",
+    "check_interval": "300s",
+    "monitors": [
+      "site_availability",
+      "performance_metrics",
+      "seo_health"
+    ]
+  }
+}
