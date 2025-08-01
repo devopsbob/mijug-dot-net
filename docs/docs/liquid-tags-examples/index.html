@@ -50,11 +50,11 @@
 <meta property="og:url" content="https://www.mijug.net/docs/liquid-tags-examples/" />
 <meta property="og:site_name" content="My Information Just Under Glass" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2025-07-31T20:30:09-04:00" />
+<meta property="article:published_time" content="2025-07-31T21:06:28-04:00" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Liquid Tags Examples" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Bob Kranson"},"dateModified":"2025-07-31T20:27:38-04:00","datePublished":"2025-07-31T20:30:09-04:00","description":"Comprehensive examples of Liquid tag usage in Jekyll","headline":"Liquid Tags Examples","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.mijug.net/docs/liquid-tags-examples/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://www.mijug.net/assets/logo-mijug-watermark-98x100.svg"},"name":"Bob Kranson"},"url":"https://www.mijug.net/docs/liquid-tags-examples/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Bob Kranson"},"dateModified":"2025-07-31T21:05:49-04:00","datePublished":"2025-07-31T21:06:28-04:00","description":"Comprehensive examples of Liquid tag usage in Jekyll","headline":"Liquid Tags Examples","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.mijug.net/docs/liquid-tags-examples/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://www.mijug.net/assets/logo-mijug-watermark-98x100.svg"},"name":"Bob Kranson"},"url":"https://www.mijug.net/docs/liquid-tags-examples/"}</script>
 <!-- End Jekyll SEO tag -->
 
   </head>
@@ -291,7 +291,7 @@
   <div class="post-content">
 <h1 id="liquid-tags-examples">Liquid Tags Examples</h1>
 
-<p>This document demonstrates various Liquid tag patterns and their usage in Jekyll. All examples should render properly with the configured Jekyll setup.</p>
+<p>This document demonstrates various Liquid tag patterns and their usage in Jekyll. Each example shows both the <strong>rendered output</strong> and the <strong>Liquid syntax</strong> used to create it, making it an excellent learning resource for understanding how Liquid templating works.</p>
 
 <h2 id="table-of-contents">Table of Contents</h2>
 
@@ -412,6 +412,7 @@
 
 <h3 id="site-variables">Site Variables</h3>
 
+<p><strong>Rendered Output:</strong></p>
 <ul>
   <li>
 <strong>Site Title</strong>: My Information Just Under Glass</li>
@@ -420,11 +421,20 @@
   <li>
 <strong>Site URL</strong>: https://www.mijug.net</li>
   <li>
-<strong>Build Time</strong>: July 31, 2025 at 08:30 PM</li>
+<strong>Build Time</strong>: July 31, 2025 at 09:06 PM</li>
 </ul>
+
+<p><strong>Liquid Syntax:</strong></p>
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- **Site Title**: <span class="cp">{{</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="cp">}}</span>
+- **Site Description**: <span class="cp">{{</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">description</span><span class="w"> </span><span class="cp">}}</span>
+- **Site URL**: <span class="cp">{{</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">url</span><span class="w"> </span><span class="cp">}}{{</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">baseurl</span><span class="w"> </span><span class="cp">}}</span>
+- **Build Time**: <span class="cp">{{</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">time</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">date</span><span class="p">:</span><span class="w"> </span><span class="s2">"%B %d, %Y at %I:%M %p"</span><span class="w"> </span><span class="cp">}}</span>
+</code></pre></div></div>
 
 <h3 id="page-variables">Page Variables</h3>
 
+<p><strong>Rendered Output:</strong></p>
 <ul>
   <li>
 <strong>Page Title</strong>: Liquid Tags Examples</li>
@@ -436,27 +446,67 @@
 <strong>Page Layout</strong>: page</li>
 </ul>
 
+<p><strong>Liquid Syntax:</strong></p>
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code>- **Page Title**: <span class="cp">{{</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="cp">}}</span>
+- **Page Date**: <span class="cp">{%</span><span class="w"> </span><span class="nt">if</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">date</span><span class="w"> </span><span class="cp">%}{{</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">date</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">date</span><span class="p">:</span><span class="w"> </span><span class="s2">"%B %d, %Y"</span><span class="w"> </span><span class="cp">}}{%</span><span class="w"> </span><span class="nt">else</span><span class="w"> </span><span class="cp">%}</span>No date set<span class="cp">{%</span><span class="w"> </span><span class="nt">endif</span><span class="w"> </span><span class="cp">%}</span>
+- **Page URL**: <span class="cp">{{</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">url</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">relative_url</span><span class="w"> </span><span class="cp">}}</span>
+- **Page Layout**: <span class="cp">{{</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">layout</span><span class="w"> </span><span class="cp">}}</span>
+</code></pre></div></div>
+
 <h2 id="control-flow-tags">Control Flow Tags</h2>
 
 <h3 id="conditional-logic">Conditional Logic</h3>
 
+<p><strong>Rendered Output:</strong></p>
+
 <blockquote>
   <p><strong>✅ Success</strong>: This page has a title: “Liquid Tags Examples”</p>
-
 </blockquote>
 
 <blockquote>
   <p><strong>📝 Published</strong>: This content is published (not a draft)</p>
-
 </blockquote>
+
+<p><strong>Liquid Syntax:</strong></p>
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{%</span><span class="w"> </span><span class="nt">if</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="cp">%}</span>
+&gt; **✅ Success**: This page has a title: "<span class="cp">{{</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="cp">}}</span>"
+<span class="cp">{%</span><span class="w"> </span><span class="nt">else</span><span class="w"> </span><span class="cp">%}</span>
+&gt; **❌ Error**: This page doesn't have a title
+<span class="cp">{%</span><span class="w"> </span><span class="nt">endif</span><span class="w"> </span><span class="cp">%}</span>
+
+<span class="cp">{%</span><span class="w"> </span><span class="nt">unless</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">draft</span><span class="w"> </span><span class="cp">%}</span>
+&gt; **📝 Published**: This content is published (not a draft)
+<span class="cp">{%</span><span class="w"> </span><span class="nt">endunless</span><span class="w"> </span><span class="cp">%}</span>
+</code></pre></div></div>
 
 <h3 id="case-statements">Case Statements</h3>
 
+<p><strong>Rendered Output:</strong></p>
+
 <p>📄 This is a regular page</p>
+
+<p><strong>Liquid Syntax:</strong></p>
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">content_type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">layout</span><span class="w"> </span><span class="cp">%}</span>
+<span class="cp">{%</span><span class="w"> </span><span class="nt">case</span><span class="w"> </span><span class="nv">content_type</span><span class="w"> </span><span class="cp">%}</span>
+<span class="cp">{%</span><span class="w"> </span><span class="nt">when</span><span class="w"> </span><span class="s1">'post'</span><span class="w"> </span><span class="cp">%}</span>
+📝 This is a blog post
+<span class="cp">{%</span><span class="w"> </span><span class="nt">when</span><span class="w"> </span><span class="s1">'page'</span><span class="w"> </span><span class="cp">%}</span>
+📄 This is a regular page
+<span class="cp">{%</span><span class="w"> </span><span class="nt">when</span><span class="w"> </span><span class="s1">'documentation'</span><span class="w"> </span><span class="cp">%}</span>
+📚 This is documentation
+<span class="cp">{%</span><span class="w"> </span><span class="nt">else</span><span class="w"> </span><span class="cp">%}</span>
+📋 This is content of type: <span class="cp">{{</span><span class="w"> </span><span class="nv">content_type</span><span class="w"> </span><span class="cp">}}</span>
+<span class="cp">{%</span><span class="w"> </span><span class="nt">endcase</span><span class="w"> </span><span class="cp">%}</span>
+</code></pre></div></div>
 
 <h2 id="loop-tags">Loop Tags</h2>
 
 <h3 id="site-posts-loop">Site Posts Loop</h3>
+
+<p><strong>Rendered Output:</strong></p>
 
 <h4 id="recent-posts">Recent Posts:</h4>
 
@@ -472,7 +522,21 @@
   </li>
 </ul>
 
+<p><strong>Liquid Syntax:</strong></p>
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{%</span><span class="w"> </span><span class="nt">if</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">posts</span><span class="p">.</span><span class="nf">size</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="cp">%}</span>
+#### Recent Posts:
+<span class="cp">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span><span class="nv">post</span><span class="w"> </span><span class="nt">in</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">posts</span><span class="w"> </span><span class="na">limit</span><span class="o">:</span><span class="mi">3</span><span class="w"> </span><span class="cp">%}</span>
+- [<span class="cp">{{</span><span class="w"> </span><span class="nv">post</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="cp">}}</span>](<span class="cp">{{</span><span class="w"> </span><span class="nv">post</span><span class="p">.</span><span class="nv">url</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">relative_url</span><span class="w"> </span><span class="cp">}}</span>) - <span class="cp">{{</span><span class="w"> </span><span class="nv">post</span><span class="p">.</span><span class="nv">date</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">date</span><span class="p">:</span><span class="w"> </span><span class="s2">"%B %d, %Y"</span><span class="w"> </span><span class="cp">}}</span>
+<span class="cp">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="cp">%}</span>
+<span class="cp">{%</span><span class="w"> </span><span class="nt">else</span><span class="w"> </span><span class="cp">%}</span>
+No posts found.
+<span class="cp">{%</span><span class="w"> </span><span class="nt">endif</span><span class="w"> </span><span class="cp">%}</span>
+</code></pre></div></div>
+
 <h3 id="documentation-pages-loop">Documentation Pages Loop</h3>
+
+<p><strong>Rendered Output:</strong></p>
 
 <h4 id="documentation-pages">Documentation Pages:</h4>
 
@@ -494,7 +558,20 @@
   </li>
 </ul>
 
+<p><strong>Liquid Syntax:</strong></p>
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">docs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">docs</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">sort</span><span class="p">:</span><span class="w"> </span><span class="s1">'nav_order'</span><span class="w"> </span><span class="cp">%}</span>
+<span class="cp">{%</span><span class="w"> </span><span class="nt">if</span><span class="w"> </span><span class="nv">docs</span><span class="p">.</span><span class="nf">size</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="cp">%}</span>
+#### Documentation Pages:
+<span class="cp">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span><span class="nv">doc</span><span class="w"> </span><span class="nt">in</span><span class="w"> </span><span class="nv">docs</span><span class="w"> </span><span class="na">limit</span><span class="o">:</span><span class="mi">5</span><span class="w"> </span><span class="cp">%}</span>
+- [<span class="cp">{{</span><span class="w"> </span><span class="nv">doc</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="cp">}}</span>](<span class="cp">{{</span><span class="w"> </span><span class="nv">doc</span><span class="p">.</span><span class="nv">url</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">relative_url</span><span class="w"> </span><span class="cp">}}</span>)
+<span class="cp">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="cp">%}</span>
+<span class="cp">{%</span><span class="w"> </span><span class="nt">endif</span><span class="w"> </span><span class="cp">%}</span>
+</code></pre></div></div>
+
 <h3 id="site-data-loop-categories">Site Data Loop (Categories)</h3>
+
+<p><strong>Rendered Output:</strong></p>
 
 <h4 id="available-categories">Available Categories:</h4>
 
@@ -526,9 +603,27 @@
   <li>
     <p><strong>Best Practices</strong> (best-practices): Recommended approaches and patterns</p>
   </li>
+  <li>
+    <p><strong>HTML</strong> (html): HTML markup and web standards</p>
+  </li>
+  <li>
+    <p><strong>Web Development</strong> (web-development): General web development topics</p>
+  </li>
 </ul>
 
+<p><strong>Liquid Syntax:</strong></p>
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{%</span><span class="w"> </span><span class="nt">if</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">data</span><span class="p">.</span><span class="nv">categories</span><span class="w"> </span><span class="cp">%}</span>
+#### Available Categories:
+<span class="cp">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span><span class="nv">category</span><span class="w"> </span><span class="nt">in</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">data</span><span class="p">.</span><span class="nv">categories</span><span class="w"> </span><span class="cp">%}</span>
+- **<span class="cp">{{</span><span class="w"> </span><span class="nv">category</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="nv">name</span><span class="w"> </span><span class="cp">}}</span>** (<span class="cp">{{</span><span class="w"> </span><span class="nv">category</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="cp">}}</span>): <span class="cp">{{</span><span class="w"> </span><span class="nv">category</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="nv">description</span><span class="w"> </span><span class="cp">}}</span>
+<span class="cp">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="cp">%}</span>
+<span class="cp">{%</span><span class="w"> </span><span class="nt">endif</span><span class="w"> </span><span class="cp">%}</span>
+</code></pre></div></div>
+
 <h3 id="site-data-loop-tags">Site Data Loop (Tags)</h3>
+
+<p><strong>Rendered Output:</strong></p>
 
 <h4 id="popular-tags">Popular Tags:</h4>
 
@@ -550,25 +645,49 @@
   </li>
 </ul>
 
+<p><strong>Liquid Syntax:</strong></p>
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{%</span><span class="w"> </span><span class="nt">if</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">data</span><span class="p">.</span><span class="nv">tags</span><span class="w"> </span><span class="cp">%}</span>
+#### Popular Tags:
+<span class="cp">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span><span class="nv">tag</span><span class="w"> </span><span class="nt">in</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">data</span><span class="p">.</span><span class="nv">tags</span><span class="w"> </span><span class="na">limit</span><span class="o">:</span><span class="mi">5</span><span class="w"> </span><span class="cp">%}</span>
+- **<span class="cp">{{</span><span class="w"> </span><span class="nv">tag</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="nv">name</span><span class="w"> </span><span class="cp">}}</span>**: <span class="cp">{{</span><span class="w"> </span><span class="nv">tag</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="nv">description</span><span class="w"> </span><span class="cp">}}</span>
+<span class="cp">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="cp">%}</span>
+<span class="cp">{%</span><span class="w"> </span><span class="nt">endif</span><span class="w"> </span><span class="cp">%}</span>
+</code></pre></div></div>
+
 <h2 id="variable-assignment-and-manipulation">Variable Assignment and Manipulation</h2>
 
+<p><strong>Rendered Output:</strong></p>
 <h3 id="calculated-values">Calculated Values:</h3>
-
 <ul>
   <li>
 <strong>Current Year</strong>: 2025</li>
   <li>
 <strong>Site Age</strong>: 0 years</li>
   <li>
-<strong>Estimated Reading Time</strong>: 7 minute(s)</li>
+<strong>Estimated Reading Time</strong>: 14 minute(s)</li>
   <li>
-<strong>Word Count</strong>: 1391 words</li>
+<strong>Word Count</strong>: 2669 words</li>
 </ul>
+
+<p><strong>Liquid Syntax:</strong></p>
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">current_year</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">time</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">date</span><span class="p">:</span><span class="w"> </span><span class="s2">"%Y"</span><span class="w"> </span><span class="cp">%}</span>
+<span class="cp">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">site_age</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">current_year</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">minus</span><span class="p">:</span><span class="w"> </span><span class="mi">2025</span><span class="w"> </span><span class="cp">%}</span>
+<span class="cp">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">word_count</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">content</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">default</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">number_of_words</span><span class="w"> </span><span class="cp">%}</span>
+<span class="cp">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">reading_time</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">word_count</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">divided_by</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">plus</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="cp">%}</span>
+
+### Calculated Values:
+- **Current Year**: <span class="cp">{{</span><span class="w"> </span><span class="nv">current_year</span><span class="w"> </span><span class="cp">}}</span>
+- **Site Age**: <span class="cp">{{</span><span class="w"> </span><span class="nv">site_age</span><span class="w"> </span><span class="cp">}}</span> years
+- **Estimated Reading Time**: <span class="cp">{{</span><span class="w"> </span><span class="nv">reading_time</span><span class="w"> </span><span class="cp">}}</span> minute(s)
+- **Word Count**: <span class="cp">{{</span><span class="w"> </span><span class="nv">word_count</span><span class="w"> </span><span class="cp">}}</span> words
+</code></pre></div></div>
 
 <h2 id="string-filters">String Filters</h2>
 
+<p><strong>Rendered Output:</strong></p>
 <h3 id="text-transformations">Text Transformations:</h3>
-
 <ul>
   <li>
 <strong>Original</strong>: Jekyll and Liquid are powerful tools for static site generation</li>
@@ -586,10 +705,24 @@
 <strong>Replace</strong>: Hugo and Liquid are powerful tools for static site generation</li>
 </ul>
 
+<p><strong>Liquid Syntax:</strong></p>
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">sample_text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Jekyll and Liquid are powerful tools for static site generation"</span><span class="w"> </span><span class="cp">%}</span>
+
+### Text Transformations:
+- **Original**: <span class="cp">{{</span><span class="w"> </span><span class="nv">sample_text</span><span class="w"> </span><span class="cp">}}</span>
+- **Capitalize**: <span class="cp">{{</span><span class="w"> </span><span class="nv">sample_text</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">capitalize</span><span class="w"> </span><span class="cp">}}</span>
+- **Upcase**: <span class="cp">{{</span><span class="w"> </span><span class="nv">sample_text</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">upcase</span><span class="w"> </span><span class="cp">}}</span>
+- **Downcase**: <span class="cp">{{</span><span class="w"> </span><span class="nv">sample_text</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">downcase</span><span class="w"> </span><span class="cp">}}</span>
+- **Truncate**: <span class="cp">{{</span><span class="w"> </span><span class="nv">sample_text</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">truncate</span><span class="p">:</span><span class="w"> </span><span class="mi">20</span><span class="w"> </span><span class="cp">}}</span>
+- **Truncate Words**: <span class="cp">{{</span><span class="w"> </span><span class="nv">sample_text</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">truncatewords</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="cp">}}</span>
+- **Replace**: <span class="cp">{{</span><span class="w"> </span><span class="nv">sample_text</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">replace</span><span class="p">:</span><span class="w"> </span><span class="s2">"Jekyll"</span><span class="p">,</span><span class="w"> </span><span class="s2">"Hugo"</span><span class="w"> </span><span class="cp">}}</span>
+</code></pre></div></div>
+
 <h2 id="array-filters">Array Filters</h2>
 
+<p><strong>Rendered Output:</strong></p>
 <h3 id="array-operations">Array Operations:</h3>
-
 <ul>
   <li>
 <strong>Technologies Array</strong>: TypeScript • Jekyll • Ruby • Node.js • VS Code</li>
@@ -605,27 +738,52 @@
 <strong>Reversed</strong>: VS Code → Node.js → Ruby → Jekyll → TypeScript</li>
 </ul>
 
+<p><strong>Liquid Syntax:</strong></p>
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">technologies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"TypeScript,Jekyll,Ruby,Node.js,VS Code"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">split</span><span class="p">:</span><span class="w"> </span><span class="s2">","</span><span class="w"> </span><span class="cp">%}</span>
+
+### Array Operations:
+- **Technologies Array**: <span class="cp">{{</span><span class="w"> </span><span class="nv">technologies</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">join</span><span class="p">:</span><span class="w"> </span><span class="s2">" • "</span><span class="w"> </span><span class="cp">}}</span>
+- **First Item**: <span class="cp">{{</span><span class="w"> </span><span class="nv">technologies</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">first</span><span class="w"> </span><span class="cp">}}</span>
+- **Last Item**: <span class="cp">{{</span><span class="w"> </span><span class="nv">technologies</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">last</span><span class="w"> </span><span class="cp">}}</span>
+- **Array Size**: <span class="cp">{{</span><span class="w"> </span><span class="nv">technologies</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">size</span><span class="w"> </span><span class="cp">}}</span>
+- **Sorted**: <span class="cp">{{</span><span class="w"> </span><span class="nv">technologies</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">sort</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">join</span><span class="p">:</span><span class="w"> </span><span class="s2">", "</span><span class="w"> </span><span class="cp">}}</span>
+- **Reversed**: <span class="cp">{{</span><span class="w"> </span><span class="nv">technologies</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">reverse</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">join</span><span class="p">:</span><span class="w"> </span><span class="s2">" → "</span><span class="w"> </span><span class="cp">}}</span>
+</code></pre></div></div>
+
 <h2 id="date-filters">Date Filters</h2>
 
+<p><strong>Rendered Output:</strong></p>
 <h3 id="date-formatting">Date Formatting:</h3>
-
 <ul>
   <li>
 <strong>Full Date</strong>: Thursday, July 31, 2025</li>
   <li>
 <strong>Short Date</strong>: 07/31/2025</li>
   <li>
-<strong>Time</strong>: 08:30 PM</li>
+<strong>Time</strong>: 09:06 PM</li>
   <li>
-<strong>ISO 8601</strong>: 2025-07-31T20:30:09-04:00</li>
+<strong>ISO 8601</strong>: 2025-07-31T21:06:28-04:00</li>
   <li>
-<strong>RFC 822</strong>: Thu, 31 Jul 2025 20:30:09 -0400</li>
+<strong>RFC 822</strong>: Thu, 31 Jul 2025 21:06:28 -0400</li>
 </ul>
+
+<p><strong>Liquid Syntax:</strong></p>
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">current_date</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">time</span><span class="w"> </span><span class="cp">%}</span>
+
+### Date Formatting:
+- **Full Date**: <span class="cp">{{</span><span class="w"> </span><span class="nv">current_date</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">date</span><span class="p">:</span><span class="w"> </span><span class="s2">"%A, %B %d, %Y"</span><span class="w"> </span><span class="cp">}}</span>
+- **Short Date**: <span class="cp">{{</span><span class="w"> </span><span class="nv">current_date</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">date</span><span class="p">:</span><span class="w"> </span><span class="s2">"%m/%d/%Y"</span><span class="w"> </span><span class="cp">}}</span>
+- **Time**: <span class="cp">{{</span><span class="w"> </span><span class="nv">current_date</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">date</span><span class="p">:</span><span class="w"> </span><span class="s2">"%I:%M %p"</span><span class="w"> </span><span class="cp">}}</span>
+- **ISO 8601**: <span class="cp">{{</span><span class="w"> </span><span class="nv">current_date</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">date_to_xmlschema</span><span class="w"> </span><span class="cp">}}</span>
+- **RFC 822**: <span class="cp">{{</span><span class="w"> </span><span class="nv">current_date</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">date_to_rfc822</span><span class="w"> </span><span class="cp">}}</span>
+</code></pre></div></div>
 
 <h2 id="math-filters">Math Filters</h2>
 
+<p><strong>Rendered Output:</strong></p>
 <h3 id="mathematical-operations">Mathematical Operations:</h3>
-
 <ul>
   <li>
 <strong>Base Number</strong>: 42</li>
@@ -641,10 +799,23 @@
 <strong>Modulo 7</strong>: 0</li>
 </ul>
 
+<p><strong>Liquid Syntax:</strong></p>
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">base_number</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">42</span><span class="w"> </span><span class="cp">%}</span>
+
+### Mathematical Operations:
+- **Base Number**: <span class="cp">{{</span><span class="w"> </span><span class="nv">base_number</span><span class="w"> </span><span class="cp">}}</span>
+- **Plus 10**: <span class="cp">{{</span><span class="w"> </span><span class="nv">base_number</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">plus</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="w"> </span><span class="cp">}}</span>
+- **Minus 5**: <span class="cp">{{</span><span class="w"> </span><span class="nv">base_number</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">minus</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="cp">}}</span>
+- **Times 2**: <span class="cp">{{</span><span class="w"> </span><span class="nv">base_number</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">times</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="cp">}}</span>
+- **Divided by 3**: <span class="cp">{{</span><span class="w"> </span><span class="nv">base_number</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">divided_by</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="cp">}}</span>
+- **Modulo 7**: <span class="cp">{{</span><span class="w"> </span><span class="nv">base_number</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">modulo</span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="w"> </span><span class="cp">}}</span>
+</code></pre></div></div>
+
 <h2 id="url-filters">URL Filters</h2>
 
+<p><strong>Rendered Output:</strong></p>
 <h3 id="url-manipulations">URL Manipulations:</h3>
-
 <ul>
   <li>
 <strong>Relative URL</strong>: /docs/example</li>
@@ -656,28 +827,64 @@
 <strong>CGI Escape</strong>: hello+world+%26+special+chars%21</li>
 </ul>
 
+<p><strong>Liquid Syntax:</strong></p>
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code>### URL Manipulations:
+- **Relative URL**: <span class="cp">{{</span><span class="w"> </span><span class="s2">"/docs/example"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">relative_url</span><span class="w"> </span><span class="cp">}}</span>
+- **Absolute URL**: <span class="cp">{{</span><span class="w"> </span><span class="s2">"/docs/example"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">absolute_url</span><span class="w"> </span><span class="cp">}}</span>
+- **URL Encode**: <span class="cp">{{</span><span class="w"> </span><span class="s2">"hello world &amp; special chars!"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">url_encode</span><span class="w"> </span><span class="cp">}}</span>
+- **CGI Escape**: <span class="cp">{{</span><span class="w"> </span><span class="s2">"hello world &amp; special chars!"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">cgi_escape</span><span class="w"> </span><span class="cp">}}</span>
+</code></pre></div></div>
+
 <h2 id="advanced-liquid-examples">Advanced Liquid Examples</h2>
 
 <h3 id="dynamic-content-based-on-page-properties">Dynamic Content Based on Page Properties</h3>
 
+<p><strong>Rendered Output:</strong></p>
+
 <h4 id="this-page-is-tagged-with">This page is tagged with:</h4>
+
+<p><strong>Liquid Syntax:</strong></p>
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{%</span><span class="w"> </span><span class="nt">if</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">tags</span><span class="w"> </span><span class="cp">%}</span>
+#### This page is tagged with:
+<span class="cp">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span><span class="nv">tag</span><span class="w"> </span><span class="nt">in</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">tags</span><span class="w"> </span><span class="cp">%}</span>
+<span class="cp">{%</span><span class="w"> </span><span class="nt">if</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">data</span><span class="p">.</span><span class="nv">tags</span><span class="p">[</span><span class="nv">tag</span><span class="p">]</span><span class="w"> </span><span class="cp">%}</span>
+- **<span class="cp">{{</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">data</span><span class="p">.</span><span class="nv">tags</span><span class="p">[</span><span class="nv">tag</span><span class="p">].</span><span class="nv">name</span><span class="w"> </span><span class="cp">}}</span>**: <span class="cp">{{</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">data</span><span class="p">.</span><span class="nv">tags</span><span class="p">[</span><span class="nv">tag</span><span class="p">].</span><span class="nv">description</span><span class="w"> </span><span class="cp">}}</span>
+<span class="cp">{%</span><span class="w"> </span><span class="nt">else</span><span class="w"> </span><span class="cp">%}</span>
+- **<span class="cp">{{</span><span class="w"> </span><span class="nv">tag</span><span class="w"> </span><span class="cp">}}</span>**: (No description available)
+<span class="cp">{%</span><span class="w"> </span><span class="nt">endif</span><span class="w"> </span><span class="cp">%}</span>
+<span class="cp">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="cp">%}</span>
+<span class="cp">{%</span><span class="w"> </span><span class="nt">endif</span><span class="w"> </span><span class="cp">%}</span>
+</code></pre></div></div>
 
 <h3 id="conditional-content-loading">Conditional Content Loading</h3>
 
+<p><strong>Rendered Output:</strong></p>
+
 <blockquote>
   <p><strong>📋 Table of Contents</strong>: This page includes an auto-generated table of contents.</p>
-
 </blockquote>
 
 <blockquote>
   <p><strong>🔗 Parent Page</strong>: This page is part of the “Getting Started” section.</p>
-
 </blockquote>
+
+<p><strong>Liquid Syntax:</strong></p>
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{%</span><span class="w"> </span><span class="nt">if</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">toc</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="kc">true</span><span class="w"> </span><span class="cp">%}</span>
+&gt; **📋 Table of Contents**: This page includes an auto-generated table of contents.
+<span class="cp">{%</span><span class="w"> </span><span class="nt">endif</span><span class="w"> </span><span class="cp">%}</span>
+
+<span class="cp">{%</span><span class="w"> </span><span class="nt">if</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">parent</span><span class="w"> </span><span class="cp">%}</span>
+&gt; **🔗 Parent Page**: This page is part of the "<span class="cp">{{</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">parent</span><span class="w"> </span><span class="cp">}}</span>" section.
+<span class="cp">{%</span><span class="w"> </span><span class="nt">endif</span><span class="w"> </span><span class="cp">%}</span>
+</code></pre></div></div>
 
 <h3 id="complex-data-processing">Complex Data Processing</h3>
 
+<p><strong>Rendered Output:</strong></p>
 <h4 id="content-statistics">Content Statistics:</h4>
-
 <ul>
   <li>
 <strong>Blog Posts</strong>: 4</li>
@@ -689,6 +896,21 @@
   <li>
 <strong>Average Content per Type</strong>: 5 pages</li>
 </ul>
+
+<p><strong>Liquid Syntax:</strong></p>
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">total_posts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">posts</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">size</span><span class="w"> </span><span class="cp">%}</span>
+<span class="cp">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">total_docs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">docs</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">size</span><span class="w"> </span><span class="cp">%}</span>
+<span class="cp">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">total_content</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">total_posts</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">plus</span><span class="p">:</span><span class="w"> </span><span class="nv">total_docs</span><span class="w"> </span><span class="cp">%}</span>
+
+#### Content Statistics:
+- **Blog Posts**: <span class="cp">{{</span><span class="w"> </span><span class="nv">total_posts</span><span class="w"> </span><span class="cp">}}</span>
+- **Documentation Pages**: <span class="cp">{{</span><span class="w"> </span><span class="nv">total_docs</span><span class="w"> </span><span class="cp">}}</span>
+- **Total Content Pages**: <span class="cp">{{</span><span class="w"> </span><span class="nv">total_content</span><span class="w"> </span><span class="cp">}}</span>
+<span class="cp">{%</span><span class="w"> </span><span class="nt">if</span><span class="w"> </span><span class="nv">total_content</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="cp">%}</span>
+- **Average Content per Type**: <span class="cp">{{</span><span class="w"> </span><span class="nv">total_content</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">divided_by</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="cp">}}</span> pages
+<span class="cp">{%</span><span class="w"> </span><span class="nt">endif</span><span class="w"> </span><span class="cp">%}</span>
+</code></pre></div></div>
 
 <h2 id="include-tags-if-templates-exist">Include Tags (if templates exist)</h2>
 
@@ -715,10 +937,10 @@
 
 <h2 id="capture-tags-for-complex-content">Capture Tags for Complex Content</h2>
 
+<p><strong>Rendered Output:</strong></p>
 <h3 id="captured-content">Captured Content:</h3>
 
 <p>This is a complex content block that includes:</p>
-
 <ul>
   <li>Multiple lines</li>
   <li><strong>Markdown formatting</strong></li>
@@ -726,14 +948,28 @@
   <li>Current date: 2025-07-31</li>
 </ul>
 
+<p><strong>Liquid Syntax:</strong></p>
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{%</span><span class="w"> </span><span class="nt">capture</span><span class="w"> </span><span class="nv">complex_content</span><span class="w"> </span><span class="cp">%}</span>
+This is a complex content block that includes:
+- Multiple lines
+- **Markdown formatting**
+- Variables: <span class="cp">{{</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="cp">}}</span>
+- Current date: <span class="cp">{{</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">time</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">date</span><span class="p">:</span><span class="w"> </span><span class="s2">"%Y-%m-%d"</span><span class="w"> </span><span class="cp">}}</span>
+<span class="cp">{%</span><span class="w"> </span><span class="nt">endcapture</span><span class="w"> </span><span class="cp">%}</span>
+
+### Captured Content:
+<span class="cp">{{</span><span class="w"> </span><span class="nv">complex_content</span><span class="w"> </span><span class="cp">}}</span>
+</code></pre></div></div>
+
 <h2 id="comment-tags">Comment Tags</h2>
 
 <!-- This is an HTML comment that will appear in the source -->
 
 <h2 id="validation-and-error-handling">Validation and Error Handling</h2>
 
+<p><strong>Rendered Output:</strong></p>
 <h3 id="safe-variable-access">Safe Variable Access:</h3>
-
 <ul>
   <li>
 <strong>Page Author</strong>: Anonymous</li>
@@ -748,14 +984,42 @@
 
 <p>✅ Null check working properly - undefined variables are handled gracefully.</p>
 
+<p><strong>Liquid Syntax:</strong></p>
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code>### Safe Variable Access:
+- **Page Author**: <span class="cp">{{</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">author</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">default</span><span class="p">:</span><span class="w"> </span><span class="s2">"Anonymous"</span><span class="w"> </span><span class="cp">}}</span>
+- **Page Excerpt**: <span class="cp">{{</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">excerpt</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">default</span><span class="p">:</span><span class="w"> </span><span class="s2">"No excerpt available"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">strip_html</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">truncate</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="w"> </span><span class="cp">}}</span>
+- **Page Categories**: <span class="cp">{%</span><span class="w"> </span><span class="nt">if</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">categories</span><span class="w"> </span><span class="cp">%}{{</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">categories</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">join</span><span class="p">:</span><span class="w"> </span><span class="s2">", "</span><span class="w"> </span><span class="cp">}}{%</span><span class="w"> </span><span class="nt">else</span><span class="w"> </span><span class="cp">%}</span>Uncategorized<span class="cp">{%</span><span class="w"> </span><span class="nt">endif</span><span class="w"> </span><span class="cp">%}</span>
+
+### Null Checks:
+<span class="cp">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">test_variable</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">nonexistent_field</span><span class="w"> </span><span class="cp">%}</span>
+<span class="cp">{%</span><span class="w"> </span><span class="nt">if</span><span class="w"> </span><span class="nv">test_variable</span><span class="w"> </span><span class="cp">%}</span>
+This won't display because the variable is null.
+<span class="cp">{%</span><span class="w"> </span><span class="nt">else</span><span class="w"> </span><span class="cp">%}</span>
+✅ Null check working properly - undefined variables are handled gracefully.
+<span class="cp">{%</span><span class="w"> </span><span class="nt">endif</span><span class="w"> </span><span class="cp">%}</span>
+</code></pre></div></div>
+
 <h2 id="performance-considerations">Performance Considerations</h2>
 
+<p><strong>Rendered Output:</strong></p>
 <ul>
   <li>
 <strong>Posts with ‘post’ layout</strong>: 4</li>
   <li>
 <strong>Reusing the same calculation</strong>: 4</li>
 </ul>
+
+<p><strong>Liquid Syntax:</strong></p>
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{%</span><span class="w"> </span><span class="nt">comment</span><span class="w"> </span><span class="cp">%}</span><span class="c">
+Use assign for repeated calculations to avoid recomputation
+</span><span class="cp">{%</span><span class="w"> </span><span class="nt">endcomment</span><span class="w"> </span><span class="cp">%}</span>
+<span class="cp">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">expensive_calculation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">posts</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">where</span><span class="p">:</span><span class="w"> </span><span class="s2">"layout"</span><span class="p">,</span><span class="w"> </span><span class="s2">"post"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">size</span><span class="w"> </span><span class="cp">%}</span>
+
+- **Posts with 'post' layout**: <span class="cp">{{</span><span class="w"> </span><span class="nv">expensive_calculation</span><span class="w"> </span><span class="cp">}}</span>
+- **Reusing the same calculation**: <span class="cp">{{</span><span class="w"> </span><span class="nv">expensive_calculation</span><span class="w"> </span><span class="cp">}}</span>
+</code></pre></div></div>
 
 <h2 id="best-practices-demonstrated">Best Practices Demonstrated</h2>
 
@@ -771,7 +1035,7 @@
 <hr>
 
 <blockquote>
-  <p><strong>💡 Pro Tip</strong>: This page demonstrates that Liquid tags are properly configured and working in your Jekyll setup. All the examples above should render correctly without errors.</p>
+  <p><strong>💡 Pro Tip</strong>: This page demonstrates that Liquid tags are properly configured and working in your Jekyll setup. Each section shows both the rendered output and the exact Liquid syntax used, making it easy to learn and copy patterns for your own content.</p>
 </blockquote>
 
 <p><em>Last updated: July 31, 2025</em></p>
