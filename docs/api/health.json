@@ -1,12 +1,12 @@
 {
   "status": "ok",
-  "timestamp": "2025-08-01 18:29:15 UTC",
+  "timestamp": "2025-08-01 20:52:55 UTC",
   "version": "1.0.0",
   "services": {
     "website": {
       "status": "operational",
       "response_time": "fast",
-      "last_updated": "2025-08-01 18:29:15 UTC"
+      "last_updated": "2025-08-01 20:52:55 UTC"
     },
     "jekyll": {
       "status": "operational",
@@ -23,7 +23,7 @@
   },
   "uptime": {
     "status": "monitoring",
-    "check_interval": "18000s",
+    "check_interval": "300s",
     "monitors": [
       "site_availability",
       "performance_metrics",

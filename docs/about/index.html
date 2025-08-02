@@ -19,7 +19,8 @@
       content="Welcome to My Information Just Under Glass - Network (MIJUG.NET), where technology meets community, and knowledge flows freely through the digital looking gl..."
     />
 
-    <link rel="stylesheet" href="/assets/main.css" />
+    
+    <link rel="stylesheet" href="/assets/main.css?v=20250801205255" />
     <link
       rel="canonical"
       href="https://www.mijug.net/about/"
@@ -62,7 +63,7 @@
 <meta property="twitter:image" content="https://www.mijug.net/assets/logo-mijug-watermark-98x100.svg" />
 <meta property="twitter:title" content="About Us" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebSite","author":{"@type":"Person","name":"Bob Kranson"},"dateModified":"2025-08-01T16:35:54-04:00","datePublished":"2025-08-01T00:00:00-04:00","description":"Learn more about the MIJUG .NET community and our mission to connect technology communities","headline":"About Us","image":"https://www.mijug.net/assets/logo-mijug-watermark-98x100.svg","name":"My Information Just Under Glass","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://www.mijug.net/assets/logo-mijug-watermark-98x100.svg"},"name":"Bob Kranson"},"url":"https://www.mijug.net/about/"}</script>
+{"@context":"https://schema.org","@type":"WebSite","author":{"@type":"Person","name":"Bob Kranson"},"dateModified":"2025-08-01T20:31:56-04:00","datePublished":"2025-08-01T00:00:00-04:00","description":"Learn more about the MIJUG .NET community and our mission to connect technology communities","headline":"About Us","image":"https://www.mijug.net/assets/logo-mijug-watermark-98x100.svg","name":"My Information Just Under Glass","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://www.mijug.net/assets/logo-mijug-watermark-98x100.svg"},"name":"Bob Kranson"},"url":"https://www.mijug.net/about/"}</script>
 <!-- End Jekyll SEO tag -->
 
   </head>
@@ -267,9 +268,24 @@
 
     <main class="page-content" aria-label="Content">
       <div class="wrapper">
+<!-- Cache Busting Meta Tags -->
+
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<meta name="cache-version" content="{{ site.time | date: '%Y%m%d%H%M%S' }}">
+<meta name="last-modified" content="2025-08-01T16:18:59-04:00">
+
+
 <article class="post">
   <header class="post-header">
     <h1 class="post-title">About Us</h1>
+    
+    <div class="cache-info" style="font-size: 0.8em; color: #666; margin-top: 0.5rem;">
+      <span title="Page last updated">🔄 Updated: August 01, 2025 at 08:18 PM</span>
+      
+    </div>
+    
   </header>
 
   <div class="post-content">
@@ -515,9 +531,19 @@ Our focus is simple: <strong>empowering others through shared knowledge and fost
 </article>
 
 <script>
-  // Browser Session Information Script
+  // Browser Session Information Script with Cache Busting
   (function () {
     'use strict';
+
+    // Cache busting configuration
+    const CACHE_VERSION = '20250801205255';
+    const PAGE_LOAD_TIME = Date.now();
+
+    // Add cache busting to any future API calls
+    function addCacheBuster(url) {
+      const separator = url.includes('?') ? '&' : '?';
+      return `${url}${separator}_v=${CACHE_VERSION}&_t=${PAGE_LOAD_TIME}`;
+    }
 
     // Store session start time
     const sessionStart = performance.now();
@@ -640,6 +666,9 @@ Our focus is simple: <strong>empowering others through shared knowledge and fost
         navigator.hardwareConcurrency || 'Not available'
       );
 
+      // Cache busting information (development only)
+      
+
       // Session Duration (update every second)
       const sessionDuration = performance.now() - sessionStart;
       updateElement('sessionDuration', formatDuration(sessionDuration));
@@ -670,6 +699,28 @@ Our focus is simple: <strong>empowering others through shared knowledge and fost
     window.addEventListener('offline', function () {
       updateElement('onlineStatus', 'Offline');
     });
+
+    // Cache busting utilities
+    window.MIJUG = window.MIJUG || {};
+    window.MIJUG.cacheBust = {
+      version: CACHE_VERSION,
+      forceRefresh: function() {
+        const currentUrl = new URL(window.location.href);
+        currentUrl.searchParams.set('_refresh', Date.now());
+        window.location.href = currentUrl.toString();
+      },
+      addCacheBuster: addCacheBuster
+    };
+
+    // Add keyboard shortcut for force refresh (Ctrl+Shift+R or Cmd+Shift+R)
+    document.addEventListener('keydown', function(e) {
+      if ((e.ctrlKey || e.metaKey) && e.shiftKey && e.key === 'R') {
+        e.preventDefault();
+        window.MIJUG.cacheBust.forceRefresh();
+      }
+    });
+
+    
   })();
 </script>
 </div>
