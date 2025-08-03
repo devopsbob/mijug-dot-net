@@ -7,7 +7,7 @@
 
     <!-- Navigation and ordering metadata -->
     
-      <meta name="docs-nav-order" content="3">
+      <meta name="docs-nav-order" content="4">
       <meta name="docs-section" content="documentation">
       
         <meta name="priority-doc" content="true">
@@ -23,7 +23,7 @@
         "name": "Getting Started with TypeScript and Jekyll",
         "description": "Learn how to set up a modern development environment with TypeScript and Jekyll for documentation.",
         "url": "https://www.mijug.net/docs/getting-started-with-typescript-and-jekyll/",
-        "position": 3,
+        "position": 4,
         "isPartOf": {
           "@type": "WebSite",
           "name": "My Information Just Under Glass",
@@ -42,7 +42,7 @@
     />
 
     
-    <link rel="stylesheet" href="/assets/main.css?v=20250801205255" />
+    <link rel="stylesheet" href="/assets/main.css?v=20250803181527" />
     <link
       rel="canonical"
       href="https://www.mijug.net/docs/getting-started-with-typescript-and-jekyll/"
@@ -85,7 +85,7 @@
 <meta property="twitter:image" content="https://www.mijug.net/assets/logo-mijug-watermark-98x100.svg" />
 <meta property="twitter:title" content="Getting Started with TypeScript and Jekyll" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"MIJUG Team"},"dateModified":"2025-08-01T17:28:00-04:00","datePublished":"2025-07-29T08:00:00-04:00","description":"Learn how to set up a modern development environment with TypeScript and Jekyll for documentation.","headline":"Getting Started with TypeScript and Jekyll","image":"https://www.mijug.net/assets/logo-mijug-watermark-98x100.svg","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.mijug.net/docs/getting-started-with-typescript-and-jekyll/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://www.mijug.net/assets/logo-mijug-watermark-98x100.svg"},"name":"MIJUG Team"},"url":"https://www.mijug.net/docs/getting-started-with-typescript-and-jekyll/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"MIJUG Team"},"dateModified":"2025-08-03T17:50:33-04:00","datePublished":"2025-07-29T08:00:00-04:00","description":"Learn how to set up a modern development environment with TypeScript and Jekyll for documentation.","headline":"Getting Started with TypeScript and Jekyll","image":"https://www.mijug.net/assets/logo-mijug-watermark-98x100.svg","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.mijug.net/docs/getting-started-with-typescript-and-jekyll/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://www.mijug.net/assets/logo-mijug-watermark-98x100.svg"},"name":"MIJUG Team"},"url":"https://www.mijug.net/docs/getting-started-with-typescript-and-jekyll/"}</script>
 <!-- End Jekyll SEO tag -->
 
   </head>
@@ -180,8 +180,20 @@
             </li>
             
             <li>
+              <a class="page-link" href="/docs/browser-management/" aria-label="View Browser Management for Testing documentation">
+                Browser Management for Testing
+              </a>
+            </li>
+            
+            <li>
               <a class="page-link" href="/docs/frontmatter-cms/" aria-label="View FrontMatter CMS Usage documentation">
                 FrontMatter CMS Usage
+              </a>
+            </li>
+            
+            <li>
+              <a class="page-link" href="/docs/cache-management/" aria-label="View Cache Management Strategies documentation">
+                Cache Management Strategies
               </a>
             </li>
             
@@ -299,8 +311,8 @@
       <time class="dt-published" datetime="2025-07-29T08:00:00-04:00" itemprop="datePublished">
         Jul 29, 2025
       </time><span class="post-meta-separator"> • </span>
-      <time class="dt-modified" datetime="2025-08-01T17:28:00-04:00" itemprop="dateModified">
-        Updated Aug 1, 2025
+      <time class="dt-modified" datetime="2025-08-03T17:50:33-04:00" itemprop="dateModified">
+        Updated Aug 3, 2025
       </time><span class="post-meta-separator"> • </span>
       <span itemprop="author" itemscope itemtype="http://schema.org/Person">
         <span class="p-author h-card" itemprop="name">MIJUG Team</span>
@@ -615,7 +627,7 @@ npm run <span class="nb">test</span>:e2e     <span class="c"># End-to-end tests<
 
 <hr>
 
-<p><em>Last updated: August 01, 2025</em></p>
+<p><em>Last updated: August 03, 2025</em></p>
 </div>
 <div class="post-categories">
     <strong>Categories:</strong> <a href="/category/tutorial" class="category-link">tutorial</a>,<a href="/category/getting-started" class="category-link">getting-started</a>
@@ -810,7 +822,7 @@ npm run <span class="nb">test</span>:e2e     <span class="c"># End-to-end tests<
 
     <!-- Cookie Consent Banner for GDPR Compliance -->
     <!-- Cookie Consent Banner for GDPR Compliance -->
-<div id="cookie-consent-banner" class="cookie-consent-banner" style="display: none">
+<div id="cookie-consent-banner" class="cookie-consent-banner" role="complementary" aria-label="Cookie consent banner" style="display: none">
   <div class="cookie-consent-content">
     <div class="cookie-consent-text">
       <p>
@@ -1159,30 +1171,30 @@ npm run <span class="nb">test</span>:e2e     <span class="c"># End-to-end tests<
   }
 
   .cookie-btn-accept {
-    background: #27ae60;
+    background: #1e8449; /* WCAG AA compliant: 4.6:1 contrast ratio */
     color: white;
   }
 
   .cookie-btn-accept:hover {
-    background: #219a52;
+    background: #196f3d; /* Darker shade for hover */
   }
 
   .cookie-btn-decline {
-    background: #e74c3c;
+    background: #c0392b; /* WCAG AA compliant: 4.8:1 contrast ratio */
     color: white;
   }
 
   .cookie-btn-decline:hover {
-    background: #c0392b;
+    background: #a93226; /* Darker shade for hover */
   }
 
   .cookie-btn-settings {
-    background: #95a5a6;
+    background: #5d6d7e; /* WCAG AA compliant: 4.7:1 contrast ratio */
     color: white;
   }
 
   .cookie-btn-settings:hover {
-    background: #7f8c8d;
+    background: #515a5a; /* Darker shade for hover */
   }
 
   /* Cookie Settings Modal */
@@ -1322,7 +1334,7 @@ npm run <span class="nb">test</span>:e2e     <span class="c"># End-to-end tests<
   }
 
   input:disabled + .cookie-slider {
-    background-color: #27ae60;
+    background-color: #1e8449; /* WCAG AA compliant green */
     cursor: not-allowed;
   }
 

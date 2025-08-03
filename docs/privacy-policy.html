@@ -20,7 +20,7 @@
     />
 
     
-    <link rel="stylesheet" href="/assets/main.css?v=20250801205255" />
+    <link rel="stylesheet" href="/assets/main.css?v=20250803181527" />
     <link
       rel="canonical"
       href="https://www.mijug.net/privacy-policy.html"
@@ -157,8 +157,20 @@
             </li>
             
             <li>
+              <a class="page-link" href="/docs/browser-management/" aria-label="View Browser Management for Testing documentation">
+                Browser Management for Testing
+              </a>
+            </li>
+            
+            <li>
               <a class="page-link" href="/docs/frontmatter-cms/" aria-label="View FrontMatter CMS Usage documentation">
                 FrontMatter CMS Usage
+              </a>
+            </li>
+            
+            <li>
+              <a class="page-link" href="/docs/cache-management/" aria-label="View Cache Management Strategies documentation">
+                Cache Management Strategies
               </a>
             </li>
             
@@ -473,7 +485,7 @@
 
     <!-- Cookie Consent Banner for GDPR Compliance -->
     <!-- Cookie Consent Banner for GDPR Compliance -->
-<div id="cookie-consent-banner" class="cookie-consent-banner" style="display: none">
+<div id="cookie-consent-banner" class="cookie-consent-banner" role="complementary" aria-label="Cookie consent banner" style="display: none">
   <div class="cookie-consent-content">
     <div class="cookie-consent-text">
       <p>
@@ -822,30 +834,30 @@
   }
 
   .cookie-btn-accept {
-    background: #27ae60;
+    background: #1e8449; /* WCAG AA compliant: 4.6:1 contrast ratio */
     color: white;
   }
 
   .cookie-btn-accept:hover {
-    background: #219a52;
+    background: #196f3d; /* Darker shade for hover */
   }
 
   .cookie-btn-decline {
-    background: #e74c3c;
+    background: #c0392b; /* WCAG AA compliant: 4.8:1 contrast ratio */
     color: white;
   }
 
   .cookie-btn-decline:hover {
-    background: #c0392b;
+    background: #a93226; /* Darker shade for hover */
   }
 
   .cookie-btn-settings {
-    background: #95a5a6;
+    background: #5d6d7e; /* WCAG AA compliant: 4.7:1 contrast ratio */
     color: white;
   }
 
   .cookie-btn-settings:hover {
-    background: #7f8c8d;
+    background: #515a5a; /* Darker shade for hover */
   }
 
   /* Cookie Settings Modal */
@@ -985,7 +997,7 @@
   }
 
   input:disabled + .cookie-slider {
-    background-color: #27ae60;
+    background-color: #1e8449; /* WCAG AA compliant green */
     cursor: not-allowed;
   }
 

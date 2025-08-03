@@ -7,23 +7,45 @@
 
     <!-- Navigation and ordering metadata -->
     
+      <meta name="docs-nav-order" content="8">
+      <meta name="docs-section" content="documentation">
+      
+        <meta name="priority-doc" content="true">
+      
+    
 
     <!-- Structured data for navigation -->
     
+      <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Cache Management Strategies",
+        "description": "Cache management strategies including cache busting, performance optimization, and deployment considerations",
+        "url": "https://www.mijug.net/docs/cache-management/",
+        "position": 8,
+        "isPartOf": {
+          "@type": "WebSite",
+          "name": "My Information Just Under Glass",
+          "url": "https://www.mijug.net/"
+        }
+      }
+      </script>
+    
 
     <title>
-      documentation | My Information Just Under Glass
+      Cache Management Strategies | My Information Just Under Glass
     </title>
     <meta
       name="description"
-      content="MIJUG.NET serves the communities of Southeast Michigan, Ohio, and Florida with technology, sustainability, and community engagement resources. A platform by ..."
+      content="Cache Management Guide"
     />
 
     
     <link rel="stylesheet" href="/assets/main.css?v=20250803181527" />
     <link
       rel="canonical"
-      href="https://www.mijug.net/category/documentation/"
+      href="https://www.mijug.net/docs/cache-management/"
     />
     <link
       rel="alternate"
@@ -46,21 +68,24 @@
     />
     <link rel="manifest" href="/manifest.webmanifest" />
     <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>documentation | My Information Just Under Glass</title>
+<title>Cache Management Strategies | My Information Just Under Glass</title>
 <meta name="generator" content="Jekyll v4.4.1" />
-<meta property="og:title" content="documentation" />
+<meta property="og:title" content="Cache Management Strategies" />
 <meta name="author" content="Bob Kranson" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="MIJUG.NET serves the communities of Southeast Michigan, Ohio, and Florida with technology, sustainability, and community engagement resources. A platform by Kranson Enterprises for sharing knowledge and connecting communities." />
-<meta property="og:description" content="MIJUG.NET serves the communities of Southeast Michigan, Ohio, and Florida with technology, sustainability, and community engagement resources. A platform by Kranson Enterprises for sharing knowledge and connecting communities." />
-<link rel="canonical" href="https://www.mijug.net/category/documentation/" />
-<meta property="og:url" content="https://www.mijug.net/category/documentation/" />
+<meta name="description" content="Cache management strategies including cache busting, performance optimization, and deployment considerations" />
+<meta property="og:description" content="Cache management strategies including cache busting, performance optimization, and deployment considerations" />
+<link rel="canonical" href="https://www.mijug.net/docs/cache-management/" />
+<meta property="og:url" content="https://www.mijug.net/docs/cache-management/" />
 <meta property="og:site_name" content="My Information Just Under Glass" />
-<meta property="og:type" content="website" />
-<meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="documentation" />
+<meta property="og:image" content="https://www.mijug.net/assets/logo-mijug-watermark-98x100.svg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-08-03T18:15:27-04:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="https://www.mijug.net/assets/logo-mijug-watermark-98x100.svg" />
+<meta property="twitter:title" content="Cache Management Strategies" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Bob Kranson"},"description":"MIJUG.NET serves the communities of Southeast Michigan, Ohio, and Florida with technology, sustainability, and community engagement resources. A platform by Kranson Enterprises for sharing knowledge and connecting communities.","headline":"documentation","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://www.mijug.net/assets/logo-mijug-watermark-98x100.svg"},"name":"Bob Kranson"},"url":"https://www.mijug.net/category/documentation/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Bob Kranson"},"dateModified":"2025-08-03T17:50:33-04:00","datePublished":"2025-08-03T18:15:27-04:00","description":"Cache management strategies including cache busting, performance optimization, and deployment considerations","headline":"Cache Management Strategies","image":"https://www.mijug.net/assets/logo-mijug-watermark-98x100.svg","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.mijug.net/docs/cache-management/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://www.mijug.net/assets/logo-mijug-watermark-98x100.svg"},"name":"Bob Kranson"},"url":"https://www.mijug.net/docs/cache-management/"}</script>
 <!-- End Jekyll SEO tag -->
 
   </head>
@@ -277,165 +302,345 @@
 
     <main class="page-content" aria-label="Content">
       <div class="wrapper">
-<div class="archive">
-  <header class="archive-header">
-    <h1 class="archive-title">Category: documentation</h1></header>
+<article class="post">
+  <header class="post-header">
+    <h1 class="post-title">Cache Management Strategies</h1>
+  </header>
 
-  <div class="archive-content">
-<p class="archive-count">
-      1postin this category</p>
+  <div class="post-content">
+<h1 id="cache-management-guide">Cache Management Guide</h1>
 
-    <ul class="post-list"><li class="post-item">
-        <span class="post-meta">Jul 30, 2025</span>
-        <h3 class="post-title">
-          <a class="post-link" href="/documentation/navigation/2025/07/30/documentation-guide.html">
-            Documentation Guide - Navigate Our Knowledge Base
-          </a>
-        </h3>
-<p class="post-excerpt">Your complete guide to navigating and using our documentation. Find tutorials, guides, and resources organized by topic and difficulty.</p>
-<div class="post-meta-tags">
-<span class="post-categories">
-            Categories:<a href="/category/documentation">documentation</a>,<a href="/category/navigation">navigation</a></span><span class="post-meta-separator"> • </span><span class="post-tags">
-            Tags:<a href="/tag/docs">docs</a>,<a href="/tag/guide">guide</a>,<a href="/tag/navigation">navigation</a>,<a href="/tag/tutorial">tutorial</a></span>
+<p>Effective cache management is crucial for web application performance and ensuring users receive the latest updates. This guide covers cache busting strategies and performance optimization techniques.</p>
+
+<h2 id="why-cache-management-matters">Why Cache Management Matters</h2>
+
+<h3 id="the-cache-dilemma">The Cache Dilemma</h3>
+<ul>
+  <li>
+<strong>Performance vs. Freshness</strong>: Caching improves load times but can serve stale content</li>
+  <li>
+<strong>User Experience</strong>: Cached content loads faster but may not reflect recent changes</li>
+  <li>
+<strong>CDN Efficiency</strong>: Content delivery networks rely on aggressive caching for global performance</li>
+  <li>
+<strong>Development Challenges</strong>: Developers need to ensure updates reach users promptly</li>
+</ul>
+
+<h3 id="common-cache-problems">Common Cache Problems</h3>
+<ol>
+  <li>
+<strong>Stale Content</strong>: Users see outdated versions of your site</li>
+  <li>
+<strong>Mixed Versions</strong>: Some files update while others remain cached</li>
+  <li>
+<strong>Development Confusion</strong>: Changes don’t appear immediately during testing</li>
+  <li>
+<strong>Deployment Issues</strong>: Production updates don’t propagate to users</li>
+</ol>
+
+<h2 id="cache-busting-strategies">Cache Busting Strategies</h2>
+
+<h3 id="1-version-based-cache-busting">1. Version-Based Cache Busting</h3>
+<p>Add version parameters to asset URLs:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- CSS with version parameter --&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"/assets/main.css?v=1.2.3"</span><span class="nt">&gt;</span>
+
+<span class="c">&lt;!-- JavaScript with version parameter --&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"/assets/app.js?v=1.2.3"</span><span class="nt">&gt;&lt;/script&gt;</span>
+
+<span class="c">&lt;!-- Images with cache busting --&gt;</span>
+<span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"/images/logo.png?v=1.2.3"</span> <span class="na">alt=</span><span class="s">"Logo"</span><span class="nt">&gt;</span>
+</code></pre></div></div>
+
+<p><strong>Pros:</strong></p>
+<ul>
+  <li>Simple to implement</li>
+  <li>Works with any asset type</li>
+  <li>Easy to understand and debug</li>
+</ul>
+
+<p><strong>Cons:</strong></p>
+<ul>
+  <li>Manual version management</li>
+  <li>All assets invalidated together</li>
+  <li>Query parameters may be ignored by some proxies</li>
+</ul>
+
+<h3 id="2-file-hash-based-cache-busting">2. File Hash-Based Cache Busting</h3>
+<p>Use content hashes in filenames:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- CSS with content hash --&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"/assets/main-a1b2c3d4.css"</span><span class="nt">&gt;</span>
+
+<span class="c">&lt;!-- JavaScript with content hash --&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"/assets/app-e5f6g7h8.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+</code></pre></div></div>
+
+<p><strong>Pros:</strong></p>
+<ul>
+  <li>Automatic invalidation when content changes</li>
+  <li>Granular cache control per file</li>
+  <li>More reliable than query parameters</li>
+</ul>
+
+<p><strong>Cons:</strong></p>
+<ul>
+  <li>Requires build process integration</li>
+  <li>More complex deployment</li>
+  <li>Need to update references</li>
+</ul>
+
+<h3 id="3-directory-based-versioning">3. Directory-Based Versioning</h3>
+<p>Use version numbers in directory paths:</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Versioned directory structure --&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"/v1.2.3/assets/main.css"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"/v1.2.3/assets/app.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+</code></pre></div></div>
+
+<p><strong>Pros:</strong></p>
+<ul>
+  <li>Clean separation of versions</li>
+  <li>Easy rollback capability</li>
+  <li>Clear version identification</li>
+</ul>
+
+<p><strong>Cons:</strong></p>
+<ul>
+  <li>Increased storage requirements</li>
+  <li>Complex deployment process</li>
+  <li>Manual path management</li>
+</ul>
+
+<h2 id="jekyll-specific-cache-busting">Jekyll-Specific Cache Busting</h2>
+
+<h3 id="site-variables-for-cache-busting">Site Variables for Cache Busting</h3>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># _config.yml</span>
+<span class="na">version</span><span class="pi">:</span> <span class="s2">"</span><span class="s">1.2.3"</span>
+<span class="na">cache_bust</span><span class="pi">:</span> <span class="s">20240130-143022</span>
+</code></pre></div></div>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- In templates --&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"/assets/main.css?v="</span><span class="nt">&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"/assets/app.js?v=%7B%22enabled%22=%3Etrue,%20%22version_format%22=%3E%22%25Y%25m%25d%25H%25M%25S%22,%20%22assets%22=%3Etrue,%20%22pages%22=%3Etrue%7D"</span><span class="nt">&gt;&lt;/script&gt;</span>
+</code></pre></div></div>
+
+<h3 id="build-time-cache-busting">Build-Time Cache Busting</h3>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># _config.yml</span>
+<span class="na">plugins</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s">jekyll-cache-bust</span>
+
+<span class="na">cache_bust</span><span class="pi">:</span>
+  <span class="na">enabled</span><span class="pi">:</span> <span class="kc">true</span>
+  <span class="na">strategy</span><span class="pi">:</span> <span class="s1">'</span><span class="s">content_hash'</span>
+</code></pre></div></div>
+
+<h3 id="liquid-template-cache-busting">Liquid Template Cache Busting</h3>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"/assets/main.css?v=1754259327"</span><span class="nt">&gt;</span>
+</code></pre></div></div>
+
+<h2 id="http-headers-for-cache-control">HTTP Headers for Cache Control</h2>
+
+<h3 id="cache-control-headers">Cache-Control Headers</h3>
+<div class="language-apache highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># .htaccess for Apache</span>
+<span class="p">&lt;</span><span class="nl">IfModule</span><span class="sr"> mod_expires.c</span><span class="p">&gt;
+</span>    <span class="nc">ExpiresActive</span> <span class="ss">on</span>
+
+    <span class="c"># CSS and JavaScript (1 year with versioning)</span>
+    <span class="nc">ExpiresByType</span> text/css "access plus 1 year"
+    <span class="nc">ExpiresByType</span> application/javascript "access plus 1 year"
+
+    <span class="c"># Images (1 month)</span>
+    <span class="nc">ExpiresByType</span> image/png "access plus 1 month"
+    <span class="nc">ExpiresByType</span> image/jpg "access plus 1 month"
+    <span class="nc">ExpiresByType</span> image/jpeg "access plus 1 month"
+    <span class="nc">ExpiresByType</span> image/gif "access plus 1 month"
+    <span class="nc">ExpiresByType</span> image/svg+xml "access plus 1 month"
+
+    <span class="c"># HTML (1 hour for dynamic content)</span>
+    <span class="nc">ExpiresByType</span> text/html "access plus 1 hour"
+<span class="p">&lt;/</span><span class="nl">IfModule</span><span class="p">&gt;
+</span>
+<span class="c"># Cache control headers</span>
+<span class="p">&lt;</span><span class="nl">IfModule</span><span class="sr"> mod_headers.c</span><span class="p">&gt;
+</span>    <span class="c"># Versioned assets - cache aggressively</span>
+    <span class="p">&lt;</span><span class="nl">FilesMatch</span><span class="sr"> "\.(css|js|png|jpg|jpeg|gif|svg)$"</span><span class="p">&gt;
+</span>        <span class="nc">Header</span> <span class="ss">set</span> Cache-Control "public, max-age=31536000, immutable"
+    <span class="p">&lt;/</span><span class="nl">FilesMatch</span><span class="p">&gt;
+</span>
+    <span class="c"># HTML - short cache with revalidation</span>
+    <span class="p">&lt;</span><span class="nl">FilesMatch</span><span class="sr"> "\.html$"</span><span class="p">&gt;
+</span>        <span class="nc">Header</span> <span class="ss">set</span> Cache-Control "public, max-age=3600, must-revalidate"
+    <span class="p">&lt;/</span><span class="nl">FilesMatch</span><span class="p">&gt;
+&lt;/</span><span class="nl">IfModule</span><span class="p">&gt;
+</span></code></pre></div></div>
+
+<h3 id="nginx-configuration">Nginx Configuration</h3>
+<div class="language-nginx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># nginx.conf</span>
+<span class="k">location</span> <span class="p">~</span><span class="sr">*</span> <span class="err">\</span><span class="s">.(css|js|png|jpg|jpeg|gif|svg)</span>$ <span class="p">{</span>
+    <span class="kn">expires</span> <span class="s">1y</span><span class="p">;</span>
+    <span class="kn">add_header</span> <span class="s">Cache-Control</span> <span class="s">"public,</span> <span class="s">immutable"</span><span class="p">;</span>
+    <span class="kn">add_header</span> <span class="s">Vary</span> <span class="s">Accept-Encoding</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="k">location</span> <span class="p">~</span><span class="sr">*</span> <span class="err">\</span><span class="s">.html</span>$ <span class="p">{</span>
+    <span class="kn">expires</span> <span class="s">1h</span><span class="p">;</span>
+    <span class="kn">add_header</span> <span class="s">Cache-Control</span> <span class="s">"public,</span> <span class="s">must-revalidate"</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h3 id="meta-tags-for-html-caching">Meta Tags for HTML Caching</h3>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Prevent caching of HTML pages --&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">http-equiv=</span><span class="s">"Cache-Control"</span> <span class="na">content=</span><span class="s">"no-cache, no-store, must-revalidate"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">http-equiv=</span><span class="s">"Pragma"</span> <span class="na">content=</span><span class="s">"no-cache"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">http-equiv=</span><span class="s">"Expires"</span> <span class="na">content=</span><span class="s">"0"</span><span class="nt">&gt;</span>
+
+<span class="c">&lt;!-- Or allow short-term caching --&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">http-equiv=</span><span class="s">"Cache-Control"</span> <span class="na">content=</span><span class="s">"public, max-age=3600"</span><span class="nt">&gt;</span>
+</code></pre></div></div>
+
+<h2 id="cdn-and-performance-optimization">CDN and Performance Optimization</h2>
+
+<h3 id="cdn-cache-busting">CDN Cache Busting</h3>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Version in CDN URLs --&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://cdn.example.com/v1.2.3/app.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+
+<span class="c">&lt;!-- Hash-based CDN URLs --&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"https://cdn.example.com/main-a1b2c3d4.css"</span><span class="nt">&gt;</span>
+</code></pre></div></div>
+
+<h3 id="preloading-critical-assets">Preloading Critical Assets</h3>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Preload critical CSS --&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"preload"</span> <span class="na">href=</span><span class="s">"/assets/critical.css?v=1.2.3"</span> <span class="na">as=</span><span class="s">"style"</span><span class="nt">&gt;</span>
+
+<span class="c">&lt;!-- Preload important JavaScript --&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"preload"</span> <span class="na">href=</span><span class="s">"/assets/app.js?v=1.2.3"</span> <span class="na">as=</span><span class="s">"script"</span><span class="nt">&gt;</span>
+
+<span class="c">&lt;!-- Preload hero images --&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"preload"</span> <span class="na">href=</span><span class="s">"/images/hero.jpg?v=1.2.3"</span> <span class="na">as=</span><span class="s">"image"</span><span class="nt">&gt;</span>
+</code></pre></div></div>
+
+<h3 id="resource-hints">Resource Hints</h3>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- DNS prefetch for external resources --&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"dns-prefetch"</span> <span class="na">href=</span><span class="s">"//cdn.example.com"</span><span class="nt">&gt;</span>
+
+<span class="c">&lt;!-- Preconnect to external domains --&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"preconnect"</span> <span class="na">href=</span><span class="s">"https://fonts.googleapis.com"</span> <span class="na">crossorigin</span><span class="nt">&gt;</span>
+
+<span class="c">&lt;!-- Prefetch next page resources --&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"prefetch"</span> <span class="na">href=</span><span class="s">"/next-page.html"</span><span class="nt">&gt;</span>
+</code></pre></div></div>
+
+<h2 id="development-vs-production">Development vs. Production</h2>
+
+<h3 id="development-environment">Development Environment</h3>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># _config_dev.yml</span>
+<span class="na">cache_bust</span><span class="pi">:</span> <span class="kc">false</span>
+<span class="na">version</span><span class="pi">:</span> <span class="s2">"</span><span class="s">dev"</span>
+
+<span class="c1"># Disable caching in development</span>
+<span class="na">plugins</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s">jekyll-cache-bust</span>
+
+<span class="na">cache_bust</span><span class="pi">:</span>
+  <span class="na">enabled</span><span class="pi">:</span> <span class="kc">false</span>
+</code></pre></div></div>
+
+<h3 id="production-environment">Production Environment</h3>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># _config_prod.yml</span>
+<span class="na">cache_bust</span><span class="pi">:</span> <span class="kc">true</span>
+<span class="na">version</span><span class="pi">:</span> <span class="s2">"</span><span class="s">1.2.3"</span>
+
+<span class="c1"># Enable aggressive caching in production</span>
+<span class="na">plugins</span><span class="pi">:</span>
+  <span class="pi">-</span> <span class="s">jekyll-cache-bust</span>
+
+<span class="na">cache_bust</span><span class="pi">:</span>
+  <span class="na">enabled</span><span class="pi">:</span> <span class="kc">true</span>
+  <span class="na">strategy</span><span class="pi">:</span> <span class="s1">'</span><span class="s">content_hash'</span>
+  <span class="na">extensions</span><span class="pi">:</span> <span class="pi">[</span><span class="s1">'</span><span class="s">css'</span><span class="pi">,</span> <span class="s1">'</span><span class="s">js'</span><span class="pi">,</span> <span class="s1">'</span><span class="s">png'</span><span class="pi">,</span> <span class="s1">'</span><span class="s">jpg'</span><span class="pi">]</span>
+</code></pre></div></div>
+
+<h2 id="monitoring-and-testing">Monitoring and Testing</h2>
+
+<h3 id="cache-validation-tools">Cache Validation Tools</h3>
+<ul>
+  <li>
+<strong>Browser DevTools</strong>: Check cache status in Network tab</li>
+  <li>
+<strong>GTmetrix</strong>: Analyze caching effectiveness</li>
+  <li>
+<strong>WebPageTest</strong>: Detailed cache analysis</li>
+  <li>
+<strong>Lighthouse</strong>: Performance auditing with cache recommendations</li>
+</ul>
+
+<h3 id="testing-cache-behavior">Testing Cache Behavior</h3>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Test cache headers</span>
+curl <span class="nt">-I</span> https://yoursite.com/assets/main.css
+
+<span class="c"># Test with different user agents</span>
+curl <span class="nt">-H</span> <span class="s2">"User-Agent: Mozilla/5.0..."</span> <span class="nt">-I</span> https://yoursite.com/
+
+<span class="c"># Check cache validation</span>
+curl <span class="nt">-H</span> <span class="s2">"If-Modified-Since: Wed, 21 Oct 2015 07:28:00 GMT"</span> <span class="nt">-I</span> https://yoursite.com/
+</code></pre></div></div>
+
+<h3 id="cache-debugging">Cache Debugging</h3>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Check if resource was served from cache</span>
+<span class="nb">window</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">'</span><span class="s1">load</span><span class="dl">'</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="nx">entries</span> <span class="o">=</span> <span class="nx">performance</span><span class="p">.</span><span class="nf">getEntriesByType</span><span class="p">(</span><span class="dl">'</span><span class="s1">resource</span><span class="dl">'</span><span class="p">);</span>
+    <span class="nx">entries</span><span class="p">.</span><span class="nf">forEach</span><span class="p">(</span><span class="nx">entry</span> <span class="o">=&gt;</span> <span class="p">{</span>
+        <span class="k">if </span><span class="p">(</span><span class="nx">entry</span><span class="p">.</span><span class="nx">transferSize</span> <span class="o">===</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">From cache:</span><span class="dl">'</span><span class="p">,</span> <span class="nx">entry</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">From network:</span><span class="dl">'</span><span class="p">,</span> <span class="nx">entry</span><span class="p">.</span><span class="nx">name</span><span class="p">);</span>
+        <span class="p">}</span>
+    <span class="p">});</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<h2 id="best-practices">Best Practices</h2>
+
+<h3 id="asset-organization">Asset Organization</h3>
+<ol>
+  <li>
+<strong>Separate Static from Dynamic</strong>: Cache static assets aggressively, dynamic content conservatively</li>
+  <li>
+<strong>Version Critical Assets</strong>: Ensure important updates reach users quickly</li>
+  <li>
+<strong>Use Immutable Caching</strong>: Set <code class="language-plaintext highlighter-rouge">immutable</code> flag for versioned assets</li>
+  <li>
+<strong>Optimize Cache Hierarchies</strong>: Consider browser, CDN, and proxy caches</li>
+</ol>
+
+<h3 id="deployment-strategies">Deployment Strategies</h3>
+<ol>
+  <li>
+<strong>Atomic Deployments</strong>: Update all references simultaneously</li>
+  <li>
+<strong>Graceful Rollouts</strong>: Allow time for cache propagation</li>
+  <li>
+<strong>Rollback Preparation</strong>: Keep previous versions accessible</li>
+  <li>
+<strong>Cache Warming</strong>: Pre-populate CDN caches after deployment</li>
+</ol>
+
+<h3 id="performance-guidelines">Performance Guidelines</h3>
+<ol>
+  <li>
+<strong>Minimize Cache Misses</strong>: Use predictable versioning schemes</li>
+  <li>
+<strong>Optimize Cache Hit Ratio</strong>: Balance freshness with performance</li>
+  <li>
+<strong>Reduce Cache Churn</strong>: Avoid unnecessary version bumps</li>
+  <li>
+<strong>Monitor Cache Effectiveness</strong>: Track hit rates and performance impact</li>
+</ol>
 </div>
-</li></ul>
-</div>
-
-  <div class="archive-navigation">
-    <p>
-      <a href="/">← Back to Home</a><span class="nav-separator"> • </span>
-      <a href="/categories/">All Categories</a></p>
-  </div>
-</div>
-
-<style>
-  .archive {
-    margin-bottom: 2rem;
-  }
-
-  .archive-header {
-    margin-bottom: 2rem;
-    border-bottom: 1px solid #e8e8e8;
-    padding-bottom: 1rem;
-  }
-
-  .archive-title {
-    margin-bottom: 0.5rem;
-    color: #333;
-  }
-
-  .archive-description {
-    color: #666;
-    font-size: 1.1rem;
-    margin-bottom: 0;
-  }
-
-  .archive-count {
-    color: #666;
-    font-style: italic;
-    margin-bottom: 1.5rem;
-  }
-
-  .post-list {
-    list-style: none;
-    padding: 0;
-  }
-
-  .post-item {
-    margin-bottom: 2rem;
-    padding-bottom: 1.5rem;
-    border-bottom: 1px solid #f0f0f0;
-  }
-
-  .post-item:last-child {
-    border-bottom: none;
-  }
-
-  .post-meta {
-    color: #666;
-    font-size: 0.9rem;
-    margin-bottom: 0.25rem;
-    display: block;
-  }
-
-  .post-title {
-    margin: 0.25rem 0 0.5rem 0;
-    font-size: 1.3rem;
-  }
-
-  .post-link {
-    text-decoration: none;
-    color: #2a7ae4;
-  }
-
-  .post-link:hover {
-    text-decoration: underline;
-  }
-
-  .post-excerpt {
-    color: #666;
-    margin-bottom: 0.75rem;
-    line-height: 1.5;
-  }
-
-  .post-meta-tags {
-    font-size: 0.85rem;
-    color: #666;
-  }
-
-  .post-meta-tags a {
-    color: #2a7ae4;
-    text-decoration: none;
-  }
-
-  .post-meta-tags a:hover {
-    text-decoration: underline;
-  }
-
-  .post-meta-separator {
-    margin: 0 0.5rem;
-  }
-
-  .archive-empty {
-    color: #666;
-    font-style: italic;
-    text-align: center;
-    padding: 2rem;
-    background-color: #f9f9f9;
-    border-radius: 4px;
-  }
-
-  .archive-navigation {
-    margin-top: 2rem;
-    padding-top: 1rem;
-    border-top: 1px solid #e8e8e8;
-    text-align: center;
-  }
-
-  .archive-navigation a {
-    color: #2a7ae4;
-    text-decoration: none;
-  }
-
-  .archive-navigation a:hover {
-    text-decoration: underline;
-  }
-
-  .nav-separator {
-    margin: 0 0.5rem;
-    color: #ccc;
-  }
-
-  @media (max-width: 600px) {
-    .post-title {
-      font-size: 1.1rem;
-    }
-
-    .post-meta-tags {
-      font-size: 0.8rem;
-    }
-  }
-</style>
+</article>
 </div>
     </main>
 

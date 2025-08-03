@@ -7,7 +7,7 @@
 
     <!-- Navigation and ordering metadata -->
     
-      <meta name="docs-nav-order" content="7">
+      <meta name="docs-nav-order" content="9">
       <meta name="docs-section" content="documentation">
       
         <meta name="priority-doc" content="true">
@@ -23,7 +23,7 @@
         "name": "The rel Attribute in HTML Links: A Comprehensive Guide",
         "description": "Complete guide to the rel attribute in HTML link definitions, including security, SEO, and performance implications with comprehensive examples.",
         "url": "https://www.mijug.net/docs/rel-attribute-guide/",
-        "position": 7,
+        "position": 9,
         "isPartOf": {
           "@type": "WebSite",
           "name": "My Information Just Under Glass",
@@ -42,7 +42,7 @@
     />
 
     
-    <link rel="stylesheet" href="/assets/main.css?v=20250801205255" />
+    <link rel="stylesheet" href="/assets/main.css?v=20250803181527" />
     <link
       rel="canonical"
       href="https://www.mijug.net/docs/rel-attribute-guide/"
@@ -85,7 +85,7 @@
 <meta property="twitter:image" content="https://www.mijug.net/assets/logo-mijug-watermark-98x100.svg" />
 <meta property="twitter:title" content="The rel Attribute in HTML Links: A Comprehensive Guide" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"MIJUG Documentation Team"},"dateModified":"2025-08-01T17:16:34-04:00","datePublished":"2025-07-31T00:00:00-04:00","description":"Complete guide to the rel attribute in HTML link definitions, including security, SEO, and performance implications with comprehensive examples.","headline":"The rel Attribute in HTML Links: A Comprehensive Guide","image":"https://www.mijug.net/assets/logo-mijug-watermark-98x100.svg","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.mijug.net/docs/rel-attribute-guide/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://www.mijug.net/assets/logo-mijug-watermark-98x100.svg"},"name":"MIJUG Documentation Team"},"url":"https://www.mijug.net/docs/rel-attribute-guide/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"MIJUG Documentation Team"},"dateModified":"2025-08-03T17:50:33-04:00","datePublished":"2025-07-31T00:00:00-04:00","description":"Complete guide to the rel attribute in HTML link definitions, including security, SEO, and performance implications with comprehensive examples.","headline":"The rel Attribute in HTML Links: A Comprehensive Guide","image":"https://www.mijug.net/assets/logo-mijug-watermark-98x100.svg","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.mijug.net/docs/rel-attribute-guide/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://www.mijug.net/assets/logo-mijug-watermark-98x100.svg"},"name":"MIJUG Documentation Team"},"url":"https://www.mijug.net/docs/rel-attribute-guide/"}</script>
 <!-- End Jekyll SEO tag -->
 
   </head>
@@ -180,8 +180,20 @@
             </li>
             
             <li>
+              <a class="page-link" href="/docs/browser-management/" aria-label="View Browser Management for Testing documentation">
+                Browser Management for Testing
+              </a>
+            </li>
+            
+            <li>
               <a class="page-link" href="/docs/frontmatter-cms/" aria-label="View FrontMatter CMS Usage documentation">
                 FrontMatter CMS Usage
+              </a>
+            </li>
+            
+            <li>
+              <a class="page-link" href="/docs/cache-management/" aria-label="View Cache Management Strategies documentation">
+                Cache Management Strategies
               </a>
             </li>
             
@@ -299,8 +311,8 @@
       <time class="dt-published" datetime="2025-07-31T00:00:00-04:00" itemprop="datePublished">
         Jul 31, 2025
       </time><span class="post-meta-separator"> • </span>
-      <time class="dt-modified" datetime="2025-08-01T17:16:34-04:00" itemprop="dateModified">
-        Updated Aug 1, 2025
+      <time class="dt-modified" datetime="2025-08-03T17:50:33-04:00" itemprop="dateModified">
+        Updated Aug 3, 2025
       </time><span class="post-meta-separator"> • </span>
       <span itemprop="author" itemscope itemtype="http://schema.org/Person">
         <span class="p-author h-card" itemprop="name">MIJUG Documentation Team</span>
@@ -1413,7 +1425,7 @@
 
     <!-- Cookie Consent Banner for GDPR Compliance -->
     <!-- Cookie Consent Banner for GDPR Compliance -->
-<div id="cookie-consent-banner" class="cookie-consent-banner" style="display: none">
+<div id="cookie-consent-banner" class="cookie-consent-banner" role="complementary" aria-label="Cookie consent banner" style="display: none">
   <div class="cookie-consent-content">
     <div class="cookie-consent-text">
       <p>
@@ -1762,30 +1774,30 @@
   }
 
   .cookie-btn-accept {
-    background: #27ae60;
+    background: #1e8449; /* WCAG AA compliant: 4.6:1 contrast ratio */
     color: white;
   }
 
   .cookie-btn-accept:hover {
-    background: #219a52;
+    background: #196f3d; /* Darker shade for hover */
   }
 
   .cookie-btn-decline {
-    background: #e74c3c;
+    background: #c0392b; /* WCAG AA compliant: 4.8:1 contrast ratio */
     color: white;
   }
 
   .cookie-btn-decline:hover {
-    background: #c0392b;
+    background: #a93226; /* Darker shade for hover */
   }
 
   .cookie-btn-settings {
-    background: #95a5a6;
+    background: #5d6d7e; /* WCAG AA compliant: 4.7:1 contrast ratio */
     color: white;
   }
 
   .cookie-btn-settings:hover {
-    background: #7f8c8d;
+    background: #515a5a; /* Darker shade for hover */
   }
 
   /* Cookie Settings Modal */
@@ -1925,7 +1937,7 @@
   }
 
   input:disabled + .cookie-slider {
-    background-color: #27ae60;
+    background-color: #1e8449; /* WCAG AA compliant green */
     cursor: not-allowed;
   }
 
