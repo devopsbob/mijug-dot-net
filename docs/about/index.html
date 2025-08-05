@@ -20,7 +20,7 @@
     />
 
     
-    <link rel="stylesheet" href="/assets/main.css?v=20250803181527" />
+    <link rel="stylesheet" href="/assets/main.css?v=20250804204907" />
     <link
       rel="canonical"
       href="https://www.mijug.net/about/"
@@ -164,8 +164,14 @@
             </li>
             
             <li>
-              <a class="page-link" href="/docs/frontmatter-cms/" aria-label="View FrontMatter CMS Usage documentation">
-                FrontMatter CMS Usage
+              <a class="page-link" href="/docs/browser-compatibility-system/" aria-label="View Browser Compatibility Detection &amp; Testing System documentation">
+                Browser Compatibility Detection &amp; Testing System
+              </a>
+            </li>
+            
+            <li>
+              <a class="page-link" href="/docs/browser-compatibility-testing/" aria-label="View Browser Compatibility Testing documentation">
+                Browser Compatibility Testing
               </a>
             </li>
             
@@ -178,6 +184,18 @@
             <li>
               <a class="page-link" href="/docs/rel-attribute-guide/" aria-label="View The rel Attribute in HTML Links: A Comprehensive Guide documentation">
                 The rel Attribute in HTML Links: A Comprehensive Guide
+              </a>
+            </li>
+            
+            <li>
+              <a class="page-link" href="/docs/frontmatter-cms/" aria-label="View FrontMatter CMS Usage documentation">
+                FrontMatter CMS Usage
+              </a>
+            </li>
+            
+            <li>
+              <a class="page-link" href="/docs/performance-optimization/" aria-label="View Performance Optimization Guide documentation">
+                Performance Optimization Guide
               </a>
             </li>
             
@@ -415,6 +433,14 @@ Our focus is simple: <strong>empowering others through shared knowledge and fost
           <span id="browserName">Loading...</span>
         </div>
         <div class="info-item">
+          <strong>Browser Version:</strong>
+          <span id="browserVersion">Loading...</span>
+        </div>
+        <div class="info-item">
+          <strong>Browser Age:</strong>
+          <span id="browserAge">Loading...</span>
+        </div>
+        <div class="info-item">
           <strong>Platform:</strong>
           <span id="platform">Loading...</span>
         </div>
@@ -548,7 +574,7 @@ Our focus is simple: <strong>empowering others through shared knowledge and fost
     'use strict';
 
     // Cache busting configuration
-    const CACHE_VERSION = '20250803181527';
+    const CACHE_VERSION = '20250804204907';
     const PAGE_LOAD_TIME = Date.now();
 
     // Add cache busting to any future API calls
@@ -608,10 +634,121 @@ Our focus is simple: <strong>empowering others through shared knowledge and fost
       return browserName;
     }
 
+    function getBrowserVersionAndAge() {
+      const userAgent = navigator.userAgent;
+      let browserInfo = {
+        name: 'Unknown',
+        version: 'Unknown',
+        age: 'Unknown'
+      };
+
+      // Browser version detection patterns
+      const patterns = {
+        Chrome: /Chrome\/(\d+\.?\d*)/,
+        Firefox: /Firefox\/(\d+\.?\d*)/,
+        Safari: /Version\/(\d+\.?\d*)/,
+        Edge: /Edg\/(\d+\.?\d*)/,
+        Opera: /Opera\/(\d+\.?\d*)/
+      };
+
+      // Release dates for age calculation (major versions) - Updated for 2025
+      const releaseDates = {
+        Chrome: {
+          // 2025 releases
+          128: '2024-08-20', 127: '2024-07-16', 126: '2024-06-11', 125: '2024-05-14',
+          124: '2024-04-16', 123: '2024-03-19', 122: '2024-02-20', 121: '2024-01-23',
+          // 2023 releases
+          120: '2023-11-21', 119: '2023-10-24', 118: '2023-10-10', 117: '2023-09-12',
+          116: '2023-08-15', 115: '2023-07-18', 114: '2023-05-30', 113: '2023-05-02',
+          112: '2023-04-04', 111: '2023-03-07', 110: '2023-02-07', 109: '2023-01-10'
+        },
+        Firefox: {
+          // 2025 releases
+          129: '2024-08-06', 128: '2024-07-09', 127: '2024-06-11', 126: '2024-05-14',
+          125: '2024-04-16', 124: '2024-03-19', 123: '2024-02-20', 122: '2024-01-23',
+          // 2023 releases
+          121: '2023-12-19', 120: '2023-11-21', 119: '2023-10-24', 118: '2023-09-26',
+          117: '2023-08-29', 116: '2023-08-01', 115: '2023-07-04', 114: '2023-06-06',
+          113: '2023-05-09', 112: '2023-04-11', 111: '2023-03-14', 110: '2023-02-14'
+        },
+        Safari: {
+          // 2025 releases
+          18: '2024-09-16', 17: '2023-09-18', 16: '2022-09-12', 15: '2021-09-20',
+          14: '2020-09-16', 13: '2019-09-19', 12: '2018-09-17', 11: '2017-09-19', 10: '2016-09-20'
+        },
+        Edge: {
+          // 2025 releases
+          128: '2024-08-22', 127: '2024-07-18', 126: '2024-06-13', 125: '2024-05-16',
+          124: '2024-04-18', 123: '2024-03-21', 122: '2024-02-22', 121: '2024-01-25',
+          // 2023 releases
+          120: '2023-12-07', 119: '2023-10-26', 118: '2023-10-12', 117: '2023-09-14',
+          116: '2023-08-17', 115: '2023-07-20', 114: '2023-06-01', 113: '2023-05-04'
+        }
+      };
+
+      // Detect browser and version
+      for (const [browser, pattern] of Object.entries(patterns)) {
+        const match = userAgent.match(pattern);
+        if (match) {
+          browserInfo.name = browser;
+          browserInfo.version = match[1];
+
+          // Calculate age
+          const majorVersion = parseInt(match[1]);
+          const dates = releaseDates[browser];
+
+          if (dates && dates[majorVersion]) {
+            const releaseDate = new Date(dates[majorVersion]);
+            const now = new Date();
+            const ageInDays = Math.floor((now - releaseDate) / (1000 * 60 * 60 * 24));
+
+            if (ageInDays < 30) {
+              browserInfo.age = `${ageInDays} days old`;
+            } else if (ageInDays < 365) {
+              const months = Math.floor(ageInDays / 30);
+              browserInfo.age = `${months} month${months > 1 ? 's' : ''} old`;
+            } else {
+              const years = Math.floor(ageInDays / 365);
+              browserInfo.age = `${years} year${years > 1 ? 's' : ''} old`;
+            }
+
+            // Add warning for very old browsers
+            if (ageInDays > 365) {
+              browserInfo.age += ' ⚠️ (Outdated)';
+            } else if (ageInDays > 180) {
+              browserInfo.age += ' ⚡ (Consider updating)';
+            } else if (ageInDays < 30) {
+              browserInfo.age += ' ✨ (Recent)';
+            }
+          } else {
+            // Handle newer versions not in our database
+            const knownVersions = Object.keys(dates || {}).map(Number).sort((a, b) => b - a);
+            const latestKnownVersion = knownVersions[0];
+
+            if (majorVersion > latestKnownVersion) {
+              browserInfo.age = 'Very recent ✨ (Newer than our database)';
+            } else if (majorVersion === latestKnownVersion) {
+              browserInfo.age = 'Recent ✨';
+            } else {
+              browserInfo.age = 'Age unknown (Older version)';
+            }
+          }
+          break;
+        }
+      }
+
+      return browserInfo;
+    }
+
     function updateBrowserInfo() {
+      // Get detailed browser information
+      const browserInfo = getBrowserVersionAndAge();
+
       // Browser Details
       updateElement('userAgent', navigator.userAgent);
-      updateElement('browserName', getBrowserName());
+      updateElement('browserName', browserInfo.name);
+      updateElement('browserVersion', browserInfo.version);
+      updateElement('browserAge', browserInfo.age);
       updateElement('platform', navigator.platform);
       updateElement('language', navigator.language);
       updateElement('cookieEnabled', navigator.cookieEnabled ? 'Yes' : 'No');
