@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Delivery Slides Mermaid Diagrams Showcase</title>
+    <link rel="stylesheet" href="/assets/main.css" />
+    <link rel="stylesheet" href="/assets/delivery-slides.css" />
+  </head>
+  <body>
+    <div class="slide-branding">
+      <h1>My Information Just Under Glass</h1>
+    </div>
+    <main class="slide-content">
+      <h1 id="delivery-slides-mermaid-diagrams-showcase">Delivery Slides Mermaid Diagrams Showcase</h1>
+
+<p>This page demonstrates various Mermaid diagrams supported in Jekyll with the <code class="language-plaintext highlighter-rouge">jekyll-mermaid</code> plugin. It isusing the delivery slides template.</p>
+
+<hr />
+
+<pre><code class="language-mermaid">  graph TD
+    A[Start] --&gt; B[End]
+</code></pre>
+
+<h2 id="flowchart-example">Flowchart Example</h2>
+
+<pre><code class="language-mermaid">flowchart TD
+    A[Start] --&gt; B{Is it working?}
+    B -- Yes --&gt; C[Celebrate]
+    B -- No --&gt; D[Debug]
+    D --&gt; B
+
+</code></pre>
+
+<hr />
+
+<h2 id="sequence-diagram-example">Sequence Diagram Example</h2>
+<pre><code class="language-mermaid">sequenceDiagram
+    participant Alice
+    participant Bob
+    Alice-&gt;&gt;Bob: Hello Bob, how are you?
+    Bob--&gt;&gt;Alice: I am good thanks!
+
+</code></pre>
+
+<hr />
+
+<h2 id="gantt-chart-example">Gantt Chart Example</h2>
+<pre><code class="language-mermaid">gantt
+    title Project Timeline
+    dateFormat  YYYY-MM-DD
+    section Development
+    Code        :a1, 2025-08-01, 5d
+    Test        :after a1  , 3d
+    Deploy      :2025-08-10, 2d
+
+</code></pre>
+
+<hr />
+
+<h2 id="mindmap-example">Mindmap Example</h2>
+<pre><code class="language-mermaid">mindmap
+  root
+    Branch 1
+      Sub-branch 1
+      Sub-branch 2
+    Branch 2
+      Sub-branch 3
+
+</code></pre>
+
+<hr />
+
+<h2 id="pie-chart-example">Pie Chart Example</h2>
+<pre><code class="language-mermaid">pie
+    title Project Distribution
+    "Frontend" : 40
+    "Backend" : 30
+    "DevOps" : 20
+    "QA" : 10
+
+</code></pre>
+
+<hr />
+
+<h2 id="state-diagram-example">State Diagram Example</h2>
+<pre><code class="language-mermaid">stateDiagram-v2
+    [*] --&gt; Ready
+    Ready --&gt; Working
+    Working --&gt; Done
+    Done --&gt; [*]
+
+</code></pre>
+
+<hr />
+
+<p><em>All diagrams above use fenced code blocks with <code class="language-plaintext highlighter-rouge">mermaid</code> for compatibility with the Jekyll plugin.</em></p>
+
+    </main>
+    
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@11.9.0/dist/mermaid.min.js"></script>
+    
+    <script>
+      (function() {
+        function convertMermaidCodeFences() {
+          try {
+            var codeBlocks = document.querySelectorAll('pre > code.language-mermaid, pre > code.mermaid');
+            codeBlocks.forEach(function(code) {
+              var pre = code.parentElement;
+              var container = pre.parentElement;
+              var div = document.createElement('div');
+              div.className = 'mermaid';
+              // Use textContent to keep raw diagram text (no HTML)
+              div.textContent = code.textContent;
+              container.replaceChild(div, pre);
+            });
+          } catch (e) {
+            console.warn('Mermaid code fence conversion failed:', e);
+          }
+        }
+        function initMermaidNow() {
+          try {
+            if (!window.mermaid) return false;
+            // Convert fenced code blocks to .mermaid containers before init
+            convertMermaidCodeFences();
+            // Initialize mermaid; startOnLoad helps auto-render if the library supports it
+            if (typeof mermaid.initialize === 'function') {
+              mermaid.initialize({ startOnLoad: true });
+            }
+            // For v10+, prefer run; fallback to init for older versions
+            if (typeof mermaid.run === 'function') {
+              mermaid.run({ querySelector: '.mermaid' });
+            } else if (typeof mermaid.init === 'function') {
+              mermaid.init(undefined, document.querySelectorAll('.mermaid'));
+            }
+            return true;
+          } catch (e) {
+            console.error('Mermaid initialization error:', e);
+            return false;
+          }
+        }
+
+        function whenReady(fn) {
+          if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', fn);
+          } else {
+            fn();
+          }
+        }
+
+        whenReady(function() {
+          // Try immediately
+          if (initMermaidNow()) return;
+          // Poll briefly in case the plugin-injected script loads slightly later
+          var attempts = 0;
+          var timer = setInterval(function() {
+            attempts++;
+            if (initMermaidNow() || attempts > 50) {
+              clearInterval(timer);
+            }
+          }, 100);
+        });
+      })();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,73 @@
+// WCAG-compliant styles for delivery-slides layout
+.slide-branding {
+  padding: 2rem 0;
+  text-align: center;
+  background: linear-gradient(135deg, #1a3660, #4a7bc8); // Accessible blue gradient
+  color: #fff;
+}
+.slide-branding h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: -1px;
+  color: #fff;
+  text-shadow: 1px 1px 4px #1a3660;
+}
+.slide-content {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 2rem;
+  background: #fff;
+  color: #1a3660;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(26,54,96,0.08);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.slide-content h1,
+.slide-content h2,
+.slide-content h3,
+.slide-content h4,
+.slide-content h5,
+.slide-content h6 {
+  text-align: center;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+// Ensure links are underlined and have high contrast
+.slide-content a {
+  color: #1a3660;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  font-weight: 600;
+}
+.slide-content a:focus, .slide-content a:hover {
+  color: #4a7bc8;
+  outline: 2px solid #1a3660;
+  outline-offset: 2px;
+}
+.slide-content ul,
+.slide-content ol {
+  display: inline-block;
+  text-align: left;
+  margin-left: auto;
+  margin-right: auto;
+}
+.slide-content ul li,
+.slide-content ol li {
+  margin-bottom: 1em;
+  text-align: left;
+}
+
+// Responsive adjustments
+@media (max-width: 600px) {
+  .slide-content {
+    padding: 0 1rem;
+  }
+  .slide-branding h1 {
+    font-size: 1.5rem;
+  }
+}

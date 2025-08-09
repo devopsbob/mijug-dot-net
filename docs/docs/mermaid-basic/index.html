@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mermaid Basic</title>
+    <link rel="stylesheet" href="/assets/main.css" />
+    <link rel="stylesheet" href="/assets/delivery-slides.css" />
+  </head>
+  <body>
+    <div class="slide-branding">
+      <h1>My Information Just Under Glass</h1>
+    </div>
+    <main class="slide-content">
+      <h1 id="basic-mermaid-diagram-test-docs-collection">Basic Mermaid Diagram Test (Docs Collection)</h1>
+
+<p>This file is used to validate basic Mermaid diagram rendering in Jekyll.</p>
+
+<pre><code class="language-mermaid">graph TD
+  A[Start] --&gt; B[End]
+</code></pre>
+
+    </main>
+    
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@11.9.0/dist/mermaid.min.js"></script>
+    
+    <script>
+      (function() {
+        function convertMermaidCodeFences() {
+          try {
+            var codeBlocks = document.querySelectorAll('pre > code.language-mermaid, pre > code.mermaid');
+            codeBlocks.forEach(function(code) {
+              var pre = code.parentElement;
+              var container = pre.parentElement;
+              var div = document.createElement('div');
+              div.className = 'mermaid';
+              // Use textContent to keep raw diagram text (no HTML)
+              div.textContent = code.textContent;
+              container.replaceChild(div, pre);
+            });
+          } catch (e) {
+            console.warn('Mermaid code fence conversion failed:', e);
+          }
+        }
+        function initMermaidNow() {
+          try {
+            if (!window.mermaid) return false;
+            // Convert fenced code blocks to .mermaid containers before init
+            convertMermaidCodeFences();
+            // Initialize mermaid; startOnLoad helps auto-render if the library supports it
+            if (typeof mermaid.initialize === 'function') {
+              mermaid.initialize({ startOnLoad: true });
+            }
+            // For v10+, prefer run; fallback to init for older versions
+            if (typeof mermaid.run === 'function') {
+              mermaid.run({ querySelector: '.mermaid' });
+            } else if (typeof mermaid.init === 'function') {
+              mermaid.init(undefined, document.querySelectorAll('.mermaid'));
+            }
+            return true;
+          } catch (e) {
+            console.error('Mermaid initialization error:', e);
+            return false;
+          }
+        }
+
+        function whenReady(fn) {
+          if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', fn);
+          } else {
+            fn();
+          }
+        }
+
+        whenReady(function() {
+          // Try immediately
+          if (initMermaidNow()) return;
+          // Poll briefly in case the plugin-injected script loads slightly later
+          var attempts = 0;
+          var timer = setInterval(function() {
+            attempts++;
+            if (initMermaidNow() || attempts > 50) {
+              clearInterval(timer);
+            }
+          }, 100);
+        });
+      })();
+    </script>
+  </body>
+</html>
