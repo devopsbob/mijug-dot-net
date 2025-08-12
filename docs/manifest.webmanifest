@@ -36,16 +36,16 @@
             "purpose": "maskable"
         },
         {
-            "src": "/assets/logo-mijug-watermark-180x180.svg",
+            "src": "/assets/logo-mijug-180x180.png",
             "sizes": "180x180",
-            "type": "image/svg+xml",
+            "type": "image/png",
             "purpose": "any"
         }
     ],
     "screenshots": [
         {
-            "src": "/assets/screenshots/screenshot-mijug-home.png",
-            "sizes": "482x143",
+            "src": "/assets/screenshots/screenshot-mijug-376x320.png",
+            "sizes": "376x320",
             "form_factor": "narrow",
             "type": "image/png",
             "label": "MIJUG.NET Home Screen - Technology and Community Platform"
