@@ -26,7 +26,7 @@
     />
 
     
-    <link rel="stylesheet" href="/assets/main.css?v=20250812174130" />
+    <link rel="stylesheet" href="/assets/main.css?v=20250812181833" />
     <link
       rel="canonical"
       href="https://www.mijug.net/docs/frontmatter-cms/"
@@ -64,12 +64,12 @@
 <meta property="og:site_name" content="My Information Just Under Glass" />
 <meta property="og:image" content="https://www.mijug.net/assets/logo-mijug-watermark-98x100.svg" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2025-08-12T17:41:30-04:00" />
+<meta property="article:published_time" content="2025-08-12T18:18:33-04:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta property="twitter:image" content="https://www.mijug.net/assets/logo-mijug-watermark-98x100.svg" />
 <meta property="twitter:title" content="FrontMatter CMS Usage" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Bob Kranson"},"dateModified":"2025-08-05T16:31:15-04:00","datePublished":"2025-08-12T17:41:30-04:00","description":"Learn how to use the FrontMatter CMS extension for content management in Jekyll","headline":"FrontMatter CMS Usage","image":"https://www.mijug.net/assets/logo-mijug-watermark-98x100.svg","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.mijug.net/docs/frontmatter-cms/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://www.mijug.net/assets/logo-mijug-watermark-98x100.svg"},"name":"Bob Kranson"},"url":"https://www.mijug.net/docs/frontmatter-cms/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Bob Kranson"},"dateModified":"2025-08-05T16:31:15-04:00","datePublished":"2025-08-12T18:18:33-04:00","description":"Learn how to use the FrontMatter CMS extension for content management in Jekyll","headline":"FrontMatter CMS Usage","image":"https://www.mijug.net/assets/logo-mijug-watermark-98x100.svg","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.mijug.net/docs/frontmatter-cms/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://www.mijug.net/assets/logo-mijug-watermark-98x100.svg"},"name":"Bob Kranson"},"url":"https://www.mijug.net/docs/frontmatter-cms/"}</script>
 <!-- End Jekyll SEO tag -->
 
   </head>
@@ -77,25 +77,61 @@
   <body>
     <header class="site-header" role="banner">
       <div class="wrapper">
-        <a class="site-title long-title" rel="home" href="/">
+        <a
+          class="site-title long-title"
+          rel="home"
+          href="/"
+        >
           
-          <img src="/assets/logo-mijug-watermark-98x100.svg" alt="My Information Just Under Glass" width="50" height="50">
+          <img
+            src="/assets/logo-mijug-watermark-98x100.svg"
+            alt="My Information Just Under Glass"
+            width="50"
+            height="50"
+          />
            My Information Just Under Glass
         </a>
 
         <nav class="site-nav" role="navigation" aria-label="Main navigation">
-          <input type="checkbox" id="header-nav-trigger" class="nav-trigger" title="Toggle header navigation" aria-label="Toggle navigation menu">
+          <input
+            type="checkbox"
+            id="header-nav-trigger"
+            class="nav-trigger"
+            title="Toggle header navigation"
+            aria-label="Toggle navigation menu"
+          />
           <label for="header-nav-trigger" aria-label="Open navigation menu">
             <span class="menu-icon">
-              <svg viewbox="0 0 18 15" width="18px" height="15px" role="img" aria-label="Menu icon">
-                <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"></path>
+              <svg
+                viewBox="0 0 18 15"
+                width="18px"
+                height="15px"
+                role="img"
+                aria-label="Menu icon"
+              >
+                <path
+                  d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"
+                />
               </svg>
             </span>
           </label>
 
           <div class="trigger">
-            <a class="page-link" href="/about/" aria-label="About MIJUG">About</a>
-            <button class="nav-button" popovertarget="mobile-navigation" popovertargetaction="show" type="button" aria-label="Open additional navigation menu" aria-haspopup="true" aria-expanded="false">
+            <a
+              class="page-link"
+              href="/about/"
+              aria-label="About MIJUG"
+              >About</a
+            >
+            <button
+              class="nav-button"
+              popovertarget="mobile-navigation"
+              popovertargetaction="show"
+              type="button"
+              aria-label="Open additional navigation menu"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
               Navigation
             </button>
           </div>
@@ -103,9 +139,22 @@
       </div>
     </header>
 
-    <nav popover id="mobile-navigation" class="site-nav" role="dialog" aria-labelledby="nav-heading" aria-modal="true">
+    <nav
+      popover
+      id="mobile-navigation"
+      class="site-nav"
+      role="dialog"
+      aria-labelledby="nav-heading"
+      aria-modal="true"
+    >
       <h2 id="nav-heading" class="sr-only">Additional Navigation</h2>
-      <button class="nav-button" popovertarget="mobile-navigation" popovertargetaction="hide" type="button" aria-label="Close navigation menu">
+      <button
+        class="nav-button"
+        popovertarget="mobile-navigation"
+        popovertargetaction="hide"
+        type="button"
+        aria-label="Close navigation menu"
+      >
         Close
       </button>
 
@@ -115,10 +164,20 @@
           <h3 class="popover-heading">Posts</h3>
           <ul class="nav-list" role="list">
             <li>
-              <a class="page-link" href="/blog/" aria-label="View blog posts">Blog</a>
+              <a
+                class="page-link"
+                href="/blog/"
+                aria-label="View blog posts"
+                >Blog</a
+              >
             </li>
             <li>
-              <a class="page-link" href="/contact/" aria-label="Contact MIJUG">Contact Us</a>
+              <a
+                class="page-link"
+                href="/contact/"
+                aria-label="Contact MIJUG"
+                >Contact Us</a
+              >
             </li>
           </ul>
         </div>
@@ -134,121 +193,201 @@
             
             
             <li>
-              <a class="page-link" href="/docs/getting-started/" aria-label="View Getting Started documentation">
+              <a
+                class="page-link"
+                href="/docs/getting-started/"
+                aria-label="View Getting Started documentation"
+              >
                 Getting Started
               </a>
             </li>
             
             <li>
-              <a class="page-link" href="/docs/welcome-mijug-workspace/" aria-label="View Workspace Home documentation">
+              <a
+                class="page-link"
+                href="/docs/welcome-mijug-workspace/"
+                aria-label="View Workspace Home documentation"
+              >
                 Workspace Home
               </a>
             </li>
             
             <li>
-              <a class="page-link" href="/docs/accessibility-testing/" aria-label="View Accessibility Testing Configuration documentation">
+              <a
+                class="page-link"
+                href="/docs/accessibility-testing/"
+                aria-label="View Accessibility Testing Configuration documentation"
+              >
                 Accessibility Testing Configuration
               </a>
             </li>
             
             <li>
-              <a class="page-link" href="/docs/getting-started-with-typescript-and-jekyll/" aria-label="View Getting Started with TypeScript and Jekyll documentation">
+              <a
+                class="page-link"
+                href="/docs/getting-started-with-typescript-and-jekyll/"
+                aria-label="View Getting Started with TypeScript and Jekyll documentation"
+              >
                 Getting Started with TypeScript and Jekyll
               </a>
             </li>
             
             <li>
-              <a class="page-link" href="/docs/tags-and-categories-guide/" aria-label="View Tags and Categories System Guide documentation">
+              <a
+                class="page-link"
+                href="/docs/tags-and-categories-guide/"
+                aria-label="View Tags and Categories System Guide documentation"
+              >
                 Tags and Categories System Guide
               </a>
             </li>
             
             <li>
-              <a class="page-link" href="/docs/liquid-tags-examples/" aria-label="View Liquid Tags Examples documentation">
+              <a
+                class="page-link"
+                href="/docs/liquid-tags-examples/"
+                aria-label="View Liquid Tags Examples documentation"
+              >
                 Liquid Tags Examples
               </a>
             </li>
             
             <li>
-              <a class="page-link" href="/docs/browser-management/" aria-label="View Browser Management for Testing documentation">
+              <a
+                class="page-link"
+                href="/docs/browser-management/"
+                aria-label="View Browser Management for Testing documentation"
+              >
                 Browser Management for Testing
               </a>
             </li>
             
             <li>
-              <a class="page-link" href="/docs/browser-compatibility-system/" aria-label="View Browser Compatibility Detection &amp; Testing System documentation">
+              <a
+                class="page-link"
+                href="/docs/browser-compatibility-system/"
+                aria-label="View Browser Compatibility Detection &amp; Testing System documentation"
+              >
                 Browser Compatibility Detection &amp; Testing System
               </a>
             </li>
             
             <li>
-              <a class="page-link" href="/docs/browser-compatibility-testing/" aria-label="View Browser Compatibility Testing documentation">
+              <a
+                class="page-link"
+                href="/docs/browser-compatibility-testing/"
+                aria-label="View Browser Compatibility Testing documentation"
+              >
                 Browser Compatibility Testing
               </a>
             </li>
             
             <li>
-              <a class="page-link" href="/docs/cache-management/" aria-label="View Cache Management Strategies documentation">
+              <a
+                class="page-link"
+                href="/docs/cache-management/"
+                aria-label="View Cache Management Strategies documentation"
+              >
                 Cache Management Strategies
               </a>
             </li>
             
             <li>
-              <a class="page-link" href="/docs/rel-attribute-guide/" aria-label="View The rel Attribute in HTML Links: A Comprehensive Guide documentation">
+              <a
+                class="page-link"
+                href="/docs/rel-attribute-guide/"
+                aria-label="View The rel Attribute in HTML Links: A Comprehensive Guide documentation"
+              >
                 The rel Attribute in HTML Links: A Comprehensive Guide
               </a>
             </li>
             
             <li>
-              <a class="page-link" href="/docs/frontmatter-cms/" aria-label="View FrontMatter CMS Usage documentation">
+              <a
+                class="page-link"
+                href="/docs/frontmatter-cms/"
+                aria-label="View FrontMatter CMS Usage documentation"
+              >
                 FrontMatter CMS Usage
               </a>
             </li>
             
             <li>
-              <a class="page-link" href="/docs/performance-optimization/" aria-label="View Performance Optimization Guide documentation">
+              <a
+                class="page-link"
+                href="/docs/performance-optimization/"
+                aria-label="View Performance Optimization Guide documentation"
+              >
                 Performance Optimization Guide
               </a>
             </li>
             
             <li>
-              <a class="page-link" href="/docs/mermaid-test-runner/" aria-label="View Mermaid Test Runner documentation">
+              <a
+                class="page-link"
+                href="/docs/mermaid-test-runner/"
+                aria-label="View Mermaid Test Runner documentation"
+              >
                 Mermaid Test Runner
               </a>
             </li>
             
             <li>
-              <a class="page-link" href="/docs/mermaid-quick-start/" aria-label="View Mermaid Quick Start documentation">
+              <a
+                class="page-link"
+                href="/docs/mermaid-quick-start/"
+                aria-label="View Mermaid Quick Start documentation"
+              >
                 Mermaid Quick Start
               </a>
             </li>
             
             <li>
-              <a class="page-link" href="/docs/mermaid-configuration-guide/" aria-label="View Mermaid Diagram Configuration Guide documentation">
+              <a
+                class="page-link"
+                href="/docs/mermaid-configuration-guide/"
+                aria-label="View Mermaid Diagram Configuration Guide documentation"
+              >
                 Mermaid Diagram Configuration Guide
               </a>
             </li>
             
             <li>
-              <a class="page-link" href="/docs/mermaid-examples/" aria-label="View Mermaid Diagram Examples documentation">
+              <a
+                class="page-link"
+                href="/docs/mermaid-examples/"
+                aria-label="View Mermaid Diagram Examples documentation"
+              >
                 Mermaid Diagram Examples
               </a>
             </li>
             
             <li>
-              <a class="page-link" href="/docs/mermaid-default-layout/" aria-label="View Mermaid on Default Layout documentation">
+              <a
+                class="page-link"
+                href="/docs/mermaid-default-layout/"
+                aria-label="View Mermaid on Default Layout documentation"
+              >
                 Mermaid on Default Layout
               </a>
             </li>
             
             <li>
-              <a class="page-link" href="/docs/mermaid-basic/" aria-label="View Mermaid Basic documentation">
+              <a
+                class="page-link"
+                href="/docs/mermaid-basic/"
+                aria-label="View Mermaid Basic documentation"
+              >
                 Mermaid Basic
               </a>
             </li>
             
             <li>
-              <a class="page-link" href="/docs/mermaid-diagrams-sample/" aria-label="View Delivery Slides Mermaid Diagrams Showcase documentation">
+              <a
+                class="page-link"
+                href="/docs/mermaid-diagrams-sample/"
+                aria-label="View Delivery Slides Mermaid Diagrams Showcase documentation"
+              >
                 Delivery Slides Mermaid Diagrams Showcase
               </a>
             </li>
@@ -265,37 +404,67 @@
           <ul class="nav-list" role="list" aria-label="Blog post categories">
             
             <li>
-              <a class="page-link" href="/category/announcements" aria-label="View Announcements category with 3 posts">
+              <a
+                class="page-link"
+                href="/category/announcements"
+                aria-label="View Announcements category with 3 posts"
+              >
                 Announcements
-                <span class="count" aria-hidden="true">(3)</span>
+                <span class="count" aria-hidden="true"
+                  >(3)</span
+                >
               </a>
             </li>
             
             <li>
-              <a class="page-link" href="/category/linux" aria-label="View Linux category with 1 posts">
+              <a
+                class="page-link"
+                href="/category/linux"
+                aria-label="View Linux category with 1 posts"
+              >
                 Linux
-                <span class="count" aria-hidden="true">(1)</span>
+                <span class="count" aria-hidden="true"
+                  >(1)</span
+                >
               </a>
             </li>
             
             <li>
-              <a class="page-link" href="/category/documentation" aria-label="View Documentation category with 1 posts">
+              <a
+                class="page-link"
+                href="/category/documentation"
+                aria-label="View Documentation category with 1 posts"
+              >
                 Documentation
-                <span class="count" aria-hidden="true">(1)</span>
+                <span class="count" aria-hidden="true"
+                  >(1)</span
+                >
               </a>
             </li>
             
             <li>
-              <a class="page-link" href="/category/navigation" aria-label="View Navigation category with 1 posts">
+              <a
+                class="page-link"
+                href="/category/navigation"
+                aria-label="View Navigation category with 1 posts"
+              >
                 Navigation
-                <span class="count" aria-hidden="true">(1)</span>
+                <span class="count" aria-hidden="true"
+                  >(1)</span
+                >
               </a>
             </li>
             
             <li>
-              <a class="page-link" href="/category/getting-started" aria-label="View Getting-started category with 3 posts">
+              <a
+                class="page-link"
+                href="/category/getting-started"
+                aria-label="View Getting-started category with 3 posts"
+              >
                 Getting-started
-                <span class="count" aria-hidden="true">(3)</span>
+                <span class="count" aria-hidden="true"
+                  >(3)</span
+                >
               </a>
             </li>
             
@@ -310,72 +479,132 @@
           <ul class="nav-list" role="list" aria-label="Blog post tags">
              
             <li>
-              <a class="page-link" href="/tag/cpus" aria-label="View posts tagged with cpus (1 posts)">
+              <a
+                class="page-link"
+                href="/tag/cpus"
+                aria-label="View posts tagged with cpus (1 posts)"
+              >
                 #cpus
-                <span class="count" aria-hidden="true">(1)</span>
+                <span class="count" aria-hidden="true"
+                  >(1)</span
+                >
               </a>
             </li>
             
             <li>
-              <a class="page-link" href="/tag/diy" aria-label="View posts tagged with diy (1 posts)">
+              <a
+                class="page-link"
+                href="/tag/diy"
+                aria-label="View posts tagged with diy (1 posts)"
+              >
                 #diy
-                <span class="count" aria-hidden="true">(1)</span>
+                <span class="count" aria-hidden="true"
+                  >(1)</span
+                >
               </a>
             </li>
             
             <li>
-              <a class="page-link" href="/tag/docs" aria-label="View posts tagged with docs (1 posts)">
+              <a
+                class="page-link"
+                href="/tag/docs"
+                aria-label="View posts tagged with docs (1 posts)"
+              >
                 #docs
-                <span class="count" aria-hidden="true">(1)</span>
+                <span class="count" aria-hidden="true"
+                  >(1)</span
+                >
               </a>
             </li>
             
             <li>
-              <a class="page-link" href="/tag/e-waste" aria-label="View posts tagged with e-waste (2 posts)">
+              <a
+                class="page-link"
+                href="/tag/e-waste"
+                aria-label="View posts tagged with e-waste (2 posts)"
+              >
                 #e-waste
-                <span class="count" aria-hidden="true">(2)</span>
+                <span class="count" aria-hidden="true"
+                  >(2)</span
+                >
               </a>
             </li>
             
             <li>
-              <a class="page-link" href="/tag/education" aria-label="View posts tagged with education (1 posts)">
+              <a
+                class="page-link"
+                href="/tag/education"
+                aria-label="View posts tagged with education (1 posts)"
+              >
                 #education
-                <span class="count" aria-hidden="true">(1)</span>
+                <span class="count" aria-hidden="true"
+                  >(1)</span
+                >
               </a>
             </li>
             
             <li>
-              <a class="page-link" href="/tag/evening-schedules" aria-label="View posts tagged with evening-schedules (1 posts)">
+              <a
+                class="page-link"
+                href="/tag/evening-schedules"
+                aria-label="View posts tagged with evening-schedules (1 posts)"
+              >
                 #evening-schedules
-                <span class="count" aria-hidden="true">(1)</span>
+                <span class="count" aria-hidden="true"
+                  >(1)</span
+                >
               </a>
             </li>
             
             <li>
-              <a class="page-link" href="/tag/gpus" aria-label="View posts tagged with gpus (1 posts)">
+              <a
+                class="page-link"
+                href="/tag/gpus"
+                aria-label="View posts tagged with gpus (1 posts)"
+              >
                 #gpus
-                <span class="count" aria-hidden="true">(1)</span>
+                <span class="count" aria-hidden="true"
+                  >(1)</span
+                >
               </a>
             </li>
             
             <li>
-              <a class="page-link" href="/tag/guide" aria-label="View posts tagged with guide (1 posts)">
+              <a
+                class="page-link"
+                href="/tag/guide"
+                aria-label="View posts tagged with guide (1 posts)"
+              >
                 #guide
-                <span class="count" aria-hidden="true">(1)</span>
+                <span class="count" aria-hidden="true"
+                  >(1)</span
+                >
               </a>
             </li>
             
             <li>
-              <a class="page-link" href="/tag/linux" aria-label="View posts tagged with linux (2 posts)">
+              <a
+                class="page-link"
+                href="/tag/linux"
+                aria-label="View posts tagged with linux (2 posts)"
+              >
                 #linux
-                <span class="count" aria-hidden="true">(2)</span>
+                <span class="count" aria-hidden="true"
+                  >(2)</span
+                >
               </a>
             </li>
             
             <li>
-              <a class="page-link" href="/tag/navigation" aria-label="View posts tagged with navigation (1 posts)">
+              <a
+                class="page-link"
+                href="/tag/navigation"
+                aria-label="View posts tagged with navigation (1 posts)"
+              >
                 #navigation
-                <span class="count" aria-hidden="true">(1)</span>
+                <span class="count" aria-hidden="true"
+                  >(1)</span
+                >
               </a>
             </li>
             
@@ -386,14 +615,12 @@
     </nav>
 
     <main class="page-content" aria-label="Content">
-      <div class="wrapper">
-<article class="post">
+      <div class="wrapper"><article class="post">
   <header class="post-header">
     <h1 class="post-title">FrontMatter CMS Usage</h1>
   </header>
 
-  <div class="post-content">
-<h1 id="frontmatter-cms-usage">FrontMatter CMS Usage</h1>
+  <div class="post-content"><h1 id="frontmatter-cms-usage">FrontMatter CMS Usage</h1>
 
 <h2 id="overview">Overview</h2>
 
@@ -402,41 +629,34 @@
 <h2 id="table-of-contents">Table of Contents</h2>
 
 <ul class="no_toc" id="markdown-toc">
-  <li>
-<a href="#frontmatter-cms-usage" id="markdown-toc-frontmatter-cms-usage">FrontMatter CMS Usage</a>    <ul>
+  <li><a href="#frontmatter-cms-usage" id="markdown-toc-frontmatter-cms-usage">FrontMatter CMS Usage</a>    <ul>
       <li><a href="#overview" id="markdown-toc-overview">Overview</a></li>
       <li><a href="#table-of-contents" id="markdown-toc-table-of-contents">Table of Contents</a></li>
-      <li>
-<a href="#getting-started" id="markdown-toc-getting-started">Getting Started</a>        <ul>
+      <li><a href="#getting-started" id="markdown-toc-getting-started">Getting Started</a>        <ul>
           <li><a href="#1-installation" id="markdown-toc-1-installation">1. Installation</a></li>
           <li><a href="#2-opening-the-cms" id="markdown-toc-2-opening-the-cms">2. Opening the CMS</a></li>
           <li><a href="#3-content-management-interface" id="markdown-toc-3-content-management-interface">3. Content Management Interface</a></li>
         </ul>
       </li>
-      <li>
-<a href="#content-types" id="markdown-toc-content-types">Content Types</a>        <ul>
+      <li><a href="#content-types" id="markdown-toc-content-types">Content Types</a>        <ul>
           <li><a href="#default-pages" id="markdown-toc-default-pages">Default Pages</a></li>
           <li><a href="#blog-posts" id="markdown-toc-blog-posts">Blog Posts</a></li>
           <li><a href="#documentation" id="markdown-toc-documentation">Documentation</a></li>
         </ul>
       </li>
-      <li>
-<a href="#creating-content" id="markdown-toc-creating-content">Creating Content</a>        <ul>
+      <li><a href="#creating-content" id="markdown-toc-creating-content">Creating Content</a>        <ul>
           <li><a href="#using-the-visual-editor" id="markdown-toc-using-the-visual-editor">Using the Visual Editor</a></li>
           <li><a href="#field-types-available" id="markdown-toc-field-types-available">Field Types Available</a></li>
         </ul>
       </li>
-      <li>
-<a href="#content-snippets" id="markdown-toc-content-snippets">Content Snippets</a>        <ul>
-          <li>
-<a href="#standard-snippets" id="markdown-toc-standard-snippets">Standard Snippets</a>            <ul>
+      <li><a href="#content-snippets" id="markdown-toc-content-snippets">Content Snippets</a>        <ul>
+          <li><a href="#standard-snippets" id="markdown-toc-standard-snippets">Standard Snippets</a>            <ul>
               <li><a href="#image-with-caption" id="markdown-toc-image-with-caption">Image with Caption</a></li>
               <li><a href="#code-block" id="markdown-toc-code-block">Code Block</a></li>
               <li><a href="#calloutalert-box" id="markdown-toc-calloutalert-box">Callout/Alert Box</a></li>
             </ul>
           </li>
-          <li>
-<a href="#liquid-tag-snippets" id="markdown-toc-liquid-tag-snippets">Liquid Tag Snippets</a>            <ul>
+          <li><a href="#liquid-tag-snippets" id="markdown-toc-liquid-tag-snippets">Liquid Tag Snippets</a>            <ul>
               <li><a href="#liquid-variable" id="markdown-toc-liquid-variable">Liquid Variable</a></li>
               <li><a href="#liquid-tag" id="markdown-toc-liquid-tag">Liquid Tag</a></li>
               <li><a href="#liquid-for-loop" id="markdown-toc-liquid-for-loop">Liquid For Loop</a></li>
@@ -447,33 +667,28 @@
           </li>
         </ul>
       </li>
-      <li>
-<a href="#media-management" id="markdown-toc-media-management">Media Management</a>        <ul>
+      <li><a href="#media-management" id="markdown-toc-media-management">Media Management</a>        <ul>
           <li><a href="#asset-organization" id="markdown-toc-asset-organization">Asset Organization</a></li>
         </ul>
       </li>
-      <li>
-<a href="#taxonomy-management" id="markdown-toc-taxonomy-management">Taxonomy Management</a>        <ul>
+      <li><a href="#taxonomy-management" id="markdown-toc-taxonomy-management">Taxonomy Management</a>        <ul>
           <li><a href="#categories" id="markdown-toc-categories">Categories</a></li>
           <li><a href="#tags" id="markdown-toc-tags">Tags</a></li>
           <li><a href="#data-file-integration" id="markdown-toc-data-file-integration">Data File Integration</a></li>
         </ul>
       </li>
-      <li>
-<a href="#workflow-integration" id="markdown-toc-workflow-integration">Workflow Integration</a>        <ul>
+      <li><a href="#workflow-integration" id="markdown-toc-workflow-integration">Workflow Integration</a>        <ul>
           <li><a href="#jekyll-preview" id="markdown-toc-jekyll-preview">Jekyll Preview</a></li>
           <li><a href="#version-control" id="markdown-toc-version-control">Version Control</a></li>
         </ul>
       </li>
-      <li>
-<a href="#advanced-features" id="markdown-toc-advanced-features">Advanced Features</a>        <ul>
+      <li><a href="#advanced-features" id="markdown-toc-advanced-features">Advanced Features</a>        <ul>
           <li><a href="#custom-fields" id="markdown-toc-custom-fields">Custom Fields</a></li>
           <li><a href="#content-templates" id="markdown-toc-content-templates">Content Templates</a></li>
           <li><a href="#bulk-operations" id="markdown-toc-bulk-operations">Bulk Operations</a></li>
         </ul>
       </li>
-      <li>
-<a href="#troubleshooting" id="markdown-toc-troubleshooting">Troubleshooting</a>        <ul>
+      <li><a href="#troubleshooting" id="markdown-toc-troubleshooting">Troubleshooting</a>        <ul>
           <li><a href="#common-issues" id="markdown-toc-common-issues">Common Issues</a></li>
           <li><a href="#configuration-files" id="markdown-toc-configuration-files">Configuration Files</a></li>
         </ul>
@@ -501,10 +716,8 @@
 <p>You can access the FrontMatter CMS in several ways:</p>
 
 <ul>
-  <li>
-<strong>Command Palette</strong>: <code class="language-plaintext highlighter-rouge">Ctrl+Shift+P</code> → “FrontMatter: Open dashboard”</li>
-  <li>
-<strong>Task Runner</strong>: <code class="language-plaintext highlighter-rouge">Ctrl+Shift+P</code> → “Tasks: Run Task” → “FrontMatter: Start CMS”</li>
+  <li><strong>Command Palette</strong>: <code class="language-plaintext highlighter-rouge">Ctrl+Shift+P</code> → “FrontMatter: Open dashboard”</li>
+  <li><strong>Task Runner</strong>: <code class="language-plaintext highlighter-rouge">Ctrl+Shift+P</code> → “Tasks: Run Task” → “FrontMatter: Start CMS”</li>
 </ul>
 
 <h3 id="3-content-management-interface">3. Content Management Interface</h3>
@@ -512,14 +725,10 @@
 <p>The CMS provides several panels:</p>
 
 <ul>
-  <li>
-<strong>Content Overview</strong>: Browse all your posts and pages</li>
-  <li>
-<strong>Media Library</strong>: Manage images and other assets</li>
-  <li>
-<strong>Taxonomies</strong>: Organize tags and categories</li>
-  <li>
-<strong>Snippets</strong>: Insert predefined content blocks</li>
+  <li><strong>Content Overview</strong>: Browse all your posts and pages</li>
+  <li><strong>Media Library</strong>: Manage images and other assets</li>
+  <li><strong>Taxonomies</strong>: Organize tags and categories</li>
+  <li><strong>Snippets</strong>: Insert predefined content blocks</li>
 </ul>
 
 <h2 id="content-types">Content Types</h2>
@@ -540,8 +749,7 @@
   <li>Full-featured blog posts with advanced metadata</li>
   <li>Used for: News, tutorials, announcements</li>
   <li>Location: <code class="language-plaintext highlighter-rouge">docs/_posts/</code> directory</li>
-  <li>Filename format: <code class="language-plaintext highlighter-rouge">YYYY-MM-DD-title.md</code>
-</li>
+  <li>Filename format: <code class="language-plaintext highlighter-rouge">YYYY-MM-DD-title.md</code></li>
 </ul>
 
 <h3 id="documentation">Documentation</h3>
@@ -562,18 +770,12 @@
   <li>Select content type (Post, Documentation, or Default)</li>
   <li>Fill in the metadata fields:
     <ul>
-      <li>
-<strong>Title</strong>: Content title</li>
-      <li>
-<strong>Description</strong>: SEO description</li>
-      <li>
-<strong>Categories</strong>: Organize content (limit varies by type)</li>
-      <li>
-<strong>Tags</strong>: Keyword tags for discoverability</li>
-      <li>
-<strong>Featured Image</strong>: Visual representation</li>
-      <li>
-<strong>Draft Status</strong>: Control publication</li>
+      <li><strong>Title</strong>: Content title</li>
+      <li><strong>Description</strong>: SEO description</li>
+      <li><strong>Categories</strong>: Organize content (limit varies by type)</li>
+      <li><strong>Tags</strong>: Keyword tags for discoverability</li>
+      <li><strong>Featured Image</strong>: Visual representation</li>
+      <li><strong>Draft Status</strong>: Control publication</li>
     </ul>
   </li>
 </ol>
@@ -581,20 +783,13 @@
 <h3 id="field-types-available">Field Types Available</h3>
 
 <ul>
-  <li>
-<strong>Text Fields</strong>: Title, description, author</li>
-  <li>
-<strong>Date/Time</strong>: Publication and modification dates</li>
-  <li>
-<strong>Choice Fields</strong>: Layout selection, callout types</li>
-  <li>
-<strong>Image Fields</strong>: Featured images with alt text</li>
-  <li>
-<strong>Boolean Fields</strong>: Draft status, TOC enable/disable</li>
-  <li>
-<strong>Number Fields</strong>: Navigation order for docs</li>
-  <li>
-<strong>Tags/Categories</strong>: Taxonomy management</li>
+  <li><strong>Text Fields</strong>: Title, description, author</li>
+  <li><strong>Date/Time</strong>: Publication and modification dates</li>
+  <li><strong>Choice Fields</strong>: Layout selection, callout types</li>
+  <li><strong>Image Fields</strong>: Featured images with alt text</li>
+  <li><strong>Boolean Fields</strong>: Draft status, TOC enable/disable</li>
+  <li><strong>Number Fields</strong>: Navigation order for docs</li>
+  <li><strong>Tags/Categories</strong>: Taxonomy management</li>
 </ul>
 
 <h2 id="content-snippets">Content Snippets</h2>
@@ -602,12 +797,9 @@
 <p>Pre-configured snippets for common content patterns. Access snippets through:</p>
 
 <ul>
-  <li>
-<strong>FrontMatter Dashboard</strong>: In the content editor panel</li>
-  <li>
-<strong>VS Code Command Palette</strong>: <code class="language-plaintext highlighter-rouge">Ctrl+Shift+P</code> → “FrontMatter: Insert snippet”</li>
-  <li>
-<strong>Editor Context Menu</strong>: Right-click in markdown files → “Insert FrontMatter snippet”</li>
+  <li><strong>FrontMatter Dashboard</strong>: In the content editor panel</li>
+  <li><strong>VS Code Command Palette</strong>: <code class="language-plaintext highlighter-rouge">Ctrl+Shift+P</code> → “FrontMatter: Insert snippet”</li>
+  <li><strong>Editor Context Menu</strong>: Right-click in markdown files → “Insert FrontMatter snippet”</li>
 </ul>
 
 <h3 id="standard-snippets">Standard Snippets</h3>
@@ -617,16 +809,14 @@
 <p><strong>Usage</strong>: Insert images with automatic caption formatting</p>
 
 <ul>
-  <li>
-<strong>Prompts for</strong>:
+  <li><strong>Prompts for</strong>:
     <ul>
       <li>Image source (with file picker integration)</li>
       <li>Alt text for accessibility</li>
       <li>Caption text</li>
     </ul>
   </li>
-  <li>
-<strong>Example output</strong>:</li>
+  <li><strong>Example output</strong>:</li>
 </ul>
 
 <div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">![</span><span class="nv">Alt text</span><span class="p">](</span><span class="sx">image-source.jpg</span><span class="p">)</span>
@@ -638,22 +828,19 @@
 <p><strong>Usage</strong>: Insert syntax-highlighted code blocks with language selection</p>
 
 <ul>
-  <li>
-<strong>Prompts for</strong>:
+  <li><strong>Prompts for</strong>:
     <ul>
       <li>Programming language (dropdown menu)</li>
       <li>Code content</li>
     </ul>
   </li>
-  <li>
-<strong>Available languages</strong>:
+  <li><strong>Available languages</strong>:
     <ul>
       <li>TypeScript, JavaScript, Bash, YAML, JSON</li>
       <li>Markdown, Ruby, Liquid, HTML, CSS, XML, SQL</li>
     </ul>
   </li>
-  <li>
-<strong>Example output</strong>:</li>
+  <li><strong>Example output</strong>:</li>
 </ul>
 
 <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Your code here</span>
@@ -664,15 +851,13 @@
 <p><strong>Usage</strong>: Insert callout boxes with interactive type selection</p>
 
 <ul>
-  <li>
-<strong>Prompts for</strong>:
+  <li><strong>Prompts for</strong>:
     <ul>
       <li>Callout type (dropdown menu)</li>
       <li>Message content</li>
     </ul>
   </li>
-  <li>
-<strong>Available types</strong>:
+  <li><strong>Available types</strong>:
     <ul>
       <li>💡 Pro Tip</li>
       <li>⚠️ Warning</li>
@@ -681,9 +866,7 @@
       <li>ℹ️ Info</li>
     </ul>
   </li>
-  <li>
-<strong>Example output</strong>: <code class="language-plaintext highlighter-rouge">&gt; **💡 Pro Tip**: Your helpful message here</code>
-</li>
+  <li><strong>Example output</strong>: <code class="language-plaintext highlighter-rouge">&gt; **💡 Pro Tip**: Your helpful message here</code></li>
 </ul>
 
 <h3 id="liquid-tag-snippets">Liquid Tag Snippets</h3>
@@ -695,13 +878,9 @@
 <p><strong>Usage</strong>: Insert `` syntax with custom variable name</p>
 
 <ul>
-  <li>
-<strong>Prompts for</strong>: Variable name</li>
-  <li>
-<strong>Example output</strong>: <code class="language-plaintext highlighter-rouge">{{ variable_name }}</code> (where <code class="language-plaintext highlighter-rouge">variable_name</code> is replaced with your input)</li>
-  <li>
-<strong>Common examples</strong>: <code class="language-plaintext highlighter-rouge">{{ page.title }}</code>, <code class="language-plaintext highlighter-rouge">{{ site.description }}</code>
-</li>
+  <li><strong>Prompts for</strong>: Variable name</li>
+  <li><strong>Example output</strong>: <code class="language-plaintext highlighter-rouge">{{ variable_name }}</code> (where <code class="language-plaintext highlighter-rouge">variable_name</code> is replaced with your input)</li>
+  <li><strong>Common examples</strong>: <code class="language-plaintext highlighter-rouge">{{ page.title }}</code>, <code class="language-plaintext highlighter-rouge">{{ site.description }}</code></li>
 </ul>
 
 <h4 id="liquid-tag">Liquid Tag</h4>
@@ -709,11 +888,8 @@
 <p><strong>Usage</strong>: Insert single Liquid tag with custom content</p>
 
 <ul>
-  <li>
-<strong>Prompts for</strong>: Tag content</li>
-  <li>
-<strong>Example output</strong>: <code class="language-plaintext highlighter-rouge">{% assign var = value %}</code>, <code class="language-plaintext highlighter-rouge">{% include file.html %}</code>
-</li>
+  <li><strong>Prompts for</strong>: Tag content</li>
+  <li><strong>Example output</strong>: <code class="language-plaintext highlighter-rouge">{% assign var = value %}</code>, <code class="language-plaintext highlighter-rouge">{% include file.html %}</code></li>
 </ul>
 
 <h4 id="liquid-for-loop">Liquid For Loop</h4>
@@ -721,35 +897,25 @@
 <p><strong>Usage</strong>: Insert complete for loop structure with interactive options</p>
 
 <ul>
-  <li>
-<strong>Prompts for</strong>:
+  <li><strong>Prompts for</strong>:
     <ul>
       <li>Loop item variable name</li>
       <li>Collection to iterate over (dropdown with common options)</li>
       <li>Loop content template</li>
     </ul>
   </li>
-  <li>
-<strong>Available collections</strong>:
+  <li><strong>Available collections</strong>:
     <ul>
-      <li>
-<code class="language-plaintext highlighter-rouge">site.posts</code> - All blog posts</li>
-      <li>
-<code class="language-plaintext highlighter-rouge">site.pages</code> - All pages</li>
-      <li>
-<code class="language-plaintext highlighter-rouge">site.docs</code> - All documentation</li>
-      <li>
-<code class="language-plaintext highlighter-rouge">site.data.categories</code> - Category data</li>
-      <li>
-<code class="language-plaintext highlighter-rouge">site.data.tags</code> - Tag data</li>
-      <li>
-<code class="language-plaintext highlighter-rouge">page.tags</code> - Current page tags</li>
-      <li>
-<code class="language-plaintext highlighter-rouge">page.categories</code> - Current page categories</li>
+      <li><code class="language-plaintext highlighter-rouge">site.posts</code> - All blog posts</li>
+      <li><code class="language-plaintext highlighter-rouge">site.pages</code> - All pages</li>
+      <li><code class="language-plaintext highlighter-rouge">site.docs</code> - All documentation</li>
+      <li><code class="language-plaintext highlighter-rouge">site.data.categories</code> - Category data</li>
+      <li><code class="language-plaintext highlighter-rouge">site.data.tags</code> - Tag data</li>
+      <li><code class="language-plaintext highlighter-rouge">page.tags</code> - Current page tags</li>
+      <li><code class="language-plaintext highlighter-rouge">page.categories</code> - Current page categories</li>
     </ul>
   </li>
-  <li>
-<strong>Example output</strong>:</li>
+  <li><strong>Example output</strong>:</li>
 </ul>
 
 <div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span><span class="nv">post</span><span class="w"> </span><span class="nt">in</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">posts</span><span class="w"> </span><span class="cp">%}</span>
@@ -762,15 +928,13 @@
 <p><strong>Usage</strong>: Insert conditional block with custom condition and content</p>
 
 <ul>
-  <li>
-<strong>Prompts for</strong>:
+  <li><strong>Prompts for</strong>:
     <ul>
       <li>Condition to check</li>
       <li>Content when condition is true</li>
     </ul>
   </li>
-  <li>
-<strong>Example output</strong>:</li>
+  <li><strong>Example output</strong>:</li>
 </ul>
 
 <div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{%</span><span class="w"> </span><span class="nt">if</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="cp">%}</span>
@@ -783,14 +947,10 @@
 <p>These interactive snippets provide:</p>
 
 <ol>
-  <li>
-<strong>Guided Input</strong>: Prompts ensure correct syntax</li>
-  <li>
-<strong>Pre-configured Options</strong>: Dropdown menus with common Jekyll objects</li>
-  <li>
-<strong>Template Completion</strong>: Full code blocks with proper structure</li>
-  <li>
-<strong>Error Prevention</strong>: Reduces syntax mistakes in Liquid code</li>
+  <li><strong>Guided Input</strong>: Prompts ensure correct syntax</li>
+  <li><strong>Pre-configured Options</strong>: Dropdown menus with common Jekyll objects</li>
+  <li><strong>Template Completion</strong>: Full code blocks with proper structure</li>
+  <li><strong>Error Prevention</strong>: Reduces syntax mistakes in Liquid code</li>
 </ol>
 
 <h4 id="common-liquid-patterns-for-reference">Common Liquid Patterns (for reference)</h4>
@@ -839,14 +999,9 @@
 <h3 id="asset-organization">Asset Organization</h3>
 
 <ul>
-  <li>
-<strong>Public Folder</strong>: <code class="language-plaintext highlighter-rouge">docs/assets/</code>
-</li>
-  <li>
-<strong>Image Storage</strong>: <code class="language-plaintext highlighter-rouge">docs/assets/images/</code>
-</li>
-  <li>
-<strong>Automatic Processing</strong>: Images are automatically linked and optimized</li>
+  <li><strong>Public Folder</strong>: <code class="language-plaintext highlighter-rouge">docs/assets/</code></li>
+  <li><strong>Image Storage</strong>: <code class="language-plaintext highlighter-rouge">docs/assets/images/</code></li>
+  <li><strong>Automatic Processing</strong>: Images are automatically linked and optimized</li>
 </ul>
 
 <h2 id="taxonomy-management">Taxonomy Management</h2>
@@ -896,10 +1051,8 @@
 <p>FrontMatter integrates with Jekyll’s live preview:</p>
 
 <ol>
-  <li>Start Jekyll server: <code class="language-plaintext highlighter-rouge">npm run dev:jekyll</code>
-</li>
-  <li>Preview changes at <code class="language-plaintext highlighter-rouge">http://localhost:4000</code>
-</li>
+  <li>Start Jekyll server: <code class="language-plaintext highlighter-rouge">npm run dev:jekyll</code></li>
+  <li>Preview changes at <code class="language-plaintext highlighter-rouge">http://localhost:4000</code></li>
 </ol>
 
 <h3 id="version-control">Version Control</h3>
@@ -932,10 +1085,8 @@
 <p>Templates are automatically applied based on content type:</p>
 
 <ul>
-  <li>Posts: <code class="language-plaintext highlighter-rouge">docs/_posts/YYYY-MM-DD-title.md</code>
-</li>
-  <li>Documentation: <code class="language-plaintext highlighter-rouge">docs/_docs/title.md</code>
-</li>
+  <li>Posts: <code class="language-plaintext highlighter-rouge">docs/_posts/YYYY-MM-DD-title.md</code></li>
+  <li>Documentation: <code class="language-plaintext highlighter-rouge">docs/_docs/title.md</code></li>
 </ul>
 
 <h3 id="bulk-operations">Bulk Operations</h3>
@@ -954,14 +1105,10 @@
 <h3 id="common-issues">Common Issues</h3>
 
 <ol>
-  <li>
-<strong>CMS not loading</strong>: Ensure the FrontMatter extension is enabled</li>
-  <li>
-<strong>Content not appearing</strong>: Check file locations match configuration</li>
-  <li>
-<strong>Images not displaying</strong>: Verify asset paths and public folder settings</li>
-  <li>
-<strong>Metadata errors</strong>: Validate YAML frontmatter syntax</li>
+  <li><strong>CMS not loading</strong>: Ensure the FrontMatter extension is enabled</li>
+  <li><strong>Content not appearing</strong>: Check file locations match configuration</li>
+  <li><strong>Images not displaying</strong>: Verify asset paths and public folder settings</li>
+  <li><strong>Metadata errors</strong>: Validate YAML frontmatter syntax</li>
 </ol>
 
 <h3 id="configuration-files">Configuration Files</h3>
@@ -969,12 +1116,9 @@
 <p>Key configuration files:</p>
 
 <ul>
-  <li>
-<code class="language-plaintext highlighter-rouge">frontmatter.json</code>: Main CMS configuration (primary configuration)</li>
-  <li>
-<code class="language-plaintext highlighter-rouge">docs/_config.yml</code>: Jekyll site configuration</li>
-  <li>
-<code class="language-plaintext highlighter-rouge">workspace.code-workspace</code>: VS Code integration (minimal FrontMatter settings)</li>
+  <li><code class="language-plaintext highlighter-rouge">frontmatter.json</code>: Main CMS configuration (primary configuration)</li>
+  <li><code class="language-plaintext highlighter-rouge">docs/_config.yml</code>: Jekyll site configuration</li>
+  <li><code class="language-plaintext highlighter-rouge">workspace.code-workspace</code>: VS Code integration (minimal FrontMatter settings)</li>
 </ul>
 
 <blockquote>
@@ -984,16 +1128,11 @@
 <h2 id="tips-and-best-practices">Tips and Best Practices</h2>
 
 <ol>
-  <li>
-<strong>Use consistent naming</strong>: Follow Jekyll naming conventions</li>
-  <li>
-<strong>Optimize images</strong>: Use the built-in optimization tools</li>
-  <li>
-<strong>Organize taxonomies</strong>: Keep categories broad, tags specific</li>
-  <li>
-<strong>Preview regularly</strong>: Test content with Jekyll’s live reload</li>
-  <li>
-<strong>Version control</strong>: Commit content changes regularly</li>
+  <li><strong>Use consistent naming</strong>: Follow Jekyll naming conventions</li>
+  <li><strong>Optimize images</strong>: Use the built-in optimization tools</li>
+  <li><strong>Organize taxonomies</strong>: Keep categories broad, tags specific</li>
+  <li><strong>Preview regularly</strong>: Test content with Jekyll’s live reload</li>
+  <li><strong>Version control</strong>: Commit content changes regularly</li>
 </ol>
 
 <h2 id="resources">Resources</h2>
@@ -1006,7 +1145,12 @@
 </div>
 </article>
 </div>
-      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3383458876439157" data-ad-slot="9352107720" data-ad-format="auto" data-full-width-responsive="true"></ins>
+      <ins class="adsbygoogle"
+          style="display:block"
+          data-ad-client="ca-pub-3383458876439157"
+          data-ad-slot="9352107720"
+          data-ad-format="auto"
+          data-full-width-responsive="true"></ins>
       <script>
           (adsbygoogle = window.adsbygoogle || []).push({});
       </script>
@@ -1018,12 +1162,27 @@
       <div class="wrapper">
         <h2 class="footer-heading">
           
-          <a href="https://www.freecounterstat.com" rel="nofollow external">Site page views</a>
+          <a href="https://www.freecounterstat.com" rel="nofollow external"
+            >Site page views</a
+          >
           <div id="sfc7cyytxa5ukdg92qwtqh9umn5txq31duh"></div>
-          <script type="text/javascript" src="https://counter1.optistats.ovh/private/counter.js?c=7cyytxa5ukdg92qwtqh9umn5txq31duh&amp;down=async" async></script>
+          <script
+            type="text/javascript"
+            src="https://counter1.optistats.ovh/private/counter.js?c=7cyytxa5ukdg92qwtqh9umn5txq31duh&down=async"
+            async
+          ></script>
           <noscript>
-            <a rel="nofollow" href="https://www.freecounterstat.com" title="page counter">
-              <img src="https://counter1.optistats.ovh/private/freecounterstat.php?c=7cyytxa5ukdg92qwtqh9umn5txq31duh" border="0" title="page counter" alt="page counter">
+            <a
+              rel="nofollow"
+              href="https://www.freecounterstat.com"
+              title="page counter"
+            >
+              <img
+                src="https://counter1.optistats.ovh/private/freecounterstat.php?c=7cyytxa5ukdg92qwtqh9umn5txq31duh"
+                border="0"
+                title="page counter"
+                alt="page counter"
+              />
             </a>
           </noscript>
           
@@ -1031,7 +1190,7 @@
 
         <div class="footer-col-wrapper">
           <div class="footer-col footer-col-1">
-            <a href="/terms-of-service.html">Terms of Service</a><br>
+            <a href="/terms-of-service.html">Terms of Service</a><br />
             <a href="/privacy-policy.html">Privacy Policy</a>
           </div>
 
@@ -1039,8 +1198,14 @@
             <a href="/contact/">Contact Us</a>
             <!-- Google Calendar Appointment Scheduling begin -->
             <div class="calendar-appointment-container">
-              <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet external">
-              <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
+              <link
+                href="https://calendar.google.com/calendar/scheduling-button-script.css"
+                rel="stylesheet external"
+              />
+              <script
+                src="https://calendar.google.com/calendar/scheduling-button-script.js"
+                async
+              ></script>
               <script>
                 (function () {
                   var target = document.currentScript;
@@ -1060,11 +1225,17 @@
 
           <div class="footer-col footer-col-3">
             <p>
-              © 2025
-              <a rel="external nofollow" href="https://share.google/8Ir6br641K4uU74l2">Kranson Enterprises</a><br>
-                  subscribe
-              <a href="/feed.xml">via RSS<svg class="svg-icon">
-                  <use xlink:href="/assets/minima-social-icons.svg#rss"></use></svg></a>
+              &copy; 2025
+              <a rel="external nofollow" href="https://share.google/8Ir6br641K4uU74l2"
+                >Kranson Enterprises</a
+              ><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;subscribe
+              <a href="/feed.xml"
+                >via RSS<svg class="svg-icon">
+                  <use
+                    xlink:href="/assets/minima-social-icons.svg#rss"
+                  ></use></svg
+              ></a>
             </p>
           </div>
         </div>
@@ -1074,594 +1245,10 @@
     
 
     <!-- Google AdSense -->
-    <!-- Google AdSense with Consent Mode Support -->
-<script>
-  // Initialize consent mode for AdSense
-  window.dataLayer = window.dataLayer || [];
-  function gtag() {
-    dataLayer.push(arguments);
-  }
-
-  // Set default consent state
-  gtag('consent', 'default', {
-    ad_storage: 'denied',
-    ad_user_data: 'denied',
-    ad_personalization: 'denied',
-  });
-</script>
-
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3383458876439157" crossorigin="anonymous"></script>
-
+    <!-- {  % include google-adsense.html %  } -->
 
     <!-- Cookie Consent Banner for GDPR Compliance -->
-    <!-- Cookie Consent Banner for GDPR Compliance -->
-<div id="cookie-consent-banner" class="cookie-consent-banner" role="complementary" aria-label="Cookie consent banner" style="display: none">
-  <div class="cookie-consent-content">
-    <div class="cookie-consent-text">
-      <p>
-        <strong>🍪 Cookie Notice</strong><br>
-        This website uses cookies for Google AdSense and analytics to improve
-        your experience.
-        <a href="/privacy-policy.html" class="cookie-policy-link">Learn more in our Privacy Policy</a>
-      </p>
-    </div>
-    <div class="cookie-consent-buttons">
-      <button id="accept-cookies" class="cookie-btn cookie-btn-accept" onclick="acceptCookies()">
-        Accept All Cookies
-      </button>
-      <button id="decline-cookies" class="cookie-btn cookie-btn-decline" onclick="declineCookies()">
-        Decline Optional Cookies
-      </button>
-      <button id="cookie-settings" class="cookie-btn cookie-btn-settings" onclick="showCookieSettings()">
-        Cookie Settings
-      </button>
-    </div>
-  </div>
-</div>
-
-<!-- Cookie Settings Modal -->
-<div id="cookie-settings-modal" class="cookie-modal" style="display: none">
-  <div class="cookie-modal-content">
-    <div class="cookie-modal-header">
-      <h3>Cookie Settings</h3>
-      <button class="cookie-modal-close" onclick="closeCookieSettings()">
-        ×
-      </button>
-    </div>
-    <div class="cookie-modal-body">
-      <div class="cookie-category">
-        <div class="cookie-category-header">
-          <h4>Essential Cookies</h4>
-          <label class="cookie-toggle">
-            <input type="checkbox" checked disabled>
-            <span class="cookie-slider"></span>
-          </label>
-        </div>
-        <p>Required for basic site functionality. These cannot be disabled.</p>
-      </div>
-
-      <div class="cookie-category">
-        <div class="cookie-category-header">
-          <h4>Analytics Cookies</h4>
-          <label class="cookie-toggle">
-            <input type="checkbox" id="analytics-cookies">
-            <span class="cookie-slider"></span>
-          </label>
-        </div>
-        <p>
-          Help us understand how visitors interact with our website via Google
-          Analytics.
-        </p>
-      </div>
-
-      <div class="cookie-category">
-        <div class="cookie-category-header">
-          <h4>Advertising Cookies</h4>
-          <label class="cookie-toggle">
-            <input type="checkbox" id="advertising-cookies">
-            <span class="cookie-slider"></span>
-          </label>
-        </div>
-        <p>Used by Google AdSense to display relevant advertisements.</p>
-      </div>
-    </div>
-    <div class="cookie-modal-footer">
-      <button class="cookie-btn cookie-btn-accept" onclick="savePreferences()">
-        Save Preferences
-      </button>
-      <button class="cookie-btn cookie-btn-decline" onclick="closeCookieSettings()">
-        Cancel
-      </button>
-    </div>
-  </div>
-</div>
-
-<script>
-  // Cookie Consent Management
-  (function () {
-    'use strict';
-
-    const COOKIE_CONSENT_KEY = 'mijug-cookie-consent';
-    const COOKIE_PREFERENCES_KEY = 'mijug-cookie-preferences';
-    const CONSENT_EXPIRY_DAYS = 365;
-
-    // Check if user is from EU (simplified check)
-    function isEUUser() {
-      // In production, use a proper geolocation service
-      // For now, show to all users for compliance
-      return true;
-    }
-
-    // Get cookie value
-    function getCookie(name) {
-      const value = `; ${document.cookie}`;
-      const parts = value.split(`; ${name}=`);
-      if (parts.length === 2) return parts.pop().split(';').shift();
-      return null;
-    }
-
-    // Set cookie
-    function setCookie(name, value, days) {
-      const expires = new Date();
-      expires.setTime(expires.getTime() + days * 24 * 60 * 60 * 1000);
-      document.cookie = `${name}=${value};expires=${expires.toUTCString()};path=/;SameSite=Strict`;
-    }
-
-    // Show cookie banner
-    function showCookieBanner() {
-      const banner = document.getElementById('cookie-consent-banner');
-      if (banner) {
-        banner.style.display = 'block';
-        banner.setAttribute('aria-hidden', 'false');
-      }
-    }
-
-    // Hide cookie banner
-    function hideCookieBanner() {
-      const banner = document.getElementById('cookie-consent-banner');
-      if (banner) {
-        banner.style.display = 'none';
-        banner.setAttribute('aria-hidden', 'true');
-      }
-    }
-
-    // Load Google Analytics conditionally
-    function loadAnalytics() {
-      if (hasAnalyticsConsent()) {
-        // Load Google Analytics if consent given
-        if (typeof gtag !== 'undefined') {
-          gtag('consent', 'update', {
-            analytics_storage: 'granted',
-          });
-        }
-      }
-    }
-
-    // Load AdSense conditionally
-    function loadAdSense() {
-      if (hasAdvertisingConsent()) {
-        // Load AdSense if consent given
-        if (typeof gtag !== 'undefined') {
-          gtag('consent', 'update', {
-            ad_storage: 'granted',
-            ad_user_data: 'granted',
-            ad_personalization: 'granted',
-          });
-        }
-      }
-    }
-
-    // Check consent status
-    function hasConsent() {
-      return getCookie(COOKIE_CONSENT_KEY) !== null;
-    }
-
-    function hasAnalyticsConsent() {
-      const preferences = getCookie(COOKIE_PREFERENCES_KEY);
-      if (!preferences) return false;
-      try {
-        const prefs = JSON.parse(preferences);
-        return prefs.analytics === true;
-      } catch {
-        return false;
-      }
-    }
-
-    function hasAdvertisingConsent() {
-      const preferences = getCookie(COOKIE_PREFERENCES_KEY);
-      if (!preferences) return false;
-      try {
-        const prefs = JSON.parse(preferences);
-        return prefs.advertising === true;
-      } catch {
-        return false;
-      }
-    }
-
-    // Global functions for buttons
-    window.acceptCookies = function () {
-      const preferences = {
-        analytics: true,
-        advertising: true,
-      };
-      setCookie(COOKIE_CONSENT_KEY, 'accepted', CONSENT_EXPIRY_DAYS);
-      setCookie(
-        COOKIE_PREFERENCES_KEY,
-        JSON.stringify(preferences),
-        CONSENT_EXPIRY_DAYS
-      );
-      hideCookieBanner();
-      loadAnalytics();
-      loadAdSense();
-    };
-
-    window.declineCookies = function () {
-      const preferences = {
-        analytics: false,
-        advertising: false,
-      };
-      setCookie(COOKIE_CONSENT_KEY, 'declined', CONSENT_EXPIRY_DAYS);
-      setCookie(
-        COOKIE_PREFERENCES_KEY,
-        JSON.stringify(preferences),
-        CONSENT_EXPIRY_DAYS
-      );
-      hideCookieBanner();
-    };
-
-    window.showCookieSettings = function () {
-      const modal = document.getElementById('cookie-settings-modal');
-      if (modal) {
-        // Load current preferences
-        const preferences = getCookie(COOKIE_PREFERENCES_KEY);
-        if (preferences) {
-          try {
-            const prefs = JSON.parse(preferences);
-            document.getElementById('analytics-cookies').checked =
-              prefs.analytics || false;
-            document.getElementById('advertising-cookies').checked =
-              prefs.advertising || false;
-          } catch {
-            // Default to false if parsing fails
-          }
-        }
-        modal.style.display = 'block';
-        modal.setAttribute('aria-hidden', 'false');
-      }
-    };
-
-    window.closeCookieSettings = function () {
-      const modal = document.getElementById('cookie-settings-modal');
-      if (modal) {
-        modal.style.display = 'none';
-        modal.setAttribute('aria-hidden', 'true');
-      }
-    };
-
-    window.savePreferences = function () {
-      const analytics = document.getElementById('analytics-cookies').checked;
-      const advertising = document.getElementById(
-        'advertising-cookies'
-      ).checked;
-
-      const preferences = {
-        analytics: analytics,
-        advertising: advertising,
-      };
-
-      setCookie(COOKIE_CONSENT_KEY, 'customized', CONSENT_EXPIRY_DAYS);
-      setCookie(
-        COOKIE_PREFERENCES_KEY,
-        JSON.stringify(preferences),
-        CONSENT_EXPIRY_DAYS
-      );
-
-      hideCookieBanner();
-      closeCookieSettings();
-
-      if (analytics) loadAnalytics();
-      if (advertising) loadAdSense();
-    };
-
-    // Initialize on DOM ready
-    document.addEventListener('DOMContentLoaded', function () {
-      if (isEUUser() && !hasConsent()) {
-        showCookieBanner();
-      } else if (hasConsent()) {
-        loadAnalytics();
-        loadAdSense();
-      }
-    });
-
-    // Close modal when clicking outside
-    window.onclick = function (event) {
-      const modal = document.getElementById('cookie-settings-modal');
-      if (event.target === modal) {
-        closeCookieSettings();
-      }
-    };
-  })();
-</script>
-
-<style>
-  /* Cookie Consent Banner Styles */
-  .cookie-consent-banner {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: #2c3e50;
-    color: white;
-    padding: 1rem;
-    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
-    z-index: 10000;
-    border-top: 3px solid #3498db;
-  }
-
-  .cookie-consent-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
-  }
-
-  .cookie-consent-text {
-    flex: 1;
-  }
-
-  .cookie-consent-text p {
-    margin: 0;
-    font-size: 0.9rem;
-    line-height: 1.4;
-  }
-
-  .cookie-policy-link {
-    color: #74c0fc; /* Improved contrast ratio of 5.18:1 for WCAG AA compliance across all browsers */
-    text-decoration: underline;
-  }
-
-  .cookie-policy-link:hover {
-    color: #2980b9;
-  }
-
-  .cookie-consent-buttons {
-    display: flex;
-    gap: 0.5rem;
-    flex-wrap: wrap;
-  }
-
-  .cookie-btn {
-    padding: 0.5rem 1rem;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 0.85rem;
-    font-weight: 500;
-    transition: all 0.2s ease;
-    white-space: nowrap;
-  }
-
-  .cookie-btn-accept {
-    background: #1e8449; /* WCAG AA compliant: 4.6:1 contrast ratio */
-    color: white;
-  }
-
-  .cookie-btn-accept:hover {
-    background: #196f3d; /* Darker shade for hover */
-  }
-
-  .cookie-btn-decline {
-    background: #c0392b; /* WCAG AA compliant: 4.8:1 contrast ratio */
-    color: white;
-  }
-
-  .cookie-btn-decline:hover {
-    background: #a93226; /* Darker shade for hover */
-  }
-
-  .cookie-btn-settings {
-    background: #5d6d7e; /* WCAG AA compliant: 4.7:1 contrast ratio */
-    color: white;
-  }
-
-  .cookie-btn-settings:hover {
-    background: #515a5a; /* Darker shade for hover */
-  }
-
-  /* Cookie Settings Modal */
-  .cookie-modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.7);
-    z-index: 10001;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .cookie-modal-content {
-    background: white;
-    border-radius: 8px;
-    max-width: 500px;
-    width: 90%;
-    max-height: 80vh;
-    overflow-y: auto;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-  }
-
-  .cookie-modal-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.5rem;
-    border-bottom: 1px solid #ecf0f1;
-  }
-
-  .cookie-modal-header h3 {
-    margin: 0;
-    color: #2c3e50;
-  }
-
-  .cookie-modal-close {
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-    color: #7f8c8d;
-    padding: 0;
-    width: 30px;
-    height: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .cookie-modal-close:hover {
-    color: #2c3e50;
-  }
-
-  .cookie-modal-body {
-    padding: 1.5rem;
-  }
-
-  .cookie-category {
-    margin-bottom: 1.5rem;
-    padding-bottom: 1rem;
-    border-bottom: 1px solid #ecf0f1;
-  }
-
-  .cookie-category:last-child {
-    border-bottom: none;
-    margin-bottom: 0;
-  }
-
-  .cookie-category-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 0.5rem;
-  }
-
-  .cookie-category-header h4 {
-    margin: 0;
-    color: #2c3e50;
-    font-size: 1rem;
-  }
-
-  .cookie-category p {
-    margin: 0;
-    font-size: 0.9rem;
-    color: #7f8c8d;
-    line-height: 1.4;
-  }
-
-  /* Toggle Switch */
-  .cookie-toggle {
-    position: relative;
-    display: inline-block;
-    width: 50px;
-    height: 24px;
-  }
-
-  .cookie-toggle input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-  }
-
-  .cookie-slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    transition: 0.4s;
-    border-radius: 24px;
-  }
-
-  .cookie-slider:before {
-    position: absolute;
-    content: '';
-    height: 18px;
-    width: 18px;
-    left: 3px;
-    bottom: 3px;
-    background-color: white;
-    transition: 0.4s;
-    border-radius: 50%;
-  }
-
-  input:checked + .cookie-slider {
-    background-color: #3498db;
-  }
-
-  input:checked + .cookie-slider:before {
-    transform: translateX(26px);
-  }
-
-  input:disabled + .cookie-slider {
-    background-color: #1e8449; /* WCAG AA compliant green */
-    cursor: not-allowed;
-  }
-
-  .cookie-modal-footer {
-    padding: 1.5rem;
-    border-top: 1px solid #ecf0f1;
-    display: flex;
-    gap: 0.5rem;
-    justify-content: flex-end;
-  }
-
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .cookie-consent-content {
-      flex-direction: column;
-      align-items: stretch;
-    }
-
-    .cookie-consent-buttons {
-      justify-content: center;
-    }
-
-    .cookie-btn {
-      flex: 1;
-      min-width: 0;
-    }
-
-    .cookie-modal-content {
-      width: 95%;
-      margin: 1rem;
-    }
-
-    .cookie-modal-footer {
-      flex-direction: column;
-    }
-
-    .cookie-modal-footer .cookie-btn {
-      width: 100%;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .cookie-consent-buttons {
-      flex-direction: column;
-    }
-
-    .cookie-category-header {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 0.5rem;
-    }
-  }
-</style>
-
+    <!-- {  % include cookie-consent.html %  } -->
 
     <!-- Mermaid support: convert fenced code blocks (```mermaid) and initialize -->
     
