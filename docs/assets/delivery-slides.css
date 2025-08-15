@@ -96,3 +96,170 @@
     font-size: 1.5rem;
   }
 }
+
+/* Print styles to prevent section breaks across pages */
+@media print {
+  /* Page setup with narrow margins for letter size */
+  @page {
+    margin: 0.5in;
+    size: letter;
+  }
+
+  /* Alternative page setup for A4 size with narrow margins */
+  @page :first {
+    margin: 1.27cm;
+    size: A4;
+  }
+
+  /* Override for A4 if browser/printer prefers it */
+  @page size-a4 {
+    margin: 1.27cm;
+    size: A4;
+  }
+
+  /* Hide unnecessary elements for print */
+  .slide-branding {
+    display: none;
+  }
+
+  /* Prevent section breaks */
+  .slide-content {
+    page-break-inside: avoid;
+    break-inside: avoid;
+    box-shadow: none;
+    margin: 0;
+    padding: 1rem;
+    max-width: none;
+  }
+
+  /* Keep headings with their content */
+  .slide-content h1,
+  .slide-content h2,
+  .slide-content h3,
+  .slide-content h4,
+  .slide-content h5,
+  .slide-content h6 {
+    page-break-after: avoid;
+    break-after: avoid;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  /* Keep lists together */
+  .slide-content ul,
+  .slide-content ol {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  /* Keep list items with their parent */
+  .slide-content li {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  /* Keep tables together */
+  .slide-content table {
+    page-break-inside: avoid;
+    break-inside: avoid;
+    margin: 1rem 0;
+    font-size: 0.9rem;
+  }
+
+  /* Keep table rows together */
+  .slide-content tr {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  /* Keep code blocks together */
+  .slide-content pre,
+  .slide-content code {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  /* Keep blockquotes together */
+  .slide-content blockquote {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  /* Ensure good contrast for print */
+  .slide-content {
+    background: white !important;
+    color: black !important;
+  }
+
+  /* Make links visible in print */
+  .slide-content a {
+    color: black !important;
+    text-decoration: underline !important;
+  }
+
+  /* Show URL after links for print */
+  .slide-content a[href]:after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+    color: #666;
+  }
+
+  /* Don't show URLs for internal links */
+  .slide-content a[href^="#"]:after,
+  .slide-content a[href^="/"]:after {
+    content: "";
+  }
+
+  /* Adjust font sizes for print */
+  .slide-content {
+    font-size: 12pt;
+    line-height: 1.4;
+  }
+
+  .slide-content h1 { font-size: 18pt; }
+  .slide-content h2 { font-size: 16pt; }
+  .slide-content h3 { font-size: 14pt; }
+  .slide-content h4 { font-size: 13pt; }
+  .slide-content h5 { font-size: 12pt; }
+  .slide-content h6 { font-size: 12pt; }
+
+  /* Add page numbers and website reference */
+  @page {
+    @bottom-right {
+      content: "Page " counter(page);
+      font-size: 10pt;
+    }
+    @bottom-left {
+      content: "www.mijug.net";
+      font-size: 10pt;
+      font-weight: bold;
+    }
+    /* Bottom-center content will be injected by JavaScript with print/modified dates */
+  }
+
+  /* Add chapter/document title */
+  @page {
+    @top-center {
+      content: "MIJUG - My Information Just Under Glass (Website)";
+      font-size: 10pt;
+      border-bottom: 1pt solid black;
+      padding-bottom: 0.5em;
+    }
+    @top-left {
+      content: "mijug.net/workshop";
+      font-size: 9pt;
+      color: #666;
+    }
+    @top-right {
+      content: attr(data-document-title);
+      font-size: 9pt;
+      color: #666;
+      text-align: right;
+    }
+  }
+
+  /* Hide any print-info elements in body content */
+  .print-info {
+    display: none !important;
+  }
+}

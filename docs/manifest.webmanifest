@@ -4,10 +4,6 @@
     "description": "MIJUG.NET serves the communities of southeast Michigan, Ohio, and Florida with technology, sustainability, and community engagement resources. A platform by Kranson Enterprises for sharing knowledge and connecting communities.",
     "start_url": "/",
     "display": "standalone",
-    "display_override": [
-        "window-controls-overlay",
-        "minimal-ui"
-    ],
     "background_color": "#fdfdfd",
     "theme_color": "#2c5aa0",
     "icons": [
@@ -40,26 +36,52 @@
             "sizes": "180x180",
             "type": "image/png",
             "purpose": "any"
+        },
+        {
+            "src": "/assets/logo-mijug-180x180.png",
+            "sizes": "144x144",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "/assets/logo-mijug-180x180.png",
+            "sizes": "96x96",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "/assets/logo-mijug-180x180.png",
+            "sizes": "72x72",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "/assets/logo-mijug-180x180.png",
+            "sizes": "48x48",
+            "type": "image/png",
+            "purpose": "any"
         }
     ],
     "screenshots": [
         {
             "src": "/assets/screenshots/screenshot-mijug-376x320.png",
             "sizes": "376x320",
-            "form_factor": "narrow",
-            "type": "image/png",
-            "label": "MIJUG.NET Home Screen - Technology and Community Platform"
+            "type": "image/png"
         },
         {
             "src": "/assets/screenshots/screenshot-cone-of-silence.png",
             "sizes": "1024x1024",
-            "form_factor": "wide",
-            "type": "image/png",
-            "label": "Cone Of Silence metaphor - Inspiration for MIJUG name"
+            "type": "image/png"
         }
     ],
     "prefer_related_applications": false,
     "related_applications": [],
+    "edge_side_panel": {
+        "preferred_width": 400
+    },
+    "permissions": [
+        "storage"
+    ],
     "categories": [
         "education",
         "technology",
@@ -75,6 +97,19 @@
     "id": "net.mijug.app",
     "shortcuts": [
         {
+            "name": "Documentation",
+            "short_name": "Docs",
+            "description": "Access workshop materials and technical guides",
+            "url": "/docs/",
+            "icons": [
+                {
+                    "src": "/assets/icons/icon-mijug-192x192.png",
+                    "sizes": "192x192",
+                    "type": "image/png"
+                }
+            ]
+        },
+        {
             "name": "Blog",
             "short_name": "Blog",
             "description": "Read latest technology insights and sustainability topics",
@@ -82,7 +117,8 @@
             "icons": [
                 {
                     "src": "/assets/icons/icon-mijug-192x192.png",
-                    "sizes": "192x192"
+                    "sizes": "192x192",
+                    "type": "image/png"
                 }
             ]
         },
@@ -94,7 +130,21 @@
             "icons": [
                 {
                     "src": "/assets/icons/icon-mijug-192x192.png",
-                    "sizes": "192x192"
+                    "sizes": "192x192",
+                    "type": "image/png"
+                }
+            ]
+        },
+        {
+            "name": "Contact",
+            "short_name": "Contact",
+            "description": "Get in touch with the MIJUG community",
+            "url": "/contact/",
+            "icons": [
+                {
+                    "src": "/assets/icons/icon-mijug-192x192.png",
+                    "sizes": "192x192",
+                    "type": "image/png"
                 }
             ]
         }
