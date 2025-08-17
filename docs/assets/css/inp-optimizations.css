@@ -1,0 +1,123 @@
+/* INP Performance Optimizations */
+
+/* Use will-change for elements that will be animated or transformed */
+.nav-trigger:checked + label + .trigger,
+.site-nav .trigger,
+#mobile-navigation,
+.category-card:hover,
+.tag-card:hover,
+.doc-card:hover {
+  will-change: transform, opacity;
+}
+
+/* Use CSS containment for better performance */
+.post-list > li,
+.doc-card,
+.category-card,
+.tag-card,
+.info-card {
+  contain: layout style;
+}
+
+/* Optimize focus and hover states for better INP */
+.page-link,
+.nav-button,
+.post-link,
+.category-link,
+.tag-link,
+.pagination-link {
+  transition: color 0.15s ease, background-color 0.15s ease, transform 0.15s ease;
+}
+
+/* Reduce layout shifts with explicit sizes */
+.site-title img {
+  width: 50px;
+  height: 50px;
+}
+
+.svg-icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+/* Use transform instead of changing layout properties */
+.category-card:hover,
+.tag-card:hover,
+.doc-card:hover {
+  transform: translateY(-2px);
+  will-change: transform;
+}
+
+/* Optimize animations to use compositor-only properties */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.category-card,
+.tag-card,
+.doc-card {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .category-card:hover,
+  .tag-card:hover,
+  .doc-card:hover {
+    transform: none;
+  }
+}
+
+/* Use aspect-ratio for consistent layouts */
+.site-title img {
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+}
+
+/* Optimize popover performance */
+#mobile-navigation {
+  contain: layout style paint;
+  transform: translateZ(0); /* Force hardware acceleration */
+}
+
+/* Optimize table rendering */
+table {
+  contain: layout;
+  table-layout: fixed;
+}
+
+/* Reduce reflows in navigation */
+.site-nav {
+  contain: layout style;
+}
+
+/* Optimize footer for better INP */
+.site-footer {
+  contain: layout style;
+}
+
+/* Use content-visibility for off-screen content */
+.post-list > li:not(:nth-child(-n+3)) {
+  content-visibility: auto;
+  contain-intrinsic-size: 0 200px;
+}
+
+/* Optimize print styles to avoid layout calculations */
+@media print {
+  * {
+    contain: none !important;
+    will-change: auto !important;
+    animation: none !important;
+    transition: none !important;
+  }
+}

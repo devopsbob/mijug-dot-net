@@ -1,14 +1,32 @@
 /**
  * Storage Access Helper - Handles tracking prevention and storage access
  * Requests storage access permission for third-party content like Google Calendar
+ * Optimized for better INP performance
  */
 
 (function () {
   'use strict';
 
-  // Check if Storage Access API is supported
+  // Cache for performance
+  let hasStorageAccessCache = null;
+  let isAPISupported = null;
+
+  // Use requestIdleCallback for non-critical work
+  function scheduleIdleWork(callback) {
+    if (window.requestIdleCallback) {
+      requestIdleCallback(callback, { timeout: 2000 });
+    } else {
+      setTimeout(callback, 16);
+    }
+  }
+
+  // Check if Storage Access API is supported (cached)
   function isStorageAccessAPISupported() {
-    return 'requestStorageAccess' in document && 'hasStorageAccess' in document;
+    if (isAPISupported === null) {
+      isAPISupported =
+        'requestStorageAccess' in document && 'hasStorageAccess' in document;
+    }
+    return isAPISupported;
   }
 
   // Request storage access for third-party content

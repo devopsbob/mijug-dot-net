@@ -1,7 +1,7 @@
 /**
  * Print Helper - Adds current date and version info when printing
  * Automatically injects print date information for MIJUG workshop materials
- * Optimized for better INP performance
+ * Optimized for better INP (Interaction to Next Paint) performance
  */
 
 (function () {
@@ -11,6 +11,10 @@
   let printDateCache = null;
   let versionCache = null;
   let titleCache = null;
+
+  // Shared timers for debouncing
+  let printTimer = null;
+  let keydownTimer = null;
 
   // Use requestIdleCallback for non-critical work
   function scheduleIdleWork(callback) {
@@ -87,62 +91,6 @@
   }
 
   // Add print date when page is printed (debounced for performance)
-  let printTimer = null;
-  function handlePrint() {
-    // Debounce rapid print events
-    if (printTimer) {
-      clearTimeout(printTimer);
-    }
-
-    printTimer = setTimeout(() => {
-      const now = new Date();
-      const printDate = now.toLocaleDateString('en-US', {
-        year: 'numeric',
-        month: 'short',
-        day: 'numeric',
-        hour: '2-digit',
-        minute: '2-digit',
-      });
-
-      // Update print date attributes efficiently
-      requestAnimationFrame(() => {
-        document.body.setAttribute('data-print-date', printDate);
-        const version = versionCache || printDate;
-        scheduleIdleWork(() => updatePrintCSS(printDate, version));
-      });
-    }, 10);
-  }
-  // Function to update CSS with current dates (optimized)
-  function updatePrintCSS(printDate, version) {
-    // Use DocumentFragment for better performance
-    const existingStyle = document.getElementById('print-date-css');
-    if (existingStyle) {
-      existingStyle.remove();
-    }
-
-    // Create style element with optimized CSS
-    const style = document.createElement('style');
-    style.id = 'print-date-css';
-    style.textContent = `
-      @media print {
-        @page {
-          @bottom-center {
-            content: "Printed: ${printDate} | Modified: ${version}";
-            font-size: 9pt;
-            color: #666;
-          }
-        }
-      }
-    `;
-
-    // Use DocumentFragment to minimize reflows
-    const fragment = document.createDocumentFragment();
-    fragment.appendChild(style);
-    document.head.appendChild(fragment);
-  }
-
-  // Add print date when page is printed (debounced for performance)
-  let printTimer = null;
   function handlePrint() {
     // Debounce rapid print events
     if (printTimer) {
@@ -181,7 +129,6 @@
   window.addEventListener('beforeprint', handlePrint, { passive: true });
 
   // Also handle Ctrl+P detection (debounced)
-  let keydownTimer = null;
   document.addEventListener(
     'keydown',
     function (e) {

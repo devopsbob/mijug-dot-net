@@ -45,7 +45,8 @@
     
 
     
-    <link rel="stylesheet" href="/assets/main.css?v=20250816224112" />
+    <link rel="stylesheet" href="/assets/main.css?v=20250817124707" />
+    <link rel="stylesheet" href="/assets/css/inp-optimizations.css?v=20250817124707" />
     <link
       rel="canonical"
       href="https://www.mijug.net/docs/tags-and-categories-guide/"
@@ -1298,10 +1299,12 @@ npm run taxonomy:validate  <span class="c"># If available</span>
               <link
                 href="https://calendar.google.com/calendar/scheduling-button-script.css"
                 rel="stylesheet external"
+                crossorigin="anonymous"
               />
               <script
                 src="https://calendar.google.com/calendar/scheduling-button-script.js"
                 async
+                crossorigin="anonymous"
               ></script>
               <script>
                 (function () {
@@ -1311,6 +1314,7 @@ npm run taxonomy:validate  <span class="c"># If available</span>
                       url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ3JTZUEoP7c_iZcj8bFGG5-fDaHmJG5w1wXNq0Hz2Y2HlCpvLoWDrgIMC_tZ9G-e6Wnf_SUmn2T?gv=true',
                       color: '#1976D2', // Improved contrast ratio of 4.52:1 for WCAG AA compliance
                       label: 'Book appointment',
+                      crossorigin: "anonymous",
                       target,
                     });
                   });
@@ -1349,19 +1353,39 @@ npm run taxonomy:validate  <span class="c"># If available</span>
 
     <!-- Mermaid support: convert fenced code blocks (```mermaid) and initialize -->
     
-    <script src="https://cdn.jsdelivr.net/npm/mermaid@11.9.0/dist/mermaid.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@11.9.0/dist/mermaid.min.js" defer></script>
     
     <script>
       (function() {
+        'use strict';
+
+        // Use requestIdleCallback for better INP performance
+        function scheduleWork(callback) {
+          if (window.requestIdleCallback) {
+            requestIdleCallback(callback, { timeout: 2000 });
+          } else {
+            setTimeout(callback, 0);
+          }
+        }
+
         function convertMermaidCodeFences() {
           try {
-            var codeBlocks = document.querySelectorAll('pre > code.language-mermaid, pre > code.mermaid');
+            // Use more efficient selector and batch DOM operations
+            const codeBlocks = document.querySelectorAll('pre > code.language-mermaid, pre > code.mermaid');
+            const fragment = document.createDocumentFragment();
+            const replacements = [];
+
             codeBlocks.forEach(function(code) {
-              var pre = code.parentElement;
-              var container = pre.parentElement;
-              var div = document.createElement('div');
+              const pre = code.parentElement;
+              const container = pre.parentElement;
+              const div = document.createElement('div');
               div.className = 'mermaid';
-              div.textContent = code.textContent; // preserve raw diagram text
+              div.textContent = code.textContent;
+              replacements.push({ container, pre, div });
+            });
+
+            // Batch DOM updates to minimize layout thrashing
+            replacements.forEach(({ container, pre, div }) => {
               container.replaceChild(div, pre);
             });
           } catch (e) {
@@ -1372,15 +1396,25 @@ npm run taxonomy:validate  <span class="c"># If available</span>
         function initMermaidNow() {
           try {
             if (!window.mermaid) return false;
-            convertMermaidCodeFences();
-            if (typeof mermaid.initialize === 'function') {
-              mermaid.initialize({ startOnLoad: true });
-            }
-            if (typeof mermaid.run === 'function') {
-              mermaid.run({ querySelector: '.mermaid' });
-            } else if (typeof mermaid.init === 'function') {
-              mermaid.init(undefined, document.querySelectorAll('.mermaid'));
-            }
+
+            scheduleWork(() => {
+              convertMermaidCodeFences();
+              if (typeof mermaid.initialize === 'function') {
+                mermaid.initialize({
+                  startOnLoad: false, // Better control over timing
+                  theme: 'default'
+                });
+              }
+
+              scheduleWork(() => {
+                if (typeof mermaid.run === 'function') {
+                  mermaid.run({ querySelector: '.mermaid' });
+                } else if (typeof mermaid.init === 'function') {
+                  mermaid.init(undefined, document.querySelectorAll('.mermaid'));
+                }
+              });
+            });
+
             return true;
           } catch (e) {
             console.error('Mermaid initialization error:', e);
@@ -1388,25 +1422,36 @@ npm run taxonomy:validate  <span class="c"># If available</span>
           }
         }
 
+        // Use passive event listeners for better performance
         function whenReady(fn) {
           if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', fn);
+            document.addEventListener('DOMContentLoaded', fn, { passive: true });
           } else {
-            fn();
+            scheduleWork(fn);
           }
         }
 
+        // Improved initialization with timeout and better error handling
         whenReady(function() {
-          if (initMermaidNow()) return;
-          var attempts = 0;
-          var timer = setInterval(function() {
-            attempts++;
-            if (initMermaidNow() || attempts > 50) {
-              clearInterval(timer);
-            }
-          }, 100);
+          scheduleWork(() => {
+            if (initMermaidNow()) return;
+
+            let attempts = 0;
+            const maxAttempts = 30; // Reduced from 50
+            const checkInterval = 200; // Increased from 100ms
+
+            const timer = setInterval(function() {
+              attempts++;
+              if (initMermaidNow() || attempts >= maxAttempts) {
+                clearInterval(timer);
+                if (attempts >= maxAttempts) {
+                  console.warn('Mermaid initialization timed out after', maxAttempts, 'attempts');
+                }
+              }
+            }, checkInterval);
+          });
         });
       })();
-    </script><script src="/assets/js/print-helper.js?v=20250816224112"></script><script src="/assets/js/storage-access.js?v=20250816224112"></script>
+    </script><script src="/assets/js/print-helper-optimized.js?v=20250817124707" defer></script><script src="/assets/js/storage-access.js?v=20250817124707" defer></script>
   </body>
 </html>
