@@ -1,1 +1,13 @@
-Sitemap: https://www.mijug.net/sitemap.xml
+# Disallow all web crawlers from accessing the site
+User-agent: *
+Disallow: /
+
+# Uncomment the following lines to allow specific services
+
+# Allow GitHub services
+# User-agent: GitHub-Crawler
+# Allow: /
+
+# Allow Google services
+# User-agent: Googlebot
+# Allow: /
