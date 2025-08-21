@@ -1,68 +1,933 @@
-<!doctype html> <html lang="en"> <head> <meta charset="utf-8" /> <meta name="viewport" content="width=device-width, initial-scale=1" /> <!-- Navigation and ordering metadata --> <meta name="docs-nav-order" content="3"> <meta name="docs-section" content="documentation"> <meta name="priority-doc" content="true"> <!-- Structured data for navigation --> <script type="application/ld+json"> { "@context": "https://schema.org", "@type": "WebPage", "name": "Accessibility Testing Configuration", "description": "Comprehensive accessibility testing setup with WCAG 2.1 AA compliance using axe-core and Playwright", "url": "https://www.mijug.net/docs/accessibility-testing/", "position": 3, "isPartOf": { "@type": "WebSite", "name": "My Information Just Under Glass", "url": "https://www.mijug.net/" } } </script> <title> Accessibility Testing Configuration | My Information Just Under Glass </title> <meta name="description" content="Accessibility Testing Configuration" /> <meta name="version" content="Aug 01, 2025" /> <link rel="stylesheet" href="/assets/main.css?v=20250821164256" /> <link rel="stylesheet" href="/assets/css/inp-optimizations.css?v=20250821164256" /> <link rel="canonical" href="https://www.mijug.net/docs/accessibility-testing/" /> <link rel="alternate" type="application/rss+xml" title="My Information Just Under Glass" href="/feed.xml" /> <link rel="icon" type="image/svg+xml" href="/assets/logo-mijug-watermark-98x100.svg" /> <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" /> <link rel="manifest" href="/manifest.webmanifest" /> <!-- Begin Jekyll SEO tag v2.8.0 --> <title>Accessibility Testing Configuration | My Information Just Under Glass</title> <meta name="generator" content="Jekyll v4.4.1" /> <meta property="og:title" content="Accessibility Testing Configuration" /> <meta name="author" content="Bob Kranson" /> <meta property="og:locale" content="en_US" /> <meta name="description" content="Comprehensive accessibility testing setup with WCAG 2.1 AA compliance using axe-core and Playwright" /> <meta property="og:description" content="Comprehensive accessibility testing setup with WCAG 2.1 AA compliance using axe-core and Playwright" /> <link rel="canonical" href="https://www.mijug.net/docs/accessibility-testing/" /> <meta property="og:url" content="https://www.mijug.net/docs/accessibility-testing/" /> <meta property="og:site_name" content="My Information Just Under Glass" /> <meta property="og:image" content="https://www.mijug.net/assets/logo-mijug-watermark-98x100.svg" /> <meta property="og:type" content="article" /> <meta property="article:published_time" content="2025-08-21T16:42:56-04:00" /> <meta name="twitter:card" content="summary_large_image" /> <meta property="twitter:image" content="https://www.mijug.net/assets/logo-mijug-watermark-98x100.svg" /> <meta property="twitter:title" content="Accessibility Testing Configuration" /> <script type="application/ld+json"> {"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Bob Kranson"},"dateModified":"2025-07-31T20:27:38-04:00","datePublished":"2025-08-21T16:42:56-04:00","description":"Comprehensive accessibility testing setup with WCAG 2.1 AA compliance using axe-core and Playwright","headline":"Accessibility Testing Configuration","image":"https://www.mijug.net/assets/logo-mijug-watermark-98x100.svg","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.mijug.net/docs/accessibility-testing/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://www.mijug.net/assets/logo-mijug-watermark-98x100.svg"},"name":"Bob Kranson"},"url":"https://www.mijug.net/docs/accessibility-testing/"}</script> <!-- End Jekyll SEO tag --> </head> <body> <header class="site-header" role="banner"> <div class="wrapper"> <a class="site-title long-title" rel="home" href="/"> <img src="/assets/logo-mijug-watermark-98x100.svg" alt="My Information Just Under Glass" width="50" height="50"> My Information Just Under Glass </a> <nav class="site-nav" role="navigation" aria-label="Main navigation"> <input type="checkbox" id="header-nav-trigger" class="nav-trigger" title="Toggle header navigation" aria-label="Toggle navigation menu"> <label for="header-nav-trigger" aria-label="Open navigation menu"> <span class="menu-icon"> <svg viewbox="0 0 18 15" width="18px" height="15px" role="img" aria-label="Menu icon"> <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"></path> </svg> </span> </label> <div class="trigger"> <a class="page-link" href="/about/" aria-label="About MIJUG">About</a> <button class="nav-button" popovertarget="mobile-navigation" popovertargetaction="show" type="button" aria-label="Open additional navigation menu" aria-haspopup="true" aria-expanded="false"> Navigation </button> </div> </nav> </div> </header> <nav popover id="mobile-navigation" class="site-nav" role="dialog" aria-labelledby="nav-heading" aria-modal="true"> <h2 id="nav-heading" class="sr-only">Additional Navigation</h2> <button class="nav-button" popovertarget="mobile-navigation" popovertargetaction="hide" type="button" aria-label="Close navigation menu"> Close </button> <div class="popover-content"> <!-- Posts Section --> <div class="popover-section"> <h3 class="popover-heading">Posts</h3> <ul class="nav-list" role="list"> <li> <a class="page-link" href="/blog/" aria-label="View blog posts">Blog</a> </li> <li> <a class="page-link" href="/contact/" aria-label="Contact MIJUG">Contact Us</a> </li> </ul> </div> <!-- Documentation Section --> <div class="popover-section"> <h3 class="popover-heading">Documentation</h3> <ul class="nav-list" role="list" aria-label="Documentation pages"> <li> <a class="page-link" href="/docs/getting-started/" aria-label="View Getting Started documentation"> Getting Started </a> </li> <li> <a class="page-link" href="/docs/welcome-mijug-workspace/" aria-label="View Workspace Home documentation"> Workspace Home </a> </li> <li> <a class="page-link" href="/docs/accessibility-testing/" aria-label="View Accessibility Testing Configuration documentation"> Accessibility Testing Configuration </a> </li> <li> <a class="page-link" href="/docs/getting-started-with-typescript-and-jekyll/" aria-label="View Getting Started with TypeScript and Jekyll documentation"> Getting Started with TypeScript and Jekyll </a> </li> <li> <a class="page-link" href="/docs/tags-and-categories-guide/" aria-label="View Tags and Categories System Guide documentation"> Tags and Categories System Guide </a> </li> <li> <a class="page-link" href="/docs/liquid-tags-examples/" aria-label="View Liquid Tags Examples documentation"> Liquid Tags Examples </a> </li> <li> <a class="page-link" href="/docs/browser-management/" aria-label="View Browser Management for Testing documentation"> Browser Management for Testing </a> </li> <li> <a class="page-link" href="/docs/browser-compatibility-system/" aria-label="View Browser Compatibility Detection &amp; Testing System documentation"> Browser Compatibility Detection &amp; Testing System </a> </li> <li> <a class="page-link" href="/docs/browser-compatibility-testing/" aria-label="View Browser Compatibility Testing documentation"> Browser Compatibility Testing </a> </li> <li> <a class="page-link" href="/docs/cache-management/" aria-label="View Cache Management Strategies documentation"> Cache Management Strategies </a> </li> <li> <a class="page-link" href="/docs/rel-attribute-guide/" aria-label="View The rel Attribute in HTML Links: A Comprehensive Guide documentation"> The rel Attribute in HTML Links: A Comprehensive Guide </a> </li> <li> <a class="page-link" href="/docs/frontmatter-cms/" aria-label="View FrontMatter CMS Usage documentation"> FrontMatter CMS Usage </a> </li> <li> <a class="page-link" href="/docs/performance-optimization/" aria-label="View Performance Optimization Guide documentation"> Performance Optimization Guide </a> </li> <li> <a class="page-link" href="/docs/mermaid-test-runner/" aria-label="View Mermaid Test Runner documentation"> Mermaid Test Runner </a> </li> <li> <a class="page-link" href="/docs/mermaid-quick-start/" aria-label="View Mermaid Quick Start documentation"> Mermaid Quick Start </a> </li> <li> <a class="page-link" href="/docs/mermaid-configuration-guide/" aria-label="View Mermaid Diagram Configuration Guide documentation"> Mermaid Diagram Configuration Guide </a> </li> <li> <a class="page-link" href="/docs/mermaid-examples/" aria-label="View Mermaid Diagram Examples documentation"> Mermaid Diagram Examples </a> </li> <li> <a class="page-link" href="/docs/mermaid-default-layout/" aria-label="View Mermaid on Default Layout documentation"> Mermaid on Default Layout </a> </li> <li> <a class="page-link" href="/docs/mermaid-basic/" aria-label="View Mermaid Basic documentation"> Mermaid Basic </a> </li> <li> <a class="page-link" href="/docs/mermaid-diagrams-sample/" aria-label="View Delivery Slides Mermaid Diagrams Showcase documentation"> Delivery Slides Mermaid Diagrams Showcase </a> </li> </ul> </div> <!-- Categories Section --> <div class="popover-section"> <h3 class="popover-heading">Categories</h3> <ul class="nav-list" role="list" aria-label="Blog post categories"> <li> <a class="page-link" href="/category/announcements" aria-label="View Announcements category with 3 posts"> Announcements <span class="count" aria-hidden="true">(3)</span> </a> </li> <li> <a class="page-link" href="/category/linux" aria-label="View Linux category with 1 posts"> Linux <span class="count" aria-hidden="true">(1)</span> </a> </li> <li> <a class="page-link" href="/category/documentation" aria-label="View Documentation category with 1 posts"> Documentation <span class="count" aria-hidden="true">(1)</span> </a> </li> <li> <a class="page-link" href="/category/navigation" aria-label="View Navigation category with 1 posts"> Navigation <span class="count" aria-hidden="true">(1)</span> </a> </li> <li> <a class="page-link" href="/category/getting-started" aria-label="View Getting-started category with 3 posts"> Getting-started <span class="count" aria-hidden="true">(3)</span> </a> </li> </ul> </div> <!-- Tags Section --> <div class="popover-section"> <h3 class="popover-heading">Tags</h3> <ul class="nav-list" role="list" aria-label="Blog post tags"> <li> <a class="page-link" href="/tag/cpus" aria-label="View posts tagged with cpus (1 posts)"> #cpus <span class="count" aria-hidden="true">(1)</span> </a> </li> <li> <a class="page-link" href="/tag/diy" aria-label="View posts tagged with diy (1 posts)"> #diy <span class="count" aria-hidden="true">(1)</span> </a> </li> <li> <a class="page-link" href="/tag/docs" aria-label="View posts tagged with docs (1 posts)"> #docs <span class="count" aria-hidden="true">(1)</span> </a> </li> <li> <a class="page-link" href="/tag/e-waste" aria-label="View posts tagged with e-waste (2 posts)"> #e-waste <span class="count" aria-hidden="true">(2)</span> </a> </li> <li> <a class="page-link" href="/tag/education" aria-label="View posts tagged with education (1 posts)"> #education <span class="count" aria-hidden="true">(1)</span> </a> </li> <li> <a class="page-link" href="/tag/evening-schedules" aria-label="View posts tagged with evening-schedules (1 posts)"> #evening-schedules <span class="count" aria-hidden="true">(1)</span> </a> </li> <li> <a class="page-link" href="/tag/gpus" aria-label="View posts tagged with gpus (1 posts)"> #gpus <span class="count" aria-hidden="true">(1)</span> </a> </li> <li> <a class="page-link" href="/tag/guide" aria-label="View posts tagged with guide (1 posts)"> #guide <span class="count" aria-hidden="true">(1)</span> </a> </li> <li> <a class="page-link" href="/tag/linux" aria-label="View posts tagged with linux (2 posts)"> #linux <span class="count" aria-hidden="true">(2)</span> </a> </li> <li> <a class="page-link" href="/tag/navigation" aria-label="View posts tagged with navigation (1 posts)"> #navigation <span class="count" aria-hidden="true">(1)</span> </a> </li> </ul> </div> </div> </nav> <main class="page-content" aria-label="Content"> <div class="wrapper">
-<article class="post"> <header class="post-header"> <h1 class="post-title">Accessibility Testing Configuration</h1> </header> <div class="post-content">
-<h1 id="accessibility-testing-configuration">Accessibility Testing Configuration</h1> <p>This project includes comprehensive accessibility testing using <code class="language-plaintext highlighter-rouge">@axe-core/playwright</code> to ensure WCAG 2.1 AA compliance.</p> <h2 id="overview">Overview</h2> <p>Accessibility testing is integrated into the E2E test suite using:</p> <ul> <li>
-<strong>@axe-core/playwright</strong>: Automated accessibility testing</li> <li>
-<strong>WCAG 2.1 AA Standards</strong>: Web Content Accessibility Guidelines Level AA</li> <li>
-<strong>Keyboard Navigation Testing</strong>: Manual keyboard accessibility tests</li> <li>
-<strong>Mobile Accessibility</strong>: Touch target and navigation testing</li> </ul> <h2 id="table-of-contents">Table of Contents</h2> <ul class="no_toc" id="markdown-toc"> <li>
-<a href="#accessibility-testing-configuration" id="markdown-toc-accessibility-testing-configuration">Accessibility Testing Configuration</a> <ul> <li><a href="#overview" id="markdown-toc-overview">Overview</a></li> <li><a href="#table-of-contents" id="markdown-toc-table-of-contents">Table of Contents</a></li> <li>
-<a href="#test-categories" id="markdown-toc-test-categories">Test Categories</a> <ul> <li><a href="#1-automated-accessibility-audits-a11y-tag" id="markdown-toc-1-automated-accessibility-audits-a11y-tag">1. Automated Accessibility Audits (<code class="language-plaintext highlighter-rouge">@a11y</code> tag)</a></li> <li><a href="#2-manual-accessibility-tests" id="markdown-toc-2-manual-accessibility-tests">2. Manual Accessibility Tests</a></li> <li><a href="#3-mobile-accessibility" id="markdown-toc-3-mobile-accessibility">3. Mobile Accessibility</a></li> </ul> </li> <li>
-<a href="#wcag-21-compliance" id="markdown-toc-wcag-21-compliance">WCAG 2.1 Compliance</a> <ul> <li><a href="#level-a-requirements" id="markdown-toc-level-a-requirements">Level A Requirements</a></li> <li><a href="#level-aa-requirements" id="markdown-toc-level-aa-requirements">Level AA Requirements</a></li> </ul> </li> <li>
-<a href="#test-structure" id="markdown-toc-test-structure">Test Structure</a> <ul> <li><a href="#accessibility-test-files" id="markdown-toc-accessibility-test-files">Accessibility Test Files</a></li> <li>
-<a href="#test-patterns" id="markdown-toc-test-patterns">Test Patterns</a> <ul> <li><a href="#basic-accessibility-audit" id="markdown-toc-basic-accessibility-audit">Basic Accessibility Audit</a></li> <li><a href="#keyboard-navigation-test" id="markdown-toc-keyboard-navigation-test">Keyboard Navigation Test</a></li> <li><a href="#specific-rule-testing" id="markdown-toc-specific-rule-testing">Specific Rule Testing</a></li> </ul> </li> </ul> </li> <li>
-<a href="#configuration" id="markdown-toc-configuration">Configuration</a> <ul> <li><a href="#packagejson-scripts" id="markdown-toc-packagejson-scripts">Package.json Scripts</a></li> <li><a href="#playwright-configuration" id="markdown-toc-playwright-configuration">Playwright Configuration</a></li> </ul> </li> <li>
-<a href="#best-practices" id="markdown-toc-best-practices">Best Practices</a> <ul> <li><a href="#1-semantic-html" id="markdown-toc-1-semantic-html">1. Semantic HTML</a></li> <li><a href="#2-aria-attributes" id="markdown-toc-2-aria-attributes">2. ARIA Attributes</a></li> <li><a href="#3-keyboard-navigation" id="markdown-toc-3-keyboard-navigation">3. Keyboard Navigation</a></li> <li><a href="#4-images-and-media" id="markdown-toc-4-images-and-media">4. Images and Media</a></li> <li><a href="#5-forms" id="markdown-toc-5-forms">5. Forms</a></li> </ul> </li> <li>
-<a href="#common-issues-and-solutions" id="markdown-toc-common-issues-and-solutions">Common Issues and Solutions</a> <ul> <li><a href="#1-color-contrast" id="markdown-toc-1-color-contrast">1. Color Contrast</a></li> <li><a href="#2-missing-alt-text" id="markdown-toc-2-missing-alt-text">2. Missing Alt Text</a></li> <li><a href="#3-keyboard-navigation-1" id="markdown-toc-3-keyboard-navigation-1">3. Keyboard Navigation</a></li> <li><a href="#4-heading-hierarchy" id="markdown-toc-4-heading-hierarchy">4. Heading Hierarchy</a></li> <li><a href="#5-form-labels" id="markdown-toc-5-form-labels">5. Form Labels</a></li> </ul> </li> <li><a href="#integration-with-cicd" id="markdown-toc-integration-with-cicd">Integration with CI/CD</a></li> <li>
-<a href="#tools-and-resources" id="markdown-toc-tools-and-resources">Tools and Resources</a> <ul> <li><a href="#testing-tools" id="markdown-toc-testing-tools">Testing Tools</a></li> <li><a href="#browser-extensions" id="markdown-toc-browser-extensions">Browser Extensions</a></li> <li><a href="#guidelines-and-standards" id="markdown-toc-guidelines-and-standards">Guidelines and Standards</a></li> </ul> </li> <li>
-<a href="#reporting-and-monitoring" id="markdown-toc-reporting-and-monitoring">Reporting and Monitoring</a> <ul> <li><a href="#test-reports" id="markdown-toc-test-reports">Test Reports</a></li> <li><a href="#continuous-monitoring" id="markdown-toc-continuous-monitoring">Continuous Monitoring</a></li> </ul> </li> </ul> </li> </ul> <h2 id="test-categories">Test Categories</h2> <h3 id="1-automated-accessibility-audits-a11y-tag">1. Automated Accessibility Audits (<code class="language-plaintext highlighter-rouge">@a11y</code> tag)</h3> <p>Run automated accessibility tests:</p> <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm run <span class="nb">test</span>:a11y         <span class="c"># Run all accessibility tests</span>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Navigation and ordering metadata -->
+    
+      <meta name="docs-nav-order" content="3">
+      <meta name="docs-section" content="documentation">
+      
+        <meta name="priority-doc" content="true">
+      
+    
+
+    <!-- Structured data for navigation -->
+    
+      <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Accessibility Testing Configuration",
+        "description": "Comprehensive accessibility testing setup with WCAG 2.1 AA compliance using axe-core and Playwright",
+        "url": "https://www.mijug.net/docs/accessibility-testing/",
+        "position": 3,
+        "isPartOf": {
+          "@type": "WebSite",
+          "name": "My Information Just Under Glass",
+          "url": "https://www.mijug.net/"
+        }
+      }
+      </script>
+    
+
+    <title>
+      Accessibility Testing Configuration | My Information Just Under Glass
+    </title>
+    <meta
+      name="description"
+      content="Accessibility Testing Configuration"
+    />
+    
+    <meta name="version" content="Aug 01, 2025" />
+    
+
+    
+    <link rel="stylesheet" href="/assets/main.css?v=20250821170013" />
+    <link rel="stylesheet" href="/assets/css/inp-optimizations.css?v=20250821170013" />
+    <link
+      rel="canonical"
+      href="https://www.mijug.net/docs/accessibility-testing/"
+    />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="My Information Just Under Glass"
+      href="/feed.xml"
+    />
+
+    
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="/assets/logo-mijug-watermark-98x100.svg"
+    />
+    
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="/favicon.ico"
+    />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Accessibility Testing Configuration | My Information Just Under Glass</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Accessibility Testing Configuration" />
+<meta name="author" content="Bob Kranson" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Comprehensive accessibility testing setup with WCAG 2.1 AA compliance using axe-core and Playwright" />
+<meta property="og:description" content="Comprehensive accessibility testing setup with WCAG 2.1 AA compliance using axe-core and Playwright" />
+<link rel="canonical" href="https://www.mijug.net/docs/accessibility-testing/" />
+<meta property="og:url" content="https://www.mijug.net/docs/accessibility-testing/" />
+<meta property="og:site_name" content="My Information Just Under Glass" />
+<meta property="og:image" content="https://www.mijug.net/assets/logo-mijug-watermark-98x100.svg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-08-21T17:00:13-04:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="https://www.mijug.net/assets/logo-mijug-watermark-98x100.svg" />
+<meta property="twitter:title" content="Accessibility Testing Configuration" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Bob Kranson"},"dateModified":"2025-07-31T20:27:38-04:00","datePublished":"2025-08-21T17:00:13-04:00","description":"Comprehensive accessibility testing setup with WCAG 2.1 AA compliance using axe-core and Playwright","headline":"Accessibility Testing Configuration","image":"https://www.mijug.net/assets/logo-mijug-watermark-98x100.svg","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.mijug.net/docs/accessibility-testing/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://www.mijug.net/assets/logo-mijug-watermark-98x100.svg"},"name":"Bob Kranson"},"url":"https://www.mijug.net/docs/accessibility-testing/"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+    <header class="site-header" role="banner">
+      <div class="wrapper">
+        <a class="site-title long-title" rel="home" href="/">
+          
+          <img src="/assets/logo-mijug-watermark-98x100.svg" alt="My Information Just Under Glass" width="50" height="50">
+           My Information Just Under Glass
+        </a>
+
+        <nav class="site-nav" role="navigation" aria-label="Main navigation">
+          <input type="checkbox" id="header-nav-trigger" class="nav-trigger" title="Toggle header navigation" aria-label="Toggle navigation menu">
+          <label for="header-nav-trigger" aria-label="Open navigation menu">
+            <span class="menu-icon">
+              <svg viewbox="0 0 18 15" width="18px" height="15px" role="img" aria-label="Menu icon">
+                <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"></path>
+              </svg>
+            </span>
+          </label>
+
+          <div class="trigger">
+            <a class="page-link" href="/about/" aria-label="About MIJUG">About</a>
+            <button class="nav-button" popovertarget="mobile-navigation" popovertargetaction="show" type="button" aria-label="Open additional navigation menu" aria-haspopup="true" aria-expanded="false">
+              Navigation
+            </button>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <nav popover id="mobile-navigation" class="site-nav" role="dialog" aria-labelledby="nav-heading" aria-modal="true">
+      <h2 id="nav-heading" class="sr-only">Additional Navigation</h2>
+      <button class="nav-button" popovertarget="mobile-navigation" popovertargetaction="hide" type="button" aria-label="Close navigation menu">
+        Close
+      </button>
+
+      <div class="popover-content">
+        <!-- Posts Section -->
+        <div class="popover-section">
+          <h3 class="popover-heading">Posts</h3>
+          <ul class="nav-list" role="list">
+            <li>
+              <a class="page-link" href="/blog/" aria-label="View blog posts">Blog</a>
+            </li>
+            <li>
+              <a class="page-link" href="/contact/" aria-label="Contact MIJUG">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Documentation Section -->
+        
+        <div class="popover-section">
+          <h3 class="popover-heading">Documentation</h3>
+          <ul class="nav-list" role="list" aria-label="Documentation pages">
+            
+            
+            
+            
+            
+            <li>
+              <a class="page-link" href="/docs/getting-started/" aria-label="View Getting Started documentation">
+                Getting Started
+              </a>
+            </li>
+            
+            <li>
+              <a class="page-link" href="/docs/welcome-mijug-workspace/" aria-label="View Workspace Home documentation">
+                Workspace Home
+              </a>
+            </li>
+            
+            <li>
+              <a class="page-link" href="/docs/accessibility-testing/" aria-label="View Accessibility Testing Configuration documentation">
+                Accessibility Testing Configuration
+              </a>
+            </li>
+            
+            <li>
+              <a class="page-link" href="/docs/getting-started-with-typescript-and-jekyll/" aria-label="View Getting Started with TypeScript and Jekyll documentation">
+                Getting Started with TypeScript and Jekyll
+              </a>
+            </li>
+            
+            <li>
+              <a class="page-link" href="/docs/tags-and-categories-guide/" aria-label="View Tags and Categories System Guide documentation">
+                Tags and Categories System Guide
+              </a>
+            </li>
+            
+            <li>
+              <a class="page-link" href="/docs/liquid-tags-examples/" aria-label="View Liquid Tags Examples documentation">
+                Liquid Tags Examples
+              </a>
+            </li>
+            
+            <li>
+              <a class="page-link" href="/docs/browser-management/" aria-label="View Browser Management for Testing documentation">
+                Browser Management for Testing
+              </a>
+            </li>
+            
+            <li>
+              <a class="page-link" href="/docs/browser-compatibility-system/" aria-label="View Browser Compatibility Detection &amp; Testing System documentation">
+                Browser Compatibility Detection &amp; Testing System
+              </a>
+            </li>
+            
+            <li>
+              <a class="page-link" href="/docs/browser-compatibility-testing/" aria-label="View Browser Compatibility Testing documentation">
+                Browser Compatibility Testing
+              </a>
+            </li>
+            
+            <li>
+              <a class="page-link" href="/docs/cache-management/" aria-label="View Cache Management Strategies documentation">
+                Cache Management Strategies
+              </a>
+            </li>
+            
+            <li>
+              <a class="page-link" href="/docs/rel-attribute-guide/" aria-label="View The rel Attribute in HTML Links: A Comprehensive Guide documentation">
+                The rel Attribute in HTML Links: A Comprehensive Guide
+              </a>
+            </li>
+            
+            <li>
+              <a class="page-link" href="/docs/frontmatter-cms/" aria-label="View FrontMatter CMS Usage documentation">
+                FrontMatter CMS Usage
+              </a>
+            </li>
+            
+            <li>
+              <a class="page-link" href="/docs/performance-optimization/" aria-label="View Performance Optimization Guide documentation">
+                Performance Optimization Guide
+              </a>
+            </li>
+            
+            <li>
+              <a class="page-link" href="/docs/mermaid-test-runner/" aria-label="View Mermaid Test Runner documentation">
+                Mermaid Test Runner
+              </a>
+            </li>
+            
+            <li>
+              <a class="page-link" href="/docs/mermaid-quick-start/" aria-label="View Mermaid Quick Start documentation">
+                Mermaid Quick Start
+              </a>
+            </li>
+            
+            <li>
+              <a class="page-link" href="/docs/mermaid-configuration-guide/" aria-label="View Mermaid Diagram Configuration Guide documentation">
+                Mermaid Diagram Configuration Guide
+              </a>
+            </li>
+            
+            <li>
+              <a class="page-link" href="/docs/mermaid-examples/" aria-label="View Mermaid Diagram Examples documentation">
+                Mermaid Diagram Examples
+              </a>
+            </li>
+            
+            <li>
+              <a class="page-link" href="/docs/mermaid-default-layout/" aria-label="View Mermaid on Default Layout documentation">
+                Mermaid on Default Layout
+              </a>
+            </li>
+            
+            <li>
+              <a class="page-link" href="/docs/mermaid-basic/" aria-label="View Mermaid Basic documentation">
+                Mermaid Basic
+              </a>
+            </li>
+            
+            <li>
+              <a class="page-link" href="/docs/mermaid-diagrams-sample/" aria-label="View Delivery Slides Mermaid Diagrams Showcase documentation">
+                Delivery Slides Mermaid Diagrams Showcase
+              </a>
+            </li>
+            
+            
+          </ul>
+        </div>
+        
+
+        <!-- Categories Section -->
+        
+        <div class="popover-section">
+          <h3 class="popover-heading">Categories</h3>
+          <ul class="nav-list" role="list" aria-label="Blog post categories">
+            
+            <li>
+              <a class="page-link" href="/category/announcements" aria-label="View Announcements category with 3 posts">
+                Announcements
+                <span class="count" aria-hidden="true">(3)</span>
+              </a>
+            </li>
+            
+            <li>
+              <a class="page-link" href="/category/linux" aria-label="View Linux category with 1 posts">
+                Linux
+                <span class="count" aria-hidden="true">(1)</span>
+              </a>
+            </li>
+            
+            <li>
+              <a class="page-link" href="/category/documentation" aria-label="View Documentation category with 1 posts">
+                Documentation
+                <span class="count" aria-hidden="true">(1)</span>
+              </a>
+            </li>
+            
+            <li>
+              <a class="page-link" href="/category/navigation" aria-label="View Navigation category with 1 posts">
+                Navigation
+                <span class="count" aria-hidden="true">(1)</span>
+              </a>
+            </li>
+            
+            <li>
+              <a class="page-link" href="/category/getting-started" aria-label="View Getting-started category with 3 posts">
+                Getting-started
+                <span class="count" aria-hidden="true">(3)</span>
+              </a>
+            </li>
+            
+          </ul>
+        </div>
+        
+
+        <!-- Tags Section -->
+        
+        <div class="popover-section">
+          <h3 class="popover-heading">Tags</h3>
+          <ul class="nav-list" role="list" aria-label="Blog post tags">
+             
+            <li>
+              <a class="page-link" href="/tag/cpus" aria-label="View posts tagged with cpus (1 posts)">
+                #cpus
+                <span class="count" aria-hidden="true">(1)</span>
+              </a>
+            </li>
+            
+            <li>
+              <a class="page-link" href="/tag/diy" aria-label="View posts tagged with diy (1 posts)">
+                #diy
+                <span class="count" aria-hidden="true">(1)</span>
+              </a>
+            </li>
+            
+            <li>
+              <a class="page-link" href="/tag/docs" aria-label="View posts tagged with docs (1 posts)">
+                #docs
+                <span class="count" aria-hidden="true">(1)</span>
+              </a>
+            </li>
+            
+            <li>
+              <a class="page-link" href="/tag/e-waste" aria-label="View posts tagged with e-waste (2 posts)">
+                #e-waste
+                <span class="count" aria-hidden="true">(2)</span>
+              </a>
+            </li>
+            
+            <li>
+              <a class="page-link" href="/tag/education" aria-label="View posts tagged with education (1 posts)">
+                #education
+                <span class="count" aria-hidden="true">(1)</span>
+              </a>
+            </li>
+            
+            <li>
+              <a class="page-link" href="/tag/evening-schedules" aria-label="View posts tagged with evening-schedules (1 posts)">
+                #evening-schedules
+                <span class="count" aria-hidden="true">(1)</span>
+              </a>
+            </li>
+            
+            <li>
+              <a class="page-link" href="/tag/gpus" aria-label="View posts tagged with gpus (1 posts)">
+                #gpus
+                <span class="count" aria-hidden="true">(1)</span>
+              </a>
+            </li>
+            
+            <li>
+              <a class="page-link" href="/tag/guide" aria-label="View posts tagged with guide (1 posts)">
+                #guide
+                <span class="count" aria-hidden="true">(1)</span>
+              </a>
+            </li>
+            
+            <li>
+              <a class="page-link" href="/tag/linux" aria-label="View posts tagged with linux (2 posts)">
+                #linux
+                <span class="count" aria-hidden="true">(2)</span>
+              </a>
+            </li>
+            
+            <li>
+              <a class="page-link" href="/tag/navigation" aria-label="View posts tagged with navigation (1 posts)">
+                #navigation
+                <span class="count" aria-hidden="true">(1)</span>
+              </a>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </nav>
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+<article class="post">
+  <header class="post-header">
+    <h1 class="post-title">Accessibility Testing Configuration</h1>
+  </header>
+
+  <div class="post-content">
+<h1 id="accessibility-testing-configuration">Accessibility Testing Configuration</h1>
+
+<p>This project includes comprehensive accessibility testing using <code class="language-plaintext highlighter-rouge">@axe-core/playwright</code> to ensure WCAG 2.1 AA compliance.</p>
+
+<h2 id="overview">Overview</h2>
+
+<p>Accessibility testing is integrated into the E2E test suite using:</p>
+
+<ul>
+  <li>
+<strong>@axe-core/playwright</strong>: Automated accessibility testing</li>
+  <li>
+<strong>WCAG 2.1 AA Standards</strong>: Web Content Accessibility Guidelines Level AA</li>
+  <li>
+<strong>Keyboard Navigation Testing</strong>: Manual keyboard accessibility tests</li>
+  <li>
+<strong>Mobile Accessibility</strong>: Touch target and navigation testing</li>
+</ul>
+
+<h2 id="table-of-contents">Table of Contents</h2>
+
+<ul class="no_toc" id="markdown-toc">
+  <li>
+<a href="#accessibility-testing-configuration" id="markdown-toc-accessibility-testing-configuration">Accessibility Testing Configuration</a>    <ul>
+      <li><a href="#overview" id="markdown-toc-overview">Overview</a></li>
+      <li><a href="#table-of-contents" id="markdown-toc-table-of-contents">Table of Contents</a></li>
+      <li>
+<a href="#test-categories" id="markdown-toc-test-categories">Test Categories</a>        <ul>
+          <li><a href="#1-automated-accessibility-audits-a11y-tag" id="markdown-toc-1-automated-accessibility-audits-a11y-tag">1. Automated Accessibility Audits (<code class="language-plaintext highlighter-rouge">@a11y</code> tag)</a></li>
+          <li><a href="#2-manual-accessibility-tests" id="markdown-toc-2-manual-accessibility-tests">2. Manual Accessibility Tests</a></li>
+          <li><a href="#3-mobile-accessibility" id="markdown-toc-3-mobile-accessibility">3. Mobile Accessibility</a></li>
+        </ul>
+      </li>
+      <li>
+<a href="#wcag-21-compliance" id="markdown-toc-wcag-21-compliance">WCAG 2.1 Compliance</a>        <ul>
+          <li><a href="#level-a-requirements" id="markdown-toc-level-a-requirements">Level A Requirements</a></li>
+          <li><a href="#level-aa-requirements" id="markdown-toc-level-aa-requirements">Level AA Requirements</a></li>
+        </ul>
+      </li>
+      <li>
+<a href="#test-structure" id="markdown-toc-test-structure">Test Structure</a>        <ul>
+          <li><a href="#accessibility-test-files" id="markdown-toc-accessibility-test-files">Accessibility Test Files</a></li>
+          <li>
+<a href="#test-patterns" id="markdown-toc-test-patterns">Test Patterns</a>            <ul>
+              <li><a href="#basic-accessibility-audit" id="markdown-toc-basic-accessibility-audit">Basic Accessibility Audit</a></li>
+              <li><a href="#keyboard-navigation-test" id="markdown-toc-keyboard-navigation-test">Keyboard Navigation Test</a></li>
+              <li><a href="#specific-rule-testing" id="markdown-toc-specific-rule-testing">Specific Rule Testing</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>
+<a href="#configuration" id="markdown-toc-configuration">Configuration</a>        <ul>
+          <li><a href="#packagejson-scripts" id="markdown-toc-packagejson-scripts">Package.json Scripts</a></li>
+          <li><a href="#playwright-configuration" id="markdown-toc-playwright-configuration">Playwright Configuration</a></li>
+        </ul>
+      </li>
+      <li>
+<a href="#best-practices" id="markdown-toc-best-practices">Best Practices</a>        <ul>
+          <li><a href="#1-semantic-html" id="markdown-toc-1-semantic-html">1. Semantic HTML</a></li>
+          <li><a href="#2-aria-attributes" id="markdown-toc-2-aria-attributes">2. ARIA Attributes</a></li>
+          <li><a href="#3-keyboard-navigation" id="markdown-toc-3-keyboard-navigation">3. Keyboard Navigation</a></li>
+          <li><a href="#4-images-and-media" id="markdown-toc-4-images-and-media">4. Images and Media</a></li>
+          <li><a href="#5-forms" id="markdown-toc-5-forms">5. Forms</a></li>
+        </ul>
+      </li>
+      <li>
+<a href="#common-issues-and-solutions" id="markdown-toc-common-issues-and-solutions">Common Issues and Solutions</a>        <ul>
+          <li><a href="#1-color-contrast" id="markdown-toc-1-color-contrast">1. Color Contrast</a></li>
+          <li><a href="#2-missing-alt-text" id="markdown-toc-2-missing-alt-text">2. Missing Alt Text</a></li>
+          <li><a href="#3-keyboard-navigation-1" id="markdown-toc-3-keyboard-navigation-1">3. Keyboard Navigation</a></li>
+          <li><a href="#4-heading-hierarchy" id="markdown-toc-4-heading-hierarchy">4. Heading Hierarchy</a></li>
+          <li><a href="#5-form-labels" id="markdown-toc-5-form-labels">5. Form Labels</a></li>
+        </ul>
+      </li>
+      <li><a href="#integration-with-cicd" id="markdown-toc-integration-with-cicd">Integration with CI/CD</a></li>
+      <li>
+<a href="#tools-and-resources" id="markdown-toc-tools-and-resources">Tools and Resources</a>        <ul>
+          <li><a href="#testing-tools" id="markdown-toc-testing-tools">Testing Tools</a></li>
+          <li><a href="#browser-extensions" id="markdown-toc-browser-extensions">Browser Extensions</a></li>
+          <li><a href="#guidelines-and-standards" id="markdown-toc-guidelines-and-standards">Guidelines and Standards</a></li>
+        </ul>
+      </li>
+      <li>
+<a href="#reporting-and-monitoring" id="markdown-toc-reporting-and-monitoring">Reporting and Monitoring</a>        <ul>
+          <li><a href="#test-reports" id="markdown-toc-test-reports">Test Reports</a></li>
+          <li><a href="#continuous-monitoring" id="markdown-toc-continuous-monitoring">Continuous Monitoring</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="test-categories">Test Categories</h2>
+
+<h3 id="1-automated-accessibility-audits-a11y-tag">1. Automated Accessibility Audits (<code class="language-plaintext highlighter-rouge">@a11y</code> tag)</h3>
+
+<p>Run automated accessibility tests:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm run <span class="nb">test</span>:a11y         <span class="c"># Run all accessibility tests</span>
 npm run <span class="nb">test</span>:a11y:headed  <span class="c"># Run with browser UI</span>
-</code></pre></div></div> <h3 id="2-manual-accessibility-tests">2. Manual Accessibility Tests</h3> <p>The following manual accessibility checks are included:</p> <ul> <li>Keyboard navigation flow</li> <li>Focus management</li> <li>Screen reader compatibility</li> <li>Color contrast verification</li> <li>Semantic markup validation</li> </ul> <h3 id="3-mobile-accessibility">3. Mobile Accessibility</h3> <p>Mobile-specific accessibility tests include:</p> <ul> <li>Touch target sizing (minimum 44px)</li> <li>Mobile navigation accessibility</li> <li>Responsive design compliance</li> </ul> <h2 id="wcag-21-compliance">WCAG 2.1 Compliance</h2> <h3 id="level-a-requirements">Level A Requirements</h3> <ul> <li>✅ Non-text content has alternatives</li> <li>✅ Captions for multimedia content</li> <li>✅ Content is adaptable</li> <li>✅ Color is not the only visual means of conveying information</li> <li>✅ Audio control available</li> <li>✅ Keyboard accessible</li> <li>✅ No seizure-inducing content</li> <li>✅ Bypass blocks mechanism</li> <li>✅ Page titles</li> <li>✅ Focus order</li> <li>✅ Link purpose</li> <li>✅ Language of page</li> </ul> <h3 id="level-aa-requirements">Level AA Requirements</h3> <ul> <li>✅ Captions for live content</li> <li>✅ Audio descriptions</li> <li>✅ Color contrast (4.5:1 normal text, 3:1 large text)</li> <li>✅ Visual presentation controls</li> <li>✅ Keyboard accessible (no keyboard traps)</li> <li>✅ Timing adjustable</li> <li>✅ Pause, stop, hide</li> <li>✅ Three flashes or below threshold</li> <li>✅ Navigation mechanisms</li> <li>✅ Headings and labels</li> <li>✅ Focus visible</li> <li>✅ Language of parts</li> </ul> <h2 id="test-structure">Test Structure</h2> <h3 id="accessibility-test-files">Accessibility Test Files</h3> <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>e2e/
+</code></pre></div></div>
+
+<h3 id="2-manual-accessibility-tests">2. Manual Accessibility Tests</h3>
+
+<p>The following manual accessibility checks are included:</p>
+
+<ul>
+  <li>Keyboard navigation flow</li>
+  <li>Focus management</li>
+  <li>Screen reader compatibility</li>
+  <li>Color contrast verification</li>
+  <li>Semantic markup validation</li>
+</ul>
+
+<h3 id="3-mobile-accessibility">3. Mobile Accessibility</h3>
+
+<p>Mobile-specific accessibility tests include:</p>
+
+<ul>
+  <li>Touch target sizing (minimum 44px)</li>
+  <li>Mobile navigation accessibility</li>
+  <li>Responsive design compliance</li>
+</ul>
+
+<h2 id="wcag-21-compliance">WCAG 2.1 Compliance</h2>
+
+<h3 id="level-a-requirements">Level A Requirements</h3>
+
+<ul>
+  <li>✅ Non-text content has alternatives</li>
+  <li>✅ Captions for multimedia content</li>
+  <li>✅ Content is adaptable</li>
+  <li>✅ Color is not the only visual means of conveying information</li>
+  <li>✅ Audio control available</li>
+  <li>✅ Keyboard accessible</li>
+  <li>✅ No seizure-inducing content</li>
+  <li>✅ Bypass blocks mechanism</li>
+  <li>✅ Page titles</li>
+  <li>✅ Focus order</li>
+  <li>✅ Link purpose</li>
+  <li>✅ Language of page</li>
+</ul>
+
+<h3 id="level-aa-requirements">Level AA Requirements</h3>
+
+<ul>
+  <li>✅ Captions for live content</li>
+  <li>✅ Audio descriptions</li>
+  <li>✅ Color contrast (4.5:1 normal text, 3:1 large text)</li>
+  <li>✅ Visual presentation controls</li>
+  <li>✅ Keyboard accessible (no keyboard traps)</li>
+  <li>✅ Timing adjustable</li>
+  <li>✅ Pause, stop, hide</li>
+  <li>✅ Three flashes or below threshold</li>
+  <li>✅ Navigation mechanisms</li>
+  <li>✅ Headings and labels</li>
+  <li>✅ Focus visible</li>
+  <li>✅ Language of parts</li>
+</ul>
+
+<h2 id="test-structure">Test Structure</h2>
+
+<h3 id="accessibility-test-files">Accessibility Test Files</h3>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>e2e/
 ├── accessibility.spec.ts              # Main accessibility tests
 ├── documentation-accessibility.spec.ts # Documentation-specific tests
 ├── homepage.spec.ts                   # Includes accessibility checks
 ├── documentation.spec.ts              # Includes accessibility checks
 └── navigation.spec.ts                 # Includes accessibility checks
-</code></pre></div></div> <h3 id="test-patterns">Test Patterns</h3> <h4 id="basic-accessibility-audit">Basic Accessibility Audit</h4> <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">test</span><span class="p">(</span><span class="dl">'</span><span class="s1">should pass accessibility audit @a11y</span><span class="dl">'</span><span class="p">,</span> <span class="k">async </span><span class="p">({</span> <span class="nx">page</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</code></pre></div></div>
+
+<h3 id="test-patterns">Test Patterns</h3>
+
+<h4 id="basic-accessibility-audit">Basic Accessibility Audit</h4>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">test</span><span class="p">(</span><span class="dl">'</span><span class="s1">should pass accessibility audit @a11y</span><span class="dl">'</span><span class="p">,</span> <span class="k">async </span><span class="p">({</span> <span class="nx">page</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="p">{</span>
   <span class="k">await</span> <span class="nx">page</span><span class="p">.</span><span class="nf">goto</span><span class="p">(</span><span class="dl">'</span><span class="s1">/</span><span class="dl">'</span><span class="p">);</span>
 
   <span class="kd">const</span> <span class="nx">accessibilityScanResults</span> <span class="o">=</span> <span class="k">await</span> <span class="k">new</span> <span class="nc">AxeBuilder</span><span class="p">({</span> <span class="nx">page</span> <span class="p">}).</span><span class="nf">withTags</span><span class="p">([</span><span class="dl">'</span><span class="s1">wcag2a</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">wcag2aa</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">wcag21aa</span><span class="dl">'</span><span class="p">]).</span><span class="nf">analyze</span><span class="p">();</span>
 
   <span class="nf">expect</span><span class="p">(</span><span class="nx">accessibilityScanResults</span><span class="p">.</span><span class="nx">violations</span><span class="p">).</span><span class="nf">toEqual</span><span class="p">([]);</span>
 <span class="p">});</span>
-</code></pre></div></div> <h4 id="keyboard-navigation-test">Keyboard Navigation Test</h4> <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">test</span><span class="p">(</span><span class="dl">'</span><span class="s1">should be keyboard accessible @a11y</span><span class="dl">'</span><span class="p">,</span> <span class="k">async </span><span class="p">({</span> <span class="nx">page</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</code></pre></div></div>
+
+<h4 id="keyboard-navigation-test">Keyboard Navigation Test</h4>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">test</span><span class="p">(</span><span class="dl">'</span><span class="s1">should be keyboard accessible @a11y</span><span class="dl">'</span><span class="p">,</span> <span class="k">async </span><span class="p">({</span> <span class="nx">page</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="p">{</span>
   <span class="k">await</span> <span class="nx">page</span><span class="p">.</span><span class="nf">goto</span><span class="p">(</span><span class="dl">'</span><span class="s1">/</span><span class="dl">'</span><span class="p">);</span>
 
   <span class="k">await</span> <span class="nx">page</span><span class="p">.</span><span class="nx">keyboard</span><span class="p">.</span><span class="nf">press</span><span class="p">(</span><span class="dl">'</span><span class="s1">Tab</span><span class="dl">'</span><span class="p">);</span>
   <span class="kd">const</span> <span class="nx">focusedElement</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">page</span><span class="p">.</span><span class="nf">evaluate</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="nb">document</span><span class="p">.</span><span class="nx">activeElement</span><span class="p">?.</span><span class="nx">tagName</span><span class="p">);</span>
   <span class="nf">expect</span><span class="p">([</span><span class="dl">'</span><span class="s1">A</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">BUTTON</span><span class="dl">'</span><span class="p">,</span> <span class="dl">'</span><span class="s1">INPUT</span><span class="dl">'</span><span class="p">]).</span><span class="nf">toContain</span><span class="p">(</span><span class="nx">focusedElement</span><span class="p">);</span>
 <span class="p">});</span>
-</code></pre></div></div> <h4 id="specific-rule-testing">Specific Rule Testing</h4> <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">test</span><span class="p">(</span><span class="dl">'</span><span class="s1">should have proper color contrast @a11y</span><span class="dl">'</span><span class="p">,</span> <span class="k">async </span><span class="p">({</span> <span class="nx">page</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="p">{</span>
+</code></pre></div></div>
+
+<h4 id="specific-rule-testing">Specific Rule Testing</h4>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">test</span><span class="p">(</span><span class="dl">'</span><span class="s1">should have proper color contrast @a11y</span><span class="dl">'</span><span class="p">,</span> <span class="k">async </span><span class="p">({</span> <span class="nx">page</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="p">{</span>
   <span class="k">await</span> <span class="nx">page</span><span class="p">.</span><span class="nf">goto</span><span class="p">(</span><span class="dl">'</span><span class="s1">/</span><span class="dl">'</span><span class="p">);</span>
 
   <span class="kd">const</span> <span class="nx">accessibilityScanResults</span> <span class="o">=</span> <span class="k">await</span> <span class="k">new</span> <span class="nc">AxeBuilder</span><span class="p">({</span> <span class="nx">page</span> <span class="p">}).</span><span class="nf">withRules</span><span class="p">([</span><span class="dl">'</span><span class="s1">color-contrast</span><span class="dl">'</span><span class="p">]).</span><span class="nf">analyze</span><span class="p">();</span>
 
   <span class="nf">expect</span><span class="p">(</span><span class="nx">accessibilityScanResults</span><span class="p">.</span><span class="nx">violations</span><span class="p">).</span><span class="nf">toEqual</span><span class="p">([]);</span>
 <span class="p">});</span>
-</code></pre></div></div> <h2 id="configuration">Configuration</h2> <h3 id="packagejson-scripts">Package.json Scripts</h3> <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+</code></pre></div></div>
+
+<h2 id="configuration">Configuration</h2>
+
+<h3 id="packagejson-scripts">Package.json Scripts</h3>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"test:a11y"</span><span class="p">:</span><span class="w"> </span><span class="s2">"playwright test --grep @a11y"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"test:a11y:headed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"playwright test --grep @a11y --headed"</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div></div> <h3 id="playwright-configuration">Playwright Configuration</h3> <p>The accessibility tests use the same Playwright configuration with additional axe-core integration.</p> <h2 id="best-practices">Best Practices</h2> <h3 id="1-semantic-html">1. Semantic HTML</h3> <ul> <li>Use proper HTML5 semantic elements (<code class="language-plaintext highlighter-rouge">&lt;main&gt;</code>, <code class="language-plaintext highlighter-rouge">&lt;nav&gt;</code>, <code class="language-plaintext highlighter-rouge">&lt;header&gt;</code>, <code class="language-plaintext highlighter-rouge">&lt;footer&gt;</code>)</li> <li>Ensure proper heading hierarchy (h1 → h2 → h3)</li> <li>Use lists (<code class="language-plaintext highlighter-rouge">&lt;ul&gt;</code>, <code class="language-plaintext highlighter-rouge">&lt;ol&gt;</code>) for grouped content</li> </ul> <h3 id="2-aria-attributes">2. ARIA Attributes</h3> <ul> <li>Add <code class="language-plaintext highlighter-rouge">aria-label</code> for elements without visible text</li> <li>Use <code class="language-plaintext highlighter-rouge">aria-describedby</code> for additional descriptions</li> <li>Implement <code class="language-plaintext highlighter-rouge">aria-expanded</code> for collapsible content</li> <li>Use <code class="language-plaintext highlighter-rouge">role</code> attributes where semantic HTML is insufficient</li> </ul> <h3 id="3-keyboard-navigation">3. Keyboard Navigation</h3> <ul> <li>Ensure all interactive elements are focusable</li> <li>Provide visible focus indicators</li> <li>Implement logical tab order</li> <li>Add skip links for main content</li> </ul> <h3 id="4-images-and-media">4. Images and Media</h3> <ul> <li>Provide meaningful <code class="language-plaintext highlighter-rouge">alt</code> text for images</li> <li>Use empty <code class="language-plaintext highlighter-rouge">alt=""</code> for decorative images</li> <li>Add captions for videos</li> <li>Provide transcripts for audio content</li> </ul> <h3 id="5-forms">5. Forms</h3> <ul> <li>Associate labels with form controls</li> <li>Provide clear error messages</li> <li>Group related form fields with <code class="language-plaintext highlighter-rouge">&lt;fieldset&gt;</code> and <code class="language-plaintext highlighter-rouge">&lt;legend&gt;</code>
-</li> <li>Indicate required fields clearly</li> </ul> <h2 id="common-issues-and-solutions">Common Issues and Solutions</h2> <h3 id="1-color-contrast">1. Color Contrast</h3> <p><strong>Issue</strong>: Text doesn’t meet 4.5:1 contrast ratio <strong>Solution</strong>: Use darker text colors or lighter backgrounds</p> <h3 id="2-missing-alt-text">2. Missing Alt Text</h3> <p><strong>Issue</strong>: Images without alt attributes <strong>Solution</strong>: Add descriptive alt text or use <code class="language-plaintext highlighter-rouge">alt=""</code> for decorative images</p> <h3 id="3-keyboard-navigation-1">3. Keyboard Navigation</h3> <p><strong>Issue</strong>: Elements not accessible via keyboard <strong>Solution</strong>: Ensure <code class="language-plaintext highlighter-rouge">tabindex</code> is properly set and add keyboard event handlers</p> <h3 id="4-heading-hierarchy">4. Heading Hierarchy</h3> <p><strong>Issue</strong>: Skipped heading levels (h1 → h3) <strong>Solution</strong>: Use proper heading sequence (h1 → h2 → h3)</p> <h3 id="5-form-labels">5. Form Labels</h3> <p><strong>Issue</strong>: Form inputs without associated labels <strong>Solution</strong>: Use <code class="language-plaintext highlighter-rouge">&lt;label for="input-id"&gt;</code> or <code class="language-plaintext highlighter-rouge">aria-label</code> attributes</p> <h2 id="integration-with-cicd">Integration with CI/CD</h2> <p>Accessibility tests can be integrated into continuous integration:</p> <div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># .github/workflows/accessibility.yml</span>
+</span></code></pre></div></div>
+
+<h3 id="playwright-configuration">Playwright Configuration</h3>
+
+<p>The accessibility tests use the same Playwright configuration with additional axe-core integration.</p>
+
+<h2 id="best-practices">Best Practices</h2>
+
+<h3 id="1-semantic-html">1. Semantic HTML</h3>
+
+<ul>
+  <li>Use proper HTML5 semantic elements (<code class="language-plaintext highlighter-rouge">&lt;main&gt;</code>, <code class="language-plaintext highlighter-rouge">&lt;nav&gt;</code>, <code class="language-plaintext highlighter-rouge">&lt;header&gt;</code>, <code class="language-plaintext highlighter-rouge">&lt;footer&gt;</code>)</li>
+  <li>Ensure proper heading hierarchy (h1 → h2 → h3)</li>
+  <li>Use lists (<code class="language-plaintext highlighter-rouge">&lt;ul&gt;</code>, <code class="language-plaintext highlighter-rouge">&lt;ol&gt;</code>) for grouped content</li>
+</ul>
+
+<h3 id="2-aria-attributes">2. ARIA Attributes</h3>
+
+<ul>
+  <li>Add <code class="language-plaintext highlighter-rouge">aria-label</code> for elements without visible text</li>
+  <li>Use <code class="language-plaintext highlighter-rouge">aria-describedby</code> for additional descriptions</li>
+  <li>Implement <code class="language-plaintext highlighter-rouge">aria-expanded</code> for collapsible content</li>
+  <li>Use <code class="language-plaintext highlighter-rouge">role</code> attributes where semantic HTML is insufficient</li>
+</ul>
+
+<h3 id="3-keyboard-navigation">3. Keyboard Navigation</h3>
+
+<ul>
+  <li>Ensure all interactive elements are focusable</li>
+  <li>Provide visible focus indicators</li>
+  <li>Implement logical tab order</li>
+  <li>Add skip links for main content</li>
+</ul>
+
+<h3 id="4-images-and-media">4. Images and Media</h3>
+
+<ul>
+  <li>Provide meaningful <code class="language-plaintext highlighter-rouge">alt</code> text for images</li>
+  <li>Use empty <code class="language-plaintext highlighter-rouge">alt=""</code> for decorative images</li>
+  <li>Add captions for videos</li>
+  <li>Provide transcripts for audio content</li>
+</ul>
+
+<h3 id="5-forms">5. Forms</h3>
+
+<ul>
+  <li>Associate labels with form controls</li>
+  <li>Provide clear error messages</li>
+  <li>Group related form fields with <code class="language-plaintext highlighter-rouge">&lt;fieldset&gt;</code> and <code class="language-plaintext highlighter-rouge">&lt;legend&gt;</code>
+</li>
+  <li>Indicate required fields clearly</li>
+</ul>
+
+<h2 id="common-issues-and-solutions">Common Issues and Solutions</h2>
+
+<h3 id="1-color-contrast">1. Color Contrast</h3>
+
+<p><strong>Issue</strong>: Text doesn’t meet 4.5:1 contrast ratio
+<strong>Solution</strong>: Use darker text colors or lighter backgrounds</p>
+
+<h3 id="2-missing-alt-text">2. Missing Alt Text</h3>
+
+<p><strong>Issue</strong>: Images without alt attributes
+<strong>Solution</strong>: Add descriptive alt text or use <code class="language-plaintext highlighter-rouge">alt=""</code> for decorative images</p>
+
+<h3 id="3-keyboard-navigation-1">3. Keyboard Navigation</h3>
+
+<p><strong>Issue</strong>: Elements not accessible via keyboard
+<strong>Solution</strong>: Ensure <code class="language-plaintext highlighter-rouge">tabindex</code> is properly set and add keyboard event handlers</p>
+
+<h3 id="4-heading-hierarchy">4. Heading Hierarchy</h3>
+
+<p><strong>Issue</strong>: Skipped heading levels (h1 → h3)
+<strong>Solution</strong>: Use proper heading sequence (h1 → h2 → h3)</p>
+
+<h3 id="5-form-labels">5. Form Labels</h3>
+
+<p><strong>Issue</strong>: Form inputs without associated labels
+<strong>Solution</strong>: Use <code class="language-plaintext highlighter-rouge">&lt;label for="input-id"&gt;</code> or <code class="language-plaintext highlighter-rouge">aria-label</code> attributes</p>
+
+<h2 id="integration-with-cicd">Integration with CI/CD</h2>
+
+<p>Accessibility tests can be integrated into continuous integration:</p>
+
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># .github/workflows/accessibility.yml</span>
 <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Run Accessibility Tests</span>
   <span class="na">run</span><span class="pi">:</span> <span class="pi">|</span>
     <span class="s">npm install</span>
     <span class="s">npm run test:a11y</span>
-</code></pre></div></div> <h2 id="tools-and-resources">Tools and Resources</h2> <h3 id="testing-tools">Testing Tools</h3> <ul> <li>
-<a href="https://github.com/dequelabs/axe-core">axe-core</a>: Accessibility testing engine</li> <li>
-<a href="https://playwright.dev/">Playwright</a>: Browser automation framework</li> <li>
-<a href="https://github.com/dequelabs/axe-core-npm/tree/develop/packages/playwright">axe-core/playwright</a>: Playwright integration</li> </ul> <h3 id="browser-extensions">Browser Extensions</h3> <ul> <li>
-<a href="https://www.deque.com/axe/devtools/">axe DevTools</a>: Browser extension for accessibility testing</li> <li>
-<a href="https://wave.webaim.org/">WAVE</a>: Web accessibility evaluation tool</li> <li>
-<a href="https://developers.google.com/web/tools/lighthouse">Lighthouse</a>: Includes accessibility audits</li> </ul> <h3 id="guidelines-and-standards">Guidelines and Standards</h3> <ul> <li>
-<a href="https://www.w3.org/WAI/WCAG21/Understanding/">WCAG 2.1</a>: Web Content Accessibility Guidelines</li> <li>
-<a href="https://www.section508.gov/">Section 508</a>: US federal accessibility standards</li> <li>
-<a href="https://www.etsi.org/deliver/etsi_en/301500_301599/301549/">EN 301 549</a>: European accessibility standard</li> </ul> <h2 id="reporting-and-monitoring">Reporting and Monitoring</h2> <h3 id="test-reports">Test Reports</h3> <p>Accessibility test results are included in standard Playwright reports:</p> <ul> <li>HTML report: <code class="language-plaintext highlighter-rouge">playwright-report/index.html</code>
-</li> <li>JSON report: <code class="language-plaintext highlighter-rouge">test-results/results.json</code>
-</li> <li>JUnit report: <code class="language-plaintext highlighter-rouge">test-results/junit.xml</code>
-</li> </ul> <h3 id="continuous-monitoring">Continuous Monitoring</h3> <p>Consider implementing:</p> <ul> <li>Regular accessibility audits in CI/CD pipeline</li> <li>Accessibility monitoring in production</li> <li>User testing with assistive technologies</li> <li>Periodic manual accessibility reviews</li> </ul> <hr> <p><strong>Last Updated</strong>: July 29, 2025 <strong>WCAG Version</strong>: 2.1 Level AA <strong>Testing Framework</strong>: Playwright + axe-core</p> </div> </article> </div> </main> <footer class="site-footer h-card"> <data class="u-url" href="/"></data> <div class="wrapper"> <div class="footer-col-wrapper"> <div class="footer-col footer-col-1"> <a href="/terms-of-service.html">Terms of Service</a><br> <a href="/privacy-policy.html">Privacy Policy</a> </div> <div class="footer-col footer-col-2"> <a href="/contact/">Contact Us</a> </div> <div class="footer-col footer-col-3"> <p> © 2025 <a rel="external nofollow" href="https://share.google/8Ir6br641K4uU74l2">Kranson Enterprises</a><br>     subscribe <a href="/feed.xml">via RSS<svg class="svg-icon"> <use xlink:href="/assets/minima-social-icons.svg#rss"></use></svg></a> </p> </div> </div> </div> </footer> <!-- Google AdSense --> <!-- { % include google-adsense.html % } --> <!-- Cookie Consent Banner for GDPR Compliance --> <!-- { % include cookie-consent.html % } --> <!-- Mermaid support: convert fenced code blocks (```mermaid) and initialize --> <script src="https://cdn.jsdelivr.net/npm/mermaid@11.9.0/dist/mermaid.min.js" defer></script> <script> (function() { 'use strict'; // Use requestIdleCallback for better INP performance function scheduleWork(callback) { if (window.requestIdleCallback) { requestIdleCallback(callback, { timeout: 2000 }); } else { setTimeout(callback, 0); } } function convertMermaidCodeFences() { try { // Use more efficient selector and batch DOM operations const codeBlocks = document.querySelectorAll('pre > code.language-mermaid, pre > code.mermaid'); const fragment = document.createDocumentFragment(); const replacements = []; codeBlocks.forEach(function(code) { const pre = code.parentElement; const container = pre.parentElement; const div = document.createElement('div'); div.className = 'mermaid'; div.textContent = code.textContent; replacements.push({ container, pre, div }); }); // Batch DOM updates to minimize layout thrashing replacements.forEach(({ container, pre, div }) => { container.replaceChild(div, pre); }); } catch (e) { console.warn('Mermaid code fence conversion failed:', e); } } function initMermaidNow() { try { if (!window.mermaid) return false; scheduleWork(() => { convertMermaidCodeFences(); if (typeof mermaid.initialize === 'function') { mermaid.initialize({ startOnLoad: false, // Better control over timing theme: 'default' }); } scheduleWork(() => { if (typeof mermaid.run === 'function') { mermaid.run({ querySelector: '.mermaid' }); } else if (typeof mermaid.init === 'function') { mermaid.init(undefined, document.querySelectorAll('.mermaid')); } }); }); return true; } catch (e) { console.error('Mermaid initialization error:', e); return false; } } // Use passive event listeners for better performance function whenReady(fn) { if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', fn, { passive: true }); } else { scheduleWork(fn); } } // Improved initialization with timeout and better error handling whenReady(function() { scheduleWork(() => { if (initMermaidNow()) return; let attempts = 0; const maxAttempts = 30; // Reduced from 50 const checkInterval = 200; // Increased from 100ms const timer = setInterval(function() { attempts++; if (initMermaidNow() || attempts >= maxAttempts) { clearInterval(timer); if (attempts >= maxAttempts) { console.warn('Mermaid initialization timed out after', maxAttempts, 'attempts'); } } }, checkInterval); }); }); })(); </script><script src="/assets/js/print-helper-optimized.js?v=20250821164256" defer></script><script src="/assets/js/storage-access.js?v=20250821164256" defer></script> </body> </html>
+</code></pre></div></div>
+
+<h2 id="tools-and-resources">Tools and Resources</h2>
+
+<h3 id="testing-tools">Testing Tools</h3>
+
+<ul>
+  <li>
+<a href="https://github.com/dequelabs/axe-core">axe-core</a>: Accessibility testing engine</li>
+  <li>
+<a href="https://playwright.dev/">Playwright</a>: Browser automation framework</li>
+  <li>
+<a href="https://github.com/dequelabs/axe-core-npm/tree/develop/packages/playwright">axe-core/playwright</a>: Playwright integration</li>
+</ul>
+
+<h3 id="browser-extensions">Browser Extensions</h3>
+
+<ul>
+  <li>
+<a href="https://www.deque.com/axe/devtools/">axe DevTools</a>: Browser extension for accessibility testing</li>
+  <li>
+<a href="https://wave.webaim.org/">WAVE</a>: Web accessibility evaluation tool</li>
+  <li>
+<a href="https://developers.google.com/web/tools/lighthouse">Lighthouse</a>: Includes accessibility audits</li>
+</ul>
+
+<h3 id="guidelines-and-standards">Guidelines and Standards</h3>
+
+<ul>
+  <li>
+<a href="https://www.w3.org/WAI/WCAG21/Understanding/">WCAG 2.1</a>: Web Content Accessibility Guidelines</li>
+  <li>
+<a href="https://www.section508.gov/">Section 508</a>: US federal accessibility standards</li>
+  <li>
+<a href="https://www.etsi.org/deliver/etsi_en/301500_301599/301549/">EN 301 549</a>: European accessibility standard</li>
+</ul>
+
+<h2 id="reporting-and-monitoring">Reporting and Monitoring</h2>
+
+<h3 id="test-reports">Test Reports</h3>
+
+<p>Accessibility test results are included in standard Playwright reports:</p>
+
+<ul>
+  <li>HTML report: <code class="language-plaintext highlighter-rouge">playwright-report/index.html</code>
+</li>
+  <li>JSON report: <code class="language-plaintext highlighter-rouge">test-results/results.json</code>
+</li>
+  <li>JUnit report: <code class="language-plaintext highlighter-rouge">test-results/junit.xml</code>
+</li>
+</ul>
+
+<h3 id="continuous-monitoring">Continuous Monitoring</h3>
+
+<p>Consider implementing:</p>
+
+<ul>
+  <li>Regular accessibility audits in CI/CD pipeline</li>
+  <li>Accessibility monitoring in production</li>
+  <li>User testing with assistive technologies</li>
+  <li>Periodic manual accessibility reviews</li>
+</ul>
+
+<hr>
+
+<p><strong>Last Updated</strong>: July 29, 2025
+<strong>WCAG Version</strong>: 2.1 Level AA
+<strong>Testing Framework</strong>: Playwright + axe-core</p>
+</div>
+</article>
+</div>
+    </main>
+
+    <footer class="site-footer h-card">
+      <data class="u-url" href="/"></data>
+
+      <div class="wrapper">
+
+        <div class="footer-col-wrapper">
+          <div class="footer-col footer-col-1">
+            <a href="/terms-of-service.html">Terms of Service</a><br>
+            <a href="/privacy-policy.html">Privacy Policy</a>
+          </div>
+
+          <div class="footer-col footer-col-2">
+            <a href="/contact/">Contact Us</a>
+          </div>
+
+          <div class="footer-col footer-col-3">
+            <p>
+              © 2025
+              <a rel="external nofollow" href="https://share.google/8Ir6br641K4uU74l2">Kranson Enterprises</a><br>
+                  subscribe
+              <a href="/feed.xml">via RSS<svg class="svg-icon">
+                  <use xlink:href="/assets/minima-social-icons.svg#rss"></use></svg></a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    
+
+    <!-- Google AdSense -->
+    <!-- {  % include google-adsense.html %  } -->
+
+    <!-- Cookie Consent Banner for GDPR Compliance -->
+    <!-- {  % include cookie-consent.html %  } -->
+
+    <!-- Mermaid support: convert fenced code blocks (```mermaid) and initialize -->
+    
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@11.9.0/dist/mermaid.min.js" defer></script>
+    
+    <script>
+      (function() {
+        'use strict';
+
+        // Use requestIdleCallback for better INP performance
+        function scheduleWork(callback) {
+          if (window.requestIdleCallback) {
+            requestIdleCallback(callback, { timeout: 2000 });
+          } else {
+            setTimeout(callback, 0);
+          }
+        }
+
+        function convertMermaidCodeFences() {
+          try {
+            // Use more efficient selector and batch DOM operations
+            const codeBlocks = document.querySelectorAll('pre > code.language-mermaid, pre > code.mermaid');
+            const fragment = document.createDocumentFragment();
+            const replacements = [];
+
+            codeBlocks.forEach(function(code) {
+              const pre = code.parentElement;
+              const container = pre.parentElement;
+              const div = document.createElement('div');
+              div.className = 'mermaid';
+              div.textContent = code.textContent;
+              replacements.push({ container, pre, div });
+            });
+
+            // Batch DOM updates to minimize layout thrashing
+            replacements.forEach(({ container, pre, div }) => {
+              container.replaceChild(div, pre);
+            });
+          } catch (e) {
+            console.warn('Mermaid code fence conversion failed:', e);
+          }
+        }
+
+        function initMermaidNow() {
+          try {
+            if (!window.mermaid) return false;
+
+            scheduleWork(() => {
+              convertMermaidCodeFences();
+              if (typeof mermaid.initialize === 'function') {
+                mermaid.initialize({
+                  startOnLoad: false, // Better control over timing
+                  theme: 'default'
+                });
+              }
+
+              scheduleWork(() => {
+                if (typeof mermaid.run === 'function') {
+                  mermaid.run({ querySelector: '.mermaid' });
+                } else if (typeof mermaid.init === 'function') {
+                  mermaid.init(undefined, document.querySelectorAll('.mermaid'));
+                }
+              });
+            });
+
+            return true;
+          } catch (e) {
+            console.error('Mermaid initialization error:', e);
+            return false;
+          }
+        }
+
+        // Use passive event listeners for better performance
+        function whenReady(fn) {
+          if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', fn, { passive: true });
+          } else {
+            scheduleWork(fn);
+          }
+        }
+
+        // Improved initialization with timeout and better error handling
+        whenReady(function() {
+          scheduleWork(() => {
+            if (initMermaidNow()) return;
+
+            let attempts = 0;
+            const maxAttempts = 30; // Reduced from 50
+            const checkInterval = 200; // Increased from 100ms
+
+            const timer = setInterval(function() {
+              attempts++;
+              if (initMermaidNow() || attempts >= maxAttempts) {
+                clearInterval(timer);
+                if (attempts >= maxAttempts) {
+                  console.warn('Mermaid initialization timed out after', maxAttempts, 'attempts');
+                }
+              }
+            }, checkInterval);
+          });
+        });
+      })();
+    </script><script src="/assets/js/print-helper-optimized.js?v=20250821170013" defer></script><script src="/assets/js/storage-access.js?v=20250821170013" defer></script>
+  </body>
+</html>

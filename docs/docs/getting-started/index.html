@@ -1,1 +1,996 @@
-<!doctype html> <html lang="en"> <head> <meta charset="utf-8" /> <meta name="viewport" content="width=device-width, initial-scale=1" /> <!-- Navigation and ordering metadata --> <meta name="docs-nav-order" content="1"> <meta name="docs-section" content="documentation"> <meta name="priority-doc" content="true"> <!-- Structured data for navigation --> <script type="application/ld+json"> { "@context": "https://schema.org", "@type": "WebPage", "name": "Getting Started", "description": "High-level overview of the MIJUG .NET workspace features and capabilities", "url": "https://www.mijug.net/docs/getting-started/", "position": 1, "isPartOf": { "@type": "WebSite", "name": "My Information Just Under Glass", "url": "https://www.mijug.net/" } } </script> <title> Getting Started | My Information Just Under Glass </title> <meta name="description" content="Getting Started" /> <meta name="version" content="Aug 04, 2025" /> <link rel="stylesheet" href="/assets/main.css?v=20250821164256" /> <link rel="stylesheet" href="/assets/css/inp-optimizations.css?v=20250821164256" /> <link rel="canonical" href="https://www.mijug.net/docs/getting-started/" /> <link rel="alternate" type="application/rss+xml" title="My Information Just Under Glass" href="/feed.xml" /> <link rel="icon" type="image/svg+xml" href="/assets/logo-mijug-watermark-98x100.svg" /> <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" /> <link rel="manifest" href="/manifest.webmanifest" /> <!-- Begin Jekyll SEO tag v2.8.0 --> <title>Getting Started | My Information Just Under Glass</title> <meta name="generator" content="Jekyll v4.4.1" /> <meta property="og:title" content="Getting Started" /> <meta name="author" content="Bob Kranson" /> <meta property="og:locale" content="en_US" /> <meta name="description" content="High-level overview of the MIJUG .NET workspace features and capabilities" /> <meta property="og:description" content="High-level overview of the MIJUG .NET workspace features and capabilities" /> <link rel="canonical" href="https://www.mijug.net/docs/getting-started/" /> <meta property="og:url" content="https://www.mijug.net/docs/getting-started/" /> <meta property="og:site_name" content="My Information Just Under Glass" /> <meta property="og:image" content="https://www.mijug.net/assets/logo-mijug-watermark-98x100.svg" /> <meta property="og:type" content="article" /> <meta property="article:published_time" content="2025-08-21T16:42:56-04:00" /> <meta name="twitter:card" content="summary_large_image" /> <meta property="twitter:image" content="https://www.mijug.net/assets/logo-mijug-watermark-98x100.svg" /> <meta property="twitter:title" content="Getting Started" /> <script type="application/ld+json"> {"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Bob Kranson"},"dateModified":"2025-08-04T17:50:00-04:00","datePublished":"2025-08-21T16:42:56-04:00","description":"High-level overview of the MIJUG .NET workspace features and capabilities","headline":"Getting Started","image":"https://www.mijug.net/assets/logo-mijug-watermark-98x100.svg","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.mijug.net/docs/getting-started/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://www.mijug.net/assets/logo-mijug-watermark-98x100.svg"},"name":"Bob Kranson"},"url":"https://www.mijug.net/docs/getting-started/"}</script> <!-- End Jekyll SEO tag --> </head> <body> <header class="site-header" role="banner"> <div class="wrapper"> <a class="site-title long-title" rel="home" href="/" > <img src="/assets/logo-mijug-watermark-98x100.svg" alt="My Information Just Under Glass" width="50" height="50" /> My Information Just Under Glass </a> <nav class="site-nav" role="navigation" aria-label="Main navigation"> <input type="checkbox" id="header-nav-trigger" class="nav-trigger" title="Toggle header navigation" aria-label="Toggle navigation menu" /> <label for="header-nav-trigger" aria-label="Open navigation menu"> <span class="menu-icon"> <svg viewBox="0 0 18 15" width="18px" height="15px" role="img" aria-label="Menu icon" > <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z" /> </svg> </span> </label> <div class="trigger"> <a class="page-link" href="/about/" aria-label="About MIJUG" >About</a > <button class="nav-button" popovertarget="mobile-navigation" popovertargetaction="show" type="button" aria-label="Open additional navigation menu" aria-haspopup="true" aria-expanded="false" > Navigation </button> </div> </nav> </div> </header> <nav popover id="mobile-navigation" class="site-nav" role="dialog" aria-labelledby="nav-heading" aria-modal="true" > <h2 id="nav-heading" class="sr-only">Additional Navigation</h2> <button class="nav-button" popovertarget="mobile-navigation" popovertargetaction="hide" type="button" aria-label="Close navigation menu" > Close </button> <div class="popover-content"> <!-- Posts Section --> <div class="popover-section"> <h3 class="popover-heading">Posts</h3> <ul class="nav-list" role="list"> <li> <a class="page-link" href="/blog/" aria-label="View blog posts" >Blog</a > </li> <li> <a class="page-link" href="/contact/" aria-label="Contact MIJUG" >Contact Us</a > </li> </ul> </div> <!-- Documentation Section --> <div class="popover-section"> <h3 class="popover-heading">Documentation</h3> <ul class="nav-list" role="list" aria-label="Documentation pages"> <li> <a class="page-link" href="/docs/getting-started/" aria-label="View Getting Started documentation" > Getting Started </a> </li> <li> <a class="page-link" href="/docs/welcome-mijug-workspace/" aria-label="View Workspace Home documentation" > Workspace Home </a> </li> <li> <a class="page-link" href="/docs/accessibility-testing/" aria-label="View Accessibility Testing Configuration documentation" > Accessibility Testing Configuration </a> </li> <li> <a class="page-link" href="/docs/getting-started-with-typescript-and-jekyll/" aria-label="View Getting Started with TypeScript and Jekyll documentation" > Getting Started with TypeScript and Jekyll </a> </li> <li> <a class="page-link" href="/docs/tags-and-categories-guide/" aria-label="View Tags and Categories System Guide documentation" > Tags and Categories System Guide </a> </li> <li> <a class="page-link" href="/docs/liquid-tags-examples/" aria-label="View Liquid Tags Examples documentation" > Liquid Tags Examples </a> </li> <li> <a class="page-link" href="/docs/browser-management/" aria-label="View Browser Management for Testing documentation" > Browser Management for Testing </a> </li> <li> <a class="page-link" href="/docs/browser-compatibility-system/" aria-label="View Browser Compatibility Detection &amp; Testing System documentation" > Browser Compatibility Detection &amp; Testing System </a> </li> <li> <a class="page-link" href="/docs/browser-compatibility-testing/" aria-label="View Browser Compatibility Testing documentation" > Browser Compatibility Testing </a> </li> <li> <a class="page-link" href="/docs/cache-management/" aria-label="View Cache Management Strategies documentation" > Cache Management Strategies </a> </li> <li> <a class="page-link" href="/docs/rel-attribute-guide/" aria-label="View The rel Attribute in HTML Links: A Comprehensive Guide documentation" > The rel Attribute in HTML Links: A Comprehensive Guide </a> </li> <li> <a class="page-link" href="/docs/frontmatter-cms/" aria-label="View FrontMatter CMS Usage documentation" > FrontMatter CMS Usage </a> </li> <li> <a class="page-link" href="/docs/performance-optimization/" aria-label="View Performance Optimization Guide documentation" > Performance Optimization Guide </a> </li> <li> <a class="page-link" href="/docs/mermaid-test-runner/" aria-label="View Mermaid Test Runner documentation" > Mermaid Test Runner </a> </li> <li> <a class="page-link" href="/docs/mermaid-quick-start/" aria-label="View Mermaid Quick Start documentation" > Mermaid Quick Start </a> </li> <li> <a class="page-link" href="/docs/mermaid-configuration-guide/" aria-label="View Mermaid Diagram Configuration Guide documentation" > Mermaid Diagram Configuration Guide </a> </li> <li> <a class="page-link" href="/docs/mermaid-examples/" aria-label="View Mermaid Diagram Examples documentation" > Mermaid Diagram Examples </a> </li> <li> <a class="page-link" href="/docs/mermaid-default-layout/" aria-label="View Mermaid on Default Layout documentation" > Mermaid on Default Layout </a> </li> <li> <a class="page-link" href="/docs/mermaid-basic/" aria-label="View Mermaid Basic documentation" > Mermaid Basic </a> </li> <li> <a class="page-link" href="/docs/mermaid-diagrams-sample/" aria-label="View Delivery Slides Mermaid Diagrams Showcase documentation" > Delivery Slides Mermaid Diagrams Showcase </a> </li> </ul> </div> <!-- Categories Section --> <div class="popover-section"> <h3 class="popover-heading">Categories</h3> <ul class="nav-list" role="list" aria-label="Blog post categories"> <li> <a class="page-link" href="/category/announcements" aria-label="View Announcements category with 3 posts" > Announcements <span class="count" aria-hidden="true" >(3)</span > </a> </li> <li> <a class="page-link" href="/category/linux" aria-label="View Linux category with 1 posts" > Linux <span class="count" aria-hidden="true" >(1)</span > </a> </li> <li> <a class="page-link" href="/category/documentation" aria-label="View Documentation category with 1 posts" > Documentation <span class="count" aria-hidden="true" >(1)</span > </a> </li> <li> <a class="page-link" href="/category/navigation" aria-label="View Navigation category with 1 posts" > Navigation <span class="count" aria-hidden="true" >(1)</span > </a> </li> <li> <a class="page-link" href="/category/getting-started" aria-label="View Getting-started category with 3 posts" > Getting-started <span class="count" aria-hidden="true" >(3)</span > </a> </li> </ul> </div> <!-- Tags Section --> <div class="popover-section"> <h3 class="popover-heading">Tags</h3> <ul class="nav-list" role="list" aria-label="Blog post tags"> <li> <a class="page-link" href="/tag/cpus" aria-label="View posts tagged with cpus (1 posts)" > #cpus <span class="count" aria-hidden="true" >(1)</span > </a> </li> <li> <a class="page-link" href="/tag/diy" aria-label="View posts tagged with diy (1 posts)" > #diy <span class="count" aria-hidden="true" >(1)</span > </a> </li> <li> <a class="page-link" href="/tag/docs" aria-label="View posts tagged with docs (1 posts)" > #docs <span class="count" aria-hidden="true" >(1)</span > </a> </li> <li> <a class="page-link" href="/tag/e-waste" aria-label="View posts tagged with e-waste (2 posts)" > #e-waste <span class="count" aria-hidden="true" >(2)</span > </a> </li> <li> <a class="page-link" href="/tag/education" aria-label="View posts tagged with education (1 posts)" > #education <span class="count" aria-hidden="true" >(1)</span > </a> </li> <li> <a class="page-link" href="/tag/evening-schedules" aria-label="View posts tagged with evening-schedules (1 posts)" > #evening-schedules <span class="count" aria-hidden="true" >(1)</span > </a> </li> <li> <a class="page-link" href="/tag/gpus" aria-label="View posts tagged with gpus (1 posts)" > #gpus <span class="count" aria-hidden="true" >(1)</span > </a> </li> <li> <a class="page-link" href="/tag/guide" aria-label="View posts tagged with guide (1 posts)" > #guide <span class="count" aria-hidden="true" >(1)</span > </a> </li> <li> <a class="page-link" href="/tag/linux" aria-label="View posts tagged with linux (2 posts)" > #linux <span class="count" aria-hidden="true" >(2)</span > </a> </li> <li> <a class="page-link" href="/tag/navigation" aria-label="View posts tagged with navigation (1 posts)" > #navigation <span class="count" aria-hidden="true" >(1)</span > </a> </li> </ul> </div> </div> </nav> <main class="page-content" aria-label="Content"> <div class="wrapper"><article class="post"> <header class="post-header"> <h1 class="post-title">Getting Started</h1> </header> <div class="post-content"><h1 id="getting-started">Getting Started</h1> <p>Welcome to the MIJUG .NET workspace - a comprehensive development environment that combines modern TypeScript development with powerful Jekyll documentation capabilities, all optimized for WSL (Windows Subsystem for Linux) integration.</p> <blockquote> <p><strong>📚 Looking for detailed commands?</strong> All specific installation steps, commands, and workflows are documented in the main private repository README file. We’d love to help you get started with full access - reach out via the contact button below and let’s schedule a friendly conversation about your development goals and how we can support your success!</p> <p><strong>🔍 Want in-depth tutorials?</strong> Check out our detailed <a href="/docs/getting-started-with-typescript-and-jekyll/">Getting Started with TypeScript and Jekyll</a> guide for comprehensive explanations and code examples.</p> </blockquote> <h2 id="-workspace-features-overview">🚀 Workspace Features Overview</h2> <h3 id="development-environment"><strong>Development Environment</strong></h3> <ul> <li><strong>TypeScript Development</strong>: Full-featured TypeScript workspace with IntelliSense, debugging, and hot reload capabilities</li> <li><strong>Jekyll Documentation Platform</strong>: Static site generation with advanced markdown features, live preview, and draft management</li> <li><strong>WSL Integration</strong>: Seamlessly optimized for Windows Subsystem for Linux (Ubuntu) development</li> <li><strong>VS Code Optimization</strong>: Pre-configured workspace with essential extensions and settings</li> </ul> <h3 id="testing--quality-assurance"><strong>Testing &amp; Quality Assurance</strong></h3> <ul> <li><strong>Multi-Level Testing</strong>: Jest unit tests, Playwright E2E testing, and WCAG 2.1 AA accessibility compliance</li> <li><strong>Cross-Browser Compatibility</strong>: Automated testing across Chromium, Firefox, and WebKit browsers</li> <li><strong>Code Quality Tools</strong>: ESLint linting, Prettier formatting, and automated code quality checks</li> <li><strong>Performance Monitoring</strong>: Built-in performance optimization and cache validation tools</li> </ul> <h3 id="content-management"><strong>Content Management</strong></h3> <ul> <li><strong>FrontMatter CMS</strong>: Visual content management system integrated directly into VS Code</li> <li><strong>Jekyll Drafts System</strong>: Complete draft workflow for content creation and review</li> <li><strong>Media Management</strong>: Integrated asset management with automatic optimization</li> <li><strong>Taxonomy Organization</strong>: Advanced tagging and categorization systems</li> </ul> <h3 id="performance--optimization"><strong>Performance &amp; Optimization</strong></h3> <ul> <li><strong>Parallel Build System</strong>: Optimized build processes with TypeScript and Jekyll running simultaneously</li> <li><strong>Intelligent Caching</strong>: Advanced caching strategies for faster development cycles</li> <li><strong>Memory Optimization</strong>: Configurable memory allocation for large-scale projects</li> <li><strong>CI/CD Ready</strong>: GitHub Actions workflows with performance-optimized pipelines</li> </ul> <h2 id="️-core-technologies--standards">🛠️ Core Technologies &amp; Standards</h2> <h3 id="frontend-technologies"><strong>Frontend Technologies</strong></h3> <ul> <li><strong><a href="https://www.typescriptlang.org/">TypeScript</a></strong>: Strongly-typed JavaScript with ES2022 target support</li> <li><strong><a href="https://jekyllrb.com/">Jekyll</a></strong>: Ruby-based static site generator with Liquid templating</li> <li><strong><a href="https://playwright.dev/">Playwright</a></strong>: Cross-browser automation and testing framework</li> <li><strong><a href="https://jestjs.io/">Jest</a></strong>: JavaScript testing framework with snapshot testing</li> </ul> <h3 id="development-tools"><strong>Development Tools</strong></h3> <ul> <li><strong><a href="https://code.visualstudio.com/">Visual Studio Code</a></strong>: Primary IDE with extensive extension support</li> <li><strong><a href="https://eslint.org/">ESLint</a></strong>: JavaScript/TypeScript linting with configurable rules</li> <li><strong><a href="https://prettier.io/">Prettier</a></strong>: Opinionated code formatting for consistent style</li> <li><strong><a href="https://shopify.github.io/ruby-lsp/">Ruby LSP</a></strong>: Ruby language server for enhanced Jekyll development</li> </ul> <h3 id="quality--accessibility"><strong>Quality &amp; Accessibility</strong></h3> <ul> <li><strong><a href="https://github.com/dequelabs/axe-core">axe-core</a></strong>: Accessibility testing engine for WCAG compliance</li> <li><strong><a href="https://www.w3.org/WAI/WCAG21/Understanding/">WCAG 2.1 Guidelines</a></strong>: Web Content Accessibility Guidelines Level AA</li> <li><strong><a href="https://developers.google.com/web/tools/lighthouse">Lighthouse</a></strong>: Performance and quality auditing</li> </ul> <h2 id="-key-capabilities">🎯 Key Capabilities</h2> <h3 id="rapid-development-workflow"><strong>Rapid Development Workflow</strong></h3> <ul> <li><strong>Hot Reload Development</strong>: Instant feedback with automatic rebuilds and browser refresh</li> <li><strong>Parallel Processing</strong>: TypeScript compilation and Jekyll building run simultaneously</li> <li><strong>Smart File Watching</strong>: Optimized file monitoring with build artifact exclusions</li> <li><strong>Quick Validation</strong>: Fast testing pipeline for rapid development feedback</li> </ul> <h3 id="content-creation-excellence"><strong>Content Creation Excellence</strong></h3> <ul> <li><strong>Draft Management</strong>: Complete Jekyll drafts workflow for content development</li> <li><strong>Visual Editing</strong>: FrontMatter CMS provides WordPress-like editing experience</li> <li><strong>SEO Optimization</strong>: Built-in SEO tools and sitemap generation</li> <li><strong>Responsive Design</strong>: Mobile-first responsive design with performance optimization</li> </ul> <h3 id="enterprise-ready-features"><strong>Enterprise-Ready Features</strong></h3> <ul> <li><strong>Security Compliance</strong>: Software Bill of Materials (SBOM) generation for supply chain security</li> <li><strong>Performance Monitoring</strong>: Comprehensive performance analysis and optimization tools</li> <li><strong>Cross-Platform Testing</strong>: Automated testing across multiple browsers and devices</li> <li><strong>Documentation Standards</strong>: Integrated documentation with markdown enhancement tools</li> </ul> <h2 id="-platform-integration">🌐 Platform Integration</h2> <h3 id="windows-subsystem-for-linux-wsl"><strong>Windows Subsystem for Linux (WSL)</strong></h3> <ul> <li><strong>Native Ubuntu Integration</strong>: Optimized for WSL2 Ubuntu development environment</li> <li><strong>File System Optimization</strong>: Efficient file watching and cross-platform compatibility</li> <li><strong>Terminal Configuration</strong>: Pre-configured Ubuntu terminal with proper encoding settings</li> </ul> <h3 id="github-integration"><strong>GitHub Integration</strong></h3> <ul> <li><strong>Actions Workflows</strong>: Pre-built CI/CD pipelines with testing and deployment automation</li> <li><strong>Pages Deployment</strong>: Automatic Jekyll site deployment to GitHub Pages</li> <li><strong>Security Scanning</strong>: Integrated dependency scanning and vulnerability reporting</li> </ul> <h2 id="-architecture--standards">📚 Architecture &amp; Standards</h2> <h3 id="code-organization"><strong>Code Organization</strong></h3> <ul> <li><strong>Modular Structure</strong>: Clear separation between source code, documentation, tests, and build artifacts</li> <li><strong>Configuration Management</strong>: Environment-specific configurations for development and production</li> <li><strong>Asset Pipeline</strong>: Optimized asset processing with cache busting and compression</li> </ul> <h3 id="development-standards"><strong>Development Standards</strong></h3> <ul> <li><strong>TypeScript Best Practices</strong>: Strict typing, modern ES features, and performance optimization</li> <li><strong>Jekyll Conventions</strong>: Standard Jekyll project structure with enhanced features</li> <li><strong>Testing Methodology</strong>: Test-driven development with comprehensive coverage strategies</li> </ul> <h3 id="performance-philosophy"><strong>Performance Philosophy</strong></h3> <ul> <li><strong>Build Optimization</strong>: Multi-level caching and parallel processing for faster builds</li> <li><strong>Runtime Efficiency</strong>: Optimized JavaScript delivery and Jekyll static generation</li> <li><strong>Developer Experience</strong>: Minimal setup time with maximum development velocity</li> </ul> <h2 id="-additional-resources--credits">🔗 Additional Resources &amp; Credits</h2> <h3 id="official-documentation"><strong>Official Documentation</strong></h3> <ul> <li><strong><a href="https://nodejs.org/docs/">Node.js Documentation</a></strong>: JavaScript runtime environment</li> <li><strong><a href="https://www.ruby-lang.org/en/documentation/">Ruby Documentation</a></strong>: Ruby programming language</li> <li><strong><a href="https://git-scm.com/doc">Git Documentation</a></strong>: Version control system</li> <li><strong><a href="https://docs.microsoft.com/en-us/windows/wsl/">WSL Documentation</a></strong>: Windows Subsystem for Linux</li> </ul> <h3 id="framework-references"><strong>Framework References</strong></h3> <ul> <li><strong><a href="https://jekyllrb.com/docs/">Jekyll Documentation</a></strong>: Static site generator</li> <li><strong><a href="https://shopify.github.io/liquid/">Liquid Documentation</a></strong>: Jekyll templating language</li> <li><strong><a href="https://github.com/jekyll/minima">Minima Theme</a></strong>: Default Jekyll theme</li> <li><strong><a href="https://docs.github.com/en/pages">GitHub Pages Guide</a></strong>: Static site hosting</li> </ul> <h3 id="testing--quality-tools"><strong>Testing &amp; Quality Tools</strong></h3> <ul> <li><strong><a href="https://playwright.dev/docs/">Playwright Documentation</a></strong>: Cross-browser testing</li> <li><strong><a href="https://jestjs.io/docs/">Jest Documentation</a></strong>: JavaScript testing framework</li> <li><strong><a href="https://github.com/dequelabs/axe-core">axe-core Documentation</a></strong>: Accessibility testing</li> <li><strong><a href="https://web.dev/accessibility/">Web.dev Accessibility</a></strong>: Accessibility best practices</li> </ul> <h3 id="development-environment-1"><strong>Development Environment</strong></h3> <ul> <li><strong><a href="https://marketplace.visualstudio.com/">VS Code Extension Marketplace</a></strong>: Editor extensions</li> <li><strong><a href="https://frontmatter.codes/">FrontMatter CMS</a></strong>: Jekyll content management</li> <li><strong><a href="https://shopify.github.io/ruby-lsp/">Ruby LSP</a></strong>: Ruby language server</li> <li><strong><a href="https://www.typescriptlang.org/docs/">TypeScript Handbook</a></strong>: TypeScript documentation</li> </ul> <h3 id="acknowledgments"><strong>Acknowledgments</strong></h3> <p>This workspace integrates best practices and optimizations developed by the open-source community, with special recognition to:</p> <ul> <li><strong>Microsoft</strong>: VS Code, TypeScript, and WSL development</li> <li><strong>Jekyll Team</strong>: Static site generation framework</li> <li><strong>Playwright Team</strong>: Cross-browser testing innovation</li> <li><strong>Shopify</strong>: Ruby LSP and development tooling</li> <li><strong>W3C</strong>: Web accessibility standards and guidelines</li> <li><strong>GitHub</strong>: Platform integration and Actions workflows</li> </ul> <h2 id="-getting-started">🎯 Getting Started</h2> <p>Ready to begin? The main repository README contains all the specific commands, installation steps, and workflow instructions you need to get up and running. This document provides the conceptual foundation - the README provides the practical implementation details.</p> <h2 id="next-steps">Next Steps</h2> <p>Once you understand the workspace capabilities, explore these specialized guides:</p> <ol> <li><strong><a href="/docs/performance-optimization/">Performance Optimization Guide</a></strong> - Advanced build, test, and development workflow optimizations</li> <li><strong><a href="/docs/getting-started-with-typescript-and-jekyll/">Comprehensive TypeScript &amp; Jekyll Guide</a></strong> - Detailed tutorial with code examples and best practices</li> <li><strong><a href="/docs/accessibility-testing/">Accessibility Testing Configuration</a></strong> - WCAG compliance testing setup and procedures</li> <li><strong><a href="/docs/frontmatter-cms/">FrontMatter CMS Usage</a></strong> - Visual content management for Jekyll sites</li> <li><strong><a href="/docs/browser-compatibility-testing/">Browser Compatibility Testing</a></strong> - Cross-browser testing strategies and Firefox optimization</li> <li><strong><a href="/docs/liquid-tags-examples/">Liquid Tags Examples</a></strong> - Advanced Jekyll templating techniques</li> </ol> <h2 id="need-help">Need Help?</h2> <ul> <li><strong>Documentation Hub</strong>: Explore the complete <a href="/docs/">documentation section</a> for specialized guides</li> <li><strong>Troubleshooting</strong>: Visit the <a href="/docs/getting-started-with-typescript-and-jekyll/#troubleshooting">comprehensive guide</a> for common issues</li> <li><strong>Community Support</strong>: <a href="/contact/">Contact our team</a> for personalized assistance</li> </ul> </div> </article> </div> </main> <footer class="site-footer h-card"> <data class="u-url" href="/"></data> <div class="wrapper"> <div class="footer-col-wrapper"> <div class="footer-col footer-col-1"> <a href="/terms-of-service.html">Terms of Service</a><br /> <a href="/privacy-policy.html">Privacy Policy</a> </div> <div class="footer-col footer-col-2"> <a href="/contact/">Contact Us</a> </div> <div class="footer-col footer-col-3"> <p> &copy; 2025 <a rel="external nofollow" href="https://share.google/8Ir6br641K4uU74l2" >Kranson Enterprises</a ><br /> &nbsp;&nbsp;&nbsp;&nbsp;subscribe <a href="/feed.xml" >via RSS<svg class="svg-icon"> <use xlink:href="/assets/minima-social-icons.svg#rss" ></use></svg ></a> </p> </div> </div> </div> </footer> <!-- Google AdSense --> <!-- { % include google-adsense.html % } --> <!-- Cookie Consent Banner for GDPR Compliance --> <!-- { % include cookie-consent.html % } --> <!-- Mermaid support: convert fenced code blocks (```mermaid) and initialize --> <script src="https://cdn.jsdelivr.net/npm/mermaid@11.9.0/dist/mermaid.min.js" defer></script> <script> (function() { 'use strict'; // Use requestIdleCallback for better INP performance function scheduleWork(callback) { if (window.requestIdleCallback) { requestIdleCallback(callback, { timeout: 2000 }); } else { setTimeout(callback, 0); } } function convertMermaidCodeFences() { try { // Use more efficient selector and batch DOM operations const codeBlocks = document.querySelectorAll('pre > code.language-mermaid, pre > code.mermaid'); const fragment = document.createDocumentFragment(); const replacements = []; codeBlocks.forEach(function(code) { const pre = code.parentElement; const container = pre.parentElement; const div = document.createElement('div'); div.className = 'mermaid'; div.textContent = code.textContent; replacements.push({ container, pre, div }); }); // Batch DOM updates to minimize layout thrashing replacements.forEach(({ container, pre, div }) => { container.replaceChild(div, pre); }); } catch (e) { console.warn('Mermaid code fence conversion failed:', e); } } function initMermaidNow() { try { if (!window.mermaid) return false; scheduleWork(() => { convertMermaidCodeFences(); if (typeof mermaid.initialize === 'function') { mermaid.initialize({ startOnLoad: false, // Better control over timing theme: 'default' }); } scheduleWork(() => { if (typeof mermaid.run === 'function') { mermaid.run({ querySelector: '.mermaid' }); } else if (typeof mermaid.init === 'function') { mermaid.init(undefined, document.querySelectorAll('.mermaid')); } }); }); return true; } catch (e) { console.error('Mermaid initialization error:', e); return false; } } // Use passive event listeners for better performance function whenReady(fn) { if (document.readyState === 'loading') { document.addEventListener('DOMContentLoaded', fn, { passive: true }); } else { scheduleWork(fn); } } // Improved initialization with timeout and better error handling whenReady(function() { scheduleWork(() => { if (initMermaidNow()) return; let attempts = 0; const maxAttempts = 30; // Reduced from 50 const checkInterval = 200; // Increased from 100ms const timer = setInterval(function() { attempts++; if (initMermaidNow() || attempts >= maxAttempts) { clearInterval(timer); if (attempts >= maxAttempts) { console.warn('Mermaid initialization timed out after', maxAttempts, 'attempts'); } } }, checkInterval); }); }); })(); </script><script src="/assets/js/print-helper-optimized.js?v=20250821164256" defer></script><script src="/assets/js/storage-access.js?v=20250821164256" defer></script> </body> </html>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Navigation and ordering metadata -->
+    
+      <meta name="docs-nav-order" content="1">
+      <meta name="docs-section" content="documentation">
+      
+        <meta name="priority-doc" content="true">
+      
+    
+
+    <!-- Structured data for navigation -->
+    
+      <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Getting Started",
+        "description": "High-level overview of the MIJUG .NET workspace features and capabilities",
+        "url": "https://www.mijug.net/docs/getting-started/",
+        "position": 1,
+        "isPartOf": {
+          "@type": "WebSite",
+          "name": "My Information Just Under Glass",
+          "url": "https://www.mijug.net/"
+        }
+      }
+      </script>
+    
+
+    <title>
+      Getting Started | My Information Just Under Glass
+    </title>
+    <meta
+      name="description"
+      content="Getting Started"
+    />
+    
+    <meta name="version" content="Aug 04, 2025" />
+    
+
+    
+    <link rel="stylesheet" href="/assets/main.css?v=20250821170013" />
+    <link rel="stylesheet" href="/assets/css/inp-optimizations.css?v=20250821170013" />
+    <link
+      rel="canonical"
+      href="https://www.mijug.net/docs/getting-started/"
+    />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="My Information Just Under Glass"
+      href="/feed.xml"
+    />
+
+    
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="/assets/logo-mijug-watermark-98x100.svg"
+    />
+    
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="/favicon.ico"
+    />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Getting Started | My Information Just Under Glass</title>
+<meta name="generator" content="Jekyll v4.4.1" />
+<meta property="og:title" content="Getting Started" />
+<meta name="author" content="Bob Kranson" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="High-level overview of the MIJUG .NET workspace features and capabilities" />
+<meta property="og:description" content="High-level overview of the MIJUG .NET workspace features and capabilities" />
+<link rel="canonical" href="https://www.mijug.net/docs/getting-started/" />
+<meta property="og:url" content="https://www.mijug.net/docs/getting-started/" />
+<meta property="og:site_name" content="My Information Just Under Glass" />
+<meta property="og:image" content="https://www.mijug.net/assets/logo-mijug-watermark-98x100.svg" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2025-08-21T17:00:13-04:00" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta property="twitter:image" content="https://www.mijug.net/assets/logo-mijug-watermark-98x100.svg" />
+<meta property="twitter:title" content="Getting Started" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Bob Kranson"},"dateModified":"2025-08-04T17:50:00-04:00","datePublished":"2025-08-21T17:00:13-04:00","description":"High-level overview of the MIJUG .NET workspace features and capabilities","headline":"Getting Started","image":"https://www.mijug.net/assets/logo-mijug-watermark-98x100.svg","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.mijug.net/docs/getting-started/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://www.mijug.net/assets/logo-mijug-watermark-98x100.svg"},"name":"Bob Kranson"},"url":"https://www.mijug.net/docs/getting-started/"}</script>
+<!-- End Jekyll SEO tag -->
+
+  </head>
+
+  <body>
+    <header class="site-header" role="banner">
+      <div class="wrapper">
+        <a
+          class="site-title long-title"
+          rel="home"
+          href="/"
+        >
+          
+          <img
+            src="/assets/logo-mijug-watermark-98x100.svg"
+            alt="My Information Just Under Glass"
+            width="50"
+            height="50"
+          />
+           My Information Just Under Glass
+        </a>
+
+        <nav class="site-nav" role="navigation" aria-label="Main navigation">
+          <input
+            type="checkbox"
+            id="header-nav-trigger"
+            class="nav-trigger"
+            title="Toggle header navigation"
+            aria-label="Toggle navigation menu"
+          />
+          <label for="header-nav-trigger" aria-label="Open navigation menu">
+            <span class="menu-icon">
+              <svg
+                viewBox="0 0 18 15"
+                width="18px"
+                height="15px"
+                role="img"
+                aria-label="Menu icon"
+              >
+                <path
+                  d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"
+                />
+              </svg>
+            </span>
+          </label>
+
+          <div class="trigger">
+            <a
+              class="page-link"
+              href="/about/"
+              aria-label="About MIJUG"
+              >About</a
+            >
+            <button
+              class="nav-button"
+              popovertarget="mobile-navigation"
+              popovertargetaction="show"
+              type="button"
+              aria-label="Open additional navigation menu"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Navigation
+            </button>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <nav
+      popover
+      id="mobile-navigation"
+      class="site-nav"
+      role="dialog"
+      aria-labelledby="nav-heading"
+      aria-modal="true"
+    >
+      <h2 id="nav-heading" class="sr-only">Additional Navigation</h2>
+      <button
+        class="nav-button"
+        popovertarget="mobile-navigation"
+        popovertargetaction="hide"
+        type="button"
+        aria-label="Close navigation menu"
+      >
+        Close
+      </button>
+
+      <div class="popover-content">
+        <!-- Posts Section -->
+        <div class="popover-section">
+          <h3 class="popover-heading">Posts</h3>
+          <ul class="nav-list" role="list">
+            <li>
+              <a
+                class="page-link"
+                href="/blog/"
+                aria-label="View blog posts"
+                >Blog</a
+              >
+            </li>
+            <li>
+              <a
+                class="page-link"
+                href="/contact/"
+                aria-label="Contact MIJUG"
+                >Contact Us</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- Documentation Section -->
+        
+        <div class="popover-section">
+          <h3 class="popover-heading">Documentation</h3>
+          <ul class="nav-list" role="list" aria-label="Documentation pages">
+            
+            
+            
+            
+            
+            <li>
+              <a
+                class="page-link"
+                href="/docs/getting-started/"
+                aria-label="View Getting Started documentation"
+              >
+                Getting Started
+              </a>
+            </li>
+            
+            <li>
+              <a
+                class="page-link"
+                href="/docs/welcome-mijug-workspace/"
+                aria-label="View Workspace Home documentation"
+              >
+                Workspace Home
+              </a>
+            </li>
+            
+            <li>
+              <a
+                class="page-link"
+                href="/docs/accessibility-testing/"
+                aria-label="View Accessibility Testing Configuration documentation"
+              >
+                Accessibility Testing Configuration
+              </a>
+            </li>
+            
+            <li>
+              <a
+                class="page-link"
+                href="/docs/getting-started-with-typescript-and-jekyll/"
+                aria-label="View Getting Started with TypeScript and Jekyll documentation"
+              >
+                Getting Started with TypeScript and Jekyll
+              </a>
+            </li>
+            
+            <li>
+              <a
+                class="page-link"
+                href="/docs/tags-and-categories-guide/"
+                aria-label="View Tags and Categories System Guide documentation"
+              >
+                Tags and Categories System Guide
+              </a>
+            </li>
+            
+            <li>
+              <a
+                class="page-link"
+                href="/docs/liquid-tags-examples/"
+                aria-label="View Liquid Tags Examples documentation"
+              >
+                Liquid Tags Examples
+              </a>
+            </li>
+            
+            <li>
+              <a
+                class="page-link"
+                href="/docs/browser-management/"
+                aria-label="View Browser Management for Testing documentation"
+              >
+                Browser Management for Testing
+              </a>
+            </li>
+            
+            <li>
+              <a
+                class="page-link"
+                href="/docs/browser-compatibility-system/"
+                aria-label="View Browser Compatibility Detection &amp; Testing System documentation"
+              >
+                Browser Compatibility Detection &amp; Testing System
+              </a>
+            </li>
+            
+            <li>
+              <a
+                class="page-link"
+                href="/docs/browser-compatibility-testing/"
+                aria-label="View Browser Compatibility Testing documentation"
+              >
+                Browser Compatibility Testing
+              </a>
+            </li>
+            
+            <li>
+              <a
+                class="page-link"
+                href="/docs/cache-management/"
+                aria-label="View Cache Management Strategies documentation"
+              >
+                Cache Management Strategies
+              </a>
+            </li>
+            
+            <li>
+              <a
+                class="page-link"
+                href="/docs/rel-attribute-guide/"
+                aria-label="View The rel Attribute in HTML Links: A Comprehensive Guide documentation"
+              >
+                The rel Attribute in HTML Links: A Comprehensive Guide
+              </a>
+            </li>
+            
+            <li>
+              <a
+                class="page-link"
+                href="/docs/frontmatter-cms/"
+                aria-label="View FrontMatter CMS Usage documentation"
+              >
+                FrontMatter CMS Usage
+              </a>
+            </li>
+            
+            <li>
+              <a
+                class="page-link"
+                href="/docs/performance-optimization/"
+                aria-label="View Performance Optimization Guide documentation"
+              >
+                Performance Optimization Guide
+              </a>
+            </li>
+            
+            <li>
+              <a
+                class="page-link"
+                href="/docs/mermaid-test-runner/"
+                aria-label="View Mermaid Test Runner documentation"
+              >
+                Mermaid Test Runner
+              </a>
+            </li>
+            
+            <li>
+              <a
+                class="page-link"
+                href="/docs/mermaid-quick-start/"
+                aria-label="View Mermaid Quick Start documentation"
+              >
+                Mermaid Quick Start
+              </a>
+            </li>
+            
+            <li>
+              <a
+                class="page-link"
+                href="/docs/mermaid-configuration-guide/"
+                aria-label="View Mermaid Diagram Configuration Guide documentation"
+              >
+                Mermaid Diagram Configuration Guide
+              </a>
+            </li>
+            
+            <li>
+              <a
+                class="page-link"
+                href="/docs/mermaid-examples/"
+                aria-label="View Mermaid Diagram Examples documentation"
+              >
+                Mermaid Diagram Examples
+              </a>
+            </li>
+            
+            <li>
+              <a
+                class="page-link"
+                href="/docs/mermaid-default-layout/"
+                aria-label="View Mermaid on Default Layout documentation"
+              >
+                Mermaid on Default Layout
+              </a>
+            </li>
+            
+            <li>
+              <a
+                class="page-link"
+                href="/docs/mermaid-basic/"
+                aria-label="View Mermaid Basic documentation"
+              >
+                Mermaid Basic
+              </a>
+            </li>
+            
+            <li>
+              <a
+                class="page-link"
+                href="/docs/mermaid-diagrams-sample/"
+                aria-label="View Delivery Slides Mermaid Diagrams Showcase documentation"
+              >
+                Delivery Slides Mermaid Diagrams Showcase
+              </a>
+            </li>
+            
+            
+          </ul>
+        </div>
+        
+
+        <!-- Categories Section -->
+        
+        <div class="popover-section">
+          <h3 class="popover-heading">Categories</h3>
+          <ul class="nav-list" role="list" aria-label="Blog post categories">
+            
+            <li>
+              <a
+                class="page-link"
+                href="/category/announcements"
+                aria-label="View Announcements category with 3 posts"
+              >
+                Announcements
+                <span class="count" aria-hidden="true"
+                  >(3)</span
+                >
+              </a>
+            </li>
+            
+            <li>
+              <a
+                class="page-link"
+                href="/category/linux"
+                aria-label="View Linux category with 1 posts"
+              >
+                Linux
+                <span class="count" aria-hidden="true"
+                  >(1)</span
+                >
+              </a>
+            </li>
+            
+            <li>
+              <a
+                class="page-link"
+                href="/category/documentation"
+                aria-label="View Documentation category with 1 posts"
+              >
+                Documentation
+                <span class="count" aria-hidden="true"
+                  >(1)</span
+                >
+              </a>
+            </li>
+            
+            <li>
+              <a
+                class="page-link"
+                href="/category/navigation"
+                aria-label="View Navigation category with 1 posts"
+              >
+                Navigation
+                <span class="count" aria-hidden="true"
+                  >(1)</span
+                >
+              </a>
+            </li>
+            
+            <li>
+              <a
+                class="page-link"
+                href="/category/getting-started"
+                aria-label="View Getting-started category with 3 posts"
+              >
+                Getting-started
+                <span class="count" aria-hidden="true"
+                  >(3)</span
+                >
+              </a>
+            </li>
+            
+          </ul>
+        </div>
+        
+
+        <!-- Tags Section -->
+        
+        <div class="popover-section">
+          <h3 class="popover-heading">Tags</h3>
+          <ul class="nav-list" role="list" aria-label="Blog post tags">
+             
+            <li>
+              <a
+                class="page-link"
+                href="/tag/cpus"
+                aria-label="View posts tagged with cpus (1 posts)"
+              >
+                #cpus
+                <span class="count" aria-hidden="true"
+                  >(1)</span
+                >
+              </a>
+            </li>
+            
+            <li>
+              <a
+                class="page-link"
+                href="/tag/diy"
+                aria-label="View posts tagged with diy (1 posts)"
+              >
+                #diy
+                <span class="count" aria-hidden="true"
+                  >(1)</span
+                >
+              </a>
+            </li>
+            
+            <li>
+              <a
+                class="page-link"
+                href="/tag/docs"
+                aria-label="View posts tagged with docs (1 posts)"
+              >
+                #docs
+                <span class="count" aria-hidden="true"
+                  >(1)</span
+                >
+              </a>
+            </li>
+            
+            <li>
+              <a
+                class="page-link"
+                href="/tag/e-waste"
+                aria-label="View posts tagged with e-waste (2 posts)"
+              >
+                #e-waste
+                <span class="count" aria-hidden="true"
+                  >(2)</span
+                >
+              </a>
+            </li>
+            
+            <li>
+              <a
+                class="page-link"
+                href="/tag/education"
+                aria-label="View posts tagged with education (1 posts)"
+              >
+                #education
+                <span class="count" aria-hidden="true"
+                  >(1)</span
+                >
+              </a>
+            </li>
+            
+            <li>
+              <a
+                class="page-link"
+                href="/tag/evening-schedules"
+                aria-label="View posts tagged with evening-schedules (1 posts)"
+              >
+                #evening-schedules
+                <span class="count" aria-hidden="true"
+                  >(1)</span
+                >
+              </a>
+            </li>
+            
+            <li>
+              <a
+                class="page-link"
+                href="/tag/gpus"
+                aria-label="View posts tagged with gpus (1 posts)"
+              >
+                #gpus
+                <span class="count" aria-hidden="true"
+                  >(1)</span
+                >
+              </a>
+            </li>
+            
+            <li>
+              <a
+                class="page-link"
+                href="/tag/guide"
+                aria-label="View posts tagged with guide (1 posts)"
+              >
+                #guide
+                <span class="count" aria-hidden="true"
+                  >(1)</span
+                >
+              </a>
+            </li>
+            
+            <li>
+              <a
+                class="page-link"
+                href="/tag/linux"
+                aria-label="View posts tagged with linux (2 posts)"
+              >
+                #linux
+                <span class="count" aria-hidden="true"
+                  >(2)</span
+                >
+              </a>
+            </li>
+            
+            <li>
+              <a
+                class="page-link"
+                href="/tag/navigation"
+                aria-label="View posts tagged with navigation (1 posts)"
+              >
+                #navigation
+                <span class="count" aria-hidden="true"
+                  >(1)</span
+                >
+              </a>
+            </li>
+            
+          </ul>
+        </div>
+        
+      </div>
+    </nav>
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper"><article class="post">
+  <header class="post-header">
+    <h1 class="post-title">Getting Started</h1>
+  </header>
+
+  <div class="post-content"><h1 id="getting-started">Getting Started</h1>
+
+<p>Welcome to the MIJUG .NET workspace - a comprehensive development environment that combines modern TypeScript development with powerful Jekyll documentation capabilities, all optimized for WSL (Windows Subsystem for Linux) integration.</p>
+
+<blockquote>
+  <p><strong>📚 Looking for detailed commands?</strong> All specific installation steps, commands, and workflows are documented in the main private repository README file. We’d love to help you get started with full access - reach out via the contact button below and let’s schedule a friendly conversation about your development goals and how we can support your success!</p>
+
+  <p><strong>🔍 Want in-depth tutorials?</strong> Check out our detailed <a href="/docs/getting-started-with-typescript-and-jekyll/">Getting Started with TypeScript and Jekyll</a> guide for comprehensive explanations and code examples.</p>
+</blockquote>
+
+<h2 id="-workspace-features-overview">🚀 Workspace Features Overview</h2>
+
+<h3 id="development-environment"><strong>Development Environment</strong></h3>
+<ul>
+  <li><strong>TypeScript Development</strong>: Full-featured TypeScript workspace with IntelliSense, debugging, and hot reload capabilities</li>
+  <li><strong>Jekyll Documentation Platform</strong>: Static site generation with advanced markdown features, live preview, and draft management</li>
+  <li><strong>WSL Integration</strong>: Seamlessly optimized for Windows Subsystem for Linux (Ubuntu) development</li>
+  <li><strong>VS Code Optimization</strong>: Pre-configured workspace with essential extensions and settings</li>
+</ul>
+
+<h3 id="testing--quality-assurance"><strong>Testing &amp; Quality Assurance</strong></h3>
+<ul>
+  <li><strong>Multi-Level Testing</strong>: Jest unit tests, Playwright E2E testing, and WCAG 2.1 AA accessibility compliance</li>
+  <li><strong>Cross-Browser Compatibility</strong>: Automated testing across Chromium, Firefox, and WebKit browsers</li>
+  <li><strong>Code Quality Tools</strong>: ESLint linting, Prettier formatting, and automated code quality checks</li>
+  <li><strong>Performance Monitoring</strong>: Built-in performance optimization and cache validation tools</li>
+</ul>
+
+<h3 id="content-management"><strong>Content Management</strong></h3>
+<ul>
+  <li><strong>FrontMatter CMS</strong>: Visual content management system integrated directly into VS Code</li>
+  <li><strong>Jekyll Drafts System</strong>: Complete draft workflow for content creation and review</li>
+  <li><strong>Media Management</strong>: Integrated asset management with automatic optimization</li>
+  <li><strong>Taxonomy Organization</strong>: Advanced tagging and categorization systems</li>
+</ul>
+
+<h3 id="performance--optimization"><strong>Performance &amp; Optimization</strong></h3>
+<ul>
+  <li><strong>Parallel Build System</strong>: Optimized build processes with TypeScript and Jekyll running simultaneously</li>
+  <li><strong>Intelligent Caching</strong>: Advanced caching strategies for faster development cycles</li>
+  <li><strong>Memory Optimization</strong>: Configurable memory allocation for large-scale projects</li>
+  <li><strong>CI/CD Ready</strong>: GitHub Actions workflows with performance-optimized pipelines</li>
+</ul>
+
+<h2 id="️-core-technologies--standards">🛠️ Core Technologies &amp; Standards</h2>
+
+<h3 id="frontend-technologies"><strong>Frontend Technologies</strong></h3>
+<ul>
+  <li><strong><a href="https://www.typescriptlang.org/">TypeScript</a></strong>: Strongly-typed JavaScript with ES2022 target support</li>
+  <li><strong><a href="https://jekyllrb.com/">Jekyll</a></strong>: Ruby-based static site generator with Liquid templating</li>
+  <li><strong><a href="https://playwright.dev/">Playwright</a></strong>: Cross-browser automation and testing framework</li>
+  <li><strong><a href="https://jestjs.io/">Jest</a></strong>: JavaScript testing framework with snapshot testing</li>
+</ul>
+
+<h3 id="development-tools"><strong>Development Tools</strong></h3>
+<ul>
+  <li><strong><a href="https://code.visualstudio.com/">Visual Studio Code</a></strong>: Primary IDE with extensive extension support</li>
+  <li><strong><a href="https://eslint.org/">ESLint</a></strong>: JavaScript/TypeScript linting with configurable rules</li>
+  <li><strong><a href="https://prettier.io/">Prettier</a></strong>: Opinionated code formatting for consistent style</li>
+  <li><strong><a href="https://shopify.github.io/ruby-lsp/">Ruby LSP</a></strong>: Ruby language server for enhanced Jekyll development</li>
+</ul>
+
+<h3 id="quality--accessibility"><strong>Quality &amp; Accessibility</strong></h3>
+<ul>
+  <li><strong><a href="https://github.com/dequelabs/axe-core">axe-core</a></strong>: Accessibility testing engine for WCAG compliance</li>
+  <li><strong><a href="https://www.w3.org/WAI/WCAG21/Understanding/">WCAG 2.1 Guidelines</a></strong>: Web Content Accessibility Guidelines Level AA</li>
+  <li><strong><a href="https://developers.google.com/web/tools/lighthouse">Lighthouse</a></strong>: Performance and quality auditing</li>
+</ul>
+
+<h2 id="-key-capabilities">🎯 Key Capabilities</h2>
+
+<h3 id="rapid-development-workflow"><strong>Rapid Development Workflow</strong></h3>
+<ul>
+  <li><strong>Hot Reload Development</strong>: Instant feedback with automatic rebuilds and browser refresh</li>
+  <li><strong>Parallel Processing</strong>: TypeScript compilation and Jekyll building run simultaneously</li>
+  <li><strong>Smart File Watching</strong>: Optimized file monitoring with build artifact exclusions</li>
+  <li><strong>Quick Validation</strong>: Fast testing pipeline for rapid development feedback</li>
+</ul>
+
+<h3 id="content-creation-excellence"><strong>Content Creation Excellence</strong></h3>
+<ul>
+  <li><strong>Draft Management</strong>: Complete Jekyll drafts workflow for content development</li>
+  <li><strong>Visual Editing</strong>: FrontMatter CMS provides WordPress-like editing experience</li>
+  <li><strong>SEO Optimization</strong>: Built-in SEO tools and sitemap generation</li>
+  <li><strong>Responsive Design</strong>: Mobile-first responsive design with performance optimization</li>
+</ul>
+
+<h3 id="enterprise-ready-features"><strong>Enterprise-Ready Features</strong></h3>
+<ul>
+  <li><strong>Security Compliance</strong>: Software Bill of Materials (SBOM) generation for supply chain security</li>
+  <li><strong>Performance Monitoring</strong>: Comprehensive performance analysis and optimization tools</li>
+  <li><strong>Cross-Platform Testing</strong>: Automated testing across multiple browsers and devices</li>
+  <li><strong>Documentation Standards</strong>: Integrated documentation with markdown enhancement tools</li>
+</ul>
+
+<h2 id="-platform-integration">🌐 Platform Integration</h2>
+
+<h3 id="windows-subsystem-for-linux-wsl"><strong>Windows Subsystem for Linux (WSL)</strong></h3>
+<ul>
+  <li><strong>Native Ubuntu Integration</strong>: Optimized for WSL2 Ubuntu development environment</li>
+  <li><strong>File System Optimization</strong>: Efficient file watching and cross-platform compatibility</li>
+  <li><strong>Terminal Configuration</strong>: Pre-configured Ubuntu terminal with proper encoding settings</li>
+</ul>
+
+<h3 id="github-integration"><strong>GitHub Integration</strong></h3>
+<ul>
+  <li><strong>Actions Workflows</strong>: Pre-built CI/CD pipelines with testing and deployment automation</li>
+  <li><strong>Pages Deployment</strong>: Automatic Jekyll site deployment to GitHub Pages</li>
+  <li><strong>Security Scanning</strong>: Integrated dependency scanning and vulnerability reporting</li>
+</ul>
+
+<h2 id="-architecture--standards">📚 Architecture &amp; Standards</h2>
+
+<h3 id="code-organization"><strong>Code Organization</strong></h3>
+<ul>
+  <li><strong>Modular Structure</strong>: Clear separation between source code, documentation, tests, and build artifacts</li>
+  <li><strong>Configuration Management</strong>: Environment-specific configurations for development and production</li>
+  <li><strong>Asset Pipeline</strong>: Optimized asset processing with cache busting and compression</li>
+</ul>
+
+<h3 id="development-standards"><strong>Development Standards</strong></h3>
+<ul>
+  <li><strong>TypeScript Best Practices</strong>: Strict typing, modern ES features, and performance optimization</li>
+  <li><strong>Jekyll Conventions</strong>: Standard Jekyll project structure with enhanced features</li>
+  <li><strong>Testing Methodology</strong>: Test-driven development with comprehensive coverage strategies</li>
+</ul>
+
+<h3 id="performance-philosophy"><strong>Performance Philosophy</strong></h3>
+<ul>
+  <li><strong>Build Optimization</strong>: Multi-level caching and parallel processing for faster builds</li>
+  <li><strong>Runtime Efficiency</strong>: Optimized JavaScript delivery and Jekyll static generation</li>
+  <li><strong>Developer Experience</strong>: Minimal setup time with maximum development velocity</li>
+</ul>
+
+<h2 id="-additional-resources--credits">🔗 Additional Resources &amp; Credits</h2>
+
+<h3 id="official-documentation"><strong>Official Documentation</strong></h3>
+<ul>
+  <li><strong><a href="https://nodejs.org/docs/">Node.js Documentation</a></strong>: JavaScript runtime environment</li>
+  <li><strong><a href="https://www.ruby-lang.org/en/documentation/">Ruby Documentation</a></strong>: Ruby programming language</li>
+  <li><strong><a href="https://git-scm.com/doc">Git Documentation</a></strong>: Version control system</li>
+  <li><strong><a href="https://docs.microsoft.com/en-us/windows/wsl/">WSL Documentation</a></strong>: Windows Subsystem for Linux</li>
+</ul>
+
+<h3 id="framework-references"><strong>Framework References</strong></h3>
+<ul>
+  <li><strong><a href="https://jekyllrb.com/docs/">Jekyll Documentation</a></strong>: Static site generator</li>
+  <li><strong><a href="https://shopify.github.io/liquid/">Liquid Documentation</a></strong>: Jekyll templating language</li>
+  <li><strong><a href="https://github.com/jekyll/minima">Minima Theme</a></strong>: Default Jekyll theme</li>
+  <li><strong><a href="https://docs.github.com/en/pages">GitHub Pages Guide</a></strong>: Static site hosting</li>
+</ul>
+
+<h3 id="testing--quality-tools"><strong>Testing &amp; Quality Tools</strong></h3>
+<ul>
+  <li><strong><a href="https://playwright.dev/docs/">Playwright Documentation</a></strong>: Cross-browser testing</li>
+  <li><strong><a href="https://jestjs.io/docs/">Jest Documentation</a></strong>: JavaScript testing framework</li>
+  <li><strong><a href="https://github.com/dequelabs/axe-core">axe-core Documentation</a></strong>: Accessibility testing</li>
+  <li><strong><a href="https://web.dev/accessibility/">Web.dev Accessibility</a></strong>: Accessibility best practices</li>
+</ul>
+
+<h3 id="development-environment-1"><strong>Development Environment</strong></h3>
+<ul>
+  <li><strong><a href="https://marketplace.visualstudio.com/">VS Code Extension Marketplace</a></strong>: Editor extensions</li>
+  <li><strong><a href="https://frontmatter.codes/">FrontMatter CMS</a></strong>: Jekyll content management</li>
+  <li><strong><a href="https://shopify.github.io/ruby-lsp/">Ruby LSP</a></strong>: Ruby language server</li>
+  <li><strong><a href="https://www.typescriptlang.org/docs/">TypeScript Handbook</a></strong>: TypeScript documentation</li>
+</ul>
+
+<h3 id="acknowledgments"><strong>Acknowledgments</strong></h3>
+<p>This workspace integrates best practices and optimizations developed by the open-source community, with special recognition to:</p>
+<ul>
+  <li><strong>Microsoft</strong>: VS Code, TypeScript, and WSL development</li>
+  <li><strong>Jekyll Team</strong>: Static site generation framework</li>
+  <li><strong>Playwright Team</strong>: Cross-browser testing innovation</li>
+  <li><strong>Shopify</strong>: Ruby LSP and development tooling</li>
+  <li><strong>W3C</strong>: Web accessibility standards and guidelines</li>
+  <li><strong>GitHub</strong>: Platform integration and Actions workflows</li>
+</ul>
+
+<h2 id="-getting-started">🎯 Getting Started</h2>
+
+<p>Ready to begin? The main repository README contains all the specific commands, installation steps, and workflow instructions you need to get up and running. This document provides the conceptual foundation - the README provides the practical implementation details.</p>
+
+<h2 id="next-steps">Next Steps</h2>
+
+<p>Once you understand the workspace capabilities, explore these specialized guides:</p>
+
+<ol>
+  <li><strong><a href="/docs/performance-optimization/">Performance Optimization Guide</a></strong> - Advanced build, test, and development workflow optimizations</li>
+  <li><strong><a href="/docs/getting-started-with-typescript-and-jekyll/">Comprehensive TypeScript &amp; Jekyll Guide</a></strong> - Detailed tutorial with code examples and best practices</li>
+  <li><strong><a href="/docs/accessibility-testing/">Accessibility Testing Configuration</a></strong> - WCAG compliance testing setup and procedures</li>
+  <li><strong><a href="/docs/frontmatter-cms/">FrontMatter CMS Usage</a></strong> - Visual content management for Jekyll sites</li>
+  <li><strong><a href="/docs/browser-compatibility-testing/">Browser Compatibility Testing</a></strong> - Cross-browser testing strategies and Firefox optimization</li>
+  <li><strong><a href="/docs/liquid-tags-examples/">Liquid Tags Examples</a></strong> - Advanced Jekyll templating techniques</li>
+</ol>
+
+<h2 id="need-help">Need Help?</h2>
+
+<ul>
+  <li><strong>Documentation Hub</strong>: Explore the complete <a href="/docs/">documentation section</a> for specialized guides</li>
+  <li><strong>Troubleshooting</strong>: Visit the <a href="/docs/getting-started-with-typescript-and-jekyll/#troubleshooting">comprehensive guide</a> for common issues</li>
+  <li><strong>Community Support</strong>: <a href="/contact/">Contact our team</a> for personalized assistance</li>
+</ul>
+</div>
+</article>
+</div>
+    </main>
+
+    <footer class="site-footer h-card">
+      <data class="u-url" href="/"></data>
+
+      <div class="wrapper">
+
+        <div class="footer-col-wrapper">
+          <div class="footer-col footer-col-1">
+            <a href="/terms-of-service.html">Terms of Service</a><br />
+            <a href="/privacy-policy.html">Privacy Policy</a>
+          </div>
+
+          <div class="footer-col footer-col-2">
+            <a href="/contact/">Contact Us</a>
+          </div>
+
+          <div class="footer-col footer-col-3">
+            <p>
+              &copy; 2025
+              <a rel="external nofollow" href="https://share.google/8Ir6br641K4uU74l2"
+                >Kranson Enterprises</a
+              ><br />
+              &nbsp;&nbsp;&nbsp;&nbsp;subscribe
+              <a href="/feed.xml"
+                >via RSS<svg class="svg-icon">
+                  <use
+                    xlink:href="/assets/minima-social-icons.svg#rss"
+                  ></use></svg
+              ></a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    
+
+    <!-- Google AdSense -->
+    <!-- {  % include google-adsense.html %  } -->
+
+    <!-- Cookie Consent Banner for GDPR Compliance -->
+    <!-- {  % include cookie-consent.html %  } -->
+
+    <!-- Mermaid support: convert fenced code blocks (```mermaid) and initialize -->
+    
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@11.9.0/dist/mermaid.min.js" defer></script>
+    
+    <script>
+      (function() {
+        'use strict';
+
+        // Use requestIdleCallback for better INP performance
+        function scheduleWork(callback) {
+          if (window.requestIdleCallback) {
+            requestIdleCallback(callback, { timeout: 2000 });
+          } else {
+            setTimeout(callback, 0);
+          }
+        }
+
+        function convertMermaidCodeFences() {
+          try {
+            // Use more efficient selector and batch DOM operations
+            const codeBlocks = document.querySelectorAll('pre > code.language-mermaid, pre > code.mermaid');
+            const fragment = document.createDocumentFragment();
+            const replacements = [];
+
+            codeBlocks.forEach(function(code) {
+              const pre = code.parentElement;
+              const container = pre.parentElement;
+              const div = document.createElement('div');
+              div.className = 'mermaid';
+              div.textContent = code.textContent;
+              replacements.push({ container, pre, div });
+            });
+
+            // Batch DOM updates to minimize layout thrashing
+            replacements.forEach(({ container, pre, div }) => {
+              container.replaceChild(div, pre);
+            });
+          } catch (e) {
+            console.warn('Mermaid code fence conversion failed:', e);
+          }
+        }
+
+        function initMermaidNow() {
+          try {
+            if (!window.mermaid) return false;
+
+            scheduleWork(() => {
+              convertMermaidCodeFences();
+              if (typeof mermaid.initialize === 'function') {
+                mermaid.initialize({
+                  startOnLoad: false, // Better control over timing
+                  theme: 'default'
+                });
+              }
+
+              scheduleWork(() => {
+                if (typeof mermaid.run === 'function') {
+                  mermaid.run({ querySelector: '.mermaid' });
+                } else if (typeof mermaid.init === 'function') {
+                  mermaid.init(undefined, document.querySelectorAll('.mermaid'));
+                }
+              });
+            });
+
+            return true;
+          } catch (e) {
+            console.error('Mermaid initialization error:', e);
+            return false;
+          }
+        }
+
+        // Use passive event listeners for better performance
+        function whenReady(fn) {
+          if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', fn, { passive: true });
+          } else {
+            scheduleWork(fn);
+          }
+        }
+
+        // Improved initialization with timeout and better error handling
+        whenReady(function() {
+          scheduleWork(() => {
+            if (initMermaidNow()) return;
+
+            let attempts = 0;
+            const maxAttempts = 30; // Reduced from 50
+            const checkInterval = 200; // Increased from 100ms
+
+            const timer = setInterval(function() {
+              attempts++;
+              if (initMermaidNow() || attempts >= maxAttempts) {
+                clearInterval(timer);
+                if (attempts >= maxAttempts) {
+                  console.warn('Mermaid initialization timed out after', maxAttempts, 'attempts');
+                }
+              }
+            }, checkInterval);
+          });
+        });
+      })();
+    </script><script src="/assets/js/print-helper-optimized.js?v=20250821170013" defer></script><script src="/assets/js/storage-access.js?v=20250821170013" defer></script>
+  </body>
+</html>
