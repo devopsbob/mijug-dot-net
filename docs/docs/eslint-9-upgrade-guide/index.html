@@ -7,7 +7,7 @@
 
     <!-- Navigation and ordering metadata -->
     
-      <meta name="docs-nav-order" content="34">
+      <meta name="docs-nav-order" content="20">
       <meta name="docs-section" content="documentation">
       
         <meta name="priority-doc" content="true">
@@ -18,14 +18,14 @@
     
 
     <title>
-      Mermaid Test Runner | My Information Just Under Glass
+      ESLint 9 Upgrade: Migration Guide and Benefits | My Information Just Under Glass
     </title>
     <meta
       name="description"
-      content="Mermaid Diagram Test Runner"
+      content="ESLint 9 Upgrade: Migration Guide and Benefits"
     />
     
-    <meta name="version" content="Aug 22, 2025" />
+    <meta name="version" content="Aug 24, 2025" />
     
 
     
@@ -33,7 +33,7 @@
     <link rel="stylesheet" href="/assets/css/inp-optimizations.css?v=20250824111833" />
     <link
       rel="canonical"
-      href="https://www.mijug.net/docs/mermaid-test-runner/"
+      href="https://www.mijug.net/docs/eslint-9-upgrade-guide/"
     />
     <link
       rel="alternate"
@@ -56,24 +56,24 @@
     />
     <link rel="manifest" href="/manifest.webmanifest" />
     <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Mermaid Test Runner | My Information Just Under Glass</title>
+<title>ESLint 9 Upgrade: Migration Guide and Benefits | My Information Just Under Glass</title>
 <meta name="generator" content="Jekyll v4.4.1" />
-<meta property="og:title" content="Mermaid Test Runner" />
+<meta property="og:title" content="ESLint 9 Upgrade: Migration Guide and Benefits" />
 <meta name="author" content="Bob Kranson" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Dedicated test runner for Mermaid diagram functionality with multi-browser support and comprehensive testing options" />
-<meta property="og:description" content="Dedicated test runner for Mermaid diagram functionality with multi-browser support and comprehensive testing options" />
-<link rel="canonical" href="https://www.mijug.net/docs/mermaid-test-runner/" />
-<meta property="og:url" content="https://www.mijug.net/docs/mermaid-test-runner/" />
+<meta name="description" content="Comprehensive guide to upgrading from ESLint 8 to ESLint 9 in the MIJUG .NET Workspace, including migration steps, benefits, and official resources." />
+<meta property="og:description" content="Comprehensive guide to upgrading from ESLint 8 to ESLint 9 in the MIJUG .NET Workspace, including migration steps, benefits, and official resources." />
+<link rel="canonical" href="https://www.mijug.net/docs/eslint-9-upgrade-guide/" />
+<meta property="og:url" content="https://www.mijug.net/docs/eslint-9-upgrade-guide/" />
 <meta property="og:site_name" content="My Information Just Under Glass" />
 <meta property="og:image" content="https://www.mijug.net/assets/logo-mijug-watermark-98x100.svg" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2025-08-24T11:18:33-04:00" />
+<meta property="article:published_time" content="2025-08-24T00:00:00-04:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta property="twitter:image" content="https://www.mijug.net/assets/logo-mijug-watermark-98x100.svg" />
-<meta property="twitter:title" content="Mermaid Test Runner" />
+<meta property="twitter:title" content="ESLint 9 Upgrade: Migration Guide and Benefits" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Bob Kranson"},"dateModified":"2025-08-22T13:42:32-04:00","datePublished":"2025-08-24T11:18:33-04:00","description":"Dedicated test runner for Mermaid diagram functionality with multi-browser support and comprehensive testing options","headline":"Mermaid Test Runner","image":"https://www.mijug.net/assets/logo-mijug-watermark-98x100.svg","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.mijug.net/docs/mermaid-test-runner/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://www.mijug.net/assets/logo-mijug-watermark-98x100.svg"},"name":"Bob Kranson"},"url":"https://www.mijug.net/docs/mermaid-test-runner/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Bob Kranson"},"dateModified":"2025-08-24T11:18:15-04:00","datePublished":"2025-08-24T00:00:00-04:00","description":"Comprehensive guide to upgrading from ESLint 8 to ESLint 9 in the MIJUG .NET Workspace, including migration steps, benefits, and official resources.","headline":"ESLint 9 Upgrade: Migration Guide and Benefits","image":"https://www.mijug.net/assets/logo-mijug-watermark-98x100.svg","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.mijug.net/docs/eslint-9-upgrade-guide/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://www.mijug.net/assets/logo-mijug-watermark-98x100.svg"},"name":"Bob Kranson"},"url":"https://www.mijug.net/docs/eslint-9-upgrade-guide/"}</script>
 <!-- End Jekyll SEO tag -->
 
   </head>
@@ -641,319 +641,101 @@
     <main class="page-content" aria-label="Content">
       <div class="wrapper"><article class="post">
   <header class="post-header">
-    <h1 class="post-title">Mermaid Test Runner</h1>
+    <h1 class="post-title">ESLint 9 Upgrade: Migration Guide and Benefits</h1>
   </header>
 
-  <div class="post-content"><h1 id="mermaid-diagram-test-runner">Mermaid Diagram Test Runner</h1>
-
-<p>This document describes the dedicated test runner for Mermaid diagram functionality in the MIJUG .NET workspace.</p>
+  <div class="post-content"><h1 id="eslint-9-upgrade-migration-guide-and-benefits">ESLint 9 Upgrade: Migration Guide and Benefits</h1>
 
 <h2 id="overview">Overview</h2>
 
-<p>The <code class="language-plaintext highlighter-rouge">scripts/test-mermaid-diagrams.js</code> script provides a specialized test runner that focuses exclusively on Mermaid diagram rendering and functionality. It automatically discovers all mermaid-related test files and provides flexible browser testing options.</p>
+<p>This document details the changes made to upgrade the MIJUG .NET Workspace from ESLint 8 to ESLint 9, the benefits of the new version, and generic migration steps for similar projects. It also covers the new ESM globals behavior in Node.js 20+ and how to handle them for maximum compatibility and clarity.</p>
 
-<h2 id="features">Features</h2>
+<h2 id="why-upgrade-to-eslint-9">Why Upgrade to ESLint 9?</h2>
 
 <ul>
-  <li><strong>Automatic Test Discovery</strong>: Finds all mermaid-related test files in the e2e directory</li>
-  <li><strong>Multi-Browser Support</strong>: Tests with Chromium, Firefox, and WebKit</li>
-  <li><strong>Browser Management</strong>: Automatic browser installation and verification</li>
-  <li><strong>Flexible Options</strong>: Headed/headless modes, debug mode, custom worker counts</li>
-  <li><strong>Error Handling</strong>: Robust error handling with helpful messages</li>
-  <li><strong>Cross-Platform</strong>: Works on Linux, macOS, and Windows</li>
+  <li><strong>Performance:</strong> ESLint 9 introduces a new flat config system, improving linting speed and memory usage.</li>
+  <li><strong>Modern Syntax:</strong> Full ES module (ESM) support, aligning with modern JavaScript/TypeScript best practices.</li>
+  <li><strong>Zero-Warning Enforcement:</strong> Enhanced rule strictness and better error reporting.</li>
+  <li><strong>Improved Plugin Ecosystem:</strong> Updated plugin APIs and compatibility with the latest TypeScript and JavaScript features.</li>
+  <li><strong>Better IDE Integration:</strong> Faster and more accurate linting in VS Code and other editors.</li>
 </ul>
 
-<h2 id="usage">Usage</h2>
+<h2 id="esm-globals-in-nodejs-20">ESM Globals in Node.js 20+</h2>
 
-<h3 id="basic-commands">Basic Commands</h3>
+<p>With Node.js 20 and later, the ESM (ECMAScript Module) environment now provides <code class="language-plaintext highlighter-rouge">__dirname</code> and <code class="language-plaintext highlighter-rouge">__filename</code> as globals, just like CommonJS. This means:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Run all mermaid tests with default settings (Chromium, headless)</span>
-npm run <span class="nb">test</span>:mermaid
+<ul>
+  <li>You no longer need to polyfill or manually define <code class="language-plaintext highlighter-rouge">__dirname</code> or <code class="language-plaintext highlighter-rouge">__filename</code> in most scripts.</li>
+  <li>Redeclaring these globals will cause lint errors (e.g., <code class="language-plaintext highlighter-rouge">no-redeclare</code>).</li>
+  <li>For maximum compatibility, always use the global <code class="language-plaintext highlighter-rouge">__dirname</code> and avoid any redeclaration or fallback logic unless you must support older Node.js versions.</li>
+</ul>
 
-<span class="c"># Run with browser UI visible (helpful for debugging)</span>
-npm run <span class="nb">test</span>:mermaid:headed
+<p><strong>Example:</strong></p>
 
-<span class="c"># Run in debug mode (step-by-step execution)</span>
-npm run <span class="nb">test</span>:mermaid:debug
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Good (Node.js 20+ ESM)</span>
+<span class="kd">const</span> <span class="nx">PROJECT_ROOT</span> <span class="o">=</span> <span class="nx">path</span><span class="p">.</span><span class="nf">resolve</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span> <span class="dl">'</span><span class="s1">..</span><span class="dl">'</span><span class="p">);</span>
 
-<span class="c"># Run with Firefox browser</span>
-npm run <span class="nb">test</span>:mermaid:firefox
+<span class="c1">// Bad (causes redeclaration error)</span>
+<span class="kd">const</span> <span class="nx">__dirname</span> <span class="o">=</span> <span class="nx">path</span><span class="p">.</span><span class="nf">dirname</span><span class="p">(</span><span class="k">new</span> <span class="nc">URL</span><span class="p">(</span><span class="k">import</span><span class="p">.</span><span class="nx">meta</span><span class="p">.</span><span class="nx">url</span><span class="p">).</span><span class="nx">pathname</span><span class="p">);</span>
 </code></pre></div></div>
 
-<h3 id="advanced-options">Advanced Options</h3>
+<p>If you must support older Node.js versions, use a conditional global assignment, but for modern projects, prefer the global.</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Run with specific browser and options</span>
-node scripts/test-mermaid-diagrams.js <span class="nt">--project</span><span class="o">=</span>webkit <span class="nt">--workers</span><span class="o">=</span>2 <span class="nt">--verbose</span>
+<h2 id="key-changes-applied">Key Changes Applied</h2>
 
-<span class="c"># Ensure browsers are installed first</span>
-node scripts/test-mermaid-diagrams.js <span class="nt">--ensure-browsers</span>
+<ul>
+  <li>Upgraded <code class="language-plaintext highlighter-rouge">eslint</code> and related plugins to version 9.x in <code class="language-plaintext highlighter-rouge">package.json</code>.</li>
+  <li>Migrated configuration to the new <a href="https://eslint.org/docs/latest/use/configure/configuration-files-new">flat config system</a>{rel=”noopener noreferrer” target=”_blank”} (<code class="language-plaintext highlighter-rouge">eslint.config.js</code>).</li>
+  <li>Updated all custom scripts and code to use ESM import/export syntax.</li>
+  <li>Removed all CommonJS <code class="language-plaintext highlighter-rouge">require()</code> and <code class="language-plaintext highlighter-rouge">module.exports</code> patterns.</li>
+  <li>Fixed all lint errors and warnings, including ESM-specific issues (e.g., <code class="language-plaintext highlighter-rouge">__dirname</code>/<code class="language-plaintext highlighter-rouge">__filename</code> handling).</li>
+  <li>Ensured all scripts in <code class="language-plaintext highlighter-rouge">scripts/</code> are ESM-compatible and pass lint checks.</li>
+  <li>Updated precheckin and CI scripts to enforce zero-warning policy.</li>
+</ul>
 
-<span class="c"># Run in headed mode with debug</span>
-node scripts/test-mermaid-diagrams.js <span class="nt">--headed</span> <span class="nt">--debug</span>
-
-<span class="c"># Get help and see all available options</span>
-node scripts/test-mermaid-diagrams.js <span class="nt">--help</span>
-</code></pre></div></div>
-
-<h2 id="command-line-options">Command Line Options</h2>
-
-<table>
-  <thead>
-    <tr>
-      <th>Option</th>
-      <th>Description</th>
-      <th>Example</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">--ensure-browsers</code></td>
-      <td>Install browsers before testing</td>
-      <td><code class="language-plaintext highlighter-rouge">--ensure-browsers</code></td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">--headed</code></td>
-      <td>Run with browser UI visible</td>
-      <td><code class="language-plaintext highlighter-rouge">--headed</code></td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">--debug</code></td>
-      <td>Step-by-step debug mode</td>
-      <td><code class="language-plaintext highlighter-rouge">--debug</code></td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">--project=&lt;name&gt;</code></td>
-      <td>Specify browser (chromium, firefox, webkit)</td>
-      <td><code class="language-plaintext highlighter-rouge">--project=firefox</code></td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">--workers=&lt;num&gt;</code></td>
-      <td>Number of parallel workers (default: 1)</td>
-      <td><code class="language-plaintext highlighter-rouge">--workers=2</code></td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">--verbose</code></td>
-      <td>Enable verbose output</td>
-      <td><code class="language-plaintext highlighter-rouge">--verbose</code></td>
-    </tr>
-    <tr>
-      <td><code class="language-plaintext highlighter-rouge">--help</code></td>
-      <td>Show help message</td>
-      <td><code class="language-plaintext highlighter-rouge">--help</code></td>
-    </tr>
-  </tbody>
-</table>
-
-<h2 id="test-files-covered">Test Files Covered</h2>
-
-<p>The script automatically discovers and runs these test files:</p>
+<h2 id="generic-migration-steps">Generic Migration Steps</h2>
 
 <ol>
-  <li><strong><code class="language-plaintext highlighter-rouge">e2e/mermaid-basic-visual.spec.ts</code></strong>
+  <li><strong>Upgrade ESLint and Plugins:</strong>
     <ul>
-      <li>Tests basic mermaid diagram rendering</li>
-      <li>Validates SVG generation and visual elements</li>
+      <li>Update <code class="language-plaintext highlighter-rouge">eslint</code> and all plugins to the latest 9.x versions in <code class="language-plaintext highlighter-rouge">package.json</code>.</li>
     </ul>
   </li>
-  <li><strong><code class="language-plaintext highlighter-rouge">e2e/mermaid-default-layout.spec.ts</code></strong>
+  <li><strong>Migrate to Flat Config:</strong>
     <ul>
-      <li>Tests mermaid rendering in default page layout</li>
-      <li>Validates sequence diagrams and syntax error handling</li>
+      <li>Replace <code class="language-plaintext highlighter-rouge">.eslintrc.*</code> with <code class="language-plaintext highlighter-rouge">eslint.config.js</code> using the <a href="https://eslint.org/docs/latest/use/configure/configuration-files-new">flat config format</a>{rel=”noopener noreferrer” target=”_blank”}.</li>
     </ul>
   </li>
-  <li><strong><code class="language-plaintext highlighter-rouge">e2e/mermaid-diagrams-visual.spec.ts</code></strong>
+  <li><strong>Update ESM Syntax:</strong>
     <ul>
-      <li>Tests visual diagram sample page</li>
-      <li>Validates multiple diagram types and SVG content</li>
+      <li>Refactor all scripts and config files to use <code class="language-plaintext highlighter-rouge">import</code>/<code class="language-plaintext highlighter-rouge">export</code>.</li>
+      <li>Remove CommonJS patterns and use the new ESM globals for <code class="language-plaintext highlighter-rouge">__dirname</code>/<code class="language-plaintext highlighter-rouge">__filename</code>.</li>
     </ul>
   </li>
-  <li><strong><code class="language-plaintext highlighter-rouge">e2e/mermaid-documentation.spec.ts</code></strong>
+  <li><strong>Fix Lint Errors:</strong>
     <ul>
-      <li>Tests documentation pages</li>
-      <li>Validates quick start, configuration guide, and examples</li>
+      <li>Run <code class="language-plaintext highlighter-rouge">eslint . --fix</code> and resolve all errors and warnings.</li>
+    </ul>
+  </li>
+  <li><strong>Update CI/Precommit:</strong>
+    <ul>
+      <li>Ensure all linting steps in CI and precommit hooks use the new config and pass with zero warnings.</li>
     </ul>
   </li>
 </ol>
 
-<h2 id="browser-compatibility">Browser Compatibility</h2>
-
-<table>
-  <thead>
-    <tr>
-      <th>Browser</th>
-      <th>Support Level</th>
-      <th>Notes</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><strong>Chromium</strong></td>
-      <td>✅ Full</td>
-      <td>Default browser, fastest execution</td>
-    </tr>
-    <tr>
-      <td><strong>Firefox</strong></td>
-      <td>✅ Full</td>
-      <td>Good compatibility, slightly slower</td>
-    </tr>
-    <tr>
-      <td><strong>WebKit</strong></td>
-      <td>✅ Full</td>
-      <td>Safari engine, best for macOS testing</td>
-    </tr>
-  </tbody>
-</table>
-
-<h2 id="error-handling">Error Handling</h2>
-
-<p>The script provides comprehensive error handling:</p>
+<h2 id="official-documentation">Official Documentation</h2>
 
 <ul>
-  <li><strong>Browser Detection</strong>: Automatically detects available browsers</li>
-  <li><strong>Fallback Support</strong>: Falls back to available browsers if requested browser isn’t available</li>
-  <li><strong>Installation Help</strong>: Guides users to install missing browsers</li>
-  <li><strong>Clear Messages</strong>: Provides helpful error messages and suggestions</li>
+  <li><a href="https://eslint.org/docs/latest/upgrade-guide">ESLint 9 Migration Guide</a>{rel=”noopener noreferrer” target=”_blank”}</li>
+  <li><a href="https://eslint.org/docs/latest/use/configure/configuration-files-new">Flat Config Reference</a>{rel=”noopener noreferrer” target=”_blank”}</li>
+  <li><a href="https://eslint.org/docs/latest/use/configure/ecmascript-modules">ESLint ESM Support</a>{rel=”noopener noreferrer” target=”_blank”}</li>
+  <li><a href="https://eslint.org/docs/latest/developer-guide/working-with-plugins">ESLint Plugin Migration</a>{rel=”noopener noreferrer” target=”_blank”}</li>
 </ul>
 
-<h2 id="integration-with-cicd">Integration with CI/CD</h2>
+<hr />
 
-<p>The script is designed to work in continuous integration environments:</p>
-
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Example GitHub Actions usage</span>
-<span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Run Mermaid Tests</span>
-  <span class="na">run</span><span class="pi">:</span> <span class="s">npm run test:mermaid</span>
-
-<span class="c1"># With specific browser</span>
-<span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Run Mermaid Tests (Firefox)</span>
-  <span class="na">run</span><span class="pi">:</span> <span class="s">npm run test:mermaid:firefox</span>
-
-<span class="c1"># With browser installation</span>
-<span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Run Mermaid Tests (All Browsers)</span>
-  <span class="na">run</span><span class="pi">:</span> <span class="pi">|</span>
-    <span class="s">npm run test:mermaid -- --ensure-browsers --project=chromium</span>
-    <span class="s">npm run test:mermaid -- --project=firefox</span>
-    <span class="s">npm run test:mermaid -- --project=webkit</span>
-</code></pre></div></div>
-
-<h2 id="performance-considerations">Performance Considerations</h2>
-
-<ul>
-  <li><strong>Single Worker Default</strong>: Uses 1 worker by default for stability</li>
-  <li><strong>Network Idle</strong>: Waits for network idle state before testing</li>
-  <li><strong>Timeout Handling</strong>: Includes appropriate timeouts for browser operations</li>
-  <li><strong>Resource Cleanup</strong>: Properly cleans up browser instances</li>
-</ul>
-
-<h2 id="debugging">Debugging</h2>
-
-<p>For debugging mermaid rendering issues:</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Run in debug mode with browser UI</span>
-npm run <span class="nb">test</span>:mermaid:debug
-
-<span class="c"># Run specific test file in headed mode</span>
-node scripts/test-mermaid-diagrams.js <span class="nt">--headed</span> <span class="nt">--project</span><span class="o">=</span>chromium e2e/mermaid-basic-visual.spec.ts
-
-<span class="c"># Enable verbose output for detailed logs</span>
-node scripts/test-mermaid-diagrams.js <span class="nt">--verbose</span> <span class="nt">--headed</span>
-</code></pre></div></div>
-
-<h2 id="configuration">Configuration</h2>
-
-<p>The script respects the Playwright configuration in <code class="language-plaintext highlighter-rouge">playwright.config.ts</code> but allows overrides via command line arguments.</p>
-
-<h2 id="output-example">Output Example</h2>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>🎨 Mermaid Diagrams Test Runner Starting...
-ℹ️  🔧 Ensuring browsers are installed...
-✅ All browsers are ready for testing!
-ℹ️  📊 Browser Engine Summary:
-ℹ️    🎯 (selected) chromium - Available
-ℹ️    ✅ firefox - Available
-ℹ️    ✅ webkit - Available
-ℹ️  🚀 Starting Mermaid diagram tests...
-ℹ️  Found 4 mermaid test files:
-🔍   - e2e/mermaid-basic-visual.spec.ts
-🔍   - e2e/mermaid-default-layout.spec.ts
-🔍   - e2e/mermaid-diagrams-visual.spec.ts
-🔍   - e2e/mermaid-documentation.spec.ts
-
-Running 7 tests using 1 worker
-  ✓  All tests passed
-✅ ✅ All Mermaid tests completed successfully!
-</code></pre></div></div>
-
-<h2 id="troubleshooting">Troubleshooting</h2>
-
-<h3 id="common-issues">Common Issues</h3>
-
-<ol>
-  <li><strong>Browser Not Found</strong>
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Solution: Install browsers</span>
-npm run <span class="nb">test</span>:mermaid <span class="nt">--</span> <span class="nt">--ensure-browsers</span>
-</code></pre></div>    </div>
-  </li>
-  <li><strong>Permission Errors</strong>
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Solution: Run with proper permissions or use skipIfNoPermissions</span>
-node scripts/test-mermaid-diagrams.js <span class="nt">--ensure-browsers</span> <span class="nt">--skip-if-no-permissions</span>
-</code></pre></div>    </div>
-  </li>
-  <li><strong>Network Timeouts</strong>
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Solution: Increase timeout or check network connectivity</span>
-node scripts/test-mermaid-diagrams.js <span class="nt">--workers</span><span class="o">=</span>1
-</code></pre></div>    </div>
-  </li>
-  <li>
-    <p><strong>iNotify Watches Limit Exceeded (Linux)</strong></p>
-
-    <p><strong>Error</strong>: <code class="language-plaintext highlighter-rouge">Listen::Error::INotifyMaxWatchesExceeded: Unable to monitor directories for changes because iNotify max watches exceeded</code></p>
-
-    <p><strong>Symptoms</strong>: Jekyll server fails to start with file watching errors, preventing the test server from running.</p>
-
-    <p><strong>Solution</strong>: Increase the iNotify watches limit on Linux systems:</p>
-
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Check current limit</span>
-<span class="nb">cat</span> /proc/sys/fs/inotify/max_user_watches
-
-<span class="c"># Increase limit permanently (requires sudo)</span>
-<span class="nb">echo </span>fs.inotify.max_user_watches<span class="o">=</span>524288 | <span class="nb">sudo tee</span> <span class="nt">-a</span> /etc/sysctl.conf
-<span class="nb">sudo </span>sysctl <span class="nt">-p</span>
-
-<span class="c"># Verify the change</span>
-<span class="nb">cat</span> /proc/sys/fs/inotify/max_user_watches
-</code></pre></div>    </div>
-
-    <p><strong>Alternative temporary fix</strong>:</p>
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Temporary increase (until reboot)</span>
-<span class="nb">sudo </span>sysctl fs.inotify.max_user_watches<span class="o">=</span>524288
-</code></pre></div>    </div>
-
-    <p><strong>Background</strong>: This issue occurs when Jekyll tries to watch too many files for changes. The default Linux limit is typically 8,192 watches, but large projects with many files can exceed this limit. Setting it to 524,288 provides ample headroom for most development scenarios.</p>
-  </li>
-</ol>
-
-<h2 id="future-enhancements">Future Enhancements</h2>
-
-<p>Potential improvements to the script:</p>
-
-<ul>
-  <li><strong>Parallel Browser Testing</strong>: Run multiple browsers simultaneously</li>
-  <li><strong>Visual Regression Testing</strong>: Screenshot comparison for diagram rendering</li>
-  <li><strong>Performance Metrics</strong>: Measure diagram rendering performance</li>
-  <li><strong>Custom Test Patterns</strong>: Allow custom glob patterns for test discovery</li>
-  <li><strong>Report Generation</strong>: Generate detailed HTML reports</li>
-  <li><strong>Integration Testing</strong>: Test mermaid with different Jekyll configurations</li>
-</ul>
-
-<h2 id="related-documentation">Related Documentation</h2>
-
-<ul>
-  <li><a href="/docs/mermaid-configuration-guide/">Mermaid Configuration Guide</a></li>
-  <li><a href="/docs/mermaid-quick-start/">Mermaid Quick Start</a></li>
-  <li><a href="/docs/mermaid-examples/">Mermaid Examples</a></li>
-  <li><a href="https://github.com/devopsbob/mijug-dot-net-project/blob/main/playwright.config.ts" rel="external noopener noreferrer" target="_blank">Playwright Configuration</a></li>
-  <li><a href="https://github.com/devopsbob/mijug-dot-net-project/blob/main/scripts/test-runner.js" rel="external noopener noreferrer" target="_blank">Main Test Runner</a></li>
-</ul>
+<p><strong>Last updated:</strong> August 24, 2025</p>
 </div>
 </article>
 </div>
