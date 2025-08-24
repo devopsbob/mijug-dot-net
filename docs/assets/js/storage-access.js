@@ -1,5 +1,8 @@
 /**
- * Storage Access Helper - Handles tracking prevention and storage access
+ * St  // Cache for performance
+  let isAPISupported = null;
+
+  // Setup storage access for third-party resourcesHelper - Handles tracking prevention and storage access
  * Requests storage access permission for third-party content like Google Calendar
  * Optimized for better INP performance
  */
@@ -8,17 +11,7 @@
   'use strict';
 
   // Cache for performance
-  let hasStorageAccessCache = null;
   let isAPISupported = null;
-
-  // Use requestIdleCallback for non-critical work
-  function scheduleIdleWork(callback) {
-    if (window.requestIdleCallback) {
-      requestIdleCallback(callback, { timeout: 2000 });
-    } else {
-      setTimeout(callback, 16);
-    }
-  }
 
   // Check if Storage Access API is supported (cached)
   function isStorageAccessAPISupported() {
@@ -62,7 +55,7 @@
     );
 
     calendarElements.forEach(element => {
-      element.addEventListener('click', async e => {
+      element.addEventListener('click', async () => {
         console.log('Requesting storage access for Google Calendar...');
         await requestStorageAccess();
       });
@@ -114,7 +107,7 @@
               : [];
 
             calendarElements.forEach(element => {
-              element.addEventListener('click', async e => {
+              element.addEventListener('click', async () => {
                 console.log(
                   'Requesting storage access for dynamic Google Calendar content...'
                 );
