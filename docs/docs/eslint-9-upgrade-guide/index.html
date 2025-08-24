@@ -29,8 +29,8 @@
     
 
     
-    <link rel="stylesheet" href="/assets/main.css?v=20250824111833" />
-    <link rel="stylesheet" href="/assets/css/inp-optimizations.css?v=20250824111833" />
+    <link rel="stylesheet" href="/assets/main.css?v=20250824113659" />
+    <link rel="stylesheet" href="/assets/css/inp-optimizations.css?v=20250824113659" />
     <link
       rel="canonical"
       href="https://www.mijug.net/docs/eslint-9-upgrade-guide/"
@@ -73,7 +73,7 @@
 <meta property="twitter:image" content="https://www.mijug.net/assets/logo-mijug-watermark-98x100.svg" />
 <meta property="twitter:title" content="ESLint 9 Upgrade: Migration Guide and Benefits" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Bob Kranson"},"dateModified":"2025-08-24T11:18:15-04:00","datePublished":"2025-08-24T00:00:00-04:00","description":"Comprehensive guide to upgrading from ESLint 8 to ESLint 9 in the MIJUG .NET Workspace, including migration steps, benefits, and official resources.","headline":"ESLint 9 Upgrade: Migration Guide and Benefits","image":"https://www.mijug.net/assets/logo-mijug-watermark-98x100.svg","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.mijug.net/docs/eslint-9-upgrade-guide/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://www.mijug.net/assets/logo-mijug-watermark-98x100.svg"},"name":"Bob Kranson"},"url":"https://www.mijug.net/docs/eslint-9-upgrade-guide/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Bob Kranson"},"dateModified":"2025-08-24T11:36:44-04:00","datePublished":"2025-08-24T00:00:00-04:00","description":"Comprehensive guide to upgrading from ESLint 8 to ESLint 9 in the MIJUG .NET Workspace, including migration steps, benefits, and official resources.","headline":"ESLint 9 Upgrade: Migration Guide and Benefits","image":"https://www.mijug.net/assets/logo-mijug-watermark-98x100.svg","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.mijug.net/docs/eslint-9-upgrade-guide/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://www.mijug.net/assets/logo-mijug-watermark-98x100.svg"},"name":"Bob Kranson"},"url":"https://www.mijug.net/docs/eslint-9-upgrade-guide/"}</script>
 <!-- End Jekyll SEO tag -->
 
   </head>
@@ -685,7 +685,7 @@
 
 <ul>
   <li>Upgraded <code class="language-plaintext highlighter-rouge">eslint</code> and related plugins to version 9.x in <code class="language-plaintext highlighter-rouge">package.json</code>.</li>
-  <li>Migrated configuration to the new <a href="https://eslint.org/docs/latest/use/configure/configuration-files-new">flat config system</a>{rel=”noopener noreferrer” target=”_blank”} (<code class="language-plaintext highlighter-rouge">eslint.config.js</code>).</li>
+  <li>Migrated configuration to the new <a href="https://eslint.org/docs/latest/use/configure/configuration-files-new" rel="external noopener noreferrer" target="_blank">flat config system</a> (<code class="language-plaintext highlighter-rouge">eslint.config.js</code>).</li>
   <li>Updated all custom scripts and code to use ESM import/export syntax.</li>
   <li>Removed all CommonJS <code class="language-plaintext highlighter-rouge">require()</code> and <code class="language-plaintext highlighter-rouge">module.exports</code> patterns.</li>
   <li>Fixed all lint errors and warnings, including ESM-specific issues (e.g., <code class="language-plaintext highlighter-rouge">__dirname</code>/<code class="language-plaintext highlighter-rouge">__filename</code> handling).</li>
@@ -703,7 +703,7 @@
   </li>
   <li><strong>Migrate to Flat Config:</strong>
     <ul>
-      <li>Replace <code class="language-plaintext highlighter-rouge">.eslintrc.*</code> with <code class="language-plaintext highlighter-rouge">eslint.config.js</code> using the <a href="https://eslint.org/docs/latest/use/configure/configuration-files-new">flat config format</a>{rel=”noopener noreferrer” target=”_blank”}.</li>
+      <li>Replace <code class="language-plaintext highlighter-rouge">.eslintrc.*</code> with <code class="language-plaintext highlighter-rouge">eslint.config.js</code> using the <a href="https://eslint.org/docs/latest/use/configure/configuration-files-new" rel="external noopener noreferrer" target="_blank">flat config format</a>.</li>
     </ul>
   </li>
   <li><strong>Update ESM Syntax:</strong>
@@ -726,11 +726,29 @@
 
 <h2 id="official-documentation">Official Documentation</h2>
 
+<p><strong>Official Documentation:</strong></p>
+
 <ul>
-  <li><a href="https://eslint.org/docs/latest/upgrade-guide">ESLint 9 Migration Guide</a>{rel=”noopener noreferrer” target=”_blank”}</li>
-  <li><a href="https://eslint.org/docs/latest/use/configure/configuration-files-new">Flat Config Reference</a>{rel=”noopener noreferrer” target=”_blank”}</li>
-  <li><a href="https://eslint.org/docs/latest/use/configure/ecmascript-modules">ESLint ESM Support</a>{rel=”noopener noreferrer” target=”_blank”}</li>
-  <li><a href="https://eslint.org/docs/latest/developer-guide/working-with-plugins">ESLint Plugin Migration</a>{rel=”noopener noreferrer” target=”_blank”}</li>
+  <li><a href="https://github.com/eslint/eslint/releases" rel="external noopener noreferrer" target="_blank">ESLint 9 Release Notes</a></li>
+  <li><a href="https://eslint.org/docs/latest/use/" rel="external noopener noreferrer" target="_blank">Use ESLint in Your Project</a></li>
+  <li><a href="https://eslint.org/docs/latest/use/configure/configuration-files-new" rel="external noopener noreferrer" target="_blank">Flat Config Reference</a></li>
+  <li><a href="https://eslint.org/docs/latest/use/configure/ecmascript-modules" rel="external noopener noreferrer" target="_blank">ESLint ESM Support</a></li>
+  <li><a href="https://eslint.org/docs/latest/developer-guide/working-with-plugins" rel="external noopener noreferrer" target="_blank">ESLint Plugin Migration</a></li>
+  <li><a href="#esm-globals-in-nodejs-20" rel="bookmark">Jump to ESM Globals in Node.js 20+</a>
+    <h2 id="bibliography--further-reading">Bibliography &amp; Further Reading</h2>
+  </li>
+</ul>
+
+<p><strong>Bibliography &amp; Further Reading:</strong></p>
+
+<ul>
+  <li><a href="https://github.com/eslint/eslint/releases" rel="external noopener noreferrer" target="_blank">ESLint 9 Release Notes</a> — Comprehensive release notes and upgrade information for each version.</li>
+  <li><a href="https://eslint.org/docs/latest/use/" rel="external noopener noreferrer" target="_blank">Use ESLint in Your Project</a> — Official documentation for configuration, migration, and usage.</li>
+  <li><a href="https://eslint.org/docs/latest/use/configure/configuration-files-new" rel="external noopener noreferrer" target="_blank">Flat Config Reference</a> — Official documentation for the new flat config system.</li>
+  <li><a href="https://eslint.org/docs/latest/use/configure/ecmascript-modules" rel="external noopener noreferrer" target="_blank">ESLint ESM Support</a> — Details on ESM support and globals in ESLint.</li>
+  <li><a href="https://eslint.org/docs/latest/developer-guide/working-with-plugins" rel="external noopener noreferrer" target="_blank">ESLint Plugin Migration</a> — Guide for updating and using plugins with ESLint 9.</li>
+  <li><a href="/docs/rel-attribute-guide/" rel="bookmark">The rel Attribute in HTML Links: A Comprehensive Guide</a> — MIJUG documentation on secure and accessible link attributes.</li>
+  <li><a href="#key-changes-applied" rel="bookmark">See Key Changes Applied</a></li>
 </ul>
 
 <hr />
@@ -884,6 +902,6 @@
           });
         });
       })();
-    </script><script src="/assets/js/print-helper-optimized.js?v=20250824111833" defer></script><script src="/assets/js/storage-access.js?v=20250824111833" defer></script><script src="/assets/js/accessibility-enhancements.js?v=20250824111833" defer></script>
+    </script><script src="/assets/js/print-helper-optimized.js?v=20250824113659" defer></script><script src="/assets/js/storage-access.js?v=20250824113659" defer></script><script src="/assets/js/accessibility-enhancements.js?v=20250824113659" defer></script>
   </body>
 </html>
