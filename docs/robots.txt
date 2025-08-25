@@ -1,27 +1,32 @@
+# Adbot requires specific exclusion
+User-agent: Googlebot
+User-agent: AdsBot-Google
+Allow: /
+Disallow: /workshop/
+
+# Allow GitHub services
+User-agent: GitHub-Crawler
+Allow: /
+Disallow: /workshop/
+
+# AI bots
+
+User-agent: GPTBot
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow:
+
+User-agent: Applebot-Extended
+Disallow: /
+
 # Disallow all web crawlers from accessing the site
 User-agent: *
 Disallow: /
 
 # Uncomment the following lines to allow specific services
 
-# Allow GitHub services
-# User-agent: GitHub-Crawler
-# Allow: /
-
-# Allow Google services
-# User-agent: Googlebot
-# Allow: /
-
-# AI bots
-
-# User-agent: GPTBot
-# Disallow: /
-
-# User-agent: CCBot
-# Disallow: /
-
-# User-agent: ClaudeBot
-# Disallow:
-
-# User-agent: Applebot-Extended
-# Disallow: /
+Sitemap: https://www.mijug.net/sitemap.xml
