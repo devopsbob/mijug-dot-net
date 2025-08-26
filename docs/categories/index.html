@@ -4,10 +4,15 @@
     <meta charset="utf-8" />
     <meta name="robots" content="noindex, nofollow" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <!-- Navigation and ordering metadata -->
+    <!-- Deny any and all bots from page in event robots meta is not honored -->
+    <script src="https://cdn.jsdelivr.net/npm/isbot@5"></script>
+    <script>
+      if (isbot(navigator.userAgent)) {
+        // Redirect bots to /about/
+        window.location.replace('/about/');
+      };
+    </script>
     
-
     
     <!-- Disable ability to print or save -->
     <script>
@@ -30,10 +35,7 @@
       }, true);
     </script>
     
-
-    <!-- Structured data for navigation -->
     
-
     <title>
       Categories | My Information Just Under Glass
     </title>
@@ -42,12 +44,11 @@
       content="MIJUG.NET serves the communities of Southeast Michigan, Ohio, and Florida with technology, sustainability, and community engagement resources. A platform by ..."
     />
     
-    <meta name="version" content="Aug 25, 2025" />
+    <meta name="version" content="Aug 26, 2025" />
     
-
     
-    <link rel="stylesheet" href="/assets/main.css?v=20250825231915" />
-    <link rel="stylesheet" href="/assets/css/inp-optimizations.css?v=20250825231915" />
+    <link rel="stylesheet" href="/assets/main.css?v=20250826170904" />
+    <link rel="stylesheet" href="/assets/css/inp-optimizations.css?v=20250826170904" />
     <link
       rel="canonical"
       href="https://www.mijug.net/categories/"
@@ -58,7 +59,6 @@
       title="My Information Just Under Glass"
       href="/feed.xml"
     />
-
     
     <link
       rel="icon"
@@ -73,7 +73,6 @@
     />
     <link rel="manifest" href="/manifest.webmanifest" />
   </head>
-
   
   <!-- oncontextmenu return false disables right click context menu -->
   <body oncontextmenu="return false;">
@@ -105,7 +104,6 @@
         </nav>
       </div>
     </header>
-
     <nav popover id="mobile-navigation" class="site-nav" role="dialog" aria-labelledby="nav-heading" aria-modal="true">
       <h2 id="nav-heading" class="sr-only">Additional Navigation</h2>
       <button class="nav-button" popovertarget="mobile-navigation" popovertargetaction="hide" type="button" aria-label="Close navigation menu">
@@ -399,7 +397,6 @@
         
       </div>
     </nav>
-
     <main class="page-content" aria-label="Content">
       <div class="wrapper">
 <h1>Categories</h1>
@@ -536,21 +533,17 @@
 </style>
 </div>
     </main>
-
     <footer class="site-footer h-card">
       <data class="u-url" href="/"></data>
-
       <div class="wrapper">
         <div class="footer-col-wrapper">
           <div class="footer-col footer-col-1">
             <a href="/terms-of-service.html">Terms of Service</a><br>
             <a href="/privacy-policy.html">Privacy Policy</a>
           </div>
-
           <div class="footer-col footer-col-2">
             <a href="/contact/">Contact Us</a>
           </div>
-
           <div class="footer-col footer-col-3">
             <p>
               © 2025
@@ -563,7 +556,6 @@
         </div>
       </div>
     </footer>
-
     <!-- Mermaid support: convert fenced code blocks (```mermaid) and initialize -->
     
     <script src="https://cdn.jsdelivr.net/npm/mermaid@11.9.0/dist/mermaid.min.js" defer></script>
@@ -665,6 +657,6 @@
           });
         });
       })();
-    </script><script src="/assets/js/print-helper-optimized.js?v=20250825231915" defer></script><script src="/assets/js/storage-access.js?v=20250825231915" defer></script><script src="/assets/js/accessibility-enhancements.js?v=20250825231915" defer></script>
+    </script><script src="/assets/js/print-helper-optimized.js?v=20250826170904" defer></script><script src="/assets/js/storage-access.js?v=20250826170904" defer></script><script src="/assets/js/accessibility-enhancements.js?v=20250826170904" defer></script>
   </body>
 </html>
