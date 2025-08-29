@@ -3,6 +3,11 @@
   <head>
     <meta charset="utf-8" />
     
+    <meta
+      name="google-adsense-account"
+      content="ca-pub-3383458876439157"
+    />
+    
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     
@@ -64,8 +69,8 @@
     <meta name="version" content="Aug 05, 2025" />
     
     
-    <link rel="stylesheet" href="/assets/main.css?v=20250826170904" />
-    <link rel="stylesheet" href="/assets/css/inp-optimizations.css?v=20250826170904" />
+    <link rel="stylesheet" href="/assets/main.css?v=20250829164006" />
+    <link rel="stylesheet" href="/assets/css/inp-optimizations.css?v=20250829164006" />
     <link
       rel="canonical"
       href="https://www.mijug.net/docs/browser-compatibility-testing/"
@@ -102,12 +107,12 @@
 <meta property="og:site_name" content="My Information Just Under Glass" />
 <meta property="og:image" content="https://www.mijug.net/assets/logo-mijug-watermark-98x100.svg" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2025-08-26T17:09:04-04:00" />
+<meta property="article:published_time" content="2025-08-29T16:40:06-04:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta property="twitter:image" content="https://www.mijug.net/assets/logo-mijug-watermark-98x100.svg" />
 <meta property="twitter:title" content="Browser Compatibility Testing" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Bob Kranson"},"dateModified":"2025-08-05T16:31:15-04:00","datePublished":"2025-08-26T17:09:04-04:00","description":"Comprehensive browser compatibility testing guide with Playwright automation, mock user agents, and browserslist validation for MIJUG .NET project","headline":"Browser Compatibility Testing","image":"https://www.mijug.net/assets/logo-mijug-watermark-98x100.svg","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.mijug.net/docs/browser-compatibility-testing/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://www.mijug.net/assets/logo-mijug-watermark-98x100.svg"},"name":"Bob Kranson"},"url":"https://www.mijug.net/docs/browser-compatibility-testing/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Bob Kranson"},"dateModified":"2025-08-05T16:31:15-04:00","datePublished":"2025-08-29T16:40:06-04:00","description":"Comprehensive browser compatibility testing guide with Playwright automation, mock user agents, and browserslist validation for MIJUG .NET project","headline":"Browser Compatibility Testing","image":"https://www.mijug.net/assets/logo-mijug-watermark-98x100.svg","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.mijug.net/docs/browser-compatibility-testing/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://www.mijug.net/assets/logo-mijug-watermark-98x100.svg"},"name":"Bob Kranson"},"url":"https://www.mijug.net/docs/browser-compatibility-testing/"}</script>
 <!-- End Jekyll SEO tag -->
 
   </head>
@@ -117,83 +122,34 @@
   
     <header class="site-header" role="banner">
       <div class="wrapper">
-        <a
-          class="site-title long-title"
-          rel="home"
-          href="/"
-        >
+        <a class="site-title long-title" rel="home" href="/">
           
-          <img
-            src="/assets/logo-mijug-watermark-98x100.svg"
-            alt="My Information Just Under Glass"
-            width="50"
-            height="50"
-          />
+          <img src="/assets/logo-mijug-watermark-98x100.svg" alt="My Information Just Under Glass" width="50" height="50">
            My Information Just Under Glass
         </a>
 
         <nav class="site-nav" role="navigation" aria-label="Main navigation">
-          <input
-            type="checkbox"
-            id="header-nav-trigger"
-            class="nav-trigger"
-            title="Toggle header navigation"
-            aria-label="Toggle navigation menu"
-          />
+          <input type="checkbox" id="header-nav-trigger" class="nav-trigger" title="Toggle header navigation" aria-label="Toggle navigation menu">
           <label for="header-nav-trigger" aria-label="Open navigation menu">
             <span class="menu-icon">
-              <svg
-                viewBox="0 0 18 15"
-                width="18px"
-                height="15px"
-                role="img"
-                aria-label="Menu icon"
-              >
-                <path
-                  d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"
-                />
+              <svg viewbox="0 0 18 15" width="18px" height="15px" role="img" aria-label="Menu icon">
+                <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"></path>
               </svg>
             </span>
           </label>
 
           <div class="trigger">
-            <a
-              class="page-link"
-              href="/about/"
-              aria-label="About MIJUG"
-              >About</a
-            >
-            <button
-              class="nav-button"
-              popovertarget="mobile-navigation"
-              popovertargetaction="show"
-              type="button"
-              aria-label="Open additional navigation menu"
-              aria-haspopup="true"
-              aria-expanded="false"
-            >
+            <a class="page-link" href="/about/" aria-label="About MIJUG">About</a>
+            <button class="nav-button" popovertarget="mobile-navigation" popovertargetaction="show" type="button" aria-label="Open additional navigation menu" aria-haspopup="true" aria-expanded="false">
               Navigation
             </button>
           </div>
         </nav>
       </div>
     </header>
-    <nav
-      popover
-      id="mobile-navigation"
-      class="site-nav"
-      role="dialog"
-      aria-labelledby="nav-heading"
-      aria-modal="true"
-    >
+    <nav popover id="mobile-navigation" class="site-nav" role="dialog" aria-labelledby="nav-heading" aria-modal="true">
       <h2 id="nav-heading" class="sr-only">Additional Navigation</h2>
-      <button
-        class="nav-button"
-        popovertarget="mobile-navigation"
-        popovertargetaction="hide"
-        type="button"
-        aria-label="Close navigation menu"
-      >
+      <button class="nav-button" popovertarget="mobile-navigation" popovertargetaction="hide" type="button" aria-label="Close navigation menu">
         Close
       </button>
 
@@ -203,20 +159,10 @@
           <h3 class="popover-heading">Posts</h3>
           <ul class="nav-list" role="list">
             <li>
-              <a
-                class="page-link"
-                href="/blog/"
-                aria-label="View blog posts"
-                >Blog</a
-              >
+              <a class="page-link" href="/blog/" aria-label="View blog posts">Blog</a>
             </li>
             <li>
-              <a
-                class="page-link"
-                href="/contact/"
-                aria-label="Contact MIJUG"
-                >Contact Us</a
-              >
+              <a class="page-link" href="/contact/" aria-label="Contact MIJUG">Contact Us</a>
             </li>
           </ul>
         </div>
@@ -232,221 +178,133 @@
             
             
             <li>
-              <a
-                class="page-link"
-                href="/docs/welcome-mijug-workspace/"
-                aria-label="View Workspace Home documentation"
-              >
+              <a class="page-link" href="/docs/welcome-mijug-workspace/" aria-label="View Workspace Home documentation">
                 Workspace Home
               </a>
             </li>
             
             <li>
-              <a
-                class="page-link"
-                href="/docs/getting-started/"
-                aria-label="View Getting Started documentation"
-              >
+              <a class="page-link" href="/docs/getting-started/" aria-label="View Getting Started documentation">
                 Getting Started
               </a>
             </li>
             
             <li>
-              <a
-                class="page-link"
-                href="/docs/getting-started-with-typescript-and-jekyll/"
-                aria-label="View Getting Started with TypeScript and Jekyll documentation"
-              >
+              <a class="page-link" href="/docs/getting-started-with-typescript-and-jekyll/" aria-label="View Getting Started with TypeScript and Jekyll documentation">
                 Getting Started with TypeScript and Jekyll
               </a>
             </li>
             
             <li>
-              <a
-                class="page-link"
-                href="/docs/accessibility-testing/"
-                aria-label="View Accessibility Testing Configuration documentation"
-              >
+              <a class="page-link" href="/docs/accessibility-testing/" aria-label="View Accessibility Testing Configuration documentation">
                 Accessibility Testing Configuration
               </a>
             </li>
             
             <li>
-              <a
-                class="page-link"
-                href="/docs/tags-and-categories-guide/"
-                aria-label="View Tags and Categories System Guide documentation"
-              >
+              <a class="page-link" href="/docs/tags-and-categories-guide/" aria-label="View Tags and Categories System Guide documentation">
                 Tags and Categories System Guide
               </a>
             </li>
             
             <li>
-              <a
-                class="page-link"
-                href="/docs/liquid-tags-examples/"
-                aria-label="View Liquid Tags Examples documentation"
-              >
+              <a class="page-link" href="/docs/liquid-tags-examples/" aria-label="View Liquid Tags Examples documentation">
                 Liquid Tags Examples
               </a>
             </li>
             
             <li>
-              <a
-                class="page-link"
-                href="/docs/browser-management/"
-                aria-label="View Browser Management for Testing documentation"
-              >
+              <a class="page-link" href="/docs/browser-management/" aria-label="View Browser Management for Testing documentation">
                 Browser Management for Testing
               </a>
             </li>
             
             <li>
-              <a
-                class="page-link"
-                href="/docs/browser-compatibility-system/"
-                aria-label="View Browser Compatibility Detection &amp; Testing System documentation"
-              >
+              <a class="page-link" href="/docs/browser-compatibility-system/" aria-label="View Browser Compatibility Detection &amp; Testing System documentation">
                 Browser Compatibility Detection &amp; Testing System
               </a>
             </li>
             
             <li>
-              <a
-                class="page-link"
-                href="/docs/browser-compatibility-testing/"
-                aria-label="View Browser Compatibility Testing documentation"
-              >
+              <a class="page-link" href="/docs/browser-compatibility-testing/" aria-label="View Browser Compatibility Testing documentation">
                 Browser Compatibility Testing
               </a>
             </li>
             
             <li>
-              <a
-                class="page-link"
-                href="/docs/cache-management/"
-                aria-label="View Cache Management Strategies documentation"
-              >
+              <a class="page-link" href="/docs/cache-management/" aria-label="View Cache Management Strategies documentation">
                 Cache Management Strategies
               </a>
             </li>
             
             <li>
-              <a
-                class="page-link"
-                href="/docs/rel-attribute-guide/"
-                aria-label="View The rel Attribute in HTML Links: A Comprehensive Guide documentation"
-              >
+              <a class="page-link" href="/docs/rel-attribute-guide/" aria-label="View The rel Attribute in HTML Links: A Comprehensive Guide documentation">
                 The rel Attribute in HTML Links: A Comprehensive Guide
               </a>
             </li>
             
             <li>
-              <a
-                class="page-link"
-                href="/docs/frontmatter-cms/"
-                aria-label="View FrontMatter CMS Usage documentation"
-              >
+              <a class="page-link" href="/docs/frontmatter-cms/" aria-label="View FrontMatter CMS Usage documentation">
                 FrontMatter CMS Usage
               </a>
             </li>
             
             <li>
-              <a
-                class="page-link"
-                href="/docs/performance-optimization/"
-                aria-label="View Performance Optimization Guide documentation"
-              >
+              <a class="page-link" href="/docs/performance-optimization/" aria-label="View Performance Optimization Guide documentation">
                 Performance Optimization Guide
               </a>
             </li>
             
             <li>
-              <a
-                class="page-link"
-                href="/docs/testing-performance-evolution/"
-                aria-label="View Testing Performance and Development Evolution documentation"
-              >
+              <a class="page-link" href="/docs/testing-performance-evolution/" aria-label="View Testing Performance and Development Evolution documentation">
                 Testing Performance and Development Evolution
               </a>
             </li>
             
             <li>
-              <a
-                class="page-link"
-                href="/docs/eslint-9-upgrade-guide/"
-                aria-label="View ESLint 9 Upgrade: Migration Guide and Benefits documentation"
-              >
+              <a class="page-link" href="/docs/eslint-9-upgrade-guide/" aria-label="View ESLint 9 Upgrade: Migration Guide and Benefits documentation">
                 ESLint 9 Upgrade: Migration Guide and Benefits
               </a>
             </li>
             
             <li>
-              <a
-                class="page-link"
-                href="/docs/mermaid-test-runner/"
-                aria-label="View Mermaid Test Runner documentation"
-              >
+              <a class="page-link" href="/docs/mermaid-test-runner/" aria-label="View Mermaid Test Runner documentation">
                 Mermaid Test Runner
               </a>
             </li>
             
             <li>
-              <a
-                class="page-link"
-                href="/docs/mermaid-quick-start/"
-                aria-label="View Mermaid Quick Start documentation"
-              >
+              <a class="page-link" href="/docs/mermaid-quick-start/" aria-label="View Mermaid Quick Start documentation">
                 Mermaid Quick Start
               </a>
             </li>
             
             <li>
-              <a
-                class="page-link"
-                href="/docs/mermaid-configuration-guide/"
-                aria-label="View Mermaid Diagram Configuration Guide documentation"
-              >
+              <a class="page-link" href="/docs/mermaid-configuration-guide/" aria-label="View Mermaid Diagram Configuration Guide documentation">
                 Mermaid Diagram Configuration Guide
               </a>
             </li>
             
             <li>
-              <a
-                class="page-link"
-                href="/docs/mermaid-examples/"
-                aria-label="View Mermaid Diagram Examples documentation"
-              >
+              <a class="page-link" href="/docs/mermaid-examples/" aria-label="View Mermaid Diagram Examples documentation">
                 Mermaid Diagram Examples
               </a>
             </li>
             
             <li>
-              <a
-                class="page-link"
-                href="/docs/mermaid-default-layout/"
-                aria-label="View Mermaid on Default Layout documentation"
-              >
+              <a class="page-link" href="/docs/mermaid-default-layout/" aria-label="View Mermaid on Default Layout documentation">
                 Mermaid on Default Layout
               </a>
             </li>
             
             <li>
-              <a
-                class="page-link"
-                href="/docs/mermaid-basic/"
-                aria-label="View Mermaid Basic documentation"
-              >
+              <a class="page-link" href="/docs/mermaid-basic/" aria-label="View Mermaid Basic documentation">
                 Mermaid Basic
               </a>
             </li>
             
             <li>
-              <a
-                class="page-link"
-                href="/docs/mermaid-diagrams-sample/"
-                aria-label="View Delivery Slides Mermaid Diagrams Showcase documentation"
-              >
+              <a class="page-link" href="/docs/mermaid-diagrams-sample/" aria-label="View Delivery Slides Mermaid Diagrams Showcase documentation">
                 Delivery Slides Mermaid Diagrams Showcase
               </a>
             </li>
@@ -463,67 +321,79 @@
           <ul class="nav-list" role="list" aria-label="Blog post categories">
             
             <li>
-              <a
-                class="page-link"
-                href="/category/announcements"
-                aria-label="View Announcements category with 5 posts"
-              >
+              <a class="page-link" href="/category/announcements" aria-label="View Announcements category with 5 posts">
                 Announcements
-                <span class="count" aria-hidden="true"
-                  >(5)</span
-                >
+                <span class="count" aria-hidden="true">(5)</span>
               </a>
             </li>
             
             <li>
-              <a
-                class="page-link"
-                href="/category/linux"
-                aria-label="View Linux category with 2 posts"
-              >
+              <a class="page-link" href="/category/linux" aria-label="View Linux category with 2 posts">
                 Linux
-                <span class="count" aria-hidden="true"
-                  >(2)</span
-                >
+                <span class="count" aria-hidden="true">(2)</span>
               </a>
             </li>
             
             <li>
-              <a
-                class="page-link"
-                href="/category/documentation"
-                aria-label="View Documentation category with 1 posts"
-              >
+              <a class="page-link" href="/category/documentation" aria-label="View Documentation category with 1 posts">
                 Documentation
-                <span class="count" aria-hidden="true"
-                  >(1)</span
-                >
+                <span class="count" aria-hidden="true">(1)</span>
               </a>
             </li>
             
             <li>
-              <a
-                class="page-link"
-                href="/category/navigation"
-                aria-label="View Navigation category with 1 posts"
-              >
+              <a class="page-link" href="/category/navigation" aria-label="View Navigation category with 1 posts">
                 Navigation
-                <span class="count" aria-hidden="true"
-                  >(1)</span
-                >
+                <span class="count" aria-hidden="true">(1)</span>
               </a>
             </li>
             
             <li>
-              <a
-                class="page-link"
-                href="/category/getting-started"
-                aria-label="View Getting-started category with 3 posts"
-              >
+              <a class="page-link" href="/category/getting-started" aria-label="View Getting-started category with 3 posts">
                 Getting-started
-                <span class="count" aria-hidden="true"
-                  >(3)</span
-                >
+                <span class="count" aria-hidden="true">(3)</span>
+              </a>
+            </li>
+            
+            <li>
+              <a class="page-link" href="/category/digital-legacy" aria-label="View Digital-legacy category with 1 posts">
+                Digital-legacy
+                <span class="count" aria-hidden="true">(1)</span>
+              </a>
+            </li>
+            
+            <li>
+              <a class="page-link" href="/category/guides" aria-label="View Guides category with 1 posts">
+                Guides
+                <span class="count" aria-hidden="true">(1)</span>
+              </a>
+            </li>
+            
+            <li>
+              <a class="page-link" href="/category/history" aria-label="View History category with 1 posts">
+                History
+                <span class="count" aria-hidden="true">(1)</span>
+              </a>
+            </li>
+            
+            <li>
+              <a class="page-link" href="/category/home" aria-label="View Home category with 1 posts">
+                Home
+                <span class="count" aria-hidden="true">(1)</span>
+              </a>
+            </li>
+            
+            <li>
+              <a class="page-link" href="/category/technology" aria-label="View Technology category with 1 posts">
+                Technology
+                <span class="count" aria-hidden="true">(1)</span>
+              </a>
+            </li>
+            
+            <li>
+              <a class="page-link" href="/category/labor-day" aria-label="View Labor-day category with 1 posts">
+                Labor-day
+                <span class="count" aria-hidden="true">(1)</span>
               </a>
             </li>
             
@@ -538,132 +408,72 @@
           <ul class="nav-list" role="list" aria-label="Blog post tags">
              
             <li>
-              <a
-                class="page-link"
-                href="/tag/ai"
-                aria-label="View posts tagged with ai (1 posts)"
-              >
-                #ai
-                <span class="count" aria-hidden="true"
-                  >(1)</span
-                >
+              <a class="page-link" href="/tag/appliances" aria-label="View posts tagged with appliances (1 posts)">
+                #appliances
+                <span class="count" aria-hidden="true">(1)</span>
               </a>
             </li>
             
             <li>
-              <a
-                class="page-link"
-                href="/tag/asus"
-                aria-label="View posts tagged with asus (1 posts)"
-              >
-                #asus
-                <span class="count" aria-hidden="true"
-                  >(1)</span
-                >
+              <a class="page-link" href="/tag/computers" aria-label="View posts tagged with computers (1 posts)">
+                #computers
+                <span class="count" aria-hidden="true">(1)</span>
               </a>
             </li>
             
             <li>
-              <a
-                class="page-link"
-                href="/tag/compatibility"
-                aria-label="View posts tagged with compatibility (1 posts)"
-              >
-                #compatibility
-                <span class="count" aria-hidden="true"
-                  >(1)</span
-                >
-              </a>
-            </li>
-            
-            <li>
-              <a
-                class="page-link"
-                href="/tag/cpus"
-                aria-label="View posts tagged with cpus (2 posts)"
-              >
+              <a class="page-link" href="/tag/cpus" aria-label="View posts tagged with cpus (1 posts)">
                 #cpus
-                <span class="count" aria-hidden="true"
-                  >(2)</span
-                >
+                <span class="count" aria-hidden="true">(1)</span>
               </a>
             </li>
             
             <li>
-              <a
-                class="page-link"
-                href="/tag/diy"
-                aria-label="View posts tagged with diy (1 posts)"
-              >
+              <a class="page-link" href="/tag/digital-legacy" aria-label="View posts tagged with digital-legacy (1 posts)">
+                #digital-legacy
+                <span class="count" aria-hidden="true">(1)</span>
+              </a>
+            </li>
+            
+            <li>
+              <a class="page-link" href="/tag/diy" aria-label="View posts tagged with diy (1 posts)">
                 #diy
-                <span class="count" aria-hidden="true"
-                  >(1)</span
-                >
+                <span class="count" aria-hidden="true">(1)</span>
               </a>
             </li>
             
             <li>
-              <a
-                class="page-link"
-                href="/tag/docs"
-                aria-label="View posts tagged with docs (1 posts)"
-              >
+              <a class="page-link" href="/tag/docs" aria-label="View posts tagged with docs (1 posts)">
                 #docs
-                <span class="count" aria-hidden="true"
-                  >(1)</span
-                >
+                <span class="count" aria-hidden="true">(1)</span>
               </a>
             </li>
             
             <li>
-              <a
-                class="page-link"
-                href="/tag/e-waste"
-                aria-label="View posts tagged with e-waste (3 posts)"
-              >
+              <a class="page-link" href="/tag/e-waste" aria-label="View posts tagged with e-waste (4 posts)">
                 #e-waste
-                <span class="count" aria-hidden="true"
-                  >(3)</span
-                >
+                <span class="count" aria-hidden="true">(4)</span>
               </a>
             </li>
             
             <li>
-              <a
-                class="page-link"
-                href="/tag/education"
-                aria-label="View posts tagged with education (1 posts)"
-              >
+              <a class="page-link" href="/tag/education" aria-label="View posts tagged with education (1 posts)">
                 #education
-                <span class="count" aria-hidden="true"
-                  >(1)</span
-                >
+                <span class="count" aria-hidden="true">(1)</span>
               </a>
             </li>
             
             <li>
-              <a
-                class="page-link"
-                href="/tag/evening-schedules"
-                aria-label="View posts tagged with evening-schedules (1 posts)"
-              >
+              <a class="page-link" href="/tag/evening-schedules" aria-label="View posts tagged with evening-schedules (1 posts)">
                 #evening-schedules
-                <span class="count" aria-hidden="true"
-                  >(1)</span
-                >
+                <span class="count" aria-hidden="true">(1)</span>
               </a>
             </li>
             
             <li>
-              <a
-                class="page-link"
-                href="/tag/get-smart"
-                aria-label="View posts tagged with get-smart (1 posts)"
-              >
-                #get-smart
-                <span class="count" aria-hidden="true"
-                  >(1)</span
-                >
+              <a class="page-link" href="/tag/gpus" aria-label="View posts tagged with gpus (1 posts)">
+                #gpus
+                <span class="count" aria-hidden="true">(1)</span>
               </a>
             </li>
             
@@ -673,12 +483,14 @@
       </div>
     </nav>
     <main class="page-content" aria-label="Content">
-      <div class="wrapper"><article class="post">
+      <div class="wrapper">
+<article class="post">
   <header class="post-header">
     <h1 class="post-title">Browser Compatibility Testing</h1>
   </header>
 
-  <div class="post-content"><h1 id="browser-compatibility-testing">Browser Compatibility Testing</h1>
+  <div class="post-content">
+<h1 id="browser-compatibility-testing">Browser Compatibility Testing</h1>
 
 <p>This document describes the browser compatibility testing system for MIJUG .NET, which validates browser version detection and ensures the browserslist configuration is being respected.</p>
 
@@ -687,10 +499,14 @@
 <p>The browser compatibility test suite simulates different browser versions to verify:</p>
 
 <ol>
-  <li><strong>Browser Version Detection</strong>: Accurate detection of browser name and version</li>
-  <li><strong>Browser Age Calculation</strong>: Appropriate age display with warnings for outdated browsers</li>
-  <li><strong>Browserslist Compliance</strong>: Respect for the project’s browserslist configuration</li>
-  <li><strong>User Experience</strong>: Proper warning display for unsupported browsers</li>
+  <li>
+<strong>Browser Version Detection</strong>: Accurate detection of browser name and version</li>
+  <li>
+<strong>Browser Age Calculation</strong>: Appropriate age display with warnings for outdated browsers</li>
+  <li>
+<strong>Browserslist Compliance</strong>: Respect for the project’s browserslist configuration</li>
+  <li>
+<strong>User Experience</strong>: Proper warning display for unsupported browsers</li>
 </ol>
 
 <h2 id="browserslist-configuration">Browserslist Configuration</h2>
@@ -718,10 +534,14 @@
 <p>Tests that current, up-to-date browsers are detected correctly:</p>
 
 <ul>
-  <li><strong>Chrome 128+</strong>: Should show as “recent” or with specific age</li>
-  <li><strong>Firefox 129+</strong>: Should show as “recent” or with specific age</li>
-  <li><strong>Safari 18+</strong>: Should show as “recent” or with specific age</li>
-  <li><strong>Edge 128+</strong>: Should show as “recent” or with specific age</li>
+  <li>
+<strong>Chrome 128+</strong>: Should show as “recent” or with specific age</li>
+  <li>
+<strong>Firefox 129+</strong>: Should show as “recent” or with specific age</li>
+  <li>
+<strong>Safari 18+</strong>: Should show as “recent” or with specific age</li>
+  <li>
+<strong>Edge 128+</strong>: Should show as “recent” or with specific age</li>
 </ul>
 
 <h3 id="2-supported-browser-detection">2. Supported Browser Detection</h3>
@@ -729,10 +549,14 @@
 <p>Tests browsers within the browserslist range:</p>
 
 <ul>
-  <li><strong>Chrome 80</strong>: Should be marked as supported but older</li>
-  <li><strong>Firefox 75</strong>: Should be marked as supported but older</li>
-  <li><strong>Safari 14</strong>: Should be marked as supported but older</li>
-  <li><strong>Edge 83</strong>: Should be marked as supported but older</li>
+  <li>
+<strong>Chrome 80</strong>: Should be marked as supported but older</li>
+  <li>
+<strong>Firefox 75</strong>: Should be marked as supported but older</li>
+  <li>
+<strong>Safari 14</strong>: Should be marked as supported but older</li>
+  <li>
+<strong>Edge 83</strong>: Should be marked as supported but older</li>
 </ul>
 
 <h3 id="3-unsupported-browser-warning">3. Unsupported Browser Warning</h3>
@@ -740,10 +564,14 @@
 <p>Tests browsers below the browserslist threshold:</p>
 
 <ul>
-  <li><strong>Chrome 58</strong>: Should show “Age unknown (Older version)” warning</li>
-  <li><strong>Firefox 52</strong>: Should show age warning</li>
-  <li><strong>Safari 11</strong>: Should show age warning</li>
-  <li><strong>Edge 15</strong>: Should show age warning</li>
+  <li>
+<strong>Chrome 58</strong>: Should show “Age unknown (Older version)” warning</li>
+  <li>
+<strong>Firefox 52</strong>: Should show age warning</li>
+  <li>
+<strong>Safari 11</strong>: Should show age warning</li>
+  <li>
+<strong>Edge 15</strong>: Should show age warning</li>
 </ul>
 
 <h3 id="4-future-browser-handling">4. Future Browser Handling</h3>
@@ -751,8 +579,10 @@
 <p>Tests very new browsers not in the release database:</p>
 
 <ul>
-  <li><strong>Chrome 150</strong>: Should show “Very recent ✨ (Newer than our database)”</li>
-  <li><strong>Firefox 150</strong>: Should show “Very recent ✨ (Newer than our database)”</li>
+  <li>
+<strong>Chrome 150</strong>: Should show “Very recent ✨ (Newer than our database)”</li>
+  <li>
+<strong>Firefox 150</strong>: Should show “Very recent ✨ (Newer than our database)”</li>
 </ul>
 
 <h2 id="running-the-tests">Running the Tests</h2>
@@ -799,20 +629,29 @@ npx playwright <span class="nb">test</span> <span class="nt">--grep</span> <span
 <h3 id="-passing-scenarios">✅ Passing Scenarios</h3>
 
 <ol>
-  <li><strong>Modern Browsers</strong>: Detected with appropriate age indicators (✨, days/months old)</li>
-  <li><strong>Supported Browsers</strong>: Marked as supported with accurate age calculation</li>
-  <li><strong>Old Browsers</strong>: Show warnings (⚠️ Outdated, ⚡ Consider updating)</li>
-  <li><strong>Future Browsers</strong>: Handle gracefully with “Very recent” indicators</li>
-  <li><strong>Accessibility</strong>: All browser info elements properly labeled and accessible</li>
+  <li>
+<strong>Modern Browsers</strong>: Detected with appropriate age indicators (✨, days/months old)</li>
+  <li>
+<strong>Supported Browsers</strong>: Marked as supported with accurate age calculation</li>
+  <li>
+<strong>Old Browsers</strong>: Show warnings (⚠️ Outdated, ⚡ Consider updating)</li>
+  <li>
+<strong>Future Browsers</strong>: Handle gracefully with “Very recent” indicators</li>
+  <li>
+<strong>Accessibility</strong>: All browser info elements properly labeled and accessible</li>
 </ol>
 
 <h3 id="-failing-scenarios-expected-warnings">❌ Failing Scenarios (Expected Warnings)</h3>
 
 <ol>
-  <li><strong>Chrome &lt; 60</strong>: Should fail browserslist validation</li>
-  <li><strong>Firefox &lt; 55</strong>: Should fail browserslist validation</li>
-  <li><strong>Safari &lt; 12</strong>: Should fail browserslist validation</li>
-  <li><strong>Edge &lt; 16</strong>: Should fail browserslist validation</li>
+  <li>
+<strong>Chrome &lt; 60</strong>: Should fail browserslist validation</li>
+  <li>
+<strong>Firefox &lt; 55</strong>: Should fail browserslist validation</li>
+  <li>
+<strong>Safari &lt; 12</strong>: Should fail browserslist validation</li>
+  <li>
+<strong>Edge &lt; 16</strong>: Should fail browserslist validation</li>
 </ol>
 
 <h2 id="browser-info-display">Browser Info Display</h2>
@@ -821,12 +660,18 @@ npx playwright <span class="nb">test</span> <span class="nt">--grep</span> <span
 
 <h3 id="browser-details">Browser Details</h3>
 <ul>
-  <li><strong>Browser Name</strong>: Chrome, Firefox, Safari, Edge, Opera</li>
-  <li><strong>Browser Version</strong>: Major.minor version number</li>
-  <li><strong>Browser Age</strong>: Age with visual indicators</li>
-  <li><strong>Platform</strong>: Operating system</li>
-  <li><strong>Language</strong>: Browser language setting</li>
-  <li><strong>Cookies</strong>: Whether cookies are enabled</li>
+  <li>
+<strong>Browser Name</strong>: Chrome, Firefox, Safari, Edge, Opera</li>
+  <li>
+<strong>Browser Version</strong>: Major.minor version number</li>
+  <li>
+<strong>Browser Age</strong>: Age with visual indicators</li>
+  <li>
+<strong>Platform</strong>: Operating system</li>
+  <li>
+<strong>Language</strong>: Browser language setting</li>
+  <li>
+<strong>Cookies</strong>: Whether cookies are enabled</li>
 </ul>
 
 <h3 id="visual-age-indicators">Visual Age Indicators</h3>
@@ -871,10 +716,14 @@ npx playwright <span class="nb">test</span> <span class="nt">--grep</span> <span
 <p>The test suite includes accessibility validation:</p>
 
 <ul>
-  <li><strong>WCAG 2.1 AA Compliance</strong>: Using axe-core for automated a11y testing</li>
-  <li><strong>Proper Labeling</strong>: All browser info elements have associated labels</li>
-  <li><strong>Keyboard Navigation</strong>: Cache busting shortcuts work properly</li>
-  <li><strong>Screen Reader Support</strong>: Information is properly structured</li>
+  <li>
+<strong>WCAG 2.1 AA Compliance</strong>: Using axe-core for automated a11y testing</li>
+  <li>
+<strong>Proper Labeling</strong>: All browser info elements have associated labels</li>
+  <li>
+<strong>Keyboard Navigation</strong>: Cache busting shortcuts work properly</li>
+  <li>
+<strong>Screen Reader Support</strong>: Information is properly structured</li>
 </ul>
 
 <h2 id="integration-with-jekyll">Integration with Jekyll</h2>
@@ -882,10 +731,14 @@ npx playwright <span class="nb">test</span> <span class="nt">--grep</span> <span
 <p>The tests validate Jekyll-specific features:</p>
 
 <ul>
-  <li><strong>Cache Busting</strong>: Meta tags and JavaScript cache versioning</li>
-  <li><strong>Development Mode</strong>: Additional debug information display</li>
-  <li><strong>Environment Variables</strong>: Proper handling of Jekyll environments</li>
-  <li><strong>Build Verification</strong>: Ensures Jekyll site builds before testing</li>
+  <li>
+<strong>Cache Busting</strong>: Meta tags and JavaScript cache versioning</li>
+  <li>
+<strong>Development Mode</strong>: Additional debug information display</li>
+  <li>
+<strong>Environment Variables</strong>: Proper handling of Jekyll environments</li>
+  <li>
+<strong>Build Verification</strong>: Ensures Jekyll site builds before testing</li>
 </ul>
 
 <h2 id="debugging-failed-tests">Debugging Failed Tests</h2>
@@ -893,21 +746,27 @@ npx playwright <span class="nb">test</span> <span class="nt">--grep</span> <span
 <h3 id="common-issues">Common Issues</h3>
 
 <ol>
-  <li><strong>Timeout Errors</strong>: Usually indicates the about page isn’t loading properly
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Check if Jekyll site exists</span>
+  <li>
+<strong>Timeout Errors</strong>: Usually indicates the about page isn’t loading properly
+    <div class="language-bash highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="c"># Check if Jekyll site exists</span>
 <span class="nb">ls</span> <span class="nt">-la</span> docs/_site/about/index.html
 
 <span class="c"># Rebuild if needed</span>
 npm run build:jekyll:drafts
 </code></pre></div>    </div>
   </li>
-  <li><strong>Version Mismatch</strong>: Test expectations don’t match detected versions
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Check what version is actually detected</span>
+  <li>
+<strong>Version Mismatch</strong>: Test expectations don’t match detected versions
+    <div class="language-bash highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="c"># Check what version is actually detected</span>
 npx playwright <span class="nb">test</span> <span class="nt">--grep</span> <span class="s2">"browser info"</span> <span class="nt">--reporter</span><span class="o">=</span>line
 </code></pre></div>    </div>
   </li>
-  <li><strong>URL Construction</strong>: File path issues in different environments
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Set explicit base URL</span>
+  <li>
+<strong>URL Construction</strong>: File path issues in different environments
+    <div class="language-bash highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code><span class="c"># Set explicit base URL</span>
 <span class="nv">BASE_URL</span><span class="o">=</span><span class="s2">"file://</span><span class="si">$(</span><span class="nb">pwd</span><span class="si">)</span><span class="s2">/docs/_site"</span> npx playwright <span class="nb">test</span>
 </code></pre></div>    </div>
   </li>
@@ -938,17 +797,22 @@ npx playwright <span class="nb">test</span> <span class="nt">--trace</span> on <
 <h2 id="future-enhancements">Future Enhancements</h2>
 
 <ol>
-  <li><strong>Dynamic Release Dates</strong>: Fetch current browser release schedules</li>
-  <li><strong>Custom Warnings</strong>: Site-specific compatibility messages</li>
-  <li><strong>Performance Metrics</strong>: Browser performance testing</li>
-  <li><strong>Real Device Testing</strong>: Cross-platform validation</li>
-  <li><strong>Analytics Integration</strong>: Track visitor browser distributions</li>
+  <li>
+<strong>Dynamic Release Dates</strong>: Fetch current browser release schedules</li>
+  <li>
+<strong>Custom Warnings</strong>: Site-specific compatibility messages</li>
+  <li>
+<strong>Performance Metrics</strong>: Browser performance testing</li>
+  <li>
+<strong>Real Device Testing</strong>: Cross-platform validation</li>
+  <li>
+<strong>Analytics Integration</strong>: Track visitor browser distributions</li>
 </ol>
 
-<hr />
+<hr>
 
-<p><strong>Last Updated</strong>: August 4, 2025
-<strong>Test Coverage</strong>: 95%+ browser compatibility scenarios
+<p><strong>Last Updated</strong>: August 4, 2025<br>
+<strong>Test Coverage</strong>: 95%+ browser compatibility scenarios<br>
 <strong>Supported Browsers</strong>: Chrome 60+, Firefox 55+, Safari 12+, Edge 16+</p>
 </div>
 </article>
@@ -959,7 +823,7 @@ npx playwright <span class="nb">test</span> <span class="nt">--trace</span> on <
       <div class="wrapper">
         <div class="footer-col-wrapper">
           <div class="footer-col footer-col-1">
-            <a href="/terms-of-service.html">Terms of Service</a><br />
+            <a href="/terms-of-service.html">Terms of Service</a><br>
             <a href="/privacy-policy.html">Privacy Policy</a>
           </div>
           <div class="footer-col footer-col-2">
@@ -967,17 +831,11 @@ npx playwright <span class="nb">test</span> <span class="nt">--trace</span> on <
           </div>
           <div class="footer-col footer-col-3">
             <p>
-              &copy; 2025
-              <a rel="external nofollow" href="https://share.google/8Ir6br641K4uU74l2"
-                >Kranson Enterprises</a
-              ><br />
-              &nbsp;&nbsp;&nbsp;&nbsp;subscribe
-              <a href="/feed.xml"
-                >via RSS<svg class="svg-icon">
-                  <use
-                    xlink:href="/assets/minima-social-icons.svg#rss"
-                  ></use></svg
-              ></a>
+              © 2025
+              <a rel="external nofollow" href="https://share.google/8Ir6br641K4uU74l2">Kranson Enterprises</a><br>
+                  subscribe
+              <a href="/feed.xml">via RSS<svg class="svg-icon">
+                  <use xlink:href="/assets/minima-social-icons.svg#rss"></use></svg></a>
             </p>
           </div>
         </div>
@@ -987,10 +845,642 @@ npx playwright <span class="nb">test</span> <span class="nt">--trace</span> on <
     
 
     <!-- Google AdSense -->
-    <!-- {  % include google-adsense.html %  } -->
+    <!-- Google AdSense with Consent Mode Support -->
+<script>
+  // Initialize consent mode for AdSense
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+
+  // Set default consent state
+  gtag('consent', 'default', {
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied',
+  });
+</script>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3383458876439157" crossorigin="anonymous"></script>
+
 
     <!-- Cookie Consent Banner for GDPR Compliance -->
-    <!-- {  % include cookie-consent.html %  } -->
+    <!-- Cookie Consent Banner for GDPR Compliance -->
+<div id="cookie-consent-banner" class="cookie-consent-banner" role="complementary" aria-label="Cookie consent banner" aria-live="polite" style="display: none">
+  <div class="cookie-consent-content">
+    <div class="cookie-consent-text">
+      <p>
+        <strong>🍪 Cookie Notice</strong><br>
+        This website uses cookies for Google AdSense and analytics to improve
+        your experience.
+        <a href="/privacy-policy.html" class="cookie-policy-link">Learn more in our Privacy Policy</a>
+      </p>
+    </div>
+    <div class="cookie-consent-buttons">
+      <button id="accept-cookies" class="cookie-btn cookie-btn-accept" onclick="acceptCookies()">
+        Accept All Cookies
+      </button>
+      <button id="decline-cookies" class="cookie-btn cookie-btn-decline" onclick="declineCookies()">
+        Decline Optional Cookies
+      </button>
+      <button id="cookie-settings" class="cookie-btn cookie-btn-settings" onclick="showCookieSettings()">
+        Cookie Settings
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Cookie Settings Modal -->
+<div id="cookie-settings-modal" class="cookie-modal" style="display: none" role="dialog" aria-modal="true" aria-labelledby="cookie-settings-title">
+  <div class="cookie-modal-content">
+    <div class="cookie-modal-header">
+      <h3 id="cookie-settings-title">Cookie Settings</h3>
+      <button class="cookie-modal-close" onclick="closeCookieSettings()" aria-label="Close cookie settings dialog">
+        ×
+      </button>
+    </div>
+    <div class="cookie-modal-body">
+      <div class="cookie-category">
+        <div class="cookie-category-header">
+          <h4>Essential Cookies</h4>
+          <label class="cookie-toggle" for="essential-cookies">
+            <input type="checkbox" id="essential-cookies" checked disabled>
+            <span class="cookie-slider"></span>
+          </label>
+        </div>
+        <p>Required for basic site functionality. These cannot be disabled.</p>
+      </div>
+
+      <div class="cookie-category">
+        <div class="cookie-category-header">
+          <h4>Analytics Cookies</h4>
+          <label class="cookie-toggle" for="analytics-cookies">
+            <input type="checkbox" id="analytics-cookies">
+            <span class="cookie-slider"></span>
+          </label>
+        </div>
+        <p>
+          Help us understand how visitors interact with our website via Google
+          Analytics.
+        </p>
+      </div>
+
+      <div class="cookie-category">
+        <div class="cookie-category-header">
+          <h4>Advertising Cookies</h4>
+          <label class="cookie-toggle" for="advertising-cookies">
+            <input type="checkbox" id="advertising-cookies">
+            <span class="cookie-slider"></span>
+          </label>
+        </div>
+        <p>Used by Google AdSense to display relevant advertisements.</p>
+      </div>
+    </div>
+    <div class="cookie-modal-footer">
+      <button class="cookie-btn cookie-btn-accept" onclick="savePreferences()">
+        Save Preferences
+      </button>
+      <button class="cookie-btn cookie-btn-decline" onclick="closeCookieSettings()">
+        Cancel
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Cookie Consent Management
+  (function () {
+    'use strict';
+
+    const COOKIE_CONSENT_KEY = 'mijug-cookie-consent';
+    const COOKIE_PREFERENCES_KEY = 'mijug-cookie-preferences';
+    const CONSENT_EXPIRY_DAYS = 365;
+
+    // Check if user is from EU (simplified check)
+    function isEUUser() {
+      // In production, use a proper geolocation service
+      // For now, show to all users for compliance
+      return true;
+    }
+
+    // Get cookie value
+    function getCookie(name) {
+      const value = `; ${document.cookie}`;
+      const parts = value.split(`; ${name}=`);
+      if (parts.length === 2) return parts.pop().split(';').shift();
+      return null;
+    }
+
+    // Set cookie
+    function setCookie(name, value, days) {
+      const expires = new Date();
+      expires.setTime(expires.getTime() + days * 24 * 60 * 60 * 1000);
+      document.cookie = `${name}=${value};expires=${expires.toUTCString()};path=/;SameSite=Strict`;
+    }
+
+    // Show cookie banner
+    function showCookieBanner() {
+      const banner = document.getElementById('cookie-consent-banner');
+      if (banner) {
+        banner.style.display = 'block';
+        banner.setAttribute('aria-hidden', 'false');
+      }
+    }
+
+    // Hide cookie banner
+    function hideCookieBanner() {
+      const banner = document.getElementById('cookie-consent-banner');
+      if (banner) {
+        banner.style.display = 'none';
+        banner.setAttribute('aria-hidden', 'true');
+      }
+    }
+
+    // Load Google Analytics conditionally
+    function loadAnalytics() {
+      if (hasAnalyticsConsent()) {
+        // Load Google Analytics if consent given
+        if (typeof gtag !== 'undefined') {
+          gtag('consent', 'update', {
+            analytics_storage: 'granted',
+          });
+        }
+      }
+    }
+
+    // Load AdSense conditionally
+    function loadAdSense() {
+      if (hasAdvertisingConsent()) {
+        // Load AdSense if consent given
+        if (typeof gtag !== 'undefined') {
+          gtag('consent', 'update', {
+            ad_storage: 'granted',
+            ad_user_data: 'granted',
+            ad_personalization: 'granted',
+          });
+        }
+      }
+    }
+
+    // Check consent status
+    function hasConsent() {
+      return getCookie(COOKIE_CONSENT_KEY) !== null;
+    }
+
+    function hasAnalyticsConsent() {
+      const preferences = getCookie(COOKIE_PREFERENCES_KEY);
+      if (!preferences) return false;
+      try {
+        const prefs = JSON.parse(preferences);
+        return prefs.analytics === true;
+      } catch {
+        return false;
+      }
+    }
+
+    function hasAdvertisingConsent() {
+      const preferences = getCookie(COOKIE_PREFERENCES_KEY);
+      if (!preferences) return false;
+      try {
+        const prefs = JSON.parse(preferences);
+        return prefs.advertising === true;
+      } catch {
+        return false;
+      }
+    }
+
+    // Focus trap for modal
+    function trapFocus(modal) {
+      const focusableSelectors = 'button, [href], input:not([type=hidden]), select, textarea, [tabindex]:not([tabindex="-1"])';
+      const focusableEls = modal.querySelectorAll(focusableSelectors);
+      const firstFocusableEl = focusableEls[0];
+      const lastFocusableEl = focusableEls[focusableEls.length - 1];
+
+      function handleTab(e) {
+        if (e.key === 'Tab') {
+          if (e.shiftKey) {
+            if (document.activeElement === firstFocusableEl) {
+              e.preventDefault();
+              lastFocusableEl.focus();
+            }
+          } else {
+            if (document.activeElement === lastFocusableEl) {
+              e.preventDefault();
+              firstFocusableEl.focus();
+            }
+          }
+        }
+      }
+
+      function handleEscape(e) {
+        if (e.key === 'Escape') {
+          closeCookieSettings();
+        }
+      }
+
+      modal.addEventListener('keydown', handleTab);
+      modal.addEventListener('keydown', handleEscape);
+      // Remove listeners on close
+      modal._removeFocusTrap = function () {
+        modal.removeEventListener('keydown', handleTab);
+        modal.removeEventListener('keydown', handleEscape);
+      };
+    }
+
+    // Global functions for buttons
+    window.acceptCookies = function () {
+      const preferences = {
+        analytics: true,
+        advertising: true,
+      };
+      setCookie(COOKIE_CONSENT_KEY, 'accepted', CONSENT_EXPIRY_DAYS);
+      setCookie(
+        COOKIE_PREFERENCES_KEY,
+        JSON.stringify(preferences),
+        CONSENT_EXPIRY_DAYS
+      );
+      hideCookieBanner();
+      loadAnalytics();
+      loadAdSense();
+    };
+
+    window.declineCookies = function () {
+      const preferences = {
+        analytics: false,
+        advertising: false,
+      };
+      setCookie(COOKIE_CONSENT_KEY, 'declined', CONSENT_EXPIRY_DAYS);
+      setCookie(
+        COOKIE_PREFERENCES_KEY,
+        JSON.stringify(preferences),
+        CONSENT_EXPIRY_DAYS
+      );
+      hideCookieBanner();
+    };
+
+    window.showCookieSettings = function () {
+      const modal = document.getElementById('cookie-settings-modal');
+      if (modal) {
+        // Load current preferences
+        const preferences = getCookie(COOKIE_PREFERENCES_KEY);
+        if (preferences) {
+          try {
+            const prefs = JSON.parse(preferences);
+            document.getElementById('analytics-cookies').checked =
+              prefs.analytics || false;
+            document.getElementById('advertising-cookies').checked =
+              prefs.advertising || false;
+          } catch {
+            // Default to false if parsing fails
+          }
+        }
+        modal.style.display = 'block';
+        modal.setAttribute('aria-hidden', 'false');
+        // Focus management: focus first button
+        setTimeout(function () {
+          const firstBtn = modal.querySelector('button, [href], input:not([type=hidden]), select, textarea, [tabindex]:not([tabindex="-1"])');
+          if (firstBtn) firstBtn.focus();
+        }, 0);
+        trapFocus(modal);
+      }
+    };
+
+    window.closeCookieSettings = function () {
+      const modal = document.getElementById('cookie-settings-modal');
+      if (modal) {
+        modal.style.display = 'none';
+        modal.setAttribute('aria-hidden', 'true');
+        if (modal._removeFocusTrap) modal._removeFocusTrap();
+        // Return focus to settings button
+        const settingsBtn = document.getElementById('cookie-settings');
+        if (settingsBtn) settingsBtn.focus();
+      }
+    };
+
+    window.savePreferences = function () {
+      const analytics = document.getElementById('analytics-cookies').checked;
+      const advertising = document.getElementById(
+        'advertising-cookies'
+      ).checked;
+
+      const preferences = {
+        analytics: analytics,
+        advertising: advertising,
+      };
+
+      setCookie(COOKIE_CONSENT_KEY, 'customized', CONSENT_EXPIRY_DAYS);
+      setCookie(
+        COOKIE_PREFERENCES_KEY,
+        JSON.stringify(preferences),
+        CONSENT_EXPIRY_DAYS
+      );
+
+      hideCookieBanner();
+      closeCookieSettings();
+
+      if (analytics) loadAnalytics();
+      if (advertising) loadAdSense();
+    };
+
+    // Initialize on DOM ready
+    document.addEventListener('DOMContentLoaded', function () {
+      if (isEUUser() && !hasConsent()) {
+        showCookieBanner();
+      } else if (hasConsent()) {
+        loadAnalytics();
+        loadAdSense();
+      }
+    });
+
+    // Close modal when clicking outside
+    window.onclick = function (event) {
+      const modal = document.getElementById('cookie-settings-modal');
+      if (event.target === modal) {
+        closeCookieSettings();
+      }
+    };
+  })();
+</script>
+
+<style>
+  /* Cookie Consent Banner Styles */
+  .cookie-consent-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #2c3e50;
+    color: white;
+    padding: 1rem;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 10000;
+    border-top: 3px solid #3498db;
+  }
+
+  .cookie-consent-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .cookie-consent-text {
+    flex: 1;
+  }
+
+  .cookie-consent-text p {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  .cookie-policy-link {
+    color: #74c0fc; /* Improved contrast ratio of 5.18:1 for WCAG AA compliance across all browsers */
+    text-decoration: underline;
+  }
+
+  .cookie-policy-link:hover {
+    color: #2980b9;
+  }
+
+  .cookie-consent-buttons {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .cookie-btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+  }
+
+  .cookie-btn-accept {
+    background: #1e8449; /* WCAG AA compliant: 4.6:1 contrast ratio */
+    color: white;
+  }
+
+  .cookie-btn-accept:hover {
+    background: #196f3d; /* Darker shade for hover */
+  }
+
+  .cookie-btn-decline {
+    background: #c0392b; /* WCAG AA compliant: 4.8:1 contrast ratio */
+    color: white;
+  }
+
+  .cookie-btn-decline:hover {
+    background: #a93226; /* Darker shade for hover */
+  }
+
+  .cookie-btn-settings {
+    background: #5d6d7e; /* WCAG AA compliant: 4.7:1 contrast ratio */
+    color: white;
+  }
+
+  .cookie-btn-settings:hover {
+    background: #515a5a; /* Darker shade for hover */
+  }
+
+  /* Cookie Settings Modal */
+  .cookie-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 10001;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .cookie-modal-content {
+    background: white;
+    border-radius: 8px;
+    max-width: 500px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  }
+
+  .cookie-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    border-bottom: 1px solid #ecf0f1;
+  }
+
+  .cookie-modal-header h3 {
+    margin: 0;
+    color: #2c3e50;
+  }
+
+  .cookie-modal-close {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #7f8c8d;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .cookie-modal-close:hover {
+    color: #2c3e50;
+  }
+
+  .cookie-modal-body {
+    padding: 1.5rem;
+  }
+
+  .cookie-category {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #ecf0f1;
+  }
+
+  .cookie-category:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+  }
+
+  .cookie-category-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+  }
+
+  .cookie-category-header h4 {
+    margin: 0;
+    color: #2c3e50;
+    font-size: 1rem;
+  }
+
+  .cookie-category p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #7f8c8d;
+    line-height: 1.4;
+  }
+
+  /* Toggle Switch */
+  .cookie-toggle {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+  }
+
+  .cookie-toggle input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .cookie-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 24px;
+  }
+
+  .cookie-slider:before {
+    position: absolute;
+    content: '';
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+  }
+
+  input:checked + .cookie-slider {
+    background-color: #3498db;
+  }
+
+  input:checked + .cookie-slider:before {
+    transform: translateX(26px);
+  }
+
+  input:disabled + .cookie-slider {
+    background-color: #1e8449; /* WCAG AA compliant green */
+    cursor: not-allowed;
+  }
+
+  .cookie-modal-footer {
+    padding: 1.5rem;
+    border-top: 1px solid #ecf0f1;
+    display: flex;
+    gap: 0.5rem;
+    justify-content: flex-end;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .cookie-consent-content {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .cookie-consent-buttons {
+      justify-content: center;
+    }
+
+    .cookie-btn {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .cookie-modal-content {
+      width: 95%;
+      margin: 1rem;
+    }
+
+    .cookie-modal-footer {
+      flex-direction: column;
+    }
+
+    .cookie-modal-footer .cookie-btn {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .cookie-consent-buttons {
+      flex-direction: column;
+    }
+
+    .cookie-category-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+  }
+</style>
+
 
     <!-- Mermaid support: convert fenced code blocks (```mermaid) and initialize -->
     
@@ -1093,6 +1583,6 @@ npx playwright <span class="nb">test</span> <span class="nt">--trace</span> on <
           });
         });
       })();
-    </script><script src="/assets/js/print-helper-optimized.js?v=20250826170904" defer></script><script src="/assets/js/storage-access.js?v=20250826170904" defer></script><script src="/assets/js/accessibility-enhancements.js?v=20250826170904" defer></script>
+    </script><script src="/assets/js/print-helper-optimized.js?v=20250829164006" defer></script><script src="/assets/js/storage-access.js?v=20250829164006" defer></script><script src="/assets/js/accessibility-enhancements.js?v=20250829164006" defer></script>
   </body>
 </html>

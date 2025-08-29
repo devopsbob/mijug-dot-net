@@ -3,6 +3,11 @@
   <head>
     <meta charset="utf-8" />
     
+    <meta
+      name="google-adsense-account"
+      content="ca-pub-3383458876439157"
+    />
+    
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
     
@@ -47,8 +52,8 @@
     <meta name="version" content="Aug 22, 2025" />
     
     
-    <link rel="stylesheet" href="/assets/main.css?v=20250826170904" />
-    <link rel="stylesheet" href="/assets/css/inp-optimizations.css?v=20250826170904" />
+    <link rel="stylesheet" href="/assets/main.css?v=20250829164006" />
+    <link rel="stylesheet" href="/assets/css/inp-optimizations.css?v=20250829164006" />
     <link
       rel="canonical"
       href="https://www.mijug.net/docs/testing-performance-evolution/"
@@ -85,12 +90,12 @@
 <meta property="og:site_name" content="My Information Just Under Glass" />
 <meta property="og:image" content="https://www.mijug.net/assets/logo-mijug-watermark-98x100.svg" />
 <meta property="og:type" content="article" />
-<meta property="article:published_time" content="2025-08-26T17:09:04-04:00" />
+<meta property="article:published_time" content="2025-08-29T16:40:06-04:00" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta property="twitter:image" content="https://www.mijug.net/assets/logo-mijug-watermark-98x100.svg" />
 <meta property="twitter:title" content="Testing Performance and Development Evolution" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Bob Kranson"},"dateModified":"2025-08-22T13:42:32-04:00","datePublished":"2025-08-26T17:09:04-04:00","description":"Performance gains achieved through strategic testing evolution, unit-first development, and E2E consolidation in the MIJUG workspace","headline":"Testing Performance and Development Evolution","image":"https://www.mijug.net/assets/logo-mijug-watermark-98x100.svg","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.mijug.net/docs/testing-performance-evolution/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://www.mijug.net/assets/logo-mijug-watermark-98x100.svg"},"name":"Bob Kranson"},"url":"https://www.mijug.net/docs/testing-performance-evolution/"}</script>
+{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Bob Kranson"},"dateModified":"2025-08-22T13:42:32-04:00","datePublished":"2025-08-29T16:40:06-04:00","description":"Performance gains achieved through strategic testing evolution, unit-first development, and E2E consolidation in the MIJUG workspace","headline":"Testing Performance and Development Evolution","image":"https://www.mijug.net/assets/logo-mijug-watermark-98x100.svg","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.mijug.net/docs/testing-performance-evolution/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://www.mijug.net/assets/logo-mijug-watermark-98x100.svg"},"name":"Bob Kranson"},"url":"https://www.mijug.net/docs/testing-performance-evolution/"}</script>
 <!-- End Jekyll SEO tag -->
 
   </head>
@@ -100,83 +105,34 @@
   
     <header class="site-header" role="banner">
       <div class="wrapper">
-        <a
-          class="site-title long-title"
-          rel="home"
-          href="/"
-        >
+        <a class="site-title long-title" rel="home" href="/">
           
-          <img
-            src="/assets/logo-mijug-watermark-98x100.svg"
-            alt="My Information Just Under Glass"
-            width="50"
-            height="50"
-          />
+          <img src="/assets/logo-mijug-watermark-98x100.svg" alt="My Information Just Under Glass" width="50" height="50">
            My Information Just Under Glass
         </a>
 
         <nav class="site-nav" role="navigation" aria-label="Main navigation">
-          <input
-            type="checkbox"
-            id="header-nav-trigger"
-            class="nav-trigger"
-            title="Toggle header navigation"
-            aria-label="Toggle navigation menu"
-          />
+          <input type="checkbox" id="header-nav-trigger" class="nav-trigger" title="Toggle header navigation" aria-label="Toggle navigation menu">
           <label for="header-nav-trigger" aria-label="Open navigation menu">
             <span class="menu-icon">
-              <svg
-                viewBox="0 0 18 15"
-                width="18px"
-                height="15px"
-                role="img"
-                aria-label="Menu icon"
-              >
-                <path
-                  d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"
-                />
+              <svg viewbox="0 0 18 15" width="18px" height="15px" role="img" aria-label="Menu icon">
+                <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"></path>
               </svg>
             </span>
           </label>
 
           <div class="trigger">
-            <a
-              class="page-link"
-              href="/about/"
-              aria-label="About MIJUG"
-              >About</a
-            >
-            <button
-              class="nav-button"
-              popovertarget="mobile-navigation"
-              popovertargetaction="show"
-              type="button"
-              aria-label="Open additional navigation menu"
-              aria-haspopup="true"
-              aria-expanded="false"
-            >
+            <a class="page-link" href="/about/" aria-label="About MIJUG">About</a>
+            <button class="nav-button" popovertarget="mobile-navigation" popovertargetaction="show" type="button" aria-label="Open additional navigation menu" aria-haspopup="true" aria-expanded="false">
               Navigation
             </button>
           </div>
         </nav>
       </div>
     </header>
-    <nav
-      popover
-      id="mobile-navigation"
-      class="site-nav"
-      role="dialog"
-      aria-labelledby="nav-heading"
-      aria-modal="true"
-    >
+    <nav popover id="mobile-navigation" class="site-nav" role="dialog" aria-labelledby="nav-heading" aria-modal="true">
       <h2 id="nav-heading" class="sr-only">Additional Navigation</h2>
-      <button
-        class="nav-button"
-        popovertarget="mobile-navigation"
-        popovertargetaction="hide"
-        type="button"
-        aria-label="Close navigation menu"
-      >
+      <button class="nav-button" popovertarget="mobile-navigation" popovertargetaction="hide" type="button" aria-label="Close navigation menu">
         Close
       </button>
 
@@ -186,20 +142,10 @@
           <h3 class="popover-heading">Posts</h3>
           <ul class="nav-list" role="list">
             <li>
-              <a
-                class="page-link"
-                href="/blog/"
-                aria-label="View blog posts"
-                >Blog</a
-              >
+              <a class="page-link" href="/blog/" aria-label="View blog posts">Blog</a>
             </li>
             <li>
-              <a
-                class="page-link"
-                href="/contact/"
-                aria-label="Contact MIJUG"
-                >Contact Us</a
-              >
+              <a class="page-link" href="/contact/" aria-label="Contact MIJUG">Contact Us</a>
             </li>
           </ul>
         </div>
@@ -215,221 +161,133 @@
             
             
             <li>
-              <a
-                class="page-link"
-                href="/docs/welcome-mijug-workspace/"
-                aria-label="View Workspace Home documentation"
-              >
+              <a class="page-link" href="/docs/welcome-mijug-workspace/" aria-label="View Workspace Home documentation">
                 Workspace Home
               </a>
             </li>
             
             <li>
-              <a
-                class="page-link"
-                href="/docs/getting-started/"
-                aria-label="View Getting Started documentation"
-              >
+              <a class="page-link" href="/docs/getting-started/" aria-label="View Getting Started documentation">
                 Getting Started
               </a>
             </li>
             
             <li>
-              <a
-                class="page-link"
-                href="/docs/getting-started-with-typescript-and-jekyll/"
-                aria-label="View Getting Started with TypeScript and Jekyll documentation"
-              >
+              <a class="page-link" href="/docs/getting-started-with-typescript-and-jekyll/" aria-label="View Getting Started with TypeScript and Jekyll documentation">
                 Getting Started with TypeScript and Jekyll
               </a>
             </li>
             
             <li>
-              <a
-                class="page-link"
-                href="/docs/accessibility-testing/"
-                aria-label="View Accessibility Testing Configuration documentation"
-              >
+              <a class="page-link" href="/docs/accessibility-testing/" aria-label="View Accessibility Testing Configuration documentation">
                 Accessibility Testing Configuration
               </a>
             </li>
             
             <li>
-              <a
-                class="page-link"
-                href="/docs/tags-and-categories-guide/"
-                aria-label="View Tags and Categories System Guide documentation"
-              >
+              <a class="page-link" href="/docs/tags-and-categories-guide/" aria-label="View Tags and Categories System Guide documentation">
                 Tags and Categories System Guide
               </a>
             </li>
             
             <li>
-              <a
-                class="page-link"
-                href="/docs/liquid-tags-examples/"
-                aria-label="View Liquid Tags Examples documentation"
-              >
+              <a class="page-link" href="/docs/liquid-tags-examples/" aria-label="View Liquid Tags Examples documentation">
                 Liquid Tags Examples
               </a>
             </li>
             
             <li>
-              <a
-                class="page-link"
-                href="/docs/browser-management/"
-                aria-label="View Browser Management for Testing documentation"
-              >
+              <a class="page-link" href="/docs/browser-management/" aria-label="View Browser Management for Testing documentation">
                 Browser Management for Testing
               </a>
             </li>
             
             <li>
-              <a
-                class="page-link"
-                href="/docs/browser-compatibility-system/"
-                aria-label="View Browser Compatibility Detection &amp; Testing System documentation"
-              >
+              <a class="page-link" href="/docs/browser-compatibility-system/" aria-label="View Browser Compatibility Detection &amp; Testing System documentation">
                 Browser Compatibility Detection &amp; Testing System
               </a>
             </li>
             
             <li>
-              <a
-                class="page-link"
-                href="/docs/browser-compatibility-testing/"
-                aria-label="View Browser Compatibility Testing documentation"
-              >
+              <a class="page-link" href="/docs/browser-compatibility-testing/" aria-label="View Browser Compatibility Testing documentation">
                 Browser Compatibility Testing
               </a>
             </li>
             
             <li>
-              <a
-                class="page-link"
-                href="/docs/cache-management/"
-                aria-label="View Cache Management Strategies documentation"
-              >
+              <a class="page-link" href="/docs/cache-management/" aria-label="View Cache Management Strategies documentation">
                 Cache Management Strategies
               </a>
             </li>
             
             <li>
-              <a
-                class="page-link"
-                href="/docs/rel-attribute-guide/"
-                aria-label="View The rel Attribute in HTML Links: A Comprehensive Guide documentation"
-              >
+              <a class="page-link" href="/docs/rel-attribute-guide/" aria-label="View The rel Attribute in HTML Links: A Comprehensive Guide documentation">
                 The rel Attribute in HTML Links: A Comprehensive Guide
               </a>
             </li>
             
             <li>
-              <a
-                class="page-link"
-                href="/docs/frontmatter-cms/"
-                aria-label="View FrontMatter CMS Usage documentation"
-              >
+              <a class="page-link" href="/docs/frontmatter-cms/" aria-label="View FrontMatter CMS Usage documentation">
                 FrontMatter CMS Usage
               </a>
             </li>
             
             <li>
-              <a
-                class="page-link"
-                href="/docs/performance-optimization/"
-                aria-label="View Performance Optimization Guide documentation"
-              >
+              <a class="page-link" href="/docs/performance-optimization/" aria-label="View Performance Optimization Guide documentation">
                 Performance Optimization Guide
               </a>
             </li>
             
             <li>
-              <a
-                class="page-link"
-                href="/docs/testing-performance-evolution/"
-                aria-label="View Testing Performance and Development Evolution documentation"
-              >
+              <a class="page-link" href="/docs/testing-performance-evolution/" aria-label="View Testing Performance and Development Evolution documentation">
                 Testing Performance and Development Evolution
               </a>
             </li>
             
             <li>
-              <a
-                class="page-link"
-                href="/docs/eslint-9-upgrade-guide/"
-                aria-label="View ESLint 9 Upgrade: Migration Guide and Benefits documentation"
-              >
+              <a class="page-link" href="/docs/eslint-9-upgrade-guide/" aria-label="View ESLint 9 Upgrade: Migration Guide and Benefits documentation">
                 ESLint 9 Upgrade: Migration Guide and Benefits
               </a>
             </li>
             
             <li>
-              <a
-                class="page-link"
-                href="/docs/mermaid-test-runner/"
-                aria-label="View Mermaid Test Runner documentation"
-              >
+              <a class="page-link" href="/docs/mermaid-test-runner/" aria-label="View Mermaid Test Runner documentation">
                 Mermaid Test Runner
               </a>
             </li>
             
             <li>
-              <a
-                class="page-link"
-                href="/docs/mermaid-quick-start/"
-                aria-label="View Mermaid Quick Start documentation"
-              >
+              <a class="page-link" href="/docs/mermaid-quick-start/" aria-label="View Mermaid Quick Start documentation">
                 Mermaid Quick Start
               </a>
             </li>
             
             <li>
-              <a
-                class="page-link"
-                href="/docs/mermaid-configuration-guide/"
-                aria-label="View Mermaid Diagram Configuration Guide documentation"
-              >
+              <a class="page-link" href="/docs/mermaid-configuration-guide/" aria-label="View Mermaid Diagram Configuration Guide documentation">
                 Mermaid Diagram Configuration Guide
               </a>
             </li>
             
             <li>
-              <a
-                class="page-link"
-                href="/docs/mermaid-examples/"
-                aria-label="View Mermaid Diagram Examples documentation"
-              >
+              <a class="page-link" href="/docs/mermaid-examples/" aria-label="View Mermaid Diagram Examples documentation">
                 Mermaid Diagram Examples
               </a>
             </li>
             
             <li>
-              <a
-                class="page-link"
-                href="/docs/mermaid-default-layout/"
-                aria-label="View Mermaid on Default Layout documentation"
-              >
+              <a class="page-link" href="/docs/mermaid-default-layout/" aria-label="View Mermaid on Default Layout documentation">
                 Mermaid on Default Layout
               </a>
             </li>
             
             <li>
-              <a
-                class="page-link"
-                href="/docs/mermaid-basic/"
-                aria-label="View Mermaid Basic documentation"
-              >
+              <a class="page-link" href="/docs/mermaid-basic/" aria-label="View Mermaid Basic documentation">
                 Mermaid Basic
               </a>
             </li>
             
             <li>
-              <a
-                class="page-link"
-                href="/docs/mermaid-diagrams-sample/"
-                aria-label="View Delivery Slides Mermaid Diagrams Showcase documentation"
-              >
+              <a class="page-link" href="/docs/mermaid-diagrams-sample/" aria-label="View Delivery Slides Mermaid Diagrams Showcase documentation">
                 Delivery Slides Mermaid Diagrams Showcase
               </a>
             </li>
@@ -446,67 +304,79 @@
           <ul class="nav-list" role="list" aria-label="Blog post categories">
             
             <li>
-              <a
-                class="page-link"
-                href="/category/announcements"
-                aria-label="View Announcements category with 5 posts"
-              >
+              <a class="page-link" href="/category/announcements" aria-label="View Announcements category with 5 posts">
                 Announcements
-                <span class="count" aria-hidden="true"
-                  >(5)</span
-                >
+                <span class="count" aria-hidden="true">(5)</span>
               </a>
             </li>
             
             <li>
-              <a
-                class="page-link"
-                href="/category/linux"
-                aria-label="View Linux category with 2 posts"
-              >
+              <a class="page-link" href="/category/linux" aria-label="View Linux category with 2 posts">
                 Linux
-                <span class="count" aria-hidden="true"
-                  >(2)</span
-                >
+                <span class="count" aria-hidden="true">(2)</span>
               </a>
             </li>
             
             <li>
-              <a
-                class="page-link"
-                href="/category/documentation"
-                aria-label="View Documentation category with 1 posts"
-              >
+              <a class="page-link" href="/category/documentation" aria-label="View Documentation category with 1 posts">
                 Documentation
-                <span class="count" aria-hidden="true"
-                  >(1)</span
-                >
+                <span class="count" aria-hidden="true">(1)</span>
               </a>
             </li>
             
             <li>
-              <a
-                class="page-link"
-                href="/category/navigation"
-                aria-label="View Navigation category with 1 posts"
-              >
+              <a class="page-link" href="/category/navigation" aria-label="View Navigation category with 1 posts">
                 Navigation
-                <span class="count" aria-hidden="true"
-                  >(1)</span
-                >
+                <span class="count" aria-hidden="true">(1)</span>
               </a>
             </li>
             
             <li>
-              <a
-                class="page-link"
-                href="/category/getting-started"
-                aria-label="View Getting-started category with 3 posts"
-              >
+              <a class="page-link" href="/category/getting-started" aria-label="View Getting-started category with 3 posts">
                 Getting-started
-                <span class="count" aria-hidden="true"
-                  >(3)</span
-                >
+                <span class="count" aria-hidden="true">(3)</span>
+              </a>
+            </li>
+            
+            <li>
+              <a class="page-link" href="/category/digital-legacy" aria-label="View Digital-legacy category with 1 posts">
+                Digital-legacy
+                <span class="count" aria-hidden="true">(1)</span>
+              </a>
+            </li>
+            
+            <li>
+              <a class="page-link" href="/category/guides" aria-label="View Guides category with 1 posts">
+                Guides
+                <span class="count" aria-hidden="true">(1)</span>
+              </a>
+            </li>
+            
+            <li>
+              <a class="page-link" href="/category/history" aria-label="View History category with 1 posts">
+                History
+                <span class="count" aria-hidden="true">(1)</span>
+              </a>
+            </li>
+            
+            <li>
+              <a class="page-link" href="/category/home" aria-label="View Home category with 1 posts">
+                Home
+                <span class="count" aria-hidden="true">(1)</span>
+              </a>
+            </li>
+            
+            <li>
+              <a class="page-link" href="/category/technology" aria-label="View Technology category with 1 posts">
+                Technology
+                <span class="count" aria-hidden="true">(1)</span>
+              </a>
+            </li>
+            
+            <li>
+              <a class="page-link" href="/category/labor-day" aria-label="View Labor-day category with 1 posts">
+                Labor-day
+                <span class="count" aria-hidden="true">(1)</span>
               </a>
             </li>
             
@@ -521,132 +391,72 @@
           <ul class="nav-list" role="list" aria-label="Blog post tags">
              
             <li>
-              <a
-                class="page-link"
-                href="/tag/ai"
-                aria-label="View posts tagged with ai (1 posts)"
-              >
-                #ai
-                <span class="count" aria-hidden="true"
-                  >(1)</span
-                >
+              <a class="page-link" href="/tag/appliances" aria-label="View posts tagged with appliances (1 posts)">
+                #appliances
+                <span class="count" aria-hidden="true">(1)</span>
               </a>
             </li>
             
             <li>
-              <a
-                class="page-link"
-                href="/tag/asus"
-                aria-label="View posts tagged with asus (1 posts)"
-              >
-                #asus
-                <span class="count" aria-hidden="true"
-                  >(1)</span
-                >
+              <a class="page-link" href="/tag/computers" aria-label="View posts tagged with computers (1 posts)">
+                #computers
+                <span class="count" aria-hidden="true">(1)</span>
               </a>
             </li>
             
             <li>
-              <a
-                class="page-link"
-                href="/tag/compatibility"
-                aria-label="View posts tagged with compatibility (1 posts)"
-              >
-                #compatibility
-                <span class="count" aria-hidden="true"
-                  >(1)</span
-                >
-              </a>
-            </li>
-            
-            <li>
-              <a
-                class="page-link"
-                href="/tag/cpus"
-                aria-label="View posts tagged with cpus (2 posts)"
-              >
+              <a class="page-link" href="/tag/cpus" aria-label="View posts tagged with cpus (1 posts)">
                 #cpus
-                <span class="count" aria-hidden="true"
-                  >(2)</span
-                >
+                <span class="count" aria-hidden="true">(1)</span>
               </a>
             </li>
             
             <li>
-              <a
-                class="page-link"
-                href="/tag/diy"
-                aria-label="View posts tagged with diy (1 posts)"
-              >
+              <a class="page-link" href="/tag/digital-legacy" aria-label="View posts tagged with digital-legacy (1 posts)">
+                #digital-legacy
+                <span class="count" aria-hidden="true">(1)</span>
+              </a>
+            </li>
+            
+            <li>
+              <a class="page-link" href="/tag/diy" aria-label="View posts tagged with diy (1 posts)">
                 #diy
-                <span class="count" aria-hidden="true"
-                  >(1)</span
-                >
+                <span class="count" aria-hidden="true">(1)</span>
               </a>
             </li>
             
             <li>
-              <a
-                class="page-link"
-                href="/tag/docs"
-                aria-label="View posts tagged with docs (1 posts)"
-              >
+              <a class="page-link" href="/tag/docs" aria-label="View posts tagged with docs (1 posts)">
                 #docs
-                <span class="count" aria-hidden="true"
-                  >(1)</span
-                >
+                <span class="count" aria-hidden="true">(1)</span>
               </a>
             </li>
             
             <li>
-              <a
-                class="page-link"
-                href="/tag/e-waste"
-                aria-label="View posts tagged with e-waste (3 posts)"
-              >
+              <a class="page-link" href="/tag/e-waste" aria-label="View posts tagged with e-waste (4 posts)">
                 #e-waste
-                <span class="count" aria-hidden="true"
-                  >(3)</span
-                >
+                <span class="count" aria-hidden="true">(4)</span>
               </a>
             </li>
             
             <li>
-              <a
-                class="page-link"
-                href="/tag/education"
-                aria-label="View posts tagged with education (1 posts)"
-              >
+              <a class="page-link" href="/tag/education" aria-label="View posts tagged with education (1 posts)">
                 #education
-                <span class="count" aria-hidden="true"
-                  >(1)</span
-                >
+                <span class="count" aria-hidden="true">(1)</span>
               </a>
             </li>
             
             <li>
-              <a
-                class="page-link"
-                href="/tag/evening-schedules"
-                aria-label="View posts tagged with evening-schedules (1 posts)"
-              >
+              <a class="page-link" href="/tag/evening-schedules" aria-label="View posts tagged with evening-schedules (1 posts)">
                 #evening-schedules
-                <span class="count" aria-hidden="true"
-                  >(1)</span
-                >
+                <span class="count" aria-hidden="true">(1)</span>
               </a>
             </li>
             
             <li>
-              <a
-                class="page-link"
-                href="/tag/get-smart"
-                aria-label="View posts tagged with get-smart (1 posts)"
-              >
-                #get-smart
-                <span class="count" aria-hidden="true"
-                  >(1)</span
-                >
+              <a class="page-link" href="/tag/gpus" aria-label="View posts tagged with gpus (1 posts)">
+                #gpus
+                <span class="count" aria-hidden="true">(1)</span>
               </a>
             </li>
             
@@ -656,12 +466,14 @@
       </div>
     </nav>
     <main class="page-content" aria-label="Content">
-      <div class="wrapper"><article class="post">
+      <div class="wrapper">
+<article class="post">
   <header class="post-header">
     <h1 class="post-title">Testing Performance and Development Evolution</h1>
   </header>
 
-  <div class="post-content"><h1 id="testing-performance-and-development-evolution">Testing Performance and Development Evolution</h1>
+  <div class="post-content">
+<h1 id="testing-performance-and-development-evolution">Testing Performance and Development Evolution</h1>
 
 <p>This document chronicles the significant performance improvements and development experience enhancements achieved through strategic testing evolution in the MIJUG .NET workspace. It provides insights into the organic growth of testing practices, the benefits of unit-first development, and the dramatic gains from E2E test consolidation.</p>
 
@@ -670,11 +482,16 @@
 <p>During a comprehensive testing optimization session, we achieved:</p>
 
 <ul>
-  <li><strong>75x performance improvement</strong> in unit test execution (2.3s vs 175s baseline)</li>
-  <li><strong>60% reduction</strong> in E2E test files (10 → 4 files)</li>
-  <li><strong>35-40% faster</strong> E2E test execution (~60-75s vs ~90-120s)</li>
-  <li><strong>100% test coverage preservation</strong> across all optimizations</li>
-  <li><strong>Enhanced developer experience</strong> through better test organization and monitoring</li>
+  <li>
+<strong>75x performance improvement</strong> in unit test execution (2.3s vs 175s baseline)</li>
+  <li>
+<strong>60% reduction</strong> in E2E test files (10 → 4 files)</li>
+  <li>
+<strong>35-40% faster</strong> E2E test execution (~60-75s vs ~90-120s)</li>
+  <li>
+<strong>100% test coverage preservation</strong> across all optimizations</li>
+  <li>
+<strong>Enhanced developer experience</strong> through better test organization and monitoring</li>
 </ul>
 
 <h2 id="-performance-benchmarks">📊 Performance Benchmarks</h2>
@@ -832,28 +649,32 @@
 <h4 id="-pros"><strong>✅ Pros</strong></h4>
 
 <ol>
-  <li><strong>Real-World Validation</strong>
+  <li>
+<strong>Real-World Validation</strong>
     <ul>
       <li>Tests evolve with actual codebase challenges</li>
       <li>Organic identification of pain points and bottlenecks</li>
       <li>Natural adaptation to project-specific requirements</li>
     </ul>
   </li>
-  <li><strong>Knowledge Building</strong>
+  <li>
+<strong>Knowledge Building</strong>
     <ul>
       <li>Team learns testing best practices through practical application</li>
       <li>Understanding develops of which testing strategies work for the specific tech stack</li>
       <li>Expertise accumulates in project-specific testing patterns</li>
     </ul>
   </li>
-  <li><strong>Sustainable Implementation</strong>
+  <li>
+<strong>Sustainable Implementation</strong>
     <ul>
       <li>Gradual adoption prevents overwhelming development workflow</li>
       <li>Incremental improvements maintain momentum</li>
       <li>Cost-effective optimization of existing test suites</li>
     </ul>
   </li>
-  <li><strong>Context-Aware Solutions</strong>
+  <li>
+<strong>Context-Aware Solutions</strong>
     <ul>
       <li>Solutions tailored to actual project constraints and requirements</li>
       <li>Testing strategies align with team workflow and development patterns</li>
@@ -865,28 +686,32 @@
 <h4 id="-cons"><strong>❌ Cons</strong></h4>
 
 <ol>
-  <li><strong>Initial Technical Debt</strong>
+  <li>
+<strong>Initial Technical Debt</strong>
     <ul>
       <li>May accumulate suboptimal testing patterns before optimization</li>
       <li>Risk of establishing inefficient testing habits early</li>
       <li>Potential for test suite bloat and maintenance overhead</li>
     </ul>
   </li>
-  <li><strong>Performance Impact During Growth</strong>
+  <li>
+<strong>Performance Impact During Growth</strong>
     <ul>
       <li>Test execution time may degrade before optimization efforts</li>
       <li>Developer experience can suffer during inefficient periods</li>
       <li>CI/CD pipeline performance may be impacted</li>
     </ul>
   </li>
-  <li><strong>Knowledge Gap Risk</strong>
+  <li>
+<strong>Knowledge Gap Risk</strong>
     <ul>
       <li>Team may miss testing best practices without upfront research</li>
       <li>Risk of implementing anti-patterns that require later refactoring</li>
       <li>May lack awareness of advanced testing strategies initially</li>
     </ul>
   </li>
-  <li><strong>Refactoring Overhead</strong>
+  <li>
+<strong>Refactoring Overhead</strong>
     <ul>
       <li>Requires dedicated time for optimization and consolidation</li>
       <li>May need to rewrite tests to follow better patterns</li>
@@ -900,11 +725,16 @@
 <p>Based on this project’s experience, the optimal strategy combines:</p>
 
 <ol>
-  <li><strong>Start with Testing Fundamentals</strong>: Implement basic unit testing from project inception</li>
-  <li><strong>Follow Testing Pyramid</strong>: Heavy unit testing, moderate integration, light E2E</li>
-  <li><strong>Regular Performance Reviews</strong>: Schedule periodic testing performance audits</li>
-  <li><strong>Incremental Optimization</strong>: Apply improvements based on actual pain points</li>
-  <li><strong>Knowledge Investment</strong>: Study testing best practices alongside organic development</li>
+  <li>
+<strong>Start with Testing Fundamentals</strong>: Implement basic unit testing from project inception</li>
+  <li>
+<strong>Follow Testing Pyramid</strong>: Heavy unit testing, moderate integration, light E2E</li>
+  <li>
+<strong>Regular Performance Reviews</strong>: Schedule periodic testing performance audits</li>
+  <li>
+<strong>Incremental Optimization</strong>: Apply improvements based on actual pain points</li>
+  <li>
+<strong>Knowledge Investment</strong>: Study testing best practices alongside organic development</li>
 </ol>
 
 <h2 id="-testing-technologies-and-best-practices">🧪 Testing Technologies and Best Practices</h2>
@@ -913,11 +743,14 @@
 
 <h4 id="jest---unit-testing-framework"><strong><a href="https://jestjs.io/" rel="external noopener noreferrer" target="_blank">Jest</a> - Unit Testing Framework</strong></h4>
 <ul>
-  <li><strong>Purpose</strong>: Fast, comprehensive unit and integration testing</li>
-  <li><strong>Best Practices</strong>:
+  <li>
+<strong>Purpose</strong>: Fast, comprehensive unit and integration testing</li>
+  <li>
+<strong>Best Practices</strong>:
     <ul>
       <li>Use <code class="language-plaintext highlighter-rouge">maxWorkers: "100%"</code> for CPU utilization</li>
-      <li>Implement focused test patterns with <code class="language-plaintext highlighter-rouge">testPathPattern</code></li>
+      <li>Implement focused test patterns with <code class="language-plaintext highlighter-rouge">testPathPattern</code>
+</li>
       <li>Configure appropriate timeouts for different test types</li>
       <li>Leverage silent mode for cleaner CI output</li>
     </ul>
@@ -939,8 +772,10 @@
 
 <h4 id="playwright---e2e-testing-framework"><strong><a href="https://playwright.dev/" rel="external noopener noreferrer" target="_blank">Playwright</a> - E2E Testing Framework</strong></h4>
 <ul>
-  <li><strong>Purpose</strong>: Cross-browser automation and E2E testing</li>
-  <li><strong>Best Practices</strong>:
+  <li>
+<strong>Purpose</strong>: Cross-browser automation and E2E testing</li>
+  <li>
+<strong>Best Practices</strong>:
     <ul>
       <li>Implement page object patterns for maintainability</li>
       <li>Use proper wait strategies (<code class="language-plaintext highlighter-rouge">waitForLoadState</code>, <code class="language-plaintext highlighter-rouge">waitForSelector</code>)</li>
@@ -966,8 +801,10 @@
 
 <h4 id="axe-coreplaywright---accessibility-testing"><strong><a href="https://github.com/dequelabs/axe-core-npm" rel="external noopener noreferrer" target="_blank">@axe-core/playwright</a> - Accessibility Testing</strong></h4>
 <ul>
-  <li><strong>Purpose</strong>: Automated WCAG 2.1 AA compliance testing</li>
-  <li><strong>Best Practices</strong>:
+  <li>
+<strong>Purpose</strong>: Automated WCAG 2.1 AA compliance testing</li>
+  <li>
+<strong>Best Practices</strong>:
     <ul>
       <li>Include accessibility tests in standard E2E suites</li>
       <li>Configure appropriate rule sets for your application type</li>
@@ -991,11 +828,21 @@
 <h3 id="documentation-resources">Documentation Resources</h3>
 
 <ul>
-  <li><strong>Jest Documentation</strong>: <a href="https://jestjs.io/docs/getting-started" rel="external noopener noreferrer" target="_blank">Jest Getting Started</a></li>
-  <li><strong>Playwright Documentation</strong>: <a href="https://playwright.dev/docs/intro" rel="external noopener noreferrer" target="_blank">Playwright Introduction</a></li>
-  <li><strong>Axe-core Documentation</strong>: <a href="https://github.com/dequelabs/axe-core" rel="external noopener noreferrer" target="_blank">Axe-core GitHub</a></li>
-  <li><strong>Testing Library</strong>: <a href="https://testing-library.com/docs/" rel="external noopener noreferrer" target="_blank">Testing Library Docs</a></li>
-  <li><strong>TypeScript Testing</strong>: <a href="https://www.typescriptlang.org/docs/handbook/2/everyday-types.html" rel="external noopener noreferrer" target="_blank">TypeScript Handbook</a></li>
+  <li>
+<strong>Jest Documentation</strong>: <a href="https://jestjs.io/docs/getting-started" rel="external noopener noreferrer" target="_blank">Jest Getting Started</a>
+</li>
+  <li>
+<strong>Playwright Documentation</strong>: <a href="https://playwright.dev/docs/intro" rel="external noopener noreferrer" target="_blank">Playwright Introduction</a>
+</li>
+  <li>
+<strong>Axe-core Documentation</strong>: <a href="https://github.com/dequelabs/axe-core" rel="external noopener noreferrer" target="_blank">Axe-core GitHub</a>
+</li>
+  <li>
+<strong>Testing Library</strong>: <a href="https://testing-library.com/docs/" rel="external noopener noreferrer" target="_blank">Testing Library Docs</a>
+</li>
+  <li>
+<strong>TypeScript Testing</strong>: <a href="https://www.typescriptlang.org/docs/handbook/2/everyday-types.html" rel="external noopener noreferrer" target="_blank">TypeScript Handbook</a>
+</li>
 </ul>
 
 <h2 id="-testing-pyramid-references">📈 Testing Pyramid References</h2>
@@ -1004,33 +851,48 @@
 
 <h3 id="foundation-layer-unit-tests-70-80"><strong>Foundation Layer: Unit Tests (70-80%)</strong></h3>
 <ul>
-  <li><strong>Fast execution</strong> (milliseconds to seconds)</li>
-  <li><strong>High coverage</strong> of business logic and utilities</li>
-  <li><strong>Isolated testing</strong> of individual components</li>
-  <li><strong>Quick feedback</strong> for developers</li>
+  <li>
+<strong>Fast execution</strong> (milliseconds to seconds)</li>
+  <li>
+<strong>High coverage</strong> of business logic and utilities</li>
+  <li>
+<strong>Isolated testing</strong> of individual components</li>
+  <li>
+<strong>Quick feedback</strong> for developers</li>
 </ul>
 
 <h3 id="integration-layer-integration-tests-15-25"><strong>Integration Layer: Integration Tests (15-25%)</strong></h3>
 <ul>
-  <li><strong>Component interaction</strong> validation</li>
-  <li><strong>API contract</strong> testing</li>
-  <li><strong>Database integration</strong> verification</li>
-  <li><strong>Service boundary</strong> testing</li>
+  <li>
+<strong>Component interaction</strong> validation</li>
+  <li>
+<strong>API contract</strong> testing</li>
+  <li>
+<strong>Database integration</strong> verification</li>
+  <li>
+<strong>Service boundary</strong> testing</li>
 </ul>
 
 <h3 id="ui-layer-e2e-tests-5-15"><strong>UI Layer: E2E Tests (5-15%)</strong></h3>
 <ul>
-  <li><strong>Critical user journeys</strong> validation</li>
-  <li><strong>Cross-browser compatibility</strong> testing</li>
-  <li><strong>Accessibility compliance</strong> verification</li>
-  <li><strong>Performance regression</strong> detection</li>
+  <li>
+<strong>Critical user journeys</strong> validation</li>
+  <li>
+<strong>Cross-browser compatibility</strong> testing</li>
+  <li>
+<strong>Accessibility compliance</strong> verification</li>
+  <li>
+<strong>Performance regression</strong> detection</li>
 </ul>
 
 <h4 id="key-references"><strong>Key References:</strong></h4>
 <ul>
-  <li>Martin Fowler’s Test Pyramid: <a href="https://martinfowler.com/articles/practical-test-pyramid.html" rel="external noopener noreferrer" target="_blank">Practical Test Pyramid</a></li>
-  <li>Google Testing Blog: <a href="https://testing.googleblog.com/2015/04/just-say-no-to-more-end-to-end-tests.html" rel="external noopener noreferrer" target="_blank">Just Say No to More End-to-End Tests</a></li>
-  <li>Mike Cohn’s Original Concept: <a href="https://www.mountaingoatsoftware.com/blog/the-forgotten-layer-of-the-test-automation-pyramid" rel="external noopener noreferrer" target="_blank">The Forgotten Layer of the Test Automation Pyramid</a></li>
+  <li>Martin Fowler’s Test Pyramid: <a href="https://martinfowler.com/articles/practical-test-pyramid.html" rel="external noopener noreferrer" target="_blank">Practical Test Pyramid</a>
+</li>
+  <li>Google Testing Blog: <a href="https://testing.googleblog.com/2015/04/just-say-no-to-more-end-to-end-tests.html" rel="external noopener noreferrer" target="_blank">Just Say No to More End-to-End Tests</a>
+</li>
+  <li>Mike Cohn’s Original Concept: <a href="https://www.mountaingoatsoftware.com/blog/the-forgotten-layer-of-the-test-automation-pyramid" rel="external noopener noreferrer" target="_blank">The Forgotten Layer of the Test Automation Pyramid</a>
+</li>
 </ul>
 
 <h2 id="️-shift-left-testing-references">⬅️ Shift-Left Testing References</h2>
@@ -1039,10 +901,14 @@
 
 <h3 id="core-principles"><strong>Core Principles:</strong></h3>
 <ol>
-  <li><strong>Test Early</strong>: Begin testing during requirements and design phases</li>
-  <li><strong>Test Often</strong>: Integrate testing into continuous development workflow</li>
-  <li><strong>Test Fast</strong>: Prioritize quick feedback through unit and integration tests</li>
-  <li><strong>Test Smart</strong>: Use automated testing to catch issues before production</li>
+  <li>
+<strong>Test Early</strong>: Begin testing during requirements and design phases</li>
+  <li>
+<strong>Test Often</strong>: Integrate testing into continuous development workflow</li>
+  <li>
+<strong>Test Fast</strong>: Prioritize quick feedback through unit and integration tests</li>
+  <li>
+<strong>Test Smart</strong>: Use automated testing to catch issues before production</li>
 </ol>
 
 <h3 id="implementation-in-this-project"><strong>Implementation in This Project:</strong></h3>
@@ -1055,9 +921,12 @@
 
 <h4 id="key-references-1"><strong>Key References:</strong></h4>
 <ul>
-  <li>IBM Shift-Left Testing: <a href="https://www.ibm.com/topics/shift-left-testing" rel="external noopener noreferrer" target="_blank">Shift-left Testing Guide</a></li>
-  <li>Microsoft DevOps Shift-Left: <a href="https://docs.microsoft.com/en-us/azure/devops/learn/devops-at-microsoft/shift-left-make-testing-fast-reliable" rel="external noopener noreferrer" target="_blank">Shift Left to Make Testing Fast and Reliable</a></li>
-  <li>Atlassian Testing Strategy: <a href="https://www.atlassian.com/continuous-delivery/software-testing/shift-left-testing" rel="external noopener noreferrer" target="_blank">Shift Left Testing Guide</a></li>
+  <li>IBM Shift-Left Testing: <a href="https://www.ibm.com/topics/shift-left-testing" rel="external noopener noreferrer" target="_blank">Shift-left Testing Guide</a>
+</li>
+  <li>Microsoft DevOps Shift-Left: <a href="https://docs.microsoft.com/en-us/azure/devops/learn/devops-at-microsoft/shift-left-make-testing-fast-reliable" rel="external noopener noreferrer" target="_blank">Shift Left to Make Testing Fast and Reliable</a>
+</li>
+  <li>Atlassian Testing Strategy: <a href="https://www.atlassian.com/continuous-delivery/software-testing/shift-left-testing" rel="external noopener noreferrer" target="_blank">Shift Left Testing Guide</a>
+</li>
 </ul>
 
 <h2 id="-test-driven-development-tdd-citations">🔄 Test-Driven Development (TDD) Citations</h2>
@@ -1066,24 +935,34 @@
 
 <h3 id="tdd-cycle-applied-retroactively"><strong>TDD Cycle Applied Retroactively:</strong></h3>
 <ol>
-  <li><strong>Red</strong>: Identified failing and slow tests</li>
-  <li><strong>Green</strong>: Implemented fixes and optimizations</li>
-  <li><strong>Refactor</strong>: Consolidated and improved test architecture</li>
+  <li>
+<strong>Red</strong>: Identified failing and slow tests</li>
+  <li>
+<strong>Green</strong>: Implemented fixes and optimizations</li>
+  <li>
+<strong>Refactor</strong>: Consolidated and improved test architecture</li>
 </ol>
 
 <h3 id="tdd-benefits-realized"><strong>TDD Benefits Realized:</strong></h3>
 <ul>
-  <li><strong>Better Design</strong>: Test consolidation led to cleaner test architecture</li>
-  <li><strong>Confidence</strong>: Comprehensive test coverage enables safe refactoring</li>
-  <li><strong>Documentation</strong>: Tests serve as living documentation of system behavior</li>
-  <li><strong>Regression Prevention</strong>: Robust test suite catches regressions early</li>
+  <li>
+<strong>Better Design</strong>: Test consolidation led to cleaner test architecture</li>
+  <li>
+<strong>Confidence</strong>: Comprehensive test coverage enables safe refactoring</li>
+  <li>
+<strong>Documentation</strong>: Tests serve as living documentation of system behavior</li>
+  <li>
+<strong>Regression Prevention</strong>: Robust test suite catches regressions early</li>
 </ul>
 
 <h4 id="key-tdd-references"><strong>Key TDD References:</strong></h4>
 <ul>
-  <li>Kent Beck’s TDD: <a href="https://www.amazon.com/Test-Driven-Development-Kent-Beck/dp/0321146530" rel="external noopener noreferrer" target="_blank">Test-Driven Development: By Example</a></li>
-  <li>Uncle Bob’s TDD Rules: <a href="https://blog.cleancoder.com/uncle-bob/2014/12/17/TheCyclesOfTDD.html" rel="external noopener noreferrer" target="_blank">The Cycles of TDD</a></li>
-  <li>Martin Fowler on TDD: <a href="https://martinfowler.com/bliki/TestDrivenDevelopment.html" rel="external noopener noreferrer" target="_blank">Test Driven Development</a></li>
+  <li>Kent Beck’s TDD: <a href="https://www.amazon.com/Test-Driven-Development-Kent-Beck/dp/0321146530" rel="external noopener noreferrer" target="_blank">Test-Driven Development: By Example</a>
+</li>
+  <li>Uncle Bob’s TDD Rules: <a href="https://blog.cleancoder.com/uncle-bob/2014/12/17/TheCyclesOfTDD.html" rel="external noopener noreferrer" target="_blank">The Cycles of TDD</a>
+</li>
+  <li>Martin Fowler on TDD: <a href="https://martinfowler.com/bliki/TestDrivenDevelopment.html" rel="external noopener noreferrer" target="_blank">Test Driven Development</a>
+</li>
 </ul>
 
 <h2 id="-developer-experience-improvements">🚀 Developer Experience Improvements</h2>
@@ -1106,36 +985,52 @@
 
 <h3 id="impact-on-development-workflow"><strong>Impact on Development Workflow:</strong></h3>
 <ol>
-  <li><strong>Faster Iteration</strong>: Developers get near-instant feedback on changes</li>
-  <li><strong>Easier Maintenance</strong>: Fewer files to manage and update</li>
-  <li><strong>Better Debugging</strong>: Enhanced logging and monitoring capabilities</li>
-  <li><strong>Increased Confidence</strong>: Reliable test execution builds trust in the test suite</li>
+  <li>
+<strong>Faster Iteration</strong>: Developers get near-instant feedback on changes</li>
+  <li>
+<strong>Easier Maintenance</strong>: Fewer files to manage and update</li>
+  <li>
+<strong>Better Debugging</strong>: Enhanced logging and monitoring capabilities</li>
+  <li>
+<strong>Increased Confidence</strong>: Reliable test execution builds trust in the test suite</li>
 </ol>
 
 <h2 id="-implementation-recommendations">📋 Implementation Recommendations</h2>
 
 <h3 id="for-new-projects"><strong>For New Projects:</strong></h3>
 <ol>
-  <li><strong>Start with Unit Testing</strong>: Implement Jest with optimized configuration from day one</li>
-  <li><strong>Follow the Pyramid</strong>: Establish 70-80% unit test coverage before adding E2E tests</li>
-  <li><strong>Plan E2E Architecture</strong>: Design logical test groupings from the beginning</li>
-  <li><strong>Implement Monitoring</strong>: Add health checks and validation utilities early</li>
+  <li>
+<strong>Start with Unit Testing</strong>: Implement Jest with optimized configuration from day one</li>
+  <li>
+<strong>Follow the Pyramid</strong>: Establish 70-80% unit test coverage before adding E2E tests</li>
+  <li>
+<strong>Plan E2E Architecture</strong>: Design logical test groupings from the beginning</li>
+  <li>
+<strong>Implement Monitoring</strong>: Add health checks and validation utilities early</li>
 </ol>
 
 <h3 id="for-existing-projects"><strong>For Existing Projects:</strong></h3>
 <ol>
-  <li><strong>Audit Current Performance</strong>: Measure test execution times and identify bottlenecks</li>
-  <li><strong>Optimize Unit Tests First</strong>: Focus on fast feedback before tackling E2E tests</li>
-  <li><strong>Consolidate Strategically</strong>: Group related E2E tests by functional domain</li>
-  <li><strong>Maintain Coverage</strong>: Ensure optimizations preserve test coverage</li>
+  <li>
+<strong>Audit Current Performance</strong>: Measure test execution times and identify bottlenecks</li>
+  <li>
+<strong>Optimize Unit Tests First</strong>: Focus on fast feedback before tackling E2E tests</li>
+  <li>
+<strong>Consolidate Strategically</strong>: Group related E2E tests by functional domain</li>
+  <li>
+<strong>Maintain Coverage</strong>: Ensure optimizations preserve test coverage</li>
 </ol>
 
 <h3 id="continuous-improvement"><strong>Continuous Improvement:</strong></h3>
 <ol>
-  <li><strong>Regular Performance Reviews</strong>: Schedule quarterly testing performance audits</li>
-  <li><strong>Monitor Test Health</strong>: Track test execution times and success rates</li>
-  <li><strong>Update Dependencies</strong>: Keep testing frameworks and tools up to date</li>
-  <li><strong>Knowledge Sharing</strong>: Document learnings and share best practices with the team</li>
+  <li>
+<strong>Regular Performance Reviews</strong>: Schedule quarterly testing performance audits</li>
+  <li>
+<strong>Monitor Test Health</strong>: Track test execution times and success rates</li>
+  <li>
+<strong>Update Dependencies</strong>: Keep testing frameworks and tools up to date</li>
+  <li>
+<strong>Knowledge Sharing</strong>: Document learnings and share best practices with the team</li>
 </ol>
 
 <h2 id="-references">📚 References</h2>
@@ -1145,10 +1040,18 @@
 <p>The Testing Pyramid is a fundamental testing strategy that emphasizes building a solid foundation of fast, reliable unit tests before adding more expensive integration and UI tests:</p>
 
 <ul>
-  <li><strong>Mike Cohn’s Original Concept</strong>: <a href="https://www.mountaingoatsoftware.com/agile/scrum/resources" rel="external noopener noreferrer" target="_blank">Succeeding with Agile: Software Development Using Scrum</a></li>
-  <li><strong>Martin Fowler’s Analysis</strong>: <a href="https://martinfowler.com/bliki/TestPyramid.html" rel="external noopener noreferrer" target="_blank">TestPyramid</a></li>
-  <li><strong>Google Testing Blog</strong>: <a href="https://testing.googleblog.com/2015/04/just-say-no-to-more-end-to-end-tests.html" rel="external noopener noreferrer" target="_blank">Just Say No to More End-to-End Tests</a></li>
-  <li><strong>Kent C. Dodds</strong>: <a href="https://kentcdodds.com/blog/write-tests" rel="external noopener noreferrer" target="_blank">Write tests. Not too many. Mostly integration</a></li>
+  <li>
+<strong>Mike Cohn’s Original Concept</strong>: <a href="https://www.mountaingoatsoftware.com/agile/scrum/resources" rel="external noopener noreferrer" target="_blank">Succeeding with Agile: Software Development Using Scrum</a>
+</li>
+  <li>
+<strong>Martin Fowler’s Analysis</strong>: <a href="https://martinfowler.com/bliki/TestPyramid.html" rel="external noopener noreferrer" target="_blank">TestPyramid</a>
+</li>
+  <li>
+<strong>Google Testing Blog</strong>: <a href="https://testing.googleblog.com/2015/04/just-say-no-to-more-end-to-end-tests.html" rel="external noopener noreferrer" target="_blank">Just Say No to More End-to-End Tests</a>
+</li>
+  <li>
+<strong>Kent C. Dodds</strong>: <a href="https://kentcdodds.com/blog/write-tests" rel="external noopener noreferrer" target="_blank">Write tests. Not too many. Mostly integration</a>
+</li>
 </ul>
 
 <h3 id="shift-left-testing-references">Shift-Left Testing References</h3>
@@ -1156,10 +1059,18 @@
 <p>Shift-Left Testing emphasizes moving testing activities earlier in the development lifecycle to catch issues sooner and reduce overall costs:</p>
 
 <ul>
-  <li><strong>IBM DevOps</strong>: <a href="https://www.ibm.com/cloud/blog/shift-left-testing" rel="external noopener noreferrer" target="_blank">Shift-left testing: What, why &amp; how to shift left</a></li>
-  <li><strong>Microsoft DevOps</strong>: <a href="https://docs.microsoft.com/en-us/devops/develop/shift-left-make-testing-fast-reliable" rel="external noopener noreferrer" target="_blank">Shift left to make testing fast and reliable</a></li>
-  <li><strong>Atlassian Guide</strong>: <a href="https://www.atlassian.com/continuous-delivery/software-testing/shift-left-testing" rel="external noopener noreferrer" target="_blank">Shift left testing guide</a></li>
-  <li><strong>SmartBear</strong>: <a href="https://smartbear.com/learn/automated-testing/shift-left-testing/" rel="external noopener noreferrer" target="_blank">What is Shift Left Testing?</a></li>
+  <li>
+<strong>IBM DevOps</strong>: <a href="https://www.ibm.com/cloud/blog/shift-left-testing" rel="external noopener noreferrer" target="_blank">Shift-left testing: What, why &amp; how to shift left</a>
+</li>
+  <li>
+<strong>Microsoft DevOps</strong>: <a href="https://docs.microsoft.com/en-us/devops/develop/shift-left-make-testing-fast-reliable" rel="external noopener noreferrer" target="_blank">Shift left to make testing fast and reliable</a>
+</li>
+  <li>
+<strong>Atlassian Guide</strong>: <a href="https://www.atlassian.com/continuous-delivery/software-testing/shift-left-testing" rel="external noopener noreferrer" target="_blank">Shift left testing guide</a>
+</li>
+  <li>
+<strong>SmartBear</strong>: <a href="https://smartbear.com/learn/automated-testing/shift-left-testing/" rel="external noopener noreferrer" target="_blank">What is Shift Left Testing?</a>
+</li>
 </ul>
 
 <h2 id="-conclusion">🎯 Conclusion</h2>
@@ -1167,21 +1078,26 @@
 <p>This session demonstrates the significant benefits achievable through strategic testing evolution. By applying the Testing Pyramid principles, implementing Shift-Left testing practices, and learning from TDD methodologies, we achieved:</p>
 
 <ul>
-  <li><strong>75x improvement</strong> in unit test performance</li>
-  <li><strong>60% reduction</strong> in E2E test complexity</li>
-  <li><strong>35-40% faster</strong> E2E execution</li>
-  <li><strong>100% preservation</strong> of test coverage</li>
-  <li><strong>Dramatically improved</strong> developer experience</li>
+  <li>
+<strong>75x improvement</strong> in unit test performance</li>
+  <li>
+<strong>60% reduction</strong> in E2E test complexity</li>
+  <li>
+<strong>35-40% faster</strong> E2E execution</li>
+  <li>
+<strong>100% preservation</strong> of test coverage</li>
+  <li>
+<strong>Dramatically improved</strong> developer experience</li>
 </ul>
 
 <p>The key insight is that testing optimization yields compound benefits: faster feedback enables more frequent testing, which improves code quality, which reduces debugging time, which increases development velocity. This creates a positive feedback loop that significantly enhances the overall development experience.</p>
 
 <p>The organic evolution approach, while requiring eventual optimization effort, provided valuable learning opportunities and context-specific solutions that might not have been discovered through a purely academic approach to testing implementation.</p>
 
-<hr />
+<hr>
 
-<p><em>Document created: August 22, 2025</em>
-<em>Performance data based on MIJUG .NET workspace optimization session</em>
+<p><em>Document created: August 22, 2025</em><br>
+<em>Performance data based on MIJUG .NET workspace optimization session</em><br>
 <em>Testing frameworks: Jest 29.7+, Playwright 1.47+, @axe-core/playwright</em></p>
 </div>
 </article>
@@ -1192,7 +1108,7 @@
       <div class="wrapper">
         <div class="footer-col-wrapper">
           <div class="footer-col footer-col-1">
-            <a href="/terms-of-service.html">Terms of Service</a><br />
+            <a href="/terms-of-service.html">Terms of Service</a><br>
             <a href="/privacy-policy.html">Privacy Policy</a>
           </div>
           <div class="footer-col footer-col-2">
@@ -1200,17 +1116,11 @@
           </div>
           <div class="footer-col footer-col-3">
             <p>
-              &copy; 2025
-              <a rel="external nofollow" href="https://share.google/8Ir6br641K4uU74l2"
-                >Kranson Enterprises</a
-              ><br />
-              &nbsp;&nbsp;&nbsp;&nbsp;subscribe
-              <a href="/feed.xml"
-                >via RSS<svg class="svg-icon">
-                  <use
-                    xlink:href="/assets/minima-social-icons.svg#rss"
-                  ></use></svg
-              ></a>
+              © 2025
+              <a rel="external nofollow" href="https://share.google/8Ir6br641K4uU74l2">Kranson Enterprises</a><br>
+                  subscribe
+              <a href="/feed.xml">via RSS<svg class="svg-icon">
+                  <use xlink:href="/assets/minima-social-icons.svg#rss"></use></svg></a>
             </p>
           </div>
         </div>
@@ -1220,10 +1130,642 @@
     
 
     <!-- Google AdSense -->
-    <!-- {  % include google-adsense.html %  } -->
+    <!-- Google AdSense with Consent Mode Support -->
+<script>
+  // Initialize consent mode for AdSense
+  window.dataLayer = window.dataLayer || [];
+  function gtag() {
+    dataLayer.push(arguments);
+  }
+
+  // Set default consent state
+  gtag('consent', 'default', {
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied',
+  });
+</script>
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3383458876439157" crossorigin="anonymous"></script>
+
 
     <!-- Cookie Consent Banner for GDPR Compliance -->
-    <!-- {  % include cookie-consent.html %  } -->
+    <!-- Cookie Consent Banner for GDPR Compliance -->
+<div id="cookie-consent-banner" class="cookie-consent-banner" role="complementary" aria-label="Cookie consent banner" aria-live="polite" style="display: none">
+  <div class="cookie-consent-content">
+    <div class="cookie-consent-text">
+      <p>
+        <strong>🍪 Cookie Notice</strong><br>
+        This website uses cookies for Google AdSense and analytics to improve
+        your experience.
+        <a href="/privacy-policy.html" class="cookie-policy-link">Learn more in our Privacy Policy</a>
+      </p>
+    </div>
+    <div class="cookie-consent-buttons">
+      <button id="accept-cookies" class="cookie-btn cookie-btn-accept" onclick="acceptCookies()">
+        Accept All Cookies
+      </button>
+      <button id="decline-cookies" class="cookie-btn cookie-btn-decline" onclick="declineCookies()">
+        Decline Optional Cookies
+      </button>
+      <button id="cookie-settings" class="cookie-btn cookie-btn-settings" onclick="showCookieSettings()">
+        Cookie Settings
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Cookie Settings Modal -->
+<div id="cookie-settings-modal" class="cookie-modal" style="display: none" role="dialog" aria-modal="true" aria-labelledby="cookie-settings-title">
+  <div class="cookie-modal-content">
+    <div class="cookie-modal-header">
+      <h3 id="cookie-settings-title">Cookie Settings</h3>
+      <button class="cookie-modal-close" onclick="closeCookieSettings()" aria-label="Close cookie settings dialog">
+        ×
+      </button>
+    </div>
+    <div class="cookie-modal-body">
+      <div class="cookie-category">
+        <div class="cookie-category-header">
+          <h4>Essential Cookies</h4>
+          <label class="cookie-toggle" for="essential-cookies">
+            <input type="checkbox" id="essential-cookies" checked disabled>
+            <span class="cookie-slider"></span>
+          </label>
+        </div>
+        <p>Required for basic site functionality. These cannot be disabled.</p>
+      </div>
+
+      <div class="cookie-category">
+        <div class="cookie-category-header">
+          <h4>Analytics Cookies</h4>
+          <label class="cookie-toggle" for="analytics-cookies">
+            <input type="checkbox" id="analytics-cookies">
+            <span class="cookie-slider"></span>
+          </label>
+        </div>
+        <p>
+          Help us understand how visitors interact with our website via Google
+          Analytics.
+        </p>
+      </div>
+
+      <div class="cookie-category">
+        <div class="cookie-category-header">
+          <h4>Advertising Cookies</h4>
+          <label class="cookie-toggle" for="advertising-cookies">
+            <input type="checkbox" id="advertising-cookies">
+            <span class="cookie-slider"></span>
+          </label>
+        </div>
+        <p>Used by Google AdSense to display relevant advertisements.</p>
+      </div>
+    </div>
+    <div class="cookie-modal-footer">
+      <button class="cookie-btn cookie-btn-accept" onclick="savePreferences()">
+        Save Preferences
+      </button>
+      <button class="cookie-btn cookie-btn-decline" onclick="closeCookieSettings()">
+        Cancel
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Cookie Consent Management
+  (function () {
+    'use strict';
+
+    const COOKIE_CONSENT_KEY = 'mijug-cookie-consent';
+    const COOKIE_PREFERENCES_KEY = 'mijug-cookie-preferences';
+    const CONSENT_EXPIRY_DAYS = 365;
+
+    // Check if user is from EU (simplified check)
+    function isEUUser() {
+      // In production, use a proper geolocation service
+      // For now, show to all users for compliance
+      return true;
+    }
+
+    // Get cookie value
+    function getCookie(name) {
+      const value = `; ${document.cookie}`;
+      const parts = value.split(`; ${name}=`);
+      if (parts.length === 2) return parts.pop().split(';').shift();
+      return null;
+    }
+
+    // Set cookie
+    function setCookie(name, value, days) {
+      const expires = new Date();
+      expires.setTime(expires.getTime() + days * 24 * 60 * 60 * 1000);
+      document.cookie = `${name}=${value};expires=${expires.toUTCString()};path=/;SameSite=Strict`;
+    }
+
+    // Show cookie banner
+    function showCookieBanner() {
+      const banner = document.getElementById('cookie-consent-banner');
+      if (banner) {
+        banner.style.display = 'block';
+        banner.setAttribute('aria-hidden', 'false');
+      }
+    }
+
+    // Hide cookie banner
+    function hideCookieBanner() {
+      const banner = document.getElementById('cookie-consent-banner');
+      if (banner) {
+        banner.style.display = 'none';
+        banner.setAttribute('aria-hidden', 'true');
+      }
+    }
+
+    // Load Google Analytics conditionally
+    function loadAnalytics() {
+      if (hasAnalyticsConsent()) {
+        // Load Google Analytics if consent given
+        if (typeof gtag !== 'undefined') {
+          gtag('consent', 'update', {
+            analytics_storage: 'granted',
+          });
+        }
+      }
+    }
+
+    // Load AdSense conditionally
+    function loadAdSense() {
+      if (hasAdvertisingConsent()) {
+        // Load AdSense if consent given
+        if (typeof gtag !== 'undefined') {
+          gtag('consent', 'update', {
+            ad_storage: 'granted',
+            ad_user_data: 'granted',
+            ad_personalization: 'granted',
+          });
+        }
+      }
+    }
+
+    // Check consent status
+    function hasConsent() {
+      return getCookie(COOKIE_CONSENT_KEY) !== null;
+    }
+
+    function hasAnalyticsConsent() {
+      const preferences = getCookie(COOKIE_PREFERENCES_KEY);
+      if (!preferences) return false;
+      try {
+        const prefs = JSON.parse(preferences);
+        return prefs.analytics === true;
+      } catch {
+        return false;
+      }
+    }
+
+    function hasAdvertisingConsent() {
+      const preferences = getCookie(COOKIE_PREFERENCES_KEY);
+      if (!preferences) return false;
+      try {
+        const prefs = JSON.parse(preferences);
+        return prefs.advertising === true;
+      } catch {
+        return false;
+      }
+    }
+
+    // Focus trap for modal
+    function trapFocus(modal) {
+      const focusableSelectors = 'button, [href], input:not([type=hidden]), select, textarea, [tabindex]:not([tabindex="-1"])';
+      const focusableEls = modal.querySelectorAll(focusableSelectors);
+      const firstFocusableEl = focusableEls[0];
+      const lastFocusableEl = focusableEls[focusableEls.length - 1];
+
+      function handleTab(e) {
+        if (e.key === 'Tab') {
+          if (e.shiftKey) {
+            if (document.activeElement === firstFocusableEl) {
+              e.preventDefault();
+              lastFocusableEl.focus();
+            }
+          } else {
+            if (document.activeElement === lastFocusableEl) {
+              e.preventDefault();
+              firstFocusableEl.focus();
+            }
+          }
+        }
+      }
+
+      function handleEscape(e) {
+        if (e.key === 'Escape') {
+          closeCookieSettings();
+        }
+      }
+
+      modal.addEventListener('keydown', handleTab);
+      modal.addEventListener('keydown', handleEscape);
+      // Remove listeners on close
+      modal._removeFocusTrap = function () {
+        modal.removeEventListener('keydown', handleTab);
+        modal.removeEventListener('keydown', handleEscape);
+      };
+    }
+
+    // Global functions for buttons
+    window.acceptCookies = function () {
+      const preferences = {
+        analytics: true,
+        advertising: true,
+      };
+      setCookie(COOKIE_CONSENT_KEY, 'accepted', CONSENT_EXPIRY_DAYS);
+      setCookie(
+        COOKIE_PREFERENCES_KEY,
+        JSON.stringify(preferences),
+        CONSENT_EXPIRY_DAYS
+      );
+      hideCookieBanner();
+      loadAnalytics();
+      loadAdSense();
+    };
+
+    window.declineCookies = function () {
+      const preferences = {
+        analytics: false,
+        advertising: false,
+      };
+      setCookie(COOKIE_CONSENT_KEY, 'declined', CONSENT_EXPIRY_DAYS);
+      setCookie(
+        COOKIE_PREFERENCES_KEY,
+        JSON.stringify(preferences),
+        CONSENT_EXPIRY_DAYS
+      );
+      hideCookieBanner();
+    };
+
+    window.showCookieSettings = function () {
+      const modal = document.getElementById('cookie-settings-modal');
+      if (modal) {
+        // Load current preferences
+        const preferences = getCookie(COOKIE_PREFERENCES_KEY);
+        if (preferences) {
+          try {
+            const prefs = JSON.parse(preferences);
+            document.getElementById('analytics-cookies').checked =
+              prefs.analytics || false;
+            document.getElementById('advertising-cookies').checked =
+              prefs.advertising || false;
+          } catch {
+            // Default to false if parsing fails
+          }
+        }
+        modal.style.display = 'block';
+        modal.setAttribute('aria-hidden', 'false');
+        // Focus management: focus first button
+        setTimeout(function () {
+          const firstBtn = modal.querySelector('button, [href], input:not([type=hidden]), select, textarea, [tabindex]:not([tabindex="-1"])');
+          if (firstBtn) firstBtn.focus();
+        }, 0);
+        trapFocus(modal);
+      }
+    };
+
+    window.closeCookieSettings = function () {
+      const modal = document.getElementById('cookie-settings-modal');
+      if (modal) {
+        modal.style.display = 'none';
+        modal.setAttribute('aria-hidden', 'true');
+        if (modal._removeFocusTrap) modal._removeFocusTrap();
+        // Return focus to settings button
+        const settingsBtn = document.getElementById('cookie-settings');
+        if (settingsBtn) settingsBtn.focus();
+      }
+    };
+
+    window.savePreferences = function () {
+      const analytics = document.getElementById('analytics-cookies').checked;
+      const advertising = document.getElementById(
+        'advertising-cookies'
+      ).checked;
+
+      const preferences = {
+        analytics: analytics,
+        advertising: advertising,
+      };
+
+      setCookie(COOKIE_CONSENT_KEY, 'customized', CONSENT_EXPIRY_DAYS);
+      setCookie(
+        COOKIE_PREFERENCES_KEY,
+        JSON.stringify(preferences),
+        CONSENT_EXPIRY_DAYS
+      );
+
+      hideCookieBanner();
+      closeCookieSettings();
+
+      if (analytics) loadAnalytics();
+      if (advertising) loadAdSense();
+    };
+
+    // Initialize on DOM ready
+    document.addEventListener('DOMContentLoaded', function () {
+      if (isEUUser() && !hasConsent()) {
+        showCookieBanner();
+      } else if (hasConsent()) {
+        loadAnalytics();
+        loadAdSense();
+      }
+    });
+
+    // Close modal when clicking outside
+    window.onclick = function (event) {
+      const modal = document.getElementById('cookie-settings-modal');
+      if (event.target === modal) {
+        closeCookieSettings();
+      }
+    };
+  })();
+</script>
+
+<style>
+  /* Cookie Consent Banner Styles */
+  .cookie-consent-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #2c3e50;
+    color: white;
+    padding: 1rem;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 10000;
+    border-top: 3px solid #3498db;
+  }
+
+  .cookie-consent-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .cookie-consent-text {
+    flex: 1;
+  }
+
+  .cookie-consent-text p {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  .cookie-policy-link {
+    color: #74c0fc; /* Improved contrast ratio of 5.18:1 for WCAG AA compliance across all browsers */
+    text-decoration: underline;
+  }
+
+  .cookie-policy-link:hover {
+    color: #2980b9;
+  }
+
+  .cookie-consent-buttons {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .cookie-btn {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+  }
+
+  .cookie-btn-accept {
+    background: #1e8449; /* WCAG AA compliant: 4.6:1 contrast ratio */
+    color: white;
+  }
+
+  .cookie-btn-accept:hover {
+    background: #196f3d; /* Darker shade for hover */
+  }
+
+  .cookie-btn-decline {
+    background: #c0392b; /* WCAG AA compliant: 4.8:1 contrast ratio */
+    color: white;
+  }
+
+  .cookie-btn-decline:hover {
+    background: #a93226; /* Darker shade for hover */
+  }
+
+  .cookie-btn-settings {
+    background: #5d6d7e; /* WCAG AA compliant: 4.7:1 contrast ratio */
+    color: white;
+  }
+
+  .cookie-btn-settings:hover {
+    background: #515a5a; /* Darker shade for hover */
+  }
+
+  /* Cookie Settings Modal */
+  .cookie-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 10001;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .cookie-modal-content {
+    background: white;
+    border-radius: 8px;
+    max-width: 500px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  }
+
+  .cookie-modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    border-bottom: 1px solid #ecf0f1;
+  }
+
+  .cookie-modal-header h3 {
+    margin: 0;
+    color: #2c3e50;
+  }
+
+  .cookie-modal-close {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #7f8c8d;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .cookie-modal-close:hover {
+    color: #2c3e50;
+  }
+
+  .cookie-modal-body {
+    padding: 1.5rem;
+  }
+
+  .cookie-category {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #ecf0f1;
+  }
+
+  .cookie-category:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+  }
+
+  .cookie-category-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+  }
+
+  .cookie-category-header h4 {
+    margin: 0;
+    color: #2c3e50;
+    font-size: 1rem;
+  }
+
+  .cookie-category p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #7f8c8d;
+    line-height: 1.4;
+  }
+
+  /* Toggle Switch */
+  .cookie-toggle {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+  }
+
+  .cookie-toggle input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .cookie-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 24px;
+  }
+
+  .cookie-slider:before {
+    position: absolute;
+    content: '';
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+  }
+
+  input:checked + .cookie-slider {
+    background-color: #3498db;
+  }
+
+  input:checked + .cookie-slider:before {
+    transform: translateX(26px);
+  }
+
+  input:disabled + .cookie-slider {
+    background-color: #1e8449; /* WCAG AA compliant green */
+    cursor: not-allowed;
+  }
+
+  .cookie-modal-footer {
+    padding: 1.5rem;
+    border-top: 1px solid #ecf0f1;
+    display: flex;
+    gap: 0.5rem;
+    justify-content: flex-end;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .cookie-consent-content {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .cookie-consent-buttons {
+      justify-content: center;
+    }
+
+    .cookie-btn {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .cookie-modal-content {
+      width: 95%;
+      margin: 1rem;
+    }
+
+    .cookie-modal-footer {
+      flex-direction: column;
+    }
+
+    .cookie-modal-footer .cookie-btn {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .cookie-consent-buttons {
+      flex-direction: column;
+    }
+
+    .cookie-category-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+  }
+</style>
+
 
     <!-- Mermaid support: convert fenced code blocks (```mermaid) and initialize -->
     
@@ -1326,6 +1868,6 @@
           });
         });
       })();
-    </script><script src="/assets/js/print-helper-optimized.js?v=20250826170904" defer></script><script src="/assets/js/storage-access.js?v=20250826170904" defer></script><script src="/assets/js/accessibility-enhancements.js?v=20250826170904" defer></script>
+    </script><script src="/assets/js/print-helper-optimized.js?v=20250829164006" defer></script><script src="/assets/js/storage-access.js?v=20250829164006" defer></script><script src="/assets/js/accessibility-enhancements.js?v=20250829164006" defer></script>
   </body>
 </html>
