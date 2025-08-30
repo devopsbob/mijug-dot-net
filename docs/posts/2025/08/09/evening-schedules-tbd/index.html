@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    
+    <script src="/assets/js/storage-access.js?v=20250829201031"></script>
     <meta
       name="google-adsense-account"
       content="ca-pub-3383458876439157"
@@ -45,8 +45,8 @@
     <meta name="version" content="Aug 27, 2025" />
     
     
-    <link rel="stylesheet" href="/assets/main.css?v=20250829181353" />
-    <link rel="stylesheet" href="/assets/css/inp-optimizations.css?v=20250829181353" />
+    <link rel="stylesheet" href="/assets/main.css?v=20250829201031" />
+    <link rel="stylesheet" href="/assets/css/inp-optimizations.css?v=20250829201031" />
     <link
       rel="canonical"
       href="https://www.mijug.net/posts/2025/08/09/evening-schedules-tbd/"
@@ -661,7 +661,7 @@
     </script>
 
     <!-- Load Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-W1M1N0DCD4"></script>
+    <script src="https://www.googletagmanager.com/gtag/js?id=G-W1M1N0DCD4" crossorigin="anonymous"></script>
     
 
     <!-- Google AdSense -->
@@ -1403,6 +1403,31 @@
           });
         });
       })();
-    </script><script src="/assets/js/print-helper-optimized.js?v=20250829181353" defer></script><script src="/assets/js/storage-access.js?v=20250829181353" defer></script><script src="/assets/js/accessibility-enhancements.js?v=20250829181353" defer></script>
+    </script><script src="/assets/js/print-helper-optimized.js?v=20250829201031" defer></script><script src="/assets/js/accessibility-enhancements.js?v=20250829201031" defer></script>
+    <script>
+      function hideCookieConsentBanner() {
+        const banner = document.getElementById('cookie-consent-banner');
+        if (!banner) return;
+
+        // Check if focus is inside the banner
+        if (banner.contains(document.activeElement)) {
+          // Move focus to body or another visible, focusable element
+          if (document.body) {
+            document.body.focus();
+          }
+        }
+
+        // Use inert instead of aria-hidden
+        banner.setAttribute('inert', '');
+        // Optionally, hide visually as well
+        banner.style.display = 'none';
+      }
+
+      // Example event handler for accept button
+      const acceptBtn = document.getElementById('accept-cookies');
+      if (acceptBtn) {
+        acceptBtn.addEventListener('click', hideCookieConsentBanner);
+      }
+    </script>
   </body>
 </html>
