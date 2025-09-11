@@ -8,8 +8,10 @@
     <script src="https://cdn.jsdelivr.net/npm/isbot@5"></script>
     <script>
       if (isbot(navigator.userAgent)) {
-        // Redirect bots to /about/
-        window.location.replace('/about/');
+        // Render simple quote for bots instead of redirect
+        document.addEventListener('DOMContentLoaded', function() {
+          document.body.innerHTML = '<div style="text-align: center; margin-top: 50px; font-family: Arial, sans-serif;"><h1>Hello World</h1><p>Bot detected - showing simple content</p><p>There is no greatness where there is not simplicity, goodness, and truth. -Leo Tolstoy, novelist and philosopher (9 Sep 1828-1910)</p></div>';
+        });
       };
     </script>
     
@@ -47,8 +49,8 @@
     <meta name="version" content="Aug 25, 2025" />
     
     
-    <link rel="stylesheet" href="/assets/main.css?v=20250910212555" />
-    <link rel="stylesheet" href="/assets/css/inp-optimizations.css?v=20250910212555" />
+    <link rel="stylesheet" href="/assets/main.css?v=20250910220019" />
+    <link rel="stylesheet" href="/assets/css/inp-optimizations.css?v=20250910220019" />
     <link
       rel="canonical"
       href="https://www.mijug.net/404.html"
@@ -489,19 +491,6 @@
             <li>
               <a
                 class="page-link"
-                href="/tag/HDMI"
-                aria-label="View posts tagged with HDMI (1 posts)"
-              >
-                #HDMI
-                <span class="count" aria-hidden="true"
-                  >(1)</span
-                >
-              </a>
-            </li>
-            
-            <li>
-              <a
-                class="page-link"
                 href="/tag/appliances"
                 aria-label="View posts tagged with appliances (1 posts)"
               >
@@ -541,36 +530,10 @@
             <li>
               <a
                 class="page-link"
-                href="/tag/computer%20hardware"
-                aria-label="View posts tagged with computer hardware (1 posts)"
-              >
-                #computer hardware
-                <span class="count" aria-hidden="true"
-                  >(1)</span
-                >
-              </a>
-            </li>
-            
-            <li>
-              <a
-                class="page-link"
                 href="/tag/computers"
                 aria-label="View posts tagged with computers (1 posts)"
               >
                 #computers
-                <span class="count" aria-hidden="true"
-                  >(1)</span
-                >
-              </a>
-            </li>
-            
-            <li>
-              <a
-                class="page-link"
-                href="/tag/connectivity"
-                aria-label="View posts tagged with connectivity (1 posts)"
-              >
-                #connectivity
                 <span class="count" aria-hidden="true"
                   >(1)</span
                 >
@@ -610,6 +573,45 @@
                 aria-label="View posts tagged with digital-legacy (1 posts)"
               >
                 #digital-legacy
+                <span class="count" aria-hidden="true"
+                  >(1)</span
+                >
+              </a>
+            </li>
+            
+            <li>
+              <a
+                class="page-link"
+                href="/tag/diy"
+                aria-label="View posts tagged with diy (1 posts)"
+              >
+                #diy
+                <span class="count" aria-hidden="true"
+                  >(1)</span
+                >
+              </a>
+            </li>
+            
+            <li>
+              <a
+                class="page-link"
+                href="/tag/docs"
+                aria-label="View posts tagged with docs (1 posts)"
+              >
+                #docs
+                <span class="count" aria-hidden="true"
+                  >(1)</span
+                >
+              </a>
+            </li>
+            
+            <li>
+              <a
+                class="page-link"
+                href="/tag/drm"
+                aria-label="View posts tagged with drm (1 posts)"
+              >
+                #drm
                 <span class="count" aria-hidden="true"
                   >(1)</span
                 >
@@ -787,6 +789,6 @@
           });
         });
       })();
-    </script><script src="/assets/js/print-helper-optimized.js?v=20250910212555" defer></script><script src="/assets/js/storage-access.js?v=20250910212555" defer></script><script src="/assets/js/accessibility-enhancements.js?v=20250910212555" defer></script>
+    </script><script src="/assets/js/print-helper-optimized.js?v=20250910220019" defer></script><script src="/assets/js/storage-access.js?v=20250910220019" defer></script><script src="/assets/js/accessibility-enhancements.js?v=20250910220019" defer></script>
   </body>
 </html>

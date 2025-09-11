@@ -8,8 +8,10 @@
     <script src="https://cdn.jsdelivr.net/npm/isbot@5"></script>
     <script>
       if (isbot(navigator.userAgent)) {
-        // Redirect bots to /about/
-        window.location.replace('/about/');
+        // Render simple quote for bots instead of redirect
+        document.addEventListener('DOMContentLoaded', function() {
+          document.body.innerHTML = '<div style="text-align: center; margin-top: 50px; font-family: Arial, sans-serif;"><h1>Hello World</h1><p>Bot detected - showing simple content</p><p>There is no greatness where there is not simplicity, goodness, and truth. -Leo Tolstoy, novelist and philosopher (9 Sep 1828-1910)</p></div>';
+        });
       };
     </script>
     
@@ -47,8 +49,8 @@
     <meta name="version" content="Sep 10, 2025" />
     
     
-    <link rel="stylesheet" href="/assets/main.css?v=20250910212555" />
-    <link rel="stylesheet" href="/assets/css/inp-optimizations.css?v=20250910212555" />
+    <link rel="stylesheet" href="/assets/main.css?v=20250910220019" />
+    <link rel="stylesheet" href="/assets/css/inp-optimizations.css?v=20250910220019" />
     <link
       rel="canonical"
       href="https://www.mijug.net/tags/"
@@ -299,13 +301,6 @@
           <ul class="nav-list" role="list" aria-label="Blog post tags">
              
             <li>
-              <a class="page-link" href="/tag/HDMI" aria-label="View posts tagged with HDMI (1 posts)">
-                #HDMI
-                <span class="count" aria-hidden="true">(1)</span>
-              </a>
-            </li>
-            
-            <li>
               <a class="page-link" href="/tag/appliances" aria-label="View posts tagged with appliances (1 posts)">
                 #appliances
                 <span class="count" aria-hidden="true">(1)</span>
@@ -327,22 +322,8 @@
             </li>
             
             <li>
-              <a class="page-link" href="/tag/computer%20hardware" aria-label="View posts tagged with computer hardware (1 posts)">
-                #computer hardware
-                <span class="count" aria-hidden="true">(1)</span>
-              </a>
-            </li>
-            
-            <li>
               <a class="page-link" href="/tag/computers" aria-label="View posts tagged with computers (1 posts)">
                 #computers
-                <span class="count" aria-hidden="true">(1)</span>
-              </a>
-            </li>
-            
-            <li>
-              <a class="page-link" href="/tag/connectivity" aria-label="View posts tagged with connectivity (1 posts)">
-                #connectivity
                 <span class="count" aria-hidden="true">(1)</span>
               </a>
             </li>
@@ -368,6 +349,27 @@
               </a>
             </li>
             
+            <li>
+              <a class="page-link" href="/tag/diy" aria-label="View posts tagged with diy (1 posts)">
+                #diy
+                <span class="count" aria-hidden="true">(1)</span>
+              </a>
+            </li>
+            
+            <li>
+              <a class="page-link" href="/tag/docs" aria-label="View posts tagged with docs (1 posts)">
+                #docs
+                <span class="count" aria-hidden="true">(1)</span>
+              </a>
+            </li>
+            
+            <li>
+              <a class="page-link" href="/tag/drm" aria-label="View posts tagged with drm (1 posts)">
+                #drm
+                <span class="count" aria-hidden="true">(1)</span>
+              </a>
+            </li>
+            
           </ul>
         </div>
         
@@ -382,13 +384,6 @@
 <div class="tags-container">
    
   <ul class="tags-list">
-      
-    <li class="tag-item">
-      <a href="/tag/hdmi" class="tag-link">
-        #HDMI
-        <span class="tag-count">(1 post)</span>
-      </a>
-    </li>
       
     <li class="tag-item">
       <a href="/tag/appliances" class="tag-link">
@@ -412,22 +407,8 @@
     </li>
       
     <li class="tag-item">
-      <a href="/tag/computer-hardware" class="tag-link">
-        #computer hardware
-        <span class="tag-count">(1 post)</span>
-      </a>
-    </li>
-      
-    <li class="tag-item">
       <a href="/tag/computers" class="tag-link">
         #computers
-        <span class="tag-count">(1 post)</span>
-      </a>
-    </li>
-      
-    <li class="tag-item">
-      <a href="/tag/connectivity" class="tag-link">
-        #connectivity
         <span class="tag-count">(1 post)</span>
       </a>
     </li>
@@ -449,13 +430,6 @@
     <li class="tag-item">
       <a href="/tag/digital-legacy" class="tag-link">
         #digital-legacy
-        <span class="tag-count">(1 post)</span>
-      </a>
-    </li>
-      
-    <li class="tag-item">
-      <a href="/tag/display-ports" class="tag-link">
-        #display ports
         <span class="tag-count">(1 post)</span>
       </a>
     </li>
@@ -484,7 +458,7 @@
     <li class="tag-item">
       <a href="/tag/e-waste" class="tag-link">
         #e-waste
-        <span class="tag-count">(4 posts)</span>
+        <span class="tag-count">(5 posts)</span>
       </a>
     </li>
       
@@ -517,9 +491,23 @@
     </li>
       
     <li class="tag-item">
+      <a href="/tag/guides" class="tag-link">
+        #guides
+        <span class="tag-count">(1 post)</span>
+      </a>
+    </li>
+      
+    <li class="tag-item">
+      <a href="/tag/hardware" class="tag-link">
+        #hardware
+        <span class="tag-count">(1 post)</span>
+      </a>
+    </li>
+      
+    <li class="tag-item">
       <a href="/tag/history" class="tag-link">
         #history
-        <span class="tag-count">(1 post)</span>
+        <span class="tag-count">(2 posts)</span>
       </a>
     </li>
       
@@ -533,13 +521,6 @@
     <li class="tag-item">
       <a href="/tag/labor-day" class="tag-link">
         #labor-day
-        <span class="tag-count">(1 post)</span>
-      </a>
-    </li>
-      
-    <li class="tag-item">
-      <a href="/tag/legacy-systems" class="tag-link">
-        #legacy systems
         <span class="tag-count">(1 post)</span>
       </a>
     </li>
@@ -631,7 +612,7 @@
     <li class="tag-item">
       <a href="/tag/technology" class="tag-link">
         #technology
-        <span class="tag-count">(1 post)</span>
+        <span class="tag-count">(2 posts)</span>
       </a>
     </li>
       
@@ -885,6 +866,6 @@
           });
         });
       })();
-    </script><script src="/assets/js/print-helper-optimized.js?v=20250910212555" defer></script><script src="/assets/js/storage-access.js?v=20250910212555" defer></script><script src="/assets/js/accessibility-enhancements.js?v=20250910212555" defer></script>
+    </script><script src="/assets/js/print-helper-optimized.js?v=20250910220019" defer></script><script src="/assets/js/storage-access.js?v=20250910220019" defer></script><script src="/assets/js/accessibility-enhancements.js?v=20250910220019" defer></script>
   </body>
 </html>
