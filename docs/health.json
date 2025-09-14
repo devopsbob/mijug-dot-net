@@ -1,12 +1,12 @@
 {
   "status": "ok",
-  "timestamp": "2025-09-12 19:00:40 UTC",
+  "timestamp": "2025-09-13 20:37:21 UTC",
   "version": "1.0.0",
   "services": {
     "website": {
       "status": "operational",
       "response_time": "fast",
-      "last_updated": "2025-09-12 19:00:40 UTC"
+      "last_updated": "2025-09-13 20:37:21 UTC"
     },
     "jekyll": {
       "status": "operational",
