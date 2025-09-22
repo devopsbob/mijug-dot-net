@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Delivery Slides Mermaid Diagrams Showcase</title>
     
-    <meta name="version" content="Sep 02, 2025" />
+    <meta name="version" content="Sep 22, 2025" />
     
     <link rel="stylesheet" href="/assets/main.css" />
     <link rel="stylesheet" href="/assets/delivery-slides.css" />
@@ -99,70 +99,110 @@
 <p><em>All diagrams above use fenced code blocks with <code class="language-plaintext highlighter-rouge">mermaid</code> for compatibility with the Jekyll plugin.</em></p>
 
     </main>
+
+    <!-- Mermaid support: convert fenced code blocks (```mermaid) and initialize -->
     
-    <script src="https://cdn.jsdelivr.net/npm/mermaid@11.9.0/dist/mermaid.min.js"></script>
-    
-    <script>
-      (function() {
-        function convertMermaidCodeFences() {
-          try {
-            var codeBlocks = document.querySelectorAll('pre > code.language-mermaid, pre > code.mermaid');
-            codeBlocks.forEach(function(code) {
-              var pre = code.parentElement;
-              var container = pre.parentElement;
-              var div = document.createElement('div');
-              div.className = 'mermaid';
-              // Use textContent to keep raw diagram text (no HTML)
-              div.textContent = code.textContent;
-              container.replaceChild(div, pre);
+      
+      <script src="https://cdn.jsdelivr.net/npm/mermaid@11.9.0/dist/mermaid.min.js" defer></script>
+      
+      <script>
+        (function() {
+          'use strict';
+
+          // Use requestIdleCallback for better INP performance
+          function scheduleWork(callback) {
+            if (window.requestIdleCallback) {
+              requestIdleCallback(callback, { timeout: 2000 });
+            } else {
+              setTimeout(callback, 0);
+            }
+          }
+
+          function convertMermaidCodeFences() {
+            try {
+              // Use more efficient selector and batch DOM operations
+              const codeBlocks = document.querySelectorAll('pre > code.language-mermaid, pre > code.mermaid');
+              const fragment = document.createDocumentFragment();
+              const replacements = [];
+
+              codeBlocks.forEach(function(code) {
+                const pre = code.parentElement;
+                const container = pre.parentElement;
+                const div = document.createElement('div');
+                div.className = 'mermaid';
+                div.textContent = code.textContent;
+                replacements.push({ container, pre, div });
+              });
+
+              // Batch DOM updates to minimize layout thrashing
+              replacements.forEach(({ container, pre, div }) => {
+                container.replaceChild(div, pre);
+              });
+            } catch (e) {
+              console.warn('Mermaid code fence conversion failed:', e);
+            }
+          }
+
+          function initMermaidNow() {
+            try {
+              if (!window.mermaid) return false;
+
+              scheduleWork(() => {
+                convertMermaidCodeFences();
+                if (typeof mermaid.initialize === 'function') {
+                  mermaid.initialize({
+                    startOnLoad: false, // Better control over timing
+                    theme: 'default'
+                  });
+                }
+
+                scheduleWork(() => {
+                  if (typeof mermaid.run === 'function') {
+                    mermaid.run({ querySelector: '.mermaid' });
+                  } else if (typeof mermaid.init === 'function') {
+                    mermaid.init(undefined, document.querySelectorAll('.mermaid'));
+                  }
+                });
+              });
+
+              return true;
+            } catch (e) {
+              console.error('Mermaid initialization error:', e);
+              return false;
+            }
+          }
+
+          // Use passive event listeners for better performance
+          function whenReady(fn) {
+            if (document.readyState === 'loading') {
+              document.addEventListener('DOMContentLoaded', fn, { passive: true });
+            } else {
+              scheduleWork(fn);
+            }
+          }
+
+          // Improved initialization with timeout and better error handling
+          whenReady(function() {
+            scheduleWork(() => {
+              if (initMermaidNow()) return;
+
+              let attempts = 0;
+              const maxAttempts = 30; // Reduced from 50
+              const checkInterval = 200; // Increased from 100ms
+
+              const timer = setInterval(function() {
+                attempts++;
+                if (initMermaidNow() || attempts >= maxAttempts) {
+                  clearInterval(timer);
+                  if (attempts >= maxAttempts) {
+                    console.warn('Mermaid initialization timed out after', maxAttempts, 'attempts');
+                  }
+                }
+              }, checkInterval);
             });
-          } catch (e) {
-            console.warn('Mermaid code fence conversion failed:', e);
-          }
-        }
-        function initMermaidNow() {
-          try {
-            if (!window.mermaid) return false;
-            // Convert fenced code blocks to .mermaid containers before init
-            convertMermaidCodeFences();
-            // Initialize mermaid; startOnLoad helps auto-render if the library supports it
-            if (typeof mermaid.initialize === 'function') {
-              mermaid.initialize({ startOnLoad: true });
-            }
-            // For v10+, prefer run; fallback to init for older versions
-            if (typeof mermaid.run === 'function') {
-              mermaid.run({ querySelector: '.mermaid' });
-            } else if (typeof mermaid.init === 'function') {
-              mermaid.init(undefined, document.querySelectorAll('.mermaid'));
-            }
-            return true;
-          } catch (e) {
-            console.error('Mermaid initialization error:', e);
-            return false;
-          }
-        }
-
-        function whenReady(fn) {
-          if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', fn);
-          } else {
-            fn();
-          }
-        }
-
-        whenReady(function() {
-          // Try immediately
-          if (initMermaidNow()) return;
-          // Poll briefly in case the plugin-injected script loads slightly later
-          var attempts = 0;
-          var timer = setInterval(function() {
-            attempts++;
-            if (initMermaidNow() || attempts > 50) {
-              clearInterval(timer);
-            }
-          }, 100);
-        });
-      })();
-    </script><script src="/assets/js/print-helper.js?v=20250917112942"></script>
+          });
+        })();
+      </script>
+    <script src="/assets/js/print-helper.js?v=20250922030901"></script>
   </body>
 </html>

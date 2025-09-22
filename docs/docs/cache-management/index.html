@@ -3,8 +3,6 @@
   <head>
     <meta charset="utf-8" />
     
-    <script src="/assets/js/storage-access.js?v=2025-09-12T225"></script>
-    
     <meta
       name="google-adsense-account"
       content="ca-pub-3383458876439157"
@@ -17,7 +15,7 @@
     <meta name="docs-nav-order" content="10" />
     <meta name="docs-section" content="documentation" />
     
-        <meta name="priority-doc" content="true" />
+    <meta name="priority-doc" content="true" />
       
     
     
@@ -70,15 +68,73 @@
     
     <meta name="version" content="Aug 30, 2025" />
     
+    <!-- Include site verification metatags -->
+    <meta name="google-site-verification" content="googlece83719b3f856e56" />
+    <!-- Preload fonts for better performance -->
+      <!-- Preload fonts for better performance -->
+  <link
+    rel="preload"
+    href="/assets/fonts/Inter-Regular.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin="anonymous"
+  />
+  <link
+    rel="preload"
+    href="/assets/fonts/Inter-Bold.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin="anonymous"
+  />
+  <link
+    rel="preload"
+    href="/assets/fonts/Inter-SemiBold.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin="anonymous"
+  />
+  <link
+    rel="preload"
+    href="/assets/fonts/Inter-Medium.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin="anonymous"
+  />
+  <link
+    rel="preload"
+    href="/assets/fonts/Inter-Light.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin="anonymous"
+  />
+  <link
+    rel="preload"
+    href="/assets/fonts/Inter-ExtraLight.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin="anonymous"
+  />
+  <link
+    rel="preload"
+    href="/assets/fonts/Inter-Black.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin="anonymous"
+  />
+  <link
+    rel="preload"
+    href="/assets/fonts/Inter-Thin.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin="anonymous"
+  />
+
     
     
-    <link rel="stylesheet" href="/assets/main.css?v=2025-09-12T225" />
-    <link rel="stylesheet" href="/assets/css/inp-optimizations.css?v=2025-09-12T225" />
+    <link rel="stylesheet" href="/assets/main.css?v=2025-09-22T060" />
+    <link rel="stylesheet" href="/assets/css/inp-optimizations.css?v=2025-09-22T060" />
     
-    <link
-      rel="canonical"
-      href="https://www.mijug.net/docs/cache-management/"
-    />
+
     <link
       rel="alternate"
       type="application/rss+xml"
@@ -98,26 +154,36 @@
       href="/favicon.ico"
     />
     <link rel="manifest" href="/manifest.webmanifest" />
-    <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Cache Management Strategies | My Information Just Under Glass</title>
-<meta name="generator" content="Jekyll v4.4.1" />
-<meta property="og:title" content="Cache Management Strategies" />
-<meta name="author" content="Bob Kranson" />
-<meta property="og:locale" content="en_US" />
-<meta name="description" content="Cache management strategies including cache busting, performance optimization, and deployment considerations" />
-<meta property="og:description" content="Cache management strategies including cache busting, performance optimization, and deployment considerations" />
-<link rel="canonical" href="https://www.mijug.net/docs/cache-management/" />
+  <!-- Use custom SEO template instead of jekyll-seo-tag -->
+  <!-- Custom SEO template without Twitter cards -->
+
+  <meta property="og:title" content="Cache Management Strategies" />
+
+
+
+  <meta property="og:description" content="Cache management strategies including cache busting, performance optimization, and deployment considerations" />
+  <meta name="description" content="Cache management strategies including cache busting, performance optimization, and deployment considerations" />
+
+
 <meta property="og:url" content="https://www.mijug.net/docs/cache-management/" />
 <meta property="og:site_name" content="My Information Just Under Glass" />
-<meta property="og:image" content="https://www.mijug.net/assets/logo-mijug-96x96.png" />
-<meta property="og:type" content="article" />
-<meta property="article:published_time" content="2025-09-17T11:29:42-04:00" />
-<meta name="twitter:card" content="summary_large_image" />
-<meta property="twitter:image" content="https://www.mijug.net/assets/logo-mijug-96x96.png" />
-<meta property="twitter:title" content="Cache Management Strategies" />
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BlogPosting","author":{"@type":"Person","name":"Bob Kranson"},"dateModified":"2025-08-30T19:40:43-04:00","datePublished":"2025-09-17T11:29:42-04:00","description":"Cache management strategies including cache busting, performance optimization, and deployment considerations","headline":"Cache Management Strategies","image":"https://www.mijug.net/assets/logo-mijug-96x96.png","mainEntityOfPage":{"@type":"WebPage","@id":"https://www.mijug.net/docs/cache-management/"},"publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://www.mijug.net/assets/logo-mijug-96x96.png"},"name":"Bob Kranson"},"url":"https://www.mijug.net/docs/cache-management/"}</script>
-<!-- End Jekyll SEO tag -->
+<meta property="og:type" content="website" />
+
+
+  <meta property="og:image" content="https://www.mijug.net/assets/logo-mijug-96x96.png" />
+
+
+<!-- LinkedIn specific tags -->
+
+<meta property="article:author" content="https://www.linkedin.com/in/bobkranson" />
+
+
+<!-- Canonical URL -->
+<link
+  rel="canonical"
+  href="https://www.mijug.net/docs/cache-management/"
+/>
+<!-- No Twitter cards - intentionally omitted -->
 
   </head>
   
@@ -563,7 +629,7 @@
 
 <h3 id="liquid-template-cache-busting">Liquid Template Cache Busting</h3>
 <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
-<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"/assets/main.css?v=1758122982"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"/assets/main.css?v=1758524941"</span><span class="nt">&gt;</span>
 </code></pre></div></div>
 
 <h2 id="http-headers-for-cache-control">HTTP Headers for Cache Control</h2>
@@ -1457,109 +1523,11 @@ curl <span class="nt">-H</span> <span class="s2">"If-Modified-Since: Wed, 21 Oct
 
     <!-- Mermaid support: convert fenced code blocks (```mermaid) and initialize -->
     
-    <script src="https://cdn.jsdelivr.net/npm/mermaid@11.9.0/dist/mermaid.min.js" defer></script>
+    <script src="/assets/js/print-helper-optimized.js?v=2025-09-22T060" defer></script>
     
-    <script>
-      (function() {
-        'use strict';
-
-        // Use requestIdleCallback for better INP performance
-        function scheduleWork(callback) {
-          if (window.requestIdleCallback) {
-            requestIdleCallback(callback, { timeout: 2000 });
-          } else {
-            setTimeout(callback, 0);
-          }
-        }
-
-        function convertMermaidCodeFences() {
-          try {
-            // Use more efficient selector and batch DOM operations
-            const codeBlocks = document.querySelectorAll('pre > code.language-mermaid, pre > code.mermaid');
-            const fragment = document.createDocumentFragment();
-            const replacements = [];
-
-            codeBlocks.forEach(function(code) {
-              const pre = code.parentElement;
-              const container = pre.parentElement;
-              const div = document.createElement('div');
-              div.className = 'mermaid';
-              div.textContent = code.textContent;
-              replacements.push({ container, pre, div });
-            });
-
-            // Batch DOM updates to minimize layout thrashing
-            replacements.forEach(({ container, pre, div }) => {
-              container.replaceChild(div, pre);
-            });
-          } catch (e) {
-            console.warn('Mermaid code fence conversion failed:', e);
-          }
-        }
-
-        function initMermaidNow() {
-          try {
-            if (!window.mermaid) return false;
-
-            scheduleWork(() => {
-              convertMermaidCodeFences();
-              if (typeof mermaid.initialize === 'function') {
-                mermaid.initialize({
-                  startOnLoad: false, // Better control over timing
-                  theme: 'default'
-                });
-              }
-
-              scheduleWork(() => {
-                if (typeof mermaid.run === 'function') {
-                  mermaid.run({ querySelector: '.mermaid' });
-                } else if (typeof mermaid.init === 'function') {
-                  mermaid.init(undefined, document.querySelectorAll('.mermaid'));
-                }
-              });
-            });
-
-            return true;
-          } catch (e) {
-            console.error('Mermaid initialization error:', e);
-            return false;
-          }
-        }
-
-        // Use passive event listeners for better performance
-        function whenReady(fn) {
-          if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', fn, { passive: true });
-          } else {
-            scheduleWork(fn);
-          }
-        }
-
-        // Improved initialization with timeout and better error handling
-        whenReady(function() {
-          scheduleWork(() => {
-            if (initMermaidNow()) return;
-
-            let attempts = 0;
-            const maxAttempts = 30; // Reduced from 50
-            const checkInterval = 200; // Increased from 100ms
-
-            const timer = setInterval(function() {
-              attempts++;
-              if (initMermaidNow() || attempts >= maxAttempts) {
-                clearInterval(timer);
-                if (attempts >= maxAttempts) {
-                  console.warn('Mermaid initialization timed out after', maxAttempts, 'attempts');
-                }
-              }
-            }, checkInterval);
-          });
-        });
-      })();
-    </script>
-    <script src="/assets/js/print-helper-optimized.js?v=2025-09-12T225" defer></script>
+    <script src="/assets/js/storage-access.js?v=2025-09-22T060"></script>
     
-    <script src="/assets/js/accessibility-enhancements.js?v=2025-09-12T225" defer></script>
+    <script src="/assets/js/accessibility-enhancements.js?v=2025-09-22T060" defer></script>
     
     <script>
       function hideCookieConsentBanner() {

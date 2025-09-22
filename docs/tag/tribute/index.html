@@ -3,8 +3,6 @@
   <head>
     <meta charset="utf-8" />
     
-    <script src="/assets/js/storage-access.js?v=2025-09-12T225"></script>
-    
     <meta
       name="google-adsense-account"
       content="ca-pub-3383458876439157"
@@ -44,17 +42,75 @@
       content="MIJUG.NET serves the communities of Southeast Michigan, Ohio, and Florida with technology, sustainability, and community engagement resources. A platform by ..."
     />
     
-    <meta name="version" content="Sep 17, 2025" />
+    <meta name="version" content="Sep 22, 2025" />
+    
+    <!-- Include site verification metatags -->
+    <meta name="google-site-verification" content="googlece83719b3f856e56" />
+    <!-- Preload fonts for better performance -->
+      <!-- Preload fonts for better performance -->
+  <link
+    rel="preload"
+    href="/assets/fonts/Inter-Regular.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin="anonymous"
+  />
+  <link
+    rel="preload"
+    href="/assets/fonts/Inter-Bold.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin="anonymous"
+  />
+  <link
+    rel="preload"
+    href="/assets/fonts/Inter-SemiBold.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin="anonymous"
+  />
+  <link
+    rel="preload"
+    href="/assets/fonts/Inter-Medium.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin="anonymous"
+  />
+  <link
+    rel="preload"
+    href="/assets/fonts/Inter-Light.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin="anonymous"
+  />
+  <link
+    rel="preload"
+    href="/assets/fonts/Inter-ExtraLight.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin="anonymous"
+  />
+  <link
+    rel="preload"
+    href="/assets/fonts/Inter-Black.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin="anonymous"
+  />
+  <link
+    rel="preload"
+    href="/assets/fonts/Inter-Thin.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin="anonymous"
+  />
+
     
     
+    <link rel="stylesheet" href="/assets/main.css?v=2025-09-22T060" />
+    <link rel="stylesheet" href="/assets/css/inp-optimizations.css?v=2025-09-22T060" />
     
-    <link rel="stylesheet" href="/assets/main.css?v=2025-09-12T225" />
-    <link rel="stylesheet" href="/assets/css/inp-optimizations.css?v=2025-09-12T225" />
-    
-    <link
-      rel="canonical"
-      href="https://www.mijug.net/tag/tribute/"
-    />
+
     <link
       rel="alternate"
       type="application/rss+xml"
@@ -74,23 +130,36 @@
       href="/favicon.ico"
     />
     <link rel="manifest" href="/manifest.webmanifest" />
-    <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>tribute | My Information Just Under Glass</title>
-<meta name="generator" content="Jekyll v4.4.1" />
-<meta property="og:title" content="tribute" />
-<meta name="author" content="Bob Kranson" />
-<meta property="og:locale" content="en_US" />
-<meta name="description" content="MIJUG.NET serves the communities of Southeast Michigan, Ohio, and Florida with technology, sustainability, and community engagement resources. A platform by Kranson Enterprises for sharing knowledge and connecting communities." />
-<meta property="og:description" content="MIJUG.NET serves the communities of Southeast Michigan, Ohio, and Florida with technology, sustainability, and community engagement resources. A platform by Kranson Enterprises for sharing knowledge and connecting communities." />
-<link rel="canonical" href="https://www.mijug.net/tag/tribute/" />
+  <!-- Use custom SEO template instead of jekyll-seo-tag -->
+  <!-- Custom SEO template without Twitter cards -->
+
+  <meta property="og:title" content="tribute" />
+
+
+
+  <meta property="og:description" content="MIJUG.NET serves the communities of Southeast Michigan, Ohio, and Florida with technology, sustainability, and community engagement resources. A platform by ..." />
+  <meta name="description" content="MIJUG.NET serves the communities of Southeast Michigan, Ohio, and Florida with technology, sustainability, and community engagement resources. A platform by ..." />
+
+
 <meta property="og:url" content="https://www.mijug.net/tag/tribute/" />
 <meta property="og:site_name" content="My Information Just Under Glass" />
 <meta property="og:type" content="website" />
-<meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="tribute" />
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","author":{"@type":"Person","name":"Bob Kranson"},"description":"MIJUG.NET serves the communities of Southeast Michigan, Ohio, and Florida with technology, sustainability, and community engagement resources. A platform by Kranson Enterprises for sharing knowledge and connecting communities.","headline":"tribute","publisher":{"@type":"Organization","logo":{"@type":"ImageObject","url":"https://www.mijug.net/assets/logo-mijug-96x96.png"},"name":"Bob Kranson"},"url":"https://www.mijug.net/tag/tribute/"}</script>
-<!-- End Jekyll SEO tag -->
+
+
+  <meta property="og:image" content="https://www.mijug.net/assets/logo-mijug-96x96.png" />
+
+
+<!-- LinkedIn specific tags -->
+
+<meta property="article:author" content="https://www.linkedin.com/in/bobkranson" />
+
+
+<!-- Canonical URL -->
+<link
+  rel="canonical"
+  href="https://www.mijug.net/tag/tribute/"
+/>
+<!-- No Twitter cards - intentionally omitted -->
 
   </head>
   
@@ -1252,109 +1321,11 @@
 
     <!-- Mermaid support: convert fenced code blocks (```mermaid) and initialize -->
     
-    <script src="https://cdn.jsdelivr.net/npm/mermaid@11.9.0/dist/mermaid.min.js" defer></script>
+    <script src="/assets/js/print-helper-optimized.js?v=2025-09-22T060" defer></script>
     
-    <script>
-      (function() {
-        'use strict';
-
-        // Use requestIdleCallback for better INP performance
-        function scheduleWork(callback) {
-          if (window.requestIdleCallback) {
-            requestIdleCallback(callback, { timeout: 2000 });
-          } else {
-            setTimeout(callback, 0);
-          }
-        }
-
-        function convertMermaidCodeFences() {
-          try {
-            // Use more efficient selector and batch DOM operations
-            const codeBlocks = document.querySelectorAll('pre > code.language-mermaid, pre > code.mermaid');
-            const fragment = document.createDocumentFragment();
-            const replacements = [];
-
-            codeBlocks.forEach(function(code) {
-              const pre = code.parentElement;
-              const container = pre.parentElement;
-              const div = document.createElement('div');
-              div.className = 'mermaid';
-              div.textContent = code.textContent;
-              replacements.push({ container, pre, div });
-            });
-
-            // Batch DOM updates to minimize layout thrashing
-            replacements.forEach(({ container, pre, div }) => {
-              container.replaceChild(div, pre);
-            });
-          } catch (e) {
-            console.warn('Mermaid code fence conversion failed:', e);
-          }
-        }
-
-        function initMermaidNow() {
-          try {
-            if (!window.mermaid) return false;
-
-            scheduleWork(() => {
-              convertMermaidCodeFences();
-              if (typeof mermaid.initialize === 'function') {
-                mermaid.initialize({
-                  startOnLoad: false, // Better control over timing
-                  theme: 'default'
-                });
-              }
-
-              scheduleWork(() => {
-                if (typeof mermaid.run === 'function') {
-                  mermaid.run({ querySelector: '.mermaid' });
-                } else if (typeof mermaid.init === 'function') {
-                  mermaid.init(undefined, document.querySelectorAll('.mermaid'));
-                }
-              });
-            });
-
-            return true;
-          } catch (e) {
-            console.error('Mermaid initialization error:', e);
-            return false;
-          }
-        }
-
-        // Use passive event listeners for better performance
-        function whenReady(fn) {
-          if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', fn, { passive: true });
-          } else {
-            scheduleWork(fn);
-          }
-        }
-
-        // Improved initialization with timeout and better error handling
-        whenReady(function() {
-          scheduleWork(() => {
-            if (initMermaidNow()) return;
-
-            let attempts = 0;
-            const maxAttempts = 30; // Reduced from 50
-            const checkInterval = 200; // Increased from 100ms
-
-            const timer = setInterval(function() {
-              attempts++;
-              if (initMermaidNow() || attempts >= maxAttempts) {
-                clearInterval(timer);
-                if (attempts >= maxAttempts) {
-                  console.warn('Mermaid initialization timed out after', maxAttempts, 'attempts');
-                }
-              }
-            }, checkInterval);
-          });
-        });
-      })();
-    </script>
-    <script src="/assets/js/print-helper-optimized.js?v=2025-09-12T225" defer></script>
+    <script src="/assets/js/storage-access.js?v=2025-09-22T060"></script>
     
-    <script src="/assets/js/accessibility-enhancements.js?v=2025-09-12T225" defer></script>
+    <script src="/assets/js/accessibility-enhancements.js?v=2025-09-22T060" defer></script>
     
     <script>
       function hideCookieConsentBanner() {
