@@ -1,77 +1,38 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="no-js">
   <head>
     <meta charset="utf-8" />
-    
-    <meta
-      name="google-adsense-account"
-      content="ca-pub-3383458876439157"
-    />
-    
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+    <!-- Early security with comprehensive CSP tailored to MIJUG .NET requirements -->
+    <meta http-equiv="Content-Security-Policy" content="
+      default-src 'self';
+      script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://cdn.jsdelivr.net https://pagead2.googlesyndication.com https://googleads.g.doubleclick.net https://ep1.adtrafficquality.google https://ep2.adtrafficquality.google https://csi.gstatic.com ;
+      style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net ;
+      style-src-elem 'self' 'unsafe-inline' ;
+      img-src 'self' data: https: https://www.google-analytics.com https://pagead2.googlesyndication.com https://ep1.adtrafficquality.google https://ep2.adtrafficquality.google;
+      font-src 'self' https://cdn.jsdelivr.net https://fonts.gstatic.com data:;
+      connect-src 'self' https://www.google-analytics.com https://pagead2.googlesyndication.com https://googleads.g.doubleclick.net https://ep1.adtrafficquality.google https://ep2.adtrafficquality.google ;
+      frame-src 'self' https://www.google.com https://googleads.g.doubleclick.net https://pagead2.googlesyndication.com https://ep1.adtrafficquality.google https://ep2.adtrafficquality.google ;
+      object-src 'none';
+      base-uri 'self';
+      form-action 'self';
+      manifest-src 'self';block-all-mixed-content;upgrade-insecure-requests">
+
+    <!-- Preconnect to critical third-party domains -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="anonymous" />
     
-    <!-- Navigation and ordering metadata -->
-    <meta name="docs-nav-order" content="7" />
-    <meta name="docs-section" content="documentation" />
-    
-    <meta name="priority-doc" content="true" />
-      
-    
-    
-    <!-- Disable ability to print or save -->
-    <script>
-      window.print = function () {
-        console.log('Skip printing');
-      };
-      window.addEventListener('keydown', function(event) {
-       if (event.keyCode === 80 && (event.ctrlKey || event.metaKey) && !event.altKey && (!event.shiftKey || window.chrome || window.opera)) {
-        event.preventDefault();
-        if (event.stopImmediatePropagation) {
-            event.stopImmediatePropagation();
-        } else {
-            event.stopPropagation();
-        }
-        return;
-       }
-        if (event.ctrlKey && (event.key === "p" || event.key === "s")) {
-           event.preventDefault();
-        }
-      }, true);
-    </script>
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin="anonymous" />
+    <link rel="preconnect" href="https://www.google-analytics.com" crossorigin="anonymous" />
     
     
-    <!-- Structured data for navigation -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "FrontMatter CMS Usage",
-        "description": "Learn how to use the FrontMatter CMS extension for content management in Jekyll",
-        "url": "https://www.mijug.net/docs/frontmatter-cms/",
-        "position": 7,
-        "isPartOf": {
-          "@type": "WebSite",
-          "name": "My Information Just Under Glass",
-          "url": "https://www.mijug.net/"
-        }
-      }
-    </script>
+    <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin="anonymous" />
+    <link rel="preconnect" href="https://googleads.g.doubleclick.net" crossorigin="anonymous" />
+    <meta name="google-adsense-account" content="ca-pub-3383458876439157" />
     
-    <title>
-      FrontMatter CMS Usage | My Information Just Under Glass
-    </title>
-    <meta
-      name="description"
-      content="FrontMatter CMS Usage"
-    />
-    
-    <meta name="version" content="Sep 09, 2025" />
-    
-    <!-- Include site verification metatags -->
-    <meta name="google-site-verification" content="googlece83719b3f856e56" />
+
     <!-- Preload fonts for better performance -->
-      <!-- Preload fonts for better performance -->
+    <!-- Preload fonts for better performance -->
   <link
     rel="preload"
     href="/assets/fonts/Inter-Regular.woff2"
@@ -128,13 +89,423 @@
     type="font/woff2"
     crossorigin="anonymous"
   />
+  <link rel="preload" href="/assets/fonts/InterVariable.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+  /* Prevent layout shift with font loading strategy */
+  @font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+    src: url('/assets/fonts/InterVariable.woff2') format('woff2');
+    size-adjust: 100%;
+    ascent-override: 90%;
+    descent-override: 20%;
+    line-gap-override: 0%;
+  }
+</style>
 
+
+    <!-- Critical CSS inline for above-the-fold content -->
+    <!-- Critical CSS for above-the-fold content -->
+<style>
+/**
+ * Critical path CSS for above-the-fold content
+ * Optimized for < 12s build target and initial viewport rendering
+ */
+
+/* Base variables for theming */
+:root {
+  --bg-color: #ffffff;
+  --text-color: #222222;
+  --accent-color: #1e8449; /* WCAG AA compliant green */
+  --link-color: #0066cc;
+  --nav-bg: #f8f8f8;
+  --border-color: #e8e8e8;
+  --header-color: #424242;
+  --focus-outline: 2px solid #1e8449;
+  --font-family-base: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-size-base: 16px;
+  --line-height-base: 1.5;
+}
+
+/* Base element styles */
+html {
+  font-size: var(--font-size-base);
+  font-family: var(--font-family-base);
+  line-height: var(--line-height-base);
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Wrapper for content layout */
+.wrapper {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 15px;
+  width: calc(100% - 30px);
+}
+
+/* Critical header and navigation styles */
+.site-header {
+  border-bottom: 1px solid var(--border-color);
+  min-height: 56px;
+  background-color: var(--nav-bg);
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.site-header .wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.site-title {
+  font-size: 1.5rem;
+  font-weight: 300;
+  letter-spacing: -1px;
+  margin-bottom: 0;
+  color: var(--header-color);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  line-height: 56px;
+}
+
+.site-title img {
+  margin-right: 10px;
+  width: 50px;
+  height: 50px;
+}
+
+.site-title.long-title {
+  font-size: 1.25rem;
+}
+
+/* Navigation styling */
+.site-nav {
+  position: relative;
+  line-height: 56px;
+}
+
+.site-nav .nav-trigger {
+  display: none;
+}
+
+.site-nav .menu-icon {
+  display: none;
+}
+
+.site-nav .page-link {
+  color: var(--text-color);
+  line-height: 1.5;
+  text-decoration: none;
+  margin-right: 20px;
+}
+
+.site-nav .page-link:hover {
+  color: var(--accent-color);
+}
+
+.nav-button {
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: var(--font-family-base);
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+/* Main content area */
+.page-content {
+  padding: 30px 0;
+  flex: 1;
+}
+
+/* Skip link - accessibility feature */
+.skip-to-content {
+  position: absolute;
+  top: -50px;
+  left: 10px;
+  background: var(--accent-color);
+  color: white;
+  padding: 8px;
+  z-index: 100;
+  transition: top 0.3s ease;
+}
+
+.skip-to-content:focus {
+  top: 10px;
+}
+
+/* Focus outline for accessibility */
+:focus {
+  outline: var(--focus-outline);
+  outline-offset: 2px;
+}
+
+/* Basic media query for responsive design */
+@media screen and (max-width: 600px) {
+  .site-nav {
+    position: absolute;
+    top: 9px;
+    right: 15px;
+    background-color: var(--nav-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    text-align: right;
+    z-index: 10;
+  }
+
+  .site-nav .menu-icon {
+    display: block;
+    float: right;
+    width: 36px;
+    height: 26px;
+    line-height: 0;
+    padding-top: 10px;
+    text-align: center;
+    cursor: pointer;
+  }
+
+  .site-nav .menu-icon > svg {
+    width: 18px;
+    height: 15px;
+  }
+
+  .site-nav .trigger {
+    clear: both;
+    display: none;
+    padding-bottom: 5px;
+  }
+
+  .site-nav:not([popover]) .nav-trigger:checked ~ .trigger {
+    display: block;
+  }
+
+  .site-nav .page-link {
+    display: block;
+    padding: 5px 10px;
+    margin: 0;
+  }
+}
+
+/* SR-only class for accessibility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Basic typography for content */
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  color: var(--header-color);
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5em;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1em;
+}
+
+/* SVG icon in header */
+.svg-icon {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  fill: currentColor;
+  vertical-align: text-bottom;
+  flex-shrink: 0;
+  box-sizing: content-box;
+}
+
+/* Image aspect ratio and container styles */
+img {
+  aspect-ratio: attr(width) / attr(height);
+}
+
+.image-container {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+}
+
+.image-container--16-9 {
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+}
+
+.image-container--4-3 {
+  padding-bottom: 75%; /* 4:3 aspect ratio */
+}
+
+.image-container img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Cookie consent banner styles */
+#cookie-consent-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  max-height: 0;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: transform 0.3s, opacity 0.3s, max-height 0s 0.3s;
+  overflow: hidden;
+}
+
+#cookie-consent-banner.visible {
+  max-height: 200px;
+  opacity: 1;
+  transform: translateY(0);
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+/* Advertisement container styles */
+.ad-container {
+  min-height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f9f9f9;
+  margin: 1rem 0;
+  overflow: hidden;
+  contain: layout size;
+}
+
+.ad-container::before {
+  content: "Advertisement";
+  color: #777;
+  font-size: 0.75rem;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+
+/* Mermaid diagram container styles */
+.mermaid-container {
+  position: relative;
+  width: 100%;
+  min-height: 150px;
+  margin: 1.5rem 0;
+  background-color: rgba(0,0,0,0.03);
+  border-radius: 4px;
+  overflow: hidden;
+  contain: layout style paint;
+}
+
+.mermaid-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:
+    linear-gradient(90deg, transparent 25%, rgba(255,255,255,.5) 50%, transparent 75%) -200% 0 / 400% 100%,
+    linear-gradient(rgba(0,0,0,.1) 0%, transparent 20%, transparent 80%, rgba(0,0,0,.1) 100%);
+  animation: loading 1.5s infinite linear;
+  opacity: 0.5;
+}
+
+@keyframes loading {
+  to { background-position: 100% 0, 0 0; }
+}
+
+[popover] {
+  contain: layout size;
+}
+
+.site-nav[popover] {
+  /* Pre-compute layout position */
+  position: absolute;
+  top: 9px;
+  right: 15px;
+  z-index: 100;
+  /* Prevent layout shift during animations */
+  transform: translateZ(0);
+  will-change: transform;
+}
+</style>
+<link rel="preload" href="/assets/main.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="/assets/main.css"></noscript>
+
+
+    <!-- Title and metadata prioritized -->
+    <title>
+      FrontMatter CMS Usage | My Information Just Under Glass
+    </title>
+    <meta
+      name="description"
+      content="FrontMatter CMS Usage"
+    />
     
-    
-    <link rel="stylesheet" href="/assets/main.css?v=2025-09-22T060" />
-    <link rel="stylesheet" href="/assets/css/inp-optimizations.css?v=2025-09-22T060" />
+    <meta name="version" content="Sep 25, 2025" />
     
 
+    <!-- Collection metadata for docs pages -->
+    
+    <!-- Navigation and ordering metadata -->
+    <meta name="docs-nav-order" content="7" />
+    <meta name="docs-section" content="documentation" />
+    
+    <meta name="priority-doc" content="true" />
+    
+    
+
+    <!-- Include site verification metatags -->
+    <meta name="google-site-verification" content="googlece83719b3f856e56" />
+
+    <!-- Non-critical CSS with preload for better performance -->
+    
+    
+    <link rel="preload" href="/assets/main.css?v=2025-09-26T003" as="style" />
+    <link rel="stylesheet" href="/assets/main.css?v=2025-09-26T003" media="print" onload="this.media='all'" />
+    <link rel="preload" href="/assets/css/inp-optimizations.css?v=2025-09-26T003" as="style" />
+    <link rel="stylesheet" href="/assets/css/inp-optimizations.css?v=2025-09-26T003" media="print" onload="this.media='all'" />
+    
+    <!-- No-JS fallback for CSS -->
+    <noscript>
+      
+      <link rel="stylesheet" href="/assets/main.css?v=2025-09-26T003" />
+      <link rel="stylesheet" href="/assets/css/inp-optimizations.css?v=2025-09-26T003" />
+      
+    </noscript>
+
+    <!-- Lower priority resources -->
     <link
       rel="alternate"
       type="application/rss+xml"
@@ -154,8 +525,9 @@
       href="/favicon.ico"
     />
     <link rel="manifest" href="/manifest.webmanifest" />
-  <!-- Use custom SEO template instead of jekyll-seo-tag -->
-  <!-- Custom SEO template without Twitter cards -->
+
+    <!-- Use custom SEO template instead of jekyll-seo-tag -->
+    <!-- Custom SEO template without Twitter cards -->
 
   <meta property="og:title" content="FrontMatter CMS Usage" />
 
@@ -185,314 +557,372 @@
 />
 <!-- No Twitter cards - intentionally omitted -->
 
+
+    <!-- Preload Mermaid.js if diagrams are used (moved up for preload benefit) -->
+    
+
+    <!-- Structured data for navigation -->
+    
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "FrontMatter CMS Usage",
+        "description": "Learn how to use the FrontMatter CMS extension for content management in Jekyll",
+        "url": "https://www.mijug.net/docs/frontmatter-cms/",
+        "position": 7,
+        "isPartOf": {
+          "@type": "WebSite",
+          "name": "My Information Just Under Glass",
+          "url": "https://www.mijug.net/"
+        }
+      }
+    </script>
+    
+
+    <!-- Critical functionality JS - prioritize user experience -->
+    
+    <!-- Disable ability to print or save (moved after critical resources) -->
+    <script>
+      window.print = function () {
+        console.log('Skip printing');
+      };
+      window.addEventListener('keydown', function(event) {
+       if (event.keyCode === 80 && (event.ctrlKey || event.metaKey) && !event.altKey && (!event.shiftKey || window.chrome || window.opera)) {
+        event.preventDefault();
+        if (event.stopImmediatePropagation) {
+            event.stopImmediatePropagation();
+        } else {
+            event.stopPropagation();
+        }
+        return;
+       }
+        if (event.ctrlKey && (event.key === "p" || event.key === "s")) {
+           event.preventDefault();
+        }
+      }, true);
+    </script>
+    
+
+    <!-- Fixed navigation overlay styles with proper z-index and positioning -->
+    <style>
+      /* Navigation toggle button - ALWAYS VISIBLE */
+      .nav-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        right: 1rem;
+        top: 50%;
+        transform: translateY(-50%);
+        background: #0b63ce;
+        color: white;
+        border: none;
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+        font-weight: 600;
+        cursor: pointer;
+        border-radius: 6px;
+        z-index: 101;
+        transition: all 0.2s ease;
+        min-height: 44px;
+        min-width: 44px;
+      }
+
+      .nav-toggle:hover {
+        background: #0a56b3;
+        transform: translateY(-50%) scale(1.02);
+      }
+
+      .nav-toggle:focus {
+        outline: 2px solid white;
+        outline-offset: 2px;
+      }
+
+      /* Hide desktop nav when JS is enabled - overlay takes over */
+      html.js nav.primary-nav {
+        display: none;
+      }
+
+      /* Overlay navigation - works on all screen sizes */
+      html.js nav.primary-nav.nav-overlay {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.85);
+        z-index: 100;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-20px);
+        transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+        overflow-y: auto;
+        padding: 0;
+        line-height: normal;
+      }
+
+      /* Visible state */
+      html.js nav.primary-nav.nav-overlay.nav-visible {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+
+      /* Navigation content card */
+      html.js nav.primary-nav.nav-overlay ul {
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        margin: 4rem auto 2rem;
+        padding: 2rem 1.5rem;
+        max-width: 500px;
+        width: calc(100% - 2rem);
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        list-style: none;
+        transform: translateZ(0);
+      }
+
+      html.js nav.primary-nav.nav-overlay li {
+        margin: 0;
+        border-bottom: 1px solid #e1e5e9;
+      }
+
+      html.js nav.primary-nav.nav-overlay li:last-child {
+        border-bottom: none;
+      }
+
+      html.js nav.primary-nav.nav-overlay a {
+        display: block;
+        padding: 1rem 0.75rem;
+        font-size: 1.1rem;
+        font-weight: 500;
+        color: #111;
+        border-radius: 8px;
+        margin: 0.25rem 0;
+        transition: all 0.2s ease;
+        text-decoration: none;
+      }
+
+      html.js nav.primary-nav.nav-overlay a:hover {
+        background: rgba(11, 99, 206, 0.08);
+        color: #0b63ce;
+        transform: translateX(4px);
+      }
+
+      html.js nav.primary-nav.nav-overlay a.active {
+        background: #0b63ce;
+        color: white;
+        font-weight: 600;
+      }
+
+      /* Lock body scroll when overlay is open */
+      body.nav-open {
+        overflow: hidden;
+        position: fixed;
+        width: 100%;
+      }
+
+      /* No-JS fallback - hide toggle button */
+      html.no-js .nav-toggle {
+        display: none;
+      }
+
+      /* Simplified navigation styles - remove all complex inline CSS */
+      .visually-hidden {
+        position: absolute !important;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+
+      /* Print styles */
+      @media print {
+        .nav-toggle {
+          display: none !important;
+        }
+        nav.primary-nav.nav-overlay {
+          display: none !important;
+        }
+      }
+    </style>
+
+    <!-- Remove all the duplicate navigation CSS from the <style> block -->
+    <!-- Keep only essential utility styles that aren't in main.scss -->
+    <style>
+      /* Critical path optimizations only - navigation styles now in main.scss */
+
+      /* Performance optimization for font loading */
+      html {
+        font-display: swap;
+      }
+
+      /* Reduce layout shift during navigation initialization */
+      .site-header .wrapper {
+        min-height: 55.95px;
+      }
+    </style>
   </head>
   
     <!-- oncontextmenu return false disables right click context menu -->
     <body oncontextmenu="return false;">
   
-    <header class="site-header" role="banner">
-      <div class="wrapper">
-        <a class="site-title long-title" rel="home" href="/">
-          
-          <img src="/assets/logo-mijug-96x96.png" alt="My Information Just Under Glass" width="50" height="50">
-           My Information Just Under Glass
-        </a>
+    <!-- Simplified header with navigation -->
+<header class="site-header" role="banner">
+  <div class="wrapper">
+    <a class="site-title long-title" rel="home" href="/">
+      
+      <img src="/assets/logo-mijug-96x96.png" alt="My Information Just Under Glass" width="50" height="50">
+       My Information Just Under Glass
+    </a>
 
-        <nav class="site-nav" role="navigation" aria-label="Main navigation">
-          <input type="checkbox" id="header-nav-trigger" class="nav-trigger" title="Toggle header navigation" aria-label="Toggle navigation menu">
-          <label for="header-nav-trigger" aria-label="Open navigation menu">
-            <span class="menu-icon">
-              <svg viewbox="0 0 18 15" width="18px" height="15px" role="img" aria-label="Menu icon">
-                <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"></path>
-              </svg>
-            </span>
-          </label>
+    <!-- Navigation toggle button -->
+    <button class="nav-toggle" aria-controls="primary-navigation" aria-expanded="false" aria-label="Toggle navigation menu">
+      Menu
+    </button>
 
-          <div class="trigger">
-            <a class="page-link" href="/about/" aria-label="About MIJUG">About</a>
-            <button class="nav-button" popovertarget="mobile-navigation" popovertargetaction="show" type="button" aria-label="Open additional navigation menu" aria-haspopup="true" aria-expanded="false">
-              Navigation
-            </button>
-          </div>
-        </nav>
-      </div>
-    </header>
-    <nav popover id="mobile-navigation" class="site-nav" role="dialog" aria-labelledby="nav-heading" aria-modal="true">
-      <h2 id="nav-heading" class="sr-only">Additional Navigation</h2>
-      <button class="nav-button" popovertarget="mobile-navigation" popovertargetaction="hide" type="button" aria-label="Close navigation menu">
-        Close
-      </button>
-
-      <div class="popover-content">
-        <!-- Posts Section -->
-        <div class="popover-section">
-          <h3 class="popover-heading">Posts</h3>
-          <ul class="nav-list" role="list">
-            <li>
-              <a class="page-link" href="/blog/" aria-label="View blog posts">Blog</a>
-            </li>
-            <li>
-              <a class="page-link" href="/contact/" aria-label="Contact MIJUG">Contact Us</a>
-            </li>
-          </ul>
-        </div>
-
-        <!-- Documentation Section -->
-        <div class="popover-section">
-          <h3 class="popover-heading">
-            <a class="page-link" href="/docs/" aria-label="View documentation index">Documentation</a>
-          </h3>
-          <ul class="nav-list" role="list" aria-label="Documentation pages">
-            
-            
-            
-            <li>
-              <a class="page-link" href="/docs/welcome-mijug-workspace/" aria-label="View Welcome to MIJUG .NET Workspace documentation">
-                Welcome to MIJUG .NET Workspace
-              </a>
-            </li>
-            
-          </ul>
-        </div>
-
-        <!-- Categories Section -->
+    <!-- Navigation with actual HTML structure -->
+    <nav id="primary-navigation" class="primary-nav" role="navigation" aria-label="Main navigation">
+      <ul>
         
-        <div class="popover-section">
-          <h3 class="popover-heading">Categories</h3>
-          <ul class="nav-list" role="list" aria-label="Blog post categories">
-            
-            <li>
-              <a class="page-link" href="/category/announcements" aria-label="View Announcements category with 7 posts">
-                Announcements
-                <span class="count" aria-hidden="true">(7)</span>
-              </a>
-            </li>
-            
-            <li>
-              <a class="page-link" href="/category/linux" aria-label="View Linux category with 2 posts">
-                Linux
-                <span class="count" aria-hidden="true">(2)</span>
-              </a>
-            </li>
-            
-            <li>
-              <a class="page-link" href="/category/documentation" aria-label="View Documentation category with 1 posts">
-                Documentation
-                <span class="count" aria-hidden="true">(1)</span>
-              </a>
-            </li>
-            
-            <li>
-              <a class="page-link" href="/category/navigation" aria-label="View Navigation category with 1 posts">
-                Navigation
-                <span class="count" aria-hidden="true">(1)</span>
-              </a>
-            </li>
-            
-            <li>
-              <a class="page-link" href="/category/getting-started" aria-label="View Getting-started category with 5 posts">
-                Getting-started
-                <span class="count" aria-hidden="true">(5)</span>
-              </a>
-            </li>
-            
-            <li>
-              <a class="page-link" href="/category/digital-legacy" aria-label="View Digital-legacy category with 1 posts">
-                Digital-legacy
-                <span class="count" aria-hidden="true">(1)</span>
-              </a>
-            </li>
-            
-            <li>
-              <a class="page-link" href="/category/guides" aria-label="View Guides category with 2 posts">
-                Guides
-                <span class="count" aria-hidden="true">(2)</span>
-              </a>
-            </li>
-            
-            <li>
-              <a class="page-link" href="/category/history" aria-label="View History category with 2 posts">
-                History
-                <span class="count" aria-hidden="true">(2)</span>
-              </a>
-            </li>
-            
-            <li>
-              <a class="page-link" href="/category/home" aria-label="View Home category with 1 posts">
-                Home
-                <span class="count" aria-hidden="true">(1)</span>
-              </a>
-            </li>
-            
-            <li>
-              <a class="page-link" href="/category/technology" aria-label="View Technology category with 2 posts">
-                Technology
-                <span class="count" aria-hidden="true">(2)</span>
-              </a>
-            </li>
-            
-            <li>
-              <a class="page-link" href="/category/labor-day" aria-label="View Labor-day category with 1 posts">
-                Labor-day
-                <span class="count" aria-hidden="true">(1)</span>
-              </a>
-            </li>
-            
-            <li>
-              <a class="page-link" href="/category/security" aria-label="View Security category with 2 posts">
-                Security
-                <span class="count" aria-hidden="true">(2)</span>
-              </a>
-            </li>
-            
-            <li>
-              <a class="page-link" href="/category/windows" aria-label="View Windows category with 1 posts">
-                Windows
-                <span class="count" aria-hidden="true">(1)</span>
-              </a>
-            </li>
-            
-            <li>
-              <a class="page-link" href="/category/encryption" aria-label="View Encryption category with 1 posts">
-                Encryption
-                <span class="count" aria-hidden="true">(1)</span>
-              </a>
-            </li>
-            
-            <li>
-              <a class="page-link" href="/category/legacy" aria-label="View Legacy category with 1 posts">
-                Legacy
-                <span class="count" aria-hidden="true">(1)</span>
-              </a>
-            </li>
-            
-            <li>
-              <a class="page-link" href="/category/writing" aria-label="View Writing category with 1 posts">
-                Writing
-                <span class="count" aria-hidden="true">(1)</span>
-              </a>
-            </li>
-            
-            <li>
-              <a class="page-link" href="/category/tools" aria-label="View Tools category with 1 posts">
-                Tools
-                <span class="count" aria-hidden="true">(1)</span>
-              </a>
-            </li>
-            
-            <li>
-              <a class="page-link" href="/category/evolution" aria-label="View Evolution category with 1 posts">
-                Evolution
-                <span class="count" aria-hidden="true">(1)</span>
-              </a>
-            </li>
-            
-            <li>
-              <a class="page-link" href="/category/productivity" aria-label="View Productivity category with 1 posts">
-                Productivity
-                <span class="count" aria-hidden="true">(1)</span>
-              </a>
-            </li>
-            
-            <li>
-              <a class="page-link" href="/category/hardware" aria-label="View Hardware category with 1 posts">
-                Hardware
-                <span class="count" aria-hidden="true">(1)</span>
-              </a>
-            </li>
-            
-            <li>
-              <a class="page-link" href="/category/workshops" aria-label="View Workshops category with 1 posts">
-                Workshops
-                <span class="count" aria-hidden="true">(1)</span>
-              </a>
-            </li>
-            
-          </ul>
-        </div>
+          <li>
+            <a href="/blog/" aria-label="Navigate to Blog">
+               Blog
+            </a>
+          </li>
         
-
-        <!-- Tags Section -->
+          <li>
+            <a href="/about/" aria-label="Navigate to About">
+               About
+            </a>
+          </li>
         
-        <div class="popover-section">
-          <h3 class="popover-heading">Tags</h3>
-          <ul class="nav-list" role="list" aria-label="Blog post tags">
-             
-            <li>
-              <a class="page-link" href="/tag/agenda" aria-label="View posts tagged with agenda (1 posts)">
-                #agenda
-                <span class="count" aria-hidden="true">(1)</span>
-              </a>
-            </li>
-            
-            <li>
-              <a class="page-link" href="/tag/appliances" aria-label="View posts tagged with appliances (1 posts)">
-                #appliances
-                <span class="count" aria-hidden="true">(1)</span>
-              </a>
-            </li>
-            
-            <li>
-              <a class="page-link" href="/tag/backup" aria-label="View posts tagged with backup (2 posts)">
-                #backup
-                <span class="count" aria-hidden="true">(2)</span>
-              </a>
-            </li>
-            
-            <li>
-              <a class="page-link" href="/tag/bitlocker" aria-label="View posts tagged with bitlocker (1 posts)">
-                #bitlocker
-                <span class="count" aria-hidden="true">(1)</span>
-              </a>
-            </li>
-            
-            <li>
-              <a class="page-link" href="/tag/computers" aria-label="View posts tagged with computers (1 posts)">
-                #computers
-                <span class="count" aria-hidden="true">(1)</span>
-              </a>
-            </li>
-            
-            <li>
-              <a class="page-link" href="/tag/copyright" aria-label="View posts tagged with copyright (1 posts)">
-                #copyright
-                <span class="count" aria-hidden="true">(1)</span>
-              </a>
-            </li>
-            
-            <li>
-              <a class="page-link" href="/tag/cpus" aria-label="View posts tagged with cpus (1 posts)">
-                #cpus
-                <span class="count" aria-hidden="true">(1)</span>
-              </a>
-            </li>
-            
-            <li>
-              <a class="page-link" href="/tag/digital-legacy" aria-label="View posts tagged with digital-legacy (1 posts)">
-                #digital-legacy
-                <span class="count" aria-hidden="true">(1)</span>
-              </a>
-            </li>
-            
-            <li>
-              <a class="page-link" href="/tag/diy" aria-label="View posts tagged with diy (2 posts)">
-                #diy
-                <span class="count" aria-hidden="true">(2)</span>
-              </a>
-            </li>
-            
-            <li>
-              <a class="page-link" href="/tag/docs" aria-label="View posts tagged with docs (1 posts)">
-                #docs
-                <span class="count" aria-hidden="true">(1)</span>
-              </a>
-            </li>
-            
-          </ul>
-        </div>
+          <li>
+            <a href="/docs/getting-started/" aria-label="Navigate to Getting Started">
+               Getting Started
+            </a>
+          </li>
         
-      </div>
+          <li>
+            <a href="/docs/welcome-mijug-workspace/" aria-label="Navigate to Workspace Overview">
+               Workspace Overview
+            </a>
+          </li>
+        
+          <li>
+            <a href="/docs/frontmatter-cms/" class="active" aria-label="Navigate to FrontMatter CMS Usage">
+               FrontMatter CMS Usage
+            </a>
+          </li>
+        
+          <li>
+            <a href="/docs/accessibility-testing/" aria-label="Navigate to Accessibility Testing Configuration">
+               Accessibility Testing Configuration
+            </a>
+          </li>
+        
+          <li>
+            <a href="/docs/browser-management/" aria-label="Navigate to Browser Management for Testing">
+               Browser Management for Testing
+            </a>
+          </li>
+        
+          <li>
+            <a href="/docs/browser-compatibility-testing/" aria-label="Navigate to Browser Compatibility Testing">
+               Browser Compatibility Testing
+            </a>
+          </li>
+        
+          <li>
+            <a href="/docs/liquid-tags-examples/" aria-label="Navigate to Liquid Tags Examples">
+               Liquid Tags Examples
+            </a>
+          </li>
+        
+          <li>
+            <a href="/docs/tags-and-categories-guide/" aria-label="Navigate to Tags and Categories System Guide">
+               Tags and Categories System Guide
+            </a>
+          </li>
+        
+          <li>
+            <a href="/docs/performance-optimization/" aria-label="Navigate to Performance Optimization Guide">
+               Performance Optimization Guide
+            </a>
+          </li>
+        
+          <li>
+            <a href="/docs/testing-performance-evolution/" aria-label="Navigate to Testing Performance and Development Evolution">
+               Testing Performance and Development Evolution
+            </a>
+          </li>
+        
+          <li>
+            <a href="/docs/cache-management/" aria-label="Navigate to Cache Management Strategies">
+               Cache Management Strategies
+            </a>
+          </li>
+        
+          <li>
+            <a href="/docs/mermaid-configuration-guide/" aria-label="Navigate to Mermaid Diagram Configuration Guide">
+               Mermaid Diagram Configuration Guide
+            </a>
+          </li>
+        
+          <li>
+            <a href="/docs/mermaid-quick-start/" aria-label="Navigate to Mermaid Quick Start">
+               Mermaid Quick Start
+            </a>
+          </li>
+        
+          <li>
+            <a href="/docs/mermaid-examples/" aria-label="Navigate to Mermaid Diagram Examples">
+               Mermaid Diagram Examples
+            </a>
+          </li>
+        
+          <li>
+            <a href="/docs/mermaid-diagrams-sample/" aria-label="Navigate to Mermaid Diagrams Sample">
+               Mermaid Diagrams Sample
+            </a>
+          </li>
+        
+          <li>
+            <a href="/docs/mermaid-test-runner/" aria-label="Navigate to Mermaid Diagrams Test Runner">
+               Mermaid Diagrams Test Runner
+            </a>
+          </li>
+        
+          <li>
+            <a href="/docs/rel-attribute-guide/" aria-label="Navigate to The rel Attribute in HTML Links: A Comprehensive Guide">
+               The rel Attribute in HTML Links: A Comprehensive Guide
+            </a>
+          </li>
+        
+          <li>
+            <a href="/docs/exploring-limitations-of-gitea-and-ruby/" aria-label="Navigate to Exploring the Limitations of Gitea and Ruby">
+               Exploring the Limitations of Gitea and Ruby
+            </a>
+          </li>
+        
+      </ul>
     </nav>
+
+    <!-- Live region for screen reader announcements -->
+    <div id="menu-status" class="visually-hidden" role="status" aria-live="polite"></div>
+  </div>
+</header>
+
     <main class="page-content" aria-label="Content">
       <div class="wrapper">
 <article class="post">
@@ -509,7 +939,9 @@
 
 <h2 id="table-of-contents">Table of Contents</h2>
 
-<ul class="no_toc" id="markdown-toc">
+<!-- prettier-ignore-start -->
+
+<ul id="markdown-toc">
   <li>
 <a href="#frontmatter-cms-usage" id="markdown-toc-frontmatter-cms-usage">FrontMatter CMS Usage</a>    <ul>
       <li><a href="#overview" id="markdown-toc-overview">Overview</a></li>
@@ -591,6 +1023,8 @@
     </ul>
   </li>
 </ul>
+
+<!-- prettier-ignore-end -->
 
 <h2 id="getting-started">Getting Started</h2>
 
@@ -1115,6 +1549,7 @@
 </article>
 </div>
     </main>
+
     <footer class="site-footer h-card">
       <data class="u-url" href="/"></data>
       <div class="wrapper">
@@ -1139,6 +1574,7 @@
       </div>
     </footer>
 
+    <!-- Non-critical scripts moved to end of body -->
     
     <!-- Google Analytics with Consent Mode -->
     <script>
@@ -1161,10 +1597,10 @@
     </script>
 
     <!-- Load Google Analytics -->
-    <script src="https://www.googletagmanager.com/gtag/js?id=G-W1M1N0DCD4" crossorigin="anonymous"></script>
+    <script src="https://www.googletagmanager.com/gtag/js?id=G-W1M1N0DCD4" crossorigin="anonymous" async></script>
     
 
-    <!-- Google AdSense -->
+    <!-- Google AdSense (async for performance) -->
     <!-- Google AdSense with Consent Mode Support -->
 <script>
   // Initialize consent mode for AdSense
@@ -1210,9 +1646,9 @@
   </div>
 </div>
 
-<!-- Cookie Settings Modal -->
+<!-- Cookie Settings Modal - Using MIJUG Theme Pattern -->
 <div id="cookie-settings-modal" class="cookie-modal" style="display: none" role="dialog" aria-modal="true" aria-labelledby="cookie-settings-title">
-  <div class="cookie-modal-content">
+  <div class="cookie-modal-content mijug-highlight">
     <div class="cookie-modal-header">
       <h3 id="cookie-settings-title">Cookie Settings</h3>
       <button class="cookie-modal-close" onclick="closeCookieSettings()" aria-label="Close cookie settings dialog">
@@ -1220,47 +1656,54 @@
       </button>
     </div>
     <div class="cookie-modal-body">
+      <p class="cookie-modal-description">
+        Customize your cookie preferences. Essential cookies are required for basic site functionality and cannot be disabled.
+      </p>
+
       <div class="cookie-category">
         <div class="cookie-category-header">
           <h4>Essential Cookies</h4>
-          <label class="cookie-toggle" for="essential-cookies">
+          <label class="cookie-toggle" for="essential-cookies" aria-label="Essential cookies (required)">
             <input type="checkbox" id="essential-cookies" checked disabled>
-            <span class="cookie-slider"></span>
+            <span class="cookie-slider cookie-slider-disabled"></span>
           </label>
         </div>
-        <p>Required for basic site functionality. These cannot be disabled.</p>
+        <p class="cookie-category-description">Required for basic site functionality. These cannot be disabled.</p>
       </div>
 
       <div class="cookie-category">
         <div class="cookie-category-header">
           <h4>Analytics Cookies</h4>
-          <label class="cookie-toggle" for="analytics-cookies">
+          <label class="cookie-toggle" for="analytics-cookies" aria-label="Analytics cookies (optional)">
             <input type="checkbox" id="analytics-cookies">
             <span class="cookie-slider"></span>
           </label>
         </div>
-        <p>
-          Help us understand how visitors interact with our website via Google
-          Analytics.
+        <p class="cookie-category-description">
+          Help us understand how visitors interact with our website via Google Analytics.
+          No personally identifiable information is collected.
         </p>
       </div>
 
       <div class="cookie-category">
         <div class="cookie-category-header">
           <h4>Advertising Cookies</h4>
-          <label class="cookie-toggle" for="advertising-cookies">
+          <label class="cookie-toggle" for="advertising-cookies" aria-label="Advertising cookies (optional)">
             <input type="checkbox" id="advertising-cookies">
             <span class="cookie-slider"></span>
           </label>
         </div>
-        <p>Used by Google AdSense to display relevant advertisements.</p>
+        <p class="cookie-category-description">
+          Used by Google AdSense to display relevant advertisements.
+          Helps support the website through ad revenue.
+        </p>
       </div>
     </div>
     <div class="cookie-modal-footer">
       <button class="cookie-btn cookie-btn-accept" onclick="savePreferences()">
         Save Preferences
       </button>
-      <button class="cookie-btn cookie-btn-decline" onclick="closeCookieSettings()">
+      <button class="cookie-btn cookie-btn-settings" onclick="closeCookieSettings()">
         Cancel
       </button>
     </div>
@@ -1268,548 +1711,883 @@
 </div>
 
 <script>
-  // Cookie Consent Management
+  /**
+   * Cookie Consent Management System
+   * Streamlined implementation using MIJUG theme styles
+   * Following MIJUG .NET Workspace coding standards
+   */
   (function () {
     'use strict';
 
-    const COOKIE_CONSENT_KEY = 'mijug-cookie-consent';
-    const COOKIE_PREFERENCES_KEY = 'mijug-cookie-preferences';
-    const CONSENT_EXPIRY_DAYS = 365;
+    // Configuration constants following MIJUG naming conventions
+    const CONFIG = {
+      COOKIE_CONSENT_KEY: 'mijug-cookie-consent',
+      COOKIE_PREFERENCES_KEY: 'mijug-cookie-preferences',
+      CONSENT_EXPIRY_DAYS: 365,
+      FOCUS_TRAP_SELECTORS: 'button, [href], input:not([type=hidden]), select, textarea, [tabindex]:not([tabindex="-1"])',
+      BANNER_ELEMENT_ID: 'cookie-consent-banner',
+      MODAL_ELEMENT_ID: 'cookie-settings-modal'
+    };
 
-    // Check if user is from EU (simplified check)
-    function isEUUser() {
-      // In production, use a proper geolocation service
-      // For now, show to all users for compliance
-      return true;
-    }
+    // Performance-optimized element caching
+    const elementCache = new Map();
 
-    // Get cookie value
-    function getCookie(name) {
-      const value = `; ${document.cookie}`;
-      const parts = value.split(`; ${name}=`);
-      if (parts.length === 2) return parts.pop().split(';').shift();
-      return null;
-    }
-
-    // Set cookie
-    function setCookie(name, value, days) {
-      const expires = new Date();
-      expires.setTime(expires.getTime() + days * 24 * 60 * 60 * 1000);
-      document.cookie = `${name}=${value};expires=${expires.toUTCString()};path=/;SameSite=Strict`;
-    }
-
-    // Show cookie banner
-    function showCookieBanner() {
-      const banner = document.getElementById('cookie-consent-banner');
-      if (banner) {
-        banner.style.display = 'block';
-        banner.setAttribute('aria-hidden', 'false');
+    /**
+     * Performance-optimized DOM element retrieval with caching
+     * @param {string} id - Element ID
+     * @returns {HTMLElement|null} - Cached or fresh DOM element
+     */
+    function getElement(id) {
+      if (!elementCache.has(id)) {
+        elementCache.set(id, document.getElementById(id));
       }
+      return elementCache.get(id);
     }
 
-    // Hide cookie banner
-    function hideCookieBanner() {
-      const banner = document.getElementById('cookie-consent-banner');
-      if (banner) {
-        banner.style.display = 'none';
-        banner.setAttribute('aria-hidden', 'true');
-      }
-    }
+    /**
+     * Modern cookie utilities with enhanced error handling
+     */
+    const cookieUtils = {
+      get(name) {
+        try {
+          const cookies = document.cookie.split(';');
+          for (const cookie of cookies) {
+            const [key, value] = cookie.trim().split('=');
+            if (key === name) {
+              return decodeURIComponent(value);
+            }
+          }
+          return null;
+        } catch (error) {
+          console.warn(`⚠️ Error reading cookie ${name}:`, error);
+          return null;
+        }
+      },
 
-    // Load Google Analytics conditionally
-    function loadAnalytics() {
-      if (hasAnalyticsConsent()) {
-        // Load Google Analytics if consent given
-        if (typeof gtag !== 'undefined') {
-          gtag('consent', 'update', {
-            analytics_storage: 'granted',
+      set(name, value, days) {
+        try {
+          const expires = new Date(Date.now() + days * 24 * 60 * 60 * 1000).toUTCString();
+          const cookieString = `${name}=${encodeURIComponent(value)};expires=${expires};path=/;SameSite=Strict`;
+          document.cookie = cookieString;
+          console.log(`🍪 Cookie set: ${name}=${value}`);
+        } catch (error) {
+          console.error(`❌ Error setting cookie ${name}:`, error);
+        }
+      },
+
+      clear(name) {
+        try {
+          const clearCookieVariations = [
+            `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`,
+            `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=${window.location.hostname};`,
+            `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=.${window.location.hostname};`
+          ];
+
+          clearCookieVariations.forEach(cookieString => {
+            document.cookie = cookieString;
           });
+
+          console.log(`🗑️ Cookie cleared: ${name}`);
+        } catch (error) {
+          console.warn(`⚠️ Error clearing cookie ${name}:`, error);
         }
       }
-    }
+    };
 
-    // Load AdSense conditionally
-    function loadAdSense() {
-      if (hasAdvertisingConsent()) {
-        // Load AdSense if consent given
-        if (typeof gtag !== 'undefined') {
+    /**
+     * Enhanced banner visibility management using existing theme z-index patterns
+     */
+    const bannerManager = {
+      show() {
+        const banner = getElement(CONFIG.BANNER_ELEMENT_ID);
+        const modal = getElement(CONFIG.MODAL_ELEMENT_ID);
+
+        if (!banner) {
+          console.error('❌ Cookie consent banner element not found');
+          return;
+        }
+
+        // Use z-index that works with existing MIJUG theme
+        banner.style.cssText = `
+          display: block !important;
+          visibility: visible !important;
+          opacity: 1 !important;
+          position: fixed !important;
+          bottom: 0 !important;
+          left: 0 !important;
+          right: 0 !important;
+          z-index: 1001 !important;
+          background: #2c3e50 !important;
+          color: white !important;
+          padding: 1rem !important;
+          box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3) !important;
+          border-top: 3px solid #3498db !important;
+          min-height: 80px !important;
+          width: 100vw !important;
+          box-sizing: border-box !important;
+          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+        `;
+
+        banner.setAttribute('aria-hidden', 'false');
+        banner.classList.add('cookie-banner-visible');
+
+        // Ensure modal stays hidden
+        if (modal) {
+          modal.style.display = 'none';
+          modal.setAttribute('aria-hidden', 'true');
+        }
+
+        console.log('✅ Cookie consent banner displayed');
+      },
+
+      hide() {
+        const banner = getElement(CONFIG.BANNER_ELEMENT_ID);
+        if (banner) {
+          banner.style.display = 'none';
+          banner.setAttribute('aria-hidden', 'true');
+          banner.classList.remove('cookie-banner-visible');
+          console.log('✅ Cookie consent banner hidden');
+        }
+      }
+    };
+
+    /**
+     * Enhanced modal management leveraging MIJUG theme patterns
+     */
+    const modalManager = {
+      show() {
+        const modal = getElement(CONFIG.MODAL_ELEMENT_ID);
+        if (!modal) {
+          console.error('❌ Cookie settings modal element not found');
+          return;
+        }
+
+        // Load current preferences before showing
+        this.loadCurrentPreferences();
+
+        // Use z-index higher than site header but compatible with theme
+        modal.style.cssText = `
+          display: flex !important;
+          visibility: visible !important;
+          opacity: 1 !important;
+          position: fixed !important;
+          top: 0 !important;
+          left: 0 !important;
+          width: 100% !important;
+          height: 100% !important;
+          background: rgba(0, 0, 0, 0.85) !important;
+          z-index: 1002 !important;
+          align-items: center !important;
+          justify-content: center !important;
+          padding: 1rem !important;
+          box-sizing: border-box !important;
+        `;
+
+        modal.setAttribute('aria-hidden', 'false');
+        modal.classList.add('cookie-modal-visible');
+
+        // Set up focus management
+        focusManager.trapFocus(modal);
+
+        // Prevent body scroll when modal is open
+        document.body.classList.add('nav-open'); // Reuse existing MIJUG class
+
+        console.log('✅ Cookie settings modal displayed');
+      },
+
+      hide() {
+        const modal = getElement(CONFIG.MODAL_ELEMENT_ID);
+        if (!modal) return;
+
+        modal.style.display = 'none';
+        modal.setAttribute('aria-hidden', 'true');
+        modal.classList.remove('cookie-modal-visible');
+
+        // Remove focus trap
+        if (modal._removeFocusTrap) {
+          modal._removeFocusTrap();
+        }
+
+        // Restore body scroll using existing MIJUG class
+        document.body.classList.remove('nav-open');
+
+        // Return focus to settings button
+        const settingsButton = getElement('cookie-settings');
+        if (settingsButton) {
+          settingsButton.focus();
+        }
+
+        console.log('✅ Cookie settings modal hidden');
+      },
+
+      loadCurrentPreferences() {
+        const preferences = cookieUtils.get(CONFIG.COOKIE_PREFERENCES_KEY);
+
+        let analytics = false;
+        let advertising = false;
+
+        if (preferences) {
+          try {
+            const prefs = JSON.parse(preferences);
+            analytics = prefs.analytics || false;
+            advertising = prefs.advertising || false;
+          } catch (e) {
+            console.warn('⚠️ Error parsing saved preferences:', e);
+          }
+        }
+
+        // Update checkboxes with retry mechanism
+        setTimeout(() => {
+          const analyticsCheckbox = getElement('analytics-cookies');
+          const advertisingCheckbox = getElement('advertising-cookies');
+
+          if (analyticsCheckbox) {
+            analyticsCheckbox.checked = analytics;
+          }
+          if (advertisingCheckbox) {
+            advertisingCheckbox.checked = advertising;
+          }
+
+          console.log('📋 Current preferences loaded:', { analytics, advertising });
+        }, 100);
+      }
+    };
+
+    /**
+     * Consent state management with enhanced logic
+     */
+    const consentManager = {
+      shouldShowConsent() {
+        try {
+          // Testing override - highest priority
+          if (window.forceShowCookieConsent === true) {
+            console.log('🧪 Testing override: Forcing cookie consent display');
+            return true;
+          }
+
+          // URL parameter override
+          const urlParams = new URLSearchParams(window.location.search);
+          if (urlParams.get('force-cookie-consent') === 'true') {
+            console.log('🧪 URL parameter override: Forcing cookie consent display');
+            return true;
+          }
+
+          // Development mode detection
+          const isDevelopment = window.location.hostname === 'localhost' ||
+                               window.location.hostname === '127.0.0.1' ||
+                               window.location.hostname.endsWith('.local');
+
+          if (isDevelopment) {
+            console.log('🔧 Development mode detected - showing cookie consent');
+            return true;
+          }
+
+          // Check existing consent
+          const consentCookie = cookieUtils.get(CONFIG.COOKIE_CONSENT_KEY);
+          if (consentCookie !== null && consentCookie !== '') {
+            console.log('✅ Existing consent found:', consentCookie);
+            return false;
+          }
+
+          console.log('📋 No existing consent - showing banner for GDPR compliance');
+          return true;
+        } catch (error) {
+          console.warn('⚠️ Error checking consent status:', error);
+          return true;
+        }
+      },
+
+      hasConsent() {
+        return cookieUtils.get(CONFIG.COOKIE_CONSENT_KEY) !== null;
+      },
+
+      hasAnalyticsConsent() {
+        const preferences = cookieUtils.get(CONFIG.COOKIE_PREFERENCES_KEY);
+        if (!preferences) return false;
+        try {
+          return JSON.parse(preferences).analytics === true;
+        } catch {
+          return false;
+        }
+      },
+
+      hasAdvertisingConsent() {
+        const preferences = cookieUtils.get(CONFIG.COOKIE_PREFERENCES_KEY);
+        if (!preferences) return false;
+        try {
+          return JSON.parse(preferences).advertising === true;
+        } catch {
+          return false;
+        }
+      }
+    };
+
+    /**
+     * Analytics integration with localhost safety
+     */
+    const analyticsManager = {
+      loadAnalytics() {
+        if (consentManager.hasAnalyticsConsent() && typeof gtag !== 'undefined') {
+          gtag('consent', 'update', { analytics_storage: 'granted' });
+          console.log('📊 Analytics loaded with user consent');
+        } else {
+          console.log('📊 Analytics not loaded (no consent or localhost)');
+        }
+      },
+
+      loadAdSense() {
+        if (consentManager.hasAdvertisingConsent() && typeof gtag !== 'undefined') {
           gtag('consent', 'update', {
             ad_storage: 'granted',
             ad_user_data: 'granted',
             ad_personalization: 'granted',
           });
+          console.log('📢 AdSense loaded with user consent');
+        } else {
+          console.log('📢 AdSense not loaded (no consent or localhost)');
         }
       }
-    }
+    };
 
-    // Check consent status
-    function hasConsent() {
-      return getCookie(COOKIE_CONSENT_KEY) !== null;
-    }
+    /**
+     * Focus management for accessibility compliance
+     */
+    const focusManager = {
+      trapFocus(modal) {
+        const focusableEls = modal.querySelectorAll(CONFIG.FOCUS_TRAP_SELECTORS);
+        const firstFocusableEl = focusableEls[0];
+        const lastFocusableEl = focusableEls[focusableEls.length - 1];
 
-    function hasAnalyticsConsent() {
-      const preferences = getCookie(COOKIE_PREFERENCES_KEY);
-      if (!preferences) return false;
-      try {
-        const prefs = JSON.parse(preferences);
-        return prefs.analytics === true;
-      } catch {
-        return false;
-      }
-    }
-
-    function hasAdvertisingConsent() {
-      const preferences = getCookie(COOKIE_PREFERENCES_KEY);
-      if (!preferences) return false;
-      try {
-        const prefs = JSON.parse(preferences);
-        return prefs.advertising === true;
-      } catch {
-        return false;
-      }
-    }
-
-    // Focus trap for modal
-    function trapFocus(modal) {
-      const focusableSelectors = 'button, [href], input:not([type=hidden]), select, textarea, [tabindex]:not([tabindex="-1"])';
-      const focusableEls = modal.querySelectorAll(focusableSelectors);
-      const firstFocusableEl = focusableEls[0];
-      const lastFocusableEl = focusableEls[focusableEls.length - 1];
-
-      function handleTab(e) {
-        if (e.key === 'Tab') {
-          if (e.shiftKey) {
-            if (document.activeElement === firstFocusableEl) {
+        const handleKeydown = (e) => {
+          if (e.key === 'Tab') {
+            if (e.shiftKey && document.activeElement === firstFocusableEl) {
               e.preventDefault();
-              lastFocusableEl.focus();
-            }
-          } else {
-            if (document.activeElement === lastFocusableEl) {
+              lastFocusableEl?.focus();
+            } else if (!e.shiftKey && document.activeElement === lastFocusableEl) {
               e.preventDefault();
-              firstFocusableEl.focus();
+              firstFocusableEl?.focus();
             }
+          } else if (e.key === 'Escape') {
+            closeCookieSettings();
           }
-        }
+        };
+
+        modal.addEventListener('keydown', handleKeydown);
+        modal._removeFocusTrap = () => modal.removeEventListener('keydown', handleKeydown);
+
+        // Focus close button first for better UX
+        requestAnimationFrame(() => {
+          const closeButton = modal.querySelector('.cookie-modal-close');
+          if (closeButton) {
+            closeButton.focus();
+          } else {
+            firstFocusableEl?.focus();
+          }
+        });
       }
+    };
 
-      function handleEscape(e) {
-        if (e.key === 'Escape') {
-          closeCookieSettings();
-        }
-      }
-
-      modal.addEventListener('keydown', handleTab);
-      modal.addEventListener('keydown', handleEscape);
-      // Remove listeners on close
-      modal._removeFocusTrap = function () {
-        modal.removeEventListener('keydown', handleTab);
-        modal.removeEventListener('keydown', handleEscape);
-      };
-    }
-
-    // Global functions for buttons
+    /**
+     * Global button handlers with enhanced error handling
+     */
     window.acceptCookies = function () {
-      const preferences = {
-        analytics: true,
-        advertising: true,
-      };
-      setCookie(COOKIE_CONSENT_KEY, 'accepted', CONSENT_EXPIRY_DAYS);
-      setCookie(
-        COOKIE_PREFERENCES_KEY,
-        JSON.stringify(preferences),
-        CONSENT_EXPIRY_DAYS
-      );
-      hideCookieBanner();
-      loadAnalytics();
-      loadAdSense();
+      try {
+        const preferences = { analytics: true, advertising: true };
+        cookieUtils.set(CONFIG.COOKIE_CONSENT_KEY, 'accepted', CONFIG.CONSENT_EXPIRY_DAYS);
+        cookieUtils.set(CONFIG.COOKIE_PREFERENCES_KEY, JSON.stringify(preferences), CONFIG.CONSENT_EXPIRY_DAYS);
+
+        bannerManager.hide();
+        analyticsManager.loadAnalytics();
+        analyticsManager.loadAdSense();
+        console.log('✅ All cookies accepted');
+      } catch (error) {
+        console.error('❌ Error accepting cookies:', error);
+      }
     };
 
     window.declineCookies = function () {
-      const preferences = {
-        analytics: false,
-        advertising: false,
-      };
-      setCookie(COOKIE_CONSENT_KEY, 'declined', CONSENT_EXPIRY_DAYS);
-      setCookie(
-        COOKIE_PREFERENCES_KEY,
-        JSON.stringify(preferences),
-        CONSENT_EXPIRY_DAYS
-      );
-      hideCookieBanner();
+      try {
+        const preferences = { analytics: false, advertising: false };
+        cookieUtils.set(CONFIG.COOKIE_CONSENT_KEY, 'declined', CONFIG.CONSENT_EXPIRY_DAYS);
+        cookieUtils.set(CONFIG.COOKIE_PREFERENCES_KEY, JSON.stringify(preferences), CONFIG.CONSENT_EXPIRY_DAYS);
+
+        bannerManager.hide();
+        console.log('❌ Optional cookies declined');
+      } catch (error) {
+        console.error('❌ Error declining cookies:', error);
+      }
     };
 
     window.showCookieSettings = function () {
-      const modal = document.getElementById('cookie-settings-modal');
-      if (modal) {
-        // Load current preferences
-        const preferences = getCookie(COOKIE_PREFERENCES_KEY);
-        if (preferences) {
-          try {
-            const prefs = JSON.parse(preferences);
-            document.getElementById('analytics-cookies').checked =
-              prefs.analytics || false;
-            document.getElementById('advertising-cookies').checked =
-              prefs.advertising || false;
-          } catch {
-            // Default to false if parsing fails
-          }
-        }
-        modal.style.display = 'block';
-        modal.setAttribute('aria-hidden', 'false');
-        // Focus management: focus first button
-        setTimeout(function () {
-          const firstBtn = modal.querySelector('button, [href], input:not([type=hidden]), select, textarea, [tabindex]:not([tabindex="-1"])');
-          if (firstBtn) firstBtn.focus();
-        }, 0);
-        trapFocus(modal);
+      try {
+        console.log('🔧 Attempting to show cookie settings modal...');
+        modalManager.show();
+      } catch (error) {
+        console.error('❌ Error showing cookie settings:', error);
       }
     };
 
     window.closeCookieSettings = function () {
-      const modal = document.getElementById('cookie-settings-modal');
-      if (modal) {
-        modal.style.display = 'none';
-        modal.setAttribute('aria-hidden', 'true');
-        if (modal._removeFocusTrap) modal._removeFocusTrap();
-        // Return focus to settings button
-        const settingsBtn = document.getElementById('cookie-settings');
-        if (settingsBtn) settingsBtn.focus();
+      try {
+        modalManager.hide();
+      } catch (error) {
+        console.error('❌ Error closing cookie settings:', error);
       }
     };
 
     window.savePreferences = function () {
-      const analytics = document.getElementById('analytics-cookies').checked;
-      const advertising = document.getElementById(
-        'advertising-cookies'
-      ).checked;
+      try {
+        const analyticsCheckbox = getElement('analytics-cookies');
+        const advertisingCheckbox = getElement('advertising-cookies');
 
-      const preferences = {
-        analytics: analytics,
-        advertising: advertising,
-      };
+        const analytics = analyticsCheckbox?.checked || false;
+        const advertising = advertisingCheckbox?.checked || false;
+        const preferences = { analytics, advertising };
 
-      setCookie(COOKIE_CONSENT_KEY, 'customized', CONSENT_EXPIRY_DAYS);
-      setCookie(
-        COOKIE_PREFERENCES_KEY,
-        JSON.stringify(preferences),
-        CONSENT_EXPIRY_DAYS
-      );
+        cookieUtils.set(CONFIG.COOKIE_CONSENT_KEY, 'customized', CONFIG.CONSENT_EXPIRY_DAYS);
+        cookieUtils.set(CONFIG.COOKIE_PREFERENCES_KEY, JSON.stringify(preferences), CONFIG.CONSENT_EXPIRY_DAYS);
 
-      hideCookieBanner();
-      closeCookieSettings();
+        bannerManager.hide();
+        modalManager.hide();
 
-      if (analytics) loadAnalytics();
-      if (advertising) loadAdSense();
+        if (analytics) analyticsManager.loadAnalytics();
+        if (advertising) analyticsManager.loadAdSense();
+
+        console.log('💾 Custom preferences saved:', preferences);
+        showSaveConfirmation();
+      } catch (error) {
+        console.error('❌ Error saving preferences:', error);
+      }
     };
 
-    // Initialize on DOM ready
-    document.addEventListener('DOMContentLoaded', function () {
-      if (isEUUser() && !hasConsent()) {
-        showCookieBanner();
-      } else if (hasConsent()) {
-        loadAnalytics();
-        loadAdSense();
+    /**
+     * Save confirmation using MIJUG theme patterns
+     */
+    function showSaveConfirmation() {
+      const notification = document.createElement('div');
+      notification.className = 'mijug-highlight';
+      notification.style.cssText = `
+        position: fixed !important;
+        top: 20px !important;
+        right: 20px !important;
+        z-index: 1003 !important;
+        max-width: 300px !important;
+        padding: 1rem 1.5rem !important;
+        border-radius: 8px !important;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+        animation: slideInRight 0.3s ease-out !important;
+      `;
+
+      notification.innerHTML = `
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+          <span style="font-size: 1.2rem;">✅</span>
+          <span>Cookie preferences saved successfully!</span>
+        </div>
+      `;
+
+      notification.setAttribute('role', 'alert');
+      notification.setAttribute('aria-live', 'polite');
+
+      document.body.appendChild(notification);
+
+      setTimeout(() => {
+        if (notification.parentNode) {
+          notification.parentNode.removeChild(notification);
+        }
+      }, 4000);
+    }
+
+    /**
+     * Enhanced initialization with multiple retry strategies
+     */
+    function initialize() {
+      console.log('🚀 Cookie consent system initializing...');
+
+      // Ensure modal is hidden on initialization
+      const modal = getElement(CONFIG.MODAL_ELEMENT_ID);
+      if (modal) {
+        modal.style.display = 'none';
+        modal.setAttribute('aria-hidden', 'true');
+      }
+
+      if (consentManager.shouldShowConsent()) {
+        bannerManager.show();
+
+        // Retry mechanisms for theme compatibility
+        setTimeout(() => bannerManager.show(), 100);
+        setTimeout(() => bannerManager.show(), 500);
+      } else if (consentManager.hasConsent()) {
+        analyticsManager.loadAnalytics();
+        analyticsManager.loadAdSense();
+      }
+    }
+
+    /**
+     * Testing mode with enhanced visibility enforcement
+     */
+    function initializeTestingMode() {
+      console.log('🧪 TESTING MODE: Enhanced cookie consent forcing');
+
+      // Clear existing cookies
+      const cookiesToClear = [CONFIG.COOKIE_CONSENT_KEY, CONFIG.COOKIE_PREFERENCES_KEY];
+      cookiesToClear.forEach(cookieName => cookieUtils.clear(cookieName));
+
+      // Set testing flags
+      window.forceShowCookieConsent = true;
+
+      setTimeout(() => {
+        bannerManager.show();
+        console.log('🧪 Testing banner display forced');
+      }, 50);
+
+      // Disable testing mode after timeout
+      setTimeout(() => {
+        window.forceShowCookieConsent = false;
+        console.log('🧪 Testing mode disabled');
+      }, 30000);
+    }
+
+    // Event listeners
+    document.addEventListener('DOMContentLoaded', () => {
+      try {
+        initialize();
+
+        if (window.location.search.includes('force-cookie-consent=true') ||
+            window.location.hostname === 'localhost') {
+          initializeTestingMode();
+        }
+      } catch (error) {
+        console.error('❌ Error during cookie consent initialization:', error);
       }
     });
 
-    // Close modal when clicking outside
-    window.onclick = function (event) {
-      const modal = document.getElementById('cookie-settings-modal');
-      if (event.target === modal) {
+    // Modal click-outside handler
+    document.addEventListener('click', (event) => {
+      const modal = getElement(CONFIG.MODAL_ELEMENT_ID);
+      if (modal && event.target === modal) {
         closeCookieSettings();
       }
-    };
+    });
+
   })();
 </script>
 
+<!-- Enhanced CSS with maximum specificity and theme override protection -->
 <style>
-  /* Cookie Consent Banner Styles */
-  .cookie-consent-banner {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: #2c3e50;
-    color: white;
-    padding: 1rem;
-    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
-    z-index: 10000;
-    border-top: 3px solid #3498db;
+  /* Critical CSS with maximum browser compatibility and specificity */
+  html body #cookie-consent-banner.cookie-consent-banner,
+  html body div#cookie-consent-banner.cookie-consent-banner {
+    position: fixed !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    background: #2c3e50 !important;
+    color: white !important;
+    padding: 1rem !important;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3) !important;
+    z-index: 2147483647 !important;
+    border-top: 3px solid #3498db !important;
+    display: none !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    width: 100% !important;
+    min-height: 80px !important;
+    box-sizing: border-box !important;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+    font-size: 14px !important;
+    line-height: 1.4 !important;
+    transform: translateZ(0) !important;
+    will-change: transform !important;
   }
 
-  .cookie-consent-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1rem;
+  /* Enhanced visibility for all child elements */
+  html body #cookie-consent-banner.cookie-consent-banner *,
+  html body div#cookie-consent-banner.cookie-consent-banner * {
+    visibility: visible !important;
+    opacity: inherit !important;
+    display: initial !important;
   }
 
-  .cookie-consent-text {
-    flex: 1;
+  /* Content layout with enhanced specificity */
+  html body .cookie-consent-content {
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 1rem !important;
+    flex-wrap: wrap !important;
   }
 
-  .cookie-consent-text p {
-    margin: 0;
-    font-size: 0.9rem;
-    line-height: 1.4;
+  html body .cookie-consent-text {
+    flex: 1 !important;
+    min-width: 200px !important;
   }
 
-  .cookie-policy-link {
-    color: #74c0fc; /* Improved contrast ratio of 5.18:1 for WCAG AA compliance across all browsers */
-    text-decoration: underline;
+  html body .cookie-consent-text p {
+    margin: 0 !important;
+    font-size: 0.9rem !important;
+    line-height: 1.4 !important;
+    color: white !important;
   }
 
-  .cookie-policy-link:hover {
-    color: #2980b9;
+  html body .cookie-policy-link {
+    color: #74c0fc !important;
+    text-decoration: underline !important;
   }
 
-  .cookie-consent-buttons {
-    display: flex;
-    gap: 0.5rem;
-    flex-wrap: wrap;
+  html body .cookie-policy-link:hover {
+    color: #a3d5ff !important;
   }
 
-  .cookie-btn {
-    padding: 0.5rem 1rem;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 0.85rem;
-    font-weight: 500;
-    transition: all 0.2s ease;
-    white-space: nowrap;
+  html body .cookie-consent-buttons {
+    display: flex !important;
+    gap: 0.5rem !important;
+    flex-wrap: wrap !important;
+    min-width: 200px !important;
   }
 
-  .cookie-btn-accept {
-    background: #1e8449; /* WCAG AA compliant: 4.6:1 contrast ratio */
-    color: white;
+  html body .cookie-btn {
+    padding: 0.5rem 1rem !important;
+    border: none !important;
+    border-radius: 4px !important;
+    cursor: pointer !important;
+    font-size: 0.85rem !important;
+    font-weight: 500 !important;
+    transition: all 0.2s ease !important;
+    white-space: nowrap !important;
+    min-width: 80px !important;
   }
 
-  .cookie-btn-accept:hover {
-    background: #196f3d; /* Darker shade for hover */
+  html body .cookie-btn-accept {
+    background: #1e8449 !important;
+    color: white !important;
   }
 
-  .cookie-btn-decline {
-    background: #c0392b; /* WCAG AA compliant: 4.8:1 contrast ratio */
-    color: white;
+  html body .cookie-btn-accept:hover {
+    background: #196f3d !important;
   }
 
-  .cookie-btn-decline:hover {
-    background: #a93226; /* Darker shade for hover */
+  html body .cookie-btn-decline {
+    background: #c0392b !important;
+    color: white !important;
   }
 
-  .cookie-btn-settings {
-    background: #5d6d7e; /* WCAG AA compliant: 4.7:1 contrast ratio */
-    color: white;
+  html body .cookie-btn-decline:hover {
+    background: #a93226 !important;
   }
 
-  .cookie-btn-settings:hover {
-    background: #515a5a; /* Darker shade for hover */
+  html body .cookie-btn-settings {
+    background: #5d6d7e !important;
+    color: white !important;
   }
 
-  /* Cookie Settings Modal */
-  .cookie-modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.7);
-    z-index: 10001;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  html body .cookie-btn-settings:hover {
+    background: #515a5a !important;
   }
 
-  .cookie-modal-content {
-    background: white;
-    border-radius: 8px;
-    max-width: 500px;
-    width: 90%;
-    max-height: 80vh;
-    overflow-y: auto;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  /* Modal with enhanced specificity - hidden by default */
+  html body .cookie-modal {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: rgba(0, 0, 0, 0.7) !important;
+    z-index: 2147483646 !important;
+    display: none !important;
+    align-items: center !important;
+    justify-content: center !important;
+    backdrop-filter: blur(2px) !important;
   }
 
-  .cookie-modal-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.5rem;
-    border-bottom: 1px solid #ecf0f1;
+  html body .cookie-modal-content {
+    background: white !important;
+    border-radius: 8px !important;
+    padding: 2rem !important;
+    max-width: 500px !important;
+    width: 90% !important;
+    max-height: 80vh !important;
+    overflow-y: auto !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
   }
 
-  .cookie-modal-header h3 {
-    margin: 0;
-    color: #2c3e50;
-  }
-
-  .cookie-modal-close {
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-    color: #7f8c8d;
-    padding: 0;
-    width: 30px;
-    height: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .cookie-modal-close:hover {
-    color: #2c3e50;
-  }
-
-  .cookie-modal-body {
-    padding: 1.5rem;
-  }
-
-  .cookie-category {
-    margin-bottom: 1.5rem;
-    padding-bottom: 1rem;
-    border-bottom: 1px solid #ecf0f1;
-  }
-
-  .cookie-category:last-child {
-    border-bottom: none;
-    margin-bottom: 0;
-  }
-
-  .cookie-category-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 0.5rem;
-  }
-
-  .cookie-category-header h4 {
-    margin: 0;
-    color: #2c3e50;
-    font-size: 1rem;
-  }
-
-  .cookie-category p {
-    margin: 0;
-    font-size: 0.9rem;
-    color: #7f8c8d;
-    line-height: 1.4;
-  }
-
-  /* Toggle Switch */
-  .cookie-toggle {
-    position: relative;
-    display: inline-block;
-    width: 50px;
-    height: 24px;
-  }
-
-  .cookie-toggle input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-  }
-
-  .cookie-slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    transition: 0.4s;
-    border-radius: 24px;
-  }
-
-  .cookie-slider:before {
-    position: absolute;
-    content: '';
-    height: 18px;
-    width: 18px;
-    left: 3px;
-    bottom: 3px;
-    background-color: white;
-    transition: 0.4s;
-    border-radius: 50%;
-  }
-
-  input:checked + .cookie-slider {
-    background-color: #3498db;
-  }
-
-  input:checked + .cookie-slider:before {
-    transform: translateX(26px);
-  }
-
-  input:disabled + .cookie-slider {
-    background-color: #1e8449; /* WCAG AA compliant green */
-    cursor: not-allowed;
-  }
-
-  .cookie-modal-footer {
-    padding: 1.5rem;
-    border-top: 1px solid #ecf0f1;
-    display: flex;
-    gap: 0.5rem;
-    justify-content: flex-end;
-  }
-
-  /* Responsive Design */
+  /* Responsive design with enhanced breakpoints */
   @media (max-width: 768px) {
-    .cookie-consent-content {
-      flex-direction: column;
-      align-items: stretch;
+    html body .cookie-consent-content {
+      flex-direction: column !important;
+      align-items: stretch !important;
+      gap: 0.75rem !important;
     }
 
-    .cookie-consent-buttons {
-      justify-content: center;
+    html body .cookie-consent-buttons {
+      justify-content: center !important;
+      gap: 0.25rem !important;
     }
 
-    .cookie-btn {
-      flex: 1;
-      min-width: 0;
+    html body .cookie-btn {
+      flex: 1 !important;
+      min-width: 0 !important;
+      font-size: 0.8rem !important;
+      padding: 0.4rem 0.8rem !important;
     }
 
-    .cookie-modal-content {
-      width: 95%;
-      margin: 1rem;
-    }
-
-    .cookie-modal-footer {
-      flex-direction: column;
-    }
-
-    .cookie-modal-footer .cookie-btn {
-      width: 100%;
+    html body .cookie-modal-content {
+      margin: 1rem !important;
+      padding: 1.5rem !important;
     }
   }
 
   @media (max-width: 480px) {
-    .cookie-consent-buttons {
-      flex-direction: column;
+    html body .cookie-consent-buttons {
+      flex-direction: column !important;
     }
 
-    .cookie-category-header {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 0.5rem;
+    html body .cookie-btn {
+      width: 100% !important;
+    }
+  }
+
+  /* Print media - hide banner */
+  @media print {
+    html body #cookie-consent-banner.cookie-consent-banner,
+    html body .cookie-modal {
+      display: none !important;
+    }
+  }
+
+  /* High contrast mode support */
+  @media (prefers-contrast: high) {
+    html body #cookie-consent-banner.cookie-consent-banner {
+      border: 2px solid white !important;
+    }
+  }
+
+  /* Reduced motion support */
+  @media (prefers-reduced-motion: reduce) {
+    html body .cookie-btn {
+      transition: none !important;
     }
   }
 </style>
 
+<style>
+  /**
+   * Enhanced modal management with aggressive visibility enforcement
+   * Following MIJUG .NET workspace performance and accessibility standards
+   */
+  const modalManager = {
+    show() {
+      const modal = getElement(CONFIG.MODAL_ELEMENT_ID);
+      if (!modal) {
+        console.error('❌ Cookie settings modal element not found');
+        return;
+      }
 
-    <!-- Mermaid support: convert fenced code blocks (```mermaid) and initialize -->
+      // Load current preferences before showing
+      this.loadCurrentPreferences();
+
+      // Use z-index higher than site header but compatible with theme
+      modal.style.cssText = `
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        background: rgba(0, 0, 0, 0.85) !important;
+        z-index: 1002 !important;
+        align-items: center !important;
+        justify-content: center !important;
+        padding: 1rem !important;
+        box-sizing: border-box !important;
+      `;
+
+      modal.setAttribute('aria-hidden', 'false');
+      modal.classList.add('cookie-modal-visible');
+
+      // Set up focus management
+      focusManager.trapFocus(modal);
+
+      // Prevent body scroll when modal is open
+      document.body.classList.add('nav-open'); // Reuse existing MIJUG class
+
+      console.log('✅ Cookie settings modal displayed');
+    },
+
+    hide() {
+      const modal = getElement(CONFIG.MODAL_ELEMENT_ID);
+      if (!modal) return;
+
+      modal.style.display = 'none';
+      modal.setAttribute('aria-hidden', 'true');
+      modal.classList.remove('cookie-modal-visible');
+
+      // Remove focus trap
+      if (modal._removeFocusTrap) {
+        modal._removeFocusTrap();
+      }
+
+      // Restore body scroll using existing MIJUG class
+      document.body.classList.remove('nav-open');
+
+      // Return focus to settings button
+      const settingsButton = getElement('cookie-settings');
+      if (settingsButton) {
+        settingsButton.focus();
+      }
+
+      console.log('✅ Cookie settings modal hidden');
+    },
+
+    loadCurrentPreferences() {
+      const preferences = cookieUtils.get(CONFIG.COOKIE_PREFERENCES_KEY);
+
+      let analytics = false;
+      let advertising = false;
+
+      if (preferences) {
+        try {
+          const prefs = JSON.parse(preferences);
+          analytics = prefs.analytics || false;
+          advertising = prefs.advertising || false;
+        } catch (e) {
+          console.warn('⚠️ Error parsing saved preferences:', e);
+        }
+      }
+
+      // Update checkboxes with retry mechanism
+      setTimeout(() => {
+        const analyticsCheckbox = getElement('analytics-cookies');
+        const advertisingCheckbox = getElement('advertising-cookies');
+
+        if (analyticsCheckbox) {
+          analyticsCheckbox.checked = analytics;
+        }
+        if (advertisingCheckbox) {
+          advertisingCheckbox.checked = advertising;
+        }
+
+        console.log('📋 Current preferences loaded:', { analytics, advertising });
+      }, 100);
+    }
+  };
+</style>
+
+
+    <!-- Mermaid support: only load if needed -->
     
-    <script src="/assets/js/print-helper-optimized.js?v=2025-09-22T060" defer></script>
+
+    <!-- Utility scripts with defer attribute -->
     
-    <script src="/assets/js/storage-access.js?v=2025-09-22T060"></script>
+    <script src="/assets/js/print-helper-optimized.js?v=2025-09-26T003" defer></script>
+    <script src="/assets/js/storage-access.js?v=2025-09-26T003" defer></script>
+    <script src="/assets/js/accessibility-enhancements.js?v=2025-09-26T003" defer></script>
     
-    <script src="/assets/js/accessibility-enhancements.js?v=2025-09-22T060" defer></script>
-    
+
+    <!-- Focus management for cookie consent -->
     <script>
       function hideCookieConsentBanner() {
         const banner = document.getElementById('cookie-consent-banner');
@@ -1830,10 +2608,90 @@
       }
 
       // Example event handler for accept button
-      const acceptBtn = document.getElementById('accept-cookies');
-      if (acceptBtn) {
-        acceptBtn.addEventListener('click', hideCookieConsentBanner);
-      }
+      document.addEventListener('DOMContentLoaded', function() {
+        const acceptBtn = document.getElementById('accept-cookies');
+        if (acceptBtn) {
+          acceptBtn.addEventListener('click', hideCookieConsentBanner);
+        }
+      });
     </script>
+
+    <!-- Simplified navigation overlay functionality - legacy browser compatible -->
+    <script>
+      (function() {
+        'use strict';
+
+        // Switch HTML class from no-js to js
+        var html = document.documentElement;
+        html.className = html.className.replace("no-js", "js");
+
+        var toggleBtn = document.querySelector('.nav-toggle');
+        var nav = document.getElementById('primary-navigation');
+        var statusEl = document.getElementById('menu-status');
+        var body = document.body;
+
+        if (!toggleBtn || !nav || !statusEl) {
+          console.warn('Navigation elements not found - falling back to no-JS behavior');
+          return;
+        }
+
+        // Add overlay class for JavaScript-enhanced styling
+        nav.classList.add('nav-overlay');
+
+        function toggleNavigation() {
+          var isExpanded = toggleBtn.getAttribute('aria-expanded') === 'true';
+
+          if (isExpanded) {
+            // Hide navigation
+            nav.classList.remove('nav-visible');
+            toggleBtn.setAttribute('aria-expanded', 'false');
+            nav.setAttribute('aria-hidden', 'true');
+            toggleBtn.textContent = 'Menu';
+            statusEl.textContent = 'Menu closed';
+            body.classList.remove('nav-open');
+          } else {
+            // Show navigation
+            nav.classList.add('nav-visible');
+            toggleBtn.setAttribute('aria-expanded', 'true');
+            nav.removeAttribute('aria-hidden');
+            toggleBtn.textContent = 'Close';
+            statusEl.textContent = 'Menu opened';
+            body.classList.add('nav-open');
+          }
+        }
+
+        // Event listeners
+        toggleBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          toggleNavigation();
+        });
+
+        // Close navigation when clicking outside or on navigation links
+        document.addEventListener('click', function(e) {
+          if (toggleBtn.getAttribute('aria-expanded') !== 'true') return;
+
+          if ((!nav.contains(e.target) && !toggleBtn.contains(e.target)) ||
+              (e.target.tagName === 'A' && nav.contains(e.target))) {
+            toggleNavigation();
+          }
+        });
+
+        // Keyboard accessibility - close on escape
+        document.addEventListener('keydown', function(e) {
+          if (e.key === 'Escape' && toggleBtn.getAttribute('aria-expanded') === 'true') {
+            toggleNavigation();
+            toggleBtn.focus();
+          }
+        });
+
+        // Initialize proper ARIA state
+        nav.setAttribute('aria-hidden', 'true');
+
+        console.log('MIJUG Navigation overlay initialized successfully');
+      })();
+    </script>
+
+    <!-- Ad container with reserved space -->
+    <div class="ad-container" id="ad-slot-1" data-ad-slot="12345678"></div>
   </body>
 </html>

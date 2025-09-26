@@ -5,7 +5,7 @@
  */
 
 (function () {
-  'use strict';
+  "use strict";
 
   // Cache DOM elements and computed values
   let printDateCache = null;
@@ -30,10 +30,10 @@
     // Cache expensive date operations
     if (!printDateCache) {
       const now = new Date();
-      printDateCache = now.toLocaleDateString('en-US', {
-        year: 'numeric',
-        month: 'short',
-        day: 'numeric',
+      printDateCache = now.toLocaleDateString("en-US", {
+        year: "numeric",
+        month: "short",
+        day: "numeric",
       });
     }
 
@@ -46,14 +46,14 @@
       }
 
       if (!titleCache) {
-        titleCache = document.title.split(' | ')[0] || document.title;
+        titleCache = document.title.split(" | ")[0] || document.title;
       }
 
       // Batch DOM writes
       requestAnimationFrame(() => {
-        document.body.setAttribute('data-print-date', printDateCache);
-        document.body.setAttribute('data-version', versionCache);
-        document.body.setAttribute('data-document-title', titleCache);
+        document.body.setAttribute("data-print-date", printDateCache);
+        document.body.setAttribute("data-version", versionCache);
+        document.body.setAttribute("data-document-title", titleCache);
 
         // Update CSS in next frame to avoid blocking
         scheduleIdleWork(() => updatePrintCSS(printDateCache, versionCache));
@@ -64,14 +64,14 @@
   // Function to update CSS with current dates (optimized)
   function updatePrintCSS(printDate, version) {
     // Use DocumentFragment for better performance
-    const existingStyle = document.getElementById('print-date-css');
+    const existingStyle = document.getElementById("print-date-css");
     if (existingStyle) {
       existingStyle.remove();
     }
 
     // Create style element with optimized CSS
-    const style = document.createElement('style');
-    style.id = 'print-date-css';
+    const style = document.createElement("style");
+    style.id = "print-date-css";
     style.textContent = `
       @media print {
         @page {
@@ -99,17 +99,17 @@
 
     printTimer = setTimeout(() => {
       const now = new Date();
-      const printDate = now.toLocaleDateString('en-US', {
-        year: 'numeric',
-        month: 'short',
-        day: 'numeric',
-        hour: '2-digit',
-        minute: '2-digit',
+      const printDate = now.toLocaleDateString("en-US", {
+        year: "numeric",
+        month: "short",
+        day: "numeric",
+        hour: "2-digit",
+        minute: "2-digit",
       });
 
       // Update print date attributes efficiently
       requestAnimationFrame(() => {
-        document.body.setAttribute('data-print-date', printDate);
+        document.body.setAttribute("data-print-date", printDate);
         const version = versionCache || printDate;
         scheduleIdleWork(() => updatePrintCSS(printDate, version));
       });
@@ -117,8 +117,8 @@
   }
 
   // Initialize when DOM is ready (optimized)
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', addPrintInfo, {
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", addPrintInfo, {
       passive: true,
     });
   } else {
@@ -126,19 +126,19 @@
   }
 
   // Update date when printing (with passive listeners for better performance)
-  window.addEventListener('beforeprint', handlePrint, { passive: true });
+  window.addEventListener("beforeprint", handlePrint, { passive: true });
 
   // Also handle Ctrl+P detection (debounced)
   document.addEventListener(
-    'keydown',
+    "keydown",
     function (e) {
-      if ((e.ctrlKey || e.metaKey) && e.key === 'p') {
+      if ((e.ctrlKey || e.metaKey) && e.key === "p") {
         if (keydownTimer) {
           clearTimeout(keydownTimer);
         }
         keydownTimer = setTimeout(handlePrint, 10);
       }
     },
-    { passive: true }
+    { passive: true },
   );
 })();

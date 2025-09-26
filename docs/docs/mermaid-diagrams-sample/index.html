@@ -4,12 +4,76 @@
     <meta charset="utf-8" />
     <meta name="robots" content="noindex, nofollow" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Early security with comprehensive CSP tailored for presentation slides -->
+    <meta http-equiv="Content-Security-Policy" content="
+      default-src 'self';
+      script-src 'self' 'unsafe-inline'  https://cdn.jsdelivr.net;
+      style-src 'self' 'unsafe-inline';
+      img-src 'self' data: https:;
+      font-src 'self' data:;
+      connect-src 'self';
+      object-src 'none';
+      base-uri 'self';">
+
+    <!-- Preconnect to critical third-party domains -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="anonymous" />
+
+    <!-- Critical metadata for presentations -->
     <title>Delivery Slides Mermaid Diagrams Showcase</title>
     
-    <meta name="version" content="Sep 22, 2025" />
+    <meta name="version" content="Sep 24, 2025" />
     
-    <link rel="stylesheet" href="/assets/main.css" />
-    <link rel="stylesheet" href="/assets/delivery-slides.css" />
+
+    <!-- Preload fonts for better text rendering in presentations -->
+    <link rel="preload" href="/assets/fonts/InterVariable.woff2" as="font" type="font/woff2" crossorigin>
+
+    <!-- Critical CSS inline for immediate slide rendering -->
+    <style>
+      /* Essential slide presentation styles */
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        background-color: #ffffff;
+        color: #222222;
+      }
+      .slide-branding {
+        padding: 1rem;
+        background-color: #f8f8f8;
+        border-bottom: 1px solid #e8e8e8;
+      }
+      .slide-branding h1 {
+        margin: 0;
+        font-size: 1.5rem;
+        font-weight: 400;
+      }
+      .slide-content {
+        padding: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      .mermaid {
+        margin: 2rem 0;
+      }
+    </style>
+
+    <!-- Non-blocking CSS loading for better performance -->
+    <link rel="preload" href="/assets/main.css" as="style" />
+    <link rel="stylesheet" href="/assets/main.css" media="print" onload="this.media='all'" />
+    <link rel="preload" href="/assets/delivery-slides.css" as="style" />
+    <link rel="stylesheet" href="/assets/delivery-slides.css" media="print" onload="this.media='all'" />
+
+    <!-- Fallback for browsers that don't support onload -->
+    <noscript>
+      <link rel="stylesheet" href="/assets/main.css" />
+      <link rel="stylesheet" href="/assets/delivery-slides.css" />
+    </noscript>
+
+    <!-- Implement preload hints for Mermaid on pages with diagrams -->
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/mermaid@11.9.0/dist/mermaid.min.js" as="script" crossorigin="anonymous">
+    
   </head>
   <body>
     <div class="slide-branding">
@@ -21,7 +85,7 @@
 <hr />
 
 <pre><code class="language-mermaid">  graph TD
-    A[Start] --&gt; B[End]
+    X[Start] --&gt; Y[End]
 </code></pre>
 
 <h2 id="flowchart-example">Flowchart Example</h2>
@@ -37,6 +101,7 @@
 <hr />
 
 <h2 id="sequence-diagram-example">Sequence Diagram Example</h2>
+
 <pre><code class="language-mermaid">sequenceDiagram
     participant Alice
     participant Bob
@@ -48,6 +113,7 @@
 <hr />
 
 <h2 id="gantt-chart-example">Gantt Chart Example</h2>
+
 <pre><code class="language-mermaid">gantt
     title Project Timeline
     dateFormat  YYYY-MM-DD
@@ -61,6 +127,7 @@
 <hr />
 
 <h2 id="mindmap-example">Mindmap Example</h2>
+
 <pre><code class="language-mermaid">mindmap
   root
     Branch 1
@@ -74,6 +141,7 @@
 <hr />
 
 <h2 id="pie-chart-example">Pie Chart Example</h2>
+
 <pre><code class="language-mermaid">pie
     title Project Distribution
     "Frontend" : 40
@@ -86,6 +154,7 @@
 <hr />
 
 <h2 id="state-diagram-example">State Diagram Example</h2>
+
 <pre><code class="language-mermaid">stateDiagram-v2
     [*] --&gt; Ready
     Ready --&gt; Working
@@ -117,10 +186,8 @@
               setTimeout(callback, 0);
             }
           }
-
           function convertMermaidCodeFences() {
             try {
-              // Use more efficient selector and batch DOM operations
               const codeBlocks = document.querySelectorAll('pre > code.language-mermaid, pre > code.mermaid');
               const fragment = document.createDocumentFragment();
               const replacements = [];
@@ -128,81 +195,54 @@
               codeBlocks.forEach(function(code) {
                 const pre = code.parentElement;
                 const container = pre.parentElement;
+
+                // Create wrapper container with reserved space
+                const wrapper = document.createElement('div');
+                wrapper.className = 'mermaid-container';
+
+                // Create diagram container
                 const div = document.createElement('div');
                 div.className = 'mermaid';
                 div.textContent = code.textContent;
-                replacements.push({ container, pre, div });
+
+                // Add to wrapper
+                wrapper.appendChild(div);
+                replacements.push({ container, pre, wrapper });
               });
 
               // Batch DOM updates to minimize layout thrashing
-              replacements.forEach(({ container, pre, div }) => {
-                container.replaceChild(div, pre);
+              replacements.forEach(({ container, pre, wrapper }) => {
+                container.replaceChild(wrapper, pre);
               });
             } catch (e) {
               console.warn('Mermaid code fence conversion failed:', e);
             }
           }
 
-          function initMermaidNow() {
-            try {
-              if (!window.mermaid) return false;
+          // Initial call to convert Mermaid code fences
+          convertMermaidCodeFences();
 
-              scheduleWork(() => {
-                convertMermaidCodeFences();
-                if (typeof mermaid.initialize === 'function') {
-                  mermaid.initialize({
-                    startOnLoad: false, // Better control over timing
-                    theme: 'default'
-                  });
-                }
-
-                scheduleWork(() => {
-                  if (typeof mermaid.run === 'function') {
-                    mermaid.run({ querySelector: '.mermaid' });
-                  } else if (typeof mermaid.init === 'function') {
-                    mermaid.init(undefined, document.querySelectorAll('.mermaid'));
+          // Observe DOM changes for dynamically added content
+          const observer = new MutationObserver((mutations) => {
+            mutations.forEach((mutation) => {
+              if (mutation.type === 'childList') {
+                mutation.addedNodes.forEach((node) => {
+                  if (node.nodeType === 1) { // Element node
+                    // Check if the added node contains Mermaid code fences
+                    const codeBlocks = node.querySelectorAll('pre > code.language-mermaid, pre > code.mermaid');
+                    if (codeBlocks.length > 0) {
+                      convertMermaidCodeFences();
+                    }
                   }
                 });
-              });
-
-              return true;
-            } catch (e) {
-              console.error('Mermaid initialization error:', e);
-              return false;
-            }
-          }
-
-          // Use passive event listeners for better performance
-          function whenReady(fn) {
-            if (document.readyState === 'loading') {
-              document.addEventListener('DOMContentLoaded', fn, { passive: true });
-            } else {
-              scheduleWork(fn);
-            }
-          }
-
-          // Improved initialization with timeout and better error handling
-          whenReady(function() {
-            scheduleWork(() => {
-              if (initMermaidNow()) return;
-
-              let attempts = 0;
-              const maxAttempts = 30; // Reduced from 50
-              const checkInterval = 200; // Increased from 100ms
-
-              const timer = setInterval(function() {
-                attempts++;
-                if (initMermaidNow() || attempts >= maxAttempts) {
-                  clearInterval(timer);
-                  if (attempts >= maxAttempts) {
-                    console.warn('Mermaid initialization timed out after', maxAttempts, 'attempts');
-                  }
-                }
-              }, checkInterval);
+              }
             });
           });
+
+          // Start observing the document body for changes
+          observer.observe(document.body, { childList: true, subtree: true });
         })();
       </script>
-    <script src="/assets/js/print-helper.js?v=20250922030901"></script>
+    <script src="/assets/js/print-helper.js?v=20250925224523" defer></script>
   </body>
 </html>
