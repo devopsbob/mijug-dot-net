@@ -489,20 +489,49 @@ img {
     <!-- Include site verification metatags -->
     <meta name="google-site-verification" content="googlece83719b3f856e56" />
 
+    <!-- Add cache busting meta tags -->
+    <meta name="cache-version" content="20250926013331" />
+
     <!-- Non-critical CSS with preload for better performance -->
     
+
+
+
+
+  <link rel="stylesheet" href="/assets/main.css?v=20250926013331" media="print">
+
+  
+
     
-    <link rel="preload" href="/assets/main.css?v=2025-09-26T003" as="style" />
-    <link rel="stylesheet" href="/assets/main.css?v=2025-09-26T003" media="print" onload="this.media='all'" />
-    <link rel="preload" href="/assets/css/inp-optimizations.css?v=2025-09-26T003" as="style" />
-    <link rel="stylesheet" href="/assets/css/inp-optimizations.css?v=2025-09-26T003" media="print" onload="this.media='all'" />
-    
+
+
+
+
+  <link rel="stylesheet" href="/assets/css/inp-optimizations.css?v=20250926013331" media="print">
+
+  
+
+
     <!-- No-JS fallback for CSS -->
     <noscript>
       
-      <link rel="stylesheet" href="/assets/main.css?v=2025-09-26T003" />
-      <link rel="stylesheet" href="/assets/css/inp-optimizations.css?v=2025-09-26T003" />
+
+
+
+
+  <link rel="stylesheet" href="/assets/main.css?v=20250926013331">
+
+  
+
       
+
+
+
+
+  <link rel="stylesheet" href="/assets/css/inp-optimizations.css?v=20250926013331">
+
+  
+
     </noscript>
 
     <!-- Lower priority resources -->
@@ -513,10 +542,11 @@ img {
       href="/feed.xml"
     />
     
+    
     <link
       rel="icon"
       type="image/svg+xml"
-      href="/assets/logo-mijug-96x96.png"
+      href="/assets/logo-mijug-96x96.png?v=20250926013331"
     />
     
     <link
@@ -579,6 +609,12 @@ img {
       }
     </script>
     
+
+    <!-- Cache busting utility script -->
+    <script>
+  window.MIJUG = window.MIJUG || {};
+  window.MIJUG.cacheVersion = "20250926013331";
+</script>
 
     <!-- Critical functionality JS - prioritize user experience -->
     
@@ -782,7 +818,7 @@ img {
   <div class="wrapper">
     <a class="site-title long-title" rel="home" href="/">
       
-      <img src="/assets/logo-mijug-96x96.png" alt="My Information Just Under Glass" width="50" height="50">
+  <img src="/assets/logo-mijug-96x96.png?v=20250926013331" alt="My Information Just Under Glass" width="50" height="50">
        My Information Just Under Glass
     </a>
 
@@ -2244,10 +2280,32 @@ npm run playwright:ensure <span class="nt">--</span> <span class="nt">--skip-if-
 
     <!-- Utility scripts with defer attribute -->
     
-    <script src="/assets/js/print-helper-optimized.js?v=2025-09-26T003" defer></script>
-    <script src="/assets/js/storage-access.js?v=2025-09-26T003" defer></script>
-    <script src="/assets/js/accessibility-enhancements.js?v=2025-09-26T003" defer></script>
+
+
+
+
+  <script src="/assets/js/print-helper-optimized.js?v=20250926013331" defer></script>
+
+  
+
     
+
+
+
+
+  <script src="/assets/js/storage-access.js?v=20250926013331" defer></script>
+
+  
+
+    
+
+
+
+
+  <script src="/assets/js/accessibility-enhancements.js?v=20250926013331" defer></script>
+
+  
+
 
     <!-- Focus management for cookie consent -->
     <script>

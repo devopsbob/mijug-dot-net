@@ -25,8 +25,11 @@
     <meta name="version" content="Sep 24, 2025" />
     
 
+    <!-- Add cache busting meta tags -->
+    <meta name="cache-version" content="20250926013331" />
+
     <!-- Preload fonts for better text rendering in presentations -->
-    <link rel="preload" href="/assets/fonts/InterVariable.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="/assets/fonts/InterVariable.woff2?v=20250926013331" as="font" type="font/woff2" crossorigin>
 
     <!-- Critical CSS inline for immediate slide rendering -->
     <style>
@@ -58,21 +61,29 @@
       }
     </style>
 
-    <!-- Non-blocking CSS loading for better performance -->
-    <link rel="preload" href="/assets/main.css" as="style" />
-    <link rel="stylesheet" href="/assets/main.css" media="print" onload="this.media='all'" />
-    <link rel="preload" href="/assets/delivery-slides.css" as="style" />
-    <link rel="stylesheet" href="/assets/delivery-slides.css" media="print" onload="this.media='all'" />
+    <!-- Non-blocking CSS loading for better performance with cache busting -->
+    <link rel="preload" href="/assets/main.css?v=20250926013331" as="style" />
+    <link rel="stylesheet" href="/assets/main.css?v=20250926013331" media="print" onload="this.media='all'" />
+    <link rel="preload" href="/assets/delivery-slides.css?v=20250926013331" as="style" />
+    <link rel="stylesheet" href="/assets/delivery-slides.css?v=20250926013331" media="print" onload="this.media='all'" />
 
     <!-- Fallback for browsers that don't support onload -->
     <noscript>
-      <link rel="stylesheet" href="/assets/main.css" />
-      <link rel="stylesheet" href="/assets/delivery-slides.css" />
+      <link rel="stylesheet" href="/assets/main.css?v=20250926013331" />
+      <link rel="stylesheet" href="/assets/delivery-slides.css?v=20250926013331" />
     </noscript>
+
+    <!-- Cache busting utility script -->
+    <script>
+  window.MIJUG = window.MIJUG || {};
+  window.MIJUG.cacheVersion = "20250926013331";
+</script>
 
     <!-- Implement preload hints for Mermaid on pages with diagrams -->
     
-    <link rel="preload" href="https://cdn.jsdelivr.net/npm/mermaid@11.9.0/dist/mermaid.min.js" as="script" crossorigin="anonymous">
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/mermaid@11.9.0/dist/mermaid.min.js?v=20250926013331" as="script" crossorigin="anonymous">
+    
     
   </head>
   <body>
@@ -172,7 +183,15 @@
     <!-- Mermaid support: convert fenced code blocks (```mermaid) and initialize -->
     
       
-      <script src="https://cdn.jsdelivr.net/npm/mermaid@11.9.0/dist/mermaid.min.js" defer></script>
+      
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/mermaid@11.9.0/dist/mermaid.min.js?v=20250926013331" defer></script>
+
+  
+
       
       <script>
         (function() {
@@ -243,6 +262,14 @@
           observer.observe(document.body, { childList: true, subtree: true });
         })();
       </script>
-    <script src="/assets/js/print-helper.js?v=20250925224523" defer></script>
+    
+
+
+
+
+  <script src="/assets/js/print-helper.js?v=20250926013331" defer></script>
+
+  
+
   </body>
 </html>

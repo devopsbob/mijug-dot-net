@@ -12,6 +12,12 @@
   let versionCache = null;
   let titleCache = null;
 
+  // // Get cache version from global MIJUG object if available
+  // const cacheVersion =
+  //   window.MIJUG && window.MIJUG.cacheBust
+  //     ? window.MIJUG.cacheBust.version
+  //     : document.querySelector('meta[name="cache-version"]')?.content || "";
+
   // Shared timers for debouncing
   let printTimer = null;
   let keydownTimer = null;
@@ -24,6 +30,19 @@
       setTimeout(callback, 16); // ~1 frame at 60fps
     }
   }
+
+  // // For dynamic resource loading, use the cache buster
+  // function loadResource(url) {
+  //   // Use the global cache buster if available
+  //   if (window.MIJUG && window.MIJUG.cacheBust && window.MIJUG.cacheBust.addCacheBuster) {
+  //     url = window.MIJUG.cacheBust.addCacheBuster(url);
+  //   } else {
+  //     // Fallback cache busting
+  //     const separator = url.includes("?") ? "&" : "?";
+  //     url = `${url}${separator}v=${cacheVersion || Date.now()}`;
+  //   }
+  //   return url;
+  // }
 
   // Add print date information when page loads
   function addPrintInfo() {
