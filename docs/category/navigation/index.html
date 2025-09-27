@@ -4,7 +4,6 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <!-- Early security with comprehensive CSP tailored to MIJUG .NET requirements -->
     <meta http-equiv="Content-Security-Policy" content="
       default-src 'self';
       script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://cdn.jsdelivr.net https://pagead2.googlesyndication.com https://googleads.g.doubleclick.net https://ep1.adtrafficquality.google https://ep2.adtrafficquality.google https://csi.gstatic.com ;
@@ -19,7 +18,6 @@
       form-action 'self';
       manifest-src 'self';block-all-mixed-content;upgrade-insecure-requests">
 
-    <!-- Preconnect to critical third-party domains -->
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="anonymous" />
     
     <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin="anonymous" />
@@ -31,82 +29,115 @@
     <meta name="google-adsense-account" content="ca-pub-3383458876439157" />
     
 
-    <!-- Preload fonts for better performance -->
-    <!-- Preload fonts for better performance -->
-  <link
-    rel="preload"
-    href="/assets/fonts/Inter-Regular.woff2"
-    as="font"
-    type="font/woff2"
-    crossorigin="anonymous"
-  />
-  <link
-    rel="preload"
-    href="/assets/fonts/Inter-Bold.woff2"
-    as="font"
-    type="font/woff2"
-    crossorigin="anonymous"
-  />
-  <link
-    rel="preload"
-    href="/assets/fonts/Inter-SemiBold.woff2"
-    as="font"
-    type="font/woff2"
-    crossorigin="anonymous"
-  />
-  <link
-    rel="preload"
-    href="/assets/fonts/Inter-Medium.woff2"
-    as="font"
-    type="font/woff2"
-    crossorigin="anonymous"
-  />
-  <link
-    rel="preload"
-    href="/assets/fonts/Inter-Light.woff2"
-    as="font"
-    type="font/woff2"
-    crossorigin="anonymous"
-  />
-  <link
-    rel="preload"
-    href="/assets/fonts/Inter-ExtraLight.woff2"
-    as="font"
-    type="font/woff2"
-    crossorigin="anonymous"
-  />
-  <link
-    rel="preload"
-    href="/assets/fonts/Inter-Black.woff2"
-    as="font"
-    type="font/woff2"
-    crossorigin="anonymous"
-  />
-  <link
-    rel="preload"
-    href="/assets/fonts/Inter-Thin.woff2"
-    as="font"
-    type="font/woff2"
-    crossorigin="anonymous"
-  />
-  <link rel="preload" href="/assets/fonts/InterVariable.woff2" as="font" type="font/woff2" crossorigin>
+    <!-- Critical navigation styles - always inlined for immediate user interaction -->
 <style>
-  /* Prevent layout shift with font loading strategy */
-  @font-face {
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 100 900;
+  /* Navigation toggle button - ALWAYS VISIBLE */
+  .nav-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #2c5aa0;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 6px;
+    z-index: 101;
+    min-height: 24px;
+    min-width: 24px;
+  }
+
+  /* Progressive enhancement - hide desktop nav when JS enabled */
+  html.js nav.primary-nav {
+    display: none;
+  }
+
+  /* Overlay navigation */
+  html.js nav.primary-nav.nav-overlay {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.85);
+    z-index: 100;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-20px);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+    overflow-y: auto;
+  }
+
+  html.js nav.primary-nav.nav-overlay.nav-visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  /* Body scroll lock when overlay is open */
+  body.nav-open {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+  }
+
+  /* No-JS fallback */
+  html.no-js .nav-toggle {
+    display: none;
+  }
+
+  /* Accessibility - visually hidden elements */
+  .visually-hidden {
+    position: absolute !important;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  /* Performance optimization for font loading */
+  html {
     font-display: swap;
-    src: url('/assets/fonts/InterVariable.woff2') format('woff2');
-    size-adjust: 100%;
-    ascent-override: 90%;
-    descent-override: 20%;
-    line-gap-override: 0%;
+  }
+
+  /* Reduce layout shift during navigation initialization */
+  .site-header .wrapper {
+    min-height: 55.95px;
   }
 </style>
 
+    <!-- Preload fonts for better performance -->
+  <link
+    rel="preload"
+    href="/assets/fonts/InterVariable.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin="anonymous"
+    immutable
+  />
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  />
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  />
 
-    <!-- Critical CSS inline for above-the-fold content -->
     <!-- Critical CSS for above-the-fold content -->
 <style>
 /**
@@ -464,7 +495,6 @@ img {
 <noscript><link rel="stylesheet" href="/assets/main.css"></noscript>
 
 
-    <!-- Title and metadata prioritized -->
     <title>
       navigation | My Information Just Under Glass
     </title>
@@ -473,61 +503,22 @@ img {
       content="MIJUG.NET serves the communities of Southeast Michigan, Ohio, and Florida with technology, sustainability, and community engagement resources. A platform by ..."
     />
     
-    <meta name="version" content="Sep 26, 2025" />
+    <meta name="version" content="Sep 27, 2025" />
     
 
-    <!-- Collection metadata for docs pages -->
     
 
-    <!-- Include site verification metatags -->
     <meta name="google-site-verification" content="googlece83719b3f856e56" />
-
-    <!-- Add cache busting meta tags -->
     <meta name="cache-version" content="20250926013331" />
 
-    <!-- Non-critical CSS with preload for better performance -->
-    
+    <link rel="preload" as="style" href="/assets/main.css?v=20250927025327" media="print" crossorigin><link rel="stylesheet" href="/assets/main.css?v=20250927025327" media="print">
+    <link rel="preload" as="style" href="/assets/css/inp-optimizations.css?v=20250927025327" media="print" crossorigin><link rel="stylesheet" href="/assets/css/inp-optimizations.css?v=20250927025327" media="print">
 
-
-
-
-  <link rel="stylesheet" href="/assets/main.css?v=20250926013331" media="print">
-
-  
-
-    
-
-
-
-
-  <link rel="stylesheet" href="/assets/css/inp-optimizations.css?v=20250926013331" media="print">
-
-  
-
-
-    <!-- No-JS fallback for CSS -->
     <noscript>
-      
-
-
-
-
-  <link rel="stylesheet" href="/assets/main.css?v=20250926013331">
-
-  
-
-      
-
-
-
-
-  <link rel="stylesheet" href="/assets/css/inp-optimizations.css?v=20250926013331">
-
-  
-
+      <link rel="stylesheet" href="/assets/main.css?v=20250927025327">
+      <link rel="stylesheet" href="/assets/css/inp-optimizations.css?v=20250927025327">
     </noscript>
 
-    <!-- Lower priority resources -->
     <link
       rel="alternate"
       type="application/rss+xml"
@@ -549,57 +540,26 @@ img {
     />
     <link rel="manifest" href="/manifest.webmanifest" />
 
-    <!-- Use custom SEO template instead of jekyll-seo-tag -->
-    <!-- Custom SEO template without Twitter cards -->
-
-  <meta property="og:title" content="navigation" />
-
-
-
-  <meta property="og:description" content="MIJUG.NET serves the communities of Southeast Michigan, Ohio, and Florida with technology, sustainability, and community engagement resources. A platform by ..." />
-  <meta name="description" content="MIJUG.NET serves the communities of Southeast Michigan, Ohio, and Florida with technology, sustainability, and community engagement resources. A platform by ..." />
-
-
+    <meta name="description" content="MIJUG.NET serves the communities of Southeast Michigan, Ohio, and Florida with technology, sustainability, and community engagement resources. A platform by ..." />
+<meta property="og:title" content="navigation" />
+<meta property="og:description" content="MIJUG.NET serves the communities of Southeast Michigan, Ohio, and Florida with technology, sustainability, and community engagement resources. A platform by ..." />
 <meta property="og:url" content="https://www.mijug.net/category/navigation/" />
 <meta property="og:site_name" content="My Information Just Under Glass" />
-<meta property="og:type" content="website" />
+<meta property="og:type" content="website" /><meta property="og:image" content="https://www.mijug.net/assets/logo-mijug-96x96.png" /><link rel="canonical" href="https://www.mijug.net/category/navigation/" />
 
 
-  <meta property="og:image" content="https://www.mijug.net/assets/logo-mijug-96x96.png" />
-
-
-<!-- LinkedIn specific tags -->
-
-<meta property="article:author" content="https://www.linkedin.com/in/bobkranson" />
-
-
-<!-- Canonical URL -->
-<link
-  rel="canonical"
-  href="https://www.mijug.net/category/navigation/"
-/>
-<!-- No Twitter cards - intentionally omitted -->
-
-
-    <!-- Preload Mermaid.js if diagrams are used (moved up for preload benefit) -->
     
 
-    <!-- Structured data for navigation -->
     
 
-    <!-- Cache busting utility script -->
     <script>
   window.MIJUG = window.MIJUG || {};
   window.MIJUG.cacheVersion = "20250926013331";
 </script>
 
-    <!-- Critical functionality JS - prioritize user experience -->
     
-    <!-- Disable ability to print or save (moved after critical resources) -->
     <script>
-      window.print = function () {
-        console.log('Skip printing');
-      };
+      window.print = function () { console.log('Skip printing'); };
       window.addEventListener('keydown', function(event) {
        if (event.keyCode === 80 && (event.ctrlKey || event.metaKey) && !event.altKey && (!event.shiftKey || window.chrome || window.opera)) {
         event.preventDefault();
@@ -616,325 +576,151 @@ img {
       }, true);
     </script>
     
-
-    <!-- Fixed navigation overlay styles with proper z-index and positioning -->
-    <style>
-      /* Navigation toggle button - ALWAYS VISIBLE */
-      .nav-toggle {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: absolute;
-        right: 1rem;
-        top: 50%;
-        transform: translateY(-50%);
-        background: #0b63ce;
-        color: white;
-        border: none;
-        padding: 0.5rem 1rem;
-        font-size: 0.9rem;
-        font-weight: 600;
-        cursor: pointer;
-        border-radius: 6px;
-        z-index: 101;
-        transition: all 0.2s ease;
-        min-height: 44px;
-        min-width: 44px;
-      }
-
-      .nav-toggle:hover {
-        background: #0a56b3;
-        transform: translateY(-50%) scale(1.02);
-      }
-
-      .nav-toggle:focus {
-        outline: 2px solid white;
-        outline-offset: 2px;
-      }
-
-      /* Hide desktop nav when JS is enabled - overlay takes over */
-      html.js nav.primary-nav {
-        display: none;
-      }
-
-      /* Overlay navigation - works on all screen sizes */
-      html.js nav.primary-nav.nav-overlay {
-        display: block;
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        width: 100vw;
-        height: 100vh;
-        background: rgba(0, 0, 0, 0.85);
-        z-index: 100;
-        opacity: 0;
-        visibility: hidden;
-        transform: translateY(-20px);
-        transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
-        overflow-y: auto;
-        padding: 0;
-        line-height: normal;
-      }
-
-      /* Visible state */
-      html.js nav.primary-nav.nav-overlay.nav-visible {
-        opacity: 1;
-        visibility: visible;
-        transform: translateY(0);
-      }
-
-      /* Navigation content card */
-      html.js nav.primary-nav.nav-overlay ul {
-        background: white;
-        border-radius: 12px;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-        margin: 4rem auto 2rem;
-        padding: 2rem 1.5rem;
-        max-width: 500px;
-        width: calc(100% - 2rem);
-        display: flex;
-        flex-direction: column;
-        gap: 0;
-        list-style: none;
-        transform: translateZ(0);
-      }
-
-      html.js nav.primary-nav.nav-overlay li {
-        margin: 0;
-        border-bottom: 1px solid #e1e5e9;
-      }
-
-      html.js nav.primary-nav.nav-overlay li:last-child {
-        border-bottom: none;
-      }
-
-      html.js nav.primary-nav.nav-overlay a {
-        display: block;
-        padding: 1rem 0.75rem;
-        font-size: 1.1rem;
-        font-weight: 500;
-        color: #111;
-        border-radius: 8px;
-        margin: 0.25rem 0;
-        transition: all 0.2s ease;
-        text-decoration: none;
-      }
-
-      html.js nav.primary-nav.nav-overlay a:hover {
-        background: rgba(11, 99, 206, 0.08);
-        color: #0b63ce;
-        transform: translateX(4px);
-      }
-
-      html.js nav.primary-nav.nav-overlay a.active {
-        background: #0b63ce;
-        color: white;
-        font-weight: 600;
-      }
-
-      /* Lock body scroll when overlay is open */
-      body.nav-open {
-        overflow: hidden;
-        position: fixed;
-        width: 100%;
-      }
-
-      /* No-JS fallback - hide toggle button */
-      html.no-js .nav-toggle {
-        display: none;
-      }
-
-      /* Simplified navigation styles - remove all complex inline CSS */
-      .visually-hidden {
-        position: absolute !important;
-        width: 1px;
-        height: 1px;
-        padding: 0;
-        margin: -1px;
-        overflow: hidden;
-        clip: rect(0, 0, 0, 0);
-        white-space: nowrap;
-        border: 0;
-      }
-
-      /* Print styles */
-      @media print {
-        .nav-toggle {
-          display: none !important;
-        }
-        nav.primary-nav.nav-overlay {
-          display: none !important;
-        }
-      }
-    </style>
-
-    <!-- Remove all the duplicate navigation CSS from the <style> block -->
-    <!-- Keep only essential utility styles that aren't in main.scss -->
-    <style>
-      /* Critical path optimizations only - navigation styles now in main.scss */
-
-      /* Performance optimization for font loading */
-      html {
-        font-display: swap;
-      }
-
-      /* Reduce layout shift during navigation initialization */
-      .site-header .wrapper {
-        min-height: 55.95px;
-      }
-    </style>
   </head>
   
-    <!-- oncontextmenu return false disables right click context menu -->
     <body oncontextmenu="return false;">
   
-    <!-- Simplified header with navigation -->
-<header class="site-header" role="banner">
-  <div class="wrapper">
-    <a class="site-title long-title" rel="home" href="/">
-      
-  <img src="/assets/logo-mijug-96x96.png?v=20250926013331" alt="My Information Just Under Glass" width="50" height="50">
-       My Information Just Under Glass
-    </a>
+    <header class="site-header" role="banner">
+      <div class="wrapper">
+        <a class="site-title long-title" rel="home" href="/">
+          
+          <img src="/assets/logo-mijug-96x96.png?v=20250926013331" alt="My Information Just Under Glass" width="50" height="50">
+           My Information Just Under Glass
+        </a>
 
-    <!-- Navigation toggle button -->
-    <button class="nav-toggle" aria-controls="primary-navigation" aria-expanded="false" aria-label="Toggle navigation menu">
-      Menu
-    </button>
+        <button class="nav-toggle" aria-controls="primary-navigation" aria-expanded="false" aria-label="Toggle navigation menu">
+          Menu
+        </button>
 
-    <!-- Navigation with actual HTML structure -->
-    <nav id="primary-navigation" class="primary-nav" role="navigation" aria-label="Main navigation">
-      <ul>
-        
-          <li>
-            <a href="/blog/" aria-label="Navigate to Blog">
-               Blog
-            </a>
-          </li>
-        
-          <li>
-            <a href="/about/" aria-label="Navigate to About">
-               About
-            </a>
-          </li>
-        
-          <li>
-            <a href="/docs/getting-started/" aria-label="Navigate to Getting Started">
-               Getting Started
-            </a>
-          </li>
-        
-          <li>
-            <a href="/docs/welcome-mijug-workspace/" aria-label="Navigate to Workspace Overview">
-               Workspace Overview
-            </a>
-          </li>
-        
-          <li>
-            <a href="/docs/frontmatter-cms/" aria-label="Navigate to FrontMatter CMS Usage">
-               FrontMatter CMS Usage
-            </a>
-          </li>
-        
-          <li>
-            <a href="/docs/accessibility-testing/" aria-label="Navigate to Accessibility Testing Configuration">
-               Accessibility Testing Configuration
-            </a>
-          </li>
-        
-          <li>
-            <a href="/docs/browser-management/" aria-label="Navigate to Browser Management for Testing">
-               Browser Management for Testing
-            </a>
-          </li>
-        
-          <li>
-            <a href="/docs/browser-compatibility-testing/" aria-label="Navigate to Browser Compatibility Testing">
-               Browser Compatibility Testing
-            </a>
-          </li>
-        
-          <li>
-            <a href="/docs/liquid-tags-examples/" aria-label="Navigate to Liquid Tags Examples">
-               Liquid Tags Examples
-            </a>
-          </li>
-        
-          <li>
-            <a href="/docs/tags-and-categories-guide/" aria-label="Navigate to Tags and Categories System Guide">
-               Tags and Categories System Guide
-            </a>
-          </li>
-        
-          <li>
-            <a href="/docs/performance-optimization/" aria-label="Navigate to Performance Optimization Guide">
-               Performance Optimization Guide
-            </a>
-          </li>
-        
-          <li>
-            <a href="/docs/testing-performance-evolution/" aria-label="Navigate to Testing Performance and Development Evolution">
-               Testing Performance and Development Evolution
-            </a>
-          </li>
-        
-          <li>
-            <a href="/docs/cache-management/" aria-label="Navigate to Cache Management Strategies">
-               Cache Management Strategies
-            </a>
-          </li>
-        
-          <li>
-            <a href="/docs/mermaid-configuration-guide/" aria-label="Navigate to Mermaid Diagram Configuration Guide">
-               Mermaid Diagram Configuration Guide
-            </a>
-          </li>
-        
-          <li>
-            <a href="/docs/mermaid-quick-start/" aria-label="Navigate to Mermaid Quick Start">
-               Mermaid Quick Start
-            </a>
-          </li>
-        
-          <li>
-            <a href="/docs/mermaid-examples/" aria-label="Navigate to Mermaid Diagram Examples">
-               Mermaid Diagram Examples
-            </a>
-          </li>
-        
-          <li>
-            <a href="/docs/mermaid-diagrams-sample/" aria-label="Navigate to Mermaid Diagrams Sample">
-               Mermaid Diagrams Sample
-            </a>
-          </li>
-        
-          <li>
-            <a href="/docs/mermaid-test-runner/" aria-label="Navigate to Mermaid Diagrams Test Runner">
-               Mermaid Diagrams Test Runner
-            </a>
-          </li>
-        
-          <li>
-            <a href="/docs/rel-attribute-guide/" aria-label="Navigate to The rel Attribute in HTML Links: A Comprehensive Guide">
-               The rel Attribute in HTML Links: A Comprehensive Guide
-            </a>
-          </li>
-        
-          <li>
-            <a href="/docs/exploring-limitations-of-gitea-and-ruby/" aria-label="Navigate to Exploring the Limitations of Gitea and Ruby">
-               Exploring the Limitations of Gitea and Ruby
-            </a>
-          </li>
-        
-      </ul>
-    </nav>
+        <nav id="primary-navigation" class="primary-nav" role="navigation" aria-label="Main navigation">
+          <ul>
+            
+              <li>
+                <a href="/blog/" aria-label="Navigate to Blog">
+                   Blog
+                </a>
+              </li>
+            
+              <li>
+                <a href="/about/" aria-label="Navigate to About">
+                   About
+                </a>
+              </li>
+            
+              <li>
+                <a href="/docs/getting-started/" aria-label="Navigate to Getting Started">
+                   Getting Started
+                </a>
+              </li>
+            
+              <li>
+                <a href="/docs/welcome-mijug-workspace/" aria-label="Navigate to Workspace Overview">
+                   Workspace Overview
+                </a>
+              </li>
+            
+              <li>
+                <a href="/docs/frontmatter-cms/" aria-label="Navigate to FrontMatter CMS Usage">
+                   FrontMatter CMS Usage
+                </a>
+              </li>
+            
+              <li>
+                <a href="/docs/accessibility-testing/" aria-label="Navigate to Accessibility Testing Configuration">
+                   Accessibility Testing Configuration
+                </a>
+              </li>
+            
+              <li>
+                <a href="/docs/browser-management/" aria-label="Navigate to Browser Management for Testing">
+                   Browser Management for Testing
+                </a>
+              </li>
+            
+              <li>
+                <a href="/docs/browser-compatibility-testing/" aria-label="Navigate to Browser Compatibility Testing">
+                   Browser Compatibility Testing
+                </a>
+              </li>
+            
+              <li>
+                <a href="/docs/liquid-tags-examples/" aria-label="Navigate to Liquid Tags Examples">
+                   Liquid Tags Examples
+                </a>
+              </li>
+            
+              <li>
+                <a href="/docs/tags-and-categories-guide/" aria-label="Navigate to Tags and Categories System Guide">
+                   Tags and Categories System Guide
+                </a>
+              </li>
+            
+              <li>
+                <a href="/docs/performance-optimization/" aria-label="Navigate to Performance Optimization Guide">
+                   Performance Optimization Guide
+                </a>
+              </li>
+            
+              <li>
+                <a href="/docs/testing-performance-evolution/" aria-label="Navigate to Testing Performance and Development Evolution">
+                   Testing Performance and Development Evolution
+                </a>
+              </li>
+            
+              <li>
+                <a href="/docs/cache-management/" aria-label="Navigate to Cache Management Strategies">
+                   Cache Management Strategies
+                </a>
+              </li>
+            
+              <li>
+                <a href="/docs/mermaid-configuration-guide/" aria-label="Navigate to Mermaid Diagram Configuration Guide">
+                   Mermaid Diagram Configuration Guide
+                </a>
+              </li>
+            
+              <li>
+                <a href="/docs/mermaid-quick-start/" aria-label="Navigate to Mermaid Quick Start">
+                   Mermaid Quick Start
+                </a>
+              </li>
+            
+              <li>
+                <a href="/docs/mermaid-examples/" aria-label="Navigate to Mermaid Diagram Examples">
+                   Mermaid Diagram Examples
+                </a>
+              </li>
+            
+              <li>
+                <a href="/docs/mermaid-diagrams-sample/" aria-label="Navigate to Mermaid Diagrams Sample">
+                   Mermaid Diagrams Sample
+                </a>
+              </li>
+            
+              <li>
+                <a href="/docs/mermaid-test-runner/" aria-label="Navigate to Mermaid Diagrams Test Runner">
+                   Mermaid Diagrams Test Runner
+                </a>
+              </li>
+            
+              <li>
+                <a href="/docs/rel-attribute-guide/" aria-label="Navigate to The rel Attribute in HTML Links: A Comprehensive Guide">
+                   The rel Attribute in HTML Links: A Comprehensive Guide
+                </a>
+              </li>
+            
+              <li>
+                <a href="/docs/exploring-limitations-of-gitea-and-ruby/" aria-label="Navigate to Exploring the Limitations of Gitea and Ruby">
+                   Exploring the Limitations of Gitea and Ruby
+                </a>
+              </li>
+            
+          </ul>
+        </nav>
 
-    <!-- Live region for screen reader announcements -->
-    <div id="menu-status" class="visually-hidden" role="status" aria-live="polite"></div>
-  </div>
-</header>
+        <div id="menu-status" class="visually-hidden" role="status" aria-live="polite"></div>
+      </div>
+    </header>
 
     <main class="page-content" aria-label="Content">
       <div class="wrapper">
@@ -1122,17 +908,13 @@ img {
       </div>
     </footer>
 
-    <!-- Non-critical scripts moved to end of body -->
     
-    <!-- Google Analytics with Consent Mode -->
     <script>
-      // Initialize gtag with default consent settings
       window.dataLayer = window.dataLayer || [];
       function gtag() {
         dataLayer.push(arguments);
       }
 
-      // Default consent to denied for GDPR compliance
       gtag('consent', 'default', {
         analytics_storage: 'denied',
         ad_storage: 'denied',
@@ -1144,31 +926,100 @@ img {
       gtag('config', 'G-W1M1N0DCD4');
     </script>
 
-    <!-- Load Google Analytics -->
     <script src="https://www.googletagmanager.com/gtag/js?id=G-W1M1N0DCD4" crossorigin="anonymous" async></script>
     
 
-    <!-- Google AdSense (async for performance) -->
-    <!-- Google AdSense with Consent Mode Support -->
+    <!-- Google AdSense with MIJUG Cookie Consent Integration -->
 <script>
-  // Initialize consent mode for AdSense
-  window.dataLayer = window.dataLayer || [];
-  function gtag() {
-    dataLayer.push(arguments);
+  // Privacy and consent checks
+  if (window.doNotTrack === '1' ||
+      navigator.doNotTrack === '1' ||
+      navigator.doNotTrack === 'yes' ||
+      navigator.msDoNotTrack === '1' ||
+      localStorage.getItem('mijug-ads-disabled') === 'true') {
+    return;
   }
 
-  // Set default consent state
+  // Development environment bypass
+  if (location.hostname === 'localhost' ||
+      location.hostname === '127.0.0.1' ||
+      location.protocol === 'file:') {
+    console.log('[MIJUG AdSense] Skipped - Development environment');
+    return;
+  }
+
+  // URL parameter bypass for testing
+  const urlParams = new URLSearchParams(window.location.search);
+  if (urlParams.get('skip-ads') === 'true') {
+    console.log('[MIJUG AdSense] Skipped - URL parameter override');
+    return;
+  }
+
+  // Initialize consent mode with MIJUG defaults
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  window.gtag = gtag;
+
+  // Set default consent state (MIJUG privacy-first approach)
   gtag('consent', 'default', {
     ad_storage: 'denied',
     ad_user_data: 'denied',
     ad_personalization: 'denied',
+    analytics_storage: 'denied'
   });
+
+  // Load AdSense with error handling
+  function loadAdSense() {
+    try {
+      const script = document.createElement('script');
+      script.async = true;
+      script.crossOrigin = 'anonymous';
+      script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=';
+      script.onerror = function() {
+        console.warn('[MIJUG AdSense] Failed to load AdSense script');
+      };
+      document.head.appendChild(script);
+
+      console.log('[MIJUG AdSense] AdSense script loaded');
+
+    } catch (error) {
+      console.warn('[MIJUG AdSense] Initialization error:', error);
+    }
+  }
+
+  // MIJUG cookie consent integration
+  if (typeof window.MijugCookieConsent !== 'undefined') {
+    window.MijugCookieConsent.onReady(function(consent) {
+      if (consent.advertising) {
+        // Update consent for AdSense
+        gtag('consent', 'update', {
+          ad_storage: 'granted',
+          ad_user_data: 'granted',
+          ad_personalization: consent.personalization ? 'granted' : 'denied'
+        });
+
+        loadAdSense();
+      } else {
+        console.log('[MIJUG AdSense] Skipped - Advertising cookies declined');
+      }
+    });
+
+    // Handle consent changes
+    window.MijugCookieConsent.onConsentChange(function(consent) {
+      gtag('consent', 'update', {
+        ad_storage: consent.advertising ? 'granted' : 'denied',
+        ad_user_data: consent.advertising ? 'granted' : 'denied',
+        ad_personalization: (consent.advertising && consent.personalization) ? 'granted' : 'denied'
+      });
+    });
+  } else {
+    // Fallback: Load with denied consent if no cookie system
+    console.log('[MIJUG AdSense] Loading with default denied consent - no cookie system detected');
+    loadAdSense();
+  }
+
 </script>
 
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3383458876439157" crossorigin="anonymous"></script>
-
-
-    <!-- Cookie Consent Banner for GDPR Compliance -->
     <!-- Cookie Consent Banner for GDPR Compliance -->
 <div id="cookie-consent-banner" class="cookie-consent-banner" role="complementary" aria-label="Cookie consent banner" aria-live="polite" style="display: none">
   <div class="cookie-consent-content">
@@ -1437,8 +1288,8 @@ img {
         // Set up focus management
         focusManager.trapFocus(modal);
 
-        // Prevent body scroll when modal is open
-        document.body.classList.add('nav-open'); // Reuse existing MIJUG class
+        // Prevent body scroll when modal is open using existing MIJUG class
+        document.body.classList.add('nav-open');
 
         console.log('✅ Cookie settings modal displayed');
       },
@@ -1713,7 +1564,7 @@ img {
      */
     function showSaveConfirmation() {
       const notification = document.createElement('div');
-      notification.className = 'mijug-highlight';
+      notification.className = 'mijug-highlight favorite-toast favorite-toast-success favorite-toast-visible';
       notification.style.cssText = `
         position: fixed !important;
         top: 20px !important;
@@ -1947,6 +1798,7 @@ img {
     align-items: center !important;
     justify-content: center !important;
     backdrop-filter: blur(2px) !important;
+    -webkit-backdrop-filter: blur(2px) !important;
   }
 
   html body .cookie-modal-content {
@@ -2059,8 +1911,8 @@ img {
       // Set up focus management
       focusManager.trapFocus(modal);
 
-      // Prevent body scroll when modal is open
-      document.body.classList.add('nav-open'); // Reuse existing MIJUG class
+      // Prevent body scroll when modal is open using existing MIJUG class
+      document.body.classList.add('nav-open');
 
       console.log('✅ Cookie settings modal displayed');
     },
@@ -2125,59 +1977,27 @@ img {
 </style>
 
 
-    <!-- Mermaid support: only load if needed -->
     
 
-    <!-- Utility scripts with defer attribute -->
-    
+    <script src="/assets/js/print-helper-optimized.js?v=20250927025327" defer crossorigin="anonymous"></script>
+    <script src="/assets/js/storage-access.js?v=20250927025327" defer crossorigin="anonymous"></script>
+    <script src="/assets/js/accessibility-enhancements.js?v=20250927025327" defer crossorigin="anonymous"></script>
 
-
-
-
-  <script src="/assets/js/print-helper-optimized.js?v=20250926013331" defer></script>
-
-  
-
-    
-
-
-
-
-  <script src="/assets/js/storage-access.js?v=20250926013331" defer></script>
-
-  
-
-    
-
-
-
-
-  <script src="/assets/js/accessibility-enhancements.js?v=20250926013331" defer></script>
-
-  
-
-
-    <!-- Focus management for cookie consent -->
     <script>
       function hideCookieConsentBanner() {
         const banner = document.getElementById('cookie-consent-banner');
         if (!banner) return;
 
-        // Check if focus is inside the banner
         if (banner.contains(document.activeElement)) {
-          // Move focus to body or another visible, focusable element
           if (document.body) {
             document.body.focus();
           }
         }
 
-        // Use inert instead of aria-hidden
         banner.setAttribute('inert', '');
-        // Optionally, hide visually as well
         banner.style.display = 'none';
       }
 
-      // Example event handler for accept button
       document.addEventListener('DOMContentLoaded', function() {
         const acceptBtn = document.getElementById('accept-cookies');
         if (acceptBtn) {
@@ -2186,12 +2006,10 @@ img {
       });
     </script>
 
-    <!-- Simplified navigation overlay functionality - legacy browser compatible -->
     <script>
       (function() {
         'use strict';
 
-        // Switch HTML class from no-js to js
         var html = document.documentElement;
         html.className = html.className.replace("no-js", "js");
 
@@ -2205,14 +2023,12 @@ img {
           return;
         }
 
-        // Add overlay class for JavaScript-enhanced styling
         nav.classList.add('nav-overlay');
 
         function toggleNavigation() {
           var isExpanded = toggleBtn.getAttribute('aria-expanded') === 'true';
 
           if (isExpanded) {
-            // Hide navigation
             nav.classList.remove('nav-visible');
             toggleBtn.setAttribute('aria-expanded', 'false');
             nav.setAttribute('aria-hidden', 'true');
@@ -2220,7 +2036,6 @@ img {
             statusEl.textContent = 'Menu closed';
             body.classList.remove('nav-open');
           } else {
-            // Show navigation
             nav.classList.add('nav-visible');
             toggleBtn.setAttribute('aria-expanded', 'true');
             nav.removeAttribute('aria-hidden');
@@ -2230,13 +2045,11 @@ img {
           }
         }
 
-        // Event listeners
         toggleBtn.addEventListener('click', function(e) {
           e.preventDefault();
           toggleNavigation();
         });
 
-        // Close navigation when clicking outside or on navigation links
         document.addEventListener('click', function(e) {
           if (toggleBtn.getAttribute('aria-expanded') !== 'true') return;
 
@@ -2246,7 +2059,6 @@ img {
           }
         });
 
-        // Keyboard accessibility - close on escape
         document.addEventListener('keydown', function(e) {
           if (e.key === 'Escape' && toggleBtn.getAttribute('aria-expanded') === 'true') {
             toggleNavigation();
@@ -2254,14 +2066,10 @@ img {
           }
         });
 
-        // Initialize proper ARIA state
         nav.setAttribute('aria-hidden', 'true');
-
-        console.log('MIJUG Navigation overlay initialized successfully');
       })();
     </script>
 
-    <!-- Ad container with reserved space -->
     <div class="ad-container" id="ad-slot-1" data-ad-slot="12345678"></div>
   </body>
 </html>
