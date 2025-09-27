@@ -1,125 +1,2557 @@
-<!doctype html> <html lang="en" class="no-js"> <head> <meta charset="utf-8" /> <meta name="viewport" content="width=device-width, initial-scale=1" /> <meta http-equiv="Content-Security-Policy" content=" default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://cdn.jsdelivr.net https://pagead2.googlesyndication.com https://googleads.g.doubleclick.net https://ep1.adtrafficquality.google https://ep2.adtrafficquality.google https://csi.gstatic.com ; style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net ; style-src-elem 'self' 'unsafe-inline' ; img-src 'self' data: https: https://www.google-analytics.com https://pagead2.googlesyndication.com https://ep1.adtrafficquality.google https://ep2.adtrafficquality.google; font-src 'self' https://cdn.jsdelivr.net https://fonts.gstatic.com data:; connect-src 'self' https://www.google-analytics.com https://pagead2.googlesyndication.com https://googleads.g.doubleclick.net https://ep1.adtrafficquality.google https://ep2.adtrafficquality.google ; frame-src 'self' https://www.google.com https://googleads.g.doubleclick.net https://pagead2.googlesyndication.com https://ep1.adtrafficquality.google https://ep2.adtrafficquality.google ; object-src 'none'; base-uri 'self'; form-action 'self'; manifest-src 'self';block-all-mixed-content;upgrade-insecure-requests"> <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="anonymous" /> <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin="anonymous" /> <link rel="preconnect" href="https://www.google-analytics.com" crossorigin="anonymous" /> <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin="anonymous" /> <link rel="preconnect" href="https://googleads.g.doubleclick.net" crossorigin="anonymous" /> <meta name="google-adsense-account" content="ca-pub-3383458876439157" /> <!-- Critical navigation styles - always inlined for immediate user interaction --> <style> /* Navigation toggle button - ALWAYS VISIBLE */ .nav-toggle { display: flex; align-items: center; justify-content: center; position: absolute; right: 1rem; top: 50%; transform: translateY(-50%); background: #2c5aa0; color: white; border: none; padding: 0.5rem 1rem; font-size: 0.9rem; font-weight: 600; cursor: pointer; border-radius: 6px; z-index: 101; min-height: 24px; min-width: 24px; } /* Progressive enhancement - hide desktop nav when JS enabled */ html.js nav.primary-nav { display: none; } /* Overlay navigation */ html.js nav.primary-nav.nav-overlay { display: block; position: fixed; top: 0; left: 0; right: 0; bottom: 0; width: 100vw; height: 100vh; background: rgba(0, 0, 0, 0.85); z-index: 100; opacity: 0; visibility: hidden; transform: translateY(-20px); transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease; overflow-y: auto; } html.js nav.primary-nav.nav-overlay.nav-visible { opacity: 1; visibility: visible; transform: translateY(0); } /* Body scroll lock when overlay is open */ body.nav-open { overflow: hidden; position: fixed; width: 100%; } /* No-JS fallback */ html.no-js .nav-toggle { display: none; } /* Accessibility - visually hidden elements */ .visually-hidden { position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; } /* Performance optimization for font loading */ html { font-display: swap; } /* Reduce layout shift during navigation initialization */ .site-header .wrapper { min-height: 55.95px; } </style> <!-- Preload fonts for better performance --> <link rel="preload" href="/assets/fonts/InterVariable.woff2" as="font" type="font/woff2" crossorigin="anonymous" immutable /> <link rel="preconnect" href="https://fonts.googleapis.com" /> <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /> <!-- Critical CSS for above-the-fold content --> <style> /** * Critical path CSS for above-the-fold content * Optimized for < 12s build target and initial viewport rendering */ /* Base variables for theming */ :root { --bg-color: #ffffff; --text-color: #222222; --accent-color: #1e8449; /* WCAG AA compliant green */ --link-color: #0066cc; --nav-bg: #f8f8f8; --border-color: #e8e8e8; --header-color: #424242; --focus-outline: 2px solid #1e8449; --font-family-base: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; --font-size-base: 16px; --line-height-base: 1.5; } /* Base element styles */ html { font-size: var(--font-size-base); font-family: var(--font-family-base); line-height: var(--line-height-base); -webkit-text-size-adjust: 100%; text-size-adjust: 100%; } body { margin: 0; padding: 0; color: var(--text-color); background-color: var(--bg-color); min-height: 100vh; display: flex; flex-direction: column; } /* Wrapper for content layout */ .wrapper { max-width: 960px; margin: 0 auto; padding: 0 15px; width: calc(100% - 30px); } /* Critical header and navigation styles */ .site-header { border-bottom: 1px solid var(--border-color); min-height: 56px; background-color: var(--nav-bg); position: relative; display: flex; align-items: center; } .site-header .wrapper { display: flex; justify-content: space-between; align-items: center; width: 100%; } .site-title { font-size: 1.5rem; font-weight: 300; letter-spacing: -1px; margin-bottom: 0; color: var(--header-color); text-decoration: none; display: flex; align-items: center; line-height: 56px; } .site-title img { margin-right: 10px; width: 50px; height: 50px; } .site-title.long-title { font-size: 1.25rem; } /* Navigation styling */ .site-nav { position: relative; line-height: 56px; } .site-nav .nav-trigger { display: none; } .site-nav .menu-icon { display: none; } .site-nav .page-link { color: var(--text-color); line-height: 1.5; text-decoration: none; margin-right: 20px; } .site-nav .page-link:hover { color: var(--accent-color); } .nav-button { background-color: var(--accent-color); color: white; border: none; padding: 8px 12px; border-radius: 4px; cursor: pointer; font-family: var(--font-family-base); font-size: 0.875rem; font-weight: 500; line-height: 1.2; } /* Main content area */ .page-content { padding: 30px 0; flex: 1; } /* Skip link - accessibility feature */ .skip-to-content { position: absolute; top: -50px; left: 10px; background: var(--accent-color); color: white; padding: 8px; z-index: 100; transition: top 0.3s ease; } .skip-to-content:focus { top: 10px; } /* Focus outline for accessibility */ :focus { outline: var(--focus-outline); outline-offset: 2px; } /* Basic media query for responsive design */ @media screen and (max-width: 600px) { .site-nav { position: absolute; top: 9px; right: 15px; background-color: var(--nav-bg); border: 1px solid var(--border-color); border-radius: 5px; text-align: right; z-index: 10; } .site-nav .menu-icon { display: block; float: right; width: 36px; height: 26px; line-height: 0; padding-top: 10px; text-align: center; cursor: pointer; } .site-nav .menu-icon > svg { width: 18px; height: 15px; } .site-nav .trigger { clear: both; display: none; padding-bottom: 5px; } .site-nav:not([popover]) .nav-trigger:checked ~ .trigger { display: block; } .site-nav .page-link { display: block; padding: 5px 10px; margin: 0; } } /* SR-only class for accessibility */ .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border-width: 0; } /* Basic typography for content */ h1, h2, h3, h4, h5, h6 { margin-top: 0; color: var(--header-color); } h1 { font-size: 2rem; margin-bottom: 0.5em; } p { margin-top: 0; margin-bottom: 1em; } /* SVG icon in header */ .svg-icon { width: 16px; height: 16px; display: inline-block; fill: currentColor; vertical-align: text-bottom; flex-shrink: 0; box-sizing: content-box; } /* Image aspect ratio and container styles */ img { aspect-ratio: attr(width) / attr(height); } .image-container { position: relative; height: 0; overflow: hidden; } .image-container--16-9 { padding-bottom: 56.25%; /* 16:9 aspect ratio */ } .image-container--4-3 { padding-bottom: 75%; /* 4:3 aspect ratio */ } .image-container img { position: absolute; width: 100%; height: 100%; object-fit: cover; } /* Cookie consent banner styles */ #cookie-consent-banner { position: fixed; bottom: 0; left: 0; right: 0; z-index: 1000; max-height: 0; opacity: 0; transform: translateY(100%); transition: transform 0.3s, opacity 0.3s, max-height 0s 0.3s; overflow: hidden; } #cookie-consent-banner.visible { max-height: 200px; opacity: 1; transform: translateY(0); transition: transform 0.3s, opacity 0.3s; } /* Advertisement container styles */ .ad-container { min-height: 250px; display: flex; align-items: center; justify-content: center; background-color: #f9f9f9; margin: 1rem 0; overflow: hidden; contain: layout size; } .ad-container::before { content: "Advertisement"; color: #777; font-size: 0.75rem; position: absolute; top: 5px; right: 5px; } /* Mermaid diagram container styles */ .mermaid-container { position: relative; width: 100%; min-height: 150px; margin: 1.5rem 0; background-color: rgba(0,0,0,0.03); border-radius: 4px; overflow: hidden; contain: layout style paint; } .mermaid-container::before { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(90deg, transparent 25%, rgba(255,255,255,.5) 50%, transparent 75%) -200% 0 / 400% 100%, linear-gradient(rgba(0,0,0,.1) 0%, transparent 20%, transparent 80%, rgba(0,0,0,.1) 100%); animation: loading 1.5s infinite linear; opacity: 0.5; } @keyframes loading { to { background-position: 100% 0, 0 0; } } [popover] { contain: layout size; } .site-nav[popover] { /* Pre-compute layout position */ position: absolute; top: 9px; right: 15px; z-index: 100; /* Prevent layout shift during animations */ transform: translateZ(0); will-change: transform; } </style> <link rel="preload" href="/assets/main.css" as="style" onload="this.onload=null;this.rel='stylesheet'"> <noscript><link rel="stylesheet" href="/assets/main.css"></noscript> <title> FrontMatter CMS Usage | My Information Just Under Glass </title> <meta name="description" content="FrontMatter CMS Usage" /> <meta name="version" content="Sep 25, 2025" /> <meta name="docs-nav-order" content="7" /> <meta name="docs-section" content="documentation" /> <meta name="priority-doc" content="true" /> <meta name="google-site-verification" content="googlece83719b3f856e56" /> <meta name="cache-version" content="20250926013331" /> <link rel="preload" as="style" href="/assets/main.css?v=20250927034911" media="print" crossorigin><link rel="stylesheet" href="/assets/main.css?v=20250927034911" media="print"> <link rel="preload" as="style" href="/assets/css/inp-optimizations.css?v=20250927034911" media="print" crossorigin><link rel="stylesheet" href="/assets/css/inp-optimizations.css?v=20250927034911" media="print"> <noscript> <link rel="stylesheet" href="/assets/main.css?v=20250927034911"> <link rel="stylesheet" href="/assets/css/inp-optimizations.css?v=20250927034911"> </noscript> <link rel="alternate" type="application/rss+xml" title="My Information Just Under Glass" href="/feed.xml" /> <link rel="icon" type="image/svg+xml" href="/assets/logo-mijug-96x96.png?v=20250926013331" /> <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" /> <link rel="manifest" href="/manifest.webmanifest" /> <meta name="description" content="Learn how to use the FrontMatter CMS extension for content management in Jekyll" /> <meta property="og:title" content="FrontMatter CMS Usage" /> <meta property="og:description" content="Learn how to use the FrontMatter CMS extension for content management in Jekyll" /> <meta property="og:url" content="https://www.mijug.net/docs/frontmatter-cms/" /> <meta property="og:site_name" content="My Information Just Under Glass" /> <meta property="og:type" content="website" /><meta property="og:image" content="https://www.mijug.net/assets/logo-mijug-96x96.png" /><link rel="canonical" href="https://www.mijug.net/docs/frontmatter-cms/" /> <script type="application/ld+json"> { "@context": "https://schema.org", "@type": "WebPage", "name": "FrontMatter CMS Usage", "description": "Learn how to use the FrontMatter CMS extension for content management in Jekyll", "url": "https://www.mijug.net/docs/frontmatter-cms/", "position": 7, "isPartOf": { "@type": "WebSite", "name": "My Information Just Under Glass", "url": "https://www.mijug.net/" } } </script> <script> window.MIJUG = window.MIJUG || {}; window.MIJUG.cacheVersion = "20250926013331"; </script> <script> window.print = function () { console.log('Skip printing'); }; window.addEventListener('keydown', function(event) { if (event.keyCode === 80 && (event.ctrlKey || event.metaKey) && !event.altKey && (!event.shiftKey || window.chrome || window.opera)) { event.preventDefault(); if (event.stopImmediatePropagation) { event.stopImmediatePropagation(); } else { event.stopPropagation(); } return; } if (event.ctrlKey && (event.key === "p" || event.key === "s")) { event.preventDefault(); } }, true); </script> </head> <body oncontextmenu="return false;"> <header class="site-header" role="banner"> <div class="wrapper"> <a class="site-title long-title" rel="home" href="/"> <img src="/assets/logo-mijug-96x96.png?v=20250926013331" alt="My Information Just Under Glass" width="50" height="50"> My Information Just Under Glass </a> <button class="nav-toggle" aria-controls="primary-navigation" aria-expanded="false" aria-label="Toggle navigation menu"> Menu </button> <nav id="primary-navigation" class="primary-nav" role="navigation" aria-label="Main navigation"> <ul> <li> <a href="/blog/" aria-label="Navigate to Blog"> Blog </a> </li> <li> <a href="/about/" aria-label="Navigate to About"> About </a> </li> <li> <a href="/docs/getting-started/" aria-label="Navigate to Getting Started"> Getting Started </a> </li> <li> <a href="/docs/welcome-mijug-workspace/" aria-label="Navigate to Workspace Overview"> Workspace Overview </a> </li> <li> <a href="/docs/frontmatter-cms/" class="active" aria-label="Navigate to FrontMatter CMS Usage"> FrontMatter CMS Usage </a> </li> <li> <a href="/docs/accessibility-testing/" aria-label="Navigate to Accessibility Testing Configuration"> Accessibility Testing Configuration </a> </li> <li> <a href="/docs/browser-management/" aria-label="Navigate to Browser Management for Testing"> Browser Management for Testing </a> </li> <li> <a href="/docs/browser-compatibility-testing/" aria-label="Navigate to Browser Compatibility Testing"> Browser Compatibility Testing </a> </li> <li> <a href="/docs/liquid-tags-examples/" aria-label="Navigate to Liquid Tags Examples"> Liquid Tags Examples </a> </li> <li> <a href="/docs/tags-and-categories-guide/" aria-label="Navigate to Tags and Categories System Guide"> Tags and Categories System Guide </a> </li> <li> <a href="/docs/performance-optimization/" aria-label="Navigate to Performance Optimization Guide"> Performance Optimization Guide </a> </li> <li> <a href="/docs/testing-performance-evolution/" aria-label="Navigate to Testing Performance and Development Evolution"> Testing Performance and Development Evolution </a> </li> <li> <a href="/docs/cache-management/" aria-label="Navigate to Cache Management Strategies"> Cache Management Strategies </a> </li> <li> <a href="/docs/mermaid-configuration-guide/" aria-label="Navigate to Mermaid Diagram Configuration Guide"> Mermaid Diagram Configuration Guide </a> </li> <li> <a href="/docs/mermaid-quick-start/" aria-label="Navigate to Mermaid Quick Start"> Mermaid Quick Start </a> </li> <li> <a href="/docs/mermaid-examples/" aria-label="Navigate to Mermaid Diagram Examples"> Mermaid Diagram Examples </a> </li> <li> <a href="/docs/mermaid-diagrams-sample/" aria-label="Navigate to Mermaid Diagrams Sample"> Mermaid Diagrams Sample </a> </li> <li> <a href="/docs/mermaid-test-runner/" aria-label="Navigate to Mermaid Diagrams Test Runner"> Mermaid Diagrams Test Runner </a> </li> <li> <a href="/docs/rel-attribute-guide/" aria-label="Navigate to The rel Attribute in HTML Links: A Comprehensive Guide"> The rel Attribute in HTML Links: A Comprehensive Guide </a> </li> <li> <a href="/docs/exploring-limitations-of-gitea-and-ruby/" aria-label="Navigate to Exploring the Limitations of Gitea and Ruby"> Exploring the Limitations of Gitea and Ruby </a> </li> </ul> </nav> <div id="menu-status" class="visually-hidden" role="status" aria-live="polite"></div> </div> </header> <main class="page-content" aria-label="Content"> <div class="wrapper">
-<article class="post"> <header class="post-header"> <h1 class="post-title">FrontMatter CMS Usage</h1> </header> <div class="post-content">
-<h1 id="frontmatter-cms-usage">FrontMatter CMS Usage</h1> <h2 id="overview">Overview</h2> <p>The FrontMatter CMS extension provides a powerful content management interface directly within VS Code for your Jekyll site. It offers a WordPress-like editing experience with visual content management, media handling, and taxonomy organization.</p> <h2 id="table-of-contents">Table of Contents</h2> <!-- prettier-ignore-start --> <ul id="markdown-toc"> <li>
-<a href="#frontmatter-cms-usage" id="markdown-toc-frontmatter-cms-usage">FrontMatter CMS Usage</a> <ul> <li><a href="#overview" id="markdown-toc-overview">Overview</a></li> <li><a href="#table-of-contents" id="markdown-toc-table-of-contents">Table of Contents</a></li> <li>
-<a href="#getting-started" id="markdown-toc-getting-started">Getting Started</a> <ul> <li><a href="#1-installation" id="markdown-toc-1-installation">1. Installation</a></li> <li><a href="#2-opening-the-cms" id="markdown-toc-2-opening-the-cms">2. Opening the CMS</a></li> <li><a href="#3-content-management-interface" id="markdown-toc-3-content-management-interface">3. Content Management Interface</a></li> </ul> </li> <li>
-<a href="#content-types" id="markdown-toc-content-types">Content Types</a> <ul> <li><a href="#default-pages" id="markdown-toc-default-pages">Default Pages</a></li> <li><a href="#blog-posts" id="markdown-toc-blog-posts">Blog Posts</a></li> <li><a href="#documentation" id="markdown-toc-documentation">Documentation</a></li> </ul> </li> <li>
-<a href="#creating-content" id="markdown-toc-creating-content">Creating Content</a> <ul> <li><a href="#using-the-visual-editor" id="markdown-toc-using-the-visual-editor">Using the Visual Editor</a></li> <li><a href="#field-types-available" id="markdown-toc-field-types-available">Field Types Available</a></li> </ul> </li> <li>
-<a href="#content-snippets" id="markdown-toc-content-snippets">Content Snippets</a> <ul> <li>
-<a href="#standard-snippets" id="markdown-toc-standard-snippets">Standard Snippets</a> <ul> <li><a href="#image-with-caption" id="markdown-toc-image-with-caption">Image with Caption</a></li> <li><a href="#code-block" id="markdown-toc-code-block">Code Block</a></li> <li><a href="#calloutalert-box" id="markdown-toc-calloutalert-box">Callout/Alert Box</a></li> </ul> </li> <li>
-<a href="#liquid-tag-snippets" id="markdown-toc-liquid-tag-snippets">Liquid Tag Snippets</a> <ul> <li><a href="#liquid-variable" id="markdown-toc-liquid-variable">Liquid Variable</a></li> <li><a href="#liquid-tag" id="markdown-toc-liquid-tag">Liquid Tag</a></li> <li><a href="#liquid-for-loop" id="markdown-toc-liquid-for-loop">Liquid For Loop</a></li> <li><a href="#liquid-if-statement" id="markdown-toc-liquid-if-statement">Liquid If Statement</a></li> <li><a href="#interactive-snippet-benefits" id="markdown-toc-interactive-snippet-benefits">Interactive Snippet Benefits</a></li> <li><a href="#common-liquid-patterns-for-reference" id="markdown-toc-common-liquid-patterns-for-reference">Common Liquid Patterns (for reference)</a></li> </ul> </li> </ul> </li> <li>
-<a href="#media-management" id="markdown-toc-media-management">Media Management</a> <ul> <li><a href="#asset-organization" id="markdown-toc-asset-organization">Asset Organization</a></li> </ul> </li> <li>
-<a href="#taxonomy-management" id="markdown-toc-taxonomy-management">Taxonomy Management</a> <ul> <li><a href="#categories" id="markdown-toc-categories">Categories</a></li> <li><a href="#tags" id="markdown-toc-tags">Tags</a></li> <li><a href="#data-file-integration" id="markdown-toc-data-file-integration">Data File Integration</a></li> </ul> </li> <li>
-<a href="#workflow-integration" id="markdown-toc-workflow-integration">Workflow Integration</a> <ul> <li><a href="#jekyll-preview" id="markdown-toc-jekyll-preview">Jekyll Preview</a></li> <li><a href="#version-control" id="markdown-toc-version-control">Version Control</a></li> </ul> </li> <li>
-<a href="#advanced-features" id="markdown-toc-advanced-features">Advanced Features</a> <ul> <li><a href="#custom-fields" id="markdown-toc-custom-fields">Custom Fields</a></li> <li><a href="#content-templates" id="markdown-toc-content-templates">Content Templates</a></li> <li><a href="#bulk-operations" id="markdown-toc-bulk-operations">Bulk Operations</a></li> </ul> </li> <li>
-<a href="#troubleshooting" id="markdown-toc-troubleshooting">Troubleshooting</a> <ul> <li><a href="#common-issues" id="markdown-toc-common-issues">Common Issues</a></li> <li><a href="#configuration-files" id="markdown-toc-configuration-files">Configuration Files</a></li> </ul> </li> <li><a href="#tips-and-best-practices" id="markdown-toc-tips-and-best-practices">Tips and Best Practices</a></li> <li><a href="#resources" id="markdown-toc-resources">Resources</a></li> </ul> </li> </ul> <!-- prettier-ignore-end --> <h2 id="getting-started">Getting Started</h2> <h3 id="1-installation">1. Installation</h3> <p>The FrontMatter extension should already be installed as part of the workspace recommendations. If not:</p> <ol> <li>Open VS Code Extensions panel (<code class="language-plaintext highlighter-rouge">Ctrl+Shift+X</code>)</li> <li>Search for “FrontMatter”</li> <li>Install the “FrontMatter” extension by Elio Struyf</li> </ol> <h3 id="2-opening-the-cms">2. Opening the CMS</h3> <p>You can access the FrontMatter CMS in several ways:</p> <ul> <li>
-<strong>Command Palette</strong>: <code class="language-plaintext highlighter-rouge">Ctrl+Shift+P</code> → “FrontMatter: Open dashboard”</li> <li>
-<strong>Task Runner</strong>: <code class="language-plaintext highlighter-rouge">Ctrl+Shift+P</code> → “Tasks: Run Task” → “FrontMatter: Start CMS”</li> </ul> <h3 id="3-content-management-interface">3. Content Management Interface</h3> <p>The CMS provides several panels:</p> <ul> <li>
-<strong>Content Overview</strong>: Browse all your posts and pages</li> <li>
-<strong>Media Library</strong>: Manage images and other assets</li> <li>
-<strong>Taxonomies</strong>: Organize tags and categories</li> <li>
-<strong>Snippets</strong>: Insert predefined content blocks</li> </ul> <h2 id="content-types">Content Types</h2> <p>The workspace is configured with three content types:</p> <h3 id="default-pages">Default Pages</h3> <ul> <li>Simple pages with basic metadata</li> <li>Used for: About pages, landing pages, etc.</li> <li>Location: <code class="language-plaintext highlighter-rouge">docs/</code> directory</li> </ul> <h3 id="blog-posts">Blog Posts</h3> <ul> <li>Full-featured blog posts with advanced metadata</li> <li>Used for: News, tutorials, announcements</li> <li>Location: <code class="language-plaintext highlighter-rouge">docs/_posts/</code> directory</li> <li>Filename format: <code class="language-plaintext highlighter-rouge">YYYY-MM-DD-title.md</code>
-</li> </ul> <h3 id="documentation">Documentation</h3> <ul> <li>Technical documentation with navigation order</li> <li>Used for: User guides, API docs, tutorials</li> <li>Location: <code class="language-plaintext highlighter-rouge">docs/_docs/</code> directory</li> </ul> <h2 id="creating-content">Creating Content</h2> <h3 id="using-the-visual-editor">Using the Visual Editor</h3> <ol> <li>Open FrontMatter dashboard</li> <li>Click “Create Content”</li> <li>Select content type (Post, Documentation, or Default)</li> <li>Fill in the metadata fields: <ul> <li>
-<strong>Title</strong>: Content title</li> <li>
-<strong>Description</strong>: SEO description</li> <li>
-<strong>Categories</strong>: Organize content (limit varies by type)</li> <li>
-<strong>Tags</strong>: Keyword tags for discoverability</li> <li>
-<strong>Featured Image</strong>: Visual representation</li> <li>
-<strong>Draft Status</strong>: Control publication</li> </ul> </li> </ol> <h3 id="field-types-available">Field Types Available</h3> <ul> <li>
-<strong>Text Fields</strong>: Title, description, author</li> <li>
-<strong>Date/Time</strong>: Publication and modification dates</li> <li>
-<strong>Choice Fields</strong>: Layout selection, callout types</li> <li>
-<strong>Image Fields</strong>: Featured images with alt text</li> <li>
-<strong>Boolean Fields</strong>: Draft status, TOC enable/disable</li> <li>
-<strong>Number Fields</strong>: Navigation order for docs</li> <li>
-<strong>Tags/Categories</strong>: Taxonomy management</li> </ul> <h2 id="content-snippets">Content Snippets</h2> <p>Pre-configured snippets for common content patterns. Access snippets through:</p> <ul> <li>
-<strong>FrontMatter Dashboard</strong>: In the content editor panel</li> <li>
-<strong>VS Code Command Palette</strong>: <code class="language-plaintext highlighter-rouge">Ctrl+Shift+P</code> → “FrontMatter: Insert snippet”</li> <li>
-<strong>Editor Context Menu</strong>: Right-click in markdown files → “Insert FrontMatter snippet”</li> </ul> <h3 id="standard-snippets">Standard Snippets</h3> <h4 id="image-with-caption">Image with Caption</h4> <p><strong>Usage</strong>: Insert images with automatic caption formatting</p> <ul> <li>
-<strong>Prompts for</strong>: <ul> <li>Image source (with file picker integration)</li> <li>Alt text for accessibility</li> <li>Caption text</li> </ul> </li> <li>
-<strong>Example output</strong>:</li> </ul> <div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">![</span><span class="nv">Alt text</span><span class="p">](</span><span class="sx">image-source.jpg</span><span class="p">)</span>
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta http-equiv="Content-Security-Policy" content="
+      default-src 'self';
+      script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://cdn.jsdelivr.net https://pagead2.googlesyndication.com https://googleads.g.doubleclick.net https://ep1.adtrafficquality.google https://ep2.adtrafficquality.google https://csi.gstatic.com ;
+      style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net ;
+      style-src-elem 'self' 'unsafe-inline' ;
+      img-src 'self' data: https: https://www.google-analytics.com https://pagead2.googlesyndication.com https://ep1.adtrafficquality.google https://ep2.adtrafficquality.google;
+      font-src 'self' https://cdn.jsdelivr.net https://fonts.gstatic.com data:;
+      connect-src 'self' https://www.google-analytics.com https://pagead2.googlesyndication.com https://googleads.g.doubleclick.net https://ep1.adtrafficquality.google https://ep2.adtrafficquality.google ;
+      frame-src 'self' https://www.google.com https://googleads.g.doubleclick.net https://pagead2.googlesyndication.com https://ep1.adtrafficquality.google https://ep2.adtrafficquality.google ;
+      object-src 'none';
+      base-uri 'self';
+      form-action 'self';
+      manifest-src 'self';block-all-mixed-content;upgrade-insecure-requests">
+
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="anonymous" />
+    
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin="anonymous" />
+    <link rel="preconnect" href="https://www.google-analytics.com" crossorigin="anonymous" />
+    
+    
+    <link rel="preconnect" href="https://pagead2.googlesyndication.com" crossorigin="anonymous" />
+    <link rel="preconnect" href="https://googleads.g.doubleclick.net" crossorigin="anonymous" />
+    <meta name="google-adsense-account" content="ca-pub-3383458876439157" />
+    
+
+    <!-- Critical navigation styles - always inlined for immediate user interaction -->
+<style>
+  /* Navigation toggle button - ALWAYS VISIBLE */
+  .nav-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: #2c5aa0;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 6px;
+    z-index: 101;
+    min-height: 24px;
+    min-width: 24px;
+  }
+
+  /* Progressive enhancement - hide desktop nav when JS enabled */
+  html.js nav.primary-nav {
+    display: none;
+  }
+
+  /* Overlay navigation */
+  html.js nav.primary-nav.nav-overlay {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.85);
+    z-index: 100;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-20px);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+    overflow-y: auto;
+  }
+
+  html.js nav.primary-nav.nav-overlay.nav-visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  /* Body scroll lock when overlay is open */
+  body.nav-open {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+  }
+
+  /* No-JS fallback */
+  html.no-js .nav-toggle {
+    display: none;
+  }
+
+  /* Accessibility - visually hidden elements */
+  .visually-hidden {
+    position: absolute !important;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  /* Performance optimization for font loading */
+  html {
+    font-display: swap;
+  }
+
+  /* Reduce layout shift during navigation initialization */
+  .site-header .wrapper {
+    min-height: 55.95px;
+  }
+</style>
+
+    <!-- Preload fonts for better performance -->
+  <link
+    rel="preload"
+    href="/assets/fonts/InterVariable.woff2"
+    as="font"
+    type="font/woff2"
+    crossorigin="anonymous"
+    immutable
+  />
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  />
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  />
+
+    <!-- Critical CSS for above-the-fold content -->
+<style>
+/**
+ * Critical path CSS for above-the-fold content
+ * Optimized for < 12s build target and initial viewport rendering
+ */
+
+/* Base variables for theming */
+:root {
+  --bg-color: #ffffff;
+  --text-color: #222222;
+  --accent-color: #1e8449; /* WCAG AA compliant green */
+  --link-color: #0066cc;
+  --nav-bg: #f8f8f8;
+  --border-color: #e8e8e8;
+  --header-color: #424242;
+  --focus-outline: 2px solid #1e8449;
+  --font-family-base: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --font-size-base: 16px;
+  --line-height-base: 1.5;
+}
+
+/* Base element styles */
+html {
+  font-size: var(--font-size-base);
+  font-family: var(--font-family-base);
+  line-height: var(--line-height-base);
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Wrapper for content layout */
+.wrapper {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 15px;
+  width: calc(100% - 30px);
+}
+
+/* Critical header and navigation styles */
+.site-header {
+  border-bottom: 1px solid var(--border-color);
+  min-height: 56px;
+  background-color: var(--nav-bg);
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.site-header .wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.site-title {
+  font-size: 1.5rem;
+  font-weight: 300;
+  letter-spacing: -1px;
+  margin-bottom: 0;
+  color: var(--header-color);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  line-height: 56px;
+}
+
+.site-title img {
+  margin-right: 10px;
+  width: 50px;
+  height: 50px;
+}
+
+.site-title.long-title {
+  font-size: 1.25rem;
+}
+
+/* Navigation styling */
+.site-nav {
+  position: relative;
+  line-height: 56px;
+}
+
+.site-nav .nav-trigger {
+  display: none;
+}
+
+.site-nav .menu-icon {
+  display: none;
+}
+
+.site-nav .page-link {
+  color: var(--text-color);
+  line-height: 1.5;
+  text-decoration: none;
+  margin-right: 20px;
+}
+
+.site-nav .page-link:hover {
+  color: var(--accent-color);
+}
+
+.nav-button {
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: var(--font-family-base);
+  font-size: 0.875rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+/* Main content area */
+.page-content {
+  padding: 30px 0;
+  flex: 1;
+}
+
+/* Skip link - accessibility feature */
+.skip-to-content {
+  position: absolute;
+  top: -50px;
+  left: 10px;
+  background: var(--accent-color);
+  color: white;
+  padding: 8px;
+  z-index: 100;
+  transition: top 0.3s ease;
+}
+
+.skip-to-content:focus {
+  top: 10px;
+}
+
+/* Focus outline for accessibility */
+:focus {
+  outline: var(--focus-outline);
+  outline-offset: 2px;
+}
+
+/* Basic media query for responsive design */
+@media screen and (max-width: 600px) {
+  .site-nav {
+    position: absolute;
+    top: 9px;
+    right: 15px;
+    background-color: var(--nav-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    text-align: right;
+    z-index: 10;
+  }
+
+  .site-nav .menu-icon {
+    display: block;
+    float: right;
+    width: 36px;
+    height: 26px;
+    line-height: 0;
+    padding-top: 10px;
+    text-align: center;
+    cursor: pointer;
+  }
+
+  .site-nav .menu-icon > svg {
+    width: 18px;
+    height: 15px;
+  }
+
+  .site-nav .trigger {
+    clear: both;
+    display: none;
+    padding-bottom: 5px;
+  }
+
+  .site-nav:not([popover]) .nav-trigger:checked ~ .trigger {
+    display: block;
+  }
+
+  .site-nav .page-link {
+    display: block;
+    padding: 5px 10px;
+    margin: 0;
+  }
+}
+
+/* SR-only class for accessibility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Basic typography for content */
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  color: var(--header-color);
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5em;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1em;
+}
+
+/* SVG icon in header */
+.svg-icon {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  fill: currentColor;
+  vertical-align: text-bottom;
+  flex-shrink: 0;
+  box-sizing: content-box;
+}
+
+/* Image aspect ratio and container styles */
+img {
+  aspect-ratio: attr(width) / attr(height);
+}
+
+.image-container {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+}
+
+.image-container--16-9 {
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+}
+
+.image-container--4-3 {
+  padding-bottom: 75%; /* 4:3 aspect ratio */
+}
+
+.image-container img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Cookie consent banner styles */
+#cookie-consent-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  max-height: 0;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: transform 0.3s, opacity 0.3s, max-height 0s 0.3s;
+  overflow: hidden;
+}
+
+#cookie-consent-banner.visible {
+  max-height: 200px;
+  opacity: 1;
+  transform: translateY(0);
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+/* Advertisement container styles */
+.ad-container {
+  min-height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f9f9f9;
+  margin: 1rem 0;
+  overflow: hidden;
+  contain: layout size;
+}
+
+.ad-container::before {
+  content: "Advertisement";
+  color: #777;
+  font-size: 0.75rem;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+
+/* Mermaid diagram container styles */
+.mermaid-container {
+  position: relative;
+  width: 100%;
+  min-height: 150px;
+  margin: 1.5rem 0;
+  background-color: rgba(0,0,0,0.03);
+  border-radius: 4px;
+  overflow: hidden;
+  contain: layout style paint;
+}
+
+.mermaid-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background:
+    linear-gradient(90deg, transparent 25%, rgba(255,255,255,.5) 50%, transparent 75%) -200% 0 / 400% 100%,
+    linear-gradient(rgba(0,0,0,.1) 0%, transparent 20%, transparent 80%, rgba(0,0,0,.1) 100%);
+  animation: loading 1.5s infinite linear;
+  opacity: 0.5;
+}
+
+@keyframes loading {
+  to { background-position: 100% 0, 0 0; }
+}
+
+[popover] {
+  contain: layout size;
+}
+
+.site-nav[popover] {
+  /* Pre-compute layout position */
+  position: absolute;
+  top: 9px;
+  right: 15px;
+  z-index: 100;
+  /* Prevent layout shift during animations */
+  transform: translateZ(0);
+  will-change: transform;
+}
+</style>
+<link rel="preload" href="/assets/main.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="/assets/main.css"></noscript>
+
+
+    <title>
+      FrontMatter CMS Usage | My Information Just Under Glass
+    </title>
+    <meta
+      name="description"
+      content="FrontMatter CMS Usage"
+    />
+    
+    <meta name="version" content="Sep 25, 2025" />
+    
+
+    
+    <meta name="docs-nav-order" content="7" />
+    <meta name="docs-section" content="documentation" />
+    
+    <meta name="priority-doc" content="true" />
+    
+    
+
+    <meta name="google-site-verification" content="googlece83719b3f856e56" />
+    <meta name="cache-version" content="20250926013331" />
+
+    <link rel="preload" as="style" href="/assets/main.css?v=20250927041728" media="print" crossorigin><link rel="stylesheet" href="/assets/main.css?v=20250927041728" media="print">
+    <link rel="preload" as="style" href="/assets/css/inp-optimizations.css?v=20250927041728" media="print" crossorigin><link rel="stylesheet" href="/assets/css/inp-optimizations.css?v=20250927041728" media="print">
+
+    <noscript>
+      <link rel="stylesheet" href="/assets/main.css?v=20250927041728">
+      <link rel="stylesheet" href="/assets/css/inp-optimizations.css?v=20250927041728">
+    </noscript>
+
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="My Information Just Under Glass"
+      href="/feed.xml"
+    />
+    
+    
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="/assets/logo-mijug-96x96.png?v=20250926013331"
+    />
+    
+    <link
+      rel="shortcut icon"
+      type="image/x-icon"
+      href="/favicon.ico"
+    />
+    <link rel="manifest" href="/manifest.webmanifest" />
+
+    <meta name="description" content="Learn how to use the FrontMatter CMS extension for content management in Jekyll" />
+<meta property="og:title" content="FrontMatter CMS Usage" />
+<meta property="og:description" content="Learn how to use the FrontMatter CMS extension for content management in Jekyll" />
+<meta property="og:url" content="https://www.mijug.net/docs/frontmatter-cms/" />
+<meta property="og:site_name" content="My Information Just Under Glass" />
+<meta property="og:type" content="website" /><meta property="og:image" content="https://www.mijug.net/assets/logo-mijug-96x96.png" /><link rel="canonical" href="https://www.mijug.net/docs/frontmatter-cms/" />
+
+
+    
+
+    
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "FrontMatter CMS Usage",
+        "description": "Learn how to use the FrontMatter CMS extension for content management in Jekyll",
+        "url": "https://www.mijug.net/docs/frontmatter-cms/",
+        "position": 7,
+        "isPartOf": {
+          "@type": "WebSite",
+          "name": "My Information Just Under Glass",
+          "url": "https://www.mijug.net/"
+        }
+      }
+    </script>
+    
+
+    <script>
+  window.MIJUG = window.MIJUG || {};
+  window.MIJUG.cacheVersion = "20250926013331";
+</script>
+
+    
+    <script>
+      window.print = function () { console.log('Skip printing'); };
+      window.addEventListener('keydown', function(event) {
+       if (event.keyCode === 80 && (event.ctrlKey || event.metaKey) && !event.altKey && (!event.shiftKey || window.chrome || window.opera)) {
+        event.preventDefault();
+        if (event.stopImmediatePropagation) {
+            event.stopImmediatePropagation();
+        } else {
+            event.stopPropagation();
+        }
+        return;
+       }
+        if (event.ctrlKey && (event.key === "p" || event.key === "s")) {
+           event.preventDefault();
+        }
+      }, true);
+    </script>
+    
+  </head>
+  
+    <body oncontextmenu="return false;">
+  
+    <header class="site-header" role="banner">
+      <div class="wrapper">
+        <a class="site-title long-title" rel="home" href="/">
+          
+          <img src="/assets/logo-mijug-96x96.png?v=20250926013331" alt="My Information Just Under Glass" width="50" height="50">
+           My Information Just Under Glass
+        </a>
+
+        <button class="nav-toggle" aria-controls="primary-navigation" aria-expanded="false" aria-label="Toggle navigation menu">
+          Menu
+        </button>
+
+        <nav id="primary-navigation" class="primary-nav" role="navigation" aria-label="Main navigation">
+          <ul>
+            
+              <li>
+                <a href="/blog/" aria-label="Navigate to Blog">
+                   Blog
+                </a>
+              </li>
+            
+              <li>
+                <a href="/about/" aria-label="Navigate to About">
+                   About
+                </a>
+              </li>
+            
+              <li>
+                <a href="/docs/getting-started/" aria-label="Navigate to Getting Started">
+                   Getting Started
+                </a>
+              </li>
+            
+              <li>
+                <a href="/docs/welcome-mijug-workspace/" aria-label="Navigate to Workspace Overview">
+                   Workspace Overview
+                </a>
+              </li>
+            
+              <li>
+                <a href="/docs/frontmatter-cms/" class="active" aria-label="Navigate to FrontMatter CMS Usage">
+                   FrontMatter CMS Usage
+                </a>
+              </li>
+            
+              <li>
+                <a href="/docs/accessibility-testing/" aria-label="Navigate to Accessibility Testing Configuration">
+                   Accessibility Testing Configuration
+                </a>
+              </li>
+            
+              <li>
+                <a href="/docs/browser-management/" aria-label="Navigate to Browser Management for Testing">
+                   Browser Management for Testing
+                </a>
+              </li>
+            
+              <li>
+                <a href="/docs/browser-compatibility-testing/" aria-label="Navigate to Browser Compatibility Testing">
+                   Browser Compatibility Testing
+                </a>
+              </li>
+            
+              <li>
+                <a href="/docs/liquid-tags-examples/" aria-label="Navigate to Liquid Tags Examples">
+                   Liquid Tags Examples
+                </a>
+              </li>
+            
+              <li>
+                <a href="/docs/tags-and-categories-guide/" aria-label="Navigate to Tags and Categories System Guide">
+                   Tags and Categories System Guide
+                </a>
+              </li>
+            
+              <li>
+                <a href="/docs/performance-optimization/" aria-label="Navigate to Performance Optimization Guide">
+                   Performance Optimization Guide
+                </a>
+              </li>
+            
+              <li>
+                <a href="/docs/testing-performance-evolution/" aria-label="Navigate to Testing Performance and Development Evolution">
+                   Testing Performance and Development Evolution
+                </a>
+              </li>
+            
+              <li>
+                <a href="/docs/cache-management/" aria-label="Navigate to Cache Management Strategies">
+                   Cache Management Strategies
+                </a>
+              </li>
+            
+              <li>
+                <a href="/docs/mermaid-configuration-guide/" aria-label="Navigate to Mermaid Diagram Configuration Guide">
+                   Mermaid Diagram Configuration Guide
+                </a>
+              </li>
+            
+              <li>
+                <a href="/docs/mermaid-quick-start/" aria-label="Navigate to Mermaid Quick Start">
+                   Mermaid Quick Start
+                </a>
+              </li>
+            
+              <li>
+                <a href="/docs/mermaid-examples/" aria-label="Navigate to Mermaid Diagram Examples">
+                   Mermaid Diagram Examples
+                </a>
+              </li>
+            
+              <li>
+                <a href="/docs/mermaid-diagrams-sample/" aria-label="Navigate to Mermaid Diagrams Sample">
+                   Mermaid Diagrams Sample
+                </a>
+              </li>
+            
+              <li>
+                <a href="/docs/mermaid-test-runner/" aria-label="Navigate to Mermaid Diagrams Test Runner">
+                   Mermaid Diagrams Test Runner
+                </a>
+              </li>
+            
+              <li>
+                <a href="/docs/rel-attribute-guide/" aria-label="Navigate to The rel Attribute in HTML Links: A Comprehensive Guide">
+                   The rel Attribute in HTML Links: A Comprehensive Guide
+                </a>
+              </li>
+            
+              <li>
+                <a href="/docs/exploring-limitations-of-gitea-and-ruby/" aria-label="Navigate to Exploring the Limitations of Gitea and Ruby">
+                   Exploring the Limitations of Gitea and Ruby
+                </a>
+              </li>
+            
+          </ul>
+        </nav>
+
+        <div id="menu-status" class="visually-hidden" role="status" aria-live="polite"></div>
+      </div>
+    </header>
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+<article class="post">
+  <header class="post-header">
+    <h1 class="post-title">FrontMatter CMS Usage</h1>
+  </header>
+
+  <div class="post-content">
+<h1 id="frontmatter-cms-usage">FrontMatter CMS Usage</h1>
+
+<h2 id="overview">Overview</h2>
+
+<p>The FrontMatter CMS extension provides a powerful content management interface directly within VS Code for your Jekyll site. It offers a WordPress-like editing experience with visual content management, media handling, and taxonomy organization.</p>
+
+<h2 id="table-of-contents">Table of Contents</h2>
+
+<!-- prettier-ignore-start -->
+
+<ul id="markdown-toc">
+  <li>
+<a href="#frontmatter-cms-usage" id="markdown-toc-frontmatter-cms-usage">FrontMatter CMS Usage</a>    <ul>
+      <li><a href="#overview" id="markdown-toc-overview">Overview</a></li>
+      <li><a href="#table-of-contents" id="markdown-toc-table-of-contents">Table of Contents</a></li>
+      <li>
+<a href="#getting-started" id="markdown-toc-getting-started">Getting Started</a>        <ul>
+          <li><a href="#1-installation" id="markdown-toc-1-installation">1. Installation</a></li>
+          <li><a href="#2-opening-the-cms" id="markdown-toc-2-opening-the-cms">2. Opening the CMS</a></li>
+          <li><a href="#3-content-management-interface" id="markdown-toc-3-content-management-interface">3. Content Management Interface</a></li>
+        </ul>
+      </li>
+      <li>
+<a href="#content-types" id="markdown-toc-content-types">Content Types</a>        <ul>
+          <li><a href="#default-pages" id="markdown-toc-default-pages">Default Pages</a></li>
+          <li><a href="#blog-posts" id="markdown-toc-blog-posts">Blog Posts</a></li>
+          <li><a href="#documentation" id="markdown-toc-documentation">Documentation</a></li>
+        </ul>
+      </li>
+      <li>
+<a href="#creating-content" id="markdown-toc-creating-content">Creating Content</a>        <ul>
+          <li><a href="#using-the-visual-editor" id="markdown-toc-using-the-visual-editor">Using the Visual Editor</a></li>
+          <li><a href="#field-types-available" id="markdown-toc-field-types-available">Field Types Available</a></li>
+        </ul>
+      </li>
+      <li>
+<a href="#content-snippets" id="markdown-toc-content-snippets">Content Snippets</a>        <ul>
+          <li>
+<a href="#standard-snippets" id="markdown-toc-standard-snippets">Standard Snippets</a>            <ul>
+              <li><a href="#image-with-caption" id="markdown-toc-image-with-caption">Image with Caption</a></li>
+              <li><a href="#code-block" id="markdown-toc-code-block">Code Block</a></li>
+              <li><a href="#calloutalert-box" id="markdown-toc-calloutalert-box">Callout/Alert Box</a></li>
+            </ul>
+          </li>
+          <li>
+<a href="#liquid-tag-snippets" id="markdown-toc-liquid-tag-snippets">Liquid Tag Snippets</a>            <ul>
+              <li><a href="#liquid-variable" id="markdown-toc-liquid-variable">Liquid Variable</a></li>
+              <li><a href="#liquid-tag" id="markdown-toc-liquid-tag">Liquid Tag</a></li>
+              <li><a href="#liquid-for-loop" id="markdown-toc-liquid-for-loop">Liquid For Loop</a></li>
+              <li><a href="#liquid-if-statement" id="markdown-toc-liquid-if-statement">Liquid If Statement</a></li>
+              <li><a href="#interactive-snippet-benefits" id="markdown-toc-interactive-snippet-benefits">Interactive Snippet Benefits</a></li>
+              <li><a href="#common-liquid-patterns-for-reference" id="markdown-toc-common-liquid-patterns-for-reference">Common Liquid Patterns (for reference)</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>
+<a href="#media-management" id="markdown-toc-media-management">Media Management</a>        <ul>
+          <li><a href="#asset-organization" id="markdown-toc-asset-organization">Asset Organization</a></li>
+        </ul>
+      </li>
+      <li>
+<a href="#taxonomy-management" id="markdown-toc-taxonomy-management">Taxonomy Management</a>        <ul>
+          <li><a href="#categories" id="markdown-toc-categories">Categories</a></li>
+          <li><a href="#tags" id="markdown-toc-tags">Tags</a></li>
+          <li><a href="#data-file-integration" id="markdown-toc-data-file-integration">Data File Integration</a></li>
+        </ul>
+      </li>
+      <li>
+<a href="#workflow-integration" id="markdown-toc-workflow-integration">Workflow Integration</a>        <ul>
+          <li><a href="#jekyll-preview" id="markdown-toc-jekyll-preview">Jekyll Preview</a></li>
+          <li><a href="#version-control" id="markdown-toc-version-control">Version Control</a></li>
+        </ul>
+      </li>
+      <li>
+<a href="#advanced-features" id="markdown-toc-advanced-features">Advanced Features</a>        <ul>
+          <li><a href="#custom-fields" id="markdown-toc-custom-fields">Custom Fields</a></li>
+          <li><a href="#content-templates" id="markdown-toc-content-templates">Content Templates</a></li>
+          <li><a href="#bulk-operations" id="markdown-toc-bulk-operations">Bulk Operations</a></li>
+        </ul>
+      </li>
+      <li>
+<a href="#troubleshooting" id="markdown-toc-troubleshooting">Troubleshooting</a>        <ul>
+          <li><a href="#common-issues" id="markdown-toc-common-issues">Common Issues</a></li>
+          <li><a href="#configuration-files" id="markdown-toc-configuration-files">Configuration Files</a></li>
+        </ul>
+      </li>
+      <li><a href="#tips-and-best-practices" id="markdown-toc-tips-and-best-practices">Tips and Best Practices</a></li>
+      <li><a href="#resources" id="markdown-toc-resources">Resources</a></li>
+    </ul>
+  </li>
+</ul>
+
+<!-- prettier-ignore-end -->
+
+<h2 id="getting-started">Getting Started</h2>
+
+<h3 id="1-installation">1. Installation</h3>
+
+<p>The FrontMatter extension should already be installed as part of the workspace recommendations. If not:</p>
+
+<ol>
+  <li>Open VS Code Extensions panel (<code class="language-plaintext highlighter-rouge">Ctrl+Shift+X</code>)</li>
+  <li>Search for “FrontMatter”</li>
+  <li>Install the “FrontMatter” extension by Elio Struyf</li>
+</ol>
+
+<h3 id="2-opening-the-cms">2. Opening the CMS</h3>
+
+<p>You can access the FrontMatter CMS in several ways:</p>
+
+<ul>
+  <li>
+<strong>Command Palette</strong>: <code class="language-plaintext highlighter-rouge">Ctrl+Shift+P</code> → “FrontMatter: Open dashboard”</li>
+  <li>
+<strong>Task Runner</strong>: <code class="language-plaintext highlighter-rouge">Ctrl+Shift+P</code> → “Tasks: Run Task” → “FrontMatter: Start CMS”</li>
+</ul>
+
+<h3 id="3-content-management-interface">3. Content Management Interface</h3>
+
+<p>The CMS provides several panels:</p>
+
+<ul>
+  <li>
+<strong>Content Overview</strong>: Browse all your posts and pages</li>
+  <li>
+<strong>Media Library</strong>: Manage images and other assets</li>
+  <li>
+<strong>Taxonomies</strong>: Organize tags and categories</li>
+  <li>
+<strong>Snippets</strong>: Insert predefined content blocks</li>
+</ul>
+
+<h2 id="content-types">Content Types</h2>
+
+<p>The workspace is configured with three content types:</p>
+
+<h3 id="default-pages">Default Pages</h3>
+
+<ul>
+  <li>Simple pages with basic metadata</li>
+  <li>Used for: About pages, landing pages, etc.</li>
+  <li>Location: <code class="language-plaintext highlighter-rouge">docs/</code> directory</li>
+</ul>
+
+<h3 id="blog-posts">Blog Posts</h3>
+
+<ul>
+  <li>Full-featured blog posts with advanced metadata</li>
+  <li>Used for: News, tutorials, announcements</li>
+  <li>Location: <code class="language-plaintext highlighter-rouge">docs/_posts/</code> directory</li>
+  <li>Filename format: <code class="language-plaintext highlighter-rouge">YYYY-MM-DD-title.md</code>
+</li>
+</ul>
+
+<h3 id="documentation">Documentation</h3>
+
+<ul>
+  <li>Technical documentation with navigation order</li>
+  <li>Used for: User guides, API docs, tutorials</li>
+  <li>Location: <code class="language-plaintext highlighter-rouge">docs/_docs/</code> directory</li>
+</ul>
+
+<h2 id="creating-content">Creating Content</h2>
+
+<h3 id="using-the-visual-editor">Using the Visual Editor</h3>
+
+<ol>
+  <li>Open FrontMatter dashboard</li>
+  <li>Click “Create Content”</li>
+  <li>Select content type (Post, Documentation, or Default)</li>
+  <li>Fill in the metadata fields:
+    <ul>
+      <li>
+<strong>Title</strong>: Content title</li>
+      <li>
+<strong>Description</strong>: SEO description</li>
+      <li>
+<strong>Categories</strong>: Organize content (limit varies by type)</li>
+      <li>
+<strong>Tags</strong>: Keyword tags for discoverability</li>
+      <li>
+<strong>Featured Image</strong>: Visual representation</li>
+      <li>
+<strong>Draft Status</strong>: Control publication</li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="field-types-available">Field Types Available</h3>
+
+<ul>
+  <li>
+<strong>Text Fields</strong>: Title, description, author</li>
+  <li>
+<strong>Date/Time</strong>: Publication and modification dates</li>
+  <li>
+<strong>Choice Fields</strong>: Layout selection, callout types</li>
+  <li>
+<strong>Image Fields</strong>: Featured images with alt text</li>
+  <li>
+<strong>Boolean Fields</strong>: Draft status, TOC enable/disable</li>
+  <li>
+<strong>Number Fields</strong>: Navigation order for docs</li>
+  <li>
+<strong>Tags/Categories</strong>: Taxonomy management</li>
+</ul>
+
+<h2 id="content-snippets">Content Snippets</h2>
+
+<p>Pre-configured snippets for common content patterns. Access snippets through:</p>
+
+<ul>
+  <li>
+<strong>FrontMatter Dashboard</strong>: In the content editor panel</li>
+  <li>
+<strong>VS Code Command Palette</strong>: <code class="language-plaintext highlighter-rouge">Ctrl+Shift+P</code> → “FrontMatter: Insert snippet”</li>
+  <li>
+<strong>Editor Context Menu</strong>: Right-click in markdown files → “Insert FrontMatter snippet”</li>
+</ul>
+
+<h3 id="standard-snippets">Standard Snippets</h3>
+
+<h4 id="image-with-caption">Image with Caption</h4>
+
+<p><strong>Usage</strong>: Insert images with automatic caption formatting</p>
+
+<ul>
+  <li>
+<strong>Prompts for</strong>:
+    <ul>
+      <li>Image source (with file picker integration)</li>
+      <li>Alt text for accessibility</li>
+      <li>Caption text</li>
+    </ul>
+  </li>
+  <li>
+<strong>Example output</strong>:</li>
+</ul>
+
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">![</span><span class="nv">Alt text</span><span class="p">](</span><span class="sx">image-source.jpg</span><span class="p">)</span>
 <span class="ge">_Caption text_</span>
-</code></pre></div></div> <h4 id="code-block">Code Block</h4> <p><strong>Usage</strong>: Insert syntax-highlighted code blocks with language selection</p> <ul> <li>
-<strong>Prompts for</strong>: <ul> <li>Programming language (dropdown menu)</li> <li>Code content</li> </ul> </li> <li>
-<strong>Available languages</strong>: <ul> <li>TypeScript, JavaScript, Bash, YAML, JSON</li> <li>Markdown, Ruby, Liquid, HTML, CSS, XML, SQL</li> </ul> </li> <li>
-<strong>Example output</strong>:</li> </ul> <div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Your code here</span>
-</code></pre></div></div> <h4 id="calloutalert-box">Callout/Alert Box</h4> <p><strong>Usage</strong>: Insert callout boxes with interactive type selection</p> <ul> <li>
-<strong>Prompts for</strong>: <ul> <li>Callout type (dropdown menu)</li> <li>Message content</li> </ul> </li> <li>
-<strong>Available types</strong>: <ul> <li>💡 Pro Tip</li> <li>⚠️ Warning</li> <li>✅ Success</li> <li>❌ Error</li> <li>ℹ️ Info</li> </ul> </li> <li>
+</code></pre></div></div>
+
+<h4 id="code-block">Code Block</h4>
+
+<p><strong>Usage</strong>: Insert syntax-highlighted code blocks with language selection</p>
+
+<ul>
+  <li>
+<strong>Prompts for</strong>:
+    <ul>
+      <li>Programming language (dropdown menu)</li>
+      <li>Code content</li>
+    </ul>
+  </li>
+  <li>
+<strong>Available languages</strong>:
+    <ul>
+      <li>TypeScript, JavaScript, Bash, YAML, JSON</li>
+      <li>Markdown, Ruby, Liquid, HTML, CSS, XML, SQL</li>
+    </ul>
+  </li>
+  <li>
+<strong>Example output</strong>:</li>
+</ul>
+
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Your code here</span>
+</code></pre></div></div>
+
+<h4 id="calloutalert-box">Callout/Alert Box</h4>
+
+<p><strong>Usage</strong>: Insert callout boxes with interactive type selection</p>
+
+<ul>
+  <li>
+<strong>Prompts for</strong>:
+    <ul>
+      <li>Callout type (dropdown menu)</li>
+      <li>Message content</li>
+    </ul>
+  </li>
+  <li>
+<strong>Available types</strong>:
+    <ul>
+      <li>💡 Pro Tip</li>
+      <li>⚠️ Warning</li>
+      <li>✅ Success</li>
+      <li>❌ Error</li>
+      <li>ℹ️ Info</li>
+    </ul>
+  </li>
+  <li>
 <strong>Example output</strong>: <code class="language-plaintext highlighter-rouge">&gt; **💡 Pro Tip**: Your helpful message here</code>
-</li> </ul> <h3 id="liquid-tag-snippets">Liquid Tag Snippets</h3> <p>The workspace includes specialized interactive snippets for Jekyll Liquid tags. These snippets prompt you for input when inserted:</p> <h4 id="liquid-variable">Liquid Variable</h4> <p><strong>Usage</strong>: Insert `` syntax with custom variable name</p> <ul> <li>
-<strong>Prompts for</strong>: Variable name</li> <li>
-<strong>Example output</strong>: <code class="language-plaintext highlighter-rouge">{{ variable_name }}</code> (where <code class="language-plaintext highlighter-rouge">variable_name</code> is replaced with your input)</li> <li>
+</li>
+</ul>
+
+<h3 id="liquid-tag-snippets">Liquid Tag Snippets</h3>
+
+<p>The workspace includes specialized interactive snippets for Jekyll Liquid tags. These snippets prompt you for input when inserted:</p>
+
+<h4 id="liquid-variable">Liquid Variable</h4>
+
+<p><strong>Usage</strong>: Insert `` syntax with custom variable name</p>
+
+<ul>
+  <li>
+<strong>Prompts for</strong>: Variable name</li>
+  <li>
+<strong>Example output</strong>: <code class="language-plaintext highlighter-rouge">{{ variable_name }}</code> (where <code class="language-plaintext highlighter-rouge">variable_name</code> is replaced with your input)</li>
+  <li>
 <strong>Common examples</strong>: <code class="language-plaintext highlighter-rouge">{{ page.title }}</code>, <code class="language-plaintext highlighter-rouge">{{ site.description }}</code>
-</li> </ul> <h4 id="liquid-tag">Liquid Tag</h4> <p><strong>Usage</strong>: Insert single Liquid tag with custom content</p> <ul> <li>
-<strong>Prompts for</strong>: Tag content</li> <li>
+</li>
+</ul>
+
+<h4 id="liquid-tag">Liquid Tag</h4>
+
+<p><strong>Usage</strong>: Insert single Liquid tag with custom content</p>
+
+<ul>
+  <li>
+<strong>Prompts for</strong>: Tag content</li>
+  <li>
 <strong>Example output</strong>: <code class="language-plaintext highlighter-rouge">{% assign var = value %}</code>, <code class="language-plaintext highlighter-rouge">{% include file.html %}</code>
-</li> </ul> <h4 id="liquid-for-loop">Liquid For Loop</h4> <p><strong>Usage</strong>: Insert complete for loop structure with interactive options</p> <ul> <li>
-<strong>Prompts for</strong>: <ul> <li>Loop item variable name</li> <li>Collection to iterate over (dropdown with common options)</li> <li>Loop content template</li> </ul> </li> <li>
-<strong>Available collections</strong>: <ul> <li>
-<code class="language-plaintext highlighter-rouge">site.posts</code> - All blog posts</li> <li>
-<code class="language-plaintext highlighter-rouge">site.pages</code> - All pages</li> <li>
-<code class="language-plaintext highlighter-rouge">site.docs</code> - All documentation</li> <li>
-<code class="language-plaintext highlighter-rouge">site.data.categories</code> - Category data</li> <li>
-<code class="language-plaintext highlighter-rouge">site.data.tags</code> - Tag data</li> <li>
-<code class="language-plaintext highlighter-rouge">page.tags</code> - Current page tags</li> <li>
-<code class="language-plaintext highlighter-rouge">page.categories</code> - Current page categories</li> </ul> </li> <li>
-<strong>Example output</strong>:</li> </ul> <div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span><span class="nv">post</span><span class="w"> </span><span class="nt">in</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">posts</span><span class="w"> </span><span class="cp">%}</span>
+</li>
+</ul>
+
+<h4 id="liquid-for-loop">Liquid For Loop</h4>
+
+<p><strong>Usage</strong>: Insert complete for loop structure with interactive options</p>
+
+<ul>
+  <li>
+<strong>Prompts for</strong>:
+    <ul>
+      <li>Loop item variable name</li>
+      <li>Collection to iterate over (dropdown with common options)</li>
+      <li>Loop content template</li>
+    </ul>
+  </li>
+  <li>
+<strong>Available collections</strong>:
+    <ul>
+      <li>
+<code class="language-plaintext highlighter-rouge">site.posts</code> - All blog posts</li>
+      <li>
+<code class="language-plaintext highlighter-rouge">site.pages</code> - All pages</li>
+      <li>
+<code class="language-plaintext highlighter-rouge">site.docs</code> - All documentation</li>
+      <li>
+<code class="language-plaintext highlighter-rouge">site.data.categories</code> - Category data</li>
+      <li>
+<code class="language-plaintext highlighter-rouge">site.data.tags</code> - Tag data</li>
+      <li>
+<code class="language-plaintext highlighter-rouge">page.tags</code> - Current page tags</li>
+      <li>
+<code class="language-plaintext highlighter-rouge">page.categories</code> - Current page categories</li>
+    </ul>
+  </li>
+  <li>
+<strong>Example output</strong>:</li>
+</ul>
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span><span class="nv">post</span><span class="w"> </span><span class="nt">in</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">posts</span><span class="w"> </span><span class="cp">%}</span>
   <span class="cp">{{</span><span class="w"> </span><span class="nv">post</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="cp">}}</span>
 <span class="cp">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="cp">%}</span>
-</code></pre></div></div> <h4 id="liquid-if-statement">Liquid If Statement</h4> <p><strong>Usage</strong>: Insert conditional block with custom condition and content</p> <ul> <li>
-<strong>Prompts for</strong>: <ul> <li>Condition to check</li> <li>Content when condition is true</li> </ul> </li> <li>
-<strong>Example output</strong>:</li> </ul> <div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{%</span><span class="w"> </span><span class="nt">if</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="cp">%}</span>
+</code></pre></div></div>
+
+<h4 id="liquid-if-statement">Liquid If Statement</h4>
+
+<p><strong>Usage</strong>: Insert conditional block with custom condition and content</p>
+
+<ul>
+  <li>
+<strong>Prompts for</strong>:
+    <ul>
+      <li>Condition to check</li>
+      <li>Content when condition is true</li>
+    </ul>
+  </li>
+  <li>
+<strong>Example output</strong>:</li>
+</ul>
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{%</span><span class="w"> </span><span class="nt">if</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="cp">%}</span>
   Content goes here
 <span class="cp">{%</span><span class="w"> </span><span class="nt">endif</span><span class="w"> </span><span class="cp">%}</span>
-</code></pre></div></div> <h4 id="interactive-snippet-benefits">Interactive Snippet Benefits</h4> <p>These interactive snippets provide:</p> <ol> <li>
-<strong>Guided Input</strong>: Prompts ensure correct syntax</li> <li>
-<strong>Pre-configured Options</strong>: Dropdown menus with common Jekyll objects</li> <li>
-<strong>Template Completion</strong>: Full code blocks with proper structure</li> <li>
-<strong>Error Prevention</strong>: Reduces syntax mistakes in Liquid code</li> </ol> <h4 id="common-liquid-patterns-for-reference">Common Liquid Patterns (for reference)</h4> <p><strong>Site Information:</strong></p> <div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{{</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="cp">}}</span>
+</code></pre></div></div>
+
+<h4 id="interactive-snippet-benefits">Interactive Snippet Benefits</h4>
+
+<p>These interactive snippets provide:</p>
+
+<ol>
+  <li>
+<strong>Guided Input</strong>: Prompts ensure correct syntax</li>
+  <li>
+<strong>Pre-configured Options</strong>: Dropdown menus with common Jekyll objects</li>
+  <li>
+<strong>Template Completion</strong>: Full code blocks with proper structure</li>
+  <li>
+<strong>Error Prevention</strong>: Reduces syntax mistakes in Liquid code</li>
+</ol>
+
+<h4 id="common-liquid-patterns-for-reference">Common Liquid Patterns (for reference)</h4>
+
+<p><strong>Site Information:</strong></p>
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{{</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="cp">}}</span>
 <span class="cp">{{</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">description</span><span class="w"> </span><span class="cp">}}</span>
 <span class="cp">{{</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">time</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">date</span><span class="p">:</span><span class="w"> </span><span class="s2">"%B %d, %Y"</span><span class="w"> </span><span class="cp">}}</span>
 <span class="cp">{{</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">url</span><span class="w"> </span><span class="cp">}}{{</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">baseurl</span><span class="w"> </span><span class="cp">}}</span>
-</code></pre></div></div> <p><strong>Page Information:</strong></p> <div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{{</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="cp">}}</span>
+</code></pre></div></div>
+
+<p><strong>Page Information:</strong></p>
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{{</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="cp">}}</span>
 <span class="cp">{{</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">date</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">date</span><span class="p">:</span><span class="w"> </span><span class="s2">"%Y-%m-%d"</span><span class="w"> </span><span class="cp">}}</span>
 <span class="cp">{{</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">url</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">relative_url</span><span class="w"> </span><span class="cp">}}</span>
 <span class="cp">{{</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">layout</span><span class="w"> </span><span class="cp">}}</span>
-</code></pre></div></div> <p><strong>Content Loops:</strong></p> <div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span><span class="nv">post</span><span class="w"> </span><span class="nt">in</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">posts</span><span class="w"> </span><span class="na">limit</span><span class="o">:</span><span class="mi">5</span><span class="w"> </span><span class="cp">%}</span>
+</code></pre></div></div>
+
+<p><strong>Content Loops:</strong></p>
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span><span class="nv">post</span><span class="w"> </span><span class="nt">in</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">posts</span><span class="w"> </span><span class="na">limit</span><span class="o">:</span><span class="mi">5</span><span class="w"> </span><span class="cp">%}</span>
   &lt;a href="<span class="cp">{{</span><span class="w"> </span><span class="nv">post</span><span class="p">.</span><span class="nv">url</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">relative_url</span><span class="w"> </span><span class="cp">}}</span>"&gt;<span class="cp">{{</span><span class="w"> </span><span class="nv">post</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="cp">}}</span>&lt;/a&gt;
 <span class="cp">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="cp">%}</span>
-</code></pre></div></div> <p><strong>Conditional Content:</strong></p> <div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{%</span><span class="w"> </span><span class="nt">if</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">categories</span><span class="w"> </span><span class="cp">%}</span>
+</code></pre></div></div>
+
+<p><strong>Conditional Content:</strong></p>
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{%</span><span class="w"> </span><span class="nt">if</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">categories</span><span class="w"> </span><span class="cp">%}</span>
   <span class="cp">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span><span class="nv">category</span><span class="w"> </span><span class="nt">in</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">categories</span><span class="w"> </span><span class="cp">%}</span>
     <span class="cp">{{</span><span class="w"> </span><span class="nv">category</span><span class="w"> </span><span class="cp">}}</span>
   <span class="cp">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="cp">%}</span>
 <span class="cp">{%</span><span class="w"> </span><span class="nt">endif</span><span class="w"> </span><span class="cp">%}</span>
-</code></pre></div></div> <p><strong>Data File Access:</strong></p> <div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span><span class="nv">category</span><span class="w"> </span><span class="nt">in</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">data</span><span class="p">.</span><span class="nv">categories</span><span class="w"> </span><span class="cp">%}</span>
+</code></pre></div></div>
+
+<p><strong>Data File Access:</strong></p>
+
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span><span class="nv">category</span><span class="w"> </span><span class="nt">in</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">data</span><span class="p">.</span><span class="nv">categories</span><span class="w"> </span><span class="cp">%}</span>
   <span class="cp">{{</span><span class="w"> </span><span class="nv">category</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="nv">name</span><span class="w"> </span><span class="cp">}}</span>: <span class="cp">{{</span><span class="w"> </span><span class="nv">category</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="nv">description</span><span class="w"> </span><span class="cp">}}</span>
 <span class="cp">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="cp">%}</span>
-</code></pre></div></div> <h2 id="media-management">Media Management</h2> <h3 id="asset-organization">Asset Organization</h3> <ul> <li>
+</code></pre></div></div>
+
+<h2 id="media-management">Media Management</h2>
+
+<h3 id="asset-organization">Asset Organization</h3>
+
+<ul>
+  <li>
 <strong>Public Folder</strong>: <code class="language-plaintext highlighter-rouge">docs/assets/</code>
-</li> <li>
+</li>
+  <li>
 <strong>Image Storage</strong>: <code class="language-plaintext highlighter-rouge">docs/assets/images/</code>
-</li> <li>
-<strong>Automatic Processing</strong>: Images are automatically linked and optimized</li> </ul> <h2 id="taxonomy-management">Taxonomy Management</h2> <h3 id="categories">Categories</h3> <p>Predefined categories available:</p> <ul> <li>tutorial</li> <li>getting-started</li> <li>development</li> <li>typescript</li> <li>jekyll</li> <li>testing</li> <li>deployment</li> <li>configuration</li> <li>best-practices</li> </ul> <h3 id="tags">Tags</h3> <p>Common tags for content organization:</p> <ul> <li>typescript, jekyll, development</li> <li>vscode, wsl, testing</li> <li>playwright, jest, markdown</li> <li>documentation, ci-cd</li> <li>github-actions, eslint, prettier</li> <li>ruby, bundler, liquid, frontmatter</li> </ul> <h3 id="data-file-integration">Data File Integration</h3> <p>Taxonomies are managed through YAML data files:</p> <ul> <li><code class="language-plaintext highlighter-rouge">docs/_data/categories.yml</code></li> <li><code class="language-plaintext highlighter-rouge">docs/_data/tags.yml</code></li> </ul> <h2 id="workflow-integration">Workflow Integration</h2> <h3 id="jekyll-preview">Jekyll Preview</h3> <p>FrontMatter integrates with Jekyll’s live preview:</p> <ol> <li>Start Jekyll server: <code class="language-plaintext highlighter-rouge">npm run dev:jekyll</code>
-</li> <li>Preview changes at <code class="language-plaintext highlighter-rouge">http://localhost:4000</code>
-</li> </ol> <h3 id="version-control">Version Control</h3> <p>FrontMatter automatically:</p> <ul> <li>Tracks content changes</li> <li>Integrates with Git workflows</li> <li>Updates modification dates</li> <li>Maintains frontmatter formatting</li> </ul> <h2 id="advanced-features">Advanced Features</h2> <h3 id="custom-fields">Custom Fields</h3> <p>Add custom fields to content types by editing <code class="language-plaintext highlighter-rouge">frontmatter.json</code>:</p> <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+</li>
+  <li>
+<strong>Automatic Processing</strong>: Images are automatically linked and optimized</li>
+</ul>
+
+<h2 id="taxonomy-management">Taxonomy Management</h2>
+
+<h3 id="categories">Categories</h3>
+
+<p>Predefined categories available:</p>
+
+<ul>
+  <li>tutorial</li>
+  <li>getting-started</li>
+  <li>development</li>
+  <li>typescript</li>
+  <li>jekyll</li>
+  <li>testing</li>
+  <li>deployment</li>
+  <li>configuration</li>
+  <li>best-practices</li>
+</ul>
+
+<h3 id="tags">Tags</h3>
+
+<p>Common tags for content organization:</p>
+
+<ul>
+  <li>typescript, jekyll, development</li>
+  <li>vscode, wsl, testing</li>
+  <li>playwright, jest, markdown</li>
+  <li>documentation, ci-cd</li>
+  <li>github-actions, eslint, prettier</li>
+  <li>ruby, bundler, liquid, frontmatter</li>
+</ul>
+
+<h3 id="data-file-integration">Data File Integration</h3>
+
+<p>Taxonomies are managed through YAML data files:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">docs/_data/categories.yml</code></li>
+  <li><code class="language-plaintext highlighter-rouge">docs/_data/tags.yml</code></li>
+</ul>
+
+<h2 id="workflow-integration">Workflow Integration</h2>
+
+<h3 id="jekyll-preview">Jekyll Preview</h3>
+
+<p>FrontMatter integrates with Jekyll’s live preview:</p>
+
+<ol>
+  <li>Start Jekyll server: <code class="language-plaintext highlighter-rouge">npm run dev:jekyll</code>
+</li>
+  <li>Preview changes at <code class="language-plaintext highlighter-rouge">http://localhost:4000</code>
+</li>
+</ol>
+
+<h3 id="version-control">Version Control</h3>
+
+<p>FrontMatter automatically:</p>
+
+<ul>
+  <li>Tracks content changes</li>
+  <li>Integrates with Git workflows</li>
+  <li>Updates modification dates</li>
+  <li>Maintains frontmatter formatting</li>
+</ul>
+
+<h2 id="advanced-features">Advanced Features</h2>
+
+<h3 id="custom-fields">Custom Fields</h3>
+
+<p>Add custom fields to content types by editing <code class="language-plaintext highlighter-rouge">frontmatter.json</code>:</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Custom Field"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"custom_field"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"single"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div></div> <h3 id="content-templates">Content Templates</h3> <p>Templates are automatically applied based on content type:</p> <ul> <li>Posts: <code class="language-plaintext highlighter-rouge">docs/_posts/YYYY-MM-DD-title.md</code>
-</li> <li>Documentation: <code class="language-plaintext highlighter-rouge">docs/_docs/title.md</code>
-</li> </ul> <h3 id="bulk-operations">Bulk Operations</h3> <p>Use the dashboard for:</p> <ul> <li>Bulk tagging and categorization</li> <li>Mass content updates</li> <li>Publication scheduling</li> <li>Draft management</li> </ul> <h2 id="troubleshooting">Troubleshooting</h2> <h3 id="common-issues">Common Issues</h3> <ol> <li>
-<strong>CMS not loading</strong>: Ensure the FrontMatter extension is enabled</li> <li>
-<strong>Content not appearing</strong>: Check file locations match configuration</li> <li>
-<strong>Images not displaying</strong>: Verify asset paths and public folder settings</li> <li>
-<strong>Metadata errors</strong>: Validate YAML frontmatter syntax</li> </ol> <h3 id="configuration-files">Configuration Files</h3> <p>Key configuration files:</p> <ul> <li>
-<code class="language-plaintext highlighter-rouge">frontmatter.json</code>: Main CMS configuration (primary configuration)</li> <li>
-<code class="language-plaintext highlighter-rouge">docs/_config.yml</code>: Jekyll site configuration</li> <li>
-<code class="language-plaintext highlighter-rouge">workspace.code-workspace</code>: VS Code integration (minimal FrontMatter settings)</li> </ul> <blockquote> <p><strong>💡 Pro Tip</strong>: All FrontMatter CMS configuration is now centralized in <code class="language-plaintext highlighter-rouge">frontmatter.json</code> to avoid conflicts and maintain consistency. The workspace file only contains basic VS Code integration settings.</p> </blockquote> <h2 id="tips-and-best-practices">Tips and Best Practices</h2> <ol> <li>
-<strong>Use consistent naming</strong>: Follow Jekyll naming conventions</li> <li>
-<strong>Optimize images</strong>: Use the built-in optimization tools</li> <li>
-<strong>Organize taxonomies</strong>: Keep categories broad, tags specific</li> <li>
-<strong>Preview regularly</strong>: Test content with Jekyll’s live reload</li> <li>
-<strong>Version control</strong>: Commit content changes regularly</li> </ol> <h2 id="resources">Resources</h2> <ul> <li><a href="https://frontmatter.codes/" rel="external noopener noreferrer" target="_blank">FrontMatter Documentation</a></li> <li><a href="https://jekyllrb.com/" rel="external noopener noreferrer" target="_blank">Jekyll Documentation</a></li> <li><a href="https://www.markdownguide.org/" rel="external noopener noreferrer" target="_blank">Markdown Guide</a></li> </ul> </div> </article> </div> <div class="ad-container" id="ad-slot-1" data-ad-slot="12345678"></div> </main> <footer class="site-footer h-card"> <data class="u-url" href="/"></data> <div class="wrapper"> <div class="footer-col-wrapper"> <div class="footer-col footer-col-1"> <a href="/terms-of-service.html">Terms of Service</a><br> <a href="/privacy-policy.html">Privacy Policy</a> </div> <div class="footer-col footer-col-2"> <a href="/contact/">Contact Us</a> </div> <div class="footer-col footer-col-3"> <p> © 2025 <a rel="external nofollow" href="https://share.google/8Ir6br641K4uU74l2">Kranson Enterprises</a><br>     subscribe <a href="/feed.xml">via RSS<svg class="svg-icon"> <use xlink:href="/assets/minima-social-icons.svg#rss"></use></svg></a> </p> </div> </div> </div> </footer> <script src="/assets/js/print-helper-optimized.js?v=20250927034911" defer crossorigin="anonymous"></script> <script src="/assets/js/storage-access.js?v=20250927034911" defer crossorigin="anonymous"></script> <script src="/assets/js/accessibility-enhancements.js?v=20250927034911" defer crossorigin="anonymous"></script> <script> function hideCookieConsentBanner() { const banner = document.getElementById('cookie-consent-banner'); if (!banner) return; if (banner.contains(document.activeElement)) { if (document.body) { document.body.focus(); } } banner.setAttribute('inert', ''); banner.style.display = 'none'; } document.addEventListener('DOMContentLoaded', function() { const acceptBtn = document.getElementById('accept-cookies'); if (acceptBtn) { acceptBtn.addEventListener('click', hideCookieConsentBanner); } }); </script> <script> (function() { 'use strict'; var html = document.documentElement; html.className = html.className.replace("no-js", "js"); var toggleBtn = document.querySelector('.nav-toggle'); var nav = document.getElementById('primary-navigation'); var statusEl = document.getElementById('menu-status'); var body = document.body; if (!toggleBtn || !nav || !statusEl) { console.warn('Navigation elements not found - falling back to no-JS behavior'); return; } nav.classList.add('nav-overlay'); function toggleNavigation() { var isExpanded = toggleBtn.getAttribute('aria-expanded') === 'true'; if (isExpanded) { nav.classList.remove('nav-visible'); toggleBtn.setAttribute('aria-expanded', 'false'); nav.setAttribute('aria-hidden', 'true'); toggleBtn.textContent = 'Menu'; statusEl.textContent = 'Menu closed'; body.classList.remove('nav-open'); } else { nav.classList.add('nav-visible'); toggleBtn.setAttribute('aria-expanded', 'true'); nav.removeAttribute('aria-hidden'); toggleBtn.textContent = 'Close'; statusEl.textContent = 'Menu opened'; body.classList.add('nav-open'); } } toggleBtn.addEventListener('click', function(e) { e.preventDefault(); toggleNavigation(); }); document.addEventListener('click', function(e) { if (toggleBtn.getAttribute('aria-expanded') !== 'true') return; if ((!nav.contains(e.target) && !toggleBtn.contains(e.target)) || (e.target.tagName === 'A' && nav.contains(e.target))) { toggleNavigation(); } }); document.addEventListener('keydown', function(e) { if (e.key === 'Escape' && toggleBtn.getAttribute('aria-expanded') === 'true') { toggleNavigation(); toggleBtn.focus(); } }); nav.setAttribute('aria-hidden', 'true'); })(); </script> <script> window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('consent', 'default', { analytics_storage: 'denied', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', }); gtag('js', new Date()); gtag('config', 'G-W1M1N0DCD4'); </script> <script src="https://www.googletagmanager.com/gtag/js?id=G-W1M1N0DCD4" crossorigin="anonymous" async></script> <!-- Google AdSense with MIJUG Cookie Consent Integration --> <script> // Privacy and consent checks if (window.doNotTrack === '1' || navigator.doNotTrack === '1' || navigator.doNotTrack === 'yes' || navigator.msDoNotTrack === '1' || localStorage.getItem('mijug-ads-disabled') === 'true') { return; } // Development environment bypass if (location.hostname === 'localhost' || location.hostname === '127.0.0.1' || location.protocol === 'file:') { console.log('[MIJUG AdSense] Skipped - Development environment'); return; } // URL parameter bypass for testing const urlParams = new URLSearchParams(window.location.search); if (urlParams.get('skip-ads') === 'true') { console.log('[MIJUG AdSense] Skipped - URL parameter override'); return; } // Initialize consent mode with MIJUG defaults window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } window.gtag = gtag; // Set default consent state (MIJUG privacy-first approach) gtag('consent', 'default', { ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied', analytics_storage: 'denied' }); // Load AdSense with error handling function loadAdSense() { try { const script = document.createElement('script'); script.async = true; script.crossOrigin = 'anonymous'; script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client='; script.onerror = function() { console.warn('[MIJUG AdSense] Failed to load AdSense script'); }; document.head.appendChild(script); console.log('[MIJUG AdSense] AdSense script loaded'); } catch (error) { console.warn('[MIJUG AdSense] Initialization error:', error); } } // MIJUG cookie consent integration if (typeof window.MijugCookieConsent !== 'undefined') { window.MijugCookieConsent.onReady(function(consent) { if (consent.advertising) { // Update consent for AdSense gtag('consent', 'update', { ad_storage: 'granted', ad_user_data: 'granted', ad_personalization: consent.personalization ? 'granted' : 'denied' }); loadAdSense(); } else { console.log('[MIJUG AdSense] Skipped - Advertising cookies declined'); } }); // Handle consent changes window.MijugCookieConsent.onConsentChange(function(consent) { gtag('consent', 'update', { ad_storage: consent.advertising ? 'granted' : 'denied', ad_user_data: consent.advertising ? 'granted' : 'denied', ad_personalization: (consent.advertising && consent.personalization) ? 'granted' : 'denied' }); }); } else { // Fallback: Load with denied consent if no cookie system console.log('[MIJUG AdSense] Loading with default denied consent - no cookie system detected'); loadAdSense(); } </script> <!-- Cookie Consent Banner for GDPR Compliance --> <div id="cookie-consent-banner" class="cookie-consent-banner" role="complementary" aria-label="Cookie consent banner" aria-live="polite" style="display: none"> <div class="cookie-consent-content"> <div class="cookie-consent-text"> <p> <strong>🍪 Cookie Notice</strong><br> This website uses cookies for Google AdSense and analytics to improve your experience. <a href="/privacy-policy.html" class="cookie-policy-link">Learn more in our Privacy Policy</a> </p> </div> <div class="cookie-consent-buttons"> <button id="accept-cookies" class="cookie-btn cookie-btn-accept" onclick="acceptCookies()"> Accept All Cookies </button> <button id="decline-cookies" class="cookie-btn cookie-btn-decline" onclick="declineCookies()"> Decline Optional Cookies </button> <button id="cookie-settings" class="cookie-btn cookie-btn-settings" onclick="showCookieSettings()"> Cookie Settings </button> </div> </div> </div> <!-- Cookie Settings Modal - Using MIJUG Theme Pattern --> <div id="cookie-settings-modal" class="cookie-modal" style="display: none" role="dialog" aria-modal="true" aria-labelledby="cookie-settings-title"> <div class="cookie-modal-content mijug-highlight"> <div class="cookie-modal-header"> <h3 id="cookie-settings-title">Cookie Settings</h3> <button class="cookie-modal-close" onclick="closeCookieSettings()" aria-label="Close cookie settings dialog"> × </button> </div> <div class="cookie-modal-body"> <p class="cookie-modal-description"> Customize your cookie preferences. Essential cookies are required for basic site functionality and cannot be disabled. </p> <div class="cookie-category"> <div class="cookie-category-header"> <h4>Essential Cookies</h4> <label class="cookie-toggle" for="essential-cookies" aria-label="Essential cookies (required)"> <input type="checkbox" id="essential-cookies" checked disabled> <span class="cookie-slider cookie-slider-disabled"></span> </label> </div> <p class="cookie-category-description">Required for basic site functionality. These cannot be disabled.</p> </div> <div class="cookie-category"> <div class="cookie-category-header"> <h4>Analytics Cookies</h4> <label class="cookie-toggle" for="analytics-cookies" aria-label="Analytics cookies (optional)"> <input type="checkbox" id="analytics-cookies"> <span class="cookie-slider"></span> </label> </div> <p class="cookie-category-description"> Help us understand how visitors interact with our website via Google Analytics. No personally identifiable information is collected. </p> </div> <div class="cookie-category"> <div class="cookie-category-header"> <h4>Advertising Cookies</h4> <label class="cookie-toggle" for="advertising-cookies" aria-label="Advertising cookies (optional)"> <input type="checkbox" id="advertising-cookies"> <span class="cookie-slider"></span> </label> </div> <p class="cookie-category-description"> Used by Google AdSense to display relevant advertisements. Helps support the website through ad revenue. </p> </div> </div> <div class="cookie-modal-footer"> <button class="cookie-btn cookie-btn-accept" onclick="savePreferences()"> Save Preferences </button> <button class="cookie-btn cookie-btn-settings" onclick="closeCookieSettings()"> Cancel </button> </div> </div> </div> <style> html body #cookie-consent-banner.cookie-consent-banner, html body div#cookie-consent-banner.cookie-consent-banner { position: fixed !important; bottom: 0 !important; left: 0 !important; right: 0 !important; background: #2c3e50 !important; color: white !important; padding: 1rem !important; box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3) !important; z-index: 2147483647 !important; border-top: 3px solid #3498db !important; display: none !important; visibility: visible !important; opacity: 1 !important; width: 100% !important; min-height: 80px !important; box-sizing: border-box !important; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important; font-size: 14px !important; line-height: 1.4 !important; transform: translateZ(0) !important; will-change: transform !important; } /* Enhanced visibility for all child elements */ html body #cookie-consent-banner.cookie-consent-banner *, html body div#cookie-consent-banner.cookie-consent-banner * { visibility: visible !important; opacity: inherit !important; display: initial !important; } /* Content layout with enhanced specificity */ html body .cookie-consent-content { max-width: 1200px !important; margin: 0 auto !important; display: flex !important; align-items: center !important; justify-content: space-between !important; gap: 1rem !important; flex-wrap: wrap !important; } html body .cookie-consent-text { flex: 1 !important; min-width: 200px !important; } html body .cookie-consent-text p { margin: 0 !important; font-size: 0.9rem !important; line-height: 1.4 !important; color: white !important; } html body .cookie-policy-link { color: #74c0fc !important; text-decoration: underline !important; } html body .cookie-policy-link:hover { color: #a3d5ff !important; } html body .cookie-consent-buttons { display: flex !important; gap: 0.5rem !important; flex-wrap: wrap !important; min-width: 200px !important; } html body .cookie-btn { padding: 0.5rem 1rem !important; border: none !important; border-radius: 4px !important; cursor: pointer !important; font-size: 0.85rem !important; font-weight: 500 !important; transition: all 0.2s ease !important; white-space: nowrap !important; min-width: 80px !important; } html body .cookie-btn-accept { background: #1e8449 !important; color: white !important; } html body .cookie-btn-accept:hover { background: #196f3d !important; } html body .cookie-btn-decline { background: #c0392b !important; color: white !important; } html body .cookie-btn-decline:hover { background: #a93226 !important; } html body .cookie-btn-settings { background: #5d6d7e !important; color: white !important; } html body .cookie-btn-settings:hover { background: #515a5a !important; } /* Modal with enhanced specificity - hidden by default */ html body .cookie-modal { position: fixed !important; top: 0 !important; left: 0 !important; width: 100% !important; height: 100% !important; background: rgba(0, 0, 0, 0.7) !important; z-index: 2147483646 !important; display: none !important; align-items: center !important; justify-content: center !important; backdrop-filter: blur(2px) !important; -webkit-backdrop-filter: blur(2px) !important; } html body .cookie-modal-content { background: white !important; border-radius: 8px !important; padding: 2rem !important; max-width: 500px !important; width: 90% !important; max-height: 80vh !important; overflow-y: auto !important; box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important; } /* Responsive design with enhanced breakpoints */ @media (max-width: 768px) { html body .cookie-consent-content { flex-direction: column !important; align-items: stretch !important; gap: 0.75rem !important; } html body .cookie-consent-buttons { justify-content: center !important; gap: 0.25rem !important; } html body .cookie-btn { flex: 1 !important; min-width: 0 !important; font-size: 0.8rem !important; padding: 0.4rem 0.8rem !important; } html body .cookie-modal-content { margin: 1rem !important; padding: 1.5rem !important; } } @media (max-width: 480px) { html body .cookie-consent-buttons { flex-direction: column !important; } html body .cookie-btn { width: 100% !important; } } /* Print media - hide banner */ @media print { html body #cookie-consent-banner.cookie-consent-banner, html body .cookie-modal { display: none !important; } } /* High contrast mode support */ @media (prefers-contrast: high) { html body #cookie-consent-banner.cookie-consent-banner { border: 2px solid white !important; } } /* Reduced motion support */ @media (prefers-reduced-motion: reduce) { html body .cookie-btn { transition: none !important; } } </style> <style> /** * Enhanced modal management with aggressive visibility enforcement * Following MIJUG .NET workspace performance and accessibility standards */ const modalManager = { show() { const modal = getElement(CONFIG.MODAL_ELEMENT_ID); if (!modal) { console.error('❌ Cookie settings modal element not found'); return; } // Load current preferences before showing this.loadCurrentPreferences(); // Use z-index higher than site header but compatible with theme modal.style.cssText = ` display: flex !important; visibility: visible !important; opacity: 1 !important; position: fixed !important; top: 0 !important; left: 0 !important; width: 100% !important; height: 100% !important; background: rgba(0, 0, 0, 0.85) !important; z-index: 1002 !important; align-items: center !important; justify-content: center !important; padding: 1rem !important; box-sizing: border-box !important; `; modal.setAttribute('aria-hidden', 'false'); modal.classList.add('cookie-modal-visible'); // Set up focus management focusManager.trapFocus(modal); // Prevent body scroll when modal is open using existing MIJUG class document.body.classList.add('nav-open'); console.log('✅ Cookie settings modal displayed'); }, hide() { const modal = getElement(CONFIG.MODAL_ELEMENT_ID); if (!modal) return; modal.style.display = 'none'; modal.setAttribute('aria-hidden', 'true'); modal.classList.remove('cookie-modal-visible'); // Remove focus trap if (modal._removeFocusTrap) { modal._removeFocusTrap(); } // Restore body scroll using existing MIJUG class document.body.classList.remove('nav-open'); // Return focus to settings button const settingsButton = getElement('cookie-settings'); if (settingsButton) { settingsButton.focus(); } console.log('✅ Cookie settings modal hidden'); }, loadCurrentPreferences() { const preferences = cookieUtils.get(CONFIG.COOKIE_PREFERENCES_KEY); let analytics = false; let advertising = false; if (preferences) { try { const prefs = JSON.parse(preferences); analytics = prefs.analytics || false; advertising = prefs.advertising || false; } catch (e) { console.warn('⚠️ Error parsing saved preferences:', e); } } // Update checkboxes with retry mechanism setTimeout(() => { const analyticsCheckbox = getElement('analytics-cookies'); const advertisingCheckbox = getElement('advertising-cookies'); if (analyticsCheckbox) { analyticsCheckbox.checked = analytics; } if (advertisingCheckbox) { advertisingCheckbox.checked = advertising; } console.log('📋 Current preferences loaded:', { analytics, advertising }); }, 100); } }; </style> <script> /** * Cookie Consent Management System * Streamlined implementation using MIJUG theme styles * Following MIJUG .NET Workspace coding standards */ (function () { 'use strict'; // Configuration constants following MIJUG naming conventions const CONFIG = { COOKIE_CONSENT_KEY: 'mijug-cookie-consent', COOKIE_PREFERENCES_KEY: 'mijug-cookie-preferences', CONSENT_EXPIRY_DAYS: 365, FOCUS_TRAP_SELECTORS: 'button, [href], input:not([type=hidden]), select, textarea, [tabindex]:not([tabindex="-1"])', BANNER_ELEMENT_ID: 'cookie-consent-banner', MODAL_ELEMENT_ID: 'cookie-settings-modal' }; // Performance-optimized element caching const elementCache = new Map(); /** * Performance-optimized DOM element retrieval with caching * @param {string} id - Element ID * @returns {HTMLElement|null} - Cached or fresh DOM element */ function getElement(id) { if (!elementCache.has(id)) { elementCache.set(id, document.getElementById(id)); } return elementCache.get(id); } /** * Modern cookie utilities with enhanced error handling */ const cookieUtils = { get(name) { try { const cookies = document.cookie.split(';'); for (const cookie of cookies) { const [key, value] = cookie.trim().split('='); if (key === name) { return decodeURIComponent(value); } } return null; } catch (error) { console.warn(`⚠️ Error reading cookie ${name}:`, error); return null; } }, set(name, value, days) { try { const expires = new Date(Date.now() + days * 24 * 60 * 60 * 1000).toUTCString(); const cookieString = `${name}=${encodeURIComponent(value)};expires=${expires};path=/;SameSite=Strict`; document.cookie = cookieString; console.log(`🍪 Cookie set: ${name}=${value}`); } catch (error) { console.error(`❌ Error setting cookie ${name}:`, error); } }, clear(name) { try { const clearCookieVariations = [ `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`, `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=${window.location.hostname};`, `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=.${window.location.hostname};` ]; clearCookieVariations.forEach(cookieString => { document.cookie = cookieString; }); console.log(`🗑️ Cookie cleared: ${name}`); } catch (error) { console.warn(`⚠️ Error clearing cookie ${name}:`, error); } } }; /** * Enhanced banner visibility management using existing theme z-index patterns */ const bannerManager = { show() { const banner = getElement(CONFIG.BANNER_ELEMENT_ID); const modal = getElement(CONFIG.MODAL_ELEMENT_ID); if (!banner) { console.error('❌ Cookie consent banner element not found'); return; } // Use z-index that works with existing MIJUG theme banner.style.cssText = ` display: block !important; visibility: visible !important; opacity: 1 !important; position: fixed !important; bottom: 0 !important; left: 0 !important; right: 0 !important; z-index: 1001 !important; background: #2c3e50 !important; color: white !important; padding: 1rem !important; box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3) !important; border-top: 3px solid #3498db !important; min-height: 80px !important; width: 100vw !important; box-sizing: border-box !important; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important; `; banner.setAttribute('aria-hidden', 'false'); banner.classList.add('cookie-banner-visible'); // Ensure modal stays hidden if (modal) { modal.style.display = 'none'; modal.setAttribute('aria-hidden', 'true'); } console.log('✅ Cookie consent banner displayed'); }, hide() { const banner = getElement(CONFIG.BANNER_ELEMENT_ID); if (banner) { banner.style.display = 'none'; banner.setAttribute('aria-hidden', 'true'); banner.classList.remove('cookie-banner-visible'); console.log('✅ Cookie consent banner hidden'); } } }; /** * Enhanced modal management leveraging MIJUG theme patterns */ const modalManager = { show() { const modal = getElement(CONFIG.MODAL_ELEMENT_ID); if (!modal) { console.error('❌ Cookie settings modal element not found'); return; } // Load current preferences before showing this.loadCurrentPreferences(); // Use z-index higher than site header but compatible with theme modal.style.cssText = ` display: flex !important; visibility: visible !important; opacity: 1 !important; position: fixed !important; top: 0 !important; left: 0 !important; width: 100% !important; height: 100% !important; background: rgba(0, 0, 0, 0.85) !important; z-index: 1002 !important; align-items: center !important; justify-content: center !important; padding: 1rem !important; box-sizing: border-box !important; `; modal.setAttribute('aria-hidden', 'false'); modal.classList.add('cookie-modal-visible'); // Set up focus management focusManager.trapFocus(modal); // Prevent body scroll when modal is open using existing MIJUG class document.body.classList.add('nav-open'); console.log('✅ Cookie settings modal displayed'); }, hide() { const modal = getElement(CONFIG.MODAL_ELEMENT_ID); if (!modal) return; modal.style.display = 'none'; modal.setAttribute('aria-hidden', 'true'); modal.classList.remove('cookie-modal-visible'); // Remove focus trap if (modal._removeFocusTrap) { modal._removeFocusTrap(); } // Restore body scroll using existing MIJUG class document.body.classList.remove('nav-open'); // Return focus to settings button const settingsButton = getElement('cookie-settings'); if (settingsButton) { settingsButton.focus(); } console.log('✅ Cookie settings modal hidden'); }, loadCurrentPreferences() { const preferences = cookieUtils.get(CONFIG.COOKIE_PREFERENCES_KEY); let analytics = false; let advertising = false; if (preferences) { try { const prefs = JSON.parse(preferences); analytics = prefs.analytics || false; advertising = prefs.advertising || false; } catch (e) { console.warn('⚠️ Error parsing saved preferences:', e); } } // Update checkboxes with retry mechanism setTimeout(() => { const analyticsCheckbox = getElement('analytics-cookies'); const advertisingCheckbox = getElement('advertising-cookies'); if (analyticsCheckbox) { analyticsCheckbox.checked = analytics; } if (advertisingCheckbox) { advertisingCheckbox.checked = advertising; } console.log('📋 Current preferences loaded:', { analytics, advertising }); }, 100); } }; /** * Consent state management with enhanced logic */ const consentManager = { shouldShowConsent() { try { // Testing override - highest priority if (window.forceShowCookieConsent === true) { console.log('🧪 Testing override: Forcing cookie consent display'); return true; } // URL parameter override const urlParams = new URLSearchParams(window.location.search); if (urlParams.get('force-cookie-consent') === 'true') { console.log('🧪 URL parameter override: Forcing cookie consent display'); return true; } // Development mode detection const isDevelopment = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1' || window.location.hostname.endsWith('.local'); if (isDevelopment) { console.log('🔧 Development mode detected - showing cookie consent'); return true; } // Check existing consent const consentCookie = cookieUtils.get(CONFIG.COOKIE_CONSENT_KEY); if (consentCookie !== null && consentCookie !== '') { console.log('✅ Existing consent found:', consentCookie); return false; } console.log('📋 No existing consent - showing banner for GDPR compliance'); return true; } catch (error) { console.warn('⚠️ Error checking consent status:', error); return true; } }, hasConsent() { return cookieUtils.get(CONFIG.COOKIE_CONSENT_KEY) !== null; }, hasAnalyticsConsent() { const preferences = cookieUtils.get(CONFIG.COOKIE_PREFERENCES_KEY); if (!preferences) return false; try { return JSON.parse(preferences).analytics === true; } catch { return false; } }, hasAdvertisingConsent() { const preferences = cookieUtils.get(CONFIG.COOKIE_PREFERENCES_KEY); if (!preferences) return false; try { return JSON.parse(preferences).advertising === true; } catch { return false; } } }; /** * Analytics integration with localhost safety */ const analyticsManager = { loadAnalytics() { if (consentManager.hasAnalyticsConsent() && typeof gtag !== 'undefined') { gtag('consent', 'update', { analytics_storage: 'granted' }); console.log('📊 Analytics loaded with user consent'); } else { console.log('📊 Analytics not loaded (no consent or localhost)'); } }, loadAdSense() { if (consentManager.hasAdvertisingConsent() && typeof gtag !== 'undefined') { gtag('consent', 'update', { ad_storage: 'granted', ad_user_data: 'granted', ad_personalization: 'granted', }); console.log('📢 AdSense loaded with user consent'); } else { console.log('📢 AdSense not loaded (no consent or localhost)'); } } }; /** * Focus management for accessibility compliance */ const focusManager = { trapFocus(modal) { const focusableEls = modal.querySelectorAll(CONFIG.FOCUS_TRAP_SELECTORS); const firstFocusableEl = focusableEls[0]; const lastFocusableEl = focusableEls[focusableEls.length - 1]; const handleKeydown = (e) => { if (e.key === 'Tab') { if (e.shiftKey && document.activeElement === firstFocusableEl) { e.preventDefault(); lastFocusableEl?.focus(); } else if (!e.shiftKey && document.activeElement === lastFocusableEl) { e.preventDefault(); firstFocusableEl?.focus(); } } else if (e.key === 'Escape') { closeCookieSettings(); } }; modal.addEventListener('keydown', handleKeydown); modal._removeFocusTrap = () => modal.removeEventListener('keydown', handleKeydown); // Focus close button first for better UX requestAnimationFrame(() => { const closeButton = modal.querySelector('.cookie-modal-close'); if (closeButton) { closeButton.focus(); } else { firstFocusableEl?.focus(); } }); } }; /** * Global button handlers with enhanced error handling */ window.acceptCookies = function () { try { const preferences = { analytics: true, advertising: true }; cookieUtils.set(CONFIG.COOKIE_CONSENT_KEY, 'accepted', CONFIG.CONSENT_EXPIRY_DAYS); cookieUtils.set(CONFIG.COOKIE_PREFERENCES_KEY, JSON.stringify(preferences), CONFIG.CONSENT_EXPIRY_DAYS); bannerManager.hide(); analyticsManager.loadAnalytics(); analyticsManager.loadAdSense(); console.log('✅ All cookies accepted'); } catch (error) { console.error('❌ Error accepting cookies:', error); } }; window.declineCookies = function () { try { const preferences = { analytics: false, advertising: false }; cookieUtils.set(CONFIG.COOKIE_CONSENT_KEY, 'declined', CONFIG.CONSENT_EXPIRY_DAYS); cookieUtils.set(CONFIG.COOKIE_PREFERENCES_KEY, JSON.stringify(preferences), CONFIG.CONSENT_EXPIRY_DAYS); bannerManager.hide(); console.log('❌ Optional cookies declined'); } catch (error) { console.error('❌ Error declining cookies:', error); } }; window.showCookieSettings = function () { try { console.log('🔧 Attempting to show cookie settings modal...'); modalManager.show(); } catch (error) { console.error('❌ Error showing cookie settings:', error); } }; window.closeCookieSettings = function () { try { modalManager.hide(); } catch (error) { console.error('❌ Error closing cookie settings:', error); } }; window.savePreferences = function () { try { const analyticsCheckbox = getElement('analytics-cookies'); const advertisingCheckbox = getElement('advertising-cookies'); const analytics = analyticsCheckbox?.checked || false; const advertising = advertisingCheckbox?.checked || false; const preferences = { analytics, advertising }; cookieUtils.set(CONFIG.COOKIE_CONSENT_KEY, 'customized', CONFIG.CONSENT_EXPIRY_DAYS); cookieUtils.set(CONFIG.COOKIE_PREFERENCES_KEY, JSON.stringify(preferences), CONFIG.CONSENT_EXPIRY_DAYS); bannerManager.hide(); modalManager.hide(); if (analytics) analyticsManager.loadAnalytics(); if (advertising) analyticsManager.loadAdSense(); console.log('💾 Custom preferences saved:', preferences); showSaveConfirmation(); } catch (error) { console.error('❌ Error saving preferences:', error); } }; /** * Save confirmation using MIJUG theme patterns */ function showSaveConfirmation() { const notification = document.createElement('div'); notification.className = 'mijug-highlight favorite-toast favorite-toast-success favorite-toast-visible'; notification.style.cssText = ` position: fixed !important; top: 20px !important; right: 20px !important; z-index: 1003 !important; max-width: 300px !important; padding: 1rem 1.5rem !important; border-radius: 8px !important; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important; animation: slideInRight 0.3s ease-out !important; `; notification.innerHTML = ` <div style="display: flex; align-items: center; gap: 0.5rem;"> <span style="font-size: 1.2rem;">✅</span> <span>Cookie preferences saved successfully!</span> </div> `; notification.setAttribute('role', 'alert'); notification.setAttribute('aria-live', 'polite'); document.body.appendChild(notification); setTimeout(() => { if (notification.parentNode) { notification.parentNode.removeChild(notification); } }, 4000); } /** * Enhanced initialization with multiple retry strategies */ function initialize() { console.log('🚀 Cookie consent system initializing...'); // Ensure modal is hidden on initialization const modal = getElement(CONFIG.MODAL_ELEMENT_ID); if (modal) { modal.style.display = 'none'; modal.setAttribute('aria-hidden', 'true'); } if (consentManager.shouldShowConsent()) { bannerManager.show(); // Retry mechanisms for theme compatibility setTimeout(() => bannerManager.show(), 100); setTimeout(() => bannerManager.show(), 500); } else if (consentManager.hasConsent()) { analyticsManager.loadAnalytics(); analyticsManager.loadAdSense(); } } /** * Testing mode with enhanced visibility enforcement */ function initializeTestingMode() { console.log('🧪 TESTING MODE: Enhanced cookie consent forcing'); // Clear existing cookies const cookiesToClear = [CONFIG.COOKIE_CONSENT_KEY, CONFIG.COOKIE_PREFERENCES_KEY]; cookiesToClear.forEach(cookieName => cookieUtils.clear(cookieName)); // Set testing flags window.forceShowCookieConsent = true; setTimeout(() => { bannerManager.show(); console.log('🧪 Testing banner display forced'); }, 50); // Disable testing mode after timeout setTimeout(() => { window.forceShowCookieConsent = false; console.log('🧪 Testing mode disabled'); }, 30000); } // Event listeners document.addEventListener('DOMContentLoaded', () => { try { initialize(); if (window.location.search.includes('force-cookie-consent=true') || window.location.hostname === 'localhost') { initializeTestingMode(); } } catch (error) { console.error('❌ Error during cookie consent initialization:', error); } }); // Modal click-outside handler document.addEventListener('click', (event) => { const modal = getElement(CONFIG.MODAL_ELEMENT_ID); if (modal && event.target === modal) { closeCookieSettings(); } }); })(); </script> </body> </html>
+</span></code></pre></div></div>
+
+<h3 id="content-templates">Content Templates</h3>
+
+<p>Templates are automatically applied based on content type:</p>
+
+<ul>
+  <li>Posts: <code class="language-plaintext highlighter-rouge">docs/_posts/YYYY-MM-DD-title.md</code>
+</li>
+  <li>Documentation: <code class="language-plaintext highlighter-rouge">docs/_docs/title.md</code>
+</li>
+</ul>
+
+<h3 id="bulk-operations">Bulk Operations</h3>
+
+<p>Use the dashboard for:</p>
+
+<ul>
+  <li>Bulk tagging and categorization</li>
+  <li>Mass content updates</li>
+  <li>Publication scheduling</li>
+  <li>Draft management</li>
+</ul>
+
+<h2 id="troubleshooting">Troubleshooting</h2>
+
+<h3 id="common-issues">Common Issues</h3>
+
+<ol>
+  <li>
+<strong>CMS not loading</strong>: Ensure the FrontMatter extension is enabled</li>
+  <li>
+<strong>Content not appearing</strong>: Check file locations match configuration</li>
+  <li>
+<strong>Images not displaying</strong>: Verify asset paths and public folder settings</li>
+  <li>
+<strong>Metadata errors</strong>: Validate YAML frontmatter syntax</li>
+</ol>
+
+<h3 id="configuration-files">Configuration Files</h3>
+
+<p>Key configuration files:</p>
+
+<ul>
+  <li>
+<code class="language-plaintext highlighter-rouge">frontmatter.json</code>: Main CMS configuration (primary configuration)</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">docs/_config.yml</code>: Jekyll site configuration</li>
+  <li>
+<code class="language-plaintext highlighter-rouge">workspace.code-workspace</code>: VS Code integration (minimal FrontMatter settings)</li>
+</ul>
+
+<blockquote>
+  <p><strong>💡 Pro Tip</strong>: All FrontMatter CMS configuration is now centralized in <code class="language-plaintext highlighter-rouge">frontmatter.json</code> to avoid conflicts and maintain consistency. The workspace file only contains basic VS Code integration settings.</p>
+</blockquote>
+
+<h2 id="tips-and-best-practices">Tips and Best Practices</h2>
+
+<ol>
+  <li>
+<strong>Use consistent naming</strong>: Follow Jekyll naming conventions</li>
+  <li>
+<strong>Optimize images</strong>: Use the built-in optimization tools</li>
+  <li>
+<strong>Organize taxonomies</strong>: Keep categories broad, tags specific</li>
+  <li>
+<strong>Preview regularly</strong>: Test content with Jekyll’s live reload</li>
+  <li>
+<strong>Version control</strong>: Commit content changes regularly</li>
+</ol>
+
+<h2 id="resources">Resources</h2>
+
+<ul>
+  <li><a href="https://frontmatter.codes/" rel="external noopener noreferrer" target="_blank">FrontMatter Documentation</a></li>
+  <li><a href="https://jekyllrb.com/" rel="external noopener noreferrer" target="_blank">Jekyll Documentation</a></li>
+  <li><a href="https://www.markdownguide.org/" rel="external noopener noreferrer" target="_blank">Markdown Guide</a></li>
+</ul>
+</div>
+</article>
+</div>
+      <div class="ad-container" id="ad-slot-1" data-ad-slot="12345678"></div>
+    </main>
+
+    <footer class="site-footer h-card">
+      <data class="u-url" href="/"></data>
+      <div class="wrapper">
+        <div class="footer-col-wrapper">
+          <div class="footer-col footer-col-1">
+            <a href="/terms-of-service.html">Terms of Service</a><br>
+            <a href="/privacy-policy.html">Privacy Policy</a>
+          </div>
+          <div class="footer-col footer-col-2">
+            <a href="/contact/">Contact Us</a>
+          </div>
+          <div class="footer-col footer-col-3">
+            <p>
+              © 2025
+              <a rel="external nofollow" href="https://share.google/8Ir6br641K4uU74l2">Kranson Enterprises</a><br>
+                  subscribe
+              <a href="/feed.xml">via RSS<svg class="svg-icon">
+                  <use xlink:href="/assets/minima-social-icons.svg#rss"></use></svg></a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    
+
+    <script src="/assets/js/print-helper-optimized.js?v=20250927041728" defer crossorigin="anonymous"></script>
+    <script src="/assets/js/storage-access.js?v=20250927041728" defer crossorigin="anonymous"></script>
+    <script src="/assets/js/accessibility-enhancements.js?v=20250927041728" defer crossorigin="anonymous"></script>
+
+    <script>
+      function hideCookieConsentBanner() {
+        const banner = document.getElementById('cookie-consent-banner');
+        if (!banner) return;
+
+        if (banner.contains(document.activeElement)) {
+          if (document.body) {
+            document.body.focus();
+          }
+        }
+
+        banner.setAttribute('inert', '');
+        banner.style.display = 'none';
+      }
+
+      document.addEventListener('DOMContentLoaded', function() {
+        const acceptBtn = document.getElementById('accept-cookies');
+        if (acceptBtn) {
+          acceptBtn.addEventListener('click', hideCookieConsentBanner);
+        }
+      });
+    </script>
+
+    <script>
+      (function() {
+        'use strict';
+
+        var html = document.documentElement;
+        html.className = html.className.replace("no-js", "js");
+
+        var toggleBtn = document.querySelector('.nav-toggle');
+        var nav = document.getElementById('primary-navigation');
+        var statusEl = document.getElementById('menu-status');
+        var body = document.body;
+
+        if (!toggleBtn || !nav || !statusEl) {
+          console.warn('Navigation elements not found - falling back to no-JS behavior');
+          return;
+        }
+
+        nav.classList.add('nav-overlay');
+
+        function toggleNavigation() {
+          var isExpanded = toggleBtn.getAttribute('aria-expanded') === 'true';
+
+          if (isExpanded) {
+            nav.classList.remove('nav-visible');
+            toggleBtn.setAttribute('aria-expanded', 'false');
+            nav.setAttribute('aria-hidden', 'true');
+            toggleBtn.textContent = 'Menu';
+            statusEl.textContent = 'Menu closed';
+            body.classList.remove('nav-open');
+          } else {
+            nav.classList.add('nav-visible');
+            toggleBtn.setAttribute('aria-expanded', 'true');
+            nav.removeAttribute('aria-hidden');
+            toggleBtn.textContent = 'Close';
+            statusEl.textContent = 'Menu opened';
+            body.classList.add('nav-open');
+          }
+        }
+
+        toggleBtn.addEventListener('click', function(e) {
+          e.preventDefault();
+          toggleNavigation();
+        });
+
+        document.addEventListener('click', function(e) {
+          if (toggleBtn.getAttribute('aria-expanded') !== 'true') return;
+
+          if ((!nav.contains(e.target) && !toggleBtn.contains(e.target)) ||
+              (e.target.tagName === 'A' && nav.contains(e.target))) {
+            toggleNavigation();
+          }
+        });
+
+        document.addEventListener('keydown', function(e) {
+          if (e.key === 'Escape' && toggleBtn.getAttribute('aria-expanded') === 'true') {
+            toggleNavigation();
+            toggleBtn.focus();
+          }
+        });
+
+        nav.setAttribute('aria-hidden', 'true');
+      })();
+    </script>
+
+    
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+
+      gtag('consent', 'default', {
+        analytics_storage: 'denied',
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+      });
+
+      gtag('js', new Date());
+      gtag('config', 'G-W1M1N0DCD4');
+    </script>
+
+    <script src="https://www.googletagmanager.com/gtag/js?id=G-W1M1N0DCD4" crossorigin="anonymous" async></script>
+    
+
+    <!-- Google AdSense with MIJUG Cookie Consent Integration -->
+<script>
+  // Privacy and consent checks
+  if (window.doNotTrack === '1' ||
+      navigator.doNotTrack === '1' ||
+      navigator.doNotTrack === 'yes' ||
+      navigator.msDoNotTrack === '1' ||
+      localStorage.getItem('mijug-ads-disabled') === 'true') {
+    return;
+  }
+
+  // Development environment bypass
+  if (location.hostname === 'localhost' ||
+      location.hostname === '127.0.0.1' ||
+      location.protocol === 'file:') {
+    console.log('[MIJUG AdSense] Skipped - Development environment');
+    return;
+  }
+
+  // URL parameter bypass for testing
+  const urlParams = new URLSearchParams(window.location.search);
+  if (urlParams.get('skip-ads') === 'true') {
+    console.log('[MIJUG AdSense] Skipped - URL parameter override');
+    return;
+  }
+
+  // Initialize consent mode with MIJUG defaults
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  window.gtag = gtag;
+
+  // Set default consent state (MIJUG privacy-first approach)
+  gtag('consent', 'default', {
+    ad_storage: 'denied',
+    ad_user_data: 'denied',
+    ad_personalization: 'denied',
+    analytics_storage: 'denied'
+  });
+
+  // Load AdSense with error handling
+  function loadAdSense() {
+    try {
+      const script = document.createElement('script');
+      script.async = true;
+      script.crossOrigin = 'anonymous';
+      script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=';
+      script.onerror = function() {
+        console.warn('[MIJUG AdSense] Failed to load AdSense script');
+      };
+      document.head.appendChild(script);
+
+      console.log('[MIJUG AdSense] AdSense script loaded');
+
+    } catch (error) {
+      console.warn('[MIJUG AdSense] Initialization error:', error);
+    }
+  }
+
+  // MIJUG cookie consent integration
+  if (typeof window.MijugCookieConsent !== 'undefined') {
+    window.MijugCookieConsent.onReady(function(consent) {
+      if (consent.advertising) {
+        // Update consent for AdSense
+        gtag('consent', 'update', {
+          ad_storage: 'granted',
+          ad_user_data: 'granted',
+          ad_personalization: consent.personalization ? 'granted' : 'denied'
+        });
+
+        loadAdSense();
+      } else {
+        console.log('[MIJUG AdSense] Skipped - Advertising cookies declined');
+      }
+    });
+
+    // Handle consent changes
+    window.MijugCookieConsent.onConsentChange(function(consent) {
+      gtag('consent', 'update', {
+        ad_storage: consent.advertising ? 'granted' : 'denied',
+        ad_user_data: consent.advertising ? 'granted' : 'denied',
+        ad_personalization: (consent.advertising && consent.personalization) ? 'granted' : 'denied'
+      });
+    });
+  } else {
+    // Fallback: Load with denied consent if no cookie system
+    console.log('[MIJUG AdSense] Loading with default denied consent - no cookie system detected');
+    loadAdSense();
+  }
+
+</script>
+
+    <!-- Cookie Consent Banner for GDPR Compliance -->
+<div id="cookie-consent-banner" class="cookie-consent-banner" role="complementary" aria-label="Cookie consent banner" aria-live="polite" style="display: none">
+  <div class="cookie-consent-content">
+    <div class="cookie-consent-text">
+      <p>
+        <strong>🍪 Cookie Notice</strong><br>
+        This website uses cookies for Google AdSense and analytics to improve
+        your experience.
+        <a href="/privacy-policy.html" class="cookie-policy-link">Learn more in our Privacy Policy</a>
+      </p>
+    </div>
+    <div class="cookie-consent-buttons">
+      <button id="accept-cookies" class="cookie-btn cookie-btn-accept" onclick="acceptCookies()">
+        Accept All Cookies
+      </button>
+      <button id="decline-cookies" class="cookie-btn cookie-btn-decline" onclick="declineCookies()">
+        Decline Optional Cookies
+      </button>
+      <button id="cookie-settings" class="cookie-btn cookie-btn-settings" onclick="showCookieSettings()">
+        Cookie Settings
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Cookie Settings Modal - Using MIJUG Theme Pattern -->
+<div id="cookie-settings-modal" class="cookie-modal" style="display: none" role="dialog" aria-modal="true" aria-labelledby="cookie-settings-title">
+  <div class="cookie-modal-content mijug-highlight">
+    <div class="cookie-modal-header">
+      <h3 id="cookie-settings-title">Cookie Settings</h3>
+      <button class="cookie-modal-close" onclick="closeCookieSettings()" aria-label="Close cookie settings dialog">
+        ×
+      </button>
+    </div>
+    <div class="cookie-modal-body">
+      <p class="cookie-modal-description">
+        Customize your cookie preferences. Essential cookies are required for basic site functionality and cannot be disabled.
+      </p>
+
+      <div class="cookie-category">
+        <div class="cookie-category-header">
+          <h4>Essential Cookies</h4>
+          <label class="cookie-toggle" for="essential-cookies" aria-label="Essential cookies (required)">
+            <input type="checkbox" id="essential-cookies" checked disabled>
+            <span class="cookie-slider cookie-slider-disabled"></span>
+          </label>
+        </div>
+        <p class="cookie-category-description">Required for basic site functionality. These cannot be disabled.</p>
+      </div>
+
+      <div class="cookie-category">
+        <div class="cookie-category-header">
+          <h4>Analytics Cookies</h4>
+          <label class="cookie-toggle" for="analytics-cookies" aria-label="Analytics cookies (optional)">
+            <input type="checkbox" id="analytics-cookies">
+            <span class="cookie-slider"></span>
+          </label>
+        </div>
+        <p class="cookie-category-description">
+          Help us understand how visitors interact with our website via Google Analytics.
+          No personally identifiable information is collected.
+        </p>
+      </div>
+
+      <div class="cookie-category">
+        <div class="cookie-category-header">
+          <h4>Advertising Cookies</h4>
+          <label class="cookie-toggle" for="advertising-cookies" aria-label="Advertising cookies (optional)">
+            <input type="checkbox" id="advertising-cookies">
+            <span class="cookie-slider"></span>
+          </label>
+        </div>
+        <p class="cookie-category-description">
+          Used by Google AdSense to display relevant advertisements.
+          Helps support the website through ad revenue.
+        </p>
+      </div>
+    </div>
+    <div class="cookie-modal-footer">
+      <button class="cookie-btn cookie-btn-accept" onclick="savePreferences()">
+        Save Preferences
+      </button>
+      <button class="cookie-btn cookie-btn-settings" onclick="closeCookieSettings()">
+        Cancel
+      </button>
+    </div>
+  </div>
+</div>
+<style>
+  html body #cookie-consent-banner.cookie-consent-banner,
+  html body div#cookie-consent-banner.cookie-consent-banner {
+    position: fixed !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    background: #2c3e50 !important;
+    color: white !important;
+    padding: 1rem !important;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3) !important;
+    z-index: 2147483647 !important;
+    border-top: 3px solid #3498db !important;
+    display: none !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    width: 100% !important;
+    min-height: 80px !important;
+    box-sizing: border-box !important;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+    font-size: 14px !important;
+    line-height: 1.4 !important;
+    transform: translateZ(0) !important;
+    will-change: transform !important;
+  }
+
+  /* Enhanced visibility for all child elements */
+  html body #cookie-consent-banner.cookie-consent-banner *,
+  html body div#cookie-consent-banner.cookie-consent-banner * {
+    visibility: visible !important;
+    opacity: inherit !important;
+    display: initial !important;
+  }
+
+  /* Content layout with enhanced specificity */
+  html body .cookie-consent-content {
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 1rem !important;
+    flex-wrap: wrap !important;
+  }
+
+  html body .cookie-consent-text {
+    flex: 1 !important;
+    min-width: 200px !important;
+  }
+
+  html body .cookie-consent-text p {
+    margin: 0 !important;
+    font-size: 0.9rem !important;
+    line-height: 1.4 !important;
+    color: white !important;
+  }
+
+  html body .cookie-policy-link {
+    color: #74c0fc !important;
+    text-decoration: underline !important;
+  }
+
+  html body .cookie-policy-link:hover {
+    color: #a3d5ff !important;
+  }
+
+  html body .cookie-consent-buttons {
+    display: flex !important;
+    gap: 0.5rem !important;
+    flex-wrap: wrap !important;
+    min-width: 200px !important;
+  }
+
+  html body .cookie-btn {
+    padding: 0.5rem 1rem !important;
+    border: none !important;
+    border-radius: 4px !important;
+    cursor: pointer !important;
+    font-size: 0.85rem !important;
+    font-weight: 500 !important;
+    transition: all 0.2s ease !important;
+    white-space: nowrap !important;
+    min-width: 80px !important;
+  }
+
+  html body .cookie-btn-accept {
+    background: #1e8449 !important;
+    color: white !important;
+  }
+
+  html body .cookie-btn-accept:hover {
+    background: #196f3d !important;
+  }
+
+  html body .cookie-btn-decline {
+    background: #c0392b !important;
+    color: white !important;
+  }
+
+  html body .cookie-btn-decline:hover {
+    background: #a93226 !important;
+  }
+
+  html body .cookie-btn-settings {
+    background: #5d6d7e !important;
+    color: white !important;
+  }
+
+  html body .cookie-btn-settings:hover {
+    background: #515a5a !important;
+  }
+
+  /* Modal with enhanced specificity - hidden by default */
+  html body .cookie-modal {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    background: rgba(0, 0, 0, 0.7) !important;
+    z-index: 2147483646 !important;
+    display: none !important;
+    align-items: center !important;
+    justify-content: center !important;
+    backdrop-filter: blur(2px) !important;
+    -webkit-backdrop-filter: blur(2px) !important;
+  }
+
+  html body .cookie-modal-content {
+    background: white !important;
+    border-radius: 8px !important;
+    padding: 2rem !important;
+    max-width: 500px !important;
+    width: 90% !important;
+    max-height: 80vh !important;
+    overflow-y: auto !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
+  }
+
+  /* Responsive design with enhanced breakpoints */
+  @media (max-width: 768px) {
+    html body .cookie-consent-content {
+      flex-direction: column !important;
+      align-items: stretch !important;
+      gap: 0.75rem !important;
+    }
+
+    html body .cookie-consent-buttons {
+      justify-content: center !important;
+      gap: 0.25rem !important;
+    }
+
+    html body .cookie-btn {
+      flex: 1 !important;
+      min-width: 0 !important;
+      font-size: 0.8rem !important;
+      padding: 0.4rem 0.8rem !important;
+    }
+
+    html body .cookie-modal-content {
+      margin: 1rem !important;
+      padding: 1.5rem !important;
+    }
+  }
+
+  @media (max-width: 480px) {
+    html body .cookie-consent-buttons {
+      flex-direction: column !important;
+    }
+
+    html body .cookie-btn {
+      width: 100% !important;
+    }
+  }
+
+  /* Print media - hide banner */
+  @media print {
+    html body #cookie-consent-banner.cookie-consent-banner,
+    html body .cookie-modal {
+      display: none !important;
+    }
+  }
+
+  /* High contrast mode support */
+  @media (prefers-contrast: high) {
+    html body #cookie-consent-banner.cookie-consent-banner {
+      border: 2px solid white !important;
+    }
+  }
+
+  /* Reduced motion support */
+  @media (prefers-reduced-motion: reduce) {
+    html body .cookie-btn {
+      transition: none !important;
+    }
+  }
+</style>
+<style>
+  /**
+   * Enhanced modal management with aggressive visibility enforcement
+   * Following MIJUG .NET workspace performance and accessibility standards
+   */
+  const modalManager = {
+    show() {
+      const modal = getElement(CONFIG.MODAL_ELEMENT_ID);
+      if (!modal) {
+        console.error('❌ Cookie settings modal element not found');
+        return;
+      }
+
+      // Load current preferences before showing
+      this.loadCurrentPreferences();
+
+      // Use z-index higher than site header but compatible with theme
+      modal.style.cssText = `
+        display: flex !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        background: rgba(0, 0, 0, 0.85) !important;
+        z-index: 1002 !important;
+        align-items: center !important;
+        justify-content: center !important;
+        padding: 1rem !important;
+        box-sizing: border-box !important;
+      `;
+
+      modal.setAttribute('aria-hidden', 'false');
+      modal.classList.add('cookie-modal-visible');
+
+      // Set up focus management
+      focusManager.trapFocus(modal);
+
+      // Prevent body scroll when modal is open using existing MIJUG class
+      document.body.classList.add('nav-open');
+
+      console.log('✅ Cookie settings modal displayed');
+    },
+
+    hide() {
+      const modal = getElement(CONFIG.MODAL_ELEMENT_ID);
+      if (!modal) return;
+
+      modal.style.display = 'none';
+      modal.setAttribute('aria-hidden', 'true');
+      modal.classList.remove('cookie-modal-visible');
+
+      // Remove focus trap
+      if (modal._removeFocusTrap) {
+        modal._removeFocusTrap();
+      }
+
+      // Restore body scroll using existing MIJUG class
+      document.body.classList.remove('nav-open');
+
+      // Return focus to settings button
+      const settingsButton = getElement('cookie-settings');
+      if (settingsButton) {
+        settingsButton.focus();
+      }
+
+      console.log('✅ Cookie settings modal hidden');
+    },
+
+    loadCurrentPreferences() {
+      const preferences = cookieUtils.get(CONFIG.COOKIE_PREFERENCES_KEY);
+
+      let analytics = false;
+      let advertising = false;
+
+      if (preferences) {
+        try {
+          const prefs = JSON.parse(preferences);
+          analytics = prefs.analytics || false;
+          advertising = prefs.advertising || false;
+        } catch (e) {
+          console.warn('⚠️ Error parsing saved preferences:', e);
+        }
+      }
+
+      // Update checkboxes with retry mechanism
+      setTimeout(() => {
+        const analyticsCheckbox = getElement('analytics-cookies');
+        const advertisingCheckbox = getElement('advertising-cookies');
+
+        if (analyticsCheckbox) {
+          analyticsCheckbox.checked = analytics;
+        }
+        if (advertisingCheckbox) {
+          advertisingCheckbox.checked = advertising;
+        }
+
+        console.log('📋 Current preferences loaded:', { analytics, advertising });
+      }, 100);
+    }
+  };
+</style>
+<script>
+  /**
+   * Cookie Consent Management System
+   * Streamlined implementation using MIJUG theme styles
+   * Following MIJUG .NET Workspace coding standards
+   */
+  (function () {
+    'use strict';
+
+    // Configuration constants following MIJUG naming conventions
+    const CONFIG = {
+      COOKIE_CONSENT_KEY: 'mijug-cookie-consent',
+      COOKIE_PREFERENCES_KEY: 'mijug-cookie-preferences',
+      CONSENT_EXPIRY_DAYS: 365,
+      FOCUS_TRAP_SELECTORS: 'button, [href], input:not([type=hidden]), select, textarea, [tabindex]:not([tabindex="-1"])',
+      BANNER_ELEMENT_ID: 'cookie-consent-banner',
+      MODAL_ELEMENT_ID: 'cookie-settings-modal'
+    };
+
+    // Performance-optimized element caching
+    const elementCache = new Map();
+
+    /**
+     * Performance-optimized DOM element retrieval with caching
+     * @param {string} id - Element ID
+     * @returns {HTMLElement|null} - Cached or fresh DOM element
+     */
+    function getElement(id) {
+      if (!elementCache.has(id)) {
+        elementCache.set(id, document.getElementById(id));
+      }
+      return elementCache.get(id);
+    }
+
+    /**
+     * Modern cookie utilities with enhanced error handling
+     */
+    const cookieUtils = {
+      get(name) {
+        try {
+          const cookies = document.cookie.split(';');
+          for (const cookie of cookies) {
+            const [key, value] = cookie.trim().split('=');
+            if (key === name) {
+              return decodeURIComponent(value);
+            }
+          }
+          return null;
+        } catch (error) {
+          console.warn(`⚠️ Error reading cookie ${name}:`, error);
+          return null;
+        }
+      },
+
+      set(name, value, days) {
+        try {
+          const expires = new Date(Date.now() + days * 24 * 60 * 60 * 1000).toUTCString();
+          const cookieString = `${name}=${encodeURIComponent(value)};expires=${expires};path=/;SameSite=Strict`;
+          document.cookie = cookieString;
+          console.log(`🍪 Cookie set: ${name}=${value}`);
+        } catch (error) {
+          console.error(`❌ Error setting cookie ${name}:`, error);
+        }
+      },
+
+      clear(name) {
+        try {
+          const clearCookieVariations = [
+            `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`,
+            `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=${window.location.hostname};`,
+            `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=.${window.location.hostname};`
+          ];
+
+          clearCookieVariations.forEach(cookieString => {
+            document.cookie = cookieString;
+          });
+
+          console.log(`🗑️ Cookie cleared: ${name}`);
+        } catch (error) {
+          console.warn(`⚠️ Error clearing cookie ${name}:`, error);
+        }
+      }
+    };
+
+    /**
+     * Enhanced banner visibility management using existing theme z-index patterns
+     */
+    const bannerManager = {
+      show() {
+        const banner = getElement(CONFIG.BANNER_ELEMENT_ID);
+        const modal = getElement(CONFIG.MODAL_ELEMENT_ID);
+
+        if (!banner) {
+          console.error('❌ Cookie consent banner element not found');
+          return;
+        }
+
+        // Use z-index that works with existing MIJUG theme
+        banner.style.cssText = `
+          display: block !important;
+          visibility: visible !important;
+          opacity: 1 !important;
+          position: fixed !important;
+          bottom: 0 !important;
+          left: 0 !important;
+          right: 0 !important;
+          z-index: 1001 !important;
+          background: #2c3e50 !important;
+          color: white !important;
+          padding: 1rem !important;
+          box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3) !important;
+          border-top: 3px solid #3498db !important;
+          min-height: 80px !important;
+          width: 100vw !important;
+          box-sizing: border-box !important;
+          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
+        `;
+
+        banner.setAttribute('aria-hidden', 'false');
+        banner.classList.add('cookie-banner-visible');
+
+        // Ensure modal stays hidden
+        if (modal) {
+          modal.style.display = 'none';
+          modal.setAttribute('aria-hidden', 'true');
+        }
+
+        console.log('✅ Cookie consent banner displayed');
+      },
+
+      hide() {
+        const banner = getElement(CONFIG.BANNER_ELEMENT_ID);
+        if (banner) {
+          banner.style.display = 'none';
+          banner.setAttribute('aria-hidden', 'true');
+          banner.classList.remove('cookie-banner-visible');
+          console.log('✅ Cookie consent banner hidden');
+        }
+      }
+    };
+
+    /**
+     * Enhanced modal management leveraging MIJUG theme patterns
+     */
+    const modalManager = {
+      show() {
+        const modal = getElement(CONFIG.MODAL_ELEMENT_ID);
+        if (!modal) {
+          console.error('❌ Cookie settings modal element not found');
+          return;
+        }
+
+        // Load current preferences before showing
+        this.loadCurrentPreferences();
+
+        // Use z-index higher than site header but compatible with theme
+        modal.style.cssText = `
+          display: flex !important;
+          visibility: visible !important;
+          opacity: 1 !important;
+          position: fixed !important;
+          top: 0 !important;
+          left: 0 !important;
+          width: 100% !important;
+          height: 100% !important;
+          background: rgba(0, 0, 0, 0.85) !important;
+          z-index: 1002 !important;
+          align-items: center !important;
+          justify-content: center !important;
+          padding: 1rem !important;
+          box-sizing: border-box !important;
+        `;
+
+        modal.setAttribute('aria-hidden', 'false');
+        modal.classList.add('cookie-modal-visible');
+
+        // Set up focus management
+        focusManager.trapFocus(modal);
+
+        // Prevent body scroll when modal is open using existing MIJUG class
+        document.body.classList.add('nav-open');
+
+        console.log('✅ Cookie settings modal displayed');
+      },
+
+      hide() {
+        const modal = getElement(CONFIG.MODAL_ELEMENT_ID);
+        if (!modal) return;
+
+        modal.style.display = 'none';
+        modal.setAttribute('aria-hidden', 'true');
+        modal.classList.remove('cookie-modal-visible');
+
+        // Remove focus trap
+        if (modal._removeFocusTrap) {
+          modal._removeFocusTrap();
+        }
+
+        // Restore body scroll using existing MIJUG class
+        document.body.classList.remove('nav-open');
+
+        // Return focus to settings button
+        const settingsButton = getElement('cookie-settings');
+        if (settingsButton) {
+          settingsButton.focus();
+        }
+
+        console.log('✅ Cookie settings modal hidden');
+      },
+
+      loadCurrentPreferences() {
+        const preferences = cookieUtils.get(CONFIG.COOKIE_PREFERENCES_KEY);
+
+        let analytics = false;
+        let advertising = false;
+
+        if (preferences) {
+          try {
+            const prefs = JSON.parse(preferences);
+            analytics = prefs.analytics || false;
+            advertising = prefs.advertising || false;
+          } catch (e) {
+            console.warn('⚠️ Error parsing saved preferences:', e);
+          }
+        }
+
+        // Update checkboxes with retry mechanism
+        setTimeout(() => {
+          const analyticsCheckbox = getElement('analytics-cookies');
+          const advertisingCheckbox = getElement('advertising-cookies');
+
+          if (analyticsCheckbox) {
+            analyticsCheckbox.checked = analytics;
+          }
+          if (advertisingCheckbox) {
+            advertisingCheckbox.checked = advertising;
+          }
+
+          console.log('📋 Current preferences loaded:', { analytics, advertising });
+        }, 100);
+      }
+    };
+
+    /**
+     * Consent state management with enhanced logic
+     */
+    const consentManager = {
+      shouldShowConsent() {
+        try {
+          // Testing override - highest priority
+          if (window.forceShowCookieConsent === true) {
+            console.log('🧪 Testing override: Forcing cookie consent display');
+            return true;
+          }
+
+          // URL parameter override
+          const urlParams = new URLSearchParams(window.location.search);
+          if (urlParams.get('force-cookie-consent') === 'true') {
+            console.log('🧪 URL parameter override: Forcing cookie consent display');
+            return true;
+          }
+
+          // Development mode detection
+          const isDevelopment = window.location.hostname === 'localhost' ||
+                               window.location.hostname === '127.0.0.1' ||
+                               window.location.hostname.endsWith('.local');
+
+          if (isDevelopment) {
+            console.log('🔧 Development mode detected - showing cookie consent');
+            return true;
+          }
+
+          // Check existing consent
+          const consentCookie = cookieUtils.get(CONFIG.COOKIE_CONSENT_KEY);
+          if (consentCookie !== null && consentCookie !== '') {
+            console.log('✅ Existing consent found:', consentCookie);
+            return false;
+          }
+
+          console.log('📋 No existing consent - showing banner for GDPR compliance');
+          return true;
+        } catch (error) {
+          console.warn('⚠️ Error checking consent status:', error);
+          return true;
+        }
+      },
+
+      hasConsent() {
+        return cookieUtils.get(CONFIG.COOKIE_CONSENT_KEY) !== null;
+      },
+
+      hasAnalyticsConsent() {
+        const preferences = cookieUtils.get(CONFIG.COOKIE_PREFERENCES_KEY);
+        if (!preferences) return false;
+        try {
+          return JSON.parse(preferences).analytics === true;
+        } catch {
+          return false;
+        }
+      },
+
+      hasAdvertisingConsent() {
+        const preferences = cookieUtils.get(CONFIG.COOKIE_PREFERENCES_KEY);
+        if (!preferences) return false;
+        try {
+          return JSON.parse(preferences).advertising === true;
+        } catch {
+          return false;
+        }
+      }
+    };
+
+    /**
+     * Analytics integration with localhost safety
+     */
+    const analyticsManager = {
+      loadAnalytics() {
+        if (consentManager.hasAnalyticsConsent() && typeof gtag !== 'undefined') {
+          gtag('consent', 'update', { analytics_storage: 'granted' });
+          console.log('📊 Analytics loaded with user consent');
+        } else {
+          console.log('📊 Analytics not loaded (no consent or localhost)');
+        }
+      },
+
+      loadAdSense() {
+        if (consentManager.hasAdvertisingConsent() && typeof gtag !== 'undefined') {
+          gtag('consent', 'update', {
+            ad_storage: 'granted',
+            ad_user_data: 'granted',
+            ad_personalization: 'granted',
+          });
+          console.log('📢 AdSense loaded with user consent');
+        } else {
+          console.log('📢 AdSense not loaded (no consent or localhost)');
+        }
+      }
+    };
+
+    /**
+     * Focus management for accessibility compliance
+     */
+    const focusManager = {
+      trapFocus(modal) {
+        const focusableEls = modal.querySelectorAll(CONFIG.FOCUS_TRAP_SELECTORS);
+        const firstFocusableEl = focusableEls[0];
+        const lastFocusableEl = focusableEls[focusableEls.length - 1];
+
+        const handleKeydown = (e) => {
+          if (e.key === 'Tab') {
+            if (e.shiftKey && document.activeElement === firstFocusableEl) {
+              e.preventDefault();
+              lastFocusableEl?.focus();
+            } else if (!e.shiftKey && document.activeElement === lastFocusableEl) {
+              e.preventDefault();
+              firstFocusableEl?.focus();
+            }
+          } else if (e.key === 'Escape') {
+            closeCookieSettings();
+          }
+        };
+
+        modal.addEventListener('keydown', handleKeydown);
+        modal._removeFocusTrap = () => modal.removeEventListener('keydown', handleKeydown);
+
+        // Focus close button first for better UX
+        requestAnimationFrame(() => {
+          const closeButton = modal.querySelector('.cookie-modal-close');
+          if (closeButton) {
+            closeButton.focus();
+          } else {
+            firstFocusableEl?.focus();
+          }
+        });
+      }
+    };
+
+    /**
+     * Global button handlers with enhanced error handling
+     */
+    window.acceptCookies = function () {
+      try {
+        const preferences = { analytics: true, advertising: true };
+        cookieUtils.set(CONFIG.COOKIE_CONSENT_KEY, 'accepted', CONFIG.CONSENT_EXPIRY_DAYS);
+        cookieUtils.set(CONFIG.COOKIE_PREFERENCES_KEY, JSON.stringify(preferences), CONFIG.CONSENT_EXPIRY_DAYS);
+
+        bannerManager.hide();
+        analyticsManager.loadAnalytics();
+        analyticsManager.loadAdSense();
+        console.log('✅ All cookies accepted');
+      } catch (error) {
+        console.error('❌ Error accepting cookies:', error);
+      }
+    };
+
+    window.declineCookies = function () {
+      try {
+        const preferences = { analytics: false, advertising: false };
+        cookieUtils.set(CONFIG.COOKIE_CONSENT_KEY, 'declined', CONFIG.CONSENT_EXPIRY_DAYS);
+        cookieUtils.set(CONFIG.COOKIE_PREFERENCES_KEY, JSON.stringify(preferences), CONFIG.CONSENT_EXPIRY_DAYS);
+
+        bannerManager.hide();
+        console.log('❌ Optional cookies declined');
+      } catch (error) {
+        console.error('❌ Error declining cookies:', error);
+      }
+    };
+
+    window.showCookieSettings = function () {
+      try {
+        console.log('🔧 Attempting to show cookie settings modal...');
+        modalManager.show();
+      } catch (error) {
+        console.error('❌ Error showing cookie settings:', error);
+      }
+    };
+
+    window.closeCookieSettings = function () {
+      try {
+        modalManager.hide();
+      } catch (error) {
+        console.error('❌ Error closing cookie settings:', error);
+      }
+    };
+
+    window.savePreferences = function () {
+      try {
+        const analyticsCheckbox = getElement('analytics-cookies');
+        const advertisingCheckbox = getElement('advertising-cookies');
+
+        const analytics = analyticsCheckbox?.checked || false;
+        const advertising = advertisingCheckbox?.checked || false;
+        const preferences = { analytics, advertising };
+
+        cookieUtils.set(CONFIG.COOKIE_CONSENT_KEY, 'customized', CONFIG.CONSENT_EXPIRY_DAYS);
+        cookieUtils.set(CONFIG.COOKIE_PREFERENCES_KEY, JSON.stringify(preferences), CONFIG.CONSENT_EXPIRY_DAYS);
+
+        bannerManager.hide();
+        modalManager.hide();
+
+        if (analytics) analyticsManager.loadAnalytics();
+        if (advertising) analyticsManager.loadAdSense();
+
+        console.log('💾 Custom preferences saved:', preferences);
+        showSaveConfirmation();
+      } catch (error) {
+        console.error('❌ Error saving preferences:', error);
+      }
+    };
+
+    /**
+     * Save confirmation using MIJUG theme patterns
+     */
+    function showSaveConfirmation() {
+      const notification = document.createElement('div');
+      notification.className = 'mijug-highlight favorite-toast favorite-toast-success favorite-toast-visible';
+      notification.style.cssText = `
+        position: fixed !important;
+        top: 20px !important;
+        right: 20px !important;
+        z-index: 1003 !important;
+        max-width: 300px !important;
+        padding: 1rem 1.5rem !important;
+        border-radius: 8px !important;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+        animation: slideInRight 0.3s ease-out !important;
+      `;
+
+      notification.innerHTML = `
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+          <span style="font-size: 1.2rem;">✅</span>
+          <span>Cookie preferences saved successfully!</span>
+        </div>
+      `;
+
+      notification.setAttribute('role', 'alert');
+      notification.setAttribute('aria-live', 'polite');
+
+      document.body.appendChild(notification);
+
+      setTimeout(() => {
+        if (notification.parentNode) {
+          notification.parentNode.removeChild(notification);
+        }
+      }, 4000);
+    }
+
+    /**
+     * Enhanced initialization with multiple retry strategies
+     */
+    function initialize() {
+      console.log('🚀 Cookie consent system initializing...');
+
+      // Ensure modal is hidden on initialization
+      const modal = getElement(CONFIG.MODAL_ELEMENT_ID);
+      if (modal) {
+        modal.style.display = 'none';
+        modal.setAttribute('aria-hidden', 'true');
+      }
+
+      if (consentManager.shouldShowConsent()) {
+        bannerManager.show();
+
+        // Retry mechanisms for theme compatibility
+        setTimeout(() => bannerManager.show(), 100);
+        setTimeout(() => bannerManager.show(), 500);
+      } else if (consentManager.hasConsent()) {
+        analyticsManager.loadAnalytics();
+        analyticsManager.loadAdSense();
+      }
+    }
+
+    /**
+     * Testing mode with enhanced visibility enforcement
+     */
+    function initializeTestingMode() {
+      console.log('🧪 TESTING MODE: Enhanced cookie consent forcing');
+
+      // Clear existing cookies
+      const cookiesToClear = [CONFIG.COOKIE_CONSENT_KEY, CONFIG.COOKIE_PREFERENCES_KEY];
+      cookiesToClear.forEach(cookieName => cookieUtils.clear(cookieName));
+
+      // Set testing flags
+      window.forceShowCookieConsent = true;
+
+      setTimeout(() => {
+        bannerManager.show();
+        console.log('🧪 Testing banner display forced');
+      }, 50);
+
+      // Disable testing mode after timeout
+      setTimeout(() => {
+        window.forceShowCookieConsent = false;
+        console.log('🧪 Testing mode disabled');
+      }, 30000);
+    }
+
+    // Event listeners
+    document.addEventListener('DOMContentLoaded', () => {
+      try {
+        initialize();
+
+        if (window.location.search.includes('force-cookie-consent=true') ||
+            window.location.hostname === 'localhost') {
+          initializeTestingMode();
+        }
+      } catch (error) {
+        console.error('❌ Error during cookie consent initialization:', error);
+      }
+    });
+
+    // Modal click-outside handler
+    document.addEventListener('click', (event) => {
+      const modal = getElement(CONFIG.MODAL_ELEMENT_ID);
+      if (modal && event.target === modal) {
+        closeCookieSettings();
+      }
+    });
+
+  })();
+</script>
+
+
+  </body>
+</html>
