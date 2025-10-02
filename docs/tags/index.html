@@ -489,33 +489,31 @@ img {
 
 
     <title>
-      Tags | My Information Just Under Glass
+      Tags | My Info Just Under Glass
     </title>
     <meta
       name="description"
       content="MIJUG.NET serves the communities of Southeast Michigan, Ohio, and Florida with technology, sustainability, and community engagement resources. A platform by ..."
     />
     
-    <meta name="version" content="Sep 28, 2025" />
+    <meta name="version" content="Oct 01, 2025" />
     
 
     
 
     <meta name="google-site-verification" content="googlece83719b3f856e56" />
-    <meta name="cache-version" content="20250926013331" />
+    <meta name="cache-version" content="20250928164112" />
 
-    <link rel="preload" as="style" href="/assets/main.css?v=20250928135440" media="print" crossorigin><link rel="stylesheet" href="/assets/main.css?v=20250928135440" media="print">
-    <link rel="preload" as="style" href="/assets/css/inp-optimizations.css?v=20250928135440" media="print" crossorigin><link rel="stylesheet" href="/assets/css/inp-optimizations.css?v=20250928135440" media="print">
+    <link rel="preload" as="style" href="/assets/main.css?v=20251001203022" media="print" crossorigin><link rel="stylesheet" href="/assets/main.css?v=20251001203022" media="print">
 
     <noscript>
-      <link rel="stylesheet" href="/assets/main.css?v=20250928135440">
-      <link rel="stylesheet" href="/assets/css/inp-optimizations.css?v=20250928135440">
+      <link rel="stylesheet" href="/assets/main.css?v=20251001203022">
     </noscript>
 
     <link
       rel="alternate"
       type="application/rss+xml"
-      title="My Information Just Under Glass"
+      title="My Info Just Under Glass"
       href="/feed.xml"
     />
     
@@ -523,7 +521,7 @@ img {
     <link
       rel="icon"
       type="image/svg+xml"
-      href="/assets/logo-mijug-96x96.png?v=20250926013331"
+      href="/assets/logo-mijug-96x96.png?v=20250928164112"
     />
     
     <link
@@ -543,57 +541,63 @@ img {
 
     <script>
   window.MIJUG = window.MIJUG || {};
-  window.MIJUG.cacheVersion = "20250926013331";
+  window.MIJUG.cacheVersion = "20250928164112";
 </script>
 
-    
-    <script>
-      window.print = function () { console.log('Skip printing'); };
-      window.addEventListener('keydown', function(event) {
-       if (event.keyCode === 80 && (event.ctrlKey || event.metaKey) && !event.altKey && (!event.shiftKey || window.chrome || window.opera)) {
-        event.preventDefault();
-        if (event.stopImmediatePropagation) {
-            event.stopImmediatePropagation();
-        } else {
-            event.stopPropagation();
-        }
-        return;
-       }
-        if (event.ctrlKey && (event.key === "p" || event.key === "s")) {
-           event.preventDefault();
-        }
-      }, true);
-    </script>
-    
+  
+  <script>
+    window.MIJUG_DISABLE_PRINT = true;
+  </script>
+  
   </head>
   
     <body oncontextmenu="return false;">
   
     <header class="site-header" role="banner">
+      <noscript>
+        <div class="legacy-browser-notice" role="alert">
+          <strong>No Commerce Available</strong>
+          <span class="notice-detail">JavaScript is required for commerce functionality.</span>
+        </div>
+      </noscript>
       <div class="wrapper">
         <a
-          class="site-title long-title"
+          class="site-title"
           rel="home"
           href="/"
         >
           
-      <img
-        src="/assets/logo-mijug-96x96.png?v=20250926013331"
-        alt="My Information Just Under Glass"
-        width="50"
-        height="50"
-      />
-           My Information Just Under Glass
+          <img
+            src="/assets/logo-mijug-96x96.png?v=20250928164112"
+            alt="My Info Just Under Glass"
+            width="50"
+            height="50"
+          />
+           My Info Just Under Glass
         </a>
 
-        <button class="nav-toggle" aria-controls="primary-navigation" aria-expanded="false" aria-label="Toggle navigation menu">
+        <!-- Mobile navigation toggle button -->
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-controls="primary-navigation"
+          aria-expanded="false"
+          aria-label="Toggle navigation menu"
+          type="button">
           Menu
         </button>
 
-        <nav id="primary-navigation" class="primary-nav" role="navigation" aria-label="Main navigation">
-          <ul>
+        <!-- Navigation modal overlay with proper close button -->
+        <nav
+          id="primary-navigation"
+          class="primary-nav"
+          role="dialog"
+          aria-modal="true"
+          aria-hidden="true">
+
+          <ul role="list">
             
-              <li>
+              <li role="listitem">
                 <a href="/blog/"
                    
                    aria-label="Navigate to Blog">
@@ -601,7 +605,7 @@ img {
                 </a>
               </li>
             
-              <li>
+              <li role="listitem">
                 <a href="/about/"
                    
                    aria-label="Navigate to About">
@@ -609,7 +613,7 @@ img {
                 </a>
               </li>
             
-              <li>
+              <li role="listitem">
                 <a href="/docs/getting-started/"
                    
                    aria-label="Navigate to Getting Started">
@@ -617,7 +621,7 @@ img {
                 </a>
               </li>
             
-              <li>
+              <li role="listitem">
                 <a href="/docs/welcome-mijug-workspace/"
                    
                    aria-label="Navigate to Workspace Overview">
@@ -625,7 +629,7 @@ img {
                 </a>
               </li>
             
-              <li>
+              <li role="listitem">
                 <a href="/docs/frontmatter-cms/"
                    
                    aria-label="Navigate to FrontMatter CMS Usage">
@@ -633,7 +637,7 @@ img {
                 </a>
               </li>
             
-              <li>
+              <li role="listitem">
                 <a href="/docs/accessibility-testing/"
                    
                    aria-label="Navigate to Accessibility Testing Configuration">
@@ -641,7 +645,7 @@ img {
                 </a>
               </li>
             
-              <li>
+              <li role="listitem">
                 <a href="/docs/browser-management/"
                    
                    aria-label="Navigate to Browser Management for Testing">
@@ -649,7 +653,7 @@ img {
                 </a>
               </li>
             
-              <li>
+              <li role="listitem">
                 <a href="/docs/browser-compatibility-testing/"
                    
                    aria-label="Navigate to Browser Compatibility Testing">
@@ -657,7 +661,7 @@ img {
                 </a>
               </li>
             
-              <li>
+              <li role="listitem">
                 <a href="/docs/liquid-tags-examples/"
                    
                    aria-label="Navigate to Liquid Tags Examples">
@@ -665,7 +669,7 @@ img {
                 </a>
               </li>
             
-              <li>
+              <li role="listitem">
                 <a href="/docs/tags-and-categories-guide/"
                    
                    aria-label="Navigate to Tags and Categories System Guide">
@@ -673,7 +677,7 @@ img {
                 </a>
               </li>
             
-              <li>
+              <li role="listitem">
                 <a href="/docs/performance-optimization/"
                    
                    aria-label="Navigate to Performance Optimization Guide">
@@ -681,7 +685,7 @@ img {
                 </a>
               </li>
             
-              <li>
+              <li role="listitem">
                 <a href="/docs/testing-performance-evolution/"
                    
                    aria-label="Navigate to Testing Performance and Development Evolution">
@@ -689,7 +693,7 @@ img {
                 </a>
               </li>
             
-              <li>
+              <li role="listitem">
                 <a href="/docs/cache-management/"
                    
                    aria-label="Navigate to Cache Management Strategies">
@@ -697,7 +701,7 @@ img {
                 </a>
               </li>
             
-              <li>
+              <li role="listitem">
                 <a href="/docs/mermaid-configuration-guide/"
                    
                    aria-label="Navigate to Mermaid Diagram Configuration Guide">
@@ -705,7 +709,7 @@ img {
                 </a>
               </li>
             
-              <li>
+              <li role="listitem">
                 <a href="/docs/mermaid-quick-start/"
                    
                    aria-label="Navigate to Mermaid Quick Start">
@@ -713,7 +717,7 @@ img {
                 </a>
               </li>
             
-              <li>
+              <li role="listitem">
                 <a href="/docs/mermaid-examples/"
                    
                    aria-label="Navigate to Mermaid Diagram Examples">
@@ -721,7 +725,7 @@ img {
                 </a>
               </li>
             
-              <li>
+              <li role="listitem">
                 <a href="/docs/mermaid-diagrams-sample/"
                    
                    aria-label="Navigate to Mermaid Diagrams Sample">
@@ -729,7 +733,7 @@ img {
                 </a>
               </li>
             
-              <li>
+              <li role="listitem">
                 <a href="/docs/mermaid-test-runner/"
                    
                    aria-label="Navigate to Mermaid Diagrams Test Runner">
@@ -737,7 +741,7 @@ img {
                 </a>
               </li>
             
-              <li>
+              <li role="listitem">
                 <a href="/docs/rel-attribute-guide/"
                    
                    aria-label="Navigate to The rel Attribute in HTML Links: A Comprehensive Guide">
@@ -745,7 +749,7 @@ img {
                 </a>
               </li>
             
-              <li>
+              <li role="listitem">
                 <a href="/docs/exploring-limitations-of-gitea-and-ruby/"
                    
                    aria-label="Navigate to Exploring the Limitations of Gitea and Ruby">
@@ -1279,23 +1283,32 @@ img {
       </div>
     </footer>
 
+    <!-- Bot detection for no-ads layout -->
     <script>
       (function() {
         if (navigator.userAgent && typeof isbot === 'function' && isbot(navigator.userAgent)) {
           window.addEventListener('DOMContentLoaded', function() {
             document.body.innerHTML = '<div style="text-align: center; margin-top: 50px; font-family: Arial, sans-serif;"><h1>Hello World</h1><p>Bot detected - showing simple content</p><p>There is no greatness where there is not simplicity, goodness, and truth. -Leo Tolstoy, novelist and philosopher (9 Sep 1828-1910)</p></div>';
           });
-        };
+        }
       })();
     </script>
     <script src="https://cdn.jsdelivr.net/npm/isbot@5" defer></script>
 
     
 
-    <script src="/assets/js/print-helper-optimized.js?v=20250928135440" defer crossorigin="anonymous"></script>
-    <script src="/assets/js/storage-access.js?v=20250928135440" defer crossorigin="anonymous"></script>
-    <script src="/assets/js/accessibility-enhancements.js?v=20250928135440" defer crossorigin="anonymous"></script>
-
+    <script>
+      // Detect nomodule support
+      (function() {
+        var supportsModules = 'noModule' in HTMLScriptElement.prototype;
+        if (!supportsModules) {
+          document.write('<div class="legacy-browser-notice" role="alert"><strong>No Commerce Available</strong><span class="notice-detail">Your browser does not support modern features required for commerce functionality.</span></div>');
+        }
+      })();
+    </script>
+    <!-- ES6/ES5 module loading -->
+    <script type="module" src="/assets/js/mijug-es6.min.js"></script>
+    <script nomodule src="/assets/js/mijug-es5.min.js"></script>
     <script>
       (function() {
         'use strict';
@@ -1358,6 +1371,5 @@ img {
 
         nav.setAttribute('aria-hidden', 'true');
       })();
-    </script>
   </body>
 </html>

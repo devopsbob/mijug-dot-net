@@ -1,13 +1,9 @@
 {
-    "name": "My Information Just Under Glass (MIJUG.NET)",
+    "name": "My Info Just Under Glass",
     "short_name": "MIJUG.NET",
     "description": "MIJUG.NET serves the communities of southeast Michigan, Ohio, and Florida with technology, sustainability, and community engagement resources. A platform by Kranson Enterprises for sharing knowledge and connecting communities.",
     "start_url": "/",
     "display": "standalone",
-    "display-override": [
-        "window-controls-overlay",
-        "minimal-ui"
-    ],
     "background_color": "#fdfdfd",
     "theme_color": "#2c5aa0",
     "icons": [
@@ -70,26 +66,16 @@
         {
             "src": "/assets/screenshots/screenshot-mijug-376x320.png",
             "sizes": "376x320",
-            "type": "image/png",
-            "form_factor": "narrow",
-            "label": "MIJUG.NET Home Screen - Technology and Community Platform"
+            "type": "image/png"
         },
         {
             "src": "/assets/screenshots/screenshot-cone-of-silence.png",
             "sizes": "1024x1024",
-            "type": "image/png",
-            "form_factor": "wide",
-            "label": "MIJUG.NET Home Screen - Technology and Community Platform"
+            "type": "image/png"
         }
     ],
     "prefer_related_applications": false,
     "related_applications": [],
-    "edge_side_panel": {
-        "preferred_width": 400
-    },
-    "permissions": [
-        "storage"
-    ],
     "categories": [
         "education",
         "technology",
