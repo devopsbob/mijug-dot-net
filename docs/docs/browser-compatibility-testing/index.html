@@ -503,7 +503,7 @@ img {
       content="This document describes the browser compatibility testing system for MIJUG .NET, which validates browser version detection and ensures the browserslist confi..."
     />
     
-    <meta name="version" content="Sep 02, 2025" />
+    <meta name="version" content="Oct 07, 2025" />
     
 
     
@@ -515,12 +515,12 @@ img {
     
 
     <meta name="google-site-verification" content="googlece83719b3f856e56" />
-    <meta name="cache-version" content="20250928164112" />
+    <meta name="cache-version" content="20251007172153" />
 
-    <link rel="preload" as="style" href="/assets/main.css?v=20251003230356" media="print" crossorigin><link rel="stylesheet" href="/assets/main.css?v=20251003230356" media="print">
+    <link rel="preload" as="style" href="/assets/main.css?v=20251009150200" media="print" crossorigin><link rel="stylesheet" href="/assets/main.css?v=20251009150200" media="print">
 
     <noscript>
-      <link rel="stylesheet" href="/assets/main.css?v=20251003230356">
+      <link rel="stylesheet" href="/assets/main.css?v=20251009150200">
     </noscript>
 
     <link
@@ -534,7 +534,7 @@ img {
     <link
       rel="icon"
       type="image/svg+xml"
-      href="/assets/logo-mijug-96x96.png?v=20250928164112"
+      href="/assets/logo-mijug-96x96.png?v=20251007172153"
     />
     
     <link
@@ -574,7 +574,7 @@ img {
 
     <script>
   window.MIJUG = window.MIJUG || {};
-  window.MIJUG.cacheVersion = "20250928164112";
+  window.MIJUG.cacheVersion = "20251007172153";
 </script>
 
   
@@ -597,7 +597,7 @@ img {
       <div class="wrapper">
         <a class="site-title" rel="home" href="/">
           
-          <img src="/assets/logo-mijug-96x96.png?v=20250928164112" alt="My Info Just Under Glass" width="50" height="50">
+          <img src="/assets/logo-mijug-96x96.png?v=20251007172153" alt="My Info Just Under Glass" width="50" height="50">
            My Info Just Under Glass
         </a>
 
@@ -802,19 +802,19 @@ img {
 
 <p>The project’s <code class="language-plaintext highlighter-rouge">package.json</code> defines supported browsers:</p>
 
-<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"browserslist"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
-    </span><span class="s2">"defaults"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"last 2 versions"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"&gt; 1%"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"IE 11"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"Chrome &gt;= 60"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"Firefox &gt;= 55"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"Safari &gt;= 12"</span><span class="p">,</span><span class="w">
-    </span><span class="s2">"Edge &gt;= 16"</span><span class="w">
-  </span><span class="p">]</span><span class="w">
-</span><span class="p">}</span><span class="w">
-</span></code></pre></div></div>
+<pre><code class="language-script">{
+  "browserslist": [
+    "defaults",
+    "last 2 versions",
+    "&gt; 1%",
+    "IE 11",
+    "Chrome &gt;= 60",
+    "Firefox &gt;= 55",
+    "Safari &gt;= 12",
+    "Edge &gt;= 16"
+  ]
+}
+</code></pre>
 
 <h2 id="test-categories">Test Categories</h2>
 
@@ -878,40 +878,40 @@ img {
 
 <h3 id="quick-test-commands">Quick Test Commands</h3>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Run all browser compatibility tests</span>
-npm run <span class="nb">test</span>:browser-compat
+<pre><code class="language-script"># Run all browser compatibility tests
+npm run test:browser-compat
 
-<span class="c"># Run in headed mode (visible browser)</span>
-npm run <span class="nb">test</span>:browser-compat:headed
+# Run in headed mode (visible browser)
+npm run test:browser-compat:headed
 
-<span class="c"># Force rebuild site before testing</span>
-npm run <span class="nb">test</span>:browser-compat:build
+# Force rebuild site before testing
+npm run test:browser-compat:build
 
-<span class="c"># Run specific test pattern</span>
-npx playwright <span class="nb">test </span>e2e/browser-compatibility.spec.ts <span class="nt">--grep</span> <span class="s2">"Chrome"</span>
-</code></pre></div></div>
+# Run specific test pattern
+npx playwright test e2e/browser-compatibility.spec.ts --grep "Chrome"
+</code></pre>
 
 <h3 id="manual-test-script">Manual Test Script</h3>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Run the custom test script with options</span>
+<pre><code class="language-script"># Run the custom test script with options
 node scripts/test-browser-compatibility.js
-node scripts/test-browser-compatibility.js <span class="nt">--build</span> <span class="nt">--headed</span>
-</code></pre></div></div>
+node scripts/test-browser-compatibility.js --build --headed
+</code></pre>
 
 <h3 id="individual-test-cases">Individual Test Cases</h3>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Test modern browser detection</span>
-npx playwright <span class="nb">test</span> <span class="nt">--grep</span> <span class="s2">"should detect modern Chrome"</span>
+<pre><code class="language-script"># Test modern browser detection
+npx playwright test --grep "should detect modern Chrome"
 
-<span class="c"># Test old browser warnings</span>
-npx playwright <span class="nb">test</span> <span class="nt">--grep</span> <span class="s2">"should warn about unsupported"</span>
+# Test old browser warnings
+npx playwright test --grep "should warn about unsupported"
 
-<span class="c"># Test future browser handling</span>
-npx playwright <span class="nb">test</span> <span class="nt">--grep</span> <span class="s2">"should handle very new browser"</span>
+# Test future browser handling
+npx playwright test --grep "should handle very new browser"
 
-<span class="c"># Test browserslist compliance</span>
-npx playwright <span class="nb">test</span> <span class="nt">--grep</span> <span class="s2">"Browserslist Configuration"</span>
-</code></pre></div></div>
+# Test browserslist compliance
+npx playwright test --grep "Browserslist Configuration"
+</code></pre>
 
 <h2 id="expected-test-results">Expected Test Results</h2>
 
@@ -979,31 +979,31 @@ npx playwright <span class="nb">test</span> <span class="nt">--grep</span> <span
 
 <p>The tests use realistic user agent strings for different browser versions:</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">mockUserAgents</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="na">chromeModern</span><span class="p">:</span>
-    <span class="dl">"</span><span class="s2">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36</span><span class="dl">"</span><span class="p">,</span>
-  <span class="na">chromeOld</span><span class="p">:</span>
-    <span class="dl">"</span><span class="s2">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36</span><span class="dl">"</span><span class="p">,</span>
-  <span class="c1">// ... more user agents</span>
-<span class="p">};</span>
-</code></pre></div></div>
+<pre><code class="language-script">const mockUserAgents = {
+  chromeModern:
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36",
+  chromeOld:
+    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36",
+  // ... more user agents
+};
+</code></pre>
 
 <h3 id="release-date-database">Release Date Database</h3>
 
 <p>The browser age calculation uses a database of major version release dates:</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">releaseDates</span> <span class="o">=</span> <span class="p">{</span>
-  <span class="na">Chrome</span><span class="p">:</span> <span class="p">{</span>
-    <span class="mi">128</span><span class="p">:</span> <span class="dl">"</span><span class="s2">2024-08-20</span><span class="dl">"</span><span class="p">,</span>
-    <span class="mi">127</span><span class="p">:</span> <span class="dl">"</span><span class="s2">2024-07-16</span><span class="dl">"</span><span class="p">,</span> <span class="c1">// ...</span>
-  <span class="p">},</span>
-  <span class="na">Firefox</span><span class="p">:</span> <span class="p">{</span>
-    <span class="mi">129</span><span class="p">:</span> <span class="dl">"</span><span class="s2">2024-08-06</span><span class="dl">"</span><span class="p">,</span>
-    <span class="mi">128</span><span class="p">:</span> <span class="dl">"</span><span class="s2">2024-07-09</span><span class="dl">"</span><span class="p">,</span> <span class="c1">// ...</span>
-  <span class="p">},</span>
-  <span class="c1">// ... more browsers</span>
-<span class="p">};</span>
-</code></pre></div></div>
+<pre><code class="language-script">const releaseDates = {
+  Chrome: {
+    128: "2024-08-20",
+    127: "2024-07-16", // ...
+  },
+  Firefox: {
+    129: "2024-08-06",
+    128: "2024-07-09", // ...
+  },
+  // ... more browsers
+};
+</code></pre>
 
 <h2 id="accessibility-testing">Accessibility Testing</h2>
 
@@ -1043,28 +1043,25 @@ npx playwright <span class="nb">test</span> <span class="nt">--grep</span> <span
   <li>
     <p><strong>Timeout Errors</strong>: Usually indicates the about page isn’t loading properly</p>
 
-    <div class="language-bash highlighter-rouge">
-<div class="highlight"><pre class="highlight"><code><span class="c"># Check if Jekyll site exists</span>
-<span class="nb">ls</span> <span class="nt">-la</span> docs/_site/about/index.html
+    <pre><code class="language-script"># Check if Jekyll site exists
+ls -la docs/_site/about/index.html
 
-<span class="c"># Rebuild if needed</span>
+# Rebuild if needed
 npm run build:jekyll:drafts
-</code></pre></div>    </div>
+</code></pre>
   </li>
   <li>
     <p><strong>Version Mismatch</strong>: Test expectations don’t match detected versions</p>
 
-    <div class="language-bash highlighter-rouge">
-<div class="highlight"><pre class="highlight"><code><span class="c"># Check what version is actually detected</span>
-npx playwright <span class="nb">test</span> <span class="nt">--grep</span> <span class="s2">"browser info"</span> <span class="nt">--reporter</span><span class="o">=</span>line
-</code></pre></div>    </div>
+    <pre><code class="language-script"># Check what version is actually detected
+npx playwright test --grep "browser info" --reporter=line
+</code></pre>
   </li>
   <li>
     <p><strong>URL Construction</strong>: File path issues in different environments</p>
-    <div class="language-bash highlighter-rouge">
-<div class="highlight"><pre class="highlight"><code><span class="c"># Set explicit base URL</span>
-<span class="nv">BASE_URL</span><span class="o">=</span><span class="s2">"file://</span><span class="si">$(</span><span class="nb">pwd</span><span class="si">)</span><span class="s2">/docs/_site"</span> npx playwright <span class="nb">test</span>
-</code></pre></div>    </div>
+    <pre><code class="language-script"># Set explicit base URL
+BASE_URL="file://$(pwd)/docs/_site" npx playwright test
+</code></pre>
   </li>
 </ol>
 
@@ -1072,23 +1069,23 @@ npx playwright <span class="nb">test</span> <span class="nt">--grep</span> <span
 
 <p>Run tests with debug logging:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Enable debug output</span>
-<span class="nv">DEBUG</span><span class="o">=</span>playwright:<span class="k">*</span> npx playwright <span class="nb">test </span>e2e/browser-compatibility.spec.ts
+<pre><code class="language-script"># Enable debug output
+DEBUG=playwright:* npx playwright test e2e/browser-compatibility.spec.ts
 
-<span class="c"># Run single test with trace</span>
-npx playwright <span class="nb">test</span> <span class="nt">--trace</span> on <span class="nt">--grep</span> <span class="s2">"should detect modern Chrome"</span>
-</code></pre></div></div>
+# Run single test with trace
+npx playwright test --trace on --grep "should detect modern Chrome"
+</code></pre>
 
 <h2 id="continuous-integration">Continuous Integration</h2>
 
 <p>The browser compatibility tests run as part of the CI pipeline:</p>
 
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># .github/workflows/test.yml</span>
-<span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Run Browser Compatibility Tests</span>
-  <span class="na">run</span><span class="pi">:</span> <span class="pi">|</span>
-    <span class="s">npm run build:jekyll:drafts</span>
-    <span class="s">npm run test:browser-compat</span>
-</code></pre></div></div>
+<pre><code class="language-script"># .github/workflows/test.yml
+- name: Run Browser Compatibility Tests
+  run: |
+    npm run build:jekyll:drafts
+    npm run test:browser-compat
+</code></pre>
 
 <h2 id="future-enhancements">Future Enhancements</h2>
 

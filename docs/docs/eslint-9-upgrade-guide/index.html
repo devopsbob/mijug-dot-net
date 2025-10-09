@@ -515,12 +515,12 @@ img {
     
 
     <meta name="google-site-verification" content="googlece83719b3f856e56" />
-    <meta name="cache-version" content="20250928164112" />
+    <meta name="cache-version" content="20251007172153" />
 
-    <link rel="preload" as="style" href="/assets/main.css?v=20251003230356" media="print" crossorigin><link rel="stylesheet" href="/assets/main.css?v=20251003230356" media="print">
+    <link rel="preload" as="style" href="/assets/main.css?v=20251009150200" media="print" crossorigin><link rel="stylesheet" href="/assets/main.css?v=20251009150200" media="print">
 
     <noscript>
-      <link rel="stylesheet" href="/assets/main.css?v=20251003230356">
+      <link rel="stylesheet" href="/assets/main.css?v=20251009150200">
     </noscript>
 
     <link
@@ -534,7 +534,7 @@ img {
     <link
       rel="icon"
       type="image/svg+xml"
-      href="/assets/logo-mijug-96x96.png?v=20250928164112"
+      href="/assets/logo-mijug-96x96.png?v=20251007172153"
     />
     
     <link
@@ -558,7 +558,7 @@ img {
 
     <script>
   window.MIJUG = window.MIJUG || {};
-  window.MIJUG.cacheVersion = "20250928164112";
+  window.MIJUG.cacheVersion = "20251007172153";
 </script>
 
   
@@ -581,7 +581,7 @@ img {
       <div class="wrapper">
         <a class="site-title" rel="home" href="/">
           
-          <img src="/assets/logo-mijug-96x96.png?v=20250928164112" alt="My Info Just Under Glass" width="50" height="50">
+          <img src="/assets/logo-mijug-96x96.png?v=20251007172153" alt="My Info Just Under Glass" width="50" height="50">
            My Info Just Under Glass
         </a>
 
@@ -796,12 +796,13 @@ img {
 
 <p><strong>Example:</strong></p>
 
-<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Good (Node.js 20+ ESM)</span>
+<div class="language-js highlighter-rouge">
+<span class="c1">// Good (Node.js 20+ ESM)</span>
 <span class="kd">const</span> <span class="nx">PROJECT_ROOT</span> <span class="o">=</span> <span class="nx">path</span><span class="p">.</span><span class="nf">resolve</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span> <span class="dl">"</span><span class="s2">..</span><span class="dl">"</span><span class="p">);</span>
 
 <span class="c1">// Bad (causes redeclaration error)</span>
 <span class="kd">const</span> <span class="nx">__dirname</span> <span class="o">=</span> <span class="nx">path</span><span class="p">.</span><span class="nf">dirname</span><span class="p">(</span><span class="k">new</span> <span class="nc">URL</span><span class="p">(</span><span class="k">import</span><span class="p">.</span><span class="nx">meta</span><span class="p">.</span><span class="nx">url</span><span class="p">).</span><span class="nx">pathname</span><span class="p">);</span>
-</code></pre></div></div>
+</div>
 
 <p>If you must support older Node.js versions, use a conditional global assignment, but for modern projects, prefer the global.</p>
 

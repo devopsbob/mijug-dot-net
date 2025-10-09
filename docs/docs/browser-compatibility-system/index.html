@@ -515,12 +515,12 @@ img {
     
 
     <meta name="google-site-verification" content="googlece83719b3f856e56" />
-    <meta name="cache-version" content="20250928164112" />
+    <meta name="cache-version" content="20251007172153" />
 
-    <link rel="preload" as="style" href="/assets/main.css?v=20251003230356" media="print" crossorigin><link rel="stylesheet" href="/assets/main.css?v=20251003230356" media="print">
+    <link rel="preload" as="style" href="/assets/main.css?v=20251009150200" media="print" crossorigin><link rel="stylesheet" href="/assets/main.css?v=20251009150200" media="print">
 
     <noscript>
-      <link rel="stylesheet" href="/assets/main.css?v=20251003230356">
+      <link rel="stylesheet" href="/assets/main.css?v=20251009150200">
     </noscript>
 
     <link
@@ -534,7 +534,7 @@ img {
     <link
       rel="icon"
       type="image/svg+xml"
-      href="/assets/logo-mijug-96x96.png?v=20250928164112"
+      href="/assets/logo-mijug-96x96.png?v=20251007172153"
     />
     
     <link
@@ -574,7 +574,7 @@ img {
 
     <script>
   window.MIJUG = window.MIJUG || {};
-  window.MIJUG.cacheVersion = "20250928164112";
+  window.MIJUG.cacheVersion = "20251007172153";
 </script>
 
   
@@ -597,7 +597,7 @@ img {
       <div class="wrapper">
         <a class="site-title" rel="home" href="/">
           
-          <img src="/assets/logo-mijug-96x96.png?v=20250928164112" alt="My Info Just Under Glass" width="50" height="50">
+          <img src="/assets/logo-mijug-96x96.png?v=20251007172153" alt="My Info Just Under Glass" width="50" height="50">
            My Info Just Under Glass
         </a>
 
@@ -870,14 +870,15 @@ img {
 
 <h3 id="version-detection-logic">Version Detection Logic</h3>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">patterns</span> <span class="o">=</span> <span class="p">{</span>
+<div class="language-javascript highlighter-rouge">
+<span class="kd">const</span> <span class="nx">patterns</span> <span class="o">=</span> <span class="p">{</span>
   <span class="na">Chrome</span><span class="p">:</span> <span class="sr">/Chrome</span><span class="se">\/(\d</span><span class="sr">+</span><span class="se">\.?\d</span><span class="sr">*</span><span class="se">)</span><span class="sr">/</span><span class="p">,</span>
   <span class="na">Firefox</span><span class="p">:</span> <span class="sr">/Firefox</span><span class="se">\/(\d</span><span class="sr">+</span><span class="se">\.?\d</span><span class="sr">*</span><span class="se">)</span><span class="sr">/</span><span class="p">,</span>
   <span class="na">Safari</span><span class="p">:</span> <span class="sr">/Version</span><span class="se">\/(\d</span><span class="sr">+</span><span class="se">\.?\d</span><span class="sr">*</span><span class="se">)</span><span class="sr">/</span><span class="p">,</span>
   <span class="na">Edge</span><span class="p">:</span> <span class="sr">/Edg</span><span class="se">\/(\d</span><span class="sr">+</span><span class="se">\.?\d</span><span class="sr">*</span><span class="se">)</span><span class="sr">/</span><span class="p">,</span>
   <span class="na">Opera</span><span class="p">:</span> <span class="sr">/Opera</span><span class="se">\/(\d</span><span class="sr">+</span><span class="se">\.?\d</span><span class="sr">*</span><span class="se">)</span><span class="sr">/</span><span class="p">,</span>
 <span class="p">};</span>
-</code></pre></div></div>
+</div>
 
 <p>The system uses sophisticated regex patterns to extract accurate version information from user agent strings, ensuring compatibility across different browser configurations.</p>
 
@@ -887,7 +888,8 @@ img {
 
 <p>The system maintains a comprehensive database of browser release dates for accurate age calculation:</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">releaseDates</span> <span class="o">=</span> <span class="p">{</span>
+<div class="language-javascript highlighter-rouge">
+<span class="kd">const</span> <span class="nx">releaseDates</span> <span class="o">=</span> <span class="p">{</span>
   <span class="na">Chrome</span><span class="p">:</span> <span class="p">{</span>
     <span class="c1">// 2025 releases</span>
     <span class="mi">128</span><span class="p">:</span> <span class="dl">"</span><span class="s2">2024-08-20</span><span class="dl">"</span><span class="p">,</span>
@@ -904,7 +906,7 @@ img {
   <span class="p">},</span>
   <span class="c1">// Additional browsers...</span>
 <span class="p">};</span>
-</code></pre></div></div>
+</div>
 
 <h3 id="database-maintenance">Database Maintenance</h3>
 
@@ -940,14 +942,15 @@ img {
 
 <p>To maintain the system’s effectiveness:</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Example of adding new releases</span>
+<div class="language-javascript highlighter-rouge">
+<span class="c1">// Example of adding new releases</span>
 <span class="nx">Chrome</span><span class="p">:</span> <span class="p">{</span>
   <span class="c1">// Add new versions as they're released</span>
   <span class="mi">129</span><span class="p">:</span> <span class="dl">'</span><span class="s1">2024-09-17</span><span class="dl">'</span><span class="p">,</span> <span class="c1">// September 2024 release</span>
   <span class="mi">130</span><span class="p">:</span> <span class="dl">'</span><span class="s1">2024-10-15</span><span class="dl">'</span><span class="p">,</span> <span class="c1">// October 2024 release</span>
   <span class="c1">// Continue with future releases</span>
 <span class="p">}</span>
-</code></pre></div></div>
+</div>
 
 <h2 id="️-security-assessment">⚠️ Security Assessment</h2>
 
@@ -1113,7 +1116,8 @@ img {
 
 <p>The system helps users understand performance implications:</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Performance context based on browser age</span>
+<div class="language-javascript highlighter-rouge">
+<span class="c1">// Performance context based on browser age</span>
 <span class="k">if </span><span class="p">(</span><span class="nx">ageInDays</span> <span class="o">&gt;</span> <span class="mi">365</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">performance_impact</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Significant performance degradation expected</span><span class="dl">"</span><span class="p">;</span>
 <span class="p">}</span> <span class="k">else</span> <span class="k">if </span><span class="p">(</span><span class="nx">ageInDays</span> <span class="o">&gt;</span> <span class="mi">180</span><span class="p">)</span> <span class="p">{</span>
@@ -1123,7 +1127,7 @@ img {
 <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
   <span class="nx">performance_impact</span> <span class="o">=</span> <span class="dl">"</span><span class="s2">Optimal performance configuration</span><span class="dl">"</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre></div></div>
+</div>
 
 <h2 id="-automated-testing-framework">🧪 Automated Testing Framework</h2>
 
@@ -1135,44 +1139,49 @@ img {
 
 <p><strong>1. Modern Browser Detection</strong></p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Tests current browsers are detected correctly</span>
+<div class="language-javascript highlighter-rouge">
+<span class="c1">// Tests current browsers are detected correctly</span>
 <span class="nf">test</span><span class="p">(</span><span class="dl">"</span><span class="s2">should detect modern Chrome correctly</span><span class="dl">"</span><span class="p">,</span> <span class="k">async </span><span class="p">({</span> <span class="nx">page</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="p">{</span>
   <span class="k">await</span> <span class="nx">page</span><span class="p">.</span><span class="nf">setUserAgent</span><span class="p">(</span><span class="nx">mockUserAgents</span><span class="p">.</span><span class="nx">chromeModern</span><span class="p">);</span>
   <span class="c1">// Validation logic...</span>
 <span class="p">});</span>
-</code></pre></div></div>
+</div>
 
 <p><strong>2. Outdated Browser Warnings</strong></p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Tests proper warnings for old browsers</span>
+<div class="language-javascript highlighter-rouge">
+<span class="c1">// Tests proper warnings for old browsers</span>
 <span class="nf">test</span><span class="p">(</span><span class="dl">"</span><span class="s2">should warn about unsupported old Chrome</span><span class="dl">"</span><span class="p">,</span> <span class="k">async </span><span class="p">({</span> <span class="nx">page</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="p">{</span>
   <span class="k">await</span> <span class="nx">page</span><span class="p">.</span><span class="nf">setUserAgent</span><span class="p">(</span><span class="nx">mockUserAgents</span><span class="p">.</span><span class="nx">chromeOld</span><span class="p">);</span>
   <span class="c1">// Warning validation...</span>
 <span class="p">});</span>
-</code></pre></div></div>
+</div>
 
 <p><strong>3. Future Browser Handling</strong></p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Tests graceful handling of newer browsers</span>
+<div class="language-javascript highlighter-rouge">
+<span class="c1">// Tests graceful handling of newer browsers</span>
 <span class="nf">test</span><span class="p">(</span><span class="dl">"</span><span class="s2">should handle very new browser versions</span><span class="dl">"</span><span class="p">,</span> <span class="k">async </span><span class="p">({</span> <span class="nx">page</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="p">{</span>
   <span class="k">await</span> <span class="nx">page</span><span class="p">.</span><span class="nf">setUserAgent</span><span class="p">(</span><span class="nx">mockUserAgents</span><span class="p">.</span><span class="nx">chromeFuture</span><span class="p">);</span>
   <span class="c1">// Future-proofing validation...</span>
 <span class="p">});</span>
-</code></pre></div></div>
+</div>
 
 <p><strong>4. Browserslist Compliance</strong></p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Tests browserslist configuration respect</span>
+<div class="language-javascript highlighter-rouge">
+<span class="c1">// Tests browserslist configuration respect</span>
 <span class="nf">test</span><span class="p">(</span><span class="dl">"</span><span class="s2">should respect browserslist configuration</span><span class="dl">"</span><span class="p">,</span> <span class="k">async </span><span class="p">({</span> <span class="nx">page</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="p">{</span>
   <span class="c1">// Browserslist validation logic...</span>
 <span class="p">});</span>
-</code></pre></div></div>
+</div>
 
 <h3 id="mock-user-agents">Mock User Agents</h3>
 
 <p>The test suite uses realistic user agent strings for comprehensive testing:</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">mockUserAgents</span> <span class="o">=</span> <span class="p">{</span>
+<div class="language-javascript highlighter-rouge">
+<span class="kd">const</span> <span class="nx">mockUserAgents</span> <span class="o">=</span> <span class="p">{</span>
   <span class="na">chromeModern</span><span class="p">:</span>
     <span class="dl">"</span><span class="s2">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36</span><span class="dl">"</span><span class="p">,</span>
   <span class="na">chromeOld</span><span class="p">:</span>
@@ -1182,7 +1191,7 @@ img {
   <span class="na">firefoxModern</span><span class="p">:</span> <span class="dl">"</span><span class="s2">Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:129.0) Gecko/20100101 Firefox/129.0</span><span class="dl">"</span><span class="p">,</span>
   <span class="c1">// Additional user agents for comprehensive testing</span>
 <span class="p">};</span>
-</code></pre></div></div>
+</div>
 
 <h2 id="️-browserslist-integration">⚙️ Browserslist Integration</h2>
 
@@ -1190,7 +1199,8 @@ img {
 
 <p>The system validates browser support against the project’s browserslist configuration:</p>
 
-<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+<div class="language-json highlighter-rouge">
+<span class="p">{</span><span class="w">
   </span><span class="nl">"browserslist"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
     </span><span class="s2">"defaults"</span><span class="p">,</span><span class="w">
     </span><span class="s2">"last 2 versions"</span><span class="p">,</span><span class="w">
@@ -1202,11 +1212,13 @@ img {
     </span><span class="s2">"Edge &gt;= 16"</span><span class="w">
   </span><span class="p">]</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span></code></pre></div></div>
+</span>
+</div>
 
 <h3 id="support-validation-logic">Support Validation Logic</h3>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nf">validateBrowserSupport</span><span class="p">(</span><span class="nx">browserInfo</span><span class="p">)</span> <span class="p">{</span>
+<div class="language-javascript highlighter-rouge">
+<span class="kd">function</span> <span class="nf">validateBrowserSupport</span><span class="p">(</span><span class="nx">browserInfo</span><span class="p">)</span> <span class="p">{</span>
   <span class="kd">const</span> <span class="p">{</span> <span class="nx">name</span><span class="p">,</span> <span class="nx">version</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">browserInfo</span><span class="p">;</span>
   <span class="kd">const</span> <span class="nx">majorVersion</span> <span class="o">=</span> <span class="nf">parseInt</span><span class="p">(</span><span class="nx">version</span><span class="p">);</span>
 
@@ -1220,7 +1232,7 @@ img {
   <span class="kd">const</span> <span class="nx">minVersion</span> <span class="o">=</span> <span class="nx">minimumVersions</span><span class="p">[</span><span class="nx">name</span><span class="p">];</span>
   <span class="k">return</span> <span class="nx">minVersion</span> <span class="p">?</span> <span class="nx">majorVersion</span> <span class="o">&gt;=</span> <span class="nx">minVersion</span> <span class="p">:</span> <span class="kc">false</span><span class="p">;</span>
 <span class="p">}</span>
-</code></pre></div></div>
+</div>
 
 <h3 id="support-status-display">Support Status Display</h3>
 
@@ -1245,7 +1257,8 @@ img {
 
 <h4 id="information-cards">Information Cards</h4>
 
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"info-card"</span><span class="nt">&gt;</span>
+<div class="language-html highlighter-rouge">
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"info-card"</span><span class="nt">&gt;</span>
   <span class="nt">&lt;h3&gt;</span>Browser Details<span class="nt">&lt;/h3&gt;</span>
   <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"info-item"</span><span class="nt">&gt;</span>
     <span class="nt">&lt;strong&gt;</span>Browser:<span class="nt">&lt;/strong&gt;</span>
@@ -1260,7 +1273,7 @@ img {
     <span class="nt">&lt;span</span> <span class="na">id=</span><span class="s">"browserAge"</span><span class="nt">&gt;</span>Loading...<span class="nt">&lt;/span&gt;</span>
   <span class="nt">&lt;/div&gt;</span>
 <span class="nt">&lt;/div&gt;</span>
-</code></pre></div></div>
+</div>
 
 <h4 id="dynamic-updates">Dynamic Updates</h4>
 
@@ -1300,7 +1313,8 @@ img {
 
 <h4 id="performance-optimization">Performance Optimization</h4>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Efficient detection with minimal overhead</span>
+<div class="language-javascript highlighter-rouge">
+<span class="c1">// Efficient detection with minimal overhead</span>
 <span class="p">(</span><span class="nf">function </span><span class="p">()</span> <span class="p">{</span>
   <span class="dl">"</span><span class="s2">use strict</span><span class="dl">"</span><span class="p">;</span>
 
@@ -1316,11 +1330,12 @@ img {
     <span class="p">}</span>
   <span class="p">}</span>
 <span class="p">})();</span>
-</code></pre></div></div>
+</div>
 
 <h4 id="error-handling">Error Handling</h4>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Graceful degradation for unsupported features</span>
+<div class="language-javascript highlighter-rouge">
+<span class="c1">// Graceful degradation for unsupported features</span>
 <span class="kd">function</span> <span class="nf">getBrowserVersionAndAge</span><span class="p">()</span> <span class="p">{</span>
   <span class="k">try</span> <span class="p">{</span>
     <span class="c1">// Browser detection logic</span>
@@ -1333,11 +1348,12 @@ img {
     <span class="p">};</span>
   <span class="p">}</span>
 <span class="p">}</span>
-</code></pre></div></div>
+</div>
 
 <h4 id="memory-management">Memory Management</h4>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Efficient interval management</span>
+<div class="language-javascript highlighter-rouge">
+<span class="c1">// Efficient interval management</span>
 <span class="kd">const</span> <span class="nx">intervalId</span> <span class="o">=</span> <span class="nf">setInterval</span><span class="p">(</span><span class="nx">updateSessionDuration</span><span class="p">,</span> <span class="mi">1000</span><span class="p">);</span>
 
 <span class="c1">// Cleanup on page unload</span>
@@ -1346,14 +1362,15 @@ img {
     <span class="nf">clearInterval</span><span class="p">(</span><span class="nx">intervalId</span><span class="p">);</span>
   <span class="p">}</span>
 <span class="p">});</span>
-</code></pre></div></div>
+</div>
 
 <h3 id="cache-busting-integration">Cache Busting Integration</h3>
 
 <p>The system integrates with the project’s cache busting functionality:</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Cache version tracking</span>
-<span class="kd">const</span> <span class="nx">CACHE_VERSION</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">20251003230356</span><span class="dl">'</span><span class="p">;</span>
+<div class="language-javascript highlighter-rouge">
+<span class="c1">// Cache version tracking</span>
+<span class="kd">const</span> <span class="nx">CACHE_VERSION</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">20251009150200</span><span class="dl">'</span><span class="p">;</span>
 
 <span class="c1">// Cache busting utilities</span>
 <span class="nb">window</span><span class="p">.</span><span class="nx">MIJUG</span> <span class="o">=</span> <span class="nb">window</span><span class="p">.</span><span class="nx">MIJUG</span> <span class="o">||</span> <span class="p">{};</span>
@@ -1365,13 +1382,14 @@ img {
     <span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span> <span class="o">=</span> <span class="nx">currentUrl</span><span class="p">.</span><span class="nf">toString</span><span class="p">();</span>
   <span class="p">},</span>
 <span class="p">};</span>
-</code></pre></div></div>
+</div>
 
 <h2 id="-testing-commands">📊 Testing Commands</h2>
 
 <h3 id="running-browser-compatibility-tests">Running Browser Compatibility Tests</h3>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Complete test suite</span>
+<div class="language-bash highlighter-rouge">
+<span class="c"># Complete test suite</span>
 npm run <span class="nb">test</span>:browser-compat
 
 <span class="c"># Headed mode for debugging</span>
@@ -1384,11 +1402,11 @@ npm run <span class="nb">test</span>:browser-compat:build
 npx playwright <span class="nb">test</span> <span class="nt">--grep</span> <span class="s2">"Chrome"</span>
 npx playwright <span class="nb">test</span> <span class="nt">--grep</span> <span class="s2">"unsupported"</span>
 npx playwright <span class="nb">test</span> <span class="nt">--grep</span> <span class="s2">"browserslist"</span>
-</code></pre></div></div>
+</div>
 
 <h3 id="test-output-examples">Test Output Examples</h3>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>✅ Modern Browser Detection
+<div class="language-bash highlighter-rouge">✅ Modern Browser Detection
   ✅ should detect modern Chrome correctly <span class="o">(</span>1.5s<span class="o">)</span>
   ✅ should detect modern Firefox correctly <span class="o">(</span>1.3s<span class="o">)</span>
   ✅ should detect modern Safari correctly <span class="o">(</span>1.4s<span class="o">)</span>
@@ -1405,7 +1423,7 @@ npx playwright <span class="nb">test</span> <span class="nt">--grep</span> <span
 🔧 Browserslist Configuration
   ✅ should respect browserslist configuration <span class="o">(</span>2.3s<span class="o">)</span>
   ✅ should validate minimum browser requirements <span class="o">(</span>1.8s<span class="o">)</span>
-</code></pre></div></div>
+</div>
 
 <h2 id="️-maintenance--updates">🛠️ Maintenance &amp; Updates</h2>
 
@@ -1418,23 +1436,23 @@ npx playwright <span class="nb">test</span> <span class="nt">--grep</span> <span
     <p><strong>Update Release Database</strong></p>
 
     <div class="language-javascript highlighter-rouge">
-<div class="highlight"><pre class="highlight"><code><span class="c1">// Add new browser versions to releaseDates object</span>
+<span class="c1">// Add new browser versions to releaseDates object</span>
 <span class="nx">Chrome</span><span class="p">:</span> <span class="p">{</span>
   <span class="c1">// Add latest Chrome releases</span>
   <span class="mi">131</span><span class="p">:</span> <span class="dl">'</span><span class="s1">2024-11-12</span><span class="dl">'</span><span class="p">,</span> <span class="c1">// Example future release</span>
 <span class="p">}</span>
-</code></pre></div>    </div>
+    </div>
   </li>
   <li>
     <p><strong>Verify Test Coverage</strong></p>
 
     <div class="language-bash highlighter-rouge">
-<div class="highlight"><pre class="highlight"><code><span class="c"># Run full test suite</span>
+<span class="c"># Run full test suite</span>
 npm run <span class="nb">test</span>:browser-compat
 
 <span class="c"># Check for new browser versions in user agents</span>
 npm run <span class="nb">test</span>:e2e:debug
-</code></pre></div>    </div>
+    </div>
   </li>
   <li>
     <p><strong>Update Documentation</strong></p>
@@ -1484,7 +1502,8 @@ npm run <span class="nb">test</span>:e2e:debug
 
 <p>To add support for new browsers:</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// 1. Add detection pattern</span>
+<div class="language-javascript highlighter-rouge">
+<span class="c1">// 1. Add detection pattern</span>
 <span class="kd">const</span> <span class="nx">patterns</span> <span class="o">=</span> <span class="p">{</span>
   <span class="c1">// Existing patterns...</span>
   <span class="na">NewBrowser</span><span class="p">:</span> <span class="sr">/NewBrowser</span><span class="se">\/(\d</span><span class="sr">+</span><span class="se">\.?\d</span><span class="sr">*</span><span class="se">)</span><span class="sr">/</span><span class="p">,</span>
@@ -1505,7 +1524,7 @@ npm run <span class="nb">test</span>:e2e:debug
   <span class="c1">// Existing browsers...</span>
   <span class="na">NewBrowser</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="c1">// Minimum supported version</span>
 <span class="p">};</span>
-</code></pre></div></div>
+</div>
 
 <h2 id="-troubleshooting">🔍 Troubleshooting</h2>
 
@@ -1515,30 +1534,33 @@ npm run <span class="nb">test</span>:e2e:debug
 
 <p><strong>Timeout Errors</strong></p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Check Jekyll site build</span>
+<div class="language-bash highlighter-rouge">
+<span class="c"># Check Jekyll site build</span>
 <span class="nb">ls</span> <span class="nt">-la</span> docs/_site/about/index.html
 
 <span class="c"># Rebuild if needed</span>
 npm run build:jekyll:drafts
-</code></pre></div></div>
+</div>
 
 <p><strong>Version Detection Issues</strong></p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Debug browser detection</span>
+<div class="language-bash highlighter-rouge">
+<span class="c"># Debug browser detection</span>
 npx playwright <span class="nb">test</span> <span class="nt">--grep</span> <span class="s2">"browser info"</span> <span class="nt">--reporter</span><span class="o">=</span>line
 
 <span class="c"># Check user agent patterns</span>
 node <span class="nt">-e</span> <span class="s2">"console.log(navigator.userAgent)"</span> <span class="c"># In browser console</span>
-</code></pre></div></div>
+</div>
 
 <p><strong>Database Outdated</strong></p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Check current date vs database coverage</span>
+<div class="language-bash highlighter-rouge">
+<span class="c"># Check current date vs database coverage</span>
 npm run <span class="nb">test</span>:browser-compat <span class="nt">--reporter</span><span class="o">=</span>verbose
 
 <span class="c"># Update database with recent releases</span>
 <span class="c"># Edit about-page.html releaseDates object</span>
-</code></pre></div></div>
+</div>
 
 <h4 id="browser-specific-issues">Browser-Specific Issues</h4>
 
@@ -1570,13 +1592,14 @@ npm run <span class="nb">test</span>:browser-compat <span class="nt">--reporter<
 
 <p>Enable detailed debugging:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Playwright debug mode</span>
+<div class="language-bash highlighter-rouge">
+<span class="c"># Playwright debug mode</span>
 <span class="nv">DEBUG</span><span class="o">=</span>playwright:<span class="k">*</span> npx playwright <span class="nb">test </span>e2e/browser-compatibility.spec.ts
 
 <span class="c"># Browser console logging</span>
 <span class="c"># In browser dev tools, check for:</span>
 console.log<span class="o">(</span><span class="s1">'🔄 MIJUG Browser Detection:'</span>, browserInfo<span class="o">)</span><span class="p">;</span>
-</code></pre></div></div>
+</div>
 
 <h2 id="-future-enhancements">📈 Future Enhancements</h2>
 

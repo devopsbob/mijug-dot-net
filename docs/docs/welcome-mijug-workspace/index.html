@@ -515,12 +515,12 @@ img {
     
 
     <meta name="google-site-verification" content="googlece83719b3f856e56" />
-    <meta name="cache-version" content="20250928164112" />
+    <meta name="cache-version" content="20251007172153" />
 
-    <link rel="preload" as="style" href="/assets/main.css?v=20251003230356" media="print" crossorigin><link rel="stylesheet" href="/assets/main.css?v=20251003230356" media="print">
+    <link rel="preload" as="style" href="/assets/main.css?v=20251009150200" media="print" crossorigin><link rel="stylesheet" href="/assets/main.css?v=20251009150200" media="print">
 
     <noscript>
-      <link rel="stylesheet" href="/assets/main.css?v=20251003230356">
+      <link rel="stylesheet" href="/assets/main.css?v=20251009150200">
     </noscript>
 
     <link
@@ -534,7 +534,7 @@ img {
     <link
       rel="icon"
       type="image/svg+xml"
-      href="/assets/logo-mijug-96x96.png?v=20250928164112"
+      href="/assets/logo-mijug-96x96.png?v=20251007172153"
     />
     
     <link
@@ -574,7 +574,7 @@ img {
 
     <script>
   window.MIJUG = window.MIJUG || {};
-  window.MIJUG.cacheVersion = "20250928164112";
+  window.MIJUG.cacheVersion = "20251007172153";
 </script>
 
   
@@ -597,7 +597,7 @@ img {
       <div class="wrapper">
         <a class="site-title" rel="home" href="/">
           
-          <img src="/assets/logo-mijug-96x96.png?v=20250928164112" alt="My Info Just Under Glass" width="50" height="50">
+          <img src="/assets/logo-mijug-96x96.png?v=20251007172153" alt="My Info Just Under Glass" width="50" height="50">
            My Info Just Under Glass
         </a>
 
@@ -804,7 +804,7 @@ img {
 
 <h3 id="dual-repository-pattern">Dual Repository Pattern</h3>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>🔒 mijug-dot-net-project/    # Private development workspace
+<div class="language-plaintext highlighter-rouge">🔒 mijug-dot-net-project/    # Private development workspace
    ├── 📁 src/               # TypeScript application code
    ├── 📁 docs/              # Jekyll documentation source
    ├── 📁 tests/             # Jest unit tests
@@ -813,7 +813,7 @@ img {
 
 🌍 mijug-dot-net/           # Public deployment repository
    └── 📁 docs/             # Auto-generated Jekyll site
-</code></pre></div></div>
+</div>
 
 <p><strong>Workflow</strong>: Develop in private → Automated deployment → Public site</p>
 
@@ -889,7 +889,8 @@ img {
 
 <h3 id="development">Development</h3>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Start optimized development environment</span>
+<div class="language-bash highlighter-rouge">
+<span class="c"># Start optimized development environment</span>
 npm run dev:optimized
 
 <span class="c"># Ultra-fast startup (skip initial build)</span>
@@ -897,11 +898,12 @@ npm run quick:start
 
 <span class="c"># Jekyll with drafts and live reload</span>
 npm run dev:jekyll
-</code></pre></div></div>
+</div>
 
 <h3 id="testing--quality">Testing &amp; Quality</h3>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Quick smoke test (&lt; 15s)</span>
+<div class="language-bash highlighter-rouge">
+<span class="c"># Quick smoke test (&lt; 15s)</span>
 npm run <span class="nb">test</span>:smoke
 
 <span class="c"># Full test suite (&lt; 90s)</span>
@@ -909,16 +911,17 @@ npm run <span class="nb">test</span>:all:safe
 
 <span class="c"># Pre-commit validation</span>
 npm run precheckin
-</code></pre></div></div>
+</div>
 
 <h3 id="build--deploy">Build &amp; Deploy</h3>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Parallel development build</span>
+<div class="language-bash highlighter-rouge">
+<span class="c"># Parallel development build</span>
 npm run build:parallel
 
 <span class="c"># Production deployment</span>
 npm run deploy:optimized
-</code></pre></div></div>
+</div>
 
 <h2 id="architecture-benefits">Architecture Benefits</h2>
 

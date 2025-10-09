@@ -515,12 +515,12 @@ img {
     
 
     <meta name="google-site-verification" content="googlece83719b3f856e56" />
-    <meta name="cache-version" content="20250928164112" />
+    <meta name="cache-version" content="20251007172153" />
 
-    <link rel="preload" as="style" href="/assets/main.css?v=20251003230356" media="print" crossorigin><link rel="stylesheet" href="/assets/main.css?v=20251003230356" media="print">
+    <link rel="preload" as="style" href="/assets/main.css?v=20251009150200" media="print" crossorigin><link rel="stylesheet" href="/assets/main.css?v=20251009150200" media="print">
 
     <noscript>
-      <link rel="stylesheet" href="/assets/main.css?v=20251003230356">
+      <link rel="stylesheet" href="/assets/main.css?v=20251009150200">
     </noscript>
 
     <link
@@ -534,7 +534,7 @@ img {
     <link
       rel="icon"
       type="image/svg+xml"
-      href="/assets/logo-mijug-96x96.png?v=20250928164112"
+      href="/assets/logo-mijug-96x96.png?v=20251007172153"
     />
     
     <link
@@ -558,7 +558,7 @@ img {
 
     <script>
   window.MIJUG = window.MIJUG || {};
-  window.MIJUG.cacheVersion = "20250928164112";
+  window.MIJUG.cacheVersion = "20251007172153";
 </script>
 
   
@@ -581,7 +581,7 @@ img {
       <div class="wrapper">
         <a class="site-title" rel="home" href="/">
           
-          <img src="/assets/logo-mijug-96x96.png?v=20250928164112" alt="My Info Just Under Glass" width="50" height="50">
+          <img src="/assets/logo-mijug-96x96.png?v=20251007172153" alt="My Info Just Under Glass" width="50" height="50">
            My Info Just Under Glass
         </a>
 
@@ -884,14 +884,15 @@ img {
 
 <h4 id="unit-test-optimizations"><strong>Unit Test Optimizations</strong></h4>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Jest configuration optimizations</span>
+<div class="language-javascript highlighter-rouge">
+<span class="c1">// Jest configuration optimizations</span>
 <span class="p">{</span>
   <span class="dl">"</span><span class="s2">maxWorkers</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">100%</span><span class="dl">"</span><span class="p">,</span>        <span class="c1">// Utilize all CPU cores</span>
   <span class="dl">"</span><span class="s2">testTimeout</span><span class="dl">"</span><span class="p">:</span> <span class="mi">5000</span><span class="p">,</span>         <span class="c1">// Fast failure detection</span>
   <span class="dl">"</span><span class="s2">silent</span><span class="dl">"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>              <span class="c1">// Reduce console noise</span>
   <span class="dl">"</span><span class="s2">testPathPattern</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">tests/</span><span class="dl">"</span>  <span class="c1">// Focus execution scope</span>
 <span class="p">}</span>
-</code></pre></div></div>
+</div>
 
 <p><strong>Key Achievements:</strong></p>
 
@@ -908,7 +909,8 @@ img {
 
 <h4 id="consolidation-results"><strong>Consolidation Results</strong></h4>
 
-<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Before: 10 fragmented test files</span>
+<div class="language-typescript highlighter-rouge">
+<span class="c1">// Before: 10 fragmented test files</span>
 <span class="nx">e2e</span><span class="o">/</span><span class="nx">accessibility</span><span class="p">.</span><span class="nx">spec</span><span class="p">.</span><span class="nx">ts</span>
 <span class="nx">e2e</span><span class="o">/</span><span class="nx">documentation</span><span class="o">-</span><span class="nx">accessibility</span><span class="p">.</span><span class="nx">spec</span><span class="p">.</span><span class="nx">ts</span>
 <span class="nx">e2e</span><span class="o">/</span><span class="nx">homepage</span><span class="p">.</span><span class="nx">spec</span><span class="p">.</span><span class="nx">ts</span>
@@ -925,7 +927,7 @@ img {
 <span class="nx">e2e</span><span class="o">/</span><span class="nx">core</span><span class="o">-</span><span class="nx">functionality</span><span class="p">.</span><span class="nx">spec</span><span class="p">.</span><span class="nf">ts         </span><span class="p">(</span><span class="mi">20</span> <span class="nx">tests</span><span class="p">)</span>
 <span class="nx">e2e</span><span class="o">/</span><span class="nx">mermaid</span><span class="o">-</span><span class="nx">consolidated</span><span class="p">.</span><span class="nx">spec</span><span class="p">.</span><span class="nf">ts        </span><span class="p">(</span><span class="mi">13</span> <span class="nx">tests</span><span class="p">)</span>
 <span class="nx">e2e</span><span class="o">/</span><span class="nx">browser</span><span class="o">-</span><span class="nx">compatibility</span><span class="p">.</span><span class="nx">spec</span><span class="p">.</span><span class="nf">ts       </span><span class="p">(</span><span class="mi">13</span> <span class="nx">tests</span><span class="p">)</span>
-</code></pre></div></div>
+</div>
 
 <p><strong>Strategic Benefits:</strong></p>
 
@@ -1052,7 +1054,8 @@ img {
   </li>
 </ul>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Jest optimization example</span>
+<div class="language-javascript highlighter-rouge">
+<span class="c1">// Jest optimization example</span>
 <span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
   <span class="na">preset</span><span class="p">:</span> <span class="dl">"</span><span class="s2">ts-jest</span><span class="dl">"</span><span class="p">,</span>
   <span class="na">testEnvironment</span><span class="p">:</span> <span class="dl">"</span><span class="s2">node</span><span class="dl">"</span><span class="p">,</span>
@@ -1063,7 +1066,7 @@ img {
   <span class="na">coverageDirectory</span><span class="p">:</span> <span class="dl">"</span><span class="s2">coverage</span><span class="dl">"</span><span class="p">,</span>
   <span class="na">testMatch</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">**/tests/**/*.test.ts</span><span class="dl">"</span><span class="p">],</span>
 <span class="p">};</span>
-</code></pre></div></div>
+</div>
 
 <h4 id="playwright---e2e-testing-framework"><strong><a href="https://playwright.dev/" rel="external noopener noreferrer" target="_blank">Playwright</a> - E2E Testing Framework</strong></h4>
 
@@ -1081,7 +1084,8 @@ img {
   </li>
 </ul>
 
-<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Playwright configuration example</span>
+<div class="language-typescript highlighter-rouge">
+<span class="c1">// Playwright configuration example</span>
 <span class="k">export</span> <span class="k">default</span> <span class="nf">defineConfig</span><span class="p">({</span>
   <span class="na">testDir</span><span class="p">:</span> <span class="dl">"</span><span class="s2">./e2e</span><span class="dl">"</span><span class="p">,</span>
   <span class="na">timeout</span><span class="p">:</span> <span class="mi">30000</span><span class="p">,</span>
@@ -1093,7 +1097,7 @@ img {
     <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">webkit</span><span class="dl">"</span><span class="p">,</span> <span class="na">use</span><span class="p">:</span> <span class="p">{</span> <span class="p">...</span><span class="nx">devices</span><span class="p">[</span><span class="dl">"</span><span class="s2">Desktop Safari</span><span class="dl">"</span><span class="p">]</span> <span class="p">}</span> <span class="p">},</span>
   <span class="p">],</span>
 <span class="p">});</span>
-</code></pre></div></div>
+</div>
 
 <h4 id="axe-coreplaywright---accessibility-testing"><strong><a href="https://github.com/dequelabs/axe-core-npm" rel="external noopener noreferrer" target="_blank">@axe-core/playwright</a> - Accessibility Testing</strong></h4>
 
@@ -1111,7 +1115,8 @@ img {
   </li>
 </ul>
 
-<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Accessibility testing example</span>
+<div class="language-typescript highlighter-rouge">
+<span class="c1">// Accessibility testing example</span>
 <span class="kd">const</span> <span class="nx">accessibilityBuilder</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">AxeBuilder</span><span class="p">({</span> <span class="nx">page</span> <span class="p">})</span>
   <span class="p">.</span><span class="nf">withTags</span><span class="p">([</span><span class="dl">"</span><span class="s2">wcag2a</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">wcag2aa</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">wcag21aa</span><span class="dl">"</span><span class="p">])</span>
   <span class="p">.</span><span class="nf">exclude</span><span class="p">(</span><span class="dl">'</span><span class="s1">img[width="1"][height="1"]</span><span class="dl">'</span><span class="p">)</span>
@@ -1120,7 +1125,7 @@ img {
 
 <span class="kd">const</span> <span class="nx">results</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">accessibilityBuilder</span><span class="p">.</span><span class="nf">analyze</span><span class="p">();</span>
 <span class="nf">expect</span><span class="p">(</span><span class="nx">results</span><span class="p">.</span><span class="nx">violations</span><span class="p">).</span><span class="nf">toEqual</span><span class="p">([]);</span>
-</code></pre></div></div>
+</div>
 
 <h3 id="documentation-resources">Documentation Resources</h3>
 

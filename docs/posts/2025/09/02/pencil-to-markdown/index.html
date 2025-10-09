@@ -509,12 +509,12 @@ img {
     
 
     <meta name="google-site-verification" content="googlece83719b3f856e56" />
-    <meta name="cache-version" content="20250928164112" />
+    <meta name="cache-version" content="20251007172153" />
 
-    <link rel="preload" as="style" href="/assets/main.css?v=20251003230356" media="print" crossorigin><link rel="stylesheet" href="/assets/main.css?v=20251003230356" media="print">
+    <link rel="preload" as="style" href="/assets/main.css?v=20251009150200" media="print" crossorigin><link rel="stylesheet" href="/assets/main.css?v=20251009150200" media="print">
 
     <noscript>
-      <link rel="stylesheet" href="/assets/main.css?v=20251003230356">
+      <link rel="stylesheet" href="/assets/main.css?v=20251009150200">
     </noscript>
 
     <link
@@ -528,7 +528,7 @@ img {
     <link
       rel="icon"
       type="image/svg+xml"
-      href="/assets/logo-mijug-96x96.png?v=20250928164112"
+      href="/assets/logo-mijug-96x96.png?v=20251007172153"
     />
     
     <link
@@ -552,7 +552,7 @@ img {
 
     <script>
   window.MIJUG = window.MIJUG || {};
-  window.MIJUG.cacheVersion = "20250928164112";
+  window.MIJUG.cacheVersion = "20251007172153";
 </script>
 
   
@@ -575,7 +575,7 @@ img {
       <div class="wrapper">
         <a class="site-title" rel="home" href="/">
           
-          <img src="/assets/logo-mijug-96x96.png?v=20250928164112" alt="My Info Just Under Glass" width="50" height="50">
+          <img src="/assets/logo-mijug-96x96.png?v=20251007172153" alt="My Info Just Under Glass" width="50" height="50">
            My Info Just Under Glass
         </a>
 
@@ -1062,25 +1062,27 @@ img {
 
 <p>Example <code class="language-plaintext highlighter-rouge">idea.md</code>:</p>
 
-<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gh"># Idea: Micro-guide for meetings</span>
+<div class="language-markdown highlighter-rouge">
+<span class="gh"># Idea: Micro-guide for meetings</span>
 
 Capture the problem, the ask, and one suggested next step.
 <span class="p">
 -</span> Problem: Meeting runs long
 <span class="p">-</span> Ask: Reduce to 30 minutes
 <span class="p">-</span> Next step: Share agenda 24h in advance
-</code></pre></div></div>
+</div>
 
 <p>Convert with pandoc (one-off) to HTML:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pandoc idea.md <span class="nt">-o</span> idea.html
-</code></pre></div></div>
+<div class="language-bash highlighter-rouge">pandoc idea.md <span class="nt">-o</span> idea.html
+</div>
 
 <p>Or use a static site generator automatically (example: Jekyll builds the <code class="language-plaintext highlighter-rouge">_site</code> HTML from Markdown):</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># build locally with Jekyll</span>
+<div class="language-bash highlighter-rouge">
+<span class="c"># build locally with Jekyll</span>
 bundle <span class="nb">exec </span>jekyll build
-</code></pre></div></div>
+</div>
 
 <p>Why this works: Markdown keeps the capture friction low, text is portable, and the same source becomes both editable and publishable.</p>
 
@@ -1118,7 +1120,7 @@ bundle <span class="nb">exec </span>jekyll build
 
 <p>Commands (if you want them) — explained plainly:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    <span class="c"># Make a branch for your changes</span>
+<div class="language-bash highlighter-rouge">    <span class="c"># Make a branch for your changes</span>
     git checkout <span class="nt">-b</span> docs/update-guidance
 
     <span class="c"># Save your edits and commit</span>
@@ -1127,7 +1129,7 @@ bundle <span class="nb">exec </span>jekyll build
 
     <span class="c"># Push and open a Pull Request on your Git hosting service</span>
     git push <span class="nt">-u</span> origin docs/update-guidance
-</code></pre></div></div>
+</div>
 
 <p>If you are not comfortable with commands, a colleague or your support team can help with these steps.</p>
 

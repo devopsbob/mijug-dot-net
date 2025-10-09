@@ -515,12 +515,12 @@ img {
     
 
     <meta name="google-site-verification" content="googlece83719b3f856e56" />
-    <meta name="cache-version" content="20250928164112" />
+    <meta name="cache-version" content="20251007172153" />
 
-    <link rel="preload" as="style" href="/assets/main.css?v=20251003230356" media="print" crossorigin><link rel="stylesheet" href="/assets/main.css?v=20251003230356" media="print">
+    <link rel="preload" as="style" href="/assets/main.css?v=20251009150200" media="print" crossorigin><link rel="stylesheet" href="/assets/main.css?v=20251009150200" media="print">
 
     <noscript>
-      <link rel="stylesheet" href="/assets/main.css?v=20251003230356">
+      <link rel="stylesheet" href="/assets/main.css?v=20251009150200">
     </noscript>
 
     <link
@@ -534,7 +534,7 @@ img {
     <link
       rel="icon"
       type="image/svg+xml"
-      href="/assets/logo-mijug-96x96.png?v=20250928164112"
+      href="/assets/logo-mijug-96x96.png?v=20251007172153"
     />
     
     <link
@@ -558,7 +558,7 @@ img {
 
     <script>
   window.MIJUG = window.MIJUG || {};
-  window.MIJUG.cacheVersion = "20250928164112";
+  window.MIJUG.cacheVersion = "20251007172153";
 </script>
 
   
@@ -581,7 +581,7 @@ img {
       <div class="wrapper">
         <a class="site-title" rel="home" href="/">
           
-          <img src="/assets/logo-mijug-96x96.png?v=20250928164112" alt="My Info Just Under Glass" width="50" height="50">
+          <img src="/assets/logo-mijug-96x96.png?v=20251007172153" alt="My Info Just Under Glass" width="50" height="50">
            My Info Just Under Glass
         </a>
 
@@ -792,7 +792,8 @@ img {
 
 <h3 id="basic-commands">Basic Commands</h3>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Run all mermaid tests with default settings (Chromium, headless)</span>
+<div class="language-bash highlighter-rouge">
+<span class="c"># Run all mermaid tests with default settings (Chromium, headless)</span>
 npm run <span class="nb">test</span>:mermaid
 
 <span class="c"># Run with browser UI visible (helpful for debugging)</span>
@@ -803,11 +804,12 @@ npm run <span class="nb">test</span>:mermaid:debug
 
 <span class="c"># Run with Firefox browser</span>
 npm run <span class="nb">test</span>:mermaid:firefox
-</code></pre></div></div>
+</div>
 
 <h3 id="advanced-options">Advanced Options</h3>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Run with specific browser and options</span>
+<div class="language-bash highlighter-rouge">
+<span class="c"># Run with specific browser and options</span>
 node scripts/test-mermaid-diagrams.js <span class="nt">--project</span><span class="o">=</span>webkit <span class="nt">--workers</span><span class="o">=</span>2 <span class="nt">--verbose</span>
 
 <span class="c"># Ensure browsers are installed first</span>
@@ -818,7 +820,7 @@ node scripts/test-mermaid-diagrams.js <span class="nt">--headed</span> <span cla
 
 <span class="c"># Get help and see all available options</span>
 node scripts/test-mermaid-diagrams.js <span class="nt">--help</span>
-</code></pre></div></div>
+</div>
 
 <h2 id="command-line-options">Command Line Options</h2>
 
@@ -952,7 +954,8 @@ node scripts/test-mermaid-diagrams.js <span class="nt">--help</span>
 
 <p>The script is designed to work in continuous integration environments:</p>
 
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Example GitHub Actions usage</span>
+<div class="language-yaml highlighter-rouge">
+<span class="c1"># Example GitHub Actions usage</span>
 <span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Run Mermaid Tests</span>
   <span class="na">run</span><span class="pi">:</span> <span class="s">npm run test:mermaid</span>
 
@@ -966,7 +969,7 @@ node scripts/test-mermaid-diagrams.js <span class="nt">--help</span>
     <span class="s">npm run test:mermaid -- --ensure-browsers --project=chromium</span>
     <span class="s">npm run test:mermaid -- --project=firefox</span>
     <span class="s">npm run test:mermaid -- --project=webkit</span>
-</code></pre></div></div>
+</div>
 
 <h2 id="performance-considerations">Performance Considerations</h2>
 
@@ -985,7 +988,8 @@ node scripts/test-mermaid-diagrams.js <span class="nt">--help</span>
 
 <p>For debugging mermaid rendering issues:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Run in debug mode with browser UI</span>
+<div class="language-bash highlighter-rouge">
+<span class="c"># Run in debug mode with browser UI</span>
 npm run <span class="nb">test</span>:mermaid:debug
 
 <span class="c"># Run specific test file in headed mode</span>
@@ -993,7 +997,7 @@ node scripts/test-mermaid-diagrams.js <span class="nt">--headed</span> <span cla
 
 <span class="c"># Enable verbose output for detailed logs</span>
 node scripts/test-mermaid-diagrams.js <span class="nt">--verbose</span> <span class="nt">--headed</span>
-</code></pre></div></div>
+</div>
 
 <h2 id="configuration">Configuration</h2>
 
@@ -1001,7 +1005,7 @@ node scripts/test-mermaid-diagrams.js <span class="nt">--verbose</span> <span cl
 
 <h2 id="output-example">Output Example</h2>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>🎨 Mermaid Diagrams Test Runner Starting...
+<div class="language-plaintext highlighter-rouge">🎨 Mermaid Diagrams Test Runner Starting...
 ℹ️  🔧 Ensuring browsers are installed...
 ✅ All browsers are ready for testing!
 ℹ️  📊 Browser Engine Summary:
@@ -1018,7 +1022,7 @@ node scripts/test-mermaid-diagrams.js <span class="nt">--verbose</span> <span cl
 Running 7 tests using 1 worker
   ✓  All tests passed
 ✅ ✅ All Mermaid tests completed successfully!
-</code></pre></div></div>
+</div>
 
 <h2 id="troubleshooting">Troubleshooting</h2>
 
@@ -1029,25 +1033,25 @@ Running 7 tests using 1 worker
     <p><strong>Browser Not Found</strong></p>
 
     <div class="language-bash highlighter-rouge">
-<div class="highlight"><pre class="highlight"><code><span class="c"># Solution: Install browsers</span>
+<span class="c"># Solution: Install browsers</span>
 npm run <span class="nb">test</span>:mermaid <span class="nt">--</span> <span class="nt">--ensure-browsers</span>
-</code></pre></div>    </div>
+    </div>
   </li>
   <li>
     <p><strong>Permission Errors</strong></p>
 
     <div class="language-bash highlighter-rouge">
-<div class="highlight"><pre class="highlight"><code><span class="c"># Solution: Run with proper permissions or use skipIfNoPermissions</span>
+<span class="c"># Solution: Run with proper permissions or use skipIfNoPermissions</span>
 node scripts/test-mermaid-diagrams.js <span class="nt">--ensure-browsers</span> <span class="nt">--skip-if-no-permissions</span>
-</code></pre></div>    </div>
+    </div>
   </li>
   <li>
     <p><strong>Network Timeouts</strong></p>
 
     <div class="language-bash highlighter-rouge">
-<div class="highlight"><pre class="highlight"><code><span class="c"># Solution: Increase timeout or check network connectivity</span>
+<span class="c"># Solution: Increase timeout or check network connectivity</span>
 node scripts/test-mermaid-diagrams.js <span class="nt">--workers</span><span class="o">=</span>1
-</code></pre></div>    </div>
+    </div>
   </li>
   <li>
     <p><strong>iNotify Watches Limit Exceeded (Linux)</strong></p>
@@ -1059,7 +1063,7 @@ node scripts/test-mermaid-diagrams.js <span class="nt">--workers</span><span cla
     <p><strong>Solution</strong>: Increase the iNotify watches limit on Linux systems:</p>
 
     <div class="language-bash highlighter-rouge">
-<div class="highlight"><pre class="highlight"><code><span class="c"># Check current limit</span>
+<span class="c"># Check current limit</span>
 <span class="nb">cat</span> /proc/sys/fs/inotify/max_user_watches
 
 <span class="c"># Increase limit permanently (requires sudo)</span>
@@ -1068,14 +1072,14 @@ node scripts/test-mermaid-diagrams.js <span class="nt">--workers</span><span cla
 
 <span class="c"># Verify the change</span>
 <span class="nb">cat</span> /proc/sys/fs/inotify/max_user_watches
-</code></pre></div>    </div>
+    </div>
 
     <p><strong>Alternative temporary fix</strong>:</p>
 
     <div class="language-bash highlighter-rouge">
-<div class="highlight"><pre class="highlight"><code><span class="c"># Temporary increase (until reboot)</span>
+<span class="c"># Temporary increase (until reboot)</span>
 <span class="nb">sudo </span>sysctl fs.inotify.max_user_watches<span class="o">=</span>524288
-</code></pre></div>    </div>
+    </div>
 
     <p><strong>Background</strong>: This issue occurs when Jekyll tries to watch too many files for changes. The default Linux limit is typically 8,192 watches, but large projects with many files can exceed this limit. Setting it to 524,288 provides ample headroom for most development scenarios.</p>
   </li>

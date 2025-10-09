@@ -515,12 +515,12 @@ img {
     
 
     <meta name="google-site-verification" content="googlece83719b3f856e56" />
-    <meta name="cache-version" content="20250928164112" />
+    <meta name="cache-version" content="20251007172153" />
 
-    <link rel="preload" as="style" href="/assets/main.css?v=20251003230356" media="print" crossorigin><link rel="stylesheet" href="/assets/main.css?v=20251003230356" media="print">
+    <link rel="preload" as="style" href="/assets/main.css?v=20251009150200" media="print" crossorigin><link rel="stylesheet" href="/assets/main.css?v=20251009150200" media="print">
 
     <noscript>
-      <link rel="stylesheet" href="/assets/main.css?v=20251003230356">
+      <link rel="stylesheet" href="/assets/main.css?v=20251009150200">
     </noscript>
 
     <link
@@ -534,7 +534,7 @@ img {
     <link
       rel="icon"
       type="image/svg+xml"
-      href="/assets/logo-mijug-96x96.png?v=20250928164112"
+      href="/assets/logo-mijug-96x96.png?v=20251007172153"
     />
     
     <link
@@ -574,7 +574,7 @@ img {
 
     <script>
   window.MIJUG = window.MIJUG || {};
-  window.MIJUG.cacheVersion = "20250928164112";
+  window.MIJUG.cacheVersion = "20251007172153";
 </script>
 
   
@@ -597,7 +597,7 @@ img {
       <div class="wrapper">
         <a class="site-title" rel="home" href="/">
           
-          <img src="/assets/logo-mijug-96x96.png?v=20250928164112" alt="My Info Just Under Glass" width="50" height="50">
+          <img src="/assets/logo-mijug-96x96.png?v=20251007172153" alt="My Info Just Under Glass" width="50" height="50">
            My Info Just Under Glass
         </a>
 
@@ -858,7 +858,8 @@ img {
 
 <h3 id="command-line-flags">Command Line Flags</h3>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Show help</span>
+<div class="language-bash highlighter-rouge">
+<span class="c"># Show help</span>
 npm run playwright:ensure <span class="nt">--</span> <span class="nt">--help</span>
 
 <span class="c"># Force reinstall everything</span>
@@ -872,11 +873,12 @@ npm run playwright:ensure <span class="nt">--</span> <span class="nt">--skip-sys
 
 <span class="c"># Fail on timeout instead of bypassing</span>
 npm run playwright:ensure <span class="nt">--</span> <span class="nt">--no-bypass-on-timeout</span>
-</code></pre></div></div>
+</div>
 
 <h3 id="environment-specific-usage">Environment-Specific Usage</h3>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># For CI/CD environments with limited permissions</span>
+<div class="language-bash highlighter-rouge">
+<span class="c"># For CI/CD environments with limited permissions</span>
 npm run browsers:ensure-safe
 
 <span class="c"># For development with full permissions</span>
@@ -887,7 +889,7 @@ npm run browsers:check
 
 <span class="c"># Force update everything</span>
 npm run browsers:update
-</code></pre></div></div>
+</div>
 
 <h2 id="how-it-works">How It Works</h2>
 
@@ -929,7 +931,8 @@ npm run browsers:update
 
 <h3 id="permission-issues">Permission Issues</h3>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Safe mode for restricted environments</span>
+<div class="language-bash highlighter-rouge">
+<span class="c"># Safe mode for restricted environments</span>
 npm run browsers:ensure-safe
 
 <span class="c"># Check current browser status</span>
@@ -937,11 +940,12 @@ npm run browsers:check
 
 <span class="c"># Manual permission fix (if you have sudo)</span>
 <span class="nb">sudo </span>npm run playwright:ensure
-</code></pre></div></div>
+</div>
 
 <h3 id="timeout-issues">Timeout Issues</h3>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Skip problematic system dependencies</span>
+<div class="language-bash highlighter-rouge">
+<span class="c"># Skip problematic system dependencies</span>
 npm run playwright:ensure <span class="nt">--</span> <span class="nt">--skip-system-deps</span>
 
 <span class="c"># Force bypass timeouts and use existing browsers</span>
@@ -949,11 +953,12 @@ npm run <span class="nb">test</span>:a11y  <span class="c"># (automatic bypass e
 
 <span class="c"># Strict mode (fail on timeout)</span>
 npm run playwright:ensure <span class="nt">--</span> <span class="nt">--no-bypass-on-timeout</span>
-</code></pre></div></div>
+</div>
 
 <h3 id="installation-failures">Installation Failures</h3>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Force complete reinstall</span>
+<div class="language-bash highlighter-rouge">
+<span class="c"># Force complete reinstall</span>
 npm run browsers:fix
 
 <span class="c"># Check what's working</span>
@@ -961,7 +966,7 @@ npm run browsers:check
 
 <span class="c"># Use existing browsers only</span>
 npm run playwright:ensure <span class="nt">--</span> <span class="nt">--skip-if-no-permissions</span>
-</code></pre></div></div>
+</div>
 
 <h2 id="error-messages-and-solutions">Error Messages and Solutions</h2>
 
@@ -1037,10 +1042,11 @@ npm run playwright:ensure <span class="nt">--</span> <span class="nt">--skip-if-
 
 <h3 id="configuration-constants">Configuration Constants</h3>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">TIMEOUT_BROWSER_INSTALL</span> <span class="o">=</span> <span class="mi">300000</span><span class="p">;</span> <span class="c1">// 5 minutes</span>
+<div class="language-javascript highlighter-rouge">
+<span class="nx">TIMEOUT_BROWSER_INSTALL</span> <span class="o">=</span> <span class="mi">300000</span><span class="p">;</span> <span class="c1">// 5 minutes</span>
 <span class="nx">TIMEOUT_SYSTEM_DEPS</span> <span class="o">=</span> <span class="mi">180000</span><span class="p">;</span> <span class="c1">// 3 minutes</span>
 <span class="nx">TIMEOUT_BROWSER_TEST</span> <span class="o">=</span> <span class="mi">15000</span><span class="p">;</span> <span class="c1">// 15 seconds</span>
-</code></pre></div></div>
+</div>
 
 <h3 id="permission-checking">Permission Checking</h3>
 

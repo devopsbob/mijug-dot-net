@@ -515,12 +515,12 @@ img {
     
 
     <meta name="google-site-verification" content="googlece83719b3f856e56" />
-    <meta name="cache-version" content="20250928164112" />
+    <meta name="cache-version" content="20251007172153" />
 
-    <link rel="preload" as="style" href="/assets/main.css?v=20251003230356" media="print" crossorigin><link rel="stylesheet" href="/assets/main.css?v=20251003230356" media="print">
+    <link rel="preload" as="style" href="/assets/main.css?v=20251009150200" media="print" crossorigin><link rel="stylesheet" href="/assets/main.css?v=20251009150200" media="print">
 
     <noscript>
-      <link rel="stylesheet" href="/assets/main.css?v=20251003230356">
+      <link rel="stylesheet" href="/assets/main.css?v=20251009150200">
     </noscript>
 
     <link
@@ -534,7 +534,7 @@ img {
     <link
       rel="icon"
       type="image/svg+xml"
-      href="/assets/logo-mijug-96x96.png?v=20250928164112"
+      href="/assets/logo-mijug-96x96.png?v=20251007172153"
     />
     
     <link
@@ -560,7 +560,7 @@ img {
 
     <script>
   window.MIJUG = window.MIJUG || {};
-  window.MIJUG.cacheVersion = "20250928164112";
+  window.MIJUG.cacheVersion = "20251007172153";
 </script>
 
   
@@ -583,7 +583,7 @@ img {
       <div class="wrapper">
         <a class="site-title" rel="home" href="/">
           
-          <img src="/assets/logo-mijug-96x96.png?v=20250928164112" alt="My Info Just Under Glass" width="50" height="50">
+          <img src="/assets/logo-mijug-96x96.png?v=20251007172153" alt="My Info Just Under Glass" width="50" height="50">
            My Info Just Under Glass
         </a>
 
@@ -819,31 +819,34 @@ img {
 
 <p>Add the jekyll-mermaid plugin to your <code class="language-plaintext highlighter-rouge">Gemfile</code>:</p>
 
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># In docs/Gemfile</span>
+<div class="language-ruby highlighter-rouge">
+<span class="c1"># In docs/Gemfile</span>
 <span class="n">group</span> <span class="ss">:jekyll_plugins</span> <span class="k">do</span>
   <span class="n">gem</span> <span class="s1">'jekyll-mermaid'</span><span class="p">,</span> <span class="s1">'~&gt; 1.0.0'</span>
   <span class="c1"># ... other plugins</span>
 <span class="k">end</span>
-</code></pre></div></div>
+</div>
 
 <h3 id="2-jekyll-configuration">2. Jekyll Configuration</h3>
 
 <p>Configure Mermaid in your <code class="language-plaintext highlighter-rouge">_config.yml</code>:</p>
 
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Enable mermaid diagrams</span>
+<div class="language-yaml highlighter-rouge">
+<span class="c1"># Enable mermaid diagrams</span>
 <span class="na">mermaid</span><span class="pi">:</span>
   <span class="na">src</span><span class="pi">:</span> <span class="s">https://cdn.jsdelivr.net/npm/mermaid@11.9.0/dist/mermaid.min.js</span>
 
 <span class="na">plugins</span><span class="pi">:</span>
   <span class="pi">-</span> <span class="s">jekyll-mermaid</span>
   <span class="c1"># ... other plugins</span>
-</code></pre></div></div>
+</div>
 
 <h3 id="3-layout-integration">3. Layout Integration</h3>
 
 <p>Add Mermaid support to your layouts. For <strong>universal support</strong>, add to <code class="language-plaintext highlighter-rouge">_layouts/default.html</code>:</p>
 
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Mermaid support: convert fenced code blocks (```mermaid) and initialize --&gt;</span>
+<div class="language-html highlighter-rouge">
+<span class="c">&lt;!-- Mermaid support: convert fenced code blocks (```mermaid) and initialize --&gt;</span>
 
 <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://cdn.jsdelivr.net/npm/mermaid@11.9.0/dist/mermaid.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
 
@@ -904,13 +907,14 @@ img {
     <span class="p">});</span>
   <span class="p">})();</span>
 <span class="nt">&lt;/script&gt;</span>
-</code></pre></div></div>
+</div>
 
 <h3 id="4-install-dependencies">4. Install Dependencies</h3>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd </span>docs
+<div class="language-bash highlighter-rouge">
+<span class="nb">cd </span>docs
 bundle <span class="nb">install</span>
-</code></pre></div></div>
+</div>
 
 <h2 id="configuration">Configuration</h2>
 
@@ -918,7 +922,8 @@ bundle <span class="nb">install</span>
 
 <p>In <code class="language-plaintext highlighter-rouge">_config.yml</code>, you can customize Mermaid settings:</p>
 
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">mermaid</span><span class="pi">:</span>
+<div class="language-yaml highlighter-rouge">
+<span class="na">mermaid</span><span class="pi">:</span>
   <span class="na">src</span><span class="pi">:</span> <span class="s">https://cdn.jsdelivr.net/npm/mermaid@11.9.0/dist/mermaid.min.js</span>
   <span class="c1"># Optional: Custom configuration</span>
   <span class="na">config</span><span class="pi">:</span>
@@ -937,13 +942,14 @@ bundle <span class="nb">install</span>
       <span class="na">boxTextMargin</span><span class="pi">:</span> <span class="m">5</span>
       <span class="na">noteMargin</span><span class="pi">:</span> <span class="m">10</span>
       <span class="na">messageMargin</span><span class="pi">:</span> <span class="m">35</span>
-</code></pre></div></div>
+</div>
 
 <h3 id="advanced-layout-specific-configuration">Advanced Layout-Specific Configuration</h3>
 
 <p>For specialized layouts (e.g., presentation slides), you can create custom configurations:</p>
 
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- In _layouts/delivery-slides.html --&gt;</span>
+<div class="language-html highlighter-rouge">
+<span class="c">&lt;!-- In _layouts/delivery-slides.html --&gt;</span>
 <span class="nt">&lt;script&gt;</span>
   <span class="nx">mermaid</span><span class="p">.</span><span class="nf">initialize</span><span class="p">({</span>
     <span class="na">theme</span><span class="p">:</span> <span class="dl">"</span><span class="s2">dark</span><span class="dl">"</span><span class="p">,</span>
@@ -954,7 +960,7 @@ bundle <span class="nb">install</span>
     <span class="p">},</span>
   <span class="p">});</span>
 <span class="nt">&lt;/script&gt;</span>
-</code></pre></div></div>
+</div>
 
 <h2 id="usage-examples">Usage Examples</h2>
 
@@ -962,54 +968,58 @@ bundle <span class="nb">install</span>
 
 <p>This is the <strong>preferred method</strong> as it’s compatible with most Markdown processors and avoids build-time HTML wrapping issues:</p>
 
-<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">```</span><span class="nl">mermaid
+<div class="language-markdown highlighter-rouge">
+<span class="p">```</span><span class="nl">mermaid
 </span><span class="sb">graph TD
     A[Start] --&gt; B{Is it?}
     B --&gt;|Yes| C[OK]
     B --&gt;|No| D[End]</span>
 <span class="p">```</span>
-</code></pre></div></div>
+</div>
 
 <h3 id="method-2-jekyll-liquid-tags">Method 2: Jekyll Liquid Tags</h3>
 
 <p><strong>Note</strong>: This method can cause issues with <code class="language-plaintext highlighter-rouge">&lt;p&gt;</code> tag wrapping. Use fenced code blocks when possible.</p>
 
-<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;script src="https://cdn.jsdelivr.net/npm/mermaid@11.9.0/dist/mermaid.min.js"&gt;&lt;/script&gt;&lt;div class="mermaid"&gt;
+<div class="language-liquid highlighter-rouge">&lt;script src="https://cdn.jsdelivr.net/npm/mermaid@11.9.0/dist/mermaid.min.js"&gt;&lt;/script&gt;&lt;div class="mermaid"&gt;
 sequenceDiagram
     participant A as Alice
     participant B as Bob
     A-&gt;&gt;B: Hello Bob, how are you?
     B--&gt;&gt;A: Great!
 &lt;/div&gt;
-</code></pre></div></div>
+</div>
 
 <h3 id="example-diagram-types">Example Diagram Types</h3>
 
 <h4 id="flowchart">Flowchart</h4>
 
-<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">```</span><span class="nl">mermaid
+<div class="language-markdown highlighter-rouge">
+<span class="p">```</span><span class="nl">mermaid
 </span><span class="sb">graph LR
     A[Square Rect] --&gt; B((Circle))
     A --&gt; C(Round Rect)
     B --&gt; D{Rhombus}
     C --&gt; D</span>
 <span class="p">```</span>
-</code></pre></div></div>
+</div>
 
 <h4 id="sequence-diagram">Sequence Diagram</h4>
 
-<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">```</span><span class="nl">mermaid
+<div class="language-markdown highlighter-rouge">
+<span class="p">```</span><span class="nl">mermaid
 </span><span class="sb">sequenceDiagram
     participant A as Client
     participant B as Server
     A-&gt;&gt;B: Request
     B--&gt;&gt;A: Response</span>
 <span class="p">```</span>
-</code></pre></div></div>
+</div>
 
 <h4 id="class-diagram">Class Diagram</h4>
 
-<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">```</span><span class="nl">mermaid
+<div class="language-markdown highlighter-rouge">
+<span class="p">```</span><span class="nl">mermaid
 </span><span class="sb">classDiagram
     class Animal {
         +String name
@@ -1022,7 +1032,7 @@ sequenceDiagram
     }
     Animal &lt;|-- Dog</span>
 <span class="p">```</span>
-</code></pre></div></div>
+</div>
 
 <h2 id="troubleshooting">Troubleshooting</h2>
 
@@ -1042,14 +1052,15 @@ sequenceDiagram
 
 <p><strong>Solutions</strong>:</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Check if Mermaid loaded</span>
+<div class="language-javascript highlighter-rouge">
+<span class="c1">// Check if Mermaid loaded</span>
 <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Mermaid loaded:</span><span class="dl">"</span><span class="p">,</span> <span class="k">typeof</span> <span class="nb">window</span><span class="p">.</span><span class="nx">mermaid</span> <span class="o">!==</span> <span class="dl">"</span><span class="s2">undefined</span><span class="dl">"</span><span class="p">);</span>
 
 <span class="c1">// Manually trigger conversion</span>
 <span class="k">if </span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">mermaid</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">mermaid</span><span class="p">.</span><span class="nf">run</span><span class="p">();</span>
 <span class="p">}</span>
-</code></pre></div></div>
+</div>
 
 <h4 id="2-syntax-error-messages-in-diagrams">2. “Syntax Error” Messages in Diagrams</h4>
 
@@ -1078,10 +1089,11 @@ sequenceDiagram
 
 <p><strong>Solutions</strong>:</p>
 
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># In _config.yml - ensure HTTPS CDN URL</span>
+<div class="language-yaml highlighter-rouge">
+<span class="c1"># In _config.yml - ensure HTTPS CDN URL</span>
 <span class="na">mermaid</span><span class="pi">:</span>
   <span class="na">src</span><span class="pi">:</span> <span class="s">https://cdn.jsdelivr.net/npm/mermaid@11.9.0/dist/mermaid.min.js</span>
-</code></pre></div></div>
+</div>
 
 <h4 id="4-script-loading-race-conditions">4. Script Loading Race Conditions</h4>
 
@@ -1089,7 +1101,8 @@ sequenceDiagram
 
 <p><strong>Solutions</strong>:</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Improved initialization with polling</span>
+<div class="language-javascript highlighter-rouge">
+<span class="c1">// Improved initialization with polling</span>
 <span class="kd">function</span> <span class="nf">initMermaidWithRetry</span><span class="p">()</span> <span class="p">{</span>
   <span class="kd">var</span> <span class="nx">attempts</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
   <span class="kd">var</span> <span class="nx">maxAttempts</span> <span class="o">=</span> <span class="mi">50</span><span class="p">;</span>
@@ -1111,13 +1124,14 @@ sequenceDiagram
 
   <span class="nf">tryInit</span><span class="p">();</span>
 <span class="p">}</span>
-</code></pre></div></div>
+</div>
 
 <h3 id="debugging-tools">Debugging Tools</h3>
 
 <h4 id="browser-console-debugging">Browser Console Debugging</h4>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Check Mermaid availability</span>
+<div class="language-javascript highlighter-rouge">
+<span class="c1">// Check Mermaid availability</span>
 <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Mermaid version:</span><span class="dl">"</span><span class="p">,</span> <span class="nx">mermaid</span><span class="p">?.</span><span class="nx">version</span><span class="p">);</span>
 
 <span class="c1">// List all mermaid elements</span>
@@ -1130,13 +1144,14 @@ sequenceDiagram
 <span class="p">}</span> <span class="k">catch </span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
   <span class="nx">console</span><span class="p">.</span><span class="nf">error</span><span class="p">(</span><span class="dl">"</span><span class="s2">Mermaid syntax error:</span><span class="dl">"</span><span class="p">,</span> <span class="nx">e</span><span class="p">);</span>
 <span class="p">}</span>
-</code></pre></div></div>
+</div>
 
 <h4 id="e2e-testing-validation">E2E Testing Validation</h4>
 
 <p>Use Playwright tests to ensure reliable rendering:</p>
 
-<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Example test validation</span>
+<div class="language-typescript highlighter-rouge">
+<span class="c1">// Example test validation</span>
 <span class="nf">test</span><span class="p">(</span><span class="dl">"</span><span class="s2">Mermaid diagram renders correctly</span><span class="dl">"</span><span class="p">,</span> <span class="k">async </span><span class="p">({</span> <span class="nx">page</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="p">{</span>
   <span class="k">await</span> <span class="nx">page</span><span class="p">.</span><span class="nf">goto</span><span class="p">(</span><span class="dl">"</span><span class="s2">/docs/mermaid-example/</span><span class="dl">"</span><span class="p">);</span>
 
@@ -1151,7 +1166,7 @@ sequenceDiagram
   <span class="kd">const</span> <span class="nx">svgCount</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">page</span><span class="p">.</span><span class="nf">locator</span><span class="p">(</span><span class="dl">"</span><span class="s2">.mermaid svg</span><span class="dl">"</span><span class="p">).</span><span class="nf">count</span><span class="p">();</span>
   <span class="nf">expect</span><span class="p">(</span><span class="nx">svgCount</span><span class="p">).</span><span class="nf">toBeGreaterThan</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
 <span class="p">});</span>
-</code></pre></div></div>
+</div>
 
 <h2 id="performance-optimization">Performance Optimization</h2>
 
@@ -1159,7 +1174,8 @@ sequenceDiagram
 
 <p>Use a reliable CDN with proper versioning:</p>
 
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Recommended CDN sources (choose one)</span>
+<div class="language-yaml highlighter-rouge">
+<span class="c1"># Recommended CDN sources (choose one)</span>
 <span class="na">mermaid</span><span class="pi">:</span>
   <span class="c1"># jsDelivr (recommended)</span>
   <span class="na">src</span><span class="pi">:</span> <span class="s">https://cdn.jsdelivr.net/npm/mermaid@11.9.0/dist/mermaid.min.js</span>
@@ -1169,13 +1185,14 @@ sequenceDiagram
 
   <span class="c1"># Alternative: cdnjs</span>
   <span class="c1"># src: https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.9.0/mermaid.min.js</span>
-</code></pre></div></div>
+</div>
 
 <h3 id="lazy-loading">Lazy Loading</h3>
 
 <p>For pages with many diagrams, consider lazy loading:</p>
 
-<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Intersection Observer for lazy loading</span>
+<div class="language-javascript highlighter-rouge">
+<span class="c1">// Intersection Observer for lazy loading</span>
 <span class="kd">const</span> <span class="nx">observer</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">IntersectionObserver</span><span class="p">((</span><span class="nx">entries</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
   <span class="nx">entries</span><span class="p">.</span><span class="nf">forEach</span><span class="p">((</span><span class="nx">entry</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
     <span class="k">if </span><span class="p">(</span><span class="nx">entry</span><span class="p">.</span><span class="nx">isIntersecting</span><span class="p">)</span> <span class="p">{</span>
@@ -1191,16 +1208,17 @@ sequenceDiagram
 <span class="p">});</span>
 
 <span class="nb">document</span><span class="p">.</span><span class="nf">querySelectorAll</span><span class="p">(</span><span class="dl">"</span><span class="s2">.mermaid</span><span class="dl">"</span><span class="p">).</span><span class="nf">forEach</span><span class="p">((</span><span class="nx">el</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="nx">observer</span><span class="p">.</span><span class="nf">observe</span><span class="p">(</span><span class="nx">el</span><span class="p">));</span>
-</code></pre></div></div>
+</div>
 
 <h3 id="bundle-size-optimization">Bundle Size Optimization</h3>
 
 <p>Consider self-hosting for production:</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Download and serve locally</span>
+<div class="language-bash highlighter-rouge">
+<span class="c"># Download and serve locally</span>
 npm <span class="nb">install </span>mermaid
 <span class="nb">cp </span>node_modules/mermaid/dist/mermaid.min.js assets/js/
-</code></pre></div></div>
+</div>
 
 <h2 id="references--credits">References &amp; Credits</h2>
 
