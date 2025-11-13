@@ -58,29 +58,106 @@
     display: none;
   }
 
-  /* Overlay navigation */
-  html.js nav.primary-nav.nav-overlay {
-    display: block;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.85);
-    z-index: 100;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-20px);
-    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
-    overflow-y: auto;
+  /* Overlay navigation - make sure it applies */
+  nav.primary-nav.nav-overlay {
+    display: block !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    background: rgba(0, 0, 0, 0.85) !important;
+    z-index: 100 !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transform: translateY(-20px) !important;
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease !important;
+    overflow-y: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
   }
 
-  html.js nav.primary-nav.nav-overlay.nav-visible {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
+  nav.primary-nav.nav-overlay.nav-visible {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
+  }
+
+  /* Navigation content styling */
+  .modern-nav-content {
+    display: block !important;
+    position: fixed !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    background: white !important;
+    border-radius: 8px !important;
+    padding: 2rem !important;
+    max-width: 90vw !important;
+    max-height: 80vh !important;
+    overflow-y: auto !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3) !important;
+    z-index: 101 !important;
+  }
+
+  /* Navigation close button */
+  .nav-close {
+    position: absolute !important;
+    top: 0.75rem !important;
+    right: 0.75rem !important;
+    background: none !important;
+    border: none !important;
+    font-size: 1.5rem !important;
+    line-height: 1 !important;
+    color: #666 !important;
+    cursor: pointer !important;
+    padding: 0.25rem !important;
+    border-radius: 4px !important;
+    transition: color 0.2s ease, background-color 0.2s ease !important;
+    width: 2rem !important;
+    height: 2rem !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .nav-close:hover,
+  .nav-close:focus {
+    color: #333 !important;
+    background-color: #f0f0f0 !important;
+  }
+
+  .modern-nav-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .modern-nav-content li {
+    margin: 0;
+    padding: 0;
+  }
+
+  .modern-nav-content a {
+    display: block;
+    padding: 0.75rem 1rem;
+    color: #333;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+  }
+
+  .modern-nav-content a:hover,
+  .modern-nav-content a:focus {
+    background-color: #f0f0f0;
+    color: #2c5aa0;
+  }
+
+  /* Legacy nav fallback - hidden by default */
+  .legacy-nav-fallback {
+    display: none;
   }
 
   /* Body scroll lock when overlay is open */
@@ -517,10 +594,10 @@ img {
     <meta name="google-site-verification" content="googlece83719b3f856e56" />
     <meta name="cache-version" content="20251007172153" />
 
-    <link rel="preload" as="style" href="/assets/main.css?v=20251112211259" media="print" crossorigin><link rel="stylesheet" href="/assets/main.css?v=20251112211259" media="print">
+    <link rel="preload" as="style" href="/assets/main.css?v=20251112224242" media="print" crossorigin><link rel="stylesheet" href="/assets/main.css?v=20251112224242" media="print">
 
     <noscript>
-      <link rel="stylesheet" href="/assets/main.css?v=20251112211259">
+      <link rel="stylesheet" href="/assets/main.css?v=20251112224242">
     </noscript>
 
     <link
@@ -643,6 +720,9 @@ img {
 
           <!-- Full navigation for modern browsers -->
           <div class="modern-nav-content">
+            <button class="nav-close" type="button" aria-label="Close navigation menu">
+              <span aria-hidden="true">×</span>
+            </button>
             <ul role="list">
               
                 <li role="listitem">
@@ -1021,10 +1101,9 @@ img {
 <strong>Example output</strong>:</li>
 </ul>
 
-<div class="language-markdown highlighter-rouge">
-<span class="p">![</span><span class="nv">Alt text</span><span class="p">](</span><span class="sx">image-source.jpg</span><span class="p">)</span>
+<div class="language-markdown highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">![</span><span class="nv">Alt text</span><span class="p">](</span><span class="sx">image-source.jpg</span><span class="p">)</span>
 <span class="ge">_Caption text_</span>
-</div>
+</code></pre></div></div>
 
 <h4 id="code-block">Code Block</h4>
 
@@ -1049,9 +1128,8 @@ img {
 <strong>Example output</strong>:</li>
 </ul>
 
-<div class="language-typescript highlighter-rouge">
-<span class="c1">// Your code here</span>
-</div>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Your code here</span>
+</code></pre></div></div>
 
 <h4 id="calloutalert-box">Callout/Alert Box</h4>
 
@@ -1146,11 +1224,10 @@ img {
 <strong>Example output</strong>:</li>
 </ul>
 
-<div class="language-liquid highlighter-rouge">
-<span class="cp">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span><span class="nv">post</span><span class="w"> </span><span class="nt">in</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">posts</span><span class="w"> </span><span class="cp">%}</span>
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span><span class="nv">post</span><span class="w"> </span><span class="nt">in</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">posts</span><span class="w"> </span><span class="cp">%}</span>
   <span class="cp">{{</span><span class="w"> </span><span class="nv">post</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="cp">}}</span>
 <span class="cp">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="cp">%}</span>
-</div>
+</code></pre></div></div>
 
 <h4 id="liquid-if-statement">Liquid If Statement</h4>
 
@@ -1168,11 +1245,10 @@ img {
 <strong>Example output</strong>:</li>
 </ul>
 
-<div class="language-liquid highlighter-rouge">
-<span class="cp">{%</span><span class="w"> </span><span class="nt">if</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="cp">%}</span>
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{%</span><span class="w"> </span><span class="nt">if</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="cp">%}</span>
   Content goes here
 <span class="cp">{%</span><span class="w"> </span><span class="nt">endif</span><span class="w"> </span><span class="cp">%}</span>
-</div>
+</code></pre></div></div>
 
 <h4 id="interactive-snippet-benefits">Interactive Snippet Benefits</h4>
 
@@ -1193,47 +1269,42 @@ img {
 
 <p><strong>Site Information:</strong></p>
 
-<div class="language-liquid highlighter-rouge">
-<span class="cp">{{</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="cp">}}</span>
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{{</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="cp">}}</span>
 <span class="cp">{{</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">description</span><span class="w"> </span><span class="cp">}}</span>
 <span class="cp">{{</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">time</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">date</span><span class="p">:</span><span class="w"> </span><span class="s2">"%B %d, %Y"</span><span class="w"> </span><span class="cp">}}</span>
 <span class="cp">{{</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">url</span><span class="w"> </span><span class="cp">}}{{</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">baseurl</span><span class="w"> </span><span class="cp">}}</span>
-</div>
+</code></pre></div></div>
 
 <p><strong>Page Information:</strong></p>
 
-<div class="language-liquid highlighter-rouge">
-<span class="cp">{{</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="cp">}}</span>
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{{</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="cp">}}</span>
 <span class="cp">{{</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">date</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">date</span><span class="p">:</span><span class="w"> </span><span class="s2">"%Y-%m-%d"</span><span class="w"> </span><span class="cp">}}</span>
 <span class="cp">{{</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">url</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">relative_url</span><span class="w"> </span><span class="cp">}}</span>
 <span class="cp">{{</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">layout</span><span class="w"> </span><span class="cp">}}</span>
-</div>
+</code></pre></div></div>
 
 <p><strong>Content Loops:</strong></p>
 
-<div class="language-liquid highlighter-rouge">
-<span class="cp">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span><span class="nv">post</span><span class="w"> </span><span class="nt">in</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">posts</span><span class="w"> </span><span class="na">limit</span><span class="o">:</span><span class="mi">5</span><span class="w"> </span><span class="cp">%}</span>
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span><span class="nv">post</span><span class="w"> </span><span class="nt">in</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">posts</span><span class="w"> </span><span class="na">limit</span><span class="o">:</span><span class="mi">5</span><span class="w"> </span><span class="cp">%}</span>
   &lt;a href="<span class="cp">{{</span><span class="w"> </span><span class="nv">post</span><span class="p">.</span><span class="nv">url</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">relative_url</span><span class="w"> </span><span class="cp">}}</span>"&gt;<span class="cp">{{</span><span class="w"> </span><span class="nv">post</span><span class="p">.</span><span class="nv">title</span><span class="w"> </span><span class="cp">}}</span>&lt;/a&gt;
 <span class="cp">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="cp">%}</span>
-</div>
+</code></pre></div></div>
 
 <p><strong>Conditional Content:</strong></p>
 
-<div class="language-liquid highlighter-rouge">
-<span class="cp">{%</span><span class="w"> </span><span class="nt">if</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">categories</span><span class="w"> </span><span class="cp">%}</span>
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{%</span><span class="w"> </span><span class="nt">if</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">categories</span><span class="w"> </span><span class="cp">%}</span>
   <span class="cp">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span><span class="nv">category</span><span class="w"> </span><span class="nt">in</span><span class="w"> </span><span class="nv">page</span><span class="p">.</span><span class="nv">categories</span><span class="w"> </span><span class="cp">%}</span>
     <span class="cp">{{</span><span class="w"> </span><span class="nv">category</span><span class="w"> </span><span class="cp">}}</span>
   <span class="cp">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="cp">%}</span>
 <span class="cp">{%</span><span class="w"> </span><span class="nt">endif</span><span class="w"> </span><span class="cp">%}</span>
-</div>
+</code></pre></div></div>
 
 <p><strong>Data File Access:</strong></p>
 
-<div class="language-liquid highlighter-rouge">
-<span class="cp">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span><span class="nv">category</span><span class="w"> </span><span class="nt">in</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">data</span><span class="p">.</span><span class="nv">categories</span><span class="w"> </span><span class="cp">%}</span>
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span><span class="nv">category</span><span class="w"> </span><span class="nt">in</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">data</span><span class="p">.</span><span class="nv">categories</span><span class="w"> </span><span class="cp">%}</span>
   <span class="cp">{{</span><span class="w"> </span><span class="nv">category</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="nv">name</span><span class="w"> </span><span class="cp">}}</span>: <span class="cp">{{</span><span class="w"> </span><span class="nv">category</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="nv">description</span><span class="w"> </span><span class="cp">}}</span>
 <span class="cp">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="cp">%}</span>
-</div>
+</code></pre></div></div>
 
 <h2 id="media-management">Media Management</h2>
 
@@ -1320,15 +1391,13 @@ img {
 
 <p>Add custom fields to content types by editing <code class="language-plaintext highlighter-rouge">frontmatter.json</code>:</p>
 
-<div class="language-json highlighter-rouge">
-<span class="p">{</span><span class="w">
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"title"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Custom Field"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"custom_field"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"single"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span>
-</div>
+</span></code></pre></div></div>
 
 <h3 id="content-templates">Content Templates</h3>
 
@@ -1500,6 +1569,15 @@ img {
           toggleNavigation();
         });
 
+        // Close button event handler
+        var closeBtn = nav.querySelector('.nav-close');
+        if (closeBtn) {
+          closeBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            toggleNavigation();
+          });
+        }
+
         document.addEventListener('click', function(e) {
           if (toggleBtn.getAttribute('aria-expanded') !== 'true') return;
 
@@ -1540,6 +1618,9 @@ img {
 
     <script src="https://www.googletagmanager.com/gtag/js?id=G-W1M1N0DCD4" crossorigin="anonymous" async></script>
     
+
+    <!-- WCAG 2.1 AA Accessibility Enhancements for scrollable regions -->
+    <script src="/assets/js/mijug-es5.min.js?v=20251112224242" defer crossorigin="anonymous"></script>
 
     <!-- Cookie consent system -->
     <!-- Google AdSense with MIJUG Cookie Consent Integration -->

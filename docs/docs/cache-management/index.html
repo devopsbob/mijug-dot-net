@@ -58,29 +58,106 @@
     display: none;
   }
 
-  /* Overlay navigation */
-  html.js nav.primary-nav.nav-overlay {
-    display: block;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.85);
-    z-index: 100;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-20px);
-    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
-    overflow-y: auto;
+  /* Overlay navigation - make sure it applies */
+  nav.primary-nav.nav-overlay {
+    display: block !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    background: rgba(0, 0, 0, 0.85) !important;
+    z-index: 100 !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transform: translateY(-20px) !important;
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease !important;
+    overflow-y: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
   }
 
-  html.js nav.primary-nav.nav-overlay.nav-visible {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
+  nav.primary-nav.nav-overlay.nav-visible {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
+  }
+
+  /* Navigation content styling */
+  .modern-nav-content {
+    display: block !important;
+    position: fixed !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    background: white !important;
+    border-radius: 8px !important;
+    padding: 2rem !important;
+    max-width: 90vw !important;
+    max-height: 80vh !important;
+    overflow-y: auto !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3) !important;
+    z-index: 101 !important;
+  }
+
+  /* Navigation close button */
+  .nav-close {
+    position: absolute !important;
+    top: 0.75rem !important;
+    right: 0.75rem !important;
+    background: none !important;
+    border: none !important;
+    font-size: 1.5rem !important;
+    line-height: 1 !important;
+    color: #666 !important;
+    cursor: pointer !important;
+    padding: 0.25rem !important;
+    border-radius: 4px !important;
+    transition: color 0.2s ease, background-color 0.2s ease !important;
+    width: 2rem !important;
+    height: 2rem !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .nav-close:hover,
+  .nav-close:focus {
+    color: #333 !important;
+    background-color: #f0f0f0 !important;
+  }
+
+  .modern-nav-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .modern-nav-content li {
+    margin: 0;
+    padding: 0;
+  }
+
+  .modern-nav-content a {
+    display: block;
+    padding: 0.75rem 1rem;
+    color: #333;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+  }
+
+  .modern-nav-content a:hover,
+  .modern-nav-content a:focus {
+    background-color: #f0f0f0;
+    color: #2c5aa0;
+  }
+
+  /* Legacy nav fallback - hidden by default */
+  .legacy-nav-fallback {
+    display: none;
   }
 
   /* Body scroll lock when overlay is open */
@@ -517,10 +594,10 @@ img {
     <meta name="google-site-verification" content="googlece83719b3f856e56" />
     <meta name="cache-version" content="20251007172153" />
 
-    <link rel="preload" as="style" href="/assets/main.css?v=20251112211259" media="print" crossorigin><link rel="stylesheet" href="/assets/main.css?v=20251112211259" media="print">
+    <link rel="preload" as="style" href="/assets/main.css?v=20251112224242" media="print" crossorigin><link rel="stylesheet" href="/assets/main.css?v=20251112224242" media="print">
 
     <noscript>
-      <link rel="stylesheet" href="/assets/main.css?v=20251112211259">
+      <link rel="stylesheet" href="/assets/main.css?v=20251112224242">
     </noscript>
 
     <link
@@ -643,6 +720,9 @@ img {
 
           <!-- Full navigation for modern browsers -->
           <div class="modern-nav-content">
+            <button class="nav-close" type="button" aria-label="Close navigation menu">
+              <span aria-hidden="true">×</span>
+            </button>
             <ul role="list">
               
                 <li role="listitem">
@@ -817,8 +897,7 @@ img {
 
 <p>Add version parameters to asset URLs:</p>
 
-<div class="language-html highlighter-rouge">
-<span class="c">&lt;!-- CSS with version parameter --&gt;</span>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- CSS with version parameter --&gt;</span>
 <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"/assets/main.css?v=1.2.3"</span> <span class="nt">/&gt;</span>
 
 <span class="c">&lt;!-- JavaScript with version parameter --&gt;</span>
@@ -826,7 +905,7 @@ img {
 
 <span class="c">&lt;!-- Images with cache busting --&gt;</span>
 <span class="nt">&lt;img</span> <span class="na">src=</span><span class="s">"/images/logo.png?v=1.2.3"</span> <span class="na">alt=</span><span class="s">"Logo"</span> <span class="nt">/&gt;</span>
-</div>
+</code></pre></div></div>
 
 <p><strong>Pros:</strong></p>
 
@@ -848,13 +927,12 @@ img {
 
 <p>Use content hashes in filenames:</p>
 
-<div class="language-html highlighter-rouge">
-<span class="c">&lt;!-- CSS with content hash --&gt;</span>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- CSS with content hash --&gt;</span>
 <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"/assets/main-a1b2c3d4.css"</span> <span class="nt">/&gt;</span>
 
 <span class="c">&lt;!-- JavaScript with content hash --&gt;</span>
 <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"/assets/app-e5f6g7h8.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
-</div>
+</code></pre></div></div>
 
 <p><strong>Pros:</strong></p>
 
@@ -876,11 +954,10 @@ img {
 
 <p>Use version numbers in directory paths:</p>
 
-<div class="language-html highlighter-rouge">
-<span class="c">&lt;!-- Versioned directory structure --&gt;</span>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Versioned directory structure --&gt;</span>
 <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"/v1.2.3/assets/main.css"</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"/v1.2.3/assets/app.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
-</div>
+</code></pre></div></div>
 
 <p><strong>Pros:</strong></p>
 
@@ -902,42 +979,38 @@ img {
 
 <h3 id="site-variables-for-cache-busting">Site Variables for Cache Busting</h3>
 
-<div class="language-yaml highlighter-rouge">
-<span class="c1"># _config.yml</span>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># _config.yml</span>
 <span class="na">version</span><span class="pi">:</span> <span class="s2">"</span><span class="s">1.2.3"</span>
 <span class="na">cache_bust</span><span class="pi">:</span> <span class="s">20240130-143022</span>
-</div>
+</code></pre></div></div>
 
-<div class="language-html highlighter-rouge">
-<span class="c">&lt;!-- In templates --&gt;</span>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- In templates --&gt;</span>
 <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"/assets/main.css?v=1.0.0"</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"/assets/app.js?v=true"</span><span class="nt">&gt;&lt;/script&gt;</span>
-</div>
+</code></pre></div></div>
 
 <h3 id="build-time-cache-busting">Build-Time Cache Busting</h3>
 
-<div class="language-yaml highlighter-rouge">
-<span class="c1"># _config.yml</span>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># _config.yml</span>
 <span class="na">plugins</span><span class="pi">:</span>
   <span class="pi">-</span> <span class="s">jekyll-cache-bust</span>
 
 <span class="na">cache_bust</span><span class="pi">:</span>
   <span class="na">enabled</span><span class="pi">:</span> <span class="kc">true</span>
   <span class="na">strategy</span><span class="pi">:</span> <span class="s2">"</span><span class="s">content_hash"</span>
-</div>
+</code></pre></div></div>
 
 <h3 id="liquid-template-cache-busting">Liquid Template Cache Busting</h3>
 
-<div class="language-html highlighter-rouge">
-<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"/assets/main.css?v=1762999979"</span> <span class="nt">/&gt;</span>
-</div>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"/assets/main.css?v=1763005362"</span> <span class="nt">/&gt;</span>
+</code></pre></div></div>
 
 <h2 id="http-headers-for-cache-control">HTTP Headers for Cache Control</h2>
 
 <h3 id="cache-control-headers">Cache-Control Headers</h3>
 
-<div class="language-apache highlighter-rouge">
-<span class="c"># .htaccess for Apache</span>
+<div class="language-apache highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># .htaccess for Apache</span>
 <span class="p">&lt;</span><span class="nl">IfModule</span><span class="sr"> mod_expires.c</span><span class="p">&gt;
 </span>    <span class="nc">ExpiresActive</span> <span class="ss">on</span>
 
@@ -968,13 +1041,11 @@ img {
 </span>        <span class="nc">Header</span> <span class="ss">set</span> Cache-Control "public, max-age=3600, must-revalidate"
     <span class="p">&lt;/</span><span class="nl">FilesMatch</span><span class="p">&gt;
 &lt;/</span><span class="nl">IfModule</span><span class="p">&gt;
-</span>
-</div>
+</span></code></pre></div></div>
 
 <h3 id="nginx-configuration">Nginx Configuration</h3>
 
-<div class="language-nginx highlighter-rouge">
-<span class="c1"># nginx.conf</span>
+<div class="language-nginx highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># nginx.conf</span>
 <span class="k">location</span> <span class="p">~</span><span class="sr">*</span> <span class="err">\</span><span class="s">.(css|js|png|jpg|jpeg|gif|svg)</span>$ <span class="p">{</span>
     <span class="kn">expires</span> <span class="s">1y</span><span class="p">;</span>
     <span class="kn">add_header</span> <span class="s">Cache-Control</span> <span class="s">"public,</span> <span class="s">immutable"</span><span class="p">;</span>
@@ -985,36 +1056,33 @@ img {
     <span class="kn">expires</span> <span class="s">1h</span><span class="p">;</span>
     <span class="kn">add_header</span> <span class="s">Cache-Control</span> <span class="s">"public,</span> <span class="s">must-revalidate"</span><span class="p">;</span>
 <span class="p">}</span>
-</div>
+</code></pre></div></div>
 
 <h3 id="meta-tags-for-html-caching">Meta Tags for HTML Caching</h3>
 
-<div class="language-html highlighter-rouge">
-<span class="c">&lt;!-- Prevent caching of HTML pages --&gt;</span>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Prevent caching of HTML pages --&gt;</span>
 <span class="nt">&lt;meta</span> <span class="na">http-equiv=</span><span class="s">"Cache-Control"</span> <span class="na">content=</span><span class="s">"no-cache, no-store, must-revalidate"</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;meta</span> <span class="na">http-equiv=</span><span class="s">"Pragma"</span> <span class="na">content=</span><span class="s">"no-cache"</span> <span class="nt">/&gt;</span>
 <span class="nt">&lt;meta</span> <span class="na">http-equiv=</span><span class="s">"Expires"</span> <span class="na">content=</span><span class="s">"0"</span> <span class="nt">/&gt;</span>
 
 <span class="c">&lt;!-- Or allow short-term caching --&gt;</span>
 <span class="nt">&lt;meta</span> <span class="na">http-equiv=</span><span class="s">"Cache-Control"</span> <span class="na">content=</span><span class="s">"public, max-age=3600"</span> <span class="nt">/&gt;</span>
-</div>
+</code></pre></div></div>
 
 <h2 id="cdn-and-performance-optimization">CDN and Performance Optimization</h2>
 
 <h3 id="cdn-cache-busting">CDN Cache Busting</h3>
 
-<div class="language-html highlighter-rouge">
-<span class="c">&lt;!-- Version in CDN URLs --&gt;</span>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Version in CDN URLs --&gt;</span>
 <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"https://cdn.example.com/v1.2.3/app.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
 
 <span class="c">&lt;!-- Hash-based CDN URLs --&gt;</span>
 <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"https://cdn.example.com/main-a1b2c3d4.css"</span> <span class="nt">/&gt;</span>
-</div>
+</code></pre></div></div>
 
 <h3 id="preloading-critical-assets">Preloading Critical Assets</h3>
 
-<div class="language-html highlighter-rouge">
-<span class="c">&lt;!-- Preload critical CSS --&gt;</span>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- Preload critical CSS --&gt;</span>
 <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"preload"</span> <span class="na">href=</span><span class="s">"/assets/critical.css?v=1.2.3"</span> <span class="na">as=</span><span class="s">"style"</span> <span class="nt">/&gt;</span>
 
 <span class="c">&lt;!-- Preload important JavaScript --&gt;</span>
@@ -1022,12 +1090,11 @@ img {
 
 <span class="c">&lt;!-- Preload hero images --&gt;</span>
 <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"preload"</span> <span class="na">href=</span><span class="s">"/images/hero.jpg?v=1.2.3"</span> <span class="na">as=</span><span class="s">"image"</span> <span class="nt">/&gt;</span>
-</div>
+</code></pre></div></div>
 
 <h3 id="resource-hints">Resource Hints</h3>
 
-<div class="language-html highlighter-rouge">
-<span class="c">&lt;!-- DNS prefetch for external resources --&gt;</span>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">&lt;!-- DNS prefetch for external resources --&gt;</span>
 <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"dns-prefetch"</span> <span class="na">href=</span><span class="s">"//cdn.example.com"</span> <span class="nt">/&gt;</span>
 
 <span class="c">&lt;!-- Preconnect to external domains --&gt;</span>
@@ -1035,14 +1102,13 @@ img {
 
 <span class="c">&lt;!-- Prefetch next page resources --&gt;</span>
 <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"prefetch"</span> <span class="na">href=</span><span class="s">"/next-page.html"</span> <span class="nt">/&gt;</span>
-</div>
+</code></pre></div></div>
 
 <h2 id="development-vs-production">Development vs. Production</h2>
 
 <h3 id="development-environment">Development Environment</h3>
 
-<div class="language-yaml highlighter-rouge">
-<span class="c1"># _config_dev.yml</span>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># _config_dev.yml</span>
 <span class="na">cache_bust</span><span class="pi">:</span> <span class="kc">false</span>
 <span class="na">version</span><span class="pi">:</span> <span class="s2">"</span><span class="s">dev"</span>
 
@@ -1052,12 +1118,11 @@ img {
 
 <span class="na">cache_bust</span><span class="pi">:</span>
   <span class="na">enabled</span><span class="pi">:</span> <span class="kc">false</span>
-</div>
+</code></pre></div></div>
 
 <h3 id="production-environment">Production Environment</h3>
 
-<div class="language-yaml highlighter-rouge">
-<span class="c1"># _config_prod.yml</span>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># _config_prod.yml</span>
 <span class="na">cache_bust</span><span class="pi">:</span> <span class="kc">true</span>
 <span class="na">version</span><span class="pi">:</span> <span class="s2">"</span><span class="s">1.2.3"</span>
 
@@ -1069,7 +1134,7 @@ img {
   <span class="na">enabled</span><span class="pi">:</span> <span class="kc">true</span>
   <span class="na">strategy</span><span class="pi">:</span> <span class="s1">'</span><span class="s">content_hash'</span>
   <span class="na">extensions</span><span class="pi">:</span> <span class="pi">[</span><span class="s1">'</span><span class="s">css'</span><span class="pi">,</span> <span class="s1">'</span><span class="s">js'</span><span class="pi">,</span> <span class="s1">'</span><span class="s">png'</span><span class="pi">,</span> <span class="s1">'</span><span class="s">jpg'</span><span class="pi">]</span>
-</div>
+</code></pre></div></div>
 
 <h2 id="monitoring-and-testing">Monitoring and Testing</h2>
 
@@ -1088,8 +1153,7 @@ img {
 
 <h3 id="testing-cache-behavior">Testing Cache Behavior</h3>
 
-<div class="language-bash highlighter-rouge">
-<span class="c"># Test cache headers</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Test cache headers</span>
 curl <span class="nt">-I</span> https://yoursite.com/assets/main.css
 
 <span class="c"># Test with different user agents</span>
@@ -1097,12 +1161,11 @@ curl <span class="nt">-H</span> <span class="s2">"User-Agent: Mozilla/5.0..."</s
 
 <span class="c"># Check cache validation</span>
 curl <span class="nt">-H</span> <span class="s2">"If-Modified-Since: Wed, 21 Oct 2015 07:28:00 GMT"</span> <span class="nt">-I</span> https://yoursite.com/
-</div>
+</code></pre></div></div>
 
 <h3 id="cache-debugging">Cache Debugging</h3>
 
-<div class="language-javascript highlighter-rouge">
-<span class="c1">// Check if resource was served from cache</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Check if resource was served from cache</span>
 <span class="nb">window</span><span class="p">.</span><span class="nf">addEventListener</span><span class="p">(</span><span class="dl">"</span><span class="s2">load</span><span class="dl">"</span><span class="p">,</span> <span class="nf">function </span><span class="p">()</span> <span class="p">{</span>
   <span class="kd">const</span> <span class="nx">entries</span> <span class="o">=</span> <span class="nx">performance</span><span class="p">.</span><span class="nf">getEntriesByType</span><span class="p">(</span><span class="dl">"</span><span class="s2">resource</span><span class="dl">"</span><span class="p">);</span>
   <span class="nx">entries</span><span class="p">.</span><span class="nf">forEach</span><span class="p">((</span><span class="nx">entry</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
@@ -1113,7 +1176,7 @@ curl <span class="nt">-H</span> <span class="s2">"If-Modified-Since: Wed, 21 Oct
     <span class="p">}</span>
   <span class="p">});</span>
 <span class="p">});</span>
-</div>
+</code></pre></div></div>
 
 <h2 id="best-practices">Best Practices</h2>
 
@@ -1249,6 +1312,15 @@ curl <span class="nt">-H</span> <span class="s2">"If-Modified-Since: Wed, 21 Oct
           toggleNavigation();
         });
 
+        // Close button event handler
+        var closeBtn = nav.querySelector('.nav-close');
+        if (closeBtn) {
+          closeBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            toggleNavigation();
+          });
+        }
+
         document.addEventListener('click', function(e) {
           if (toggleBtn.getAttribute('aria-expanded') !== 'true') return;
 
@@ -1289,6 +1361,9 @@ curl <span class="nt">-H</span> <span class="s2">"If-Modified-Since: Wed, 21 Oct
 
     <script src="https://www.googletagmanager.com/gtag/js?id=G-W1M1N0DCD4" crossorigin="anonymous" async></script>
     
+
+    <!-- WCAG 2.1 AA Accessibility Enhancements for scrollable regions -->
+    <script src="/assets/js/mijug-es5.min.js?v=20251112224242" defer crossorigin="anonymous"></script>
 
     <!-- Cookie consent system -->
     <!-- Google AdSense with MIJUG Cookie Consent Integration -->

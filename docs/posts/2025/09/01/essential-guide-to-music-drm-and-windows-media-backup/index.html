@@ -58,29 +58,106 @@
     display: none;
   }
 
-  /* Overlay navigation */
-  html.js nav.primary-nav.nav-overlay {
-    display: block;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.85);
-    z-index: 100;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-20px);
-    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
-    overflow-y: auto;
+  /* Overlay navigation - make sure it applies */
+  nav.primary-nav.nav-overlay {
+    display: block !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    background: rgba(0, 0, 0, 0.85) !important;
+    z-index: 100 !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transform: translateY(-20px) !important;
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease !important;
+    overflow-y: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
   }
 
-  html.js nav.primary-nav.nav-overlay.nav-visible {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
+  nav.primary-nav.nav-overlay.nav-visible {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
+  }
+
+  /* Navigation content styling */
+  .modern-nav-content {
+    display: block !important;
+    position: fixed !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    background: white !important;
+    border-radius: 8px !important;
+    padding: 2rem !important;
+    max-width: 90vw !important;
+    max-height: 80vh !important;
+    overflow-y: auto !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3) !important;
+    z-index: 101 !important;
+  }
+
+  /* Navigation close button */
+  .nav-close {
+    position: absolute !important;
+    top: 0.75rem !important;
+    right: 0.75rem !important;
+    background: none !important;
+    border: none !important;
+    font-size: 1.5rem !important;
+    line-height: 1 !important;
+    color: #666 !important;
+    cursor: pointer !important;
+    padding: 0.25rem !important;
+    border-radius: 4px !important;
+    transition: color 0.2s ease, background-color 0.2s ease !important;
+    width: 2rem !important;
+    height: 2rem !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .nav-close:hover,
+  .nav-close:focus {
+    color: #333 !important;
+    background-color: #f0f0f0 !important;
+  }
+
+  .modern-nav-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .modern-nav-content li {
+    margin: 0;
+    padding: 0;
+  }
+
+  .modern-nav-content a {
+    display: block;
+    padding: 0.75rem 1rem;
+    color: #333;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+  }
+
+  .modern-nav-content a:hover,
+  .modern-nav-content a:focus {
+    background-color: #f0f0f0;
+    color: #2c5aa0;
+  }
+
+  /* Legacy nav fallback - hidden by default */
+  .legacy-nav-fallback {
+    display: none;
   }
 
   /* Body scroll lock when overlay is open */
@@ -511,10 +588,10 @@ img {
     <meta name="google-site-verification" content="googlece83719b3f856e56" />
     <meta name="cache-version" content="20251007172153" />
 
-    <link rel="preload" as="style" href="/assets/main.css?v=20251112211259" media="print" crossorigin><link rel="stylesheet" href="/assets/main.css?v=20251112211259" media="print">
+    <link rel="preload" as="style" href="/assets/main.css?v=20251112224242" media="print" crossorigin><link rel="stylesheet" href="/assets/main.css?v=20251112224242" media="print">
 
     <noscript>
-      <link rel="stylesheet" href="/assets/main.css?v=20251112211259">
+      <link rel="stylesheet" href="/assets/main.css?v=20251112224242">
     </noscript>
 
     <link
@@ -621,6 +698,9 @@ img {
 
           <!-- Full navigation for modern browsers -->
           <div class="modern-nav-content">
+            <button class="nav-close" type="button" aria-label="Close navigation menu">
+              <span aria-hidden="true">×</span>
+            </button>
             <ul role="list">
               
                 <li role="listitem">
@@ -768,16 +848,16 @@ img {
       </span></p>
 <p class="post-description">DRM is a way for companies to control how you use digital files, like music and movies, to prevent unauthorized copying or sharing.</p>
 <div class="post-tags">
-<span class="tag">#drm</span><span class="tag">#music</span><span class="tag">#video</span><span class="tag">#backup</span><span class="tag">#security</span><span class="tag">#windows</span><span class="tag">#linux</span><span class="tag">#legal</span><span class="tag">#copyright</span>
+<a href="/tag/drm" class="tag-link">#drm</a><a href="/tag/music" class="tag-link">#music</a><a href="/tag/video" class="tag-link">#video</a><a href="/tag/backup" class="tag-link">#backup</a><a href="/tag/security" class="tag-link">#security</a><a href="/tag/windows" class="tag-link">#windows</a><a href="/tag/linux" class="tag-link">#linux</a><a href="/tag/legal" class="tag-link">#legal</a><a href="/tag/copyright" class="tag-link">#copyright</a>
 </div></header>
 
   <div class="post-content e-content" itemprop="articleBody">
 <h2 id="welcome-to-the-wild-world-of-digital-music-and-video-ownership">Welcome to the Wild World of Digital Music and Video Ownership!</h2>
 
-<p><strong>Quick Summary:</strong><br>
+<p><strong>Quick Summary:</strong>
 If you listen to music or watch movies online, you’ve probably used services like Spotify, Apple Music, Netflix, or Amazon Prime. These services use something called DRM (Digital Rights Management) to control how you use their songs and videos. This guide explains DRM in simple terms, how it affects you, and what you can do to keep your music and videos safe.</p>
 
-<p><strong>Think of DRM like a magical library card:</strong><br>
+<p><strong>Think of DRM like a magical library card:</strong>
 Imagine a library where every book is enchanted. When you borrow a book, it opens just for you—no one else can read it, and you can’t copy the pages to give to your friends. The magic keeps the author’s work safe, so they get credit and reward for their creation. But it also means you, the reader, can enjoy the story as long as you follow the library’s rules. DRM works a bit like this: it protects the creator’s rights while letting you enjoy the music or movie—just not in any way you want.</p>
 
 <p>This article is written for everyone—including older adults and those who aren’t tech experts. We use plain language and explain any technical words.</p>
@@ -786,7 +866,7 @@ Imagine a library where every book is enchanted. When you borrow a book, it open
 
 <p>When you buy or stream music and videos online, you don’t always get a simple file you can use anywhere. Instead, DRM technology is used to lock these files. This means you need special permission—called a license or key—to play them. Usually, this permission is linked to your account (like your Apple ID or Microsoft account) or your specific device (your computer or phone).</p>
 
-<p><strong>What does this mean for you?</strong><br>
+<p><strong>What does this mean for you?</strong>
 You can listen or watch on approved devices and apps, but you can’t copy or share the files freely. This is different from old CDs or DVDs, which you could play anywhere.</p>
 
 <p><strong>Common DRM systems:</strong></p>
@@ -828,8 +908,8 @@ You can listen or watch on approved devices and apps, but you can’t copy or sh
   <p><strong>In summary:</strong> DRM on streaming services means you can’t copy, share, or play downloaded content outside the official apps. This protects copyright holders but can limit your ability to use content across different devices or platforms. If you’re ever stuck, check the help links at the end of this article.</p>
 </blockquote>
 
-<p>For more background, see:<br>
-<a href="https://www.riaa.com/resources-learning/" rel="external noopener noreferrer" target="_blank">Recording Industry Association of America (RIAA): Resources and Learning</a><br><br>
+<p>For more background, see:
+<a href="https://www.riaa.com/resources-learning/" rel="external noopener noreferrer" target="_blank">Recording Industry Association of America (RIAA): Resources and Learning</a><br>
 <a href="https://www.ifpi.org/resources/" rel="external noopener noreferrer" target="_blank">International Federation of the Phonographic Industry (IFPI): Resources</a></p>
 
 <h3 id="where-are-my-keys-stored">Where Are My Keys Stored?</h3>
@@ -895,14 +975,14 @@ You can listen or watch on approved devices and apps, but you can’t copy or sh
 
 <p>In the United States, the law is strict about DRM. The Digital Millennium Copyright Act (DMCA) says you can’t break DRM, even for personal use, except in special cases (like for accessibility or if you qualify for an exemption).</p>
 
-<p><a href="https://www.copyright.gov/title17/" rel="external noopener noreferrer" target="_blank">U.S. Copyright Office: Copyright Law</a><br><br>
+<p><a href="https://www.copyright.gov/title17/" rel="external noopener noreferrer" target="_blank">U.S. Copyright Office: Copyright Law</a><br>
 <a href="https://www.copyright.gov/1201/" rel="external noopener noreferrer" target="_blank">U.S. Copyright Office: DMCA Exemptions</a></p>
 
 <h3 id="eu-copyright-law">EU Copyright Law</h3>
 
 <p>In the European Union, the rules are a bit more flexible. Some countries let you make a personal backup, but the details vary. You may have to pay a small fee (built into the price) to support artists.</p>
 
-<p><a href="https://commission.europa.eu/law/law-topic/data-protection_en" rel="external noopener noreferrer" target="_blank">EU Data Protection</a><br><br>
+<p><a href="https://commission.europa.eu/law/law-topic/data-protection_en" rel="external noopener noreferrer" target="_blank">EU Data Protection</a><br>
 <a href="https://eur-lex.europa.eu/legal-content/EN/LSU/?uri=celex:32001L0029" rel="external noopener noreferrer" target="_blank">EUR-Lex: Directive 2001/29/EC</a></p>
 
 <h3 id="do-i-own-my-music-or-just-a-license">Do I Own My Music or Just a License?</h3>
@@ -943,16 +1023,16 @@ You can listen or watch on approved devices and apps, but you can’t copy or sh
 
 <h2 id="frequently-asked-questions-faq">Frequently Asked Questions (FAQ)</h2>
 
-<p><strong>Q: Why can’t I play my old music files on my new computer?</strong><br>
+<p><strong>Q: Why can’t I play my old music files on my new computer?</strong>
 A: You may be missing the DRM keys or licenses. Try restoring from a backup or signing in with your original account.</p>
 
-<p><strong>Q: Is it legal to make a backup of my music?</strong><br>
+<p><strong>Q: Is it legal to make a backup of my music?</strong>
 A: It depends on your country and whether you have to break DRM to do it. Check the law and your service’s terms.</p>
 
-<p><strong>Q: Can I give my music files to a friend or family member?</strong><br>
+<p><strong>Q: Can I give my music files to a friend or family member?</strong>
 A: Usually not. Most licenses are for personal use only.</p>
 
-<p><strong>Q: Where can I learn more about copyright and music?</strong><br>
+<p><strong>Q: Where can I learn more about copyright and music?</strong>
 A: See the links to the RIAA, IFPI, and government copyright offices above.</p>
 
 <hr>
@@ -1131,6 +1211,15 @@ A: See the links to the RIAA, IFPI, and government copyright offices above.</p>
           toggleNavigation();
         });
 
+        // Close button event handler
+        var closeBtn = nav.querySelector('.nav-close');
+        if (closeBtn) {
+          closeBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            toggleNavigation();
+          });
+        }
+
         document.addEventListener('click', function(e) {
           if (toggleBtn.getAttribute('aria-expanded') !== 'true') return;
 
@@ -1171,6 +1260,9 @@ A: See the links to the RIAA, IFPI, and government copyright offices above.</p>
 
     <script src="https://www.googletagmanager.com/gtag/js?id=G-W1M1N0DCD4" crossorigin="anonymous" async></script>
     
+
+    <!-- WCAG 2.1 AA Accessibility Enhancements for scrollable regions -->
+    <script src="/assets/js/mijug-es5.min.js?v=20251112224242" defer crossorigin="anonymous"></script>
 
     <!-- Cookie consent system -->
     <!-- Google AdSense with MIJUG Cookie Consent Integration -->

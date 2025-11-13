@@ -58,29 +58,106 @@
     display: none;
   }
 
-  /* Overlay navigation */
-  html.js nav.primary-nav.nav-overlay {
-    display: block;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.85);
-    z-index: 100;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-20px);
-    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
-    overflow-y: auto;
+  /* Overlay navigation - make sure it applies */
+  nav.primary-nav.nav-overlay {
+    display: block !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    background: rgba(0, 0, 0, 0.85) !important;
+    z-index: 100 !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transform: translateY(-20px) !important;
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease !important;
+    overflow-y: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
   }
 
-  html.js nav.primary-nav.nav-overlay.nav-visible {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
+  nav.primary-nav.nav-overlay.nav-visible {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
+  }
+
+  /* Navigation content styling */
+  .modern-nav-content {
+    display: block !important;
+    position: fixed !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    background: white !important;
+    border-radius: 8px !important;
+    padding: 2rem !important;
+    max-width: 90vw !important;
+    max-height: 80vh !important;
+    overflow-y: auto !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3) !important;
+    z-index: 101 !important;
+  }
+
+  /* Navigation close button */
+  .nav-close {
+    position: absolute !important;
+    top: 0.75rem !important;
+    right: 0.75rem !important;
+    background: none !important;
+    border: none !important;
+    font-size: 1.5rem !important;
+    line-height: 1 !important;
+    color: #666 !important;
+    cursor: pointer !important;
+    padding: 0.25rem !important;
+    border-radius: 4px !important;
+    transition: color 0.2s ease, background-color 0.2s ease !important;
+    width: 2rem !important;
+    height: 2rem !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .nav-close:hover,
+  .nav-close:focus {
+    color: #333 !important;
+    background-color: #f0f0f0 !important;
+  }
+
+  .modern-nav-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .modern-nav-content li {
+    margin: 0;
+    padding: 0;
+  }
+
+  .modern-nav-content a {
+    display: block;
+    padding: 0.75rem 1rem;
+    color: #333;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+  }
+
+  .modern-nav-content a:hover,
+  .modern-nav-content a:focus {
+    background-color: #f0f0f0;
+    color: #2c5aa0;
+  }
+
+  /* Legacy nav fallback - hidden by default */
+  .legacy-nav-fallback {
+    display: none;
   }
 
   /* Body scroll lock when overlay is open */
@@ -517,10 +594,10 @@ img {
     <meta name="google-site-verification" content="googlece83719b3f856e56" />
     <meta name="cache-version" content="20251007172153" />
 
-    <link rel="preload" as="style" href="/assets/main.css?v=20251112211259" media="print" crossorigin><link rel="stylesheet" href="/assets/main.css?v=20251112211259" media="print">
+    <link rel="preload" as="style" href="/assets/main.css?v=20251112224242" media="print" crossorigin><link rel="stylesheet" href="/assets/main.css?v=20251112224242" media="print">
 
     <noscript>
-      <link rel="stylesheet" href="/assets/main.css?v=20251112211259">
+      <link rel="stylesheet" href="/assets/main.css?v=20251112224242">
     </noscript>
 
     <link
@@ -643,6 +720,9 @@ img {
 
           <!-- Full navigation for modern browsers -->
           <div class="modern-nav-content">
+            <button class="nav-close" type="button" aria-label="Close navigation menu">
+              <span aria-hidden="true">×</span>
+            </button>
             <ul role="list">
               
                 <li role="listitem">
@@ -870,8 +950,7 @@ img {
 
 <h3 id="essential-commands">Essential Commands</h3>
 
-<div class="language-bash highlighter-rouge">
-<span class="c"># 1. Install dependencies</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># 1. Install dependencies</span>
 npm <span class="nb">install
 cd </span>docs <span class="o">&amp;&amp;</span> bundle <span class="nb">install</span> <span class="o">&amp;&amp;</span> <span class="nb">cd</span> ..
 
@@ -888,7 +967,7 @@ npm run dev:optimized          <span class="c"># Parallel TypeScript + Jekyll de
 
 <span class="c"># 3. Verify setup</span>
 npm run health-check          <span class="c"># Comprehensive environment validation</span>
-</div>
+</code></pre></div></div>
 
 <h3 id="technology-stack">Technology Stack</h3>
 
@@ -907,7 +986,7 @@ npm run health-check          <span class="c"># Comprehensive environment valida
 
 <h3 id="workspace-structure">Workspace Structure</h3>
 
-<div class="language-plaintext highlighter-rouge">mijug-dot-net-project/          # Development workspace
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mijug-dot-net-project/          # Development workspace
 ├── src/                        # TypeScript source code
 ├── docs/                       # Jekyll documentation site
 ├── tests/                      # Jest unit tests
@@ -917,7 +996,7 @@ npm run health-check          <span class="c"># Comprehensive environment valida
 
 mijug-dot-net/                  # Auto-generated public repository
 └── docs/                       # Deployed Jekyll site
-</div>
+</code></pre></div></div>
 
 <h3 id="development-philosophy">Development Philosophy</h3>
 
@@ -936,19 +1015,17 @@ mijug-dot-net/                  # Auto-generated public repository
 
 <h3 id="-quick-start-development">🚀 Quick Start Development</h3>
 
-<div class="language-bash highlighter-rouge">
-<span class="c"># Ultra-fast startup (&lt; 15 seconds)</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Ultra-fast startup (&lt; 15 seconds)</span>
 npm run quick:start             <span class="c"># TypeScript + Jekyll with drafts + monitoring</span>
 npm run dev:fast               <span class="c"># Skip initial build for rapid iteration</span>
 
 <span class="c"># Comprehensive development</span>
 npm run dev:optimized          <span class="c"># Memory-efficient parallel development</span>
-</div>
+</code></pre></div></div>
 
 <h3 id="-testing-workflows">🧪 Testing Workflows</h3>
 
-<div class="language-bash highlighter-rouge">
-<span class="c"># Quick validation (&lt; 15 seconds)</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Quick validation (&lt; 15 seconds)</span>
 npm run <span class="nb">test</span>:smoke             <span class="c"># Unit + Chromium E2E</span>
 
 <span class="c"># Comprehensive testing (&lt; 90 seconds)</span>
@@ -957,12 +1034,11 @@ npm run <span class="nb">test</span>:all:safe          <span class="c"># Jest + 
 <span class="c"># Specialized testing</span>
 npm run <span class="nb">test</span>:a11y              <span class="c"># WCAG 2.1 AA compliance testing</span>
 npm run <span class="nb">test</span>:browser-compat    <span class="c"># Multi-browser compatibility matrix</span>
-</div>
+</code></pre></div></div>
 
 <h3 id="️-build--deployment">🏗️ Build &amp; Deployment</h3>
 
-<div class="language-bash highlighter-rouge">
-<span class="c"># Development builds</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Development builds</span>
 npm run build:parallel         <span class="c"># TypeScript + Jekyll simultaneously</span>
 npm run build:fast             <span class="c"># Rapid iteration builds</span>
 
@@ -972,7 +1048,7 @@ npm run deploy:optimized       <span class="c"># Automated private → public sy
 
 <span class="c"># Pre-commit validation</span>
 npm run precheckin             <span class="c"># Format → lint → clean → build → test → validate</span>
-</div>
+</code></pre></div></div>
 
 <h2 id="key-features--capabilities">Key Features &amp; Capabilities</h2>
 
@@ -1032,20 +1108,18 @@ npm run precheckin             <span class="c"># Format → lint → clean → b
 
 <h3 id="nodejs--typescript">Node.js &amp; TypeScript</h3>
 
-<div class="language-bash highlighter-rouge">
-<span class="c"># Verify Node.js version (22.8+ LTS required)</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Verify Node.js version (22.8+ LTS required)</span>
 node <span class="nt">--version</span>
 npm <span class="nt">--version</span>
 
 <span class="c"># TypeScript compilation check</span>
 npx tsc <span class="nt">--noEmit</span>                <span class="c"># Type checking without output</span>
 npm run build:ts               <span class="c"># Full TypeScript build</span>
-</div>
+</code></pre></div></div>
 
 <h3 id="ruby--jekyll">Ruby &amp; Jekyll</h3>
 
-<div class="language-bash highlighter-rouge">
-<span class="c"># Verify Ruby version (3.3.8+ required)</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Verify Ruby version (3.3.8+ required)</span>
 ruby <span class="nt">--version</span>
 bundle <span class="nt">--version</span>
 
@@ -1053,14 +1127,13 @@ bundle <span class="nt">--version</span>
 <span class="nb">cd </span>docs
 bundle <span class="nb">exec </span>jekyll serve <span class="nt">--livereload</span> <span class="nt">--drafts</span>  <span class="c"># Development server</span>
 bundle <span class="nb">exec </span>jekyll build                        <span class="c"># Production build</span>
-</div>
+</code></pre></div></div>
 
 <h3 id="code-examples">Code Examples</h3>
 
 <h4 id="typescript-function-with-types">TypeScript Function with Types</h4>
 
-<div class="language-typescript highlighter-rouge">
-<span class="k">export</span> <span class="kr">interface</span> <span class="nx">WorkspaceConfig</span> <span class="p">{</span>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">export</span> <span class="kr">interface</span> <span class="nx">WorkspaceConfig</span> <span class="p">{</span>
   <span class="nl">name</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
   <span class="nl">version</span><span class="p">:</span> <span class="kr">string</span><span class="p">;</span>
   <span class="nl">features</span><span class="p">:</span> <span class="kr">string</span><span class="p">[];</span>
@@ -1081,12 +1154,11 @@ bundle <span class="nb">exec </span>jekyll build                        <span cl
 <span class="nf">createWorkspace</span><span class="p">(</span><span class="nx">config</span><span class="p">).</span><span class="nf">then</span><span class="p">((</span><span class="nx">success</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
   <span class="nx">console</span><span class="p">.</span><span class="nf">log</span><span class="p">(</span><span class="dl">"</span><span class="s2">Workspace ready:</span><span class="dl">"</span><span class="p">,</span> <span class="nx">success</span><span class="p">);</span>
 <span class="p">});</span>
-</div>
+</code></pre></div></div>
 
 <h4 id="jekyll-front-matter-configuration">Jekyll Front Matter Configuration</h4>
 
-<div class="language-yaml highlighter-rouge">
-<span class="nn">---</span>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
 <span class="na">layout</span><span class="pi">:</span> <span class="s">post</span>
 <span class="na">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Development</span><span class="nv"> </span><span class="s">Guide"</span>
 <span class="na">date</span><span class="pi">:</span> <span class="s">2025-09-08</span>
@@ -1096,12 +1168,11 @@ bundle <span class="nb">exec </span>jekyll build                        <span cl
 <span class="na">description</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Complete</span><span class="nv"> </span><span class="s">development</span><span class="nv"> </span><span class="s">environment</span><span class="nv"> </span><span class="s">setup"</span>
 <span class="na">author</span><span class="pi">:</span> <span class="s2">"</span><span class="s">MIJUG</span><span class="nv"> </span><span class="s">Team"</span>
 <span class="nn">---</span>
-</div>
+</code></pre></div></div>
 
 <h4 id="packagejson-script-examples">Package.json Script Examples</h4>
 
-<div class="language-json highlighter-rouge">
-<span class="p">{</span><span class="w">
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"scripts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
     </span><span class="nl">"dev:optimized"</span><span class="p">:</span><span class="w"> </span><span class="s2">"concurrently </span><span class="se">\"</span><span class="s2">npm run dev:ts</span><span class="se">\"</span><span class="s2"> </span><span class="se">\"</span><span class="s2">npm run dev:jekyll</span><span class="se">\"</span><span class="s2"> --names </span><span class="se">\"</span><span class="s2">TS,Jekyll</span><span class="se">\"</span><span class="s2">"</span><span class="p">,</span><span class="w">
     </span><span class="nl">"test:all:safe"</span><span class="p">:</span><span class="w"> </span><span class="s2">"npm run test:unit &amp;&amp; npm run test:e2e &amp;&amp; npm run test:a11y"</span><span class="p">,</span><span class="w">
@@ -1109,8 +1180,7 @@ bundle <span class="nb">exec </span>jekyll build                        <span cl
     </span><span class="nl">"precheckin"</span><span class="p">:</span><span class="w"> </span><span class="s2">"npm run format &amp;&amp; npm run lint:fix &amp;&amp; npm run clean &amp;&amp; npm run build:all &amp;&amp; npm run test:all"</span><span class="w">
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
-</span>
-</div>
+</span></code></pre></div></div>
 
 <h2 id="troubleshooting">Troubleshooting</h2>
 
@@ -1118,23 +1188,21 @@ bundle <span class="nb">exec </span>jekyll build                        <span cl
 
 <h4 id="nodejs-version-problems">Node.js Version Problems</h4>
 
-<p><strong>Problem</strong>: TypeScript compilation fails or npm scripts error<br>
+<p><strong>Problem</strong>: TypeScript compilation fails or npm scripts error
 <strong>Solution</strong>:</p>
 
-<div class="language-bash highlighter-rouge">
-<span class="c"># Use Node Version Manager</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Use Node Version Manager</span>
 nvm <span class="nb">install</span> <span class="nt">--lts</span>
 nvm use <span class="nt">--lts</span>
 nvm <span class="nb">alias </span>default node
-</div>
+</code></pre></div></div>
 
 <h4 id="rubyjekyll-issues">Ruby/Jekyll Issues</h4>
 
-<p><strong>Problem</strong>: Bundle install fails or Jekyll won’t start<br>
+<p><strong>Problem</strong>: Bundle install fails or Jekyll won’t start
 <strong>Solution</strong>:</p>
 
-<div class="language-bash highlighter-rouge">
-<span class="c"># Configure Ruby environment</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Configure Ruby environment</span>
 <span class="nb">echo</span> <span class="s1">'export GEM_HOME=$HOME/gems'</span> <span class="o">&gt;&gt;</span> ~/.bashrc
 <span class="nb">echo</span> <span class="s1">'export PATH=$HOME/gems/bin:$PATH'</span> <span class="o">&gt;&gt;</span> ~/.bashrc
 <span class="nb">source</span> ~/.bashrc
@@ -1143,30 +1211,28 @@ nvm <span class="nb">alias </span>default node
 <span class="nb">cd </span>docs
 bundle clean <span class="nt">--force</span>
 bundle <span class="nb">install</span>
-</div>
+</code></pre></div></div>
 
 <h4 id="permission-errors">Permission Errors</h4>
 
-<p><strong>Problem</strong>: Cannot write to directories or install packages<br>
+<p><strong>Problem</strong>: Cannot write to directories or install packages
 <strong>Solution</strong>:</p>
 
-<div class="language-bash highlighter-rouge">
-<span class="c"># Fix npm permissions (avoid sudo)</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Fix npm permissions (avoid sudo)</span>
 <span class="nb">mkdir</span> ~/.npm-global
 npm config <span class="nb">set </span>prefix <span class="s1">'~/.npm-global'</span>
 <span class="nb">echo</span> <span class="s1">'export PATH=~/.npm-global/bin:$PATH'</span> <span class="o">&gt;&gt;</span> ~/.bashrc
 
 <span class="c"># Fix Ruby gem permissions</span>
 gem <span class="nb">install </span>bundler <span class="nt">--user-install</span>
-</div>
+</code></pre></div></div>
 
 <h4 id="port-conflicts">Port Conflicts</h4>
 
-<p><strong>Problem</strong>: Development servers conflict on ports 4000 or 3000<br>
+<p><strong>Problem</strong>: Development servers conflict on ports 4000 or 3000
 <strong>Solution</strong>:</p>
 
-<div class="language-bash highlighter-rouge">
-<span class="c"># NEW: Use automated process checking (recommended)</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># NEW: Use automated process checking (recommended)</span>
 npm run check-processes    <span class="c"># Check for conflicts</span>
 npm run kill-dev-servers   <span class="c"># Kill conflicting processes</span>
 npm run dev:restart        <span class="c"># Clean restart</span>
@@ -1178,57 +1244,53 @@ lsof <span class="nt">-i</span> :3000
 
 <span class="c"># Use alternative ports</span>
 npm run dev:jekyll <span class="nt">--</span> <span class="nt">--port</span> 4001
-</div>
+</code></pre></div></div>
 
 <h4 id="build-cache-corruption">Build Cache Corruption</h4>
 
-<p><strong>Problem</strong>: Builds fail or produce inconsistent results<br>
+<p><strong>Problem</strong>: Builds fail or produce inconsistent results
 <strong>Solution</strong>:</p>
 
-<div class="language-bash highlighter-rouge">
-<span class="c"># Use process-safe build commands (recommended)</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Use process-safe build commands (recommended)</span>
 npm run build:parallel:safe    <span class="c"># Build with process checking</span>
 npm run quick:build            <span class="c"># Quick build with safety checks</span>
 
 <span class="c"># Manual cleanup</span>
 npm run kill-dev-servers <span class="o">&amp;&amp;</span> npm run clean <span class="o">&amp;&amp;</span> npm run build
-</div>
+</code></pre></div></div>
 
 <h4 id="wsl-file-system-issues">WSL File System Issues</h4>
 
-<p><strong>Problem</strong>: File watching doesn’t work or builds are slow<br>
+<p><strong>Problem</strong>: File watching doesn’t work or builds are slow
 <strong>Solution</strong>:</p>
 
-<div class="language-bash highlighter-rouge">
-<span class="c"># Increase file watchers limit</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Increase file watchers limit</span>
 <span class="nb">echo </span>fs.inotify.max_user_watches<span class="o">=</span>524288 | <span class="nb">sudo tee</span> <span class="nt">-a</span> /etc/sysctl.conf
 <span class="nb">sudo </span>sysctl <span class="nt">-p</span>
 
 <span class="c"># Use WSL2 file system (not Windows mount)</span>
 <span class="c"># Work in /home/user/ not /mnt/c/</span>
-</div>
+</code></pre></div></div>
 
 <h3 id="performance-optimization">Performance Optimization</h3>
 
 <h4 id="memory-issues">Memory Issues</h4>
 
-<div class="language-bash highlighter-rouge">
-<span class="c"># Increase Node.js memory limit</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Increase Node.js memory limit</span>
 npm run build:ts <span class="nt">--</span> <span class="nt">--max-old-space-size</span><span class="o">=</span>4096
 
 <span class="c"># Use memory-efficient testing</span>
 npm run <span class="nb">test</span>:memory-efficient
-</div>
+</code></pre></div></div>
 
 <h4 id="build-speed">Build Speed</h4>
 
-<div class="language-bash highlighter-rouge">
-<span class="c"># Use parallel builds</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Use parallel builds</span>
 npm run build:parallel:optimized
 
 <span class="c"># Enable caching</span>
 npm run cache:optimize
-</div>
+</code></pre></div></div>
 
 <h2 id="next-steps">Next Steps</h2>
 
@@ -1302,7 +1364,7 @@ npm run cache:optimize
 
 <hr>
 
-<p><strong>Environment</strong>: WSL2 + Ubuntu 24.04 LTS | Node.js v22.8+ | Ruby v3.3.8+YJIT<br>
+<p><strong>Environment</strong>: WSL2 + Ubuntu 24.04 LTS | Node.js v22.8+ | Ruby v3.3.8+YJIT
 <strong>Last Updated</strong>: September 8, 2025</p>
 </div>
 </article>
@@ -1398,6 +1460,15 @@ npm run cache:optimize
           toggleNavigation();
         });
 
+        // Close button event handler
+        var closeBtn = nav.querySelector('.nav-close');
+        if (closeBtn) {
+          closeBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            toggleNavigation();
+          });
+        }
+
         document.addEventListener('click', function(e) {
           if (toggleBtn.getAttribute('aria-expanded') !== 'true') return;
 
@@ -1438,6 +1509,9 @@ npm run cache:optimize
 
     <script src="https://www.googletagmanager.com/gtag/js?id=G-W1M1N0DCD4" crossorigin="anonymous" async></script>
     
+
+    <!-- WCAG 2.1 AA Accessibility Enhancements for scrollable regions -->
+    <script src="/assets/js/mijug-es5.min.js?v=20251112224242" defer crossorigin="anonymous"></script>
 
     <!-- Cookie consent system -->
     <!-- Google AdSense with MIJUG Cookie Consent Integration -->

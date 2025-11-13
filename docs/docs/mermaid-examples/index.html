@@ -58,29 +58,106 @@
     display: none;
   }
 
-  /* Overlay navigation */
-  html.js nav.primary-nav.nav-overlay {
-    display: block;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.85);
-    z-index: 100;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-20px);
-    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
-    overflow-y: auto;
+  /* Overlay navigation - make sure it applies */
+  nav.primary-nav.nav-overlay {
+    display: block !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    background: rgba(0, 0, 0, 0.85) !important;
+    z-index: 100 !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transform: translateY(-20px) !important;
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease !important;
+    overflow-y: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
   }
 
-  html.js nav.primary-nav.nav-overlay.nav-visible {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
+  nav.primary-nav.nav-overlay.nav-visible {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
+  }
+
+  /* Navigation content styling */
+  .modern-nav-content {
+    display: block !important;
+    position: fixed !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    background: white !important;
+    border-radius: 8px !important;
+    padding: 2rem !important;
+    max-width: 90vw !important;
+    max-height: 80vh !important;
+    overflow-y: auto !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3) !important;
+    z-index: 101 !important;
+  }
+
+  /* Navigation close button */
+  .nav-close {
+    position: absolute !important;
+    top: 0.75rem !important;
+    right: 0.75rem !important;
+    background: none !important;
+    border: none !important;
+    font-size: 1.5rem !important;
+    line-height: 1 !important;
+    color: #666 !important;
+    cursor: pointer !important;
+    padding: 0.25rem !important;
+    border-radius: 4px !important;
+    transition: color 0.2s ease, background-color 0.2s ease !important;
+    width: 2rem !important;
+    height: 2rem !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .nav-close:hover,
+  .nav-close:focus {
+    color: #333 !important;
+    background-color: #f0f0f0 !important;
+  }
+
+  .modern-nav-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .modern-nav-content li {
+    margin: 0;
+    padding: 0;
+  }
+
+  .modern-nav-content a {
+    display: block;
+    padding: 0.75rem 1rem;
+    color: #333;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+  }
+
+  .modern-nav-content a:hover,
+  .modern-nav-content a:focus {
+    background-color: #f0f0f0;
+    color: #2c5aa0;
+  }
+
+  /* Legacy nav fallback - hidden by default */
+  .legacy-nav-fallback {
+    display: none;
   }
 
   /* Body scroll lock when overlay is open */
@@ -503,7 +580,7 @@ img {
       content="This page showcases various types of Mermaid diagrams you can use in your content."
     />
     
-    <meta name="version" content="Sep 22, 2025" />
+    <meta name="version" content="Nov 13, 2025" />
     
 
     
@@ -517,10 +594,10 @@ img {
     <meta name="google-site-verification" content="googlece83719b3f856e56" />
     <meta name="cache-version" content="20251007172153" />
 
-    <link rel="preload" as="style" href="/assets/main.css?v=20251112211259" media="print" crossorigin><link rel="stylesheet" href="/assets/main.css?v=20251112211259" media="print">
+    <link rel="preload" as="style" href="/assets/main.css?v=20251112224242" media="print" crossorigin><link rel="stylesheet" href="/assets/main.css?v=20251112224242" media="print">
 
     <noscript>
-      <link rel="stylesheet" href="/assets/main.css?v=20251112211259">
+      <link rel="stylesheet" href="/assets/main.css?v=20251112224242">
     </noscript>
 
     <link
@@ -629,6 +706,9 @@ img {
 
           <!-- Full navigation for modern browsers -->
           <div class="modern-nav-content">
+            <button class="nav-close" type="button" aria-label="Close navigation menu">
+              <span aria-hidden="true">×</span>
+            </button>
             <ul role="list">
               
                 <li role="listitem">
@@ -769,7 +849,28 @@ img {
   <div class="post-content">
 <p>This page showcases various types of Mermaid diagrams you can use in your content.</p>
 
+<h2 id="table-of-contents">Table of Contents</h2>
+
+<ol>
+  <li><a href="#flowcharts">Flowcharts</a></li>
+  <li><a href="#sequence-diagrams">Sequence Diagrams</a></li>
+  <li><a href="#class-diagrams">Class Diagrams</a></li>
+  <li><a href="#state-diagrams">State Diagrams</a></li>
+  <li><a href="#entity-relationship-diagrams">Entity Relationship Diagrams</a></li>
+  <li><a href="#journey-diagrams">Journey Diagrams</a></li>
+  <li><a href="#pie-charts">Pie Charts</a></li>
+  <li><a href="#gantt-charts">Gantt Charts</a></li>
+  <li><a href="#mind-maps">Mind Maps</a></li>
+  <li><a href="#best-practices">Best Practices</a></li>
+</ol>
+
+<h2 id="overview">Overview</h2>
+
+<p>Mermaid is a JavaScript-based diagramming and charting tool that renders Markdown-inspired text definitions to create and display diagrams. This documentation provides practical examples for different diagram types.</p>
+
 <h2 id="flowcharts">Flowcharts</h2>
+
+<p>Flowcharts are used to represent processes and workflows with decision points.</p>
 
 <h3 id="basic-flowchart">Basic Flowchart</h3>
 
@@ -781,6 +882,18 @@ img {
     E --&gt; B
     C --&gt; F[End]
 </code></pre>
+
+<pre>
+```mermaid
+graph TD
+    A[Start] --&gt; B{Is it working?}
+    B --&gt;|Yes| C[Great!]
+    B --&gt;|No| D[Debug]
+    D --&gt; E[Fix Issue]
+    E --&gt; B
+    C --&gt; F[End]
+```
+</pre>
 
 <h3 id="development-workflow">Development Workflow</h3>
 
@@ -797,7 +910,25 @@ img {
     H --&gt; E
 </code></pre>
 
+<pre>
+```mermaid
+graph LR
+    A[Write Code] --&gt; B[Test]
+    B --&gt; C{Tests Pass?}
+    C --&gt;|Yes| D[Deploy]
+    C --&gt;|No| E[Fix Bugs]
+    E --&gt; B
+    D --&gt; F[Monitor]
+    F --&gt; G{Issues?}
+    G --&gt;|Yes| H[Rollback]
+    G --&gt;|No| I[Success]
+    H --&gt; E
+```
+</pre>
+
 <h2 id="sequence-diagrams">Sequence Diagrams</h2>
+
+<p>Sequence diagrams show interactions between objects in a sequential manner.</p>
 
 <h3 id="api-request-flow">API Request Flow</h3>
 
@@ -811,6 +942,20 @@ img {
     DB--&gt;&gt;S: Return Results
     S--&gt;&gt;C: HTTP Response
 </code></pre>
+
+<pre>
+```mermaid
+sequenceDiagram
+    participant C as Client
+    participant S as Server
+    participant DB as Database
+
+    C-&gt;&gt;S: HTTP Request
+    S-&gt;&gt;DB: Query Data
+    DB--&gt;&gt;S: Return Results
+    S--&gt;&gt;C: HTTP Response
+```
+</pre>
 
 <h3 id="authentication-flow">Authentication Flow</h3>
 
@@ -828,7 +973,26 @@ img {
     A--&gt;&gt;U: Display Data
 </code></pre>
 
+<pre>
+```mermaid
+sequenceDiagram
+    participant U as User
+    participant A as App
+    participant Auth as Auth Server
+    participant API as API Server
+
+    U-&gt;&gt;A: Login Request
+    A-&gt;&gt;Auth: Authenticate
+    Auth--&gt;&gt;A: JWT Token
+    A-&gt;&gt;API: API Request + Token
+    API--&gt;&gt;A: Protected Data
+    A--&gt;&gt;U: Display Data
+```
+</pre>
+
 <h2 id="class-diagrams">Class Diagrams</h2>
+
+<p>Class diagrams represent the static structure of a system.</p>
 
 <h3 id="simple-class-structure">Simple Class Structure</h3>
 
@@ -857,7 +1021,37 @@ img {
     Animal &lt;|-- Cat
 </code></pre>
 
+<pre>
+```mermaid
+classDiagram
+    class Animal {
+        -String name
+        -int age
+        +getName() String
+        +setAge(int age)
+        +makeSound() void
+    }
+
+    class Dog {
+        -String breed
+        +bark() void
+        +fetch() void
+    }
+
+    class Cat {
+        -boolean indoor
+        +meow() void
+        +purr() void
+    }
+
+    Animal &lt;|-- Dog
+    Animal &lt;|-- Cat
+```
+</pre>
+
 <h2 id="state-diagrams">State Diagrams</h2>
+
+<p>State diagrams illustrate the behavior of a system through states and transitions.</p>
 
 <h3 id="user-session-states">User Session States</h3>
 
@@ -872,7 +1066,23 @@ img {
     Expired --&gt; Anonymous: redirect
 </code></pre>
 
+<pre>
+```mermaid
+stateDiagram-v2
+    [*] --&gt; Anonymous
+    Anonymous --&gt; LoggingIn: login()
+    LoggingIn --&gt; Authenticated: success
+    LoggingIn --&gt; Anonymous: failure
+    Authenticated --&gt; LoggingOut: logout()
+    LoggingOut --&gt; Anonymous: complete
+    Authenticated --&gt; Expired: timeout
+    Expired --&gt; Anonymous: redirect
+```
+</pre>
+
 <h2 id="entity-relationship-diagrams">Entity Relationship Diagrams</h2>
+
+<p>ER diagrams show relationships between entities in a database.</p>
 
 <h3 id="simple-database-schema">Simple Database Schema</h3>
 
@@ -905,7 +1115,41 @@ img {
     USER ||--o{ COMMENT : "makes"
 </code></pre>
 
+<pre>
+```mermaid
+erDiagram
+    USER {
+        int id PK
+        string email UK
+        string name
+        datetime created_at
+    }
+
+    POST {
+        int id PK
+        int user_id FK
+        string title
+        text content
+        datetime published_at
+    }
+
+    COMMENT {
+        int id PK
+        int post_id FK
+        int user_id FK
+        text content
+        datetime created_at
+    }
+
+    USER ||--o{ POST : "writes"
+    POST ||--o{ COMMENT : "has"
+    USER ||--o{ COMMENT : "makes"
+```
+</pre>
+
 <h2 id="journey-diagrams">Journey Diagrams</h2>
+
+<p>Journey diagrams visualize user experiences and customer journeys.</p>
 
 <h3 id="user-onboarding-journey">User Onboarding Journey</h3>
 
@@ -925,7 +1169,28 @@ img {
       Invite team: 3: User
 </code></pre>
 
+<pre>
+```mermaid
+journey
+    title User Onboarding Journey
+    section Discovery
+      Visit website: 5: User
+      Read about features: 4: User
+      Compare plans: 3: User
+    section Registration
+      Sign up form: 3: User
+      Email verification: 2: User
+      Profile setup: 4: User
+    section First Use
+      Tutorial: 5: User
+      Create first project: 5: User
+      Invite team: 3: User
+```
+</pre>
+
 <h2 id="pie-charts">Pie Charts</h2>
+
+<p>Pie charts display proportional data in a circular format.</p>
 
 <h3 id="technology-usage">Technology Usage</h3>
 
@@ -937,7 +1202,20 @@ img {
     "Other" : 5
 </code></pre>
 
+<pre>
+```mermaid
+pie title Technology Stack Usage
+    "JavaScript" : 40
+    "Python" : 25
+    "TypeScript" : 20
+    "Ruby" : 10
+    "Other" : 5
+```
+</pre>
+
 <h2 id="gantt-charts">Gantt Charts</h2>
+
+<p>Gantt charts show project timelines and task dependencies.</p>
 
 <h3 id="project-timeline">Project Timeline</h3>
 
@@ -957,7 +1235,28 @@ img {
     User Testing   :2025-03-25, 2025-04-10
 </code></pre>
 
+<pre>
+```mermaid
+gantt
+    title Project Development Timeline
+    dateFormat  YYYY-MM-DD
+    section Planning
+    Requirements    :2025-01-01, 2025-01-15
+    Design         :2025-01-10, 2025-01-25
+    section Development
+    Backend        :2025-01-20, 2025-03-01
+    Frontend       :2025-02-01, 2025-03-15
+    Integration    :2025-03-01, 2025-03-20
+    section Testing
+    Unit Tests     :2025-02-15, 2025-03-25
+    Integration Tests :2025-03-15, 2025-04-01
+    User Testing   :2025-03-25, 2025-04-10
+```
+</pre>
+
 <h2 id="mind-maps">Mind Maps</h2>
+
+<p>Mind maps show hierarchical relationships and brainstorming ideas.</p>
 
 <h3 id="project-structure">Project Structure</h3>
 
@@ -980,6 +1279,29 @@ img {
       Build Process
       Testing
 </code></pre>
+
+<pre>
+```mermaid
+mindmap
+  root((Jekyll Site))
+    Content
+      Posts
+      Pages
+      Collections
+    Layout
+      Templates
+      Includes
+      Assets
+    Configuration
+      Config YAML
+      Gemfile
+      Plugins
+    Development
+      Local Server
+      Build Process
+      Testing
+```
+</pre>
 
 <h2 id="tips-for-creating-effective-diagrams">Tips for Creating Effective Diagrams</h2>
 
@@ -1009,6 +1331,41 @@ img {
 <strong>Troubleshooting</strong>: Decision trees, diagnostic flows</li>
   <li>
 <strong>Presentations</strong>: Visual storytelling, process overview</li>
+</ul>
+
+<h2 id="practical-tips">Practical Tips</h2>
+
+<h3 id="for-developers">For Developers</h3>
+
+<ul>
+  <li>Use descriptive node names that clearly indicate their purpose</li>
+  <li>Keep diagrams focused on one main concept</li>
+  <li>Test diagrams in different browsers for compatibility</li>
+</ul>
+
+<h3 id="for-documentation-writers">For Documentation Writers</h3>
+
+<ul>
+  <li>Include titles for all diagrams</li>
+  <li>Add brief explanations for complex diagrams</li>
+  <li>Use consistent styling throughout your documentation</li>
+</ul>
+
+<h3 id="for-designers">For Designers</h3>
+
+<ul>
+  <li>Consider color contrast for accessibility</li>
+  <li>Ensure diagrams are responsive</li>
+  <li>Test with different screen sizes</li>
+</ul>
+
+<h2 id="accessibility-considerations">Accessibility Considerations</h2>
+
+<ul>
+  <li>Ensure diagrams have appropriate alt text for screen readers</li>
+  <li>Use sufficient color contrast for text elements</li>
+  <li>Provide text alternatives for complex diagrams</li>
+  <li>Consider keyboard navigation for interactive diagrams</li>
 </ul>
 
 <hr>
@@ -1172,6 +1529,15 @@ img {
           toggleNavigation();
         });
 
+        // Close button event handler
+        var closeBtn = nav.querySelector('.nav-close');
+        if (closeBtn) {
+          closeBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            toggleNavigation();
+          });
+        }
+
         document.addEventListener('click', function(e) {
           if (toggleBtn.getAttribute('aria-expanded') !== 'true') return;
 
@@ -1212,6 +1578,9 @@ img {
 
     <script src="https://www.googletagmanager.com/gtag/js?id=G-W1M1N0DCD4" crossorigin="anonymous" async></script>
     
+
+    <!-- WCAG 2.1 AA Accessibility Enhancements for scrollable regions -->
+    <script src="/assets/js/mijug-es5.min.js?v=20251112224242" defer crossorigin="anonymous"></script>
 
     <!-- Cookie consent system -->
     <!-- Google AdSense with MIJUG Cookie Consent Integration -->
