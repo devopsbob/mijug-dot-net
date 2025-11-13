@@ -58,29 +58,106 @@
     display: none;
   }
 
-  /* Overlay navigation */
-  html.js nav.primary-nav.nav-overlay {
-    display: block;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.85);
-    z-index: 100;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-20px);
-    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
-    overflow-y: auto;
+  /* Overlay navigation - make sure it applies */
+  nav.primary-nav.nav-overlay {
+    display: block !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    background: rgba(0, 0, 0, 0.85) !important;
+    z-index: 100 !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transform: translateY(-20px) !important;
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease !important;
+    overflow-y: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
   }
 
-  html.js nav.primary-nav.nav-overlay.nav-visible {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
+  nav.primary-nav.nav-overlay.nav-visible {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
+  }
+
+  /* Navigation content styling */
+  .modern-nav-content {
+    display: block !important;
+    position: fixed !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    background: white !important;
+    border-radius: 8px !important;
+    padding: 2rem !important;
+    max-width: 90vw !important;
+    max-height: 80vh !important;
+    overflow-y: auto !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3) !important;
+    z-index: 101 !important;
+  }
+
+  /* Navigation close button */
+  .nav-close {
+    position: absolute !important;
+    top: 0.75rem !important;
+    right: 0.75rem !important;
+    background: none !important;
+    border: none !important;
+    font-size: 1.5rem !important;
+    line-height: 1 !important;
+    color: #666 !important;
+    cursor: pointer !important;
+    padding: 0.25rem !important;
+    border-radius: 4px !important;
+    transition: color 0.2s ease, background-color 0.2s ease !important;
+    width: 2rem !important;
+    height: 2rem !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .nav-close:hover,
+  .nav-close:focus {
+    color: #333 !important;
+    background-color: #f0f0f0 !important;
+  }
+
+  .modern-nav-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .modern-nav-content li {
+    margin: 0;
+    padding: 0;
+  }
+
+  .modern-nav-content a {
+    display: block;
+    padding: 0.75rem 1rem;
+    color: #333;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+  }
+
+  .modern-nav-content a:hover,
+  .modern-nav-content a:focus {
+    background-color: #f0f0f0;
+    color: #2c5aa0;
+  }
+
+  /* Legacy nav fallback - hidden by default */
+  .legacy-nav-fallback {
+    display: none;
   }
 
   /* Body scroll lock when overlay is open */
@@ -517,10 +594,10 @@ img {
     <meta name="google-site-verification" content="googlece83719b3f856e56" />
     <meta name="cache-version" content="20251007172153" />
 
-    <link rel="preload" as="style" href="/assets/main.css?v=20251112211259" media="print" crossorigin><link rel="stylesheet" href="/assets/main.css?v=20251112211259" media="print">
+    <link rel="preload" as="style" href="/assets/main.css?v=20251112224242" media="print" crossorigin><link rel="stylesheet" href="/assets/main.css?v=20251112224242" media="print">
 
     <noscript>
-      <link rel="stylesheet" href="/assets/main.css?v=20251112211259">
+      <link rel="stylesheet" href="/assets/main.css?v=20251112224242">
     </noscript>
 
     <link
@@ -534,7 +611,7 @@ img {
     <link
       rel="icon"
       type="image/svg+xml"
-      href="/assets/kranson_enterprises_logo_180x180.png?v=20251007172153"
+      href="/assets/logo-mijug-96x96.png?v=20251007172153"
     />
     
     <link
@@ -549,7 +626,7 @@ img {
 <meta property="og:description" content="Performance gains achieved through strategic testing evolution, unit-first development, and E2E consolidation in the MIJUG workspace" />
 <meta property="og:url" content="https://www.mijug.net/docs/testing-performance-evolution/" />
 <meta property="og:site_name" content="My Info Just Under Glass" />
-<meta property="og:type" content="website" /><meta property="og:image" content="https://www.mijug.net/assets/kranson_enterprises_logo_180x180.png" /><link rel="canonical" href="https://www.mijug.net/docs/testing-performance-evolution/" />
+<meta property="og:type" content="website" /><meta property="og:image" content="https://www.mijug.net/assets/logo-mijug-96x96.png" /><link rel="canonical" href="https://www.mijug.net/docs/testing-performance-evolution/" />
 
 
     
@@ -581,7 +658,7 @@ img {
       <div class="wrapper">
         <a class="site-title" rel="home" href="/">
           
-          <img src="/assets/kranson_enterprises_logo_180x180.png?v=20251007172153" alt="My Info Just Under Glass" width="50" height="50">
+          <img src="/assets/logo-mijug-96x96.png?v=20251007172153" alt="My Info Just Under Glass" width="50" height="50">
            My Info Just Under Glass
         </a>
 
@@ -627,6 +704,9 @@ img {
 
           <!-- Full navigation for modern browsers -->
           <div class="modern-nav-content">
+            <button class="nav-close" type="button" aria-label="Close navigation menu">
+              <span aria-hidden="true">×</span>
+            </button>
             <ul role="list">
               
                 <li role="listitem">
@@ -884,15 +964,14 @@ img {
 
 <h4 id="unit-test-optimizations"><strong>Unit Test Optimizations</strong></h4>
 
-<div class="language-javascript highlighter-rouge">
-<span class="c1">// Jest configuration optimizations</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Jest configuration optimizations</span>
 <span class="p">{</span>
   <span class="dl">"</span><span class="s2">maxWorkers</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">100%</span><span class="dl">"</span><span class="p">,</span>        <span class="c1">// Utilize all CPU cores</span>
   <span class="dl">"</span><span class="s2">testTimeout</span><span class="dl">"</span><span class="p">:</span> <span class="mi">5000</span><span class="p">,</span>         <span class="c1">// Fast failure detection</span>
   <span class="dl">"</span><span class="s2">silent</span><span class="dl">"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>              <span class="c1">// Reduce console noise</span>
   <span class="dl">"</span><span class="s2">testPathPattern</span><span class="dl">"</span><span class="p">:</span> <span class="dl">"</span><span class="s2">tests/</span><span class="dl">"</span>  <span class="c1">// Focus execution scope</span>
 <span class="p">}</span>
-</div>
+</code></pre></div></div>
 
 <p><strong>Key Achievements:</strong></p>
 
@@ -909,8 +988,7 @@ img {
 
 <h4 id="consolidation-results"><strong>Consolidation Results</strong></h4>
 
-<div class="language-typescript highlighter-rouge">
-<span class="c1">// Before: 10 fragmented test files</span>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Before: 10 fragmented test files</span>
 <span class="nx">e2e</span><span class="o">/</span><span class="nx">accessibility</span><span class="p">.</span><span class="nx">spec</span><span class="p">.</span><span class="nx">ts</span>
 <span class="nx">e2e</span><span class="o">/</span><span class="nx">documentation</span><span class="o">-</span><span class="nx">accessibility</span><span class="p">.</span><span class="nx">spec</span><span class="p">.</span><span class="nx">ts</span>
 <span class="nx">e2e</span><span class="o">/</span><span class="nx">homepage</span><span class="p">.</span><span class="nx">spec</span><span class="p">.</span><span class="nx">ts</span>
@@ -927,7 +1005,7 @@ img {
 <span class="nx">e2e</span><span class="o">/</span><span class="nx">core</span><span class="o">-</span><span class="nx">functionality</span><span class="p">.</span><span class="nx">spec</span><span class="p">.</span><span class="nf">ts         </span><span class="p">(</span><span class="mi">20</span> <span class="nx">tests</span><span class="p">)</span>
 <span class="nx">e2e</span><span class="o">/</span><span class="nx">mermaid</span><span class="o">-</span><span class="nx">consolidated</span><span class="p">.</span><span class="nx">spec</span><span class="p">.</span><span class="nf">ts        </span><span class="p">(</span><span class="mi">13</span> <span class="nx">tests</span><span class="p">)</span>
 <span class="nx">e2e</span><span class="o">/</span><span class="nx">browser</span><span class="o">-</span><span class="nx">compatibility</span><span class="p">.</span><span class="nx">spec</span><span class="p">.</span><span class="nf">ts       </span><span class="p">(</span><span class="mi">13</span> <span class="nx">tests</span><span class="p">)</span>
-</div>
+</code></pre></div></div>
 
 <p><strong>Strategic Benefits:</strong></p>
 
@@ -1054,8 +1132,7 @@ img {
   </li>
 </ul>
 
-<div class="language-javascript highlighter-rouge">
-<span class="c1">// Jest optimization example</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Jest optimization example</span>
 <span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
   <span class="na">preset</span><span class="p">:</span> <span class="dl">"</span><span class="s2">ts-jest</span><span class="dl">"</span><span class="p">,</span>
   <span class="na">testEnvironment</span><span class="p">:</span> <span class="dl">"</span><span class="s2">node</span><span class="dl">"</span><span class="p">,</span>
@@ -1066,7 +1143,7 @@ img {
   <span class="na">coverageDirectory</span><span class="p">:</span> <span class="dl">"</span><span class="s2">coverage</span><span class="dl">"</span><span class="p">,</span>
   <span class="na">testMatch</span><span class="p">:</span> <span class="p">[</span><span class="dl">"</span><span class="s2">**/tests/**/*.test.ts</span><span class="dl">"</span><span class="p">],</span>
 <span class="p">};</span>
-</div>
+</code></pre></div></div>
 
 <h4 id="playwright---e2e-testing-framework"><strong><a href="https://playwright.dev/" rel="external noopener noreferrer" target="_blank">Playwright</a> - E2E Testing Framework</strong></h4>
 
@@ -1084,8 +1161,7 @@ img {
   </li>
 </ul>
 
-<div class="language-typescript highlighter-rouge">
-<span class="c1">// Playwright configuration example</span>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Playwright configuration example</span>
 <span class="k">export</span> <span class="k">default</span> <span class="nf">defineConfig</span><span class="p">({</span>
   <span class="na">testDir</span><span class="p">:</span> <span class="dl">"</span><span class="s2">./e2e</span><span class="dl">"</span><span class="p">,</span>
   <span class="na">timeout</span><span class="p">:</span> <span class="mi">30000</span><span class="p">,</span>
@@ -1097,7 +1173,7 @@ img {
     <span class="p">{</span> <span class="na">name</span><span class="p">:</span> <span class="dl">"</span><span class="s2">webkit</span><span class="dl">"</span><span class="p">,</span> <span class="na">use</span><span class="p">:</span> <span class="p">{</span> <span class="p">...</span><span class="nx">devices</span><span class="p">[</span><span class="dl">"</span><span class="s2">Desktop Safari</span><span class="dl">"</span><span class="p">]</span> <span class="p">}</span> <span class="p">},</span>
   <span class="p">],</span>
 <span class="p">});</span>
-</div>
+</code></pre></div></div>
 
 <h4 id="axe-coreplaywright---accessibility-testing"><strong><a href="https://github.com/dequelabs/axe-core-npm" rel="external noopener noreferrer" target="_blank">@axe-core/playwright</a> - Accessibility Testing</strong></h4>
 
@@ -1115,8 +1191,7 @@ img {
   </li>
 </ul>
 
-<div class="language-typescript highlighter-rouge">
-<span class="c1">// Accessibility testing example</span>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Accessibility testing example</span>
 <span class="kd">const</span> <span class="nx">accessibilityBuilder</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">AxeBuilder</span><span class="p">({</span> <span class="nx">page</span> <span class="p">})</span>
   <span class="p">.</span><span class="nf">withTags</span><span class="p">([</span><span class="dl">"</span><span class="s2">wcag2a</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">wcag2aa</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">wcag21aa</span><span class="dl">"</span><span class="p">])</span>
   <span class="p">.</span><span class="nf">exclude</span><span class="p">(</span><span class="dl">'</span><span class="s1">img[width="1"][height="1"]</span><span class="dl">'</span><span class="p">)</span>
@@ -1125,7 +1200,7 @@ img {
 
 <span class="kd">const</span> <span class="nx">results</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">accessibilityBuilder</span><span class="p">.</span><span class="nf">analyze</span><span class="p">();</span>
 <span class="nf">expect</span><span class="p">(</span><span class="nx">results</span><span class="p">.</span><span class="nx">violations</span><span class="p">).</span><span class="nf">toEqual</span><span class="p">([]);</span>
-</div>
+</code></pre></div></div>
 
 <h3 id="documentation-resources">Documentation Resources</h3>
 
@@ -1414,8 +1489,8 @@ img {
 
 <hr>
 
-<p><em>Document created: August 22, 2025</em><br>
-<em>Performance data based on MIJUG .NET workspace optimization session</em><br>
+<p><em>Document created: August 22, 2025</em>
+<em>Performance data based on MIJUG .NET workspace optimization session</em>
 <em>Testing frameworks: Jest 29.7+, Playwright 1.47+, @axe-core/playwright</em></p>
 </div>
 </article>
@@ -1511,6 +1586,15 @@ img {
           toggleNavigation();
         });
 
+        // Close button event handler
+        var closeBtn = nav.querySelector('.nav-close');
+        if (closeBtn) {
+          closeBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            toggleNavigation();
+          });
+        }
+
         document.addEventListener('click', function(e) {
           if (toggleBtn.getAttribute('aria-expanded') !== 'true') return;
 
@@ -1551,6 +1635,9 @@ img {
 
     <script src="https://www.googletagmanager.com/gtag/js?id=G-W1M1N0DCD4" crossorigin="anonymous" async></script>
     
+
+    <!-- WCAG 2.1 AA Accessibility Enhancements for scrollable regions -->
+    <script src="/assets/js/mijug-es5.min.js?v=20251112224242" defer crossorigin="anonymous"></script>
 
     <!-- Cookie consent system -->
     <!-- Google AdSense with MIJUG Cookie Consent Integration -->

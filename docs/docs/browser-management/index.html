@@ -58,29 +58,106 @@
     display: none;
   }
 
-  /* Overlay navigation */
-  html.js nav.primary-nav.nav-overlay {
-    display: block;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.85);
-    z-index: 100;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-20px);
-    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
-    overflow-y: auto;
+  /* Overlay navigation - make sure it applies */
+  nav.primary-nav.nav-overlay {
+    display: block !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    background: rgba(0, 0, 0, 0.85) !important;
+    z-index: 100 !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transform: translateY(-20px) !important;
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease !important;
+    overflow-y: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
   }
 
-  html.js nav.primary-nav.nav-overlay.nav-visible {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
+  nav.primary-nav.nav-overlay.nav-visible {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
+  }
+
+  /* Navigation content styling */
+  .modern-nav-content {
+    display: block !important;
+    position: fixed !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    background: white !important;
+    border-radius: 8px !important;
+    padding: 2rem !important;
+    max-width: 90vw !important;
+    max-height: 80vh !important;
+    overflow-y: auto !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3) !important;
+    z-index: 101 !important;
+  }
+
+  /* Navigation close button */
+  .nav-close {
+    position: absolute !important;
+    top: 0.75rem !important;
+    right: 0.75rem !important;
+    background: none !important;
+    border: none !important;
+    font-size: 1.5rem !important;
+    line-height: 1 !important;
+    color: #666 !important;
+    cursor: pointer !important;
+    padding: 0.25rem !important;
+    border-radius: 4px !important;
+    transition: color 0.2s ease, background-color 0.2s ease !important;
+    width: 2rem !important;
+    height: 2rem !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .nav-close:hover,
+  .nav-close:focus {
+    color: #333 !important;
+    background-color: #f0f0f0 !important;
+  }
+
+  .modern-nav-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .modern-nav-content li {
+    margin: 0;
+    padding: 0;
+  }
+
+  .modern-nav-content a {
+    display: block;
+    padding: 0.75rem 1rem;
+    color: #333;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+  }
+
+  .modern-nav-content a:hover,
+  .modern-nav-content a:focus {
+    background-color: #f0f0f0;
+    color: #2c5aa0;
+  }
+
+  /* Legacy nav fallback - hidden by default */
+  .legacy-nav-fallback {
+    display: none;
   }
 
   /* Body scroll lock when overlay is open */
@@ -517,10 +594,10 @@ img {
     <meta name="google-site-verification" content="googlece83719b3f856e56" />
     <meta name="cache-version" content="20251007172153" />
 
-    <link rel="preload" as="style" href="/assets/main.css?v=20251112211259" media="print" crossorigin><link rel="stylesheet" href="/assets/main.css?v=20251112211259" media="print">
+    <link rel="preload" as="style" href="/assets/main.css?v=20251112224242" media="print" crossorigin><link rel="stylesheet" href="/assets/main.css?v=20251112224242" media="print">
 
     <noscript>
-      <link rel="stylesheet" href="/assets/main.css?v=20251112211259">
+      <link rel="stylesheet" href="/assets/main.css?v=20251112224242">
     </noscript>
 
     <link
@@ -534,7 +611,7 @@ img {
     <link
       rel="icon"
       type="image/svg+xml"
-      href="/assets/kranson_enterprises_logo_180x180.png?v=20251007172153"
+      href="/assets/logo-mijug-96x96.png?v=20251007172153"
     />
     
     <link
@@ -549,7 +626,7 @@ img {
 <meta property="og:description" content="Advanced browser management system with timeout handling and permission-aware operations for automated testing" />
 <meta property="og:url" content="https://www.mijug.net/docs/browser-management/" />
 <meta property="og:site_name" content="My Info Just Under Glass" />
-<meta property="og:type" content="website" /><meta property="og:image" content="https://www.mijug.net/assets/kranson_enterprises_logo_180x180.png" /><link rel="canonical" href="https://www.mijug.net/docs/browser-management/" />
+<meta property="og:type" content="website" /><meta property="og:image" content="https://www.mijug.net/assets/logo-mijug-96x96.png" /><link rel="canonical" href="https://www.mijug.net/docs/browser-management/" />
 
 
     
@@ -597,7 +674,7 @@ img {
       <div class="wrapper">
         <a class="site-title" rel="home" href="/">
           
-          <img src="/assets/kranson_enterprises_logo_180x180.png?v=20251007172153" alt="My Info Just Under Glass" width="50" height="50">
+          <img src="/assets/logo-mijug-96x96.png?v=20251007172153" alt="My Info Just Under Glass" width="50" height="50">
            My Info Just Under Glass
         </a>
 
@@ -643,6 +720,9 @@ img {
 
           <!-- Full navigation for modern browsers -->
           <div class="modern-nav-content">
+            <button class="nav-close" type="button" aria-label="Close navigation menu">
+              <span aria-hidden="true">×</span>
+            </button>
             <ul role="list">
               
                 <li role="listitem">
@@ -858,8 +938,7 @@ img {
 
 <h3 id="command-line-flags">Command Line Flags</h3>
 
-<div class="language-bash highlighter-rouge">
-<span class="c"># Show help</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Show help</span>
 npm run playwright:ensure <span class="nt">--</span> <span class="nt">--help</span>
 
 <span class="c"># Force reinstall everything</span>
@@ -873,12 +952,11 @@ npm run playwright:ensure <span class="nt">--</span> <span class="nt">--skip-sys
 
 <span class="c"># Fail on timeout instead of bypassing</span>
 npm run playwright:ensure <span class="nt">--</span> <span class="nt">--no-bypass-on-timeout</span>
-</div>
+</code></pre></div></div>
 
 <h3 id="environment-specific-usage">Environment-Specific Usage</h3>
 
-<div class="language-bash highlighter-rouge">
-<span class="c"># For CI/CD environments with limited permissions</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># For CI/CD environments with limited permissions</span>
 npm run browsers:ensure-safe
 
 <span class="c"># For development with full permissions</span>
@@ -889,7 +967,7 @@ npm run browsers:check
 
 <span class="c"># Force update everything</span>
 npm run browsers:update
-</div>
+</code></pre></div></div>
 
 <h2 id="how-it-works">How It Works</h2>
 
@@ -931,8 +1009,7 @@ npm run browsers:update
 
 <h3 id="permission-issues">Permission Issues</h3>
 
-<div class="language-bash highlighter-rouge">
-<span class="c"># Safe mode for restricted environments</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Safe mode for restricted environments</span>
 npm run browsers:ensure-safe
 
 <span class="c"># Check current browser status</span>
@@ -940,12 +1017,11 @@ npm run browsers:check
 
 <span class="c"># Manual permission fix (if you have sudo)</span>
 <span class="nb">sudo </span>npm run playwright:ensure
-</div>
+</code></pre></div></div>
 
 <h3 id="timeout-issues">Timeout Issues</h3>
 
-<div class="language-bash highlighter-rouge">
-<span class="c"># Skip problematic system dependencies</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Skip problematic system dependencies</span>
 npm run playwright:ensure <span class="nt">--</span> <span class="nt">--skip-system-deps</span>
 
 <span class="c"># Force bypass timeouts and use existing browsers</span>
@@ -953,12 +1029,11 @@ npm run <span class="nb">test</span>:a11y  <span class="c"># (automatic bypass e
 
 <span class="c"># Strict mode (fail on timeout)</span>
 npm run playwright:ensure <span class="nt">--</span> <span class="nt">--no-bypass-on-timeout</span>
-</div>
+</code></pre></div></div>
 
 <h3 id="installation-failures">Installation Failures</h3>
 
-<div class="language-bash highlighter-rouge">
-<span class="c"># Force complete reinstall</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Force complete reinstall</span>
 npm run browsers:fix
 
 <span class="c"># Check what's working</span>
@@ -966,7 +1041,7 @@ npm run browsers:check
 
 <span class="c"># Use existing browsers only</span>
 npm run playwright:ensure <span class="nt">--</span> <span class="nt">--skip-if-no-permissions</span>
-</div>
+</code></pre></div></div>
 
 <h2 id="error-messages-and-solutions">Error Messages and Solutions</h2>
 
@@ -1042,11 +1117,10 @@ npm run playwright:ensure <span class="nt">--</span> <span class="nt">--skip-if-
 
 <h3 id="configuration-constants">Configuration Constants</h3>
 
-<div class="language-javascript highlighter-rouge">
-<span class="nx">TIMEOUT_BROWSER_INSTALL</span> <span class="o">=</span> <span class="mi">300000</span><span class="p">;</span> <span class="c1">// 5 minutes</span>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">TIMEOUT_BROWSER_INSTALL</span> <span class="o">=</span> <span class="mi">300000</span><span class="p">;</span> <span class="c1">// 5 minutes</span>
 <span class="nx">TIMEOUT_SYSTEM_DEPS</span> <span class="o">=</span> <span class="mi">180000</span><span class="p">;</span> <span class="c1">// 3 minutes</span>
 <span class="nx">TIMEOUT_BROWSER_TEST</span> <span class="o">=</span> <span class="mi">15000</span><span class="p">;</span> <span class="c1">// 15 seconds</span>
-</div>
+</code></pre></div></div>
 
 <h3 id="permission-checking">Permission Checking</h3>
 
@@ -1157,6 +1231,15 @@ npm run playwright:ensure <span class="nt">--</span> <span class="nt">--skip-if-
           toggleNavigation();
         });
 
+        // Close button event handler
+        var closeBtn = nav.querySelector('.nav-close');
+        if (closeBtn) {
+          closeBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            toggleNavigation();
+          });
+        }
+
         document.addEventListener('click', function(e) {
           if (toggleBtn.getAttribute('aria-expanded') !== 'true') return;
 
@@ -1197,6 +1280,9 @@ npm run playwright:ensure <span class="nt">--</span> <span class="nt">--skip-if-
 
     <script src="https://www.googletagmanager.com/gtag/js?id=G-W1M1N0DCD4" crossorigin="anonymous" async></script>
     
+
+    <!-- WCAG 2.1 AA Accessibility Enhancements for scrollable regions -->
+    <script src="/assets/js/mijug-es5.min.js?v=20251112224242" defer crossorigin="anonymous"></script>
 
     <!-- Cookie consent system -->
     <!-- Google AdSense with MIJUG Cookie Consent Integration -->

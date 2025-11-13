@@ -58,29 +58,106 @@
     display: none;
   }
 
-  /* Overlay navigation */
-  html.js nav.primary-nav.nav-overlay {
-    display: block;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.85);
-    z-index: 100;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-20px);
-    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
-    overflow-y: auto;
+  /* Overlay navigation - make sure it applies */
+  nav.primary-nav.nav-overlay {
+    display: block !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    background: rgba(0, 0, 0, 0.85) !important;
+    z-index: 100 !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transform: translateY(-20px) !important;
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease !important;
+    overflow-y: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
   }
 
-  html.js nav.primary-nav.nav-overlay.nav-visible {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
+  nav.primary-nav.nav-overlay.nav-visible {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
+  }
+
+  /* Navigation content styling */
+  .modern-nav-content {
+    display: block !important;
+    position: fixed !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    background: white !important;
+    border-radius: 8px !important;
+    padding: 2rem !important;
+    max-width: 90vw !important;
+    max-height: 80vh !important;
+    overflow-y: auto !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3) !important;
+    z-index: 101 !important;
+  }
+
+  /* Navigation close button */
+  .nav-close {
+    position: absolute !important;
+    top: 0.75rem !important;
+    right: 0.75rem !important;
+    background: none !important;
+    border: none !important;
+    font-size: 1.5rem !important;
+    line-height: 1 !important;
+    color: #666 !important;
+    cursor: pointer !important;
+    padding: 0.25rem !important;
+    border-radius: 4px !important;
+    transition: color 0.2s ease, background-color 0.2s ease !important;
+    width: 2rem !important;
+    height: 2rem !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  .nav-close:hover,
+  .nav-close:focus {
+    color: #333 !important;
+    background-color: #f0f0f0 !important;
+  }
+
+  .modern-nav-content ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .modern-nav-content li {
+    margin: 0;
+    padding: 0;
+  }
+
+  .modern-nav-content a {
+    display: block;
+    padding: 0.75rem 1rem;
+    color: #333;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+  }
+
+  .modern-nav-content a:hover,
+  .modern-nav-content a:focus {
+    background-color: #f0f0f0;
+    color: #2c5aa0;
+  }
+
+  /* Legacy nav fallback - hidden by default */
+  .legacy-nav-fallback {
+    display: none;
   }
 
   /* Body scroll lock when overlay is open */
@@ -517,10 +594,10 @@ img {
     <meta name="google-site-verification" content="googlece83719b3f856e56" />
     <meta name="cache-version" content="20251007172153" />
 
-    <link rel="preload" as="style" href="/assets/main.css?v=20251112211259" media="print" crossorigin><link rel="stylesheet" href="/assets/main.css?v=20251112211259" media="print">
+    <link rel="preload" as="style" href="/assets/main.css?v=20251112224242" media="print" crossorigin><link rel="stylesheet" href="/assets/main.css?v=20251112224242" media="print">
 
     <noscript>
-      <link rel="stylesheet" href="/assets/main.css?v=20251112211259">
+      <link rel="stylesheet" href="/assets/main.css?v=20251112224242">
     </noscript>
 
     <link
@@ -534,7 +611,7 @@ img {
     <link
       rel="icon"
       type="image/svg+xml"
-      href="/assets/kranson_enterprises_logo_180x180.png?v=20251007172153"
+      href="/assets/logo-mijug-96x96.png?v=20251007172153"
     />
     
     <link
@@ -549,7 +626,7 @@ img {
 <meta property="og:description" content="Complete guide to understanding, using, and managing tags and categories for content organization and archive browsing" />
 <meta property="og:url" content="https://www.mijug.net/docs/tags-and-categories-guide/" />
 <meta property="og:site_name" content="My Info Just Under Glass" />
-<meta property="og:type" content="website" /><meta property="og:image" content="https://www.mijug.net/assets/kranson_enterprises_logo_180x180.png" /><link rel="canonical" href="https://www.mijug.net/docs/tags-and-categories-guide/" />
+<meta property="og:type" content="website" /><meta property="og:image" content="https://www.mijug.net/assets/logo-mijug-96x96.png" /><link rel="canonical" href="https://www.mijug.net/docs/tags-and-categories-guide/" />
 
 
     
@@ -597,7 +674,7 @@ img {
       <div class="wrapper">
         <a class="site-title" rel="home" href="/">
           
-          <img src="/assets/kranson_enterprises_logo_180x180.png?v=20251007172153" alt="My Info Just Under Glass" width="50" height="50">
+          <img src="/assets/logo-mijug-96x96.png?v=20251007172153" alt="My Info Just Under Glass" width="50" height="50">
            My Info Just Under Glass
         </a>
 
@@ -643,6 +720,9 @@ img {
 
           <!-- Full navigation for modern browsers -->
           <div class="modern-nav-content">
+            <button class="nav-close" type="button" aria-label="Close navigation menu">
+              <span aria-hidden="true">×</span>
+            </button>
             <ul role="list">
               
                 <li role="listitem">
@@ -825,10 +905,10 @@ img {
 
 <p>Taxonomy definitions are stored in:</p>
 
-<div class="language-plaintext highlighter-rouge">docs/_data/
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docs/_data/
 ├── categories.yml  # Category definitions with metadata
 └── tags.yml        # Tag definitions with metadata
-</div>
+</code></pre></div></div>
 
 <p>Each taxonomy entry includes:</p>
 
@@ -984,14 +1064,13 @@ img {
 </li>
 </ol>
 
-<div class="language-yaml highlighter-rouge">
-<span class="c1"># Example new category</span>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Example new category</span>
 <span class="na">machine-learning</span><span class="pi">:</span>
   <span class="na">name</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Machine</span><span class="nv"> </span><span class="s">Learning"</span>
   <span class="na">description</span><span class="pi">:</span> <span class="s2">"</span><span class="s">AI</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">ML</span><span class="nv"> </span><span class="s">development</span><span class="nv"> </span><span class="s">topics"</span>
   <span class="na">color</span><span class="pi">:</span> <span class="s2">"</span><span class="s">#FF6B35"</span>
   <span class="na">icon</span><span class="pi">:</span> <span class="s2">"</span><span class="s">🤖"</span>
-</div>
+</code></pre></div></div>
 
 <h2 id="️-tags-system">🏷️ Tags System</h2>
 
@@ -1148,13 +1227,12 @@ img {
 <strong>Consider Aliases</strong>: Think about alternative names</li>
 </ol>
 
-<div class="language-yaml highlighter-rouge">
-<span class="c1"># Example new tag</span>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># Example new tag</span>
 <span class="na">react</span><span class="pi">:</span>
   <span class="na">name</span><span class="pi">:</span> <span class="s2">"</span><span class="s">React"</span>
   <span class="na">description</span><span class="pi">:</span> <span class="s2">"</span><span class="s">React</span><span class="nv"> </span><span class="s">JavaScript</span><span class="nv"> </span><span class="s">library</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">building</span><span class="nv"> </span><span class="s">user</span><span class="nv"> </span><span class="s">interfaces"</span>
   <span class="na">color</span><span class="pi">:</span> <span class="s2">"</span><span class="s">#61DAFB"</span>
-</div>
+</code></pre></div></div>
 
 <h2 id="-content-creation-workflow">🔄 Content Creation Workflow</h2>
 
@@ -1175,8 +1253,7 @@ img {
 
 <h3 id="manual-front-matter">Manual Front Matter</h3>
 
-<div class="language-yaml highlighter-rouge">
-<span class="nn">---</span>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">---</span>
 <span class="na">layout</span><span class="pi">:</span> <span class="s">post</span>
 <span class="na">title</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Your</span><span class="nv"> </span><span class="s">Post</span><span class="nv"> </span><span class="s">Title"</span>
 <span class="na">description</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Brief</span><span class="nv"> </span><span class="s">description</span><span class="nv"> </span><span class="s">for</span><span class="nv"> </span><span class="s">SEO"</span>
@@ -1189,7 +1266,7 @@ img {
   <span class="pi">-</span> <span class="s">vscode</span>
 <span class="na">author</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Your</span><span class="nv"> </span><span class="s">Name"</span>
 <span class="nn">---</span>
-</div>
+</code></pre></div></div>
 
 <h3 id="validation-checklist">Validation Checklist</h3>
 
@@ -1302,24 +1379,22 @@ img {
 
 <p>Location: <code class="language-plaintext highlighter-rouge">docs/_data/categories.yml</code></p>
 
-<div class="language-yaml highlighter-rouge">
-<span class="na">category-name</span><span class="pi">:</span>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">category-name</span><span class="pi">:</span>
   <span class="na">name</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Display</span><span class="nv"> </span><span class="s">Name"</span>
   <span class="na">description</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Purpose</span><span class="nv"> </span><span class="s">and</span><span class="nv"> </span><span class="s">scope</span><span class="nv"> </span><span class="s">description"</span>
   <span class="na">color</span><span class="pi">:</span> <span class="s2">"</span><span class="s">#HexColor"</span>
   <span class="na">icon</span><span class="pi">:</span> <span class="s2">"</span><span class="s">📚"</span> <span class="c1"># Optional emoji</span>
-</div>
+</code></pre></div></div>
 
 <h4 id="tags-data-file">Tags Data File</h4>
 
 <p>Location: <code class="language-plaintext highlighter-rouge">docs/_data/tags.yml</code></p>
 
-<div class="language-yaml highlighter-rouge">
-<span class="na">tag-name</span><span class="pi">:</span>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">tag-name</span><span class="pi">:</span>
   <span class="na">name</span><span class="pi">:</span> <span class="s2">"</span><span class="s">Display</span><span class="nv"> </span><span class="s">Name"</span>
   <span class="na">description</span><span class="pi">:</span> <span class="s2">"</span><span class="s">What</span><span class="nv"> </span><span class="s">this</span><span class="nv"> </span><span class="s">tag</span><span class="nv"> </span><span class="s">represents"</span>
   <span class="na">color</span><span class="pi">:</span> <span class="s2">"</span><span class="s">#HexColor"</span>
-</div>
+</code></pre></div></div>
 
 <h3 id="adding-new-taxonomy-terms">Adding New Taxonomy Terms</h3>
 
@@ -1342,14 +1417,13 @@ img {
 
 <h4 id="validation-commands">Validation Commands</h4>
 
-<div class="language-bash highlighter-rouge">
-<span class="c"># Test Jekyll build with new taxonomy</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Test Jekyll build with new taxonomy</span>
 <span class="nb">cd </span>docs
 bundle <span class="nb">exec </span>jekyll build <span class="nt">--drafts</span>
 
 <span class="c"># Check for missing data file entries</span>
 npm run taxonomy:validate  <span class="c"># If available</span>
-</div>
+</code></pre></div></div>
 
 <h2 id="-troubleshooting">🔍 Troubleshooting</h2>
 
@@ -1398,8 +1472,7 @@ npm run taxonomy:validate  <span class="c"># If available</span>
 
 <h4 id="check-taxonomy-consistency">Check Taxonomy Consistency</h4>
 
-<div class="language-bash highlighter-rouge">
-<span class="c"># Find posts without categories</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Find posts without categories</span>
 <span class="nb">grep</span> <span class="nt">-L</span> <span class="s2">"categories:"</span> docs/_posts/<span class="k">*</span>.md
 
 <span class="c"># Find posts without tags</span>
@@ -1407,7 +1480,7 @@ npm run taxonomy:validate  <span class="c"># If available</span>
 
 <span class="c"># List all used taxonomy terms</span>
 <span class="nb">grep</span> <span class="nt">-h</span> <span class="s2">"categories:</span><span class="se">\|</span><span class="s2">tags:"</span> docs/_posts/<span class="k">*</span>.md | <span class="nb">sort</span> | <span class="nb">uniq</span>
-</div>
+</code></pre></div></div>
 
 <h2 id="-advanced-features">📈 Advanced Features</h2>
 
@@ -1415,31 +1488,31 @@ npm run taxonomy:validate  <span class="c"># If available</span>
 
 <p>Create specialized archive templates:</p>
 
-<div class="language-plaintext highlighter-rouge">docs/_layouts/
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docs/_layouts/
 ├── archive.html        # Default archive layout
 ├── category-archive.html  # Category-specific layout
 └── tag-archive.html    # Tag-specific layout
-</div>
+</code></pre></div></div>
 
 <h3 id="taxonomy-based-navigation">Taxonomy-Based Navigation</h3>
 
 <p>Generate dynamic navigation:</p>
 
-<div class="language-liquid highlighter-rouge">&lt;!-- Category navigation --&gt;
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;!-- Category navigation --&gt;
 <span class="cp">{%</span><span class="w"> </span><span class="nt">for</span><span class="w"> </span><span class="nv">category</span><span class="w"> </span><span class="nt">in</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">data</span><span class="p">.</span><span class="nv">categories</span><span class="w"> </span><span class="cp">%}</span>
   &lt;a href="/category/<span class="cp">{{</span><span class="w"> </span><span class="nv">category</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="w"> </span><span class="cp">}}</span>/" style="color: <span class="cp">{{</span><span class="w"> </span><span class="nv">category</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="nv">color</span><span class="w"> </span><span class="cp">}}</span>"&gt;
     <span class="cp">{{</span><span class="w"> </span><span class="nv">category</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="nv">icon</span><span class="w"> </span><span class="cp">}}</span> <span class="cp">{{</span><span class="w"> </span><span class="nv">category</span><span class="p">[</span><span class="mi">1</span><span class="p">].</span><span class="nv">name</span><span class="w"> </span><span class="cp">}}</span>
   &lt;/a&gt;
 <span class="cp">{%</span><span class="w"> </span><span class="nt">endfor</span><span class="w"> </span><span class="cp">%}</span>
-</div>
+</code></pre></div></div>
 
 <h3 id="related-content-system">Related Content System</h3>
 
 <p>Use tags for content recommendations:</p>
 
-<div class="language-liquid highlighter-rouge">&lt;!-- Related posts by shared tags --&gt;
+<div class="language-liquid highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;!-- Related posts by shared tags --&gt;
 <span class="cp">{%</span><span class="w"> </span><span class="nt">assign</span><span class="w"> </span><span class="nv">related_posts</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nv">site</span><span class="p">.</span><span class="nv">posts</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">where_exp</span><span class="p">:</span><span class="w"> </span><span class="s2">"post"</span><span class="p">,</span><span class="w"> </span><span class="s2">"post.tags contains page.tags[0]"</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="nf">limit</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="cp">%}</span>
-</div>
+</code></pre></div></div>
 
 <h2 id="-best-practices-summary">🎯 Best Practices Summary</h2>
 
@@ -1515,8 +1588,8 @@ npm run taxonomy:validate  <span class="c"># If available</span>
 
 <hr>
 
-<p><strong>Last Updated</strong>: August 5, 2025<br>
-<strong>Maintainer</strong>: MIJUG Development Team<br>
+<p><strong>Last Updated</strong>: August 5, 2025
+<strong>Maintainer</strong>: MIJUG Development Team
 <strong>Related Documentation</strong>: <a href="/docs/frontmatter-cms/">Content Management Guide</a></p>
 </div>
 </article>
@@ -1612,6 +1685,15 @@ npm run taxonomy:validate  <span class="c"># If available</span>
           toggleNavigation();
         });
 
+        // Close button event handler
+        var closeBtn = nav.querySelector('.nav-close');
+        if (closeBtn) {
+          closeBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            toggleNavigation();
+          });
+        }
+
         document.addEventListener('click', function(e) {
           if (toggleBtn.getAttribute('aria-expanded') !== 'true') return;
 
@@ -1652,6 +1734,9 @@ npm run taxonomy:validate  <span class="c"># If available</span>
 
     <script src="https://www.googletagmanager.com/gtag/js?id=G-W1M1N0DCD4" crossorigin="anonymous" async></script>
     
+
+    <!-- WCAG 2.1 AA Accessibility Enhancements for scrollable regions -->
+    <script src="/assets/js/mijug-es5.min.js?v=20251112224242" defer crossorigin="anonymous"></script>
 
     <!-- Cookie consent system -->
     <!-- Google AdSense with MIJUG Cookie Consent Integration -->
