@@ -6,7 +6,7 @@
     <!-- Homepage - Highest priority -->
     <url>
         <loc>https://www.mijug.net/</loc>
-        <lastmod>2025-10-09T15:02:00-04:00</lastmod>
+        <lastmod>2025-11-12T21:12:59-05:00</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
@@ -22,7 +22,7 @@
     <url>
         <loc>https://www.mijug.net/posts/2025/10/06/typescript-jekyll-workspace/</loc>
         <lastmod>2025-10-09T14:42:23-04:00</lastmod>
-        <changefreq>weekly</changefreq>
+        <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         
     </url>
@@ -31,7 +31,7 @@
     <url>
         <loc>https://www.mijug.net/blog/browser-support-es5-es6-guide/</loc>
         <lastmod>2025-10-03T20:05:28-04:00</lastmod>
-        <changefreq>weekly</changefreq>
+        <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         
         <image:image>
@@ -45,7 +45,7 @@
     <url>
         <loc>https://www.mijug.net/posts/2025/10/02/september-2025-a-look-back/</loc>
         <lastmod>2025-10-03T20:05:28-04:00</lastmod>
-        <changefreq>weekly</changefreq>
+        <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         
     </url>
@@ -54,7 +54,7 @@
     <url>
         <loc>https://www.mijug.net/posts/2025/09/15/evening-in-person-seminar-dates-announced/</loc>
         <lastmod>2025-09-15T18:49:13-04:00</lastmod>
-        <changefreq>weekly</changefreq>
+        <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         
     </url>
@@ -63,7 +63,7 @@
     <url>
         <loc>https://www.mijug.net/posts/2025/09/12/inperson-seminars-agenda-and-highlights/</loc>
         <lastmod>2025-09-25T18:00:10-04:00</lastmod>
-        <changefreq>weekly</changefreq>
+        <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         
         <image:image>
@@ -77,7 +77,7 @@
     <url>
         <loc>https://www.mijug.net/posts/wires-that-connect-understanding-their-differences/</loc>
         <lastmod>2025-09-25T18:00:10-04:00</lastmod>
-        <changefreq>weekly</changefreq>
+        <changefreq>monthly</changefreq>
         <priority>0.8</priority>
         
     </url>
@@ -962,13 +962,13 @@
     <!-- Essential utility pages -->
     <url>
         <loc>https://www.mijug.net/tags/</loc>
-        <lastmod>2025-10-09T15:02:00-04:00</lastmod>
+        <lastmod>2025-11-12T21:12:59-05:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.4</priority>
     </url>
     <url>
         <loc>https://www.mijug.net/categories/</loc>
-        <lastmod>2025-10-09T15:02:00-04:00</lastmod>
+        <lastmod>2025-11-12T21:12:59-05:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.4</priority>
     </url>
