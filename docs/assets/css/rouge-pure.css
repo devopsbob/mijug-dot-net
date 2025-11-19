@@ -1,0 +1,32 @@
+/* Adds Bounding Box to Code Blocks */
+/* Container styling */
+.highlight .highlight,
+.highlight pre.highlight,
+.highlighter-rouge .highlight,
+.highlighter-rouge pre.highlight,
+.language-javascript .highlight,
+.language-javascript pre.highlight,
+.language-typescript .highlight,
+.language-typescript pre.highlight,
+.language-html .highlight,
+.language-html pre.highlight,
+.language-css .highlight,
+.language-css pre.highlight,
+.language-scss .highlight,
+.language-scss pre.highlight,
+.language-bash .highlight,
+.language-bash pre.highlight,
+.language-json .highlight,
+.language-json pre.highlight,
+.language-yaml .highlight,
+.language-yaml pre.highlight,
+.language-markdown .highlight,
+.language-markdown pre.highlight {
+  margin: 0;
+  padding: 1.25rem 1.5rem;
+  overflow-x: auto;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border: 1px solid #ccc;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05);
+  font-size: 0.9375rem;
+}

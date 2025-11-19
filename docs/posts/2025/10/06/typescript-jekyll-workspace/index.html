@@ -1,8 +1,8 @@
-<!DOCTYPE html>
 <html lang="en" class="no-js">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="format-detection" content="telephone=no" />
 
     <meta http-equiv="Content-Security-Policy" content="
       default-src 'self';
@@ -588,10 +588,10 @@ img {
     <meta name="google-site-verification" content="googlece83719b3f856e56" />
     <meta name="cache-version" content="20251007172153" />
 
-    <link rel="preload" as="style" href="/assets/main.css?v=20251112232854" media="print" crossorigin><link rel="stylesheet" href="/assets/main.css?v=20251112232854" media="print">
+    <link rel="preload" as="style" href="/assets/main.css?v=20251119161223" media="print" crossorigin><link rel="stylesheet" href="/assets/main.css?v=20251119161223" media="print">
 
     <noscript>
-      <link rel="stylesheet" href="/assets/main.css?v=20251112232854">
+      <link rel="stylesheet" href="/assets/main.css?v=20251119161223">
     </noscript>
 
     <link
@@ -841,8 +841,8 @@ img {
       <time class="dt-published" datetime="2025-10-06T16:39:01-04:00" itemprop="datePublished">
         Published Oct 6, 2025
       </time><span class="post-meta-separator"> • </span>
-      <time class="dt-modified" datetime="2025-11-11T14:33:07-05:00" itemprop="dateModified">
-        Updated Nov 11, 2025
+      <time class="dt-modified" datetime="2025-11-19T12:18:59-05:00" itemprop="dateModified">
+        Updated Nov 19, 2025
       </time><span class="post-meta-separator"> • </span>
       <span itemprop="author" itemscope itemtype="http://schema.org/Person">
         <span class="p-author h-card" itemprop="name">MIJUG Team</span>
@@ -911,12 +911,12 @@ npm <span class="nb">install</span> <span class="o">&amp;&amp;</span> <span clas
 npm run health-check
 
 <span class="c"># Ultra-fast development environment (&lt; 15 seconds startup)</span>
-npm run quick:start                 <span class="c"># TypeScript + Jekyll with performance monitoring</span>
-npm run dev:optimized              <span class="c"># Parallel development with memory limits</span>
+npm run quick:start           <span class="c"># TypeScript + Jekyll with performance monitoring</span>
+npm run dev:optimized         <span class="c"># Parallel development with memory limits</span>
 
 <span class="c"># Performance-monitored testing (&lt; 90 seconds)</span>
-npm run <span class="nb">test</span>:all:safe              <span class="c"># Jest + Playwright + Accessibility + Mermaid</span>
-npm run <span class="nb">test</span>:smoke                 <span class="c"># Quick validation (&lt; 15s)</span>
+npm run <span class="nb">test</span>:all:safe         <span class="c"># Jest + Playwright + Accessibility + Mermaid</span>
+npm run <span class="nb">test</span>:smoke            <span class="c"># Quick validation (&lt; 15s)</span>
 </code></pre></div></div>
 
 <h2 id="the-secret-sauce-performance-benchmarks">The Secret Sauce: Performance Benchmarks</h2>
@@ -965,8 +965,8 @@ npm run <span class="nb">test</span>:smoke                 <span class="c"># Qui
 <p>Every component is tested for WCAG 2.1 AA compliance automatically:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/bash</span>
-npm run <span class="nb">test</span>:a11y                  <span class="c"># Comprehensive accessibility audits</span>
-npm run <span class="nb">test</span>:a11y:headed           <span class="c"># Visual accessibility verification</span>
+npm run <span class="nb">test</span>:a11y             <span class="c"># Comprehensive accessibility audits</span>
+npm run <span class="nb">test</span>:a11y:headed      <span class="c"># Visual accessibility verification</span>
 </code></pre></div></div>
 
 <h3 id="2-dual-repository-workflow">2. Dual Repository Workflow</h3>
@@ -985,9 +985,9 @@ npm run <span class="nb">test</span>:a11y:headed           <span class="c"># Vis
 <p>Two-phase cache busting system that optimizes both build performance and browser caching:</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/bash</span>
-npm run cache:manage               <span class="c"># Smart cache updates only when assets change</span>
-npm run cache:optimize             <span class="c"># Build performance optimization</span>
-npm run cache:verify:debug         <span class="c"># Debug cache issues</span>
+npm run cache:manage          <span class="c"># Smart cache updates only when assets change</span>
+npm run cache:optimize        <span class="c"># Build performance optimization</span>
+npm run cache:verify:debug    <span class="c"># Debug cache issues</span>
 </code></pre></div></div>
 
 <h2 id="content-management-that-actually-works">Content Management That Actually Works</h2>
@@ -1032,7 +1032,7 @@ npm run browsers:ensure-safe       <span class="c"># Browser management automati
 <h3 id="pre-commit-quality-gateway">Pre-Commit Quality Gateway</h3>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/bash</span>
-npm run precheckin                 <span class="c"># Full checkpoint: format → lint → build → test → validate</span>
+npm run precheckin     <span class="c"># Full checkpoint: format → lint → build → test → validate</span>
 </code></pre></div></div>
 
 <p>This single command runs:</p>
@@ -1049,16 +1049,16 @@ npm run precheckin                 <span class="c"># Full checkpoint: format →
 <h3 id="production-deployment">Production Deployment</h3>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/bash</span>
-npm run deploy:optimized           <span class="c"># Automated sync with performance benchmarks</span>
-npm run deploy:production          <span class="c"># Production deployment with NODE_ENV=production</span>
+npm run deploy:optimized     <span class="c"># Automated sync with performance benchmarks</span>
+npm run deploy:production    <span class="c"># Production deployment with NODE_ENV=production</span>
 </code></pre></div></div>
 
 <h2 id="performance-monitoring-in-real-time">Performance Monitoring in Real-Time</h2>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/bash</span>
-npm run perf:monitor               <span class="c"># Live performance metrics</span>
-npm run analyze:memory             <span class="c"># Memory usage analysis</span>
-npm run perf:regression-check      <span class="c"># Detect performance regressions</span>
+npm run perf:monitor            <span class="c"># Live performance metrics</span>
+npm run analyze:memory          <span class="c"># Memory usage analysis</span>
+npm run perf:regression-check   <span class="c"># Detect performance regressions</span>
 </code></pre></div></div>
 
 <h2 id="why-this-matters-for-your-projects">Why This Matters for Your Projects</h2>
@@ -1285,6 +1285,7 @@ rbenv global 3.3.8
         'use strict';
 
         var html = document.documentElement;
+        html.setAttribute('lang', "en");
         var supportsModules = 'noModule' in HTMLScriptElement.prototype;
 
         // Update HTML classes for navigation management
@@ -1392,7 +1393,7 @@ rbenv global 3.3.8
     
 
     <!-- WCAG 2.1 AA Accessibility Enhancements for scrollable regions -->
-    <script src="/assets/js/mijug-es5.min.js?v=20251112232854" defer crossorigin="anonymous"></script>
+    <script src="/assets/js/mijug-es5.min.js?v=20251119161223" defer crossorigin="anonymous"></script>
 
     <!-- Cookie consent system -->
     <!-- Google AdSense with MIJUG Cookie Consent Integration -->
