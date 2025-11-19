@@ -1,0 +1,642 @@
+/* Code block styling */
+pre,
+code {
+  font-size: 0.9375rem;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  background-color: #eef;
+  font-family: Monaco, Menlo, Consolas, 'Courier New', monospace;
+}
+
+code {
+  padding: 1px 5px;
+}
+
+pre {
+  padding: 8px 12px;
+  overflow-x: auto;
+}
+
+pre > code {
+  border: 0;
+  padding-right: 0;
+  padding-left: 0;
+}
+
+/* Accessibility for code blocks */
+.highlight pre,
+.language-liquid .highlight pre,
+pre.highlight {
+  min-height: 21px;
+}
+
+.highlight pre:focus,
+.language-liquid .highlight pre:focus,
+pre.highlight:focus {
+  outline: 2px solid #007acc;
+  outline-offset: 2px;
+  background-color: #dde;
+}
+
+/* Enhanced syntax highlighting for .highlight and .highlighter-rouge */
+.highlight,
+.highlighter-rouge,
+.language-javascript,
+.language-typescript,
+.language-html,
+.language-css,
+.language-scss,
+.language-bash,
+.language-json,
+.language-yaml,
+.language-markdown {
+  margin: 1.5rem 0;
+  border-radius: 6px;
+  position: relative;
+}
+
+/* Container styling */
+.highlight .highlight,
+.highlight pre.highlight,
+.highlighter-rouge .highlight,
+.highlighter-rouge pre.highlight,
+.language-javascript .highlight,
+.language-javascript pre.highlight,
+.language-typescript .highlight,
+.language-typescript pre.highlight,
+.language-html .highlight,
+.language-html pre.highlight,
+.language-css .highlight,
+.language-css pre.highlight,
+.language-scss .highlight,
+.language-scss pre.highlight,
+.language-bash .highlight,
+.language-bash pre.highlight,
+.language-json .highlight,
+.language-json pre.highlight,
+.language-yaml .highlight,
+.language-yaml pre.highlight,
+.language-markdown .highlight,
+.language-markdown pre.highlight {
+  margin: 0;
+  padding: 1.25rem 1.5rem;
+  overflow-x: auto;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border: 1px solid #ccc;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05);
+  font-size: 0.9375rem;
+}
+
+/* Enhanced focus state for syntax highlighted blocks */
+.highlight .highlight:focus,
+.highlight pre.highlight:focus,
+.highlighter-rouge .highlight:focus,
+.highlighter-rouge pre.highlight:focus,
+.language-javascript .highlight:focus,
+.language-javascript pre.highlight:focus,
+.language-typescript .highlight:focus,
+.language-typescript pre.highlight:focus,
+.language-html .highlight:focus,
+.language-html pre.highlight:focus,
+.language-css .highlight:focus,
+.language-css pre.highlight:focus,
+.language-scss .highlight:focus,
+.language-scss pre.highlight:focus,
+.language-bash .highlight:focus,
+.language-bash pre.highlight:focus,
+.language-json .highlight:focus,
+.language-json pre.highlight:focus,
+.language-yaml .highlight:focus,
+.language-yaml pre.highlight:focus,
+.language-markdown .highlight:focus,
+.language-markdown pre.highlight:focus {
+  background: linear-gradient(135deg, #eef 0%, #dde 100%);
+  border-color: #007acc;
+  box-shadow:
+    inset 0 1px 2px rgba(0, 0, 0, 0.05),
+    0 0 0 4px rgba(0, 122, 204, 0.1),
+    0 2px 8px rgba(0, 122, 204, 0.15);
+}
+
+/* Language label for enhanced accessibility */
+.highlight .highlight[data-language]::before,
+.highlight pre.highlight[data-language]::before,
+.highlighter-rouge .highlight[data-language]::before,
+.highlighter-rouge pre.highlight[data-language]::before,
+.language-javascript .highlight[data-language]::before,
+.language-javascript pre.highlight[data-language]::before,
+.language-typescript .highlight[data-language]::before,
+.language-typescript pre.highlight[data-language]::before,
+.language-html .highlight[data-language]::before,
+.language-html pre.highlight[data-language]::before,
+.language-css .highlight[data-language]::before,
+.language-css pre.highlight[data-language]::before,
+.language-scss .highlight[data-language]::before,
+.language-scss pre.highlight[data-language]::before,
+.language-bash .highlight[data-language]::before,
+.language-bash pre.highlight[data-language]::before,
+.language-json .highlight[data-language]::before,
+.language-json pre.highlight[data-language]::before,
+.language-yaml .highlight[data-language]::before,
+.language-yaml pre.highlight[data-language]::before,
+.language-markdown .highlight[data-language]::before,
+.language-markdown pre.highlight[data-language]::before {
+  content: attr(data-language);
+  position: absolute;
+  top: -1px;
+  right: 0;
+  background: #007acc;
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 0 6px 0 4px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  z-index: 1;
+}
+
+/* Code content within highlight blocks */
+.highlight pre > code,
+.highlighter-rouge pre > code,
+.language-javascript pre > code,
+.language-typescript pre > code,
+.language-html pre > code,
+.language-css pre > code,
+.language-scss pre > code,
+.language-bash pre > code,
+.language-json pre > code,
+.language-yaml pre > code,
+.language-markdown pre > code,
+.highlight .highlight > pre > code,
+.highlighter-rouge .highlight > pre > code,
+.language-javascript .highlight > pre > code,
+.language-typescript .highlight > pre > code,
+.language-html .highlight > pre > code,
+.language-css .highlight > pre > code,
+.language-scss .highlight > pre > code,
+.language-bash .highlight > pre > code,
+.language-json .highlight > pre > code,
+.language-yaml .highlight > pre > code,
+.language-markdown .highlight > pre > code {
+  display: block;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: inherit;
+  overflow-x: visible;
+  white-space: pre;
+  word-wrap: normal;
+}
+
+.highlight pre > code:focus,
+.highlighter-rouge pre > code:focus,
+.language-javascript pre > code:focus,
+.language-typescript pre > code:focus,
+.language-html pre > code:focus,
+.language-css pre > code:focus,
+.language-scss pre > code:focus,
+.language-bash pre > code:focus,
+.language-json pre > code:focus,
+.language-yaml pre > code:focus,
+.language-markdown pre > code:focus,
+.highlight .highlight > pre > code:focus,
+.highlighter-rouge .highlight > pre > code:focus,
+.language-javascript .highlight > pre > code:focus,
+.language-typescript .highlight > pre > code:focus,
+.language-html .highlight > pre > code:focus,
+.language-css .highlight > pre > code:focus,
+.language-scss .highlight > pre > code:focus,
+.language-bash .highlight > pre > code:focus,
+.language-json .highlight > pre > code:focus,
+.language-yaml .highlight > pre > code:focus,
+.language-markdown .highlight > pre > code:focus {
+  outline: none;
+  background: transparent;
+}
+
+/* Rouge syntax highlighter enhancements */
+.rouge-gutter .gl {
+  color: #999;
+  border-right: 1px solid #ccc;
+  padding-right: 0.75rem;
+  margin-right: 0.75rem;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Copy button enhancement */
+.code-copy-container {
+  position: relative;
+}
+
+.code-copy-button {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: rgba(0, 122, 204, 0.9);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(-4px);
+  transition: all 0.3s ease;
+  z-index: 2;
+  width: auto;
+}
+
+.code-copy-button:hover,
+.code-copy-button:focus {
+  background: #007acc;
+  transform: translateY(0);
+  outline: 2px solid white;
+  outline-offset: 2px;
+}
+
+.code-copy-button.copied {
+  background: #28a745;
+}
+
+.code-copy-button.copied::after {
+  content: " ✓";
+}
+
+.code-copy-container:hover .code-copy-button,
+.code-copy-container:focus-within .code-copy-button,
+.code-copy-button:focus {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Mobile optimizations */
+@media screen and (max-width: 768px) {
+  pre,
+  .highlight pre.highlight {
+    padding: 1rem;
+    font-size: 0.85rem;
+    border-radius: 4px;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+  }
+
+  code {
+    font-size: 0.8rem;
+    padding: 1px 4px;
+  }
+
+  .code-copy-button {
+    position: static;
+    display: block;
+    width: 100%;
+    margin-top: 0.5rem;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Print optimizations */
+@media print {
+  pre,
+  code,
+  .highlight pre.highlight {
+    background: white !important;
+    border: 1px solid #333 !important;
+    color: #000 !important;
+    box-shadow: none !important;
+  }
+
+  .highlight pre.highlight::before,
+  .highlight pre.highlight::after,
+  .code-copy-button {
+    display: none !important;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .highlight pre.highlight,
+  pre,
+  code {
+    background-color: #1e1e1e;
+    border-color: #333;
+    color: #d4d4d4;
+  }
+
+  .highlight pre.highlight:focus,
+  pre:focus,
+  code:focus {
+    background-color: #2d2d2d;
+    border-color: #007acc;
+  }
+
+  .rouge-gutter .gl {
+    color: #858585;
+    border-right-color: #333;
+  }
+}
+
+/* Error state for invalid code blocks */
+.code-error {
+  border-color: #dc3545 !important;
+  background-color: rgba(220, 53, 69, 0.05) !important;
+}
+
+.code-error::before {
+  content: "⚠️ Code Error: ";
+  color: #dc3545;
+  font-weight: 600;
+}
+
+/* Rouge syntax highlighting tokens using vim.css color scheme */
+.highlight {
+  background-color: #222 !important;
+}
+
+.highlight pre,
+.highlight pre > code {
+  background-color: #222 !important;
+}
+
+/* Keywords (yellow in vim.css) */
+.highlight .k,
+.highlight .kc,
+.highlight .kd,
+.highlight .kn,
+.highlight .kp,
+.highlight .kr,
+.highlight .kt {
+  color: #cdcd00;
+}
+
+/* Strings (red in vim.css) */
+.highlight .s,
+.highlight .sb,
+.highlight .sc,
+.highlight .sd,
+.highlight .s2,
+.highlight .se,
+.highlight .sh,
+.highlight .si,
+.highlight .sx,
+.highlight .sr,
+.highlight .s1,
+.highlight .ss {
+  color: #cd0000;
+}
+
+/* Comments (blue in vim.css) */
+.highlight .c,
+.highlight .cm,
+.highlight .cp,
+.highlight .c1,
+.highlight .cs {
+  color: #000080;
+  font-style: italic;
+}
+
+/* Numbers (magenta in vim.css) */
+.highlight .m,
+.highlight .mf,
+.highlight .mh,
+.highlight .mi,
+.highlight .mo {
+  color: #cd00cd;
+}
+
+/* Operators (cyan in vim.css) */
+.highlight .o,
+.highlight .ow {
+  color: #3399cc;
+}
+
+/* Names (gray in vim.css) */
+.highlight .n,
+.highlight .na,
+.highlight .nb,
+.highlight .nc,
+.highlight .no,
+.highlight .nd,
+.highlight .ni,
+.highlight .ne,
+.highlight .nf,
+.highlight .nl,
+.highlight .nn,
+.highlight .nt,
+.highlight .nv {
+  color: #cccccc;
+}
+
+/* Variables and functions (cyan in vim.css) */
+.highlight .nf {
+  color: #cccccc;
+}
+
+.highlight .nv,
+.highlight .vc,
+.highlight .vg,
+.highlight .vi {
+  color: #00cdcd;
+}
+
+/* Punctuation (gray in vim.css) */
+.highlight .p {
+  color: #cccccc;
+}
+
+/* Errors (from vim.css) */
+.highlight .err {
+  color: #cccccc;
+  border: 1px solid #FF0000;
+}
+
+/* Line numbers (if enabled) */
+.highlight .lineno {
+  color: #ccc;
+  background-color: rgba(204, 204, 204, 0.1);
+  padding-right: 0.5rem;
+  margin-right: 0.5rem;
+  border-right: 1px solid #ccc;
+  user-select: none;
+}
+
+/* Adjust syntax colors for accessibility contrast */
+.highlight pre > code .k,
+.highlight pre > code .kc,
+.highlight pre > code .kd,
+.highlight pre > code .kn,
+.highlight pre > code .kp,
+.highlight pre > code .kr,
+.highlight pre > code .kt {
+  color: #569cd6;
+}
+
+.highlight pre > code .s,
+.highlight pre > code .sb,
+.highlight pre > code .sc,
+.highlight pre > code .sd,
+.highlight pre > code .s2,
+.highlight pre > code .se,
+.highlight pre > code .sh,
+.highlight pre > code .si,
+.highlight pre > code .sx,
+.highlight pre > code .sr,
+.highlight pre > code .s1,
+.highlight pre > code .ss {
+  color: #ce9178;
+}
+
+.highlight pre > code .c,
+.highlight pre > code .cm,
+.highlight pre > code .cp,
+.highlight pre > code .c1,
+.highlight pre > code .cs {
+  color: #a4e984;
+}
+
+.highlight pre > code .m,
+.highlight pre > code .mf,
+.highlight pre > code .mh,
+.highlight pre > code .mi,
+.highlight pre > code .mo {
+  color: #b5cea8;
+}
+
+.highlight pre > code .nf {
+  color: #dcdcaa;
+}
+
+.highlight pre > code .nv,
+.highlight pre > code .vc,
+.highlight pre > code .vg,
+.highlight pre > code .vi {
+  color: #9cdcfe;
+}
+
+.highlight pre > code .err {
+  color: #f44747;
+  background-color: rgba(244, 71, 71, 0.15);
+}
+
+/* Dark mode syntax highlighting */
+@media (prefers-color-scheme: dark) {
+  .highlight .k,
+  .highlight .kc,
+  .highlight .kd,
+  .highlight .kn,
+  .highlight .kp,
+  .highlight .kr,
+  .highlight .kt {
+    color: #569cd6;
+  }
+
+  .highlight .s,
+  .highlight .sb,
+  .highlight .sc,
+  .highlight .sd,
+  .highlight .s2,
+  .highlight .se,
+  .highlight .sh,
+  .highlight .si,
+  .highlight .sx,
+  .highlight .sr,
+  .highlight .s1,
+  .highlight .ss {
+    color: #ce9178;
+  }
+
+  .highlight .c,
+  .highlight .cm,
+  .highlight .cp,
+  .highlight .c1,
+  .highlight .cs {
+    color: #6a9955;
+  }
+
+  .highlight .m,
+  .highlight .mf,
+  .highlight .mh,
+  .highlight .mi,
+  .highlight .mo {
+    color: #b5cea8;
+  }
+
+  .highlight .nf {
+    color: #dcdcaa;
+  }
+
+  .highlight .nv,
+  .highlight .vc,
+  .highlight .vg,
+  .highlight .vi {
+    color: #9cdcfe;
+  }
+
+  .highlight .err {
+    color: #f44747;
+    background-color: rgba(244, 71, 71, 0.15);
+  }
+}
+
+/* Copy button styling */
+.highlighter-rouge .copy-button {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: #e9ecef;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: #007acc;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: auto;
+  height: auto;
+}
+
+.highlighter-rouge .copy-button:hover,
+.highlighter-rouge .copy-button:focus {
+  background: #007acc;
+  color: white;
+  outline: 2px solid #007acc;
+  outline-offset: 1px;
+}
+
+.highlighter-rouge .copy-button:active {
+  background: #005a9e;
+}
+
+.highlighter-rouge .copy-button.copied {
+  background: #28a745;
+  color: white;
+  border-color: #28a745;
+}
+
+.highlighter-rouge .copy-button.loading {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Language label styling */
+.highlighter-rouge[data-language]::before {
+  content: attr(data-language);
+  position: absolute;
+  top: -1px;
+  right: 0;
+  background: #007acc;
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 0 4px 0 4px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  z-index: 1;
+}
