@@ -592,12 +592,12 @@ img {
     
 
     <meta name="google-site-verification" content="googlece83719b3f856e56" />
-    <meta name="cache-version" content="20251007172153" />
+    <meta name="cache-version" content="20251119192849" />
 
-    <link rel="preload" as="style" href="/assets/main.css?v=20251119161223" media="print" crossorigin><link rel="stylesheet" href="/assets/main.css?v=20251119161223" media="print">
+    <link rel="preload" as="style" href="/assets/main.css?v=20251119205905" media="print" crossorigin><link rel="stylesheet" href="/assets/main.css?v=20251119205905" media="print">
 
     <noscript>
-      <link rel="stylesheet" href="/assets/main.css?v=20251119161223">
+      <link rel="stylesheet" href="/assets/main.css?v=20251119205905">
     </noscript>
 
     <link
@@ -611,7 +611,7 @@ img {
     <link
       rel="icon"
       type="image/svg+xml"
-      href="/assets/kranson_enterprises_logo_180x180.png?v=20251007172153"
+      href="/assets/kranson_enterprises_logo_180x180.png?v=20251119192849"
     />
     
     <link
@@ -651,7 +651,7 @@ img {
 
     <script>
   window.MIJUG = window.MIJUG || {};
-  window.MIJUG.cacheVersion = "20251007172153";
+  window.MIJUG.cacheVersion = "20251119192849";
 </script>
 
   
@@ -674,7 +674,7 @@ img {
       <div class="wrapper">
         <a class="site-title" rel="home" href="/">
           
-          <img src="/assets/kranson_enterprises_logo_180x180.png?v=20251007172153" alt="My Info Just Under Glass" width="50" height="50">
+          <img src="/assets/kranson_enterprises_logo_180x180.png?v=20251119192849" alt="My Info Just Under Glass" width="50" height="50">
            My Info Just Under Glass
         </a>
 
@@ -883,19 +883,63 @@ img {
 
 <p>The project’s <code class="language-plaintext highlighter-rouge">package.json</code> defines supported browsers:</p>
 
-<pre><code class="language-script">{
-  "browserslist": [
-    "defaults",
-    "last 2 versions",
-    "&gt; 1%",
-    "IE 11",
-    "Chrome &gt;= 60",
-    "Firefox &gt;= 55",
-    "Safari &gt;= 12",
-    "Edge &gt;= 16"
-  ]
-}
-</code></pre>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"browserslist"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="s2">"defaults"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"last 2 versions"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"&gt; 1%"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"IE 11"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"Chrome &gt;= 60"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"Firefox &gt;= 55"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"Safari &gt;= 12"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"Edge &gt;= 16"</span><span class="w">
+  </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
+
+<h2 id="es5-vs-es6-es2015-support">ES5 vs ES6 (ES2015) Support</h2>
+
+<p>This project needs to be explicit about whether a browser is expected to run modern ES6 (ES2015+) code natively or should be treated as ES5-only and therefore require transpilation/polyfills. The guidance below is conservative and focused on major browser releases — some specific ES2015 features (modules, proxies, certain APIs) may require newer minor/major releases.</p>
+
+<ul>
+  <li>
+<strong>ES6-capable (generally safe for ES2015 syntax/features):</strong>
+    <ul>
+      <li>
+<strong>Chrome:</strong> 49+</li>
+      <li>
+<strong>Firefox:</strong> 45+ (recommend 54+ for broader feature coverage)</li>
+      <li>
+<strong>Edge:</strong> 15+ (EdgeHTML 15 has broad ES6 support) and all Chromium-based Edge (79+)</li>
+      <li>
+<strong>Safari:</strong> 10+</li>
+      <li>
+<strong>Opera:</strong> 36+</li>
+      <li>
+<strong>Android Chrome / WebView:</strong> 49+</li>
+      <li>
+<strong>iOS Safari:</strong> 10+</li>
+    </ul>
+  </li>
+  <li>
+<strong>ES5-only or Legacy (require transpilation and polyfills to run ES6 code reliably):</strong>
+    <ul>
+      <li>
+<strong>Internet Explorer:</strong> IE11 and older — ES5 only; do not assume ES6 support</li>
+      <li>
+<strong>Older mobile browsers:</strong> legacy Android Browser (pre-Chrome WebView), older embedded browsers</li>
+      <li>
+<strong>Older desktop versions:</strong> Safari &lt; 10, Chrome &lt; 49, Firefox &lt; 45</li>
+    </ul>
+  </li>
+</ul>
+
+<p>Notes:</p>
+
+<ul>
+  <li>If your code uses very new language features (optional chaining, nullish coalescing, top-level await, native modules), target newer minimum versions (for example: Chrome 61+, Firefox 60+, Safari 11+).</li>
+  <li>The project’s <code class="language-plaintext highlighter-rouge">browserslist</code> + build tooling should be used to drive transpilation (Babel / TypeScript) and polyfill inclusion. For public-facing sites that must support IE11, configure the toolchain to emit ES5 and include polyfills. For modern-only deployments, you can target ES6/ES2015 and reduce transpilation.</li>
+</ul>
 
 <h2 id="test-categories">Test Categories</h2>
 
@@ -959,7 +1003,7 @@ img {
 
 <h3 id="quick-test-commands">Quick Test Commands</h3>
 
-<pre><code class="language-script"># Run all browser compatibility tests
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Run all browser compatibility tests
 npm run test:browser-compat
 
 # Run in headed mode (visible browser)
@@ -970,18 +1014,18 @@ npm run test:browser-compat:build
 
 # Run specific test pattern
 npx playwright test e2e/browser-compatibility.spec.ts --grep "Chrome"
-</code></pre>
+</code></pre></div></div>
 
 <h3 id="manual-test-script">Manual Test Script</h3>
 
-<pre><code class="language-script"># Run the custom test script with options
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Run the custom test script with options
 node scripts/test-browser-compatibility.js
 node scripts/test-browser-compatibility.js --build --headed
-</code></pre>
+</code></pre></div></div>
 
 <h3 id="individual-test-cases">Individual Test Cases</h3>
 
-<pre><code class="language-script"># Test modern browser detection
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Test modern browser detection
 npx playwright test --grep "should detect modern Chrome"
 
 # Test old browser warnings
@@ -992,7 +1036,7 @@ npx playwright test --grep "should handle very new browser"
 
 # Test browserslist compliance
 npx playwright test --grep "Browserslist Configuration"
-</code></pre>
+</code></pre></div></div>
 
 <h2 id="expected-test-results">Expected Test Results</h2>
 
@@ -1060,31 +1104,31 @@ npx playwright test --grep "Browserslist Configuration"
 
 <p>The tests use realistic user agent strings for different browser versions:</p>
 
-<pre><code class="language-script">const mockUserAgents = {
-  chromeModern:
-    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36",
-  chromeOld:
-    "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36",
-  // ... more user agents
-};
-</code></pre>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">mockUserAgents</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">chromeModern</span><span class="p">:</span>
+    <span class="dl">"</span><span class="s2">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36</span><span class="dl">"</span><span class="p">,</span>
+  <span class="na">chromeOld</span><span class="p">:</span>
+    <span class="dl">"</span><span class="s2">Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/58.0.3029.110 Safari/537.36</span><span class="dl">"</span><span class="p">,</span>
+  <span class="c1">// ... more user agents</span>
+<span class="p">};</span>
+</code></pre></div></div>
 
 <h3 id="release-date-database">Release Date Database</h3>
 
 <p>The browser age calculation uses a database of major version release dates:</p>
 
-<pre><code class="language-script">const releaseDates = {
-  Chrome: {
-    128: "2024-08-20",
-    127: "2024-07-16", // ...
-  },
-  Firefox: {
-    129: "2024-08-06",
-    128: "2024-07-09", // ...
-  },
-  // ... more browsers
-};
-</code></pre>
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">const</span> <span class="nx">releaseDates</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="na">Chrome</span><span class="p">:</span> <span class="p">{</span>
+    <span class="mi">128</span><span class="p">:</span> <span class="dl">"</span><span class="s2">2024-08-20</span><span class="dl">"</span><span class="p">,</span>
+    <span class="mi">127</span><span class="p">:</span> <span class="dl">"</span><span class="s2">2024-07-16</span><span class="dl">"</span><span class="p">,</span> <span class="c1">// ...</span>
+  <span class="p">},</span>
+  <span class="na">Firefox</span><span class="p">:</span> <span class="p">{</span>
+    <span class="mi">129</span><span class="p">:</span> <span class="dl">"</span><span class="s2">2024-08-06</span><span class="dl">"</span><span class="p">,</span>
+    <span class="mi">128</span><span class="p">:</span> <span class="dl">"</span><span class="s2">2024-07-09</span><span class="dl">"</span><span class="p">,</span> <span class="c1">// ...</span>
+  <span class="p">},</span>
+  <span class="c1">// ... more browsers</span>
+<span class="p">};</span>
+</code></pre></div></div>
 
 <h2 id="accessibility-testing">Accessibility Testing</h2>
 
@@ -1124,25 +1168,28 @@ npx playwright test --grep "Browserslist Configuration"
   <li>
     <p><strong>Timeout Errors</strong>: Usually indicates the about page isn’t loading properly</p>
 
-    <pre><code class="language-script"># Check if Jekyll site exists
+    <div class="language-text highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code># Check if Jekyll site exists
 ls -la docs/_site/about/index.html
 
 # Rebuild if needed
 npm run build:jekyll:drafts
-</code></pre>
+</code></pre></div>    </div>
   </li>
   <li>
     <p><strong>Version Mismatch</strong>: Test expectations don’t match detected versions</p>
 
-    <pre><code class="language-script"># Check what version is actually detected
+    <div class="language-text highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code># Check what version is actually detected
 npx playwright test --grep "browser info" --reporter=line
-</code></pre>
+</code></pre></div>    </div>
   </li>
   <li>
     <p><strong>URL Construction</strong>: File path issues in different environments</p>
-    <pre><code class="language-script"># Set explicit base URL
+    <div class="language-text highlighter-rouge">
+<div class="highlight"><pre class="highlight"><code># Set explicit base URL
 BASE_URL="file://$(pwd)/docs/_site" npx playwright test
-</code></pre>
+</code></pre></div>    </div>
   </li>
 </ol>
 
@@ -1150,23 +1197,23 @@ BASE_URL="file://$(pwd)/docs/_site" npx playwright test
 
 <p>Run tests with debug logging:</p>
 
-<pre><code class="language-script"># Enable debug output
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Enable debug output
 DEBUG=playwright:* npx playwright test e2e/browser-compatibility.spec.ts
 
 # Run single test with trace
 npx playwright test --trace on --grep "should detect modern Chrome"
-</code></pre>
+</code></pre></div></div>
 
 <h2 id="continuous-integration">Continuous Integration</h2>
 
 <p>The browser compatibility tests run as part of the CI pipeline:</p>
 
-<pre><code class="language-script"># .github/workflows/test.yml
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code># .github/workflows/test.yml
 - name: Run Browser Compatibility Tests
   run: |
     npm run build:jekyll:drafts
     npm run test:browser-compat
-</code></pre>
+</code></pre></div></div>
 
 <h2 id="future-enhancements">Future Enhancements</h2>
 
@@ -1334,7 +1381,7 @@ npx playwright test --trace on --grep "should detect modern Chrome"
     
 
     <!-- WCAG 2.1 AA Accessibility Enhancements for scrollable regions -->
-    <script src="/assets/js/mijug-es5.min.js?v=20251119161223" defer crossorigin="anonymous"></script>
+    <script src="/assets/js/mijug-es5.min.js?v=20251119205905" defer crossorigin="anonymous"></script>
 
     <!-- Cookie consent system -->
     <!-- Google AdSense with MIJUG Cookie Consent Integration -->

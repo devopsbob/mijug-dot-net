@@ -592,12 +592,12 @@ img {
     
 
     <meta name="google-site-verification" content="googlece83719b3f856e56" />
-    <meta name="cache-version" content="20251007172153" />
+    <meta name="cache-version" content="20251119192849" />
 
-    <link rel="preload" as="style" href="/assets/main.css?v=20251119161223" media="print" crossorigin><link rel="stylesheet" href="/assets/main.css?v=20251119161223" media="print">
+    <link rel="preload" as="style" href="/assets/main.css?v=20251119205905" media="print" crossorigin><link rel="stylesheet" href="/assets/main.css?v=20251119205905" media="print">
 
     <noscript>
-      <link rel="stylesheet" href="/assets/main.css?v=20251119161223">
+      <link rel="stylesheet" href="/assets/main.css?v=20251119205905">
     </noscript>
 
     <link
@@ -611,7 +611,7 @@ img {
     <link
       rel="icon"
       type="image/svg+xml"
-      href="/assets/kranson_enterprises_logo_180x180.png?v=20251007172153"
+      href="/assets/kranson_enterprises_logo_180x180.png?v=20251119192849"
     />
     
     <link
@@ -651,7 +651,7 @@ img {
 
     <script>
   window.MIJUG = window.MIJUG || {};
-  window.MIJUG.cacheVersion = "20251007172153";
+  window.MIJUG.cacheVersion = "20251119192849";
 </script>
 
   
@@ -674,7 +674,7 @@ img {
       <div class="wrapper">
         <a class="site-title" rel="home" href="/">
           
-          <img src="/assets/kranson_enterprises_logo_180x180.png?v=20251007172153" alt="My Info Just Under Glass" width="50" height="50">
+          <img src="/assets/kranson_enterprises_logo_180x180.png?v=20251119192849" alt="My Info Just Under Glass" width="50" height="50">
            My Info Just Under Glass
         </a>
 
@@ -1025,58 +1025,58 @@ npm run <span class="nb">test</span>:a11y:headed  <span class="c"># Run with bro
 
 <h3 id="accessibility-test-files">Accessibility Test Files</h3>
 
-<pre><code class="language-script">e2e/
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>e2e/
 ├── accessibility.spec.ts               # Main accessibility tests
 ├── documentation-accessibility.spec.ts # Documentation-specific tests
 ├── homepage.spec.ts                    # Includes accessibility checks
 ├── documentation.spec.ts               # Includes accessibility checks
 └── navigation.spec.ts                  # Includes accessibility checks
-</code></pre>
+</code></pre></div></div>
 
 <h3 id="test-patterns">Test Patterns</h3>
 
 <h4 id="basic-accessibility-audit">Basic Accessibility Audit</h4>
 
-<pre><code class="language-script">test("should pass accessibility audit @a11y", async ({ page }) =&gt; {
-  await page.goto("/");
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">test</span><span class="p">(</span><span class="dl">"</span><span class="s2">should pass accessibility audit @a11y</span><span class="dl">"</span><span class="p">,</span> <span class="k">async </span><span class="p">({</span> <span class="nx">page</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">await</span> <span class="nx">page</span><span class="p">.</span><span class="nf">goto</span><span class="p">(</span><span class="dl">"</span><span class="s2">/</span><span class="dl">"</span><span class="p">);</span>
 
-  const accessibilityScanResults = await new AxeBuilder({ page }).withTags(["wcag2a", "wcag2aa", "wcag21aa"]).analyze();
+  <span class="kd">const</span> <span class="nx">accessibilityScanResults</span> <span class="o">=</span> <span class="k">await</span> <span class="k">new</span> <span class="nc">AxeBuilder</span><span class="p">({</span> <span class="nx">page</span> <span class="p">}).</span><span class="nf">withTags</span><span class="p">([</span><span class="dl">"</span><span class="s2">wcag2a</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">wcag2aa</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">wcag21aa</span><span class="dl">"</span><span class="p">]).</span><span class="nf">analyze</span><span class="p">();</span>
 
-  expect(accessibilityScanResults.violations).toEqual([]);
-});
-</code></pre>
+  <span class="nf">expect</span><span class="p">(</span><span class="nx">accessibilityScanResults</span><span class="p">.</span><span class="nx">violations</span><span class="p">).</span><span class="nf">toEqual</span><span class="p">([]);</span>
+<span class="p">});</span>
+</code></pre></div></div>
 
 <h4 id="keyboard-navigation-test">Keyboard Navigation Test</h4>
 
-<pre><code class="language-script">test("should be keyboard accessible @a11y", async ({ page }) =&gt; {
-  await page.goto("/");
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">test</span><span class="p">(</span><span class="dl">"</span><span class="s2">should be keyboard accessible @a11y</span><span class="dl">"</span><span class="p">,</span> <span class="k">async </span><span class="p">({</span> <span class="nx">page</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">await</span> <span class="nx">page</span><span class="p">.</span><span class="nf">goto</span><span class="p">(</span><span class="dl">"</span><span class="s2">/</span><span class="dl">"</span><span class="p">);</span>
 
-  await page.keyboard.press("Tab");
-  const focusedElement = await page.evaluate(() =&gt; document.activeElement?.tagName);
-  expect(["A", "BUTTON", "INPUT"]).toContain(focusedElement);
-});
-</code></pre>
+  <span class="k">await</span> <span class="nx">page</span><span class="p">.</span><span class="nx">keyboard</span><span class="p">.</span><span class="nf">press</span><span class="p">(</span><span class="dl">"</span><span class="s2">Tab</span><span class="dl">"</span><span class="p">);</span>
+  <span class="kd">const</span> <span class="nx">focusedElement</span> <span class="o">=</span> <span class="k">await</span> <span class="nx">page</span><span class="p">.</span><span class="nf">evaluate</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="nb">document</span><span class="p">.</span><span class="nx">activeElement</span><span class="p">?.</span><span class="nx">tagName</span><span class="p">);</span>
+  <span class="nf">expect</span><span class="p">([</span><span class="dl">"</span><span class="s2">A</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">BUTTON</span><span class="dl">"</span><span class="p">,</span> <span class="dl">"</span><span class="s2">INPUT</span><span class="dl">"</span><span class="p">]).</span><span class="nf">toContain</span><span class="p">(</span><span class="nx">focusedElement</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div></div>
 
 <h4 id="specific-rule-testing">Specific Rule Testing</h4>
 
-<pre><code class="language-script">test("should have proper color contrast @a11y", async ({ page }) =&gt; {
-  await page.goto("/");
+<div class="language-typescript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">test</span><span class="p">(</span><span class="dl">"</span><span class="s2">should have proper color contrast @a11y</span><span class="dl">"</span><span class="p">,</span> <span class="k">async </span><span class="p">({</span> <span class="nx">page</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="p">{</span>
+  <span class="k">await</span> <span class="nx">page</span><span class="p">.</span><span class="nf">goto</span><span class="p">(</span><span class="dl">"</span><span class="s2">/</span><span class="dl">"</span><span class="p">);</span>
 
-  const accessibilityScanResults = await new AxeBuilder({ page }).withRules(["color-contrast"]).analyze();
+  <span class="kd">const</span> <span class="nx">accessibilityScanResults</span> <span class="o">=</span> <span class="k">await</span> <span class="k">new</span> <span class="nc">AxeBuilder</span><span class="p">({</span> <span class="nx">page</span> <span class="p">}).</span><span class="nf">withRules</span><span class="p">([</span><span class="dl">"</span><span class="s2">color-contrast</span><span class="dl">"</span><span class="p">]).</span><span class="nf">analyze</span><span class="p">();</span>
 
-  expect(accessibilityScanResults.violations).toEqual([]);
-});
-</code></pre>
+  <span class="nf">expect</span><span class="p">(</span><span class="nx">accessibilityScanResults</span><span class="p">.</span><span class="nx">violations</span><span class="p">).</span><span class="nf">toEqual</span><span class="p">([]);</span>
+<span class="p">});</span>
+</code></pre></div></div>
 
 <h2 id="configuration">Configuration</h2>
 
 <h3 id="packagejson-scripts">Package.json Scripts</h3>
 
-<pre><code class="language-script">{
-  "test:a11y": "playwright test --grep @a11y",
-  "test:a11y:headed": "playwright test --grep @a11y --headed"
-}
-</code></pre>
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"test:a11y"</span><span class="p">:</span><span class="w"> </span><span class="s2">"playwright test --grep @a11y"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"test:a11y:headed"</span><span class="p">:</span><span class="w"> </span><span class="s2">"playwright test --grep @a11y --headed"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div></div>
 
 <h3 id="playwright-configuration">Playwright Configuration</h3>
 
@@ -1160,12 +1160,12 @@ npm run <span class="nb">test</span>:a11y:headed  <span class="c"># Run with bro
 
 <p>Accessibility tests can be integrated into continuous integration:</p>
 
-<pre><code class="language-script"># .github/workflows/accessibility.yml
-- name: Run Accessibility Tests
-  run: |
-    npm install
-    npm run test:a11y
-</code></pre>
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># .github/workflows/accessibility.yml</span>
+<span class="pi">-</span> <span class="na">name</span><span class="pi">:</span> <span class="s">Run Accessibility Tests</span>
+  <span class="na">run</span><span class="pi">:</span> <span class="pi">|</span>
+    <span class="s">npm install</span>
+    <span class="s">npm run test:a11y</span>
+</code></pre></div></div>
 
 <h2 id="tools-and-resources">Tools and Resources</h2>
 
@@ -1379,7 +1379,7 @@ npm run <span class="nb">test</span>:a11y:headed  <span class="c"># Run with bro
     
 
     <!-- WCAG 2.1 AA Accessibility Enhancements for scrollable regions -->
-    <script src="/assets/js/mijug-es5.min.js?v=20251119161223" defer crossorigin="anonymous"></script>
+    <script src="/assets/js/mijug-es5.min.js?v=20251119205905" defer crossorigin="anonymous"></script>
 
     <!-- Cookie consent system -->
     <!-- Google AdSense with MIJUG Cookie Consent Integration -->
