@@ -221,10 +221,6 @@ pre.highlight:focus {
   border-right: 1px solid #ccc;
   padding-right: 0.75rem;
   margin-right: 0.75rem;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
 }
 
 /* Copy button enhancement */
@@ -281,8 +277,6 @@ pre.highlight:focus {
     padding: 1rem;
     font-size: 0.85rem;
     border-radius: 4px;
-    -webkit-overflow-scrolling: touch;
-    overscroll-behavior-x: contain;
   }
 
   code {
@@ -462,7 +456,6 @@ pre.highlight:focus {
   padding-right: 0.5rem;
   margin-right: 0.5rem;
   border-right: 1px solid #ccc;
-  user-select: none;
 }
 
 /* Adjust syntax colors for accessibility contrast */

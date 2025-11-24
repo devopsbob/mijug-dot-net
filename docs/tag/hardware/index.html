@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en" class="no-js">
   <head>
     <meta charset="utf-8" />
@@ -6,8 +7,7 @@
     <meta name="format-detection" content="telephone=no" />
 
     <!-- CSP tailored to MIJUG .NET requirements -->
-    <meta http-equiv="Content-Security-Policy" content="
-      default-src 'self';
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self';
       script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net ;
       style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net ;
       style-src-elem 'self' 'unsafe-inline' ;
@@ -235,8 +235,6 @@ html {
   font-size: var(--font-size-base);
   font-family: var(--font-family-base);
   line-height: var(--line-height-base);
-  -webkit-text-size-adjust: 100%;
-  text-size-adjust: 100%;
 }
 
 body {
@@ -542,10 +540,6 @@ img {
   opacity: 0.5;
 }
 
-@keyframes loading {
-  to { background-position: 100% 0, 0 0; }
-}
-
 [popover] {
   contain: layout size;
 }
@@ -573,7 +567,7 @@ img {
       content="MIJUG.NET serves the communities of Southeast Michigan, Ohio, and Florida with technology, sustainability, and community engagement resources. A platform by ..."
     />
     
-    <meta name="version" content="Nov 21, 2025" />
+    <meta name="version" content="Nov 24, 2025" />
     
 
     
@@ -581,10 +575,10 @@ img {
     <meta name="google-site-verification" content="googlece83719b3f856e56" />
     <meta name="cache-version" content="20251119192849" />
 
-    <link rel="preload" as="style" href="/assets/main.css?v=20251121173953" media="print" crossorigin><link rel="stylesheet" href="/assets/main.css?v=20251121173953" media="print">
+    <link rel="preload" as="style" href="/assets/main.css?v=20251124183850" media="print" crossorigin><link rel="stylesheet" href="/assets/main.css?v=20251124183850" media="print">
 
     <noscript>
-      <link rel="stylesheet" href="/assets/main.css?v=20251121173953">
+      <link rel="stylesheet" href="/assets/main.css?v=20251124183850">
     </noscript>
 
     <link
@@ -595,18 +589,15 @@ img {
     />
     
     
-    <link
-      rel="icon"
-      type="image/svg+xml"
-      href="/assets/kranson_enterprises_logo_180x180.png?v=20251119192849"
-    />
+    <link rel="icon" type="image/png" href="/assets/kranson_enterprises_logo_180x180.png?v=20251119192849" />
+    <link rel="apple-touch-icon" type="image/png" href="/assets/kranson_enterprises_logo_180x180.png?v=20251119192849" />
     
     <link
       rel="shortcut icon"
       type="image/x-icon"
       href="/favicon.ico"
     />
-    <link rel="manifest" href="/manifest.webmanifest" />
+    
     <link
       rel="canonical"
       href="https://www.mijug.net/tag/hardware/"
@@ -645,7 +636,7 @@ img {
         </a>
 
         <!-- Mobile navigation toggle button -->
-        <button class="nav-toggle" type="button" aria-controls="primary-navigation" aria-expanded="false" aria-label="Toggle navigation menu">
+        <button class="nav-toggle" aria-controls="primary-navigation" aria-expanded="false" aria-label="Toggle navigation menu" type="button">
           Menu
         </button>
 

@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en" class="no-js">
   <head>
     <meta charset="utf-8" />
@@ -242,8 +243,6 @@ html {
   font-size: var(--font-size-base);
   font-family: var(--font-family-base);
   line-height: var(--line-height-base);
-  -webkit-text-size-adjust: 100%;
-  text-size-adjust: 100%;
 }
 
 body {
@@ -549,10 +548,6 @@ img {
   opacity: 0.5;
 }
 
-@keyframes loading {
-  to { background-position: 100% 0, 0 0; }
-}
-
 [popover] {
   contain: layout size;
 }
@@ -588,10 +583,10 @@ img {
     <meta name="google-site-verification" content="googlece83719b3f856e56" />
     <meta name="cache-version" content="20251119192849" />
 
-    <link rel="preload" as="style" href="/assets/main.css?v=20251121173953" media="print" crossorigin><link rel="stylesheet" href="/assets/main.css?v=20251121173953" media="print">
+    <link rel="preload" as="style" href="/assets/main.css?v=20251124183850" media="print" crossorigin><link rel="stylesheet" href="/assets/main.css?v=20251124183850" media="print">
 
     <noscript>
-      <link rel="stylesheet" href="/assets/main.css?v=20251121173953">
+      <link rel="stylesheet" href="/assets/main.css?v=20251124183850">
     </noscript>
 
     <link
@@ -602,18 +597,15 @@ img {
     />
     
     
-    <link
-      rel="icon"
-      type="image/svg+xml"
-      href="/assets/kranson_enterprises_logo_180x180.png?v=20251119192849"
-    />
+    <link rel="icon" type="image/png" href="/assets/kranson_enterprises_logo_180x180.png?v=20251119192849" />
+    <link rel="apple-touch-icon" type="image/png" href="/assets/kranson_enterprises_logo_180x180.png?v=20251119192849" />
     
     <link
       rel="shortcut icon"
       type="image/x-icon"
       href="/favicon.ico"
     />
-    <link rel="manifest" href="/manifest.webmanifest" />
+    
 
     <meta name="description" content="A developer's journey from navigation nightmare to ES6 enlightenment - and the surprising security risks lurking in legacy browser support decisions." />
 <meta property="og:title" content="The Great JavaScript Divide" />
@@ -1386,7 +1378,7 @@ npm run <span class="nb">test</span>:a11y           <span class="c"># WCAG 2.1 A
   }
 </style>
 </div>
-      <div class="ad-container" id="ad-slot-1" data-ad-slot="12345678"></div>
+      <div class="customad-container" id="adslot-1" data-ad-slot="12345678"></div>
     </main>
 
     <footer class="site-footer h-card">
@@ -1406,7 +1398,8 @@ npm run <span class="nb">test</span>:a11y           <span class="c"># WCAG 2.1 A
               <a rel="external nofollow" href="https://share.google/8Ir6br641K4uU74l2">Kranson Enterprises</a><br>
                   subscribe
               <a href="/feed.xml">via RSS<svg class="svg-icon">
-                  <use xlink:href="/assets/minima-social-icons.svg#rss"></use></svg></a>
+                  <use xlink:href="/assets/minima-social-icons.svg#rss"></use></svg>
+              </a>
             </p>
           </div>
         </div>
@@ -1529,1055 +1522,55 @@ npm run <span class="nb">test</span>:a11y           <span class="c"># WCAG 2.1 A
     
 
     <!-- WCAG 2.1 AA Accessibility Enhancements for scrollable regions -->
-    <script src="/assets/js/mijug-es5.min.js?v=20251121173953" defer crossorigin="anonymous"></script>
+    <script src="/assets/js/mijug-es6.min.js?v=20251124183850" defer crossorigin="anonymous"></script>
 
     <!-- Cookie consent system -->
-    <!-- Google AdSense with MIJUG Cookie Consent Integration -->
-<script>
-  (function() {
-    'use strict';
-
-    // Privacy and consent checks
-    if (window.doNotTrack === '1' ||
-        navigator.doNotTrack === '1' ||
-        navigator.doNotTrack === 'yes' ||
-        navigator.msDoNotTrack === '1' ||
-        localStorage.getItem('mijug-ads-disabled') === 'true') {
-      return;
-    }
-
-    // Development environment bypass
-    if (location.hostname === 'localhost' ||
-        location.hostname === '127.0.0.1' ||
-        location.protocol === 'file:') {
-      console.log('[MIJUG AdSense] Skipped - Development environment');
-      return;
-    }
-
-    // URL parameter bypass for testing
-    const urlParams = new URLSearchParams(window.location.search);
-    if (urlParams.get('skip-ads') === 'true') {
-      console.log('[MIJUG AdSense] Skipped - URL parameter override');
-      return;
-    }
-
-    // Initialize consent mode with MIJUG defaults
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    window.gtag = gtag;
-
-    // Set default consent state (MIJUG privacy-first approach)
-    gtag('consent', 'default', {
-      ad_storage: 'denied',
-      ad_user_data: 'denied',
-      ad_personalization: 'denied',
-      analytics_storage: 'denied'
-    });
-
-    // Load AdSense with error handling
-    function loadAdSense() {
-      try {
-        const script = document.createElement('script');
-        script.async = true;
-        script.crossOrigin = 'anonymous';
-        script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3383458876439157';
-        script.onerror = function() {
-          console.warn('[MIJUG AdSense] Failed to load AdSense script');
-        };
-        document.head.appendChild(script);
-
-        console.log('[MIJUG AdSense] AdSense script loaded');
-
-      } catch (error) {
-        console.warn('[MIJUG AdSense] Initialization error:', error);
-      }
-    }
-
-    // MIJUG cookie consent integration
-    if (typeof window.MijugCookieConsent !== 'undefined') {
-      window.MijugCookieConsent.onReady(function(consent) {
-        if (consent.advertising) {
-          // Update consent for AdSense
-          gtag('consent', 'update', {
-            ad_storage: 'granted',
-            ad_user_data: 'granted',
-            ad_personalization: consent.personalization ? 'granted' : 'denied'
-          });
-
-          loadAdSense();
-        } else {
-          console.log('[MIJUG AdSense] Skipped - Advertising cookies declined');
-        }
-      });
-
-      // Handle consent changes
-      window.MijugCookieConsent.onConsentChange(function(consent) {
-        gtag('consent', 'update', {
-          ad_storage: consent.advertising ? 'granted' : 'denied',
-          ad_user_data: consent.advertising ? 'granted' : 'denied',
-          ad_personalization: (consent.advertising && consent.personalization) ? 'granted' : 'denied'
-        });
-      });
-    } else {
-      // Fallback: Load with denied consent if no cookie system
-      console.log('[MIJUG AdSense] Loading with default denied consent - no cookie system detected');
-      loadAdSense();
-    }
-
-  })();
-</script>
-
-    <!-- Cookie Consent Banner for GDPR Compliance -->
-<div id="cookie-consent-banner" class="cookie-consent-banner" role="complementary" aria-label="Cookie consent banner" aria-live="polite" style="display: none">
-  <div class="cookie-consent-content">
-    <div class="cookie-consent-text">
-      <p>
-        <strong>🍪 Cookie Notice</strong><br>
-        This website uses cookies for Google AdSense and analytics to improve
-        your experience.
-        <a href="/privacy-policy.html" class="cookie-policy-link">Learn more in our Privacy Policy</a>
-      </p>
-    </div>
-    <div class="cookie-consent-buttons">
-      <button id="accept-cookies" class="cookie-btn cookie-btn-accept" onclick="acceptCookies()">
-        Accept All Cookies
-      </button>
-      <button id="decline-cookies" class="cookie-btn cookie-btn-decline" onclick="declineCookies()">
-        Decline Optional Cookies
-      </button>
-      <button id="cookie-settings" class="cookie-btn cookie-btn-settings" onclick="showCookieSettings()">
-        Cookie Settings
-      </button>
-    </div>
-  </div>
-</div>
-
-<!-- Cookie Settings Modal - Using MIJUG Theme Pattern -->
-<div id="cookie-settings-modal" class="cookie-modal" style="display: none" role="dialog" aria-modal="true" aria-labelledby="cookie-settings-title">
-  <div class="cookie-modal-content mijug-highlight">
-    <div class="cookie-modal-header">
-      <h3 id="cookie-settings-title">Cookie Settings</h3>
-      <button class="cookie-modal-close" onclick="closeCookieSettings()" aria-label="Close cookie settings dialog" type="button">
-        ×
-      </button>
-    </div>
-    <div class="cookie-modal-body">
-      <p class="cookie-modal-description">
-        Customize your cookie preferences. Essential cookies are required for basic site functionality and cannot be disabled.
-      </p>
-
-      <div class="cookie-category">
-        <div class="cookie-category-header">
-          <h4>Essential Cookies</h4>
-          <label class="cookie-toggle" for="essential-cookies" aria-label="Essential cookies (required)">
-            <input type="checkbox" id="essential-cookies" checked disabled>
-            <span class="cookie-slider cookie-slider-disabled"></span>
-          </label>
-        </div>
-        <p class="cookie-category-description">Required for basic site functionality. These cannot be disabled.</p>
-      </div>
-
-      <div class="cookie-category">
-        <div class="cookie-category-header">
-          <h4>Analytics Cookies</h4>
-          <label class="cookie-toggle" for="analytics-cookies" aria-label="Analytics cookies (optional)">
-            <input type="checkbox" id="analytics-cookies">
-            <span class="cookie-slider"></span>
-          </label>
-        </div>
-        <p class="cookie-category-description">
-          Help us understand how visitors interact with our website via Google Analytics.
-          No personally identifiable information is collected.
-        </p>
-      </div>
-
-      <div class="cookie-category">
-        <div class="cookie-category-header">
-          <h4>Advertising Cookies</h4>
-          <label class="cookie-toggle" for="advertising-cookies" aria-label="Advertising cookies (optional)">
-            <input type="checkbox" id="advertising-cookies">
-            <span class="cookie-slider"></span>
-          </label>
-        </div>
-        <p class="cookie-category-description">
-          Used by Google AdSense to display relevant advertisements.
-          Helps support the website through ad revenue.
-        </p>
-      </div>
-    </div>
-    <div class="cookie-modal-footer">
-      <button class="cookie-btn cookie-btn-accept" onclick="savePreferences()" type="button">
-        Save Preferences
-      </button>
-      <button class="cookie-btn cookie-btn-settings" onclick="closeCookieSettings()" type="button">
-        Cancel
-      </button>
-    </div>
-  </div>
-</div>
-<style>
-  html body #cookie-consent-banner.cookie-consent-banner,
-  html body div#cookie-consent-banner.cookie-consent-banner {
-    position: fixed !important;
-    bottom: 0 !important;
-    left: 0 !important;
-    right: 0 !important;
-    background: #2c3e50 !important;
-    color: white !important;
-    padding: 1rem !important;
-    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3) !important;
-    z-index: 2147483647 !important;
-    border-top: 3px solid #3498db !important;
-    display: none !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    width: 100% !important;
-    min-height: 80px !important;
-    box-sizing: border-box !important;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
-    font-size: 14px !important;
-    line-height: 1.4 !important;
-    transform: translateZ(0) !important;
-    will-change: transform !important;
-  }
-
-  /* Enhanced visibility for all child elements */
-  html body #cookie-consent-banner.cookie-consent-banner *,
-  html body div#cookie-consent-banner.cookie-consent-banner * {
-    visibility: visible !important;
-    opacity: inherit !important;
-    display: initial !important;
-  }
-
-  /* Content layout with enhanced specificity */
-  html body .cookie-consent-content {
-    max-width: 1200px !important;
-    margin: 0 auto !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: space-between !important;
-    gap: 1rem !important;
-    flex-wrap: wrap !important;
-  }
-
-  html body .cookie-consent-text {
-    flex: 1 !important;
-    min-width: 200px !important;
-  }
-
-  html body .cookie-consent-text p {
-    margin: 0 !important;
-    font-size: 0.9rem !important;
-    line-height: 1.4 !important;
-    color: white !important;
-  }
-
-  html body .cookie-policy-link {
-    color: #74c0fc !important;
-    text-decoration: underline !important;
-  }
-
-  html body .cookie-policy-link:hover {
-    color: #a3d5ff !important;
-  }
-
-  html body .cookie-consent-buttons {
-    display: flex !important;
-    gap: 0.5rem !important;
-    flex-wrap: wrap !important;
-    min-width: 200px !important;
-  }
-
-  html body .cookie-btn {
-    padding: 0.5rem 1rem !important;
-    border: none !important;
-    border-radius: 4px !important;
-    cursor: pointer !important;
-    font-size: 0.85rem !important;
-    font-weight: 500 !important;
-    transition: all 0.2s ease !important;
-    white-space: nowrap !important;
-    min-width: 80px !important;
-  }
-
-  html body .cookie-btn-accept {
-    background: #1e8449 !important;
-    color: white !important;
-  }
-
-  html body .cookie-btn-accept:hover {
-    background: #196f3d !important;
-  }
-
-  html body .cookie-btn-decline {
-    background: #c0392b !important;
-    color: white !important;
-  }
-
-  html body .cookie-btn-decline:hover {
-    background: #a93226 !important;
-  }
-
-  html body .cookie-btn-settings {
-    background: #5d6d7e !important;
-    color: white !important;
-  }
-
-  html body .cookie-btn-settings:hover {
-    background: #515a5a !important;
-  }
-
-  /* Modal with enhanced specificity - hidden by default */
-  html body .cookie-modal {
-    position: fixed !important;
-    top: 0 !important;
-    left: 0 !important;
-    width: 100% !important;
-    height: 100% !important;
-    background: rgba(0, 0, 0, 0.7) !important;
-    z-index: 2147483646 !important;
-    display: none !important;
-    align-items: center !important;
-    justify-content: center !important;
-    -webkit-backdrop-filter: blur(2px) !important;
-    backdrop-filter: blur(2px) !important;
-  }
-
-  html body .cookie-modal-content {
-    background: white !important;
-    border-radius: 8px !important;
-    padding: 2rem !important;
-    max-width: 500px !important;
-    width: 90% !important;
-    max-height: 80vh !important;
-    overflow-y: auto !important;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
-  }
-
-  /* Responsive design with enhanced breakpoints */
-  @media (max-width: 768px) {
-    html body .cookie-consent-content {
-      flex-direction: column !important;
-      align-items: stretch !important;
-      gap: 0.75rem !important;
-    }
-
-    html body .cookie-consent-buttons {
-      justify-content: center !important;
-      gap: 0.25rem !important;
-    }
-
-    html body .cookie-btn {
-      flex: 1 !important;
-      min-width: 0 !important;
-      font-size: 0.8rem !important;
-      padding: 0.4rem 0.8rem !important;
-    }
-
-    html body .cookie-modal-content {
-      margin: 1rem !important;
-      padding: 1.5rem !important;
-    }
-  }
-
-  @media (max-width: 480px) {
-    html body .cookie-consent-buttons {
-      flex-direction: column !important;
-    }
-
-    html body .cookie-btn {
-      width: 100% !important;
-    }
-  }
-
-  /* Print media - hide banner */
-  @media print {
-    html body #cookie-consent-banner.cookie-consent-banner,
-    html body .cookie-modal {
-      display: none !important;
-    }
-  }
-
-  /* High contrast mode support */
-  @media (prefers-contrast: high) {
-    html body #cookie-consent-banner.cookie-consent-banner {
-      border: 2px solid white !important;
-    }
-  }
-
-  /* Reduced motion support */
-  @media (prefers-reduced-motion: reduce) {
-    html body .cookie-btn {
-      transition: none !important;
-    }
-  }
-</style>
-<style>
-  /**
-   * Enhanced modal management with aggressive visibility enforcement
-   * Following MIJUG .NET workspace performance and accessibility standards
-   */
-  const modalManager = {
-    show() {
-      const modal = getElement(CONFIG.MODAL_ELEMENT_ID);
-      if (!modal) {
-        console.error('❌ Cookie settings modal element not found');
-        return;
-      }
-
-      // Load current preferences before showing
-      this.loadCurrentPreferences();
-
-      // Use z-index higher than site header but compatible with theme
-      modal.style.cssText = `
-        display: flex !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-        position: fixed !important;
-        top: 0 !important;
-        left: 0 !important;
-        width: 100% !important;
-        height: 100% !important;
-        background: rgba(0, 0, 0, 0.85) !important;
-        z-index: 1002 !important;
-        align-items: center !important;
-        justify-content: center !important;
-        padding: 1rem !important;
-        box-sizing: border-box !important;
-      `;
-
-      modal.setAttribute('aria-hidden', 'false');
-      modal.classList.add('cookie-modal-visible');
-
-      // Set up focus management
-      focusManager.trapFocus(modal);
-
-      // Prevent body scroll when modal is open using existing MIJUG class
-      document.body.classList.add('nav-open');
-
-      console.log('✅ Cookie settings modal displayed');
-    },
-
-    hide() {
-      const modal = getElement(CONFIG.MODAL_ELEMENT_ID);
-      if (!modal) return;
-
-      modal.style.display = 'none';
-      modal.setAttribute('aria-hidden', 'true');
-      modal.classList.remove('cookie-modal-visible');
-
-      // Remove focus trap
-      if (modal._removeFocusTrap) {
-        modal._removeFocusTrap();
-      }
-
-      // Restore body scroll using existing MIJUG class
-      document.body.classList.remove('nav-open');
-
-      // Return focus to settings button
-      const settingsButton = getElement('cookie-settings');
-      if (settingsButton) {
-        settingsButton.focus();
-      }
-
-      console.log('✅ Cookie settings modal hidden');
-    },
-
-    loadCurrentPreferences() {
-      const preferences = cookieUtils.get(CONFIG.COOKIE_PREFERENCES_KEY);
-
-      let analytics = false;
-      let advertising = false;
-
-      if (preferences) {
-        try {
-          const prefs = JSON.parse(preferences);
-          analytics = prefs.analytics || false;
-          advertising = prefs.advertising || false;
-        } catch (e) {
-          console.warn('⚠️ Error parsing saved preferences:', e);
-        }
-      }
-
-      // Update checkboxes with retry mechanism
-      setTimeout(() => {
-        const analyticsCheckbox = getElement('analytics-cookies');
-        const advertisingCheckbox = getElement('advertising-cookies');
-
-        if (analyticsCheckbox) {
-          analyticsCheckbox.checked = analytics;
-        }
-        if (advertisingCheckbox) {
-          advertisingCheckbox.checked = advertising;
-        }
-
-        console.log('📋 Current preferences loaded:', { analytics, advertising });
-      }, 100);
-    }
-  };
-</style>
-<script>
-  /**
-   * Cookie Consent Management System
-   * Streamlined implementation using MIJUG theme styles
-   * Following MIJUG .NET Workspace coding standards
-   */
-  (function () {
-    'use strict';
-
-    // Configuration constants following MIJUG naming conventions
-    const CONFIG = {
-      COOKIE_CONSENT_KEY: 'mijug-cookie-consent',
-      COOKIE_PREFERENCES_KEY: 'mijug-cookie-preferences',
-      CONSENT_EXPIRY_DAYS: 365,
-      FOCUS_TRAP_SELECTORS: 'button, [href], input:not([type=hidden]), select, textarea, [tabindex]:not([tabindex="-1"])',
-      BANNER_ELEMENT_ID: 'cookie-consent-banner',
-      MODAL_ELEMENT_ID: 'cookie-settings-modal'
-    };
-
-    // Performance-optimized element caching
-    const elementCache = new Map();
-
-    /**
-     * Performance-optimized DOM element retrieval with caching
-     * @param {string} id - Element ID
-     * @returns {HTMLElement|null} - Cached or fresh DOM element
-     */
-    function getElement(id) {
-      if (!elementCache.has(id)) {
-        elementCache.set(id, document.getElementById(id));
-      }
-      return elementCache.get(id);
-    }
-
-    /**
-     * Modern cookie utilities with enhanced error handling
-     */
-    const cookieUtils = {
-      get(name) {
-        try {
-          const cookies = document.cookie.split(';');
-          for (const cookie of cookies) {
-            const [key, value] = cookie.trim().split('=');
-            if (key === name) {
-              return decodeURIComponent(value);
-            }
-          }
-          return null;
-        } catch (error) {
-          console.warn(`⚠️ Error reading cookie ${name}:`, error);
-          return null;
-        }
-      },
-
-      set(name, value, days) {
-        try {
-          const expires = new Date(Date.now() + days * 24 * 60 * 60 * 1000).toUTCString();
-          const cookieString = `${name}=${encodeURIComponent(value)};expires=${expires};path=/;SameSite=Strict`;
-          document.cookie = cookieString;
-          console.log(`🍪 Cookie set: ${name}=${value}`);
-        } catch (error) {
-          console.error(`❌ Error setting cookie ${name}:`, error);
-        }
-      },
-
-      clear(name) {
-        try {
-          const clearCookieVariations = [
-            `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`,
-            `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=${window.location.hostname};`,
-            `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=.${window.location.hostname};`
-          ];
-
-          clearCookieVariations.forEach(cookieString => {
-            document.cookie = cookieString;
-          });
-
-          console.log(`🗑️ Cookie cleared: ${name}`);
-        } catch (error) {
-          console.warn(`⚠️ Error clearing cookie ${name}:`, error);
-        }
-      }
-    };
-
-    /**
-     * Enhanced banner visibility management using existing theme z-index patterns
-     */
-    const bannerManager = {
-      show() {
-        const banner = getElement(CONFIG.BANNER_ELEMENT_ID);
-        const modal = getElement(CONFIG.MODAL_ELEMENT_ID);
-
-        if (!banner) {
-          console.error('❌ Cookie consent banner element not found');
-          return;
-        }
-
-        // Use z-index that works with existing MIJUG theme
-        banner.style.cssText = `
-          display: block !important;
-          visibility: visible !important;
-          opacity: 1 !important;
-          position: fixed !important;
-          bottom: 0 !important;
-          left: 0 !important;
-          right: 0 !important;
-          z-index: 1001 !important;
-          background: #2c3e50 !important;
-          color: white !important;
-          padding: 1rem !important;
-          box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3) !important;
-          border-top: 3px solid #3498db !important;
-          min-height: 80px !important;
-          width: 100vw !important;
-          box-sizing: border-box !important;
-          font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
-        `;
-
-        banner.setAttribute('aria-hidden', 'false');
-        banner.classList.add('cookie-banner-visible');
-
-        // Ensure modal stays hidden
-        if (modal) {
-          modal.style.display = 'none';
-          modal.setAttribute('aria-hidden', 'true');
-        }
-
-        console.log('✅ Cookie consent banner displayed');
-      },
-
-      hide() {
-        const banner = getElement(CONFIG.BANNER_ELEMENT_ID);
-        if (banner) {
-          banner.style.display = 'none';
-          banner.setAttribute('aria-hidden', 'true');
-          banner.classList.remove('cookie-banner-visible');
-          console.log('✅ Cookie consent banner hidden');
-        }
-      }
-    };
-
-    /**
-     * Enhanced modal management leveraging MIJUG theme patterns
-     */
-    const modalManager = {
-      show() {
-        const modal = getElement(CONFIG.MODAL_ELEMENT_ID);
-        if (!modal) {
-          console.error('❌ Cookie settings modal element not found');
-          return;
-        }
-
-        // Load current preferences before showing
-        this.loadCurrentPreferences();
-
-        // Use z-index higher than site header but compatible with theme
-        modal.style.cssText = `
-          display: flex !important;
-          visibility: visible !important;
-          opacity: 1 !important;
-          position: fixed !important;
-          top: 0 !important;
-          left: 0 !important;
-          width: 100% !important;
-          height: 100% !important;
-          background: rgba(0, 0, 0, 0.85) !important;
-          z-index: 1002 !important;
-          align-items: center !important;
-          justify-content: center !important;
-          padding: 1rem !important;
-          box-sizing: border-box !important;
-        `;
-
-        modal.setAttribute('aria-hidden', 'false');
-        modal.classList.add('cookie-modal-visible');
-
-        // Set up focus management
-        focusManager.trapFocus(modal);
-
-        // Prevent body scroll when modal is open using existing MIJUG class
-        document.body.classList.add('nav-open');
-
-        console.log('✅ Cookie settings modal displayed');
-      },
-
-      hide() {
-        const modal = getElement(CONFIG.MODAL_ELEMENT_ID);
-        if (!modal) return;
-
-        modal.style.display = 'none';
-        modal.setAttribute('aria-hidden', 'true');
-        modal.classList.remove('cookie-modal-visible');
-
-        // Remove focus trap
-        if (modal._removeFocusTrap) {
-          modal._removeFocusTrap();
-        }
-
-        // Restore body scroll using existing MIJUG class
-        document.body.classList.remove('nav-open');
-
-        // Return focus to settings button
-        const settingsButton = getElement('cookie-settings');
-        if (settingsButton) {
-          settingsButton.focus();
-        }
-
-        console.log('✅ Cookie settings modal hidden');
-      },
-
-      loadCurrentPreferences() {
-        const preferences = cookieUtils.get(CONFIG.COOKIE_PREFERENCES_KEY);
-
-        let analytics = false;
-        let advertising = false;
-
-        if (preferences) {
+    <!-- %  include google-adsense.html % -->
+    <!-- % include cookie-consent.html % -->}
+    <!-- Accessibility enhancement for Rouge code blocks: add role/tabindex/aria-label in browser -->
+    <script>
+      (function() {
+        'use strict';
+
+        function enhanceCodeBlocks() {
           try {
-            const prefs = JSON.parse(preferences);
-            analytics = prefs.analytics || false;
-            advertising = prefs.advertising || false;
+            var blocks = document.querySelectorAll('div.highlighter-rouge div.highlight');
+            blocks.forEach(function(el) {
+              if (!el.hasAttribute('role')) el.setAttribute('role', 'img');
+              if (!el.hasAttribute('tabindex')) el.setAttribute('tabindex', '0');
+
+              if (!el.hasAttribute('aria-label')) {
+                var code = el.querySelector('pre code');
+                var preview = '';
+                if (code && code.textContent) {
+                  preview = code.textContent.trim().split('\n')[0] || '';
+                  if (preview.length > 60) preview = preview.slice(0, 57) + '...';
+                }
+
+                // try to detect language from ancestor class
+                var language = '';
+                var parent = el.parentElement;
+                if (parent && parent.className) {
+                  var m = parent.className.match(/language-(\w+)/);
+                  if (m) language = m[1];
+                }
+
+                var label = 'Code example' + (language ? (' in ' + language) : '') + (preview ? (': ' + preview) : '');
+                el.setAttribute('aria-label', label);
+              }
+            });
           } catch (e) {
-            console.warn('⚠️ Error parsing saved preferences:', e);
+            console.warn('EnhanceCodeBlocks error', e);
           }
         }
 
-        // Update checkboxes with retry mechanism
-        setTimeout(() => {
-          const analyticsCheckbox = getElement('analytics-cookies');
-          const advertisingCheckbox = getElement('advertising-cookies');
-
-          if (analyticsCheckbox) {
-            analyticsCheckbox.checked = analytics;
-          }
-          if (advertisingCheckbox) {
-            advertisingCheckbox.checked = advertising;
-          }
-
-          console.log('📋 Current preferences loaded:', { analytics, advertising });
-        }, 100);
-      }
-    };
-
-    /**
-     * Consent state management with enhanced logic
-     */
-    const consentManager = {
-      shouldShowConsent() {
-        try {
-          // Testing override - highest priority
-          if (window.forceShowCookieConsent === true) {
-            console.log('🧪 Testing override: Forcing cookie consent display');
-            return true;
-          }
-
-          // URL parameter override
-          const urlParams = new URLSearchParams(window.location.search);
-          if (urlParams.get('force-cookie-consent') === 'true') {
-            console.log('🧪 URL parameter override: Forcing cookie consent display');
-            return true;
-          }
-
-          // Development mode detection
-          const isDevelopment = window.location.hostname === 'localhost' ||
-                               window.location.hostname === '127.0.0.1' ||
-                               window.location.hostname.endsWith('.local');
-
-          if (isDevelopment) {
-            console.log('🔧 Development mode detected - showing cookie consent');
-            return true;
-          }
-
-          // Check existing consent
-          const consentCookie = cookieUtils.get(CONFIG.COOKIE_CONSENT_KEY);
-          if (consentCookie !== null && consentCookie !== '') {
-            console.log('✅ Existing consent found:', consentCookie);
-            return false;
-          }
-
-          console.log('📋 No existing consent - showing banner for GDPR compliance');
-          return true;
-        } catch (error) {
-          console.warn('⚠️ Error checking consent status:', error);
-          return true;
-        }
-      },
-
-      hasConsent() {
-        return cookieUtils.get(CONFIG.COOKIE_CONSENT_KEY) !== null;
-      },
-
-      hasAnalyticsConsent() {
-        const preferences = cookieUtils.get(CONFIG.COOKIE_PREFERENCES_KEY);
-        if (!preferences) return false;
-        try {
-          return JSON.parse(preferences).analytics === true;
-        } catch {
-          return false;
-        }
-      },
-
-      hasAdvertisingConsent() {
-        const preferences = cookieUtils.get(CONFIG.COOKIE_PREFERENCES_KEY);
-        if (!preferences) return false;
-        try {
-          return JSON.parse(preferences).advertising === true;
-        } catch {
-          return false;
-        }
-      }
-    };
-
-    /**
-     * Analytics integration with localhost safety
-     */
-    const analyticsManager = {
-      loadAnalytics() {
-        if (consentManager.hasAnalyticsConsent() && typeof gtag !== 'undefined') {
-          gtag('consent', 'update', { analytics_storage: 'granted' });
-          console.log('📊 Analytics loaded with user consent');
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', enhanceCodeBlocks);
         } else {
-          console.log('📊 Analytics not loaded (no consent or localhost)');
+          enhanceCodeBlocks();
         }
-      },
-
-      loadAdSense() {
-        if (consentManager.hasAdvertisingConsent() && typeof gtag !== 'undefined') {
-          gtag('consent', 'update', {
-            ad_storage: 'granted',
-            ad_user_data: 'granted',
-            ad_personalization: 'granted',
-          });
-          console.log('📢 AdSense loaded with user consent');
-        } else {
-          console.log('📢 AdSense not loaded (no consent or localhost)');
-        }
-      }
-    };
-
-    /**
-     * Focus management for accessibility compliance
-     */
-    const focusManager = {
-      trapFocus(modal) {
-        const focusableEls = modal.querySelectorAll(CONFIG.FOCUS_TRAP_SELECTORS);
-        const firstFocusableEl = focusableEls[0];
-        const lastFocusableEl = focusableEls[focusableEls.length - 1];
-
-        const handleKeydown = (e) => {
-          if (e.key === 'Tab') {
-            if (e.shiftKey && document.activeElement === firstFocusableEl) {
-              e.preventDefault();
-              lastFocusableEl?.focus();
-            } else if (!e.shiftKey && document.activeElement === lastFocusableEl) {
-              e.preventDefault();
-              firstFocusableEl?.focus();
-            }
-          } else if (e.key === 'Escape') {
-            closeCookieSettings();
-          }
-        };
-
-        modal.addEventListener('keydown', handleKeydown);
-        modal._removeFocusTrap = () => modal.removeEventListener('keydown', handleKeydown);
-
-        // Focus close button first for better UX
-        requestAnimationFrame(() => {
-          const closeButton = modal.querySelector('.cookie-modal-close');
-          if (closeButton) {
-            closeButton.focus();
-          } else {
-            firstFocusableEl?.focus();
-          }
-        });
-      }
-    };
-
-    /**
-     * Global button handlers with enhanced error handling
-     */
-    window.acceptCookies = function () {
-      try {
-        const preferences = { analytics: true, advertising: true };
-        cookieUtils.set(CONFIG.COOKIE_CONSENT_KEY, 'accepted', CONFIG.CONSENT_EXPIRY_DAYS);
-        cookieUtils.set(CONFIG.COOKIE_PREFERENCES_KEY, JSON.stringify(preferences), CONFIG.CONSENT_EXPIRY_DAYS);
-
-        bannerManager.hide();
-        analyticsManager.loadAnalytics();
-        analyticsManager.loadAdSense();
-        console.log('✅ All cookies accepted');
-      } catch (error) {
-        console.error('❌ Error accepting cookies:', error);
-      }
-    };
-
-    window.declineCookies = function () {
-      try {
-        const preferences = { analytics: false, advertising: false };
-        cookieUtils.set(CONFIG.COOKIE_CONSENT_KEY, 'declined', CONFIG.CONSENT_EXPIRY_DAYS);
-        cookieUtils.set(CONFIG.COOKIE_PREFERENCES_KEY, JSON.stringify(preferences), CONFIG.CONSENT_EXPIRY_DAYS);
-
-        bannerManager.hide();
-        console.log('❌ Optional cookies declined');
-      } catch (error) {
-        console.error('❌ Error declining cookies:', error);
-      }
-    };
-
-    window.showCookieSettings = function () {
-      try {
-        console.log('🔧 Attempting to show cookie settings modal...');
-        modalManager.show();
-      } catch (error) {
-        console.error('❌ Error showing cookie settings:', error);
-      }
-    };
-
-    window.closeCookieSettings = function () {
-      try {
-        modalManager.hide();
-      } catch (error) {
-        console.error('❌ Error closing cookie settings:', error);
-      }
-    };
-
-    window.savePreferences = function () {
-      try {
-        const analyticsCheckbox = getElement('analytics-cookies');
-        const advertisingCheckbox = getElement('advertising-cookies');
-
-        const analytics = analyticsCheckbox?.checked || false;
-        const advertising = advertisingCheckbox?.checked || false;
-        const preferences = { analytics, advertising };
-
-        cookieUtils.set(CONFIG.COOKIE_CONSENT_KEY, 'customized', CONFIG.CONSENT_EXPIRY_DAYS);
-        cookieUtils.set(CONFIG.COOKIE_PREFERENCES_KEY, JSON.stringify(preferences), CONFIG.CONSENT_EXPIRY_DAYS);
-
-        bannerManager.hide();
-        modalManager.hide();
-
-        if (analytics) analyticsManager.loadAnalytics();
-        if (advertising) analyticsManager.loadAdSense();
-
-        console.log('💾 Custom preferences saved:', preferences);
-        showSaveConfirmation();
-      } catch (error) {
-        console.error('❌ Error saving preferences:', error);
-      }
-    };
-
-    /**
-     * Save confirmation using MIJUG theme patterns
-     */
-    function showSaveConfirmation() {
-      const notification = document.createElement('div');
-      notification.className = 'mijug-highlight favorite-toast favorite-toast-success favorite-toast-visible';
-      notification.style.cssText = `
-        position: fixed !important;
-        top: 20px !important;
-        right: 20px !important;
-        z-index: 1003 !important;
-        max-width: 300px !important;
-        padding: 1rem 1.5rem !important;
-        border-radius: 8px !important;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
-        animation: slideInRight 0.3s ease-out !important;
-      `;
-
-      notification.innerHTML = `
-        <div style="display: flex; align-items: center; gap: 0.5rem;">
-          <span style="font-size: 1.2rem;">✅</span>
-          <span>Cookie preferences saved successfully!</span>
-        </div>
-      `;
-
-      notification.setAttribute('role', 'alert');
-      notification.setAttribute('aria-live', 'polite');
-
-      document.body.appendChild(notification);
-
-      setTimeout(() => {
-        if (notification.parentNode) {
-          notification.parentNode.removeChild(notification);
-        }
-      }, 4000);
-    }
-
-    /**
-     * Enhanced initialization with multiple retry strategies
-     */
-    function initialize() {
-      console.log('🚀 Cookie consent system initializing...');
-
-      // Ensure modal is hidden on initialization
-      const modal = getElement(CONFIG.MODAL_ELEMENT_ID);
-      if (modal) {
-        modal.style.display = 'none';
-        modal.setAttribute('aria-hidden', 'true');
-      }
-
-      if (consentManager.shouldShowConsent()) {
-        bannerManager.show();
-
-        // Retry mechanisms for theme compatibility
-        setTimeout(() => bannerManager.show(), 100);
-        setTimeout(() => bannerManager.show(), 500);
-      } else if (consentManager.hasConsent()) {
-        analyticsManager.loadAnalytics();
-        analyticsManager.loadAdSense();
-      }
-    }
-
-    /**
-     * Testing mode with enhanced visibility enforcement
-     */
-    function initializeTestingMode() {
-      console.log('🧪 TESTING MODE: Enhanced cookie consent forcing');
-
-      // Clear existing cookies
-      const cookiesToClear = [CONFIG.COOKIE_CONSENT_KEY, CONFIG.COOKIE_PREFERENCES_KEY];
-      cookiesToClear.forEach(cookieName => cookieUtils.clear(cookieName));
-
-      // Set testing flags
-      window.forceShowCookieConsent = true;
-
-      setTimeout(() => {
-        bannerManager.show();
-        console.log('🧪 Testing banner display forced');
-      }, 50);
-
-      // Disable testing mode after timeout
-      setTimeout(() => {
-        window.forceShowCookieConsent = false;
-        console.log('🧪 Testing mode disabled');
-      }, 30000);
-    }
-
-    // Event listeners
-    document.addEventListener('DOMContentLoaded', () => {
-      try {
-        initialize();
-
-        if (window.location.search.includes('force-cookie-consent=true') ||
-            window.location.hostname === 'localhost') {
-          initializeTestingMode();
-        }
-      } catch (error) {
-        console.error('❌ Error during cookie consent initialization:', error);
-      }
-    });
-
-    // Modal click-outside handler
-    document.addEventListener('click', (event) => {
-      const modal = getElement(CONFIG.MODAL_ELEMENT_ID);
-      if (modal && event.target === modal) {
-        closeCookieSettings();
-      }
-    });
-
-  })();
-</script>
-
+      })();
+    </script>
 
   </body>
 </html>

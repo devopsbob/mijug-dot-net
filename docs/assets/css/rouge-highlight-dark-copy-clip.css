@@ -112,10 +112,10 @@ code:focus {
 .highlighter-rouge pre,
 .highlighter-rouge code {
   /* Preserve spacing but allow wrapping */
-  white-space: pre-wrap; /* CSS3 */
   white-space: -moz-pre-wrap; /* Firefox */
   white-space: -pre-wrap; /* Opera <7 */
   white-space: -o-pre-wrap; /* Opera */
+  white-space: pre-wrap; /* CSS3 */
   word-wrap: break-word; /* IE */
   overflow-wrap: anywhere; /* Break long words/URLs when needed */
   word-break: break-word;
@@ -218,10 +218,10 @@ code:focus {
 .wrapper pre,
 .wrapper pre code {
   /* Preserve spacing semantics but allow wrapping on narrow viewports */
-  white-space: pre-wrap !important;
   white-space: -moz-pre-wrap !important;
   white-space: -pre-wrap !important;
   white-space: -o-pre-wrap !important;
+  white-space: pre-wrap !important;
   word-wrap: break-word !important;
   overflow-wrap: anywhere !important;
   word-break: break-word !important;
