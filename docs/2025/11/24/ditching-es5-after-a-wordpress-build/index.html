@@ -568,22 +568,16 @@ img {
 
 
     <title>
-      Exploring the Limitations of Gitea and Ruby | My Info Just Under Glass
+      Ditching ES5 after a WordPress Build | My Info Just Under Glass
     </title>
     <meta
       name="description"
-      content="Gitea: A Friendly Alternative to GitHub Actions"
+      content="MIJUG.NET serves the communities of Southeast Michigan, Ohio, and Florida with technology, sustainability, and community engagement resources. A platform by ..."
     />
     
-    <meta name="version" content="Sep 02, 2025" />
+    <meta name="version" content="Nov 24, 2025" />
     
 
-    
-    <meta name="docs-nav-order" content="21" />
-    <meta name="docs-section" content="documentation" />
-    
-    <meta name="priority-doc" content="true" />
-    
     
 
     <meta name="google-site-verification" content="googlece83719b3f856e56" />
@@ -613,12 +607,12 @@ img {
     />
     
 
-    <meta name="description" content="How Gitea simulates GitHub Actions workflows." />
-<meta property="og:title" content="Exploring the Limitations of Gitea and Ruby" />
-<meta property="og:description" content="How Gitea simulates GitHub Actions workflows." />
-<meta property="og:url" content="https://www.mijug.net/docs/exploring-limitations-of-gitea-and-ruby/" />
+    <meta name="description" content="A humorous, readable discussion about modern browser support and why we can move on from ES5 templating exceptions." />
+<meta property="og:title" content="Ditching ES5 after a WordPress Build" />
+<meta property="og:description" content="A humorous, readable discussion about modern browser support and why we can move on from ES5 templating exceptions." />
+<meta property="og:url" content="https://www.mijug.net/2025/11/24/ditching-es5-after-a-wordpress-build/" />
 <meta property="og:site_name" content="My Info Just Under Glass" />
-<meta property="og:type" content="website" /><meta property="og:image" content="https://www.mijug.net/assets/kranson_enterprises_logo_180x180.png" /><link rel="canonical" href="https://www.mijug.net/docs/exploring-limitations-of-gitea-and-ruby/" />
+<meta property="og:type" content="article" /><meta property="og:image" content="https://www.mijug.net/" /><meta property="article:author" content="https://www.linkedin.com/in/bobkranson" /><link rel="canonical" href="https://www.mijug.net/2025/11/24/ditching-es5-after-a-wordpress-build/" />
 
 
     
@@ -875,7 +869,7 @@ img {
               
                 <li role="listitem">
                   <a href="/docs/exploring-limitations-of-gitea-and-ruby/"
-                     class="active" aria-current="page"
+                     
                      aria-label="Navigate to Exploring the Limitations of Gitea and Ruby">
                      Exploring the Limitations of Gitea and Ruby
                   </a>
@@ -890,64 +884,356 @@ img {
     </header>
 
     <main class="page-content" aria-label="Content">
-      <div class="wrapper"><article class="post">
+      <div class="wrapper"><article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
   <header class="post-header">
-    <h1 class="post-title">Exploring the Limitations of Gitea and Ruby</h1>
-  </header>
+    <h1 class="post-title p-name" itemprop="name headline">Ditching ES5 after a WordPress Build</h1>
+    <p class="post-meta">
+      <time class="dt-published" datetime="2025-11-24T19:01:03-05:00" itemprop="datePublished">
+        Published Nov 24, 2025
+      </time><span class="post-meta-separator"> • </span>
+      <time class="dt-modified" datetime="2025-11-24T21:11:09-05:00" itemprop="dateModified">
+        Updated Nov 24, 2025
+      </time><span class="post-meta-separator"> • </span>
+      <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span class="p-author h-card" itemprop="name">MIJUG Team</span>
+      </span></p><p class="post-description">A humorous, readable discussion about modern browser support and why we can move on from ES5 templating exceptions.</p></header>
 
-  <div class="post-content"><h2 id="gitea-a-friendly-alternative-to-github-actions">Gitea: A Friendly Alternative to GitHub Actions</h2>
+  <div class="post-content e-content" itemprop="articleBody">
+<p>&lt;!-* prettier-ignore-start –&gt;</p>
 
-<p>Gitea is a simple, self-hosted service for managing your code, much like GitHub or GitLab, but you can run it on your own computer or server. One of its best features is the ability to automate tasks—like building your website or running tests—using something called Gitea Actions. These actions work a lot like GitHub Actions, so if you’ve used those before, you’ll feel right at home. You write instructions in easy-to-read files, and Gitea follows them to help you keep your project running smoothly, even if you’re not a programmer.</p>
+<ul>
+  <li>TOC</li>
+</ul>
 
-<h2 id="running-ruby-programs-in-gitea">Running Ruby Programs in Gitea</h2>
+<p>&lt;!-* prettier-ignore-end –&gt;</p>
 
-<p>If you want to use Ruby (a popular programming language) with Gitea, you have two main choices:</p>
+<h2 id="introduction--a-short-story-about-a-long-browser">Introduction — A Short Story About a Long Browser</h2>
 
-<ol>
-  <li><strong>Use Docker:</strong> This is like putting your Ruby setup in a special box, so it always works the same way, no matter where you run it. Gitea Actions can use these boxes to make sure everything is just right.</li>
-  <li><strong>Install Ruby Directly:</strong> You can also put Ruby right on your computer or server. This is sometimes easier for beginners, but it can cause problems if your setup is different from what your project expects.</li>
-</ol>
+<p>Have you ever kept an old appliance around “just in case”? Building websites can feel the same way. After a recent WordPress project, I realized we spend a lot of time making sure very old browsers still work—like keeping the heat on for a guest who never leaves.</p>
 
-<p>For most people, using Docker is safer and more reliable, but if you’re just experimenting or have a simple project, installing Ruby directly can work too.</p>
+<p>This article is a friendly, slightly cheeky look at why, in 2025, it’s okay to use modern web tools and let go of outdated habits. If you’re not a techie, don’t worry! I’ll use simple analogies and plain language throughout.</p>
 
-<h2 id="a-bit-of-history-gitea-and-ruby">A Bit of History: Gitea and Ruby</h2>
+<p><strong>Summary:</strong></p>
 
-<p><strong>Gitea</strong> started in 2016 as a way for people to run their own code hosting service. It’s written in a language called Go, and it’s designed to be fast and easy to use, even on older computers.</p>
+<p>Modern web tools make websites easier to build and maintain. It’s okay to move on from old ways.</p>
 
-<p><strong>Ruby</strong> has been around since the 1990s. It’s known for being easy to read and write, which is why many people love it for building websites and automating tasks. Ruby’s most famous tool is Ruby on Rails, which powers many websites you use every day.</p>
+<p><strong>Release years for context:</strong></p>
 
-<h2 id="my-experience-ruby-on-raspberry-pi-and-ci-challenges">My Experience: Ruby on Raspberry Pi and CI Challenges</h2>
+<ul>
+  <li>Microsoft Windows: first released in 1985.</li>
+  <li>Apple Macintosh: first released in 1984.</li>
+  <li>“The Year of the Web” * 1995</li>
+</ul>
 
-<p>I wanted to run Ruby on a Raspberry Pi (a tiny, affordable computer). I tried using tools like <code class="language-plaintext highlighter-rouge">rbenv</code> and <code class="language-plaintext highlighter-rouge">rvm</code> to install Ruby, but I kept running into problems—Ruby and its add-ons (called gems) were hard to get working just right. I learned that GitHub Actions uses a special Docker image to make Ruby work smoothly, so I tried building Ruby from scratch on my Raspberry Pi instead.</p>
+<p><em><strong>Windows &amp; Apple/iOS at a glance (selected years):</strong></em></p>
 
-<p>At first, I tried the newest Ruby version (3.4.5), but it didn’t work with Jekyll (the tool I use for my website), which needed an older version. So, I built Ruby 3.3.9, and that finally worked! The only catch: the Raspberry Pi is not very powerful, so some of my tests took too long and failed. This is normal for small computers, but it’s something to keep in mind if you want to do everything locally.</p>
+<ul>
+  <li>2003 — Windows: Windows XP era (widely used). Apple/iOS: pre-iPhone (Mac OS X 10.3 Panther released 2003).</li>
+  <li>2009 — Windows: Windows 7 released (2009). Apple/iOS: iPhone OS 3.0 (2009).</li>
+  <li>2015 — Windows: Windows 10 released (2015). Apple/iOS: iOS 9 (2015).</li>
+  <li>2019 — Windows: Windows 10 (ongoing updates; 2019 builds). Apple/iOS: iOS 13 (2019).</li>
+  <li>2025 — Windows: Windows 11 is the modern baseline (released 2021; current in 2025). Apple/iOS: modern iOS releases (varies by device and year — check device settings for exact version in 2025).</li>
+</ul>
+
+<p>Note: mobile OS versions (iOS, Android) and Windows builds vary by device and update cadence. Use analytics to understand what versions your audience actually uses before changing support policies.</p>
 
 <hr />
 
-<h2 id="final-thoughts-saving-power-and-working-offline">Final Thoughts: Saving Power and Working Offline</h2>
+<h2 id="es6-modules-the-new-streetlights-everyone-can-see">ES6 Modules: The New Streetlights Everyone Can See</h2>
 
-<p>One of my main goals is to make my website and tools work well even on older or less powerful computers, and to avoid needing the internet just to build or test my site. By carefully choosing the right Ruby version and setting up everything to run locally, I can keep my system fast and reliable. This also means I’m not dependent on cloud services—everything works right on my own hardware, which is great for privacy, cost, and long-term sustainability.</p>
+<p><strong>What JavaScript actually does (plain language):</strong></p>
 
-<p>If you’re working with limited resources or want to be able to build and test your site without an internet connection, I recommend:</p>
+<p>JavaScript is the language that makes web pages move, respond, and change without reloading. It listens for clicks and typing, updates what you see on the page, runs small animations, fetches data from servers, and can even run on servers themselves (for example, with Node.js). Without JavaScript most sites would be static documents — useful, but less interactive and less helpful for modern tasks.</p>
+
+<p><strong>JavaScript standards explained:</strong></p>
 
 <ul>
-  <li>Using lightweight tools like Gitea</li>
-  <li>Choosing software versions that work well together</li>
-  <li>Running as much as possible on your own computer</li>
-  <li>Being patient with slower hardware, and adjusting test settings if needed</li>
+  <li>ES5 (ECMAScript 5) was released in 2009 and became the standard for browser compatibility for many years.</li>
+  <li>ES6 (ECMAScript 2015) was released in 2015, introducing modules and many modern features now widely supported.</li>
+</ul>
+
+<p><strong>Short ECMAScript timeline:</strong></p>
+
+<ul>
+  <li>First edition: ECMAScript 1 (1997).</li>
+  <li>2003: ES3-era (ECMAScript 3 was published in 1999; there was no new edition in 2003).</li>
+  <li>2009: ES5 (ECMAScript 5) — broad compatibility baseline for many years.</li>
+  <li>2015: ES6 (ECMAScript 2015) — modules, modern syntax and features.</li>
+  <li>2022: ECMAScript 2022 (ES2022) — newer yearly updates with incremental features.</li>
+</ul>
+
+<p><strong>What is ES6?</strong></p>
+
+<p>ES6 (also called ECMAScript 2015) is a newer version of JavaScript, the language that powers most websites. ES6 modules are a way to organize code into neat, reusable pieces—like putting ingredients into labelled jars.</p>
+
+<p><strong>Why does this matter?</strong></p>
+
+<p>Most modern phones and computers (made after 2019) understand ES6 modules. This means websites can be built in a cleaner, more organized way.</p>
+
+<p>Over the last decade, devices and browsers have largely stabilized and toolchains have matured. That stability means a lot of the painful, device-specific complexity has been abstracted away by platforms and build tools, so teams can focus on crafting and publishing targeted experiences instead of maintaining dozens of small compatibility hacks. The old tools and fallbacks still exist for edge cases, but modern workflows make it much easier and faster to build custom, device-aware experiences for Edge, Chrome, Safari, and newer mobile browsers.</p>
+
+<p><strong>Analogy:</strong></p>
+
+<p>ES6 modules are like labelled jars in your kitchen. Instead of dumping everything into one pot and hoping for the best, you can grab exactly what you need.</p>
+
+<h2 id="quick-facts"><strong>Quick facts:</strong></h2>
+
+<p>The iPhone 12 (2020) and most phones since 2017 support ES6 modules.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Device / Platform</td>
+      <td>Approx. Year ES6 Support Became Widely Available</td>
+    </tr>
+    <tr>
+      <td>—————————–_</td>
+      <td>———————————————–_</td>
+    </tr>
+    <tr>
+      <td>iPhone / Mobile Safari</td>
+      <td>~2016–2018</td>
+    </tr>
+    <tr>
+      <td>Android phones (Chrome)</td>
+      <td>~2017</td>
+    </tr>
+    <tr>
+      <td>Google Pixel series</td>
+      <td>~2017</td>
+    </tr>
+    <tr>
+      <td>Samsung Galaxy (modern models)</td>
+      <td>~2017–2018</td>
+    </tr>
+    <tr>
+      <td>Firefox for Android</td>
+      <td>~2017–2018</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Tip:</strong> If you use a phone or computer made in the last five years, you’re probably fine!</p>
+
+<p><strong>Summary:</strong> Modern devices support new web features. You don’t need to worry about most old browser problems anymore.</p>
+
+<hr />
+
+<h2 id="wordpress-classic-themes-a-gracious-retirement-plan-but-people-keep-inviting-them-to-parties">WordPress Classic Themes: A Gracious Retirement Plan (But People Keep Inviting Them to Parties)</h2>
+
+<p><strong>Quick laugh-out-loud clarification:</strong></p>
+
+<p>Jekyll and WordPress are <em>not</em> the same thing! Jekyll is a static site generator that turns Markdown files into a website with the speed of a postal worker on roller skates. WordPress, on the other hand, is a dynamic site builder (with PHP under the hood) that can be customized with classic themes, plugins, and a whole lot of button clicking. If you ever tried to use both at once, you probably laughed, cried, and then reached for more coffee.</p>
+
+<p><strong>Static vs dynamic (plain English):</strong></p>
+
+<p>A site built with Jekyll is typically rendered once at build time — the generator creates static HTML files you upload to a server or CDN. Those files don’t change unless you rebuild and redeploy. WordPress usually builds pages at runtime on the server, so content, layouts, or user-specific data can change instantly without rebuilding the whole site. In short: static = one-time render; dynamic = runtime changeable.</p>
+
+<p><strong>What is a WordPress theme?</strong></p>
+
+<p>It’s the design and layout for your website. “Classic themes” are older styles that were officially retired in 2022, but some sites still use them for old content.</p>
+
+<p><strong>Developer control vs built-in styles:</strong> Classic themes and custom PHP give developers full control over templates, markup, and styles — you can build anything, but you also maintain everything. In contrast, WordPress’s newer block themes and built-in style settings let editors adjust appearance and layout through the UI without code. That trade-off is why some teams start with classic themes for total control and later migrate to block themes for easier editing and consistency.</p>
+
+<p><strong>Why keep them?</strong></p>
+
+<p>Some organizations have important archives or old sites that need these classic themes. But for new projects, using modern themes saves time and effort.</p>
+
+<p>In some projects I built a classic theme and then enabled block-theme compatibility using a classic engineering approach — this lets the site continue to support older browsers (including IE in constrained cases) while allowing us to gradually target new audiences on Edge, Chrome, and modern Safari.</p>
+
+<p><strong>WordPress timeline:</strong></p>
+
+<ul>
+  <li>WordPress first launched in 2003.</li>
+  <li>In 2019, WordPress was at version 5.2, which introduced broader ES6 support and the block editor (Gutenberg).</li>
+  <li>As of 2025, WordPress is at version 6.5+, with even stronger ES6 and block theme support, plus many modern features.
+    <ul>
+      <li>WordPress supported ES5 JavaScript since around version 2.8 (2009), which enabled compatibility with older browsers and classic themes for many years.</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="block-themes-and-the-gutenberg-project-design-objectives">Block themes and the Gutenberg project: design objectives</h2>
+
+<p><strong>What is Gutenberg?</strong> Gutenberg is a new way to build WordPress sites using “blocks”—like LEGO pieces you can mix and match. This makes editing easier and less technical.</p>
+
+<p><strong>Where JavaScript goes in a block theme:</strong></p>
+
+<p>In block themes JavaScript lives alongside the theme or block assets and is explicitly registered so WordPress knows when to load it. Developers typically place scripts in the theme’s <code class="language-plaintext highlighter-rouge">assets/js/</code> folder or inside a block’s build output, and then declare them in <code class="language-plaintext highlighter-rouge">block.json</code> (using <code class="language-plaintext highlighter-rouge">editorScript</code> / <code class="language-plaintext highlighter-rouge">script</code>) or enqueue them with <code class="language-plaintext highlighter-rouge">wp_enqueue_script()</code> for front-end behaviour. In plain terms: put your JS with the theme or block assets and declare it so WordPress loads it in the editor or on the page when needed.</p>
+
+<p><strong>Key goals:</strong></p>
+
+<ul>
+  <li>Build pages from reusable blocks (like LEGO)</li>
+  <li>Edit headers, footers, and layouts visually</li>
+  <li>Use modern web technology for speed and accessibility</li>
+  <li>Make sure designs work for everyone, including people with disabilities</li>
+</ul>
+
+<p><strong>Analogy:</strong> Editing with Gutenberg is like swapping pieces in a brochure, not reprinting the whole thing.</p>
+
+<p><strong>Summary:</strong> Modern WordPress tools make editing easier for everyone. Classic themes are for old sites; new sites should use blocks.</p>
+
+<h2 id="object-management-group-omg--model-driven-architecture-mda">Object Management Group (OMG) &amp; Model-Driven Architecture (MDA)</h2>
+
+<p>You may have heard of the Object Management Group and Model-Driven Architecture (MDA) from the early 2000s. At its heart MDA is a simple idea: describe your application in a platform-independent way (a recipe), then transform that description into platform-specific code (the version that runs on a particular server or device). The two key concepts are the Platform-Independent Model (PIM) and the Platform-Specific Model (PSM).</p>
+
+<p>Why this matters for WordPress and block themes: many of the same patterns appear in modern CMS work. Block metadata (<code class="language-plaintext highlighter-rouge">block.json</code>), theme metadata (<code class="language-plaintext highlighter-rouge">theme.json</code>), and the way blocks declare their scripts, styles, and render behaviour act like small, platform-specific models. Developers author blocks and templates in a general way (the PIM-ish recipe) and build toolchains produce the final assets and declarations the platform loads (the PSM-ish outputs). In plain terms: MDA-style separation—describe once, generate for the platform—helps block-enabled theme delivery by keeping content models, presentation, and platform wiring distinct.</p>
+
+<p>Analogy: Think of MDA as writing a single recipe that can be transformed into a version for a gas oven, an electric oven, or a microwave. WordPress block metadata is the recipe; the theme assets and registered scripts are the oven-specific instructions.</p>
+
+<hr />
+
+<h2 id="jekyll-markdown-and-a-brief-timeline">Jekyll, Markdown, and a Brief Timeline</h2>
+
+<p><strong>What is Markdown?</strong> Markdown is a simple way to write text that turns into a website. It was created in 2004.</p>
+
+<p><strong>What is Jekyll?</strong> Jekyll is a tool (from 2008) that takes Markdown files and builds a website automatically. It’s used by many writers and small teams.</p>
+
+<p>Jekyll provides its own platform-specific implementation using Ruby and front matter: authors write simple front-matter metadata and Markdown, and Jekyll (Ruby) transforms that into the site output. In spirit this mirrors how WordPress uses PHP and <code class="language-plaintext highlighter-rouge">block.json</code>/theme metadata to describe and produce platform-specific assets.</p>
+
+<p><strong>Analogy:</strong> Writing in Markdown is like writing a clear letter. Jekyll is the postal worker who delivers it online.</p>
+
+<p><strong>Summary:</strong> Markdown and Jekyll make website writing simple and friendly, even for non-technical people.</p>
+
+<hr />
+
+<h2 id="templating-exceptions-noscript-fallbacks-and-es5-support-in-2025--why-we-should-stop-stalling">Templating Exceptions, Noscript Fallbacks, and ES5 Support in 2025 — Why We Should Stop Stalling</h2>
+
+<p><strong>What does this mean?</strong> In the past, developers added lots of special rules (“exceptions”) to make websites work for very old browsers. This made websites harder to build and test.</p>
+
+<p><strong>Why stop?</strong></p>
+
+<ul>
+  <li>Every extra rule means more testing and more chances for mistakes</li>
+  <li>New people have to learn old, confusing code</li>
+  <li>It slows down improvements for accessibility and usability</li>
+</ul>
+
+<p><strong>Summary:</strong> Don’t add lots of old-browser rules unless you really need them. Focus on making your site work well for most people.</p>
+
+<hr />
+
+<h2 id="accessibility-wins-by-letting-go">Accessibility Wins by Letting Go</h2>
+
+<p><strong>What is accessibility?</strong> Making sure everyone—including people with disabilities—can use your website.</p>
+
+<p><strong>Why does modern code help?</strong> Clean, simple code is easier to make accessible. You can focus on things like keyboard navigation and clear labels.</p>
+
+<p><strong>Summary:</strong> Using modern tools helps everyone, especially those who need accessible websites.</p>
+
+<hr />
+
+<h2 id="a-modest-proposal">A Modest Proposal</h2>
+
+<p><strong>Practical advice:</strong></p>
+
+<ol>
+  <li>Use modern web tools (ES6 modules, block themes) for new projects.</li>
+  <li>Exchange content as Markdown documents — they’re easier to move into target pages and reduce formatting drift.</li>
+  <li>Limit multiple nesting, colors, or inline styles in text — this improves accessibility and keeps documentation structures easy to manage.</li>
+  <li>Keep classic themes for legacy sites.</li>
+  <li>If you really need to support very old browsers, make a special version—don’t complicate your main site.</li>
+</ol>
+
+<hr />
+
+<h2 id="what-does-this-mean-for-you">What does this mean for you?</h2>
+
+<p><strong>If you’re not a developer:</strong></p>
+
+<ul>
+  <li>You can expect websites to work well on your phone or computer if it’s not ancient.</li>
+  <li>Editing and updating sites is easier than ever—no need to call a developer for every change.</li>
+  <li>Accessibility is improving, so sites are more usable for everyone.</li>
+</ul>
+
+<p><strong>If you manage a website:</strong></p>
+
+<ul>
+  <li>Ask your developer to use modern tools unless you have a special reason not to.</li>
+  <li>Don’t worry about supporting very old browsers unless your audience needs it.</li>
 </ul>
 
 <hr />
 
-<h2 id="bibliography">Bibliography</h2>
+<h2 id="conclusion--progress-is-not-personal">Conclusion — Progress Is Not Personal</h2>
 
-<p><a href="https://gitea.com/" rel="external noopener noreferrer" target="_blank">Gitea Official Website</a><br />
-<a href="https://www.ruby-lang.org/en/" rel="external noopener noreferrer" target="_blank">Ruby Programming Language</a><br />
-<a href="https://docs.github.com/en/actions" rel="external noopener noreferrer" target="_blank">GitHub Actions Documentation</a><br />
-<a href="https://en.wikipedia.org/wiki/CI/CD" rel="external noopener noreferrer" target="_blank">Continuous Integration (CI/CD) Concepts</a><br />
-<a href="https://jekyllrb.com/" rel="external noopener noreferrer" target="_blank">Jekyll Static Site Generator</a></p>
-</div>
+<p>We’re not abandoning anyone. We’re choosing to spend our time and care where it helps most. Modern browsers and phones make it easier to build fast, accessible, and enjoyable websites for everyone.</p>
+
+<p>— Multiple drafts. Slightly opinionated. Definitely caffeinated.</p>
+</div><footer class="post-footer">
+    <div class="post-nav"><div class="prev-post">
+        <a rel="prev" href="/posts/2025/10/06/typescript-jekyll-workspace/" class="prev-link"> ← Building a Modern TypeScript + Jekyll Workspace in 2025 </a>
+      </div></div>
+  </footer>
+
+  <a class="u-url" rel="canonical" href="/2025/11/24/ditching-es5-after-a-wordpress-build/" hidden></a>
 </article>
+
+<style>
+  .post-meta-separator {
+    color: #666;
+  }
+
+  .post-description {
+    font-style: italic;
+    color: #666;
+    margin-bottom: 1rem;
+  }
+
+  .post-tags {
+    margin-bottom: 1rem;
+  }
+
+  .tag {
+    background: #f0f0f0;
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.25rem;
+    font-size: 0.8rem;
+    margin-right: 0.5rem;
+    color: #555;
+  }
+
+  .post-categories {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #eee;
+  }
+
+  .category-link {
+    text-decoration: none;
+    color: #0066cc;
+  }
+
+  .category-link:hover {
+    text-decoration: underline;
+  }
+
+  .post-nav {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #eee;
+  }
+
+  .prev-link,
+  .next-link {
+    text-decoration: none;
+    color: #0066cc;
+    font-weight: 500;
+  }
+
+  .prev-link:hover,
+  .next-link:hover {
+    text-decoration: underline;
+  }
+
+  .next-post {
+    text-align: right;
+  }
+</style>
 </div>
       <div class="customad-container" id="adslot-1" data-ad-slot="12345678"></div>
     </main>
